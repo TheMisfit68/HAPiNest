@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,10 @@
 		DC06CD292354E42B00C8E9F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD282354E42B00C8E9F9 /* Assets.xcassets */; };
 		DC06CD2C2354E42B00C8E9F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD2B2354E42B00C8E9F9 /* Preview Assets.xcassets */; };
 		DC06CD2F2354E42B00C8E9F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */; };
+		DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD3D2354E61600C8E9F9 /* JVCocoa */; };
+		DC06CD412354E64500C8E9F9 /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD402354E64500C8E9F9 /* Sodium */; };
+		DC06CD442354E67600C8E9F9 /* Modbus in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD432354E67600C8E9F9 /* Modbus */; };
+		DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD462354E72F00C8E9F9 /* HAP */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,11 @@
 		DC06CD2E2354E42B00C8E9F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC06CD302354E42B00C8E9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC06CD312354E42B00C8E9F9 /* HAPiNest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HAPiNest.entitlements; sourceTree = "<group>"; };
+		DC06CD382354E52A00C8E9F9 /* MilightDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MilightDriver; sourceTree = "<group>"; };
+		DC06CD392354E54600C8E9F9 /* TizenDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TizenDriver; sourceTree = "<group>"; };
+		DC06CD3A2354E56200C8E9F9 /* YASDIdriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YASDIdriver; sourceTree = "<group>"; };
+		DC06CD3B2354E5AB00C8E9F9 /* ModbusDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ModbusDriver; sourceTree = "<group>"; };
+		DC06CD482354E80200C8E9F9 /* SoftPLC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SoftPLC; path = Drivers/SoftPLC; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +39,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */,
+				DC06CD442354E67600C8E9F9 /* Modbus in Frameworks */,
+				DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */,
+				DC06CD412354E64500C8E9F9 /* Sodium in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			isa = PBXGroup;
 			children = (
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
+				DC06CD482354E80200C8E9F9 /* SoftPLC */,
+				DC06CD372354E4BB00C8E9F9 /* Drivers */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +89,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DC06CD372354E4BB00C8E9F9 /* Drivers */ = {
+			isa = PBXGroup;
+			children = (
+				DC06CD382354E52A00C8E9F9 /* MilightDriver */,
+				DC06CD3B2354E5AB00C8E9F9 /* ModbusDriver */,
+				DC06CD392354E54600C8E9F9 /* TizenDriver */,
+				DC06CD3A2354E56200C8E9F9 /* YASDIdriver */,
+			);
+			path = Drivers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,6 +116,12 @@
 			dependencies = (
 			);
 			name = HAPiNest;
+			packageProductDependencies = (
+				DC06CD3D2354E61600C8E9F9 /* JVCocoa */,
+				DC06CD402354E64500C8E9F9 /* Sodium */,
+				DC06CD432354E67600C8E9F9 /* Modbus */,
+				DC06CD462354E72F00C8E9F9 /* HAP */,
+			);
 			productName = HAPiNest;
 			productReference = DC06CD212354E42A00C8E9F9 /* HAPiNest.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +150,12 @@
 				Base,
 			);
 			mainGroup = DC06CD182354E42A00C8E9F9;
+			packageReferences = (
+				DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */,
+				DC06CD3F2354E64500C8E9F9 /* XCRemoteSwiftPackageReference "Sodium" */,
+				DC06CD422354E67600C8E9F9 /* XCRemoteSwiftPackageReference "Modbus" */,
+				DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */,
+			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -345,6 +383,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TheMisfit68/JVCocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DC06CD3F2354E64500C8E9F9 /* XCRemoteSwiftPackageReference "Sodium" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TheMisfit68/Sodium.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DC06CD422354E67600C8E9F9 /* XCRemoteSwiftPackageReference "Modbus" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TheMisfit68/Modbus.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Bouke/HAP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC06CD3D2354E61600C8E9F9 /* JVCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */;
+			productName = JVCocoa;
+		};
+		DC06CD402354E64500C8E9F9 /* Sodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC06CD3F2354E64500C8E9F9 /* XCRemoteSwiftPackageReference "Sodium" */;
+			productName = Sodium;
+		};
+		DC06CD432354E67600C8E9F9 /* Modbus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC06CD422354E67600C8E9F9 /* XCRemoteSwiftPackageReference "Modbus" */;
+			productName = Modbus;
+		};
+		DC06CD462354E72F00C8E9F9 /* HAP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */;
+			productName = HAP;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC06CD192354E42A00C8E9F9 /* Project object */;
 }
