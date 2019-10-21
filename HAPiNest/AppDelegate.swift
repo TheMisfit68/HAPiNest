@@ -31,8 +31,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.makeKeyAndOrderFront(nil)
         
 
-        let testDriver =  MilightDriver(versionNumber: 6, ipAddress: "192.168.0.52")
+        let testDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
         testDriver.findBridge()
+        testDriver.execute(mode:.rgbw, action:.on, value: 12, zone:.zone02)
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

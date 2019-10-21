@@ -65,6 +65,15 @@
         }
       },
       {
+        "package": "rdncat",
+        "repositoryURL": "https://github.com/rderik/rdncat.git",
+        "state": {
+          "branch": "master",
+          "revision": "064324eedd409b83cf9e0b2ba6bd7be6bd20c0da",
+          "version": null
+        }
+      },
+      {
         "package": "Regex",
         "repositoryURL": "https://github.com/crossroadlabs/Regex.git",
         "state": {

@@ -212,7 +212,7 @@
 				};
 			};
 			buildConfigurationList = DC06CD1C2354E42A00C8E9F9 /* Build configuration list for PBXProject "HAPiNest" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -224,6 +224,7 @@
 				DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */,
 				DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */,
 				DCF3DF422358D757008BAFCF /* XCRemoteSwiftPackageReference "Sodium" */,
+				DC610EEA2369E5EF005CE1CD /* XCRemoteSwiftPackageReference "rdncat" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
@@ -477,6 +478,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.6.0;
+			};
+		};
+		DC610EEA2369E5EF005CE1CD /* XCRemoteSwiftPackageReference "rdncat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rderik/rdncat.git";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		DCF3DF422358D757008BAFCF /* XCRemoteSwiftPackageReference "Sodium" */ = {
