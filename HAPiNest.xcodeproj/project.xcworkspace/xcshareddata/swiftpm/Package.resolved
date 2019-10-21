@@ -65,15 +65,6 @@
         }
       },
       {
-        "package": "Modbus",
-        "repositoryURL": "https://github.com/TheMisfit68/Modbus.git",
-        "state": {
-          "branch": "master",
-          "revision": "6ee622e51e74975ca26072d48cf35be4383dff92",
-          "version": null
-        }
-      },
-      {
         "package": "Regex",
         "repositoryURL": "https://github.com/crossroadlabs/Regex.git",
         "state": {

@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC0140C42358EBF3002085FD /* ModbusDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC0140C32358EBF3002085FD /* ModbusDriver */; };
 		DC06CD252354E42A00C8E9F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06CD242354E42A00C8E9F9 /* AppDelegate.swift */; };
 		DC06CD272354E42A00C8E9F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06CD262354E42A00C8E9F9 /* ContentView.swift */; };
 		DC06CD292354E42B00C8E9F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD282354E42B00C8E9F9 /* Assets.xcassets */; };
 		DC06CD2C2354E42B00C8E9F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD2B2354E42B00C8E9F9 /* Preview Assets.xcassets */; };
 		DC06CD2F2354E42B00C8E9F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */; };
 		DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD3D2354E61600C8E9F9 /* JVCocoa */; };
-		DC06CD412354E64500C8E9F9 /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD402354E64500C8E9F9 /* Sodium */; };
-		DC06CD442354E67600C8E9F9 /* Modbus in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD432354E67600C8E9F9 /* Modbus */; };
 		DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD462354E72F00C8E9F9 /* HAP */; };
+		DC5B4D482357D3A400ED82B3 /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC5B4D472357D3A400ED82B3 /* MilightDriver */; };
+		DCB5F6222354ED7D005F610F /* Modbus Config.psd in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61A2354ED7D005F610F /* Modbus Config.psd */; };
+		DCB5F6232354ED7D005F610F /* MacModBus Application.icns in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61B2354ED7D005F610F /* MacModBus Application.icns */; };
+		DCB5F6242354ED7D005F610F /* MacModBus Configuration File.icns in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61C2354ED7D005F610F /* MacModBus Configuration File.icns */; };
+		DCB5F6252354ED7D005F610F /* ModbusApp.psd in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61D2354ED7D005F610F /* ModbusApp.psd */; };
+		DCB5F6262354ED7D005F610F /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61F2354ED7D005F610F /* AppIcon.iconset */; };
+		DCB5F6272354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */; };
+		DCE48A492355071600E513AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE48A482355071600E513AC /* Images.xcassets */; };
+		DCF3DF442358D757008BAFCF /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = DCF3DF432358D757008BAFCF /* Sodium */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC0140C52358F46F002085FD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = "../../../../../../../Library/Autosave Information/MyPlayground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC06CD212354E42A00C8E9F9 /* HAPiNest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAPiNest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC06CD242354E42A00C8E9F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC06CD262354E42A00C8E9F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +41,15 @@
 		DC06CD3A2354E56200C8E9F9 /* YASDIdriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YASDIdriver; sourceTree = "<group>"; };
 		DC06CD3B2354E5AB00C8E9F9 /* ModbusDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ModbusDriver; sourceTree = "<group>"; };
 		DC06CD482354E80200C8E9F9 /* SoftPLC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SoftPLC; path = Drivers/SoftPLC; sourceTree = "<group>"; };
+		DC6BA608235B701700086A8F /* AppleScriptDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppleScriptDriver; path = "../../../../../../../../Library/Autosave Information/AppleScriptDriver"; sourceTree = "<group>"; };
+		DCB5F61A2354ED7D005F610F /* Modbus Config.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Modbus Config.psd"; sourceTree = "<group>"; };
+		DCB5F61B2354ED7D005F610F /* MacModBus Application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "MacModBus Application.icns"; sourceTree = "<group>"; };
+		DCB5F61C2354ED7D005F610F /* MacModBus Configuration File.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "MacModBus Configuration File.icns"; sourceTree = "<group>"; };
+		DCB5F61D2354ED7D005F610F /* ModbusApp.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModbusApp.psd; sourceTree = "<group>"; };
+		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
+		DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "HAP-Specification-Non-Commercial-Version.pdf"; sourceTree = "<group>"; };
+		DCE48A482355071600E513AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DCE48A4A2355372A00E513AC /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = ToDo.md; path = HAPiNest/ToDo.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,10 +57,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF3DF442358D757008BAFCF /* Sodium in Frameworks */,
 				DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */,
-				DC06CD442354E67600C8E9F9 /* Modbus in Frameworks */,
+				DC0140C42358EBF3002085FD /* ModbusDriver in Frameworks */,
+				DC5B4D482357D3A400ED82B3 /* MilightDriver in Frameworks */,
 				DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */,
-				DC06CD412354E64500C8E9F9 /* Sodium in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,10 +71,15 @@
 		DC06CD182354E42A00C8E9F9 = {
 			isa = PBXGroup;
 			children = (
+				DC0140C52358F46F002085FD /* MyPlayground.playground */,
+				DCE48A4A2355372A00E513AC /* ToDo.md */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DC06CD482354E80200C8E9F9 /* SoftPLC */,
 				DC06CD372354E4BB00C8E9F9 /* Drivers */,
+				DCB5F6182354ED7D005F610F /* Artwork */,
+				DCB5F6202354ED7D005F610F /* Documentation */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
+				DC5B4D462357D3A400ED82B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +101,7 @@
 				DC06CD302354E42B00C8E9F9 /* Info.plist */,
 				DC06CD312354E42B00C8E9F9 /* HAPiNest.entitlements */,
 				DC06CD2A2354E42B00C8E9F9 /* Preview Content */,
+				DCE48A482355071600E513AC /* Images.xcassets */,
 			);
 			path = HAPiNest;
 			sourceTree = "<group>";
@@ -92,12 +117,56 @@
 		DC06CD372354E4BB00C8E9F9 /* Drivers */ = {
 			isa = PBXGroup;
 			children = (
+				DC6BA608235B701700086A8F /* AppleScriptDriver */,
 				DC06CD382354E52A00C8E9F9 /* MilightDriver */,
 				DC06CD3B2354E5AB00C8E9F9 /* ModbusDriver */,
 				DC06CD392354E54600C8E9F9 /* TizenDriver */,
 				DC06CD3A2354E56200C8E9F9 /* YASDIdriver */,
 			);
 			path = Drivers;
+			sourceTree = "<group>";
+		};
+		DC5B4D462357D3A400ED82B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCB5F6182354ED7D005F610F /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				DCB5F6192354ED7D005F610F /* MacModbus original icon design */,
+				DCB5F61E2354ED7D005F610F /* Iconset */,
+			);
+			path = Artwork;
+			sourceTree = "<group>";
+		};
+		DCB5F6192354ED7D005F610F /* MacModbus original icon design */ = {
+			isa = PBXGroup;
+			children = (
+				DCB5F61A2354ED7D005F610F /* Modbus Config.psd */,
+				DCB5F61B2354ED7D005F610F /* MacModBus Application.icns */,
+				DCB5F61C2354ED7D005F610F /* MacModBus Configuration File.icns */,
+				DCB5F61D2354ED7D005F610F /* ModbusApp.psd */,
+			);
+			path = "MacModbus original icon design";
+			sourceTree = "<group>";
+		};
+		DCB5F61E2354ED7D005F610F /* Iconset */ = {
+			isa = PBXGroup;
+			children = (
+				DCB5F61F2354ED7D005F610F /* AppIcon.iconset */,
+			);
+			path = Iconset;
+			sourceTree = "<group>";
+		};
+		DCB5F6202354ED7D005F610F /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */,
+			);
+			path = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,9 +187,10 @@
 			name = HAPiNest;
 			packageProductDependencies = (
 				DC06CD3D2354E61600C8E9F9 /* JVCocoa */,
-				DC06CD402354E64500C8E9F9 /* Sodium */,
-				DC06CD432354E67600C8E9F9 /* Modbus */,
 				DC06CD462354E72F00C8E9F9 /* HAP */,
+				DC5B4D472357D3A400ED82B3 /* MilightDriver */,
+				DCF3DF432358D757008BAFCF /* Sodium */,
+				DC0140C32358EBF3002085FD /* ModbusDriver */,
 			);
 			productName = HAPiNest;
 			productReference = DC06CD212354E42A00C8E9F9 /* HAPiNest.app */;
@@ -152,9 +222,8 @@
 			mainGroup = DC06CD182354E42A00C8E9F9;
 			packageReferences = (
 				DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */,
-				DC06CD3F2354E64500C8E9F9 /* XCRemoteSwiftPackageReference "Sodium" */,
-				DC06CD422354E67600C8E9F9 /* XCRemoteSwiftPackageReference "Modbus" */,
 				DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */,
+				DCF3DF422358D757008BAFCF /* XCRemoteSwiftPackageReference "Sodium" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
@@ -171,8 +240,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC06CD2F2354E42B00C8E9F9 /* Main.storyboard in Resources */,
+				DCE48A492355071600E513AC /* Images.xcassets in Resources */,
+				DCB5F6242354ED7D005F610F /* MacModBus Configuration File.icns in Resources */,
+				DCB5F6272354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf in Resources */,
 				DC06CD2C2354E42B00C8E9F9 /* Preview Assets.xcassets in Resources */,
+				DCB5F6222354ED7D005F610F /* Modbus Config.psd in Resources */,
+				DCB5F6262354ED7D005F610F /* AppIcon.iconset in Resources */,
 				DC06CD292354E42B00C8E9F9 /* Assets.xcassets in Resources */,
+				DCB5F6252354ED7D005F610F /* ModbusApp.psd in Resources */,
+				DCB5F6232354ED7D005F610F /* MacModBus Application.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,12 +394,12 @@
 		DC06CD352354E42B00C8E9F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HAPiNest/HAPiNest.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HAPiNest/Preview Content\"";
-				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				DEVELOPMENT_TEAM = Y7A29RG88E;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HAPiNest/Info.plist;
@@ -334,6 +410,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = oneclick.be.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -341,12 +418,12 @@
 		DC06CD362354E42B00C8E9F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HAPiNest/HAPiNest.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HAPiNest/Preview Content\"";
-				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				DEVELOPMENT_TEAM = Y7A29RG88E;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HAPiNest/Info.plist;
@@ -357,6 +434,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = oneclick.be.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -393,22 +471,6 @@
 				kind = branch;
 			};
 		};
-		DC06CD3F2354E64500C8E9F9 /* XCRemoteSwiftPackageReference "Sodium" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TheMisfit68/Sodium.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		DC06CD422354E67600C8E9F9 /* XCRemoteSwiftPackageReference "Modbus" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TheMisfit68/Modbus.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Bouke/HAP.git";
@@ -417,28 +479,39 @@
 				minimumVersion = 0.6.0;
 			};
 		};
+		DCF3DF422358D757008BAFCF /* XCRemoteSwiftPackageReference "Sodium" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TheMisfit68/Sodium.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DC0140C32358EBF3002085FD /* ModbusDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ModbusDriver;
+		};
 		DC06CD3D2354E61600C8E9F9 /* JVCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */;
 			productName = JVCocoa;
 		};
-		DC06CD402354E64500C8E9F9 /* Sodium */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC06CD3F2354E64500C8E9F9 /* XCRemoteSwiftPackageReference "Sodium" */;
-			productName = Sodium;
-		};
-		DC06CD432354E67600C8E9F9 /* Modbus */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC06CD422354E67600C8E9F9 /* XCRemoteSwiftPackageReference "Modbus" */;
-			productName = Modbus;
-		};
 		DC06CD462354E72F00C8E9F9 /* HAP */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */;
 			productName = HAP;
+		};
+		DC5B4D472357D3A400ED82B3 /* MilightDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MilightDriver;
+		};
+		DCF3DF432358D757008BAFCF /* Sodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCF3DF422358D757008BAFCF /* XCRemoteSwiftPackageReference "Sodium" */;
+			productName = Sodium;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

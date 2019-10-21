@@ -8,6 +8,7 @@
 
 import Cocoa
 import SwiftUI
+import MilightDriver
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -28,8 +29,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
-    }
+        
 
+        let testDriver =  MilightDriver(versionNumber: 6, ipAddress: "192.168.0.52")
+        testDriver.findBridge()
+    }
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
