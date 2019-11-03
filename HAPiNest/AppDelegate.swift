@@ -9,12 +9,16 @@
 import Cocoa
 import SwiftUI
 import MilightDriver
+import SiriDriver
+
+// JUST FOR TESTING PURPOSES!!
+let testDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
+let testSiri = SiriDriver(language: .flemish)
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
-
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
@@ -29,11 +33,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
-        
-
-        let testDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
-        testDriver.findBridge()
-        testDriver.execute(mode:.rgbw, action:.on, value: 12, zone:.zone02)
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

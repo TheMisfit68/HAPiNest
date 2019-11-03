@@ -23,11 +23,11 @@
 		DCB5F6262354ED7D005F610F /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61F2354ED7D005F610F /* AppIcon.iconset */; };
 		DCB5F6272354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */; };
 		DCE48A492355071600E513AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE48A482355071600E513AC /* Images.xcassets */; };
+		DCEFAE11236F64B4002A05D2 /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCEFAE10236F64B4002A05D2 /* SiriDriver */; };
 		DCF3DF442358D757008BAFCF /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = DCF3DF432358D757008BAFCF /* Sodium */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DC0140C52358F46F002085FD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = "../../../../../../../Library/Autosave Information/MyPlayground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC06CD212354E42A00C8E9F9 /* HAPiNest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAPiNest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC06CD242354E42A00C8E9F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC06CD262354E42A00C8E9F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
 		DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "HAP-Specification-Non-Commercial-Version.pdf"; sourceTree = "<group>"; };
 		DCE48A482355071600E513AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DCE48A4A2355372A00E513AC /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = ToDo.md; path = HAPiNest/ToDo.md; sourceTree = "<group>"; };
+		DCEFAE0F236F57FB002A05D2 /* SiriDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SiriDriver; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +62,7 @@
 				DC0140C42358EBF3002085FD /* ModbusDriver in Frameworks */,
 				DC5B4D482357D3A400ED82B3 /* MilightDriver in Frameworks */,
 				DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */,
+				DCEFAE11236F64B4002A05D2 /* SiriDriver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,8 +72,6 @@
 		DC06CD182354E42A00C8E9F9 = {
 			isa = PBXGroup;
 			children = (
-				DC0140C52358F46F002085FD /* MyPlayground.playground */,
-				DCE48A4A2355372A00E513AC /* ToDo.md */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DC06CD482354E80200C8E9F9 /* SoftPLC */,
 				DC06CD372354E4BB00C8E9F9 /* Drivers */,
@@ -117,6 +116,7 @@
 		DC06CD372354E4BB00C8E9F9 /* Drivers */ = {
 			isa = PBXGroup;
 			children = (
+				DCEFAE0F236F57FB002A05D2 /* SiriDriver */,
 				DC6BA608235B701700086A8F /* AppleScriptDriver */,
 				DC06CD382354E52A00C8E9F9 /* MilightDriver */,
 				DC06CD3B2354E5AB00C8E9F9 /* ModbusDriver */,
@@ -191,6 +191,7 @@
 				DC5B4D472357D3A400ED82B3 /* MilightDriver */,
 				DCF3DF432358D757008BAFCF /* Sodium */,
 				DC0140C32358EBF3002085FD /* ModbusDriver */,
+				DCEFAE10236F64B4002A05D2 /* SiriDriver */,
 			);
 			productName = HAPiNest;
 			productReference = DC06CD212354E42A00C8E9F9 /* HAPiNest.app */;
@@ -516,6 +517,10 @@
 		DC5B4D472357D3A400ED82B3 /* MilightDriver */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MilightDriver;
+		};
+		DCEFAE10236F64B4002A05D2 /* SiriDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SiriDriver;
 		};
 		DCF3DF432358D757008BAFCF /* Sodium */ = {
 			isa = XCSwiftPackageProductDependency;

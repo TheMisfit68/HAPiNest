@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SiriDriver"
+               BuildableName = "SiriDriver"
+               BlueprintName = "SiriDriver"
+               ReferencedContainer = "container:Drivers/SiriDriver">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "DC06CD202354E42A00C8E9F9"
                BuildableName = "HAPiNest.app"
                BlueprintName = "HAPiNest"
