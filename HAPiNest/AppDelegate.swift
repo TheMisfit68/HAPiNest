@@ -8,15 +8,6 @@
 
 import Cocoa
 import SwiftUI
-import AppleScriptDriver
-import SiriDriver
-import MilightDriver
-
-
-// JUST FOR TESTING PURPOSES!!
-let testDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
-let testSiri = SiriDriver(language: .flemish)
-let testScript = AppleScriptDriver()
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -33,7 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered, defer: false)
         window.center()
-        window.setFrameAutosaveName("Main Window")
+        window.title = "HAPiNest testing dashboard 🛋"
+        window.setFrameAutosaveName(window.title)
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
     }
