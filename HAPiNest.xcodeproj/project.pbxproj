@@ -15,6 +15,11 @@
 		DC06CD2F2354E42B00C8E9F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */; };
 		DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD3D2354E61600C8E9F9 /* JVCocoa */; };
 		DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD462354E72F00C8E9F9 /* HAP */; };
+		DC23FB062370B5C300949B90 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23FB052370B5C300949B90 /* NetworkExtension.framework */; };
+		DC23FB082370B5D000949B90 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23FB072370B5D000949B90 /* GameKit.framework */; };
+		DC23FB0C2370B5DD00949B90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23FB0B2370B5DD00949B90 /* MapKit.framework */; };
+		DC23FB0E2370B70F00949B90 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23FB0D2370B70F00949B90 /* CloudKit.framework */; };
+		DC2529F123705051005EA70D /* AppleScriptDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC2529F023705051005EA70D /* AppleScriptDriver */; };
 		DC5B4D482357D3A400ED82B3 /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC5B4D472357D3A400ED82B3 /* MilightDriver */; };
 		DCB5F6222354ED7D005F610F /* Modbus Config.psd in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61A2354ED7D005F610F /* Modbus Config.psd */; };
 		DCB5F6232354ED7D005F610F /* MacModBus Application.icns in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61B2354ED7D005F610F /* MacModBus Application.icns */; };
@@ -41,7 +46,11 @@
 		DC06CD3A2354E56200C8E9F9 /* YASDIdriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YASDIdriver; sourceTree = "<group>"; };
 		DC06CD3B2354E5AB00C8E9F9 /* ModbusDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ModbusDriver; sourceTree = "<group>"; };
 		DC06CD482354E80200C8E9F9 /* SoftPLC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SoftPLC; path = Drivers/SoftPLC; sourceTree = "<group>"; };
-		DC6BA608235B701700086A8F /* AppleScriptDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppleScriptDriver; path = "../../../../../../../../Library/Autosave Information/AppleScriptDriver"; sourceTree = "<group>"; };
+		DC096F172374EC6F00CABF54 /* AppleScriptDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppleScriptDriver; sourceTree = "<group>"; };
+		DC23FB052370B5C300949B90 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		DC23FB072370B5D000949B90 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		DC23FB0B2370B5DD00949B90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DC23FB0D2370B70F00949B90 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DCB5F61A2354ED7D005F610F /* Modbus Config.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Modbus Config.psd"; sourceTree = "<group>"; };
 		DCB5F61B2354ED7D005F610F /* MacModBus Application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "MacModBus Application.icns"; sourceTree = "<group>"; };
 		DCB5F61C2354ED7D005F610F /* MacModBus Configuration File.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "MacModBus Configuration File.icns"; sourceTree = "<group>"; };
@@ -57,12 +66,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC23FB082370B5D000949B90 /* GameKit.framework in Frameworks */,
 				DCF3DF442358D757008BAFCF /* Sodium in Frameworks */,
 				DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */,
 				DC0140C42358EBF3002085FD /* ModbusDriver in Frameworks */,
+				DC23FB0C2370B5DD00949B90 /* MapKit.framework in Frameworks */,
 				DC5B4D482357D3A400ED82B3 /* MilightDriver in Frameworks */,
 				DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */,
+				DC23FB062370B5C300949B90 /* NetworkExtension.framework in Frameworks */,
+				DC23FB0E2370B70F00949B90 /* CloudKit.framework in Frameworks */,
 				DCEFAE11236F64B4002A05D2 /* SiriDriver in Frameworks */,
+				DC2529F123705051005EA70D /* AppleScriptDriver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +130,8 @@
 		DC06CD372354E4BB00C8E9F9 /* Drivers */ = {
 			isa = PBXGroup;
 			children = (
+				DC096F172374EC6F00CABF54 /* AppleScriptDriver */,
 				DCEFAE0F236F57FB002A05D2 /* SiriDriver */,
-				DC6BA608235B701700086A8F /* AppleScriptDriver */,
 				DC06CD382354E52A00C8E9F9 /* MilightDriver */,
 				DC06CD3B2354E5AB00C8E9F9 /* ModbusDriver */,
 				DC06CD392354E54600C8E9F9 /* TizenDriver */,
@@ -129,6 +143,10 @@
 		DC5B4D462357D3A400ED82B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC23FB0D2370B70F00949B90 /* CloudKit.framework */,
+				DC23FB0B2370B5DD00949B90 /* MapKit.framework */,
+				DC23FB072370B5D000949B90 /* GameKit.framework */,
+				DC23FB052370B5C300949B90 /* NetworkExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,6 +210,7 @@
 				DCF3DF432358D757008BAFCF /* Sodium */,
 				DC0140C32358EBF3002085FD /* ModbusDriver */,
 				DCEFAE10236F64B4002A05D2 /* SiriDriver */,
+				DC2529F023705051005EA70D /* AppleScriptDriver */,
 			);
 			productName = HAPiNest;
 			productReference = DC06CD212354E42A00C8E9F9 /* HAPiNest.app */;
@@ -513,6 +532,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */;
 			productName = HAP;
+		};
+		DC2529F023705051005EA70D /* AppleScriptDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppleScriptDriver;
 		};
 		DC5B4D472357D3A400ED82B3 /* MilightDriver */ = {
 			isa = XCSwiftPackageProductDependency;

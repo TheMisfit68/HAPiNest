@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AppleScriptDriver"
+               BuildableName = "AppleScriptDriver"
+               BlueprintName = "AppleScriptDriver"
+               ReferencedContainer = "container:../../../../../../../Library/Autosave Information/AppleScriptDriver">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "SiriDriver"
                BuildableName = "SiriDriver"
                BlueprintName = "SiriDriver"

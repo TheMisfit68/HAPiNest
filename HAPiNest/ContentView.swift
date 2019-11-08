@@ -15,7 +15,7 @@ struct ContentView: View {
             Text("HAPiNest testing Dash 🛋")
                 .padding(.top)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
+            
             SiriView()
             OnOfView()
             BrightnessView()
@@ -77,7 +77,7 @@ extension ContentView {
     struct ColorView: View {
         var body: some View {
             VStack {
-               Button(action: {testDriver.executeCommand(mode: .rgbwwcw, action: .hue, value:130, zone: .all)}) {
+                Button(action: {testDriver.executeCommand(mode: .rgbwwcw, action: .hue, value:41, zone: .all)}) {
                     Text("Fixed Color")
                 }
                 Button(action: {testDriver.executeCommand(mode: .rgbwwcw, action: .saturation, value:100, zone: .all)}) {
@@ -93,7 +93,7 @@ extension ContentView {
     struct ModeView: View {
         var body: some View {
             VStack {
-               Button(action: {testDriver.executeCommand(mode: .rgbwwcw, action: .effect, value:9, zone: .all)}) {
+                Button(action: {testDriver.executeCommand(mode: .rgbwwcw, action: .effect, value:9, zone: .all)}) {
                     Text("Mode 9")
                 }
                 Button(action: {testDriver.executeCommand(mode: .rgbwwcw, action: .effectSpeedUp, zone: .all)}) {
@@ -111,6 +111,10 @@ extension ContentView {
             VStack {
                 Button(action: {testSiri.speak(text: "De HAPiNest server draait prima")}) {
                     Text("Test Server")
+                }
+                
+                Button(action: {testScript.runScript("TestScript")}) {
+                    Text("Run Applescript")
                 }
             }
         }
