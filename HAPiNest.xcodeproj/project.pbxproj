@@ -21,15 +21,17 @@
 		DC23FB0E2370B70F00949B90 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23FB0D2370B70F00949B90 /* CloudKit.framework */; };
 		DC2529F123705051005EA70D /* AppleScriptDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC2529F023705051005EA70D /* AppleScriptDriver */; };
 		DC5B4D482357D3A400ED82B3 /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC5B4D472357D3A400ED82B3 /* MilightDriver */; };
+		DC9672FD2376050100917D1B /* MyAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9672FC2376050100917D1B /* MyAccessories.swift */; };
 		DCB5F6222354ED7D005F610F /* Modbus Config.psd in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61A2354ED7D005F610F /* Modbus Config.psd */; };
 		DCB5F6232354ED7D005F610F /* MacModBus Application.icns in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61B2354ED7D005F610F /* MacModBus Application.icns */; };
 		DCB5F6242354ED7D005F610F /* MacModBus Configuration File.icns in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61C2354ED7D005F610F /* MacModBus Configuration File.icns */; };
 		DCB5F6252354ED7D005F610F /* ModbusApp.psd in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61D2354ED7D005F610F /* ModbusApp.psd */; };
 		DCB5F6262354ED7D005F610F /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61F2354ED7D005F610F /* AppIcon.iconset */; };
 		DCB5F6272354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */; };
-		DCCBA6FD23755BB0002F6854 /* HAPiNestServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HAPiNestServer.swift */; };
+		DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
 		DCEFAE11236F64B4002A05D2 /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCEFAE10236F64B4002A05D2 /* SiriDriver */; };
 		DCF3DF442358D757008BAFCF /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = DCF3DF432358D757008BAFCF /* Sodium */; };
+		DCFCB79B2381AFEB0066E00B /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB79A2381AFEB0066E00B /* Bridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,14 +53,16 @@
 		DC23FB072370B5D000949B90 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		DC23FB0B2370B5DD00949B90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DC23FB0D2370B70F00949B90 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		DC9672FC2376050100917D1B /* MyAccessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccessories.swift; sourceTree = "<group>"; };
 		DCB5F61A2354ED7D005F610F /* Modbus Config.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Modbus Config.psd"; sourceTree = "<group>"; };
 		DCB5F61B2354ED7D005F610F /* MacModBus Application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "MacModBus Application.icns"; sourceTree = "<group>"; };
 		DCB5F61C2354ED7D005F610F /* MacModBus Configuration File.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "MacModBus Configuration File.icns"; sourceTree = "<group>"; };
 		DCB5F61D2354ED7D005F610F /* ModbusApp.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = ModbusApp.psd; sourceTree = "<group>"; };
 		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
 		DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "HAP-Specification-Non-Commercial-Version.pdf"; sourceTree = "<group>"; };
-		DCCBA6FC23755BB0002F6854 /* HAPiNestServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPiNestServer.swift; sourceTree = "<group>"; };
+		DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
 		DCEFAE0F236F57FB002A05D2 /* SiriDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SiriDriver; sourceTree = "<group>"; };
+		DCFCB79A2381AFEB0066E00B /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +113,9 @@
 			children = (
 				DC06CD242354E42A00C8E9F9 /* AppDelegate.swift */,
 				DC06CD262354E42A00C8E9F9 /* ContentView.swift */,
-				DCCBA6FC23755BB0002F6854 /* HAPiNestServer.swift */,
+				DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */,
+				DCFCB79A2381AFEB0066E00B /* Bridge.swift */,
+				DC9672FC2376050100917D1B /* MyAccessories.swift */,
 				DC06CD282354E42B00C8E9F9 /* Assets.xcassets */,
 				DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */,
 				DC06CD302354E42B00C8E9F9 /* Info.plist */,
@@ -279,9 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFCB79B2381AFEB0066E00B /* Bridge.swift in Sources */,
+				DC9672FD2376050100917D1B /* MyAccessories.swift in Sources */,
 				DC06CD272354E42A00C8E9F9 /* ContentView.swift in Sources */,
 				DC06CD252354E42A00C8E9F9 /* AppDelegate.swift in Sources */,
-				DCCBA6FD23755BB0002F6854 /* HAPiNestServer.swift in Sources */,
+				DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
