@@ -7,6 +7,13 @@
  //
  
  import SwiftUI
+ import MilightDriver
+ import SiriDriver
+ import AppleScriptDriver
+ 
+ let testDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
+ let testSiri = SiriDriver(language: .flemish)
+ let testScripter = AppleScriptDriver()
  
  struct ContentView: View {
     var body: some View {
@@ -121,7 +128,7 @@
                     Text("Test Server")
                 }
                 
-                Button(action: {testScript.runScript("TestScript")}) {
+                Button(action: {testScripter.runScript("testScripter")}) {
                     Text("Run Applescript")
                 }
             }

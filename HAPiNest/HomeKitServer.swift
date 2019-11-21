@@ -14,10 +14,11 @@ import JVCocoa
 
 public class HomeKitServer:Singleton{
     
+    let mainBridgeDelegate = MainBridgeDelegate()
+    
     public static var shared: HomeKitServer = HomeKitServer()
     var bridge:Bridge!{
         didSet{
-            let mainBridgeDelegate = MainBridgeDelegate()
             self.bridge.delegate = mainBridgeDelegate
                 HAPserver = try? Server(device: self.bridge, listenPort: 8000)
             self.bridge.printPairingInstructions()
@@ -37,9 +38,6 @@ public class HomeKitServer:Singleton{
     }
     
 }
-
-
-
 
 
 //device.delegate = delegate
