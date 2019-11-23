@@ -33,14 +33,3 @@ let myAccessories:[Accessory]  = [
 ]
 
 
-let milightDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
-let siriDriver = SiriDriver(language: .flemish)
-let appleScriptDriver = AppleScriptDriver()
-
-let driversToUse:[String:AnyObject] =  [
-    
-    "Balk" : milightDriver,
-    "UFO" : milightDriver,
-    "W.C." : milightDriver
-    
-]
