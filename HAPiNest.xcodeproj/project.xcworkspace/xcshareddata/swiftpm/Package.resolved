@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AppleScriptDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/AppleScriptDriver.git",
+        "state": {
+          "branch": "master",
+          "revision": "23e00dd39cbddccb28dd96a53c22756feb346a62",
+          "version": null
+        }
+      },
+      {
         "package": "BigInt",
         "repositoryURL": "https://github.com/Boilertalk/BigInt.swift.git",
         "state": {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "12d2bf3ec7207ec3cd004b9582f69ef5fae1da3b",
           "version": "1.0.32"
+        }
+      },
+      {
+        "package": "ClibModbus",
+        "repositoryURL": "https://github.com/TheMisfit68/ClibModbus.git",
+        "state": {
+          "branch": "master",
+          "revision": "e94aeadb8928b4d811e9f43c2062b381888a59eb",
+          "version": null
         }
       },
       {
@@ -65,11 +83,20 @@
         }
       },
       {
-        "package": "rdncat",
-        "repositoryURL": "https://github.com/rderik/rdncat.git",
+        "package": "MilightDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/MilightDriver.git",
         "state": {
           "branch": "master",
-          "revision": "064324eedd409b83cf9e0b2ba6bd7be6bd20c0da",
+          "revision": "19d3e3b3c7cece443b36aaff99d909ca7206b2f7",
+          "version": null
+        }
+      },
+      {
+        "package": "ModbusDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/ModbusDriver.git",
+        "state": {
+          "branch": "master",
+          "revision": "d0a116b3cdec8193df589865325be1441c90aeb6",
           "version": null
         }
       },
@@ -83,11 +110,11 @@
         }
       },
       {
-        "package": "Sodium",
-        "repositoryURL": "https://github.com/TheMisfit68/Sodium.git",
+        "package": "SiriDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/SiriDriver.git",
         "state": {
           "branch": "master",
-          "revision": "b4c29c8c02989bca5753eeb68aea8ae149f54fba",
+          "revision": "23c76fe5f33fa3a1f467252c18d5d5b5fb306d42",
           "version": null
         }
       },

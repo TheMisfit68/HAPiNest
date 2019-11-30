@@ -12,6 +12,7 @@ import JVCocoa
 import AppleScriptDriver
 import SiriDriver
 import MilightDriver
+import ModbusDriver
 
 typealias Bridge = Device
 typealias BridgeDelegate = DeviceDelegate
@@ -39,6 +40,7 @@ class MainBridgeDelegate: BridgeDelegate {
     let milightDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
     let siriDriver = SiriDriver(language: .flemish)
     let appleScriptDriver = AppleScriptDriver()
+    let modbusDriver = ModbusDriver(ipAddress:"127.0.0.1", port:1502)
     
     func didRequestIdentificationOf(_ accessory: Accessory) {
         JVDebugger.shared.log(debugLevel: .Info,"Requested identification "
@@ -103,6 +105,8 @@ class MainBridgeDelegate: BridgeDelegate {
         case "W.C.":
             driverToUse = milightDriver
             driverParameters["zone"] = MilightZone.zone03
+        case "ModbusSimmulatedLight":
+            driverToUse = modbusDriver
         default:
             driverToUse =  nil
         }
@@ -127,6 +131,23 @@ class MainBridgeDelegate: BridgeDelegate {
                     miligthDriver.executeCommand(mode: .rgbwwcw, action: .temperature, value:100,  zone: zone)
                 }
             }
+        case let modbusDriver as ModbusDriver:
+           
+            var digitalInputModule:ioLogicE1210 = ioLogicE1210(ipAddress:"127.0.0.1", port:1502)
+            let value = characteristic.value as! Bool
+            digitalInputModule.modbusDriver.readAllInputs()
+            for channel in digitalInputModule.channels{
+                    let inputSignal = channel as! DigitalInputSignal
+                print("InputSignal \(inputSignal.number) = \(inputSignal.value)")
+            }
+            
+            var digitalOutputModule:ioLogicE1216 = ioLogicE1216(ipAddress:"127.0.0.1", port:1502)
+            print("value = \(value)")
+            for channel in digitalOutputModule.channels{
+                    let outputSignal = channel as! DigitalOutputSignal
+                    outputSignal.value = value
+            }
+            digitalOutputModule.modbusDriver.writeAllOutputs()
             
         case let siriDriver as SiriDriver:
             print("Didn't implement this driver yet")
