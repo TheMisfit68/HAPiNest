@@ -11,6 +11,12 @@ import HAP
 import AppleScriptDriver
 import SiriDriver
 import MilightDriver
+import ModbusDriver
+
+let milightDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
+let siriDriver = SiriDriver(language: .flemish)
+let appleScripTDriver = AppleScriptDriver()
+let modBusDriver = ModbusDriver(ipAddress: "127.0.0.1", port: 1502)
 
 // Global configInfo
 let myAccessories:[Accessory]  = [
@@ -36,4 +42,21 @@ let myAccessories:[Accessory]  = [
     
 ]
 
+protocol AccessoryDelegate{
+    
+      func handleCharacteristicChange<T>(
+          
+          _ accessory: Accessory,
+          _ service: Service,
+          _ characteristic: GenericCharacteristic<T>,
+          _ value:T?
+      )
+    
+}
 
+let AccessoryDelegates:[String:AccessoryDelegate] = [
+    "Balk" : milightDriver,
+    "UFO" : milightDriver,
+    "W.C." : milightDriver,
+    "ModbusSimmulatedLight": modBusDriver
+]

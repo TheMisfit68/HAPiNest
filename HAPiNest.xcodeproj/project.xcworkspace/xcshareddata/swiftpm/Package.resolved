@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "ClibYASDI",
+        "repositoryURL": "https://github.com/TheMisfit68/ClibYASDI.git",
+        "state": {
+          "branch": "master",
+          "revision": "440191ef9014e20838b8b2caa2d55ed842bb6e44",
+          "version": null
+        }
+      },
+      {
         "package": "Evergreen",
         "repositoryURL": "https://github.com/Bouke/Evergreen.git",
         "state": {
@@ -88,15 +97,6 @@
         "state": {
           "branch": "master",
           "revision": "19d3e3b3c7cece443b36aaff99d909ca7206b2f7",
-          "version": null
-        }
-      },
-      {
-        "package": "ModbusDriver",
-        "repositoryURL": "https://github.com/TheMisfit68/ModbusDriver.git",
-        "state": {
-          "branch": "master",
-          "revision": "d0a116b3cdec8193df589865325be1441c90aeb6",
           "version": null
         }
       },

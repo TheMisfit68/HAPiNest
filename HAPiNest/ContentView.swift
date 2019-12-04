@@ -10,6 +10,7 @@
  import MilightDriver
  import SiriDriver
  import AppleScriptDriver
+ import YASDIDriver
  
  let testDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
  let testSiri = SiriDriver(language: .flemish)
@@ -19,6 +20,10 @@
     var body: some View {
         
         ScrollView {
+            
+            YASDIView()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
             
             SiriView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -131,6 +136,25 @@
                 Button(action: {testScripter.runScript("testScripter")}) {
                     Text("Run Applescript")
                 }
+            }
+        }
+    }
+    
+    struct YASDIView: View {
+        var body: some View {
+            VStack {
+                Button(action: {
+                    
+                    // Insert code here to initialize your application
+                    if YASDIDriver.installDrivers(configFile: "YasdiConfigFile.ini"){
+//                        SMAInverter.createInverters(maxNumberToSearch:PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
+                    }
+                    
+                    
+                }) {
+                    Text("Search inverter")
+                }
+                
             }
         }
     }

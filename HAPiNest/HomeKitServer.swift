@@ -10,6 +10,7 @@ import Foundation
 import HAP
 import Darwin
 import JVCocoa
+import YASDIDriver
 
 
 public class HomeKitServer:Singleton{
