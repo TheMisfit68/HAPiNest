@@ -31,15 +31,52 @@
 		DCB5F6262354ED7D005F610F /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61F2354ED7D005F610F /* AppIcon.iconset */; };
 		DCB5F6272354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */; };
 		DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
-		DCD50B172397118300C0CED4 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC68045A2395B78A006808A3 /* YasdiConfigFile.ini */; };
+		DCD50B172397118300C0CED4 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC68045A2395B78A006808A3 /* YasdiConfigFile.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCD50B192397146400C0CED4 /* MilightDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B182397146400C0CED4 /* MilightDriver.swift */; };
 		DCD50B1B2397152100C0CED4 /* ModbusDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */; };
 		DCD50B1D2397161000C0CED4 /* SiriDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B1C2397161000C0CED4 /* SiriDriver.swift */; };
 		DCD50B1F239716C100C0CED4 /* AppleScriptDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */; };
 		DCE471C72390386B0059036D /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCE471C62390386B0059036D /* MilightDriver */; };
-		DCEFAE11236F64B4002A05D2 /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCEFAE10236F64B4002A05D2 /* SiriDriver */; };
 		DCFCB79B2381AFEB0066E00B /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB79A2381AFEB0066E00B /* Bridge.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCB2249723997BF100F2EB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCB2240C23997BF000F2EB06 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5C389BAA0D7945108B1D9345;
+			remoteInfo = yasdi;
+		};
+		DCB2249923997BF100F2EB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCB2240C23997BF000F2EB06 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4E001DBCEA1C40DEA412CC61;
+			remoteInfo = yasdi_drv_ip;
+		};
+		DCB2249B23997BF100F2EB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCB2240C23997BF000F2EB06 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E80904ADEBFD48DA83D8E9D9;
+			remoteInfo = yasdi_drv_serial;
+		};
+		DCB2249D23997BF100F2EB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCB2240C23997BF000F2EB06 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D3315070F6A46F9A10BB90F;
+			remoteInfo = yasdimaster;
+		};
+		DCB2249F23997BF100F2EB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCB2240C23997BF000F2EB06 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8551937D01264E39BC5E57CB;
+			remoteInfo = yasdishell;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DC6804582395B702006808A3 /* CopyFiles */ = {
@@ -63,15 +100,368 @@
 		DC06CD2E2354E42B00C8E9F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC06CD302354E42B00C8E9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC06CD312354E42B00C8E9F9 /* HAPiNest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HAPiNest.entitlements; sourceTree = "<group>"; };
+		DC1B172B239EE2B80092394E /* ClibYASDI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ClibYASDI; path = "../../C-based Packages/ClibYASDI"; sourceTree = "<group>"; };
 		DC23FB052370B5C300949B90 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		DC23FB072370B5D000949B90 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		DC23FB0B2370B5DD00949B90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DC23FB0D2370B70F00949B90 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DC68044A2395A31B006808A3 /* YASDIDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YASDIDriver; path = ../Drivers/YASDIDriver; sourceTree = "<group>"; };
 		DC68045A2395B78A006808A3 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
-		DC83CAF023970D4C0027AEC6 /* ClibYASDI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ClibYASDI; path = "../../C-based Packages/ClibYASDI"; sourceTree = "<group>"; };
 		DC9672FC2376050100917D1B /* MyAccessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccessories.swift; sourceTree = "<group>"; };
 		DC980B192391D80400EB5D97 /* ModbusDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ModbusDriver; path = ../Drivers/ModbusDriver; sourceTree = "<group>"; };
+		DCB222EF2398364C00F2EB06 /* libyasdi.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.1.8.1.dylib; path = ../../../../../../../../../usr/local/lib/libyasdi.1.8.1.dylib; sourceTree = "<group>"; };
+		DCB222F02398364C00F2EB06 /* libyasdimaster.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.1.8.1.dylib; path = ../../../../../../../../../usr/local/lib/libyasdimaster.1.8.1.dylib; sourceTree = "<group>"; };
+		DCB222F523997BF000F2EB06 /* minmap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = minmap.c; sourceTree = "<group>"; };
+		DCB222F623997BF000F2EB06 /* protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = protocol.h; sourceTree = "<group>"; };
+		DCB222F723997BF000F2EB06 /* timer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = timer.c; sourceTree = "<group>"; };
+		DCB222F823997BF000F2EB06 /* smadata_cmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = smadata_cmd.h; sourceTree = "<group>"; };
+		DCB222F923997BF000F2EB06 /* minqueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = minqueue.c; sourceTree = "<group>"; };
+		DCB222FA23997BF000F2EB06 /* tools.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tools.c; sourceTree = "<group>"; };
+		DCB222FB23997BF000F2EB06 /* byteorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = byteorder.h; sourceTree = "<group>"; };
+		DCB222FC23997BF000F2EB06 /* defractionizer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = defractionizer.c; sourceTree = "<group>"; };
+		DCB222FD23997BF000F2EB06 /* repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = repository.h; sourceTree = "<group>"; };
+		DCB222FE23997BF000F2EB06 /* router.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = router.c; sourceTree = "<group>"; };
+		DCB222FF23997BF000F2EB06 /* scheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scheduler.h; sourceTree = "<group>"; };
+		DCB2230023997BF000F2EB06 /* mempool.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mempool.c; sourceTree = "<group>"; };
+		DCB2230123997BF000F2EB06 /* fractionizer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fractionizer.c; sourceTree = "<group>"; };
+		DCB2230223997BF000F2EB06 /* iorequest.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = iorequest.c; sourceTree = "<group>"; };
+		DCB2230323997BF000F2EB06 /* prot_layer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prot_layer.c; sourceTree = "<group>"; };
+		DCB2230423997BF000F2EB06 /* smadata_layer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = smadata_layer.c; sourceTree = "<group>"; };
+		DCB2230523997BF000F2EB06 /* queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = queue.c; sourceTree = "<group>"; };
+		DCB2230623997BF000F2EB06 /* statistic_writer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = statistic_writer.c; sourceTree = "<group>"; };
+		DCB2230723997BF000F2EB06 /* driver_layer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = driver_layer.c; sourceTree = "<group>"; };
+		DCB2230823997BF000F2EB06 /* netpacket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = netpacket.h; sourceTree = "<group>"; };
+		DCB2230923997BF000F2EB06 /* timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
+		DCB2230A23997BF000F2EB06 /* minmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minmap.h; sourceTree = "<group>"; };
+		DCB2230B23997BF000F2EB06 /* repository.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = repository.c; sourceTree = "<group>"; };
+		DCB2230C23997BF000F2EB06 /* byteorder.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = byteorder.c; sourceTree = "<group>"; };
+		DCB2230D23997BF000F2EB06 /* tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
+		DCB2230E23997BF000F2EB06 /* minqueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minqueue.h; sourceTree = "<group>"; };
+		DCB2230F23997BF000F2EB06 /* defractionizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defractionizer.h; sourceTree = "<group>"; };
+		DCB2231023997BF000F2EB06 /* fractionizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fractionizer.h; sourceTree = "<group>"; };
+		DCB2231123997BF000F2EB06 /* mempool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mempool.h; sourceTree = "<group>"; };
+		DCB2231223997BF000F2EB06 /* router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = router.h; sourceTree = "<group>"; };
+		DCB2231323997BF000F2EB06 /* scheduler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = scheduler.c; sourceTree = "<group>"; };
+		DCB2231423997BF000F2EB06 /* driver_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = driver_layer.h; sourceTree = "<group>"; };
+		DCB2231523997BF000F2EB06 /* netpacket.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = netpacket.c; sourceTree = "<group>"; };
+		DCB2231623997BF000F2EB06 /* statistic_writer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statistic_writer.h; sourceTree = "<group>"; };
+		DCB2231723997BF000F2EB06 /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
+		DCB2231823997BF000F2EB06 /* smadata_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = smadata_layer.h; sourceTree = "<group>"; };
+		DCB2231923997BF000F2EB06 /* prot_layer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prot_layer.h; sourceTree = "<group>"; };
+		DCB2231A23997BF000F2EB06 /* iorequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iorequest.h; sourceTree = "<group>"; };
+		DCB2231B23997BF000F2EB06 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DCB2231E23997BF000F2EB06 /* CMakeDetermineCompilerABI_C.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = CMakeDetermineCompilerABI_C.bin; sourceTree = "<group>"; };
+		DCB2232023997BF000F2EB06 /* CMakeCCompilerId.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CMakeCCompilerId.c; sourceTree = "<group>"; };
+		DCB2232223997BF000F2EB06 /* BuildDescriptionCacheIndex-1e76d5b36f4bc359eef5183c5f651a7d */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BuildDescriptionCacheIndex-1e76d5b36f4bc359eef5183c5f651a7d"; sourceTree = "<group>"; };
+		DCB2232323997BF000F2EB06 /* build.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = build.db; sourceTree = "<group>"; };
+		DCB2232423997BF000F2EB06 /* f2923c0f42f61365f61a4efc2f21e96a-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "f2923c0f42f61365f61a4efc2f21e96a-manifest.xcbuild"; sourceTree = "<group>"; };
+		DCB2232523997BF000F2EB06 /* f2923c0f42f61365f61a4efc2f21e96a-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "f2923c0f42f61365f61a4efc2f21e96a-desc.xcbuild"; sourceTree = "<group>"; };
+		DCB2232923997BF000F2EB06 /* Script-2C8FEB8E15DC1A1A00E56A5D.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-2C8FEB8E15DC1A1A00E56A5D.sh"; sourceTree = "<group>"; };
+		DCB2232C23997BF000F2EB06 /* CMakeCCompilerId.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = CMakeCCompilerId.d; sourceTree = "<group>"; };
+		DCB2232D23997BF000F2EB06 /* CMakeCCompilerId.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = CMakeCCompilerId.o; sourceTree = "<group>"; };
+		DCB2232E23997BF000F2EB06 /* CompilerIdC_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = CompilerIdC_dependency_info.dat; sourceTree = "<group>"; };
+		DCB2232F23997BF000F2EB06 /* CompilerIdC.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = CompilerIdC.LinkFileList; sourceTree = "<group>"; };
+		DCB2233023997BF000F2EB06 /* CMakeCCompilerId.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = CMakeCCompilerId.dia; sourceTree = "<group>"; };
+		DCB2233123997BF000F2EB06 /* CompilerIdC-generated-files.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CompilerIdC-generated-files.hmap"; sourceTree = "<group>"; };
+		DCB2233223997BF000F2EB06 /* CompilerIdC.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = CompilerIdC.hmap; sourceTree = "<group>"; };
+		DCB2233323997BF000F2EB06 /* CompilerIdC-own-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CompilerIdC-own-target-headers.hmap"; sourceTree = "<group>"; };
+		DCB2233423997BF000F2EB06 /* all-product-headers.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "all-product-headers.yaml"; sourceTree = "<group>"; };
+		DCB2233523997BF000F2EB06 /* CompilerIdC-project-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CompilerIdC-project-headers.hmap"; sourceTree = "<group>"; };
+		DCB2233623997BF000F2EB06 /* CompilerIdC-all-non-framework-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CompilerIdC-all-non-framework-target-headers.hmap"; sourceTree = "<group>"; };
+		DCB2233723997BF000F2EB06 /* CompilerIdC-all-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CompilerIdC-all-target-headers.hmap"; sourceTree = "<group>"; };
+		DCB2233823997BF000F2EB06 /* CompilerIdC */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = CompilerIdC; sourceTree = "<group>"; };
+		DCB2233923997BF000F2EB06 /* CompilerIdC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CompilerIdC.xcodeproj; sourceTree = "<group>"; };
+		DCB2233D23997BF000F2EB06 /* CMakeCCompiler.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeCCompiler.cmake; sourceTree = "<group>"; };
+		DCB2233E23997BF000F2EB06 /* CMakeSystem.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeSystem.cmake; sourceTree = "<group>"; };
+		DCB2233F23997BF000F2EB06 /* cmake.check_cache */ = {isa = PBXFileReference; lastKnownFileType = text; path = cmake.check_cache; sourceTree = "<group>"; };
+		DCB2234023997BF000F2EB06 /* CMakeOutput.log */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeOutput.log; sourceTree = "<group>"; };
+		DCB2234123997BF000F2EB06 /* feature_tests.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = feature_tests.bin; sourceTree = "<group>"; };
+		DCB2234223997BF000F2EB06 /* feature_tests.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = feature_tests.c; sourceTree = "<group>"; };
+		DCB2234423997BF000F2EB06 /* TargetDirectories.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TargetDirectories.txt; sourceTree = "<group>"; };
+		DCB2234623997BF000F2EB06 /* serial_windows.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = serial_windows.c; sourceTree = "<group>"; };
+		DCB2234723997BF000F2EB06 /* serial_posix.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = serial_posix.c; sourceTree = "<group>"; };
+		DCB2234823997BF000F2EB06 /* ip_generic.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ip_generic.c; sourceTree = "<group>"; };
+		DCB2234923997BF000F2EB06 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DCB2234A23997BF000F2EB06 /* serial_windows.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = serial_windows.h; sourceTree = "<group>"; };
+		DCB2234B23997BF000F2EB06 /* serial_posix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = serial_posix.h; sourceTree = "<group>"; };
+		DCB2234C23997BF000F2EB06 /* ip_generic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ip_generic.h; sourceTree = "<group>"; };
+		DCB2234E23997BF000F2EB06 /* CommonShellUIMain.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CommonShellUIMain.c; sourceTree = "<group>"; };
+		DCB2234F23997BF000F2EB06 /* CHANGES */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGES; sourceTree = "<group>"; };
+		DCB2235123997BF000F2EB06 /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		DCB2235223997BF000F2EB06 /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		DCB2235323997BF000F2EB06 /* device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
+		DCB2235423997BF000F2EB06 /* compiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compiler.h; sourceTree = "<group>"; };
+		DCB2235523997BF000F2EB06 /* version.h.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = version.h.in; sourceTree = "<group>"; };
+		DCB2235623997BF000F2EB06 /* os.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = os.h; sourceTree = "<group>"; };
+		DCB2235723997BF000F2EB06 /* events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = events.h; sourceTree = "<group>"; };
+		DCB2235823997BF000F2EB06 /* lists.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lists.h; sourceTree = "<group>"; };
+		DCB2235923997BF000F2EB06 /* copyright.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = copyright.h; sourceTree = "<group>"; };
+		DCB2235A23997BF000F2EB06 /* frame_listener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = frame_listener.h; sourceTree = "<group>"; };
+		DCB2235B23997BF000F2EB06 /* packet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = packet.h; sourceTree = "<group>"; };
+		DCB2235C23997BF000F2EB06 /* yasdi_version.rc */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_version.rc; sourceTree = "<group>"; };
+		DCB2235D23997BF000F2EB06 /* chandef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chandef.h; sourceTree = "<group>"; };
+		DCB2235E23997BF000F2EB06 /* osswitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = osswitch.h; sourceTree = "<group>"; };
+		DCB2236023997BF000F2EB06 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DCB2236223997BF000F2EB06 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		DCB2236423997BF000F2EB06 /* project.h.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = project.h.in; sourceTree = "<group>"; };
+		DCB2236523997BF000F2EB06 /* project.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = project.h; sourceTree = "<group>"; };
+		DCB2236623997BF000F2EB06 /* yasdi-posix.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "yasdi-posix.ini"; sourceTree = "<group>"; };
+		DCB2236723997BF000F2EB06 /* yasdi-windows.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "yasdi-windows.ini"; sourceTree = "<group>"; };
+		DCB2236923997BF000F2EB06 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DCB2236D23997BF000F2EB06 /* Script-921CDEC96F8343EEB41A5C96.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-921CDEC96F8343EEB41A5C96.sh"; sourceTree = "<group>"; };
+		DCB2236F23997BF000F2EB06 /* Script-80F2733272DC4B8ABEA71073.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-80F2733272DC4B8ABEA71073.sh"; sourceTree = "<group>"; };
+		DCB2237323997BF000F2EB06 /* minmap.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = minmap.d; sourceTree = "<group>"; };
+		DCB2237423997BF000F2EB06 /* smanet.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = smanet.o; sourceTree = "<group>"; };
+		DCB2237523997BF000F2EB06 /* os_linux.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = os_linux.d; sourceTree = "<group>"; };
+		DCB2237623997BF000F2EB06 /* defractionizer.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = defractionizer.dia; sourceTree = "<group>"; };
+		DCB2237723997BF000F2EB06 /* sunnynet.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = sunnynet.d; sourceTree = "<group>"; };
+		DCB2237823997BF000F2EB06 /* libyasdi.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = libyasdi.dia; sourceTree = "<group>"; };
+		DCB2237923997BF000F2EB06 /* timer.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = timer.d; sourceTree = "<group>"; };
+		DCB2237A23997BF000F2EB06 /* getini.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = getini.dia; sourceTree = "<group>"; };
+		DCB2237B23997BF000F2EB06 /* minqueue.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = minqueue.dia; sourceTree = "<group>"; };
+		DCB2237C23997BF000F2EB06 /* byteorder.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = byteorder.o; sourceTree = "<group>"; };
+		DCB2237D23997BF000F2EB06 /* tools.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = tools.d; sourceTree = "<group>"; };
+		DCB2237E23997BF000F2EB06 /* minqueue.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = minqueue.d; sourceTree = "<group>"; };
+		DCB2237F23997BF000F2EB06 /* repository.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = repository.dia; sourceTree = "<group>"; };
+		DCB2238023997BF000F2EB06 /* defractionizer.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = defractionizer.d; sourceTree = "<group>"; };
+		DCB2238123997BF000F2EB06 /* iorequest.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = iorequest.dia; sourceTree = "<group>"; };
+		DCB2238223997BF000F2EB06 /* repository.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = repository.o; sourceTree = "<group>"; };
+		DCB2238323997BF000F2EB06 /* timer.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = timer.dia; sourceTree = "<group>"; };
+		DCB2238423997BF000F2EB06 /* router.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = router.d; sourceTree = "<group>"; };
+		DCB2238523997BF000F2EB06 /* fractionizer.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = fractionizer.dia; sourceTree = "<group>"; };
+		DCB2238623997BF000F2EB06 /* scheduler.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = scheduler.o; sourceTree = "<group>"; };
+		DCB2238723997BF000F2EB06 /* mempool.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = mempool.d; sourceTree = "<group>"; };
+		DCB2238823997BF000F2EB06 /* mempool.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = mempool.dia; sourceTree = "<group>"; };
+		DCB2238923997BF000F2EB06 /* os_linux.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = os_linux.dia; sourceTree = "<group>"; };
+		DCB2238A23997BF000F2EB06 /* fractionizer.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = fractionizer.d; sourceTree = "<group>"; };
+		DCB2238B23997BF000F2EB06 /* statistic_writer.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = statistic_writer.dia; sourceTree = "<group>"; };
+		DCB2238C23997BF000F2EB06 /* smadata_layer.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = smadata_layer.d; sourceTree = "<group>"; };
+		DCB2238D23997BF000F2EB06 /* getini.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = getini.o; sourceTree = "<group>"; };
+		DCB2238E23997BF000F2EB06 /* iorequest.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = iorequest.d; sourceTree = "<group>"; };
+		DCB2238F23997BF000F2EB06 /* prot_layer.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = prot_layer.d; sourceTree = "<group>"; };
+		DCB2239023997BF000F2EB06 /* scheduler.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = scheduler.dia; sourceTree = "<group>"; };
+		DCB2239123997BF000F2EB06 /* libyasdi.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = libyasdi.o; sourceTree = "<group>"; };
+		DCB2239223997BF000F2EB06 /* smanet.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = smanet.dia; sourceTree = "<group>"; };
+		DCB2239323997BF000F2EB06 /* router.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = router.dia; sourceTree = "<group>"; };
+		DCB2239423997BF000F2EB06 /* statistic_writer.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = statistic_writer.d; sourceTree = "<group>"; };
+		DCB2239523997BF000F2EB06 /* driver_layer.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = driver_layer.d; sourceTree = "<group>"; };
+		DCB2239623997BF000F2EB06 /* netpacket.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = netpacket.o; sourceTree = "<group>"; };
+		DCB2239723997BF000F2EB06 /* netpacket.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = netpacket.dia; sourceTree = "<group>"; };
+		DCB2239823997BF000F2EB06 /* timer.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = timer.o; sourceTree = "<group>"; };
+		DCB2239923997BF000F2EB06 /* sunnynet.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = sunnynet.o; sourceTree = "<group>"; };
+		DCB2239A23997BF000F2EB06 /* smanet.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = smanet.d; sourceTree = "<group>"; };
+		DCB2239B23997BF000F2EB06 /* os_linux.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = os_linux.o; sourceTree = "<group>"; };
+		DCB2239C23997BF000F2EB06 /* minmap.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = minmap.o; sourceTree = "<group>"; };
+		DCB2239D23997BF000F2EB06 /* repository.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = repository.d; sourceTree = "<group>"; };
+		DCB2239E23997BF000F2EB06 /* minqueue.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = minqueue.o; sourceTree = "<group>"; };
+		DCB2239F23997BF000F2EB06 /* tools.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = tools.o; sourceTree = "<group>"; };
+		DCB223A023997BF000F2EB06 /* byteorder.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = byteorder.d; sourceTree = "<group>"; };
+		DCB223A123997BF000F2EB06 /* defractionizer.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = defractionizer.o; sourceTree = "<group>"; };
+		DCB223A223997BF000F2EB06 /* driver_layer.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = driver_layer.dia; sourceTree = "<group>"; };
+		DCB223A323997BF000F2EB06 /* tools.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = tools.dia; sourceTree = "<group>"; };
+		DCB223A423997BF000F2EB06 /* yasdi.1.8.1_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = yasdi.1.8.1_dependency_info.dat; sourceTree = "<group>"; };
+		DCB223A523997BF000F2EB06 /* fractionizer.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = fractionizer.o; sourceTree = "<group>"; };
+		DCB223A623997BF000F2EB06 /* mempool.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mempool.o; sourceTree = "<group>"; };
+		DCB223A723997BF000F2EB06 /* router.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = router.o; sourceTree = "<group>"; };
+		DCB223A823997BF000F2EB06 /* byteorder.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = byteorder.dia; sourceTree = "<group>"; };
+		DCB223A923997BF000F2EB06 /* smadata_layer.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = smadata_layer.dia; sourceTree = "<group>"; };
+		DCB223AA23997BF000F2EB06 /* scheduler.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = scheduler.d; sourceTree = "<group>"; };
+		DCB223AB23997BF000F2EB06 /* yasdi.1.8.1.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi.1.8.1.LinkFileList; sourceTree = "<group>"; };
+		DCB223AC23997BF000F2EB06 /* sunnynet.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = sunnynet.dia; sourceTree = "<group>"; };
+		DCB223AD23997BF000F2EB06 /* minmap.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = minmap.dia; sourceTree = "<group>"; };
+		DCB223AE23997BF000F2EB06 /* driver_layer.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = driver_layer.o; sourceTree = "<group>"; };
+		DCB223AF23997BF000F2EB06 /* netpacket.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = netpacket.d; sourceTree = "<group>"; };
+		DCB223B023997BF000F2EB06 /* prot_layer.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = prot_layer.dia; sourceTree = "<group>"; };
+		DCB223B123997BF000F2EB06 /* statistic_writer.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = statistic_writer.o; sourceTree = "<group>"; };
+		DCB223B223997BF000F2EB06 /* libyasdi.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = libyasdi.d; sourceTree = "<group>"; };
+		DCB223B323997BF000F2EB06 /* prot_layer.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = prot_layer.o; sourceTree = "<group>"; };
+		DCB223B423997BF000F2EB06 /* iorequest.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = iorequest.o; sourceTree = "<group>"; };
+		DCB223B523997BF000F2EB06 /* getini.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = getini.d; sourceTree = "<group>"; };
+		DCB223B623997BF000F2EB06 /* smadata_layer.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = smadata_layer.o; sourceTree = "<group>"; };
+		DCB223B723997BF000F2EB06 /* Script-54FD675A574B4EE49852AE10.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-54FD675A574B4EE49852AE10.sh"; sourceTree = "<group>"; };
+		DCB223BB23997BF000F2EB06 /* yasdi_drv_ip.1.8.1.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_ip.1.8.1.LinkFileList; sourceTree = "<group>"; };
+		DCB223BC23997BF000F2EB06 /* ip_generic.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = ip_generic.d; sourceTree = "<group>"; };
+		DCB223BD23997BF000F2EB06 /* ip_generic.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = ip_generic.dia; sourceTree = "<group>"; };
+		DCB223BE23997BF000F2EB06 /* yasdi_drv_ip.1.8.1_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = yasdi_drv_ip.1.8.1_dependency_info.dat; sourceTree = "<group>"; };
+		DCB223BF23997BF000F2EB06 /* ip_generic.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = ip_generic.o; sourceTree = "<group>"; };
+		DCB223C023997BF000F2EB06 /* Script-856BA83DA7604073A48532FC.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-856BA83DA7604073A48532FC.sh"; sourceTree = "<group>"; };
+		DCB223C423997BF000F2EB06 /* serial_posix.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = serial_posix.d; sourceTree = "<group>"; };
+		DCB223C523997BF000F2EB06 /* serial_posix.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = serial_posix.dia; sourceTree = "<group>"; };
+		DCB223C623997BF000F2EB06 /* yasdi_drv_serial.1.8.1_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = yasdi_drv_serial.1.8.1_dependency_info.dat; sourceTree = "<group>"; };
+		DCB223C723997BF000F2EB06 /* yasdi_drv_serial.1.8.1.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_serial.1.8.1.LinkFileList; sourceTree = "<group>"; };
+		DCB223C823997BF000F2EB06 /* serial_posix.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = serial_posix.o; sourceTree = "<group>"; };
+		DCB223C923997BF000F2EB06 /* Script-8785554E263F43CAAF737CA1.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-8785554E263F43CAAF737CA1.sh"; sourceTree = "<group>"; };
+		DCB223CB23997BF000F2EB06 /* Script-601C5FC5BCDA45CFBEDF42F0.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-601C5FC5BCDA45CFBEDF42F0.sh"; sourceTree = "<group>"; };
+		DCB223CF23997BF000F2EB06 /* objman.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = objman.o; sourceTree = "<group>"; };
+		DCB223D023997BF000F2EB06 /* main.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = main.o; sourceTree = "<group>"; };
+		DCB223D123997BF000F2EB06 /* busevents.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = busevents.dia; sourceTree = "<group>"; };
+		DCB223D223997BF000F2EB06 /* plant.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = plant.o; sourceTree = "<group>"; };
+		DCB223D323997BF000F2EB06 /* chanvalrepo.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = chanvalrepo.o; sourceTree = "<group>"; };
+		DCB223D423997BF000F2EB06 /* statewritechan.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = statewritechan.d; sourceTree = "<group>"; };
+		DCB223D523997BF000F2EB06 /* stateident.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = stateident.dia; sourceTree = "<group>"; };
+		DCB223D623997BF000F2EB06 /* statereadchan.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = statereadchan.o; sourceTree = "<group>"; };
+		DCB223D723997BF000F2EB06 /* libyasdimaster.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = libyasdimaster.d; sourceTree = "<group>"; };
+		DCB223D823997BF000F2EB06 /* busevents.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = busevents.d; sourceTree = "<group>"; };
+		DCB223D923997BF000F2EB06 /* yasdimaster.1.8.1.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdimaster.1.8.1.LinkFileList; sourceTree = "<group>"; };
+		DCB223DA23997BF000F2EB06 /* stateconfig.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = stateconfig.o; sourceTree = "<group>"; };
+		DCB223DB23997BF000F2EB06 /* ysecurity.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = ysecurity.d; sourceTree = "<group>"; };
+		DCB223DC23997BF000F2EB06 /* stateident.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = stateident.o; sourceTree = "<group>"; };
+		DCB223DD23997BF000F2EB06 /* netchannel.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = netchannel.d; sourceTree = "<group>"; };
+		DCB223DE23997BF000F2EB06 /* netchannel.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = netchannel.dia; sourceTree = "<group>"; };
+		DCB223DF23997BF000F2EB06 /* chanvalrepo.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = chanvalrepo.dia; sourceTree = "<group>"; };
+		DCB223E023997BF000F2EB06 /* statedetection.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = statedetection.o; sourceTree = "<group>"; };
+		DCB223E123997BF000F2EB06 /* mastercmd.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = mastercmd.d; sourceTree = "<group>"; };
+		DCB223E223997BF000F2EB06 /* statewritechan.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = statewritechan.dia; sourceTree = "<group>"; };
+		DCB223E323997BF000F2EB06 /* netdevice.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = netdevice.dia; sourceTree = "<group>"; };
+		DCB223E423997BF000F2EB06 /* netdevice.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = netdevice.d; sourceTree = "<group>"; };
+		DCB223E523997BF000F2EB06 /* statedetection.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = statedetection.dia; sourceTree = "<group>"; };
+		DCB223E623997BF000F2EB06 /* mastercmd.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = mastercmd.dia; sourceTree = "<group>"; };
+		DCB223E723997BF000F2EB06 /* libyasdimaster.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = libyasdimaster.o; sourceTree = "<group>"; };
+		DCB223E823997BF000F2EB06 /* statereadchan.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = statereadchan.d; sourceTree = "<group>"; };
+		DCB223E923997BF000F2EB06 /* statewritechan.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = statewritechan.o; sourceTree = "<group>"; };
+		DCB223EA23997BF000F2EB06 /* plant.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = plant.d; sourceTree = "<group>"; };
+		DCB223EB23997BF000F2EB06 /* chanvalrepo.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = chanvalrepo.d; sourceTree = "<group>"; };
+		DCB223EC23997BF000F2EB06 /* main.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = main.d; sourceTree = "<group>"; };
+		DCB223ED23997BF000F2EB06 /* objman.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = objman.d; sourceTree = "<group>"; };
+		DCB223EE23997BF000F2EB06 /* ysecurity.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = ysecurity.o; sourceTree = "<group>"; };
+		DCB223EF23997BF000F2EB06 /* stateconfig.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = stateconfig.d; sourceTree = "<group>"; };
+		DCB223F023997BF000F2EB06 /* ysecurity.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = ysecurity.dia; sourceTree = "<group>"; };
+		DCB223F123997BF000F2EB06 /* objman.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = objman.dia; sourceTree = "<group>"; };
+		DCB223F223997BF000F2EB06 /* busevents.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = busevents.o; sourceTree = "<group>"; };
+		DCB223F323997BF000F2EB06 /* libyasdimaster.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = libyasdimaster.dia; sourceTree = "<group>"; };
+		DCB223F423997BF000F2EB06 /* mastercmd.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mastercmd.o; sourceTree = "<group>"; };
+		DCB223F523997BF000F2EB06 /* statereadchan.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = statereadchan.dia; sourceTree = "<group>"; };
+		DCB223F623997BF000F2EB06 /* yasdimaster.1.8.1_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = yasdimaster.1.8.1_dependency_info.dat; sourceTree = "<group>"; };
+		DCB223F723997BF000F2EB06 /* statedetection.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = statedetection.d; sourceTree = "<group>"; };
+		DCB223F823997BF000F2EB06 /* netchannel.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = netchannel.o; sourceTree = "<group>"; };
+		DCB223F923997BF000F2EB06 /* stateconfig.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = stateconfig.dia; sourceTree = "<group>"; };
+		DCB223FA23997BF000F2EB06 /* stateident.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = stateident.d; sourceTree = "<group>"; };
+		DCB223FB23997BF000F2EB06 /* plant.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = plant.dia; sourceTree = "<group>"; };
+		DCB223FC23997BF000F2EB06 /* netdevice.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = netdevice.o; sourceTree = "<group>"; };
+		DCB223FD23997BF000F2EB06 /* main.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.dia; sourceTree = "<group>"; };
+		DCB223FE23997BF000F2EB06 /* Script-98D00A1B6DC54DE583CB94CE.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Script-98D00A1B6DC54DE583CB94CE.sh"; sourceTree = "<group>"; };
+		DCB2240223997BF000F2EB06 /* CommonShellUIMain.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = CommonShellUIMain.d; sourceTree = "<group>"; };
+		DCB2240323997BF000F2EB06 /* CommonShellUIMain.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommonShellUIMain.dia; sourceTree = "<group>"; };
+		DCB2240423997BF000F2EB06 /* CommonShellUIMain.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = CommonShellUIMain.o; sourceTree = "<group>"; };
+		DCB2240523997BF000F2EB06 /* yasdishell.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdishell.LinkFileList; sourceTree = "<group>"; };
+		DCB2240623997BF000F2EB06 /* yasdishell_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = yasdishell_dependency_info.dat; sourceTree = "<group>"; };
+		DCB2240823997BF000F2EB06 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		DCB2240923997BF000F2EB06 /* yasdishell.xcent */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = yasdishell.xcent; sourceTree = "<group>"; };
+		DCB2240A23997BF000F2EB06 /* cmake_install.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = cmake_install.cmake; sourceTree = "<group>"; };
+		DCB2240B23997BF000F2EB06 /* CTestTestfile.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = CTestTestfile.cmake; sourceTree = "<group>"; };
+		DCB2240C23997BF000F2EB06 /* yasdi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = yasdi.xcodeproj; sourceTree = "<group>"; };
+		DCB2241123997BF000F2EB06 /* getini.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getini.h; sourceTree = "<group>"; };
+		DCB2241223997BF000F2EB06 /* smadef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = smadef.h; sourceTree = "<group>"; };
+		DCB2241323997BF000F2EB06 /* getini.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = getini.c; sourceTree = "<group>"; };
+		DCB2241523997BF000F2EB06 /* smanet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = smanet.h; sourceTree = "<group>"; };
+		DCB2241623997BF000F2EB06 /* sunnynet.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sunnynet.c; sourceTree = "<group>"; };
+		DCB2241723997BF000F2EB06 /* sunnynet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sunnynet.h; sourceTree = "<group>"; };
+		DCB2241823997BF000F2EB06 /* smanet.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = smanet.c; sourceTree = "<group>"; };
+		DCB2241923997BF000F2EB06 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DCB2241B23997BF000F2EB06 /* libyasdimaster.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libyasdimaster.c; sourceTree = "<group>"; };
+		DCB2241C23997BF000F2EB06 /* libyasdimaster.def */ = {isa = PBXFileReference; lastKnownFileType = text; path = libyasdimaster.def; sourceTree = "<group>"; };
+		DCB2241D23997BF000F2EB06 /* libyasdi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libyasdi.h; sourceTree = "<group>"; };
+		DCB2241E23997BF000F2EB06 /* libyasdi.def */ = {isa = PBXFileReference; lastKnownFileType = text; path = libyasdi.def; sourceTree = "<group>"; };
+		DCB2241F23997BF000F2EB06 /* libyasdimaster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libyasdimaster.h; sourceTree = "<group>"; };
+		DCB2242023997BF000F2EB06 /* libyasdi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libyasdi.c; sourceTree = "<group>"; };
+		DCB2242323997BF000F2EB06 /* yasdi.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi.ini; sourceTree = "<group>"; };
+		DCB2242423997BF000F2EB06 /* sample1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sample1.c; sourceTree = "<group>"; };
+		DCB2242623997BF000F2EB06 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DCB2242823997BF000F2EB06 /* objman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = objman.h; sourceTree = "<group>"; };
+		DCB2242923997BF000F2EB06 /* plant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plant.h; sourceTree = "<group>"; };
+		DCB2242A23997BF000F2EB06 /* chanvalrepo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chanvalrepo.h; sourceTree = "<group>"; };
+		DCB2242B23997BF000F2EB06 /* statewritechan.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = statewritechan.c; sourceTree = "<group>"; };
+		DCB2242C23997BF000F2EB06 /* statereadchan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statereadchan.h; sourceTree = "<group>"; };
+		DCB2242D23997BF000F2EB06 /* busevents.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = busevents.c; sourceTree = "<group>"; };
+		DCB2242E23997BF000F2EB06 /* ysecurity.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ysecurity.c; sourceTree = "<group>"; };
+		DCB2242F23997BF000F2EB06 /* stateconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stateconfig.h; sourceTree = "<group>"; };
+		DCB2243023997BF000F2EB06 /* stateident.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stateident.h; sourceTree = "<group>"; };
+		DCB2243123997BF000F2EB06 /* netchannel.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = netchannel.c; sourceTree = "<group>"; };
+		DCB2243223997BF000F2EB06 /* statedetection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statedetection.h; sourceTree = "<group>"; };
+		DCB2243323997BF000F2EB06 /* mastercmd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mastercmd.c; sourceTree = "<group>"; };
+		DCB2243423997BF000F2EB06 /* netdevice.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = netdevice.c; sourceTree = "<group>"; };
+		DCB2243523997BF000F2EB06 /* statereadchan.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = statereadchan.c; sourceTree = "<group>"; };
+		DCB2243623997BF000F2EB06 /* statewritechan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statewritechan.h; sourceTree = "<group>"; };
+		DCB2243723997BF000F2EB06 /* plant.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = plant.c; sourceTree = "<group>"; };
+		DCB2243823997BF000F2EB06 /* chanvalrepo.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = chanvalrepo.c; sourceTree = "<group>"; };
+		DCB2243923997BF000F2EB06 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		DCB2243A23997BF000F2EB06 /* objman.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = objman.c; sourceTree = "<group>"; };
+		DCB2243B23997BF000F2EB06 /* stateconfig.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stateconfig.c; sourceTree = "<group>"; };
+		DCB2243C23997BF000F2EB06 /* ysecurity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ysecurity.h; sourceTree = "<group>"; };
+		DCB2243D23997BF000F2EB06 /* master.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = master.h; sourceTree = "<group>"; };
+		DCB2243E23997BF000F2EB06 /* busevents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = busevents.h; sourceTree = "<group>"; };
+		DCB2243F23997BF000F2EB06 /* states.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = states.h; sourceTree = "<group>"; };
+		DCB2244023997BF000F2EB06 /* mastercmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mastercmd.h; sourceTree = "<group>"; };
+		DCB2244123997BF000F2EB06 /* statedetection.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = statedetection.c; sourceTree = "<group>"; };
+		DCB2244223997BF000F2EB06 /* netchannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = netchannel.h; sourceTree = "<group>"; };
+		DCB2244323997BF000F2EB06 /* stateident.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stateident.c; sourceTree = "<group>"; };
+		DCB2244423997BF000F2EB06 /* netdevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = netdevice.h; sourceTree = "<group>"; };
+		DCB2244623997BF000F2EB06 /* yasdi_drv_serial_postBuildPhase.makeRelease */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_serial_postBuildPhase.makeRelease; sourceTree = "<group>"; };
+		DCB2244723997BF000F2EB06 /* RUN_TESTS_postBuildPhase.makeRelease */ = {isa = PBXFileReference; lastKnownFileType = text; path = RUN_TESTS_postBuildPhase.makeRelease; sourceTree = "<group>"; };
+		DCB2244823997BF000F2EB06 /* ZERO_CHECK_cmakeRulesBuildPhase.makeDebug */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZERO_CHECK_cmakeRulesBuildPhase.makeDebug; sourceTree = "<group>"; };
+		DCB2244923997BF000F2EB06 /* install_postBuildPhase.makeRelWithDebInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = install_postBuildPhase.makeRelWithDebInfo; sourceTree = "<group>"; };
+		DCB2244A23997BF000F2EB06 /* yasdimaster_postBuildPhase.makeDebug */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdimaster_postBuildPhase.makeDebug; sourceTree = "<group>"; };
+		DCB2244B23997BF100F2EB06 /* yasdimaster_postBuildPhase.makeRelease */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdimaster_postBuildPhase.makeRelease; sourceTree = "<group>"; };
+		DCB2244C23997BF100F2EB06 /* ALL_BUILD_cmakeRulesBuildPhase.makeDebug */ = {isa = PBXFileReference; lastKnownFileType = text; path = ALL_BUILD_cmakeRulesBuildPhase.makeDebug; sourceTree = "<group>"; };
+		DCB2244D23997BF100F2EB06 /* yasdi_drv_ip_postBuildPhase.makeMinSizeRel */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_ip_postBuildPhase.makeMinSizeRel; sourceTree = "<group>"; };
+		DCB2244E23997BF100F2EB06 /* yasdi_postBuildPhase.makeMinSizeRel */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_postBuildPhase.makeMinSizeRel; sourceTree = "<group>"; };
+		DCB2244F23997BF100F2EB06 /* RUN_TESTS_postBuildPhase.makeMinSizeRel */ = {isa = PBXFileReference; lastKnownFileType = text; path = RUN_TESTS_postBuildPhase.makeMinSizeRel; sourceTree = "<group>"; };
+		DCB2245023997BF100F2EB06 /* yasdi_drv_serial_postBuildPhase.makeRelWithDebInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_serial_postBuildPhase.makeRelWithDebInfo; sourceTree = "<group>"; };
+		DCB2245123997BF100F2EB06 /* yasdi_drv_serial_postBuildPhase.makeDebug */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_serial_postBuildPhase.makeDebug; sourceTree = "<group>"; };
+		DCB2245223997BF100F2EB06 /* ZERO_CHECK_cmakeRulesBuildPhase.makeRelWithDebInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZERO_CHECK_cmakeRulesBuildPhase.makeRelWithDebInfo; sourceTree = "<group>"; };
+		DCB2245323997BF100F2EB06 /* RUN_TESTS_postBuildPhase.makeDebug */ = {isa = PBXFileReference; lastKnownFileType = text; path = RUN_TESTS_postBuildPhase.makeDebug; sourceTree = "<group>"; };
+		DCB2245423997BF100F2EB06 /* yasdi_drv_ip_postBuildPhase.makeRelWithDebInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_ip_postBuildPhase.makeRelWithDebInfo; sourceTree = "<group>"; };
+		DCB2245523997BF100F2EB06 /* yasdimaster_postBuildPhase.makeRelWithDebInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdimaster_postBuildPhase.makeRelWithDebInfo; sourceTree = "<group>"; };
+		DCB2245623997BF100F2EB06 /* ReRunCMake.make */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = ReRunCMake.make; sourceTree = "<group>"; };
+		DCB2245723997BF100F2EB06 /* yasdi_drv_ip_postBuildPhase.makeDebug */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_ip_postBuildPhase.makeDebug; sourceTree = "<group>"; };
+		DCB2245823997BF100F2EB06 /* RUN_TESTS_postBuildPhase.makeRelWithDebInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = RUN_TESTS_postBuildPhase.makeRelWithDebInfo; sourceTree = "<group>"; };
+		DCB2245923997BF100F2EB06 /* yasdi_postBuildPhase.makeRelease */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_postBuildPhase.makeRelease; sourceTree = "<group>"; };
+		DCB2245A23997BF100F2EB06 /* yasdi_postBuildPhase.makeRelWithDebInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_postBuildPhase.makeRelWithDebInfo; sourceTree = "<group>"; };
+		DCB2245B23997BF100F2EB06 /* yasdimaster_postBuildPhase.makeMinSizeRel */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdimaster_postBuildPhase.makeMinSizeRel; sourceTree = "<group>"; };
+		DCB2245C23997BF100F2EB06 /* XCODE_DEPEND_HELPER.make */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = XCODE_DEPEND_HELPER.make; sourceTree = "<group>"; };
+		DCB2245D23997BF100F2EB06 /* ALL_BUILD_cmakeRulesBuildPhase.makeRelWithDebInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ALL_BUILD_cmakeRulesBuildPhase.makeRelWithDebInfo; sourceTree = "<group>"; };
+		DCB2245E23997BF100F2EB06 /* ALL_BUILD_cmakeRulesBuildPhase.makeRelease */ = {isa = PBXFileReference; lastKnownFileType = text; path = ALL_BUILD_cmakeRulesBuildPhase.makeRelease; sourceTree = "<group>"; };
+		DCB2245F23997BF100F2EB06 /* yasdi_drv_serial_postBuildPhase.makeMinSizeRel */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_serial_postBuildPhase.makeMinSizeRel; sourceTree = "<group>"; };
+		DCB2246023997BF100F2EB06 /* ALL_BUILD_cmakeRulesBuildPhase.makeMinSizeRel */ = {isa = PBXFileReference; lastKnownFileType = text; path = ALL_BUILD_cmakeRulesBuildPhase.makeMinSizeRel; sourceTree = "<group>"; };
+		DCB2246123997BF100F2EB06 /* install_postBuildPhase.makeMinSizeRel */ = {isa = PBXFileReference; lastKnownFileType = text; path = install_postBuildPhase.makeMinSizeRel; sourceTree = "<group>"; };
+		DCB2246223997BF100F2EB06 /* install_postBuildPhase.makeRelease */ = {isa = PBXFileReference; lastKnownFileType = text; path = install_postBuildPhase.makeRelease; sourceTree = "<group>"; };
+		DCB2246323997BF100F2EB06 /* yasdi_postBuildPhase.makeDebug */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_postBuildPhase.makeDebug; sourceTree = "<group>"; };
+		DCB2246423997BF100F2EB06 /* yasdi_drv_ip_postBuildPhase.makeRelease */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi_drv_ip_postBuildPhase.makeRelease; sourceTree = "<group>"; };
+		DCB2246523997BF100F2EB06 /* ZERO_CHECK_cmakeRulesBuildPhase.makeMinSizeRel */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZERO_CHECK_cmakeRulesBuildPhase.makeMinSizeRel; sourceTree = "<group>"; };
+		DCB2246623997BF100F2EB06 /* install_postBuildPhase.makeDebug */ = {isa = PBXFileReference; lastKnownFileType = text; path = install_postBuildPhase.makeDebug; sourceTree = "<group>"; };
+		DCB2246723997BF100F2EB06 /* ZERO_CHECK_cmakeRulesBuildPhase.makeRelease */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZERO_CHECK_cmakeRulesBuildPhase.makeRelease; sourceTree = "<group>"; };
+		DCB2246923997BF100F2EB06 /* os_linux.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = os_linux.c; sourceTree = "<group>"; };
+		DCB2246A23997BF100F2EB06 /* os_windows.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = os_windows.c; sourceTree = "<group>"; };
+		DCB2246B23997BF100F2EB06 /* os_darwin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = os_darwin.h; sourceTree = "<group>"; };
+		DCB2246C23997BF100F2EB06 /* os_windows.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = os_windows.h; sourceTree = "<group>"; };
+		DCB2246D23997BF100F2EB06 /* os_linux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = os_linux.h; sourceTree = "<group>"; };
+		DCB2246E23997BF100F2EB06 /* COPYRIGHT */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
+		DCB2246F23997BF100F2EB06 /* CMakeCache.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeCache.txt; sourceTree = "<group>"; };
+		DCB2247223997BF100F2EB06 /* 2deb5e27a88745282606d3a6523c518d-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2deb5e27a88745282606d3a6523c518d-desc.xcbuild"; sourceTree = "<group>"; };
+		DCB2247323997BF100F2EB06 /* df1cfb79d9d84f9b8eb69f3fffd4c9ef-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "df1cfb79d9d84f9b8eb69f3fffd4c9ef-desc.xcbuild"; sourceTree = "<group>"; };
+		DCB2247423997BF100F2EB06 /* df1cfb79d9d84f9b8eb69f3fffd4c9ef-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "df1cfb79d9d84f9b8eb69f3fffd4c9ef-manifest.xcbuild"; sourceTree = "<group>"; };
+		DCB2247523997BF100F2EB06 /* eed05c0fc1156854fd6560f42ad62742-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "eed05c0fc1156854fd6560f42ad62742-manifest.xcbuild"; sourceTree = "<group>"; };
+		DCB2247623997BF100F2EB06 /* 2797758ee1598dc2e6b29a902e630085-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2797758ee1598dc2e6b29a902e630085-desc.xcbuild"; sourceTree = "<group>"; };
+		DCB2247723997BF100F2EB06 /* build.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = build.db; sourceTree = "<group>"; };
+		DCB2247823997BF100F2EB06 /* eed05c0fc1156854fd6560f42ad62742-desc.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eed05c0fc1156854fd6560f42ad62742-desc.xcbuild"; sourceTree = "<group>"; };
+		DCB2247923997BF100F2EB06 /* 2deb5e27a88745282606d3a6523c518d-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2deb5e27a88745282606d3a6523c518d-manifest.xcbuild"; sourceTree = "<group>"; };
+		DCB2247A23997BF100F2EB06 /* 2797758ee1598dc2e6b29a902e630085-manifest.xcbuild */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2797758ee1598dc2e6b29a902e630085-manifest.xcbuild"; sourceTree = "<group>"; };
+		DCB2247B23997BF100F2EB06 /* BuildDescriptionCacheIndex-ae1147487e8a7e8e03c86b1ad3362f21 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BuildDescriptionCacheIndex-ae1147487e8a7e8e03c86b1ad3362f21"; sourceTree = "<group>"; };
+		DCB2247C23997BF100F2EB06 /* install_manifest.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = install_manifest.txt; sourceTree = "<group>"; };
+		DCB2247E23997BF100F2EB06 /* libyasdimaster.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdimaster.dylib; sourceTree = "<group>"; };
+		DCB2247F23997BF100F2EB06 /* libyasdi_drv_serial.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi_drv_serial.1.dylib; sourceTree = "<group>"; };
+		DCB2248023997BF100F2EB06 /* libyasdi_drv_serial.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi_drv_serial.dylib; sourceTree = "<group>"; };
+		DCB2248123997BF100F2EB06 /* libyasdi_drv_serial.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi_drv_serial.1.8.1.dylib; sourceTree = "<group>"; };
+		DCB2248223997BF100F2EB06 /* yasdishell */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = yasdishell; sourceTree = "<group>"; };
+		DCB2248323997BF100F2EB06 /* libyasdi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi.dylib; sourceTree = "<group>"; };
+		DCB2248423997BF100F2EB06 /* yasdi.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = yasdi.ini; sourceTree = "<group>"; };
+		DCB2248523997BF100F2EB06 /* libyasdi_drv_ip.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi_drv_ip.1.8.1.dylib; sourceTree = "<group>"; };
+		DCB2248623997BF100F2EB06 /* libyasdimaster.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdimaster.1.8.1.dylib; sourceTree = "<group>"; };
+		DCB2248723997BF100F2EB06 /* libyasdi_drv_ip.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi_drv_ip.dylib; sourceTree = "<group>"; };
+		DCB2248823997BF100F2EB06 /* libyasdimaster.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdimaster.1.dylib; sourceTree = "<group>"; };
+		DCB2248923997BF100F2EB06 /* libyasdi.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi.1.dylib; sourceTree = "<group>"; };
+		DCB2248A23997BF100F2EB06 /* libyasdi_drv_ip.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi_drv_ip.1.dylib; sourceTree = "<group>"; };
+		DCB2248B23997BF100F2EB06 /* libyasdi.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libyasdi.1.8.1.dylib; sourceTree = "<group>"; };
 		DCB5F61A2354ED7D005F610F /* Modbus Config.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Modbus Config.psd"; sourceTree = "<group>"; };
 		DCB5F61B2354ED7D005F610F /* MacModBus Application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "MacModBus Application.icns"; sourceTree = "<group>"; };
 		DCB5F61C2354ED7D005F610F /* MacModBus Configuration File.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "MacModBus Configuration File.icns"; sourceTree = "<group>"; };
@@ -102,7 +492,6 @@
 				DCE471C72390386B0059036D /* MilightDriver in Frameworks */,
 				DC23FB0E2370B70F00949B90 /* CloudKit.framework in Frameworks */,
 				DC6BC8CF2390480500BD9445 /* SiriDriver in Frameworks */,
-				DCEFAE11236F64B4002A05D2 /* SiriDriver in Frameworks */,
 				DC6BC8CC2390466800BD9445 /* AppleScriptDriver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,7 +502,7 @@
 		DC06CD182354E42A00C8E9F9 = {
 			isa = PBXGroup;
 			children = (
-				DC83CAF023970D4C0027AEC6 /* ClibYASDI */,
+				DC1B172B239EE2B80092394E /* ClibYASDI */,
 				DC68044A2395A31B006808A3 /* YASDIDriver */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
@@ -161,6 +550,9 @@
 		DC5B4D462357D3A400ED82B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCB222F323997BF000F2EB06 /* YASDI project */,
+				DCB222EF2398364C00F2EB06 /* libyasdi.1.8.1.dylib */,
+				DCB222F02398364C00F2EB06 /* libyasdimaster.1.8.1.dylib */,
 				DC980B192391D80400EB5D97 /* ModbusDriver */,
 				DC23FB0D2370B70F00949B90 /* CloudKit.framework */,
 				DC23FB0B2370B5DD00949B90 /* MapKit.framework */,
@@ -179,6 +571,816 @@
 				DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */,
 			);
 			path = Drivers;
+			sourceTree = "<group>";
+		};
+		DCB222F323997BF000F2EB06 /* YASDI project */ = {
+			isa = PBXGroup;
+			children = (
+				DCB222F423997BF000F2EB06 /* core */,
+				DCB2231B23997BF000F2EB06 /* LICENSE */,
+				DCB2231C23997BF000F2EB06 /* CMakeFiles */,
+				DCB2234523997BF000F2EB06 /* driver */,
+				DCB2234D23997BF000F2EB06 /* shell */,
+				DCB2234F23997BF000F2EB06 /* CHANGES */,
+				DCB2235023997BF000F2EB06 /* include */,
+				DCB2235F23997BF000F2EB06 /* projects */,
+				DCB2236A23997BF000F2EB06 /* yasdi.build */,
+				DCB2240A23997BF000F2EB06 /* cmake_install.cmake */,
+				DCB2240B23997BF000F2EB06 /* CTestTestfile.cmake */,
+				DCB2240C23997BF000F2EB06 /* yasdi.xcodeproj */,
+				DCB2240F23997BF000F2EB06 /* release */,
+				DCB2241023997BF000F2EB06 /* smalib */,
+				DCB2241423997BF000F2EB06 /* protocol */,
+				DCB2241923997BF000F2EB06 /* README */,
+				DCB2241A23997BF000F2EB06 /* libs */,
+				DCB2242123997BF000F2EB06 /* samples */,
+				DCB2242723997BF000F2EB06 /* master */,
+				DCB2244523997BF000F2EB06 /* CMakeScripts */,
+				DCB2246823997BF100F2EB06 /* os */,
+				DCB2246E23997BF100F2EB06 /* COPYRIGHT */,
+				DCB2246F23997BF100F2EB06 /* CMakeCache.txt */,
+				DCB2247023997BF100F2EB06 /* build */,
+				DCB2247C23997BF100F2EB06 /* install_manifest.txt */,
+				DCB2247D23997BF100F2EB06 /* debug */,
+			);
+			name = "YASDI project";
+			path = "../../C-based Packages/YASDI/YASDI project";
+			sourceTree = "<group>";
+		};
+		DCB222F423997BF000F2EB06 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				DCB222F523997BF000F2EB06 /* minmap.c */,
+				DCB222F623997BF000F2EB06 /* protocol.h */,
+				DCB222F723997BF000F2EB06 /* timer.c */,
+				DCB222F823997BF000F2EB06 /* smadata_cmd.h */,
+				DCB222F923997BF000F2EB06 /* minqueue.c */,
+				DCB222FA23997BF000F2EB06 /* tools.c */,
+				DCB222FB23997BF000F2EB06 /* byteorder.h */,
+				DCB222FC23997BF000F2EB06 /* defractionizer.c */,
+				DCB222FD23997BF000F2EB06 /* repository.h */,
+				DCB222FE23997BF000F2EB06 /* router.c */,
+				DCB222FF23997BF000F2EB06 /* scheduler.h */,
+				DCB2230023997BF000F2EB06 /* mempool.c */,
+				DCB2230123997BF000F2EB06 /* fractionizer.c */,
+				DCB2230223997BF000F2EB06 /* iorequest.c */,
+				DCB2230323997BF000F2EB06 /* prot_layer.c */,
+				DCB2230423997BF000F2EB06 /* smadata_layer.c */,
+				DCB2230523997BF000F2EB06 /* queue.c */,
+				DCB2230623997BF000F2EB06 /* statistic_writer.c */,
+				DCB2230723997BF000F2EB06 /* driver_layer.c */,
+				DCB2230823997BF000F2EB06 /* netpacket.h */,
+				DCB2230923997BF000F2EB06 /* timer.h */,
+				DCB2230A23997BF000F2EB06 /* minmap.h */,
+				DCB2230B23997BF000F2EB06 /* repository.c */,
+				DCB2230C23997BF000F2EB06 /* byteorder.c */,
+				DCB2230D23997BF000F2EB06 /* tools.h */,
+				DCB2230E23997BF000F2EB06 /* minqueue.h */,
+				DCB2230F23997BF000F2EB06 /* defractionizer.h */,
+				DCB2231023997BF000F2EB06 /* fractionizer.h */,
+				DCB2231123997BF000F2EB06 /* mempool.h */,
+				DCB2231223997BF000F2EB06 /* router.h */,
+				DCB2231323997BF000F2EB06 /* scheduler.c */,
+				DCB2231423997BF000F2EB06 /* driver_layer.h */,
+				DCB2231523997BF000F2EB06 /* netpacket.c */,
+				DCB2231623997BF000F2EB06 /* statistic_writer.h */,
+				DCB2231723997BF000F2EB06 /* queue.h */,
+				DCB2231823997BF000F2EB06 /* smadata_layer.h */,
+				DCB2231923997BF000F2EB06 /* prot_layer.h */,
+				DCB2231A23997BF000F2EB06 /* iorequest.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		DCB2231C23997BF000F2EB06 /* CMakeFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2231D23997BF000F2EB06 /* 3.10.0 */,
+				DCB2233F23997BF000F2EB06 /* cmake.check_cache */,
+				DCB2234023997BF000F2EB06 /* CMakeOutput.log */,
+				DCB2234123997BF000F2EB06 /* feature_tests.bin */,
+				DCB2234223997BF000F2EB06 /* feature_tests.c */,
+				DCB2234323997BF000F2EB06 /* CMakeTmp */,
+				DCB2234423997BF000F2EB06 /* TargetDirectories.txt */,
+			);
+			path = CMakeFiles;
+			sourceTree = "<group>";
+		};
+		DCB2231D23997BF000F2EB06 /* 3.10.0 */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2231E23997BF000F2EB06 /* CMakeDetermineCompilerABI_C.bin */,
+				DCB2231F23997BF000F2EB06 /* CompilerIdC */,
+				DCB2233D23997BF000F2EB06 /* CMakeCCompiler.cmake */,
+				DCB2233E23997BF000F2EB06 /* CMakeSystem.cmake */,
+			);
+			path = 3.10.0;
+			sourceTree = "<group>";
+		};
+		DCB2231F23997BF000F2EB06 /* CompilerIdC */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2232023997BF000F2EB06 /* CMakeCCompilerId.c */,
+				DCB2232123997BF000F2EB06 /* XCBuildData */,
+				DCB2232623997BF000F2EB06 /* CompilerIdC.build */,
+				DCB2233823997BF000F2EB06 /* CompilerIdC */,
+				DCB2233923997BF000F2EB06 /* CompilerIdC.xcodeproj */,
+				DCB2233C23997BF000F2EB06 /* tmp */,
+			);
+			path = CompilerIdC;
+			sourceTree = "<group>";
+		};
+		DCB2232123997BF000F2EB06 /* XCBuildData */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2232223997BF000F2EB06 /* BuildDescriptionCacheIndex-1e76d5b36f4bc359eef5183c5f651a7d */,
+				DCB2232323997BF000F2EB06 /* build.db */,
+				DCB2232423997BF000F2EB06 /* f2923c0f42f61365f61a4efc2f21e96a-manifest.xcbuild */,
+				DCB2232523997BF000F2EB06 /* f2923c0f42f61365f61a4efc2f21e96a-desc.xcbuild */,
+			);
+			path = XCBuildData;
+			sourceTree = "<group>";
+		};
+		DCB2232623997BF000F2EB06 /* CompilerIdC.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2232723997BF000F2EB06 /* Debug */,
+			);
+			path = CompilerIdC.build;
+			sourceTree = "<group>";
+		};
+		DCB2232723997BF000F2EB06 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2232823997BF000F2EB06 /* CompilerIdC.build */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		DCB2232823997BF000F2EB06 /* CompilerIdC.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2232923997BF000F2EB06 /* Script-2C8FEB8E15DC1A1A00E56A5D.sh */,
+				DCB2232A23997BF000F2EB06 /* Objects-normal */,
+				DCB2233123997BF000F2EB06 /* CompilerIdC-generated-files.hmap */,
+				DCB2233223997BF000F2EB06 /* CompilerIdC.hmap */,
+				DCB2233323997BF000F2EB06 /* CompilerIdC-own-target-headers.hmap */,
+				DCB2233423997BF000F2EB06 /* all-product-headers.yaml */,
+				DCB2233523997BF000F2EB06 /* CompilerIdC-project-headers.hmap */,
+				DCB2233623997BF000F2EB06 /* CompilerIdC-all-non-framework-target-headers.hmap */,
+				DCB2233723997BF000F2EB06 /* CompilerIdC-all-target-headers.hmap */,
+			);
+			path = CompilerIdC.build;
+			sourceTree = "<group>";
+		};
+		DCB2232A23997BF000F2EB06 /* Objects-normal */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2232B23997BF000F2EB06 /* x86_64 */,
+			);
+			path = "Objects-normal";
+			sourceTree = "<group>";
+		};
+		DCB2232B23997BF000F2EB06 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2232C23997BF000F2EB06 /* CMakeCCompilerId.d */,
+				DCB2232D23997BF000F2EB06 /* CMakeCCompilerId.o */,
+				DCB2232E23997BF000F2EB06 /* CompilerIdC_dependency_info.dat */,
+				DCB2232F23997BF000F2EB06 /* CompilerIdC.LinkFileList */,
+				DCB2233023997BF000F2EB06 /* CMakeCCompilerId.dia */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		DCB2233A23997BF000F2EB06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCB2233C23997BF000F2EB06 /* tmp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tmp;
+			sourceTree = "<group>";
+		};
+		DCB2234323997BF000F2EB06 /* CMakeTmp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CMakeTmp;
+			sourceTree = "<group>";
+		};
+		DCB2234523997BF000F2EB06 /* driver */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2234623997BF000F2EB06 /* serial_windows.c */,
+				DCB2234723997BF000F2EB06 /* serial_posix.c */,
+				DCB2234823997BF000F2EB06 /* ip_generic.c */,
+				DCB2234923997BF000F2EB06 /* README */,
+				DCB2234A23997BF000F2EB06 /* serial_windows.h */,
+				DCB2234B23997BF000F2EB06 /* serial_posix.h */,
+				DCB2234C23997BF000F2EB06 /* ip_generic.h */,
+			);
+			path = driver;
+			sourceTree = "<group>";
+		};
+		DCB2234D23997BF000F2EB06 /* shell */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2234E23997BF000F2EB06 /* CommonShellUIMain.c */,
+			);
+			path = shell;
+			sourceTree = "<group>";
+		};
+		DCB2235023997BF000F2EB06 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2235123997BF000F2EB06 /* debug.h */,
+				DCB2235223997BF000F2EB06 /* version.h */,
+				DCB2235323997BF000F2EB06 /* device.h */,
+				DCB2235423997BF000F2EB06 /* compiler.h */,
+				DCB2235523997BF000F2EB06 /* version.h.in */,
+				DCB2235623997BF000F2EB06 /* os.h */,
+				DCB2235723997BF000F2EB06 /* events.h */,
+				DCB2235823997BF000F2EB06 /* lists.h */,
+				DCB2235923997BF000F2EB06 /* copyright.h */,
+				DCB2235A23997BF000F2EB06 /* frame_listener.h */,
+				DCB2235B23997BF000F2EB06 /* packet.h */,
+				DCB2235C23997BF000F2EB06 /* yasdi_version.rc */,
+				DCB2235D23997BF000F2EB06 /* chandef.h */,
+				DCB2235E23997BF000F2EB06 /* osswitch.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DCB2235F23997BF000F2EB06 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2236023997BF000F2EB06 /* README */,
+				DCB2236123997BF000F2EB06 /* generic-cmake */,
+			);
+			path = projects;
+			sourceTree = "<group>";
+		};
+		DCB2236123997BF000F2EB06 /* generic-cmake */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2236223997BF000F2EB06 /* CMakeLists.txt */,
+				DCB2236323997BF000F2EB06 /* incprj */,
+				DCB2236623997BF000F2EB06 /* yasdi-posix.ini */,
+				DCB2236723997BF000F2EB06 /* yasdi-windows.ini */,
+				DCB2236823997BF000F2EB06 /* devices */,
+			);
+			path = "generic-cmake";
+			sourceTree = "<group>";
+		};
+		DCB2236323997BF000F2EB06 /* incprj */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2236423997BF000F2EB06 /* project.h.in */,
+				DCB2236523997BF000F2EB06 /* project.h */,
+			);
+			path = incprj;
+			sourceTree = "<group>";
+		};
+		DCB2236823997BF000F2EB06 /* devices */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2236923997BF000F2EB06 /* README */,
+			);
+			path = devices;
+			sourceTree = "<group>";
+		};
+		DCB2236A23997BF000F2EB06 /* yasdi.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2236B23997BF000F2EB06 /* Debug */,
+			);
+			path = yasdi.build;
+			sourceTree = "<group>";
+		};
+		DCB2236B23997BF000F2EB06 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2236C23997BF000F2EB06 /* ZERO_CHECK.build */,
+				DCB2236E23997BF000F2EB06 /* install.build */,
+				DCB2237023997BF000F2EB06 /* yasdi.build */,
+				DCB223B823997BF000F2EB06 /* yasdi_drv_ip.build */,
+				DCB223C123997BF000F2EB06 /* yasdi_drv_serial.build */,
+				DCB223CA23997BF000F2EB06 /* ALL_BUILD.build */,
+				DCB223CC23997BF000F2EB06 /* yasdimaster.build */,
+				DCB223FF23997BF000F2EB06 /* yasdishell.build */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		DCB2236C23997BF000F2EB06 /* ZERO_CHECK.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2236D23997BF000F2EB06 /* Script-921CDEC96F8343EEB41A5C96.sh */,
+			);
+			path = ZERO_CHECK.build;
+			sourceTree = "<group>";
+		};
+		DCB2236E23997BF000F2EB06 /* install.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2236F23997BF000F2EB06 /* Script-80F2733272DC4B8ABEA71073.sh */,
+			);
+			path = install.build;
+			sourceTree = "<group>";
+		};
+		DCB2237023997BF000F2EB06 /* yasdi.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2237123997BF000F2EB06 /* Objects-normal */,
+				DCB223B723997BF000F2EB06 /* Script-54FD675A574B4EE49852AE10.sh */,
+			);
+			path = yasdi.build;
+			sourceTree = "<group>";
+		};
+		DCB2237123997BF000F2EB06 /* Objects-normal */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2237223997BF000F2EB06 /* x86_64 */,
+			);
+			path = "Objects-normal";
+			sourceTree = "<group>";
+		};
+		DCB2237223997BF000F2EB06 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2237323997BF000F2EB06 /* minmap.d */,
+				DCB2237423997BF000F2EB06 /* smanet.o */,
+				DCB2237523997BF000F2EB06 /* os_linux.d */,
+				DCB2237623997BF000F2EB06 /* defractionizer.dia */,
+				DCB2237723997BF000F2EB06 /* sunnynet.d */,
+				DCB2237823997BF000F2EB06 /* libyasdi.dia */,
+				DCB2237923997BF000F2EB06 /* timer.d */,
+				DCB2237A23997BF000F2EB06 /* getini.dia */,
+				DCB2237B23997BF000F2EB06 /* minqueue.dia */,
+				DCB2237C23997BF000F2EB06 /* byteorder.o */,
+				DCB2237D23997BF000F2EB06 /* tools.d */,
+				DCB2237E23997BF000F2EB06 /* minqueue.d */,
+				DCB2237F23997BF000F2EB06 /* repository.dia */,
+				DCB2238023997BF000F2EB06 /* defractionizer.d */,
+				DCB2238123997BF000F2EB06 /* iorequest.dia */,
+				DCB2238223997BF000F2EB06 /* repository.o */,
+				DCB2238323997BF000F2EB06 /* timer.dia */,
+				DCB2238423997BF000F2EB06 /* router.d */,
+				DCB2238523997BF000F2EB06 /* fractionizer.dia */,
+				DCB2238623997BF000F2EB06 /* scheduler.o */,
+				DCB2238723997BF000F2EB06 /* mempool.d */,
+				DCB2238823997BF000F2EB06 /* mempool.dia */,
+				DCB2238923997BF000F2EB06 /* os_linux.dia */,
+				DCB2238A23997BF000F2EB06 /* fractionizer.d */,
+				DCB2238B23997BF000F2EB06 /* statistic_writer.dia */,
+				DCB2238C23997BF000F2EB06 /* smadata_layer.d */,
+				DCB2238D23997BF000F2EB06 /* getini.o */,
+				DCB2238E23997BF000F2EB06 /* iorequest.d */,
+				DCB2238F23997BF000F2EB06 /* prot_layer.d */,
+				DCB2239023997BF000F2EB06 /* scheduler.dia */,
+				DCB2239123997BF000F2EB06 /* libyasdi.o */,
+				DCB2239223997BF000F2EB06 /* smanet.dia */,
+				DCB2239323997BF000F2EB06 /* router.dia */,
+				DCB2239423997BF000F2EB06 /* statistic_writer.d */,
+				DCB2239523997BF000F2EB06 /* driver_layer.d */,
+				DCB2239623997BF000F2EB06 /* netpacket.o */,
+				DCB2239723997BF000F2EB06 /* netpacket.dia */,
+				DCB2239823997BF000F2EB06 /* timer.o */,
+				DCB2239923997BF000F2EB06 /* sunnynet.o */,
+				DCB2239A23997BF000F2EB06 /* smanet.d */,
+				DCB2239B23997BF000F2EB06 /* os_linux.o */,
+				DCB2239C23997BF000F2EB06 /* minmap.o */,
+				DCB2239D23997BF000F2EB06 /* repository.d */,
+				DCB2239E23997BF000F2EB06 /* minqueue.o */,
+				DCB2239F23997BF000F2EB06 /* tools.o */,
+				DCB223A023997BF000F2EB06 /* byteorder.d */,
+				DCB223A123997BF000F2EB06 /* defractionizer.o */,
+				DCB223A223997BF000F2EB06 /* driver_layer.dia */,
+				DCB223A323997BF000F2EB06 /* tools.dia */,
+				DCB223A423997BF000F2EB06 /* yasdi.1.8.1_dependency_info.dat */,
+				DCB223A523997BF000F2EB06 /* fractionizer.o */,
+				DCB223A623997BF000F2EB06 /* mempool.o */,
+				DCB223A723997BF000F2EB06 /* router.o */,
+				DCB223A823997BF000F2EB06 /* byteorder.dia */,
+				DCB223A923997BF000F2EB06 /* smadata_layer.dia */,
+				DCB223AA23997BF000F2EB06 /* scheduler.d */,
+				DCB223AB23997BF000F2EB06 /* yasdi.1.8.1.LinkFileList */,
+				DCB223AC23997BF000F2EB06 /* sunnynet.dia */,
+				DCB223AD23997BF000F2EB06 /* minmap.dia */,
+				DCB223AE23997BF000F2EB06 /* driver_layer.o */,
+				DCB223AF23997BF000F2EB06 /* netpacket.d */,
+				DCB223B023997BF000F2EB06 /* prot_layer.dia */,
+				DCB223B123997BF000F2EB06 /* statistic_writer.o */,
+				DCB223B223997BF000F2EB06 /* libyasdi.d */,
+				DCB223B323997BF000F2EB06 /* prot_layer.o */,
+				DCB223B423997BF000F2EB06 /* iorequest.o */,
+				DCB223B523997BF000F2EB06 /* getini.d */,
+				DCB223B623997BF000F2EB06 /* smadata_layer.o */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		DCB223B823997BF000F2EB06 /* yasdi_drv_ip.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223B923997BF000F2EB06 /* Objects-normal */,
+				DCB223C023997BF000F2EB06 /* Script-856BA83DA7604073A48532FC.sh */,
+			);
+			path = yasdi_drv_ip.build;
+			sourceTree = "<group>";
+		};
+		DCB223B923997BF000F2EB06 /* Objects-normal */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223BA23997BF000F2EB06 /* x86_64 */,
+			);
+			path = "Objects-normal";
+			sourceTree = "<group>";
+		};
+		DCB223BA23997BF000F2EB06 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223BB23997BF000F2EB06 /* yasdi_drv_ip.1.8.1.LinkFileList */,
+				DCB223BC23997BF000F2EB06 /* ip_generic.d */,
+				DCB223BD23997BF000F2EB06 /* ip_generic.dia */,
+				DCB223BE23997BF000F2EB06 /* yasdi_drv_ip.1.8.1_dependency_info.dat */,
+				DCB223BF23997BF000F2EB06 /* ip_generic.o */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		DCB223C123997BF000F2EB06 /* yasdi_drv_serial.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223C223997BF000F2EB06 /* Objects-normal */,
+				DCB223C923997BF000F2EB06 /* Script-8785554E263F43CAAF737CA1.sh */,
+			);
+			path = yasdi_drv_serial.build;
+			sourceTree = "<group>";
+		};
+		DCB223C223997BF000F2EB06 /* Objects-normal */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223C323997BF000F2EB06 /* x86_64 */,
+			);
+			path = "Objects-normal";
+			sourceTree = "<group>";
+		};
+		DCB223C323997BF000F2EB06 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223C423997BF000F2EB06 /* serial_posix.d */,
+				DCB223C523997BF000F2EB06 /* serial_posix.dia */,
+				DCB223C623997BF000F2EB06 /* yasdi_drv_serial.1.8.1_dependency_info.dat */,
+				DCB223C723997BF000F2EB06 /* yasdi_drv_serial.1.8.1.LinkFileList */,
+				DCB223C823997BF000F2EB06 /* serial_posix.o */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		DCB223CA23997BF000F2EB06 /* ALL_BUILD.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223CB23997BF000F2EB06 /* Script-601C5FC5BCDA45CFBEDF42F0.sh */,
+			);
+			path = ALL_BUILD.build;
+			sourceTree = "<group>";
+		};
+		DCB223CC23997BF000F2EB06 /* yasdimaster.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223CD23997BF000F2EB06 /* Objects-normal */,
+				DCB223FE23997BF000F2EB06 /* Script-98D00A1B6DC54DE583CB94CE.sh */,
+			);
+			path = yasdimaster.build;
+			sourceTree = "<group>";
+		};
+		DCB223CD23997BF000F2EB06 /* Objects-normal */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223CE23997BF000F2EB06 /* x86_64 */,
+			);
+			path = "Objects-normal";
+			sourceTree = "<group>";
+		};
+		DCB223CE23997BF000F2EB06 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				DCB223CF23997BF000F2EB06 /* objman.o */,
+				DCB223D023997BF000F2EB06 /* main.o */,
+				DCB223D123997BF000F2EB06 /* busevents.dia */,
+				DCB223D223997BF000F2EB06 /* plant.o */,
+				DCB223D323997BF000F2EB06 /* chanvalrepo.o */,
+				DCB223D423997BF000F2EB06 /* statewritechan.d */,
+				DCB223D523997BF000F2EB06 /* stateident.dia */,
+				DCB223D623997BF000F2EB06 /* statereadchan.o */,
+				DCB223D723997BF000F2EB06 /* libyasdimaster.d */,
+				DCB223D823997BF000F2EB06 /* busevents.d */,
+				DCB223D923997BF000F2EB06 /* yasdimaster.1.8.1.LinkFileList */,
+				DCB223DA23997BF000F2EB06 /* stateconfig.o */,
+				DCB223DB23997BF000F2EB06 /* ysecurity.d */,
+				DCB223DC23997BF000F2EB06 /* stateident.o */,
+				DCB223DD23997BF000F2EB06 /* netchannel.d */,
+				DCB223DE23997BF000F2EB06 /* netchannel.dia */,
+				DCB223DF23997BF000F2EB06 /* chanvalrepo.dia */,
+				DCB223E023997BF000F2EB06 /* statedetection.o */,
+				DCB223E123997BF000F2EB06 /* mastercmd.d */,
+				DCB223E223997BF000F2EB06 /* statewritechan.dia */,
+				DCB223E323997BF000F2EB06 /* netdevice.dia */,
+				DCB223E423997BF000F2EB06 /* netdevice.d */,
+				DCB223E523997BF000F2EB06 /* statedetection.dia */,
+				DCB223E623997BF000F2EB06 /* mastercmd.dia */,
+				DCB223E723997BF000F2EB06 /* libyasdimaster.o */,
+				DCB223E823997BF000F2EB06 /* statereadchan.d */,
+				DCB223E923997BF000F2EB06 /* statewritechan.o */,
+				DCB223EA23997BF000F2EB06 /* plant.d */,
+				DCB223EB23997BF000F2EB06 /* chanvalrepo.d */,
+				DCB223EC23997BF000F2EB06 /* main.d */,
+				DCB223ED23997BF000F2EB06 /* objman.d */,
+				DCB223EE23997BF000F2EB06 /* ysecurity.o */,
+				DCB223EF23997BF000F2EB06 /* stateconfig.d */,
+				DCB223F023997BF000F2EB06 /* ysecurity.dia */,
+				DCB223F123997BF000F2EB06 /* objman.dia */,
+				DCB223F223997BF000F2EB06 /* busevents.o */,
+				DCB223F323997BF000F2EB06 /* libyasdimaster.dia */,
+				DCB223F423997BF000F2EB06 /* mastercmd.o */,
+				DCB223F523997BF000F2EB06 /* statereadchan.dia */,
+				DCB223F623997BF000F2EB06 /* yasdimaster.1.8.1_dependency_info.dat */,
+				DCB223F723997BF000F2EB06 /* statedetection.d */,
+				DCB223F823997BF000F2EB06 /* netchannel.o */,
+				DCB223F923997BF000F2EB06 /* stateconfig.dia */,
+				DCB223FA23997BF000F2EB06 /* stateident.d */,
+				DCB223FB23997BF000F2EB06 /* plant.dia */,
+				DCB223FC23997BF000F2EB06 /* netdevice.o */,
+				DCB223FD23997BF000F2EB06 /* main.dia */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		DCB223FF23997BF000F2EB06 /* yasdishell.build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2240023997BF000F2EB06 /* Objects-normal */,
+				DCB2240723997BF000F2EB06 /* DerivedSources */,
+				DCB2240923997BF000F2EB06 /* yasdishell.xcent */,
+			);
+			path = yasdishell.build;
+			sourceTree = "<group>";
+		};
+		DCB2240023997BF000F2EB06 /* Objects-normal */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2240123997BF000F2EB06 /* x86_64 */,
+			);
+			path = "Objects-normal";
+			sourceTree = "<group>";
+		};
+		DCB2240123997BF000F2EB06 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2240223997BF000F2EB06 /* CommonShellUIMain.d */,
+				DCB2240323997BF000F2EB06 /* CommonShellUIMain.dia */,
+				DCB2240423997BF000F2EB06 /* CommonShellUIMain.o */,
+				DCB2240523997BF000F2EB06 /* yasdishell.LinkFileList */,
+				DCB2240623997BF000F2EB06 /* yasdishell_dependency_info.dat */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		DCB2240723997BF000F2EB06 /* DerivedSources */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2240823997BF000F2EB06 /* Entitlements.plist */,
+			);
+			path = DerivedSources;
+			sourceTree = "<group>";
+		};
+		DCB2240D23997BF000F2EB06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2249823997BF100F2EB06 /* libyasdi.dylib */,
+				DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.dylib */,
+				DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.dylib */,
+				DCB2249E23997BF100F2EB06 /* libyasdimaster.dylib */,
+				DCB224A023997BF100F2EB06 /* yasdishell */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCB2240F23997BF000F2EB06 /* release */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = release;
+			sourceTree = "<group>";
+		};
+		DCB2241023997BF000F2EB06 /* smalib */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2241123997BF000F2EB06 /* getini.h */,
+				DCB2241223997BF000F2EB06 /* smadef.h */,
+				DCB2241323997BF000F2EB06 /* getini.c */,
+			);
+			path = smalib;
+			sourceTree = "<group>";
+		};
+		DCB2241423997BF000F2EB06 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2241523997BF000F2EB06 /* smanet.h */,
+				DCB2241623997BF000F2EB06 /* sunnynet.c */,
+				DCB2241723997BF000F2EB06 /* sunnynet.h */,
+				DCB2241823997BF000F2EB06 /* smanet.c */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		DCB2241A23997BF000F2EB06 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2241B23997BF000F2EB06 /* libyasdimaster.c */,
+				DCB2241C23997BF000F2EB06 /* libyasdimaster.def */,
+				DCB2241D23997BF000F2EB06 /* libyasdi.h */,
+				DCB2241E23997BF000F2EB06 /* libyasdi.def */,
+				DCB2241F23997BF000F2EB06 /* libyasdimaster.h */,
+				DCB2242023997BF000F2EB06 /* libyasdi.c */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		DCB2242123997BF000F2EB06 /* samples */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2242223997BF000F2EB06 /* sample1 */,
+			);
+			path = samples;
+			sourceTree = "<group>";
+		};
+		DCB2242223997BF000F2EB06 /* sample1 */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2242323997BF000F2EB06 /* yasdi.ini */,
+				DCB2242423997BF000F2EB06 /* sample1.c */,
+				DCB2242523997BF000F2EB06 /* devices */,
+			);
+			path = sample1;
+			sourceTree = "<group>";
+		};
+		DCB2242523997BF000F2EB06 /* devices */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2242623997BF000F2EB06 /* README */,
+			);
+			path = devices;
+			sourceTree = "<group>";
+		};
+		DCB2242723997BF000F2EB06 /* master */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2242823997BF000F2EB06 /* objman.h */,
+				DCB2242923997BF000F2EB06 /* plant.h */,
+				DCB2242A23997BF000F2EB06 /* chanvalrepo.h */,
+				DCB2242B23997BF000F2EB06 /* statewritechan.c */,
+				DCB2242C23997BF000F2EB06 /* statereadchan.h */,
+				DCB2242D23997BF000F2EB06 /* busevents.c */,
+				DCB2242E23997BF000F2EB06 /* ysecurity.c */,
+				DCB2242F23997BF000F2EB06 /* stateconfig.h */,
+				DCB2243023997BF000F2EB06 /* stateident.h */,
+				DCB2243123997BF000F2EB06 /* netchannel.c */,
+				DCB2243223997BF000F2EB06 /* statedetection.h */,
+				DCB2243323997BF000F2EB06 /* mastercmd.c */,
+				DCB2243423997BF000F2EB06 /* netdevice.c */,
+				DCB2243523997BF000F2EB06 /* statereadchan.c */,
+				DCB2243623997BF000F2EB06 /* statewritechan.h */,
+				DCB2243723997BF000F2EB06 /* plant.c */,
+				DCB2243823997BF000F2EB06 /* chanvalrepo.c */,
+				DCB2243923997BF000F2EB06 /* main.c */,
+				DCB2243A23997BF000F2EB06 /* objman.c */,
+				DCB2243B23997BF000F2EB06 /* stateconfig.c */,
+				DCB2243C23997BF000F2EB06 /* ysecurity.h */,
+				DCB2243D23997BF000F2EB06 /* master.h */,
+				DCB2243E23997BF000F2EB06 /* busevents.h */,
+				DCB2243F23997BF000F2EB06 /* states.h */,
+				DCB2244023997BF000F2EB06 /* mastercmd.h */,
+				DCB2244123997BF000F2EB06 /* statedetection.c */,
+				DCB2244223997BF000F2EB06 /* netchannel.h */,
+				DCB2244323997BF000F2EB06 /* stateident.c */,
+				DCB2244423997BF000F2EB06 /* netdevice.h */,
+			);
+			path = master;
+			sourceTree = "<group>";
+		};
+		DCB2244523997BF000F2EB06 /* CMakeScripts */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2244623997BF000F2EB06 /* yasdi_drv_serial_postBuildPhase.makeRelease */,
+				DCB2244723997BF000F2EB06 /* RUN_TESTS_postBuildPhase.makeRelease */,
+				DCB2244823997BF000F2EB06 /* ZERO_CHECK_cmakeRulesBuildPhase.makeDebug */,
+				DCB2244923997BF000F2EB06 /* install_postBuildPhase.makeRelWithDebInfo */,
+				DCB2244A23997BF000F2EB06 /* yasdimaster_postBuildPhase.makeDebug */,
+				DCB2244B23997BF100F2EB06 /* yasdimaster_postBuildPhase.makeRelease */,
+				DCB2244C23997BF100F2EB06 /* ALL_BUILD_cmakeRulesBuildPhase.makeDebug */,
+				DCB2244D23997BF100F2EB06 /* yasdi_drv_ip_postBuildPhase.makeMinSizeRel */,
+				DCB2244E23997BF100F2EB06 /* yasdi_postBuildPhase.makeMinSizeRel */,
+				DCB2244F23997BF100F2EB06 /* RUN_TESTS_postBuildPhase.makeMinSizeRel */,
+				DCB2245023997BF100F2EB06 /* yasdi_drv_serial_postBuildPhase.makeRelWithDebInfo */,
+				DCB2245123997BF100F2EB06 /* yasdi_drv_serial_postBuildPhase.makeDebug */,
+				DCB2245223997BF100F2EB06 /* ZERO_CHECK_cmakeRulesBuildPhase.makeRelWithDebInfo */,
+				DCB2245323997BF100F2EB06 /* RUN_TESTS_postBuildPhase.makeDebug */,
+				DCB2245423997BF100F2EB06 /* yasdi_drv_ip_postBuildPhase.makeRelWithDebInfo */,
+				DCB2245523997BF100F2EB06 /* yasdimaster_postBuildPhase.makeRelWithDebInfo */,
+				DCB2245623997BF100F2EB06 /* ReRunCMake.make */,
+				DCB2245723997BF100F2EB06 /* yasdi_drv_ip_postBuildPhase.makeDebug */,
+				DCB2245823997BF100F2EB06 /* RUN_TESTS_postBuildPhase.makeRelWithDebInfo */,
+				DCB2245923997BF100F2EB06 /* yasdi_postBuildPhase.makeRelease */,
+				DCB2245A23997BF100F2EB06 /* yasdi_postBuildPhase.makeRelWithDebInfo */,
+				DCB2245B23997BF100F2EB06 /* yasdimaster_postBuildPhase.makeMinSizeRel */,
+				DCB2245C23997BF100F2EB06 /* XCODE_DEPEND_HELPER.make */,
+				DCB2245D23997BF100F2EB06 /* ALL_BUILD_cmakeRulesBuildPhase.makeRelWithDebInfo */,
+				DCB2245E23997BF100F2EB06 /* ALL_BUILD_cmakeRulesBuildPhase.makeRelease */,
+				DCB2245F23997BF100F2EB06 /* yasdi_drv_serial_postBuildPhase.makeMinSizeRel */,
+				DCB2246023997BF100F2EB06 /* ALL_BUILD_cmakeRulesBuildPhase.makeMinSizeRel */,
+				DCB2246123997BF100F2EB06 /* install_postBuildPhase.makeMinSizeRel */,
+				DCB2246223997BF100F2EB06 /* install_postBuildPhase.makeRelease */,
+				DCB2246323997BF100F2EB06 /* yasdi_postBuildPhase.makeDebug */,
+				DCB2246423997BF100F2EB06 /* yasdi_drv_ip_postBuildPhase.makeRelease */,
+				DCB2246523997BF100F2EB06 /* ZERO_CHECK_cmakeRulesBuildPhase.makeMinSizeRel */,
+				DCB2246623997BF100F2EB06 /* install_postBuildPhase.makeDebug */,
+				DCB2246723997BF100F2EB06 /* ZERO_CHECK_cmakeRulesBuildPhase.makeRelease */,
+			);
+			path = CMakeScripts;
+			sourceTree = "<group>";
+		};
+		DCB2246823997BF100F2EB06 /* os */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2246923997BF100F2EB06 /* os_linux.c */,
+				DCB2246A23997BF100F2EB06 /* os_windows.c */,
+				DCB2246B23997BF100F2EB06 /* os_darwin.h */,
+				DCB2246C23997BF100F2EB06 /* os_windows.h */,
+				DCB2246D23997BF100F2EB06 /* os_linux.h */,
+			);
+			path = os;
+			sourceTree = "<group>";
+		};
+		DCB2247023997BF100F2EB06 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2247123997BF100F2EB06 /* XCBuildData */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		DCB2247123997BF100F2EB06 /* XCBuildData */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2247223997BF100F2EB06 /* 2deb5e27a88745282606d3a6523c518d-desc.xcbuild */,
+				DCB2247323997BF100F2EB06 /* df1cfb79d9d84f9b8eb69f3fffd4c9ef-desc.xcbuild */,
+				DCB2247423997BF100F2EB06 /* df1cfb79d9d84f9b8eb69f3fffd4c9ef-manifest.xcbuild */,
+				DCB2247523997BF100F2EB06 /* eed05c0fc1156854fd6560f42ad62742-manifest.xcbuild */,
+				DCB2247623997BF100F2EB06 /* 2797758ee1598dc2e6b29a902e630085-desc.xcbuild */,
+				DCB2247723997BF100F2EB06 /* build.db */,
+				DCB2247823997BF100F2EB06 /* eed05c0fc1156854fd6560f42ad62742-desc.xcbuild */,
+				DCB2247923997BF100F2EB06 /* 2deb5e27a88745282606d3a6523c518d-manifest.xcbuild */,
+				DCB2247A23997BF100F2EB06 /* 2797758ee1598dc2e6b29a902e630085-manifest.xcbuild */,
+				DCB2247B23997BF100F2EB06 /* BuildDescriptionCacheIndex-ae1147487e8a7e8e03c86b1ad3362f21 */,
+			);
+			path = XCBuildData;
+			sourceTree = "<group>";
+		};
+		DCB2247D23997BF100F2EB06 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2247E23997BF100F2EB06 /* libyasdimaster.dylib */,
+				DCB2247F23997BF100F2EB06 /* libyasdi_drv_serial.1.dylib */,
+				DCB2248023997BF100F2EB06 /* libyasdi_drv_serial.dylib */,
+				DCB2248123997BF100F2EB06 /* libyasdi_drv_serial.1.8.1.dylib */,
+				DCB2248223997BF100F2EB06 /* yasdishell */,
+				DCB2248323997BF100F2EB06 /* libyasdi.dylib */,
+				DCB2248423997BF100F2EB06 /* yasdi.ini */,
+				DCB2248523997BF100F2EB06 /* libyasdi_drv_ip.1.8.1.dylib */,
+				DCB2248623997BF100F2EB06 /* libyasdimaster.1.8.1.dylib */,
+				DCB2248723997BF100F2EB06 /* libyasdi_drv_ip.dylib */,
+				DCB2248823997BF100F2EB06 /* libyasdimaster.1.dylib */,
+				DCB2248923997BF100F2EB06 /* libyasdi.1.dylib */,
+				DCB2248A23997BF100F2EB06 /* libyasdi_drv_ip.1.dylib */,
+				DCB2248B23997BF100F2EB06 /* libyasdi.1.8.1.dylib */,
+				DCB2248C23997BF100F2EB06 /* devices */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		DCB2248C23997BF100F2EB06 /* devices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = devices;
 			sourceTree = "<group>";
 		};
 		DCB5F6182354ED7D005F610F /* Artwork */ = {
@@ -225,6 +1427,7 @@
 			buildConfigurationList = DC06CD342354E42B00C8E9F9 /* Build configuration list for PBXNativeTarget "HAPiNest" */;
 			buildPhases = (
 				DC6804582395B702006808A3 /* CopyFiles */,
+				DC5D6D4A239CF2DC00F7BDF7 /* ShellScript */,
 				DC06CD1D2354E42A00C8E9F9 /* Sources */,
 				DC06CD1E2354E42A00C8E9F9 /* Frameworks */,
 				DC06CD1F2354E42A00C8E9F9 /* Resources */,
@@ -237,7 +1440,6 @@
 			packageProductDependencies = (
 				DC06CD3D2354E61600C8E9F9 /* JVCocoa */,
 				DC06CD462354E72F00C8E9F9 /* HAP */,
-				DCEFAE10236F64B4002A05D2 /* SiriDriver */,
 				DCE471C62390386B0059036D /* MilightDriver */,
 				DC6BC8CB2390466800BD9445 /* AppleScriptDriver */,
 				DC6BC8CE2390480500BD9445 /* SiriDriver */,
@@ -285,12 +1487,64 @@
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DCB2233A23997BF000F2EB06 /* Products */;
+					ProjectRef = DCB2233923997BF000F2EB06 /* CompilerIdC.xcodeproj */;
+				},
+				{
+					ProductGroup = DCB2240D23997BF000F2EB06 /* Products */;
+					ProjectRef = DCB2240C23997BF000F2EB06 /* yasdi.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DC06CD202354E42A00C8E9F9 /* HAPiNest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DCB2249823997BF100F2EB06 /* libyasdi.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			name = libyasdi.dylib;
+			path = libyasdi.1.8.1.dylib;
+			remoteRef = DCB2249723997BF100F2EB06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			name = libyasdi_drv_ip.dylib;
+			path = libyasdi_drv_ip.1.8.1.dylib;
+			remoteRef = DCB2249923997BF100F2EB06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			name = libyasdi_drv_serial.dylib;
+			path = libyasdi_drv_serial.1.8.1.dylib;
+			remoteRef = DCB2249B23997BF100F2EB06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCB2249E23997BF100F2EB06 /* libyasdimaster.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			name = libyasdimaster.dylib;
+			path = libyasdimaster.1.8.1.dylib;
+			remoteRef = DCB2249D23997BF100F2EB06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCB224A023997BF100F2EB06 /* yasdishell */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = yasdishell;
+			remoteRef = DCB2249F23997BF100F2EB06 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DC06CD1F2354E42A00C8E9F9 /* Resources */ = {
@@ -310,6 +1564,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DC5D6D4A239CF2DC00F7BDF7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Make sure both test configfiles are readable at runtime.\nchmod 777 ${BUILT_PRODUCTS_DIR}/yasdi.ini\nchmod 777 ${BUILT_PRODUCTS_DIR}/YasdiConfigFile.ini\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC06CD1D2354E42A00C8E9F9 /* Sources */ = {
@@ -462,12 +1737,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HAPiNest/HAPiNest.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HAPiNest/Preview Content\"";
-				DEVELOPMENT_TEAM = Y7A29RG88E;
-				ENABLE_HARDENED_RUNTIME = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HAPiNest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -487,12 +1762,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HAPiNest/HAPiNest.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HAPiNest/Preview Content\"";
-				DEVELOPMENT_TEAM = Y7A29RG88E;
-				ENABLE_HARDENED_RUNTIME = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HAPiNest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -636,10 +1911,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DCE471C52390386B0059036D /* XCRemoteSwiftPackageReference "MilightDriver" */;
 			productName = MilightDriver;
-		};
-		DCEFAE10236F64B4002A05D2 /* SiriDriver */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SiriDriver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
