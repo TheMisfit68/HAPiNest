@@ -37,6 +37,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             storage: HomeKitServer.shared.configFile,
             accessories: myAccessories)
         
+        let inverterData = JVSQLdbase.open(file: "InverterData.sqlite")
+        
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

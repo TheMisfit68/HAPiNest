@@ -47,15 +47,6 @@
         }
       },
       {
-        "package": "ClibYASDI",
-        "repositoryURL": "https://github.com/TheMisfit68/ClibYASDI.git",
-        "state": {
-          "branch": "master",
-          "revision": "440191ef9014e20838b8b2caa2d55ed842bb6e44",
-          "version": null
-        }
-      },
-      {
         "package": "Evergreen",
         "repositoryURL": "https://github.com/Bouke/Evergreen.git",
         "state": {

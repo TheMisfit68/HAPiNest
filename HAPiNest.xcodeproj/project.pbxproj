@@ -31,6 +31,7 @@
 		DCB5F6262354ED7D005F610F /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61F2354ED7D005F610F /* AppIcon.iconset */; };
 		DCB5F6272354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */; };
 		DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
+		DCCC6E6323A055C500E1DA58 /* InverterData.sqlite in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCCC6E5723A054F600E1DA58 /* InverterData.sqlite */; };
 		DCD50B172397118300C0CED4 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC68045A2395B78A006808A3 /* YasdiConfigFile.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCD50B192397146400C0CED4 /* MilightDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B182397146400C0CED4 /* MilightDriver.swift */; };
 		DCD50B1B2397152100C0CED4 /* ModbusDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */; };
@@ -86,6 +87,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				DCD50B172397118300C0CED4 /* YasdiConfigFile.ini in CopyFiles */,
+				DCCC6E6323A055C500E1DA58 /* InverterData.sqlite in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,10 +471,12 @@
 		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
 		DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "HAP-Specification-Non-Commercial-Version.pdf"; sourceTree = "<group>"; };
 		DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
+		DCCC6E5723A054F600E1DA58 /* InverterData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = InverterData.sqlite; sourceTree = "<group>"; };
 		DCD50B182397146400C0CED4 /* MilightDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilightDriver.swift; sourceTree = "<group>"; };
 		DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModbusDriver.swift; sourceTree = "<group>"; };
 		DCD50B1C2397161000C0CED4 /* SiriDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriDriver.swift; sourceTree = "<group>"; };
 		DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptDriver.swift; sourceTree = "<group>"; };
+		DCD79FC923A03EDC002B5523 /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
 		DCFCB79A2381AFEB0066E00B /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -504,12 +508,14 @@
 			children = (
 				DC1B172B239EE2B80092394E /* ClibYASDI */,
 				DC68044A2395A31B006808A3 /* YASDIDriver */,
+				DCD79FC923A03EDC002B5523 /* JVCocoa */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
 				DCB5F6202354ED7D005F610F /* Documentation */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 				DC5B4D462357D3A400ED82B3 /* Frameworks */,
 				DC68045A2395B78A006808A3 /* YasdiConfigFile.ini */,
+				DCCC6E5723A054F600E1DA58 /* InverterData.sqlite */,
 			);
 			sourceTree = "<group>";
 		};

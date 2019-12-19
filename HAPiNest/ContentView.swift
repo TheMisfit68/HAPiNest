@@ -22,8 +22,8 @@
         ScrollView {
             
             YASDIView()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
             
             SiriView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -147,7 +147,10 @@
                     
                     // Insert code here to initialize your application
                     if YASDIDriver.installDrivers(configFile: "YasdiConfigFile.ini"){
-//                        SMAInverter.createInverters(maxNumberToSearch:PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
+
+                     //TODO: - Re-enable async device detection
+                        SMAInverter.handleAllYasdiEvents()
+                        SMAInverter.createInverters(maxNumberToSearch: 1)
                     }
                     
                     
