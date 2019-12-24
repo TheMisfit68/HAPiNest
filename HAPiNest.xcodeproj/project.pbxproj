@@ -31,7 +31,7 @@
 		DCB5F6262354ED7D005F610F /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F61F2354ED7D005F610F /* AppIcon.iconset */; };
 		DCB5F6272354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */; };
 		DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
-		DCCC6E6323A055C500E1DA58 /* InverterData.sqlite in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCCC6E5723A054F600E1DA58 /* InverterData.sqlite */; };
+		DCCC6E6323A055C500E1DA58 /* InverterData.sqlite in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCCC6E5723A054F600E1DA58 /* InverterData.sqlite */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCD50B172397118300C0CED4 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC68045A2395B78A006808A3 /* YasdiConfigFile.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCD50B192397146400C0CED4 /* MilightDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B182397146400C0CED4 /* MilightDriver.swift */; };
 		DCD50B1B2397152100C0CED4 /* ModbusDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */; };
@@ -82,9 +82,9 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		DC6804582395B702006808A3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
+			buildActionMask = 12;
+			dstPath = YASDI;
+			dstSubfolderSpec = 7;
 			files = (
 				DCD50B172397118300C0CED4 /* YasdiConfigFile.ini in CopyFiles */,
 				DCCC6E6323A055C500E1DA58 /* InverterData.sqlite in CopyFiles */,
@@ -1587,7 +1587,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Make sure both test configfiles are readable at runtime.\nchmod 777 ${BUILT_PRODUCTS_DIR}/yasdi.ini\nchmod 777 ${BUILT_PRODUCTS_DIR}/YasdiConfigFile.ini\n";
+			shellScript = "#chmod 777 ${BUILT_PRODUCTS_DIR}/YasdiConfigFile.ini\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1743,11 +1743,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HAPiNest/HAPiNest.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HAPiNest/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HAPiNest/Info.plist;
@@ -1768,11 +1768,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HAPiNest/HAPiNest.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HAPiNest/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HAPiNest/Info.plist;

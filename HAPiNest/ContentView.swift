@@ -146,11 +146,12 @@
                 Button(action: {
                     
                     // Insert code here to initialize your application
-                    if YASDIDriver.installDrivers(configFile: "YasdiConfigFile.ini"){
+                    if YASDIDriver.installDrivers(){
 
                      //TODO: - Re-enable async device detection
-                        SMAInverter.handleAllYasdiEvents()
+//                        SMAInverter.handleAllYasdiEvents()
                         SMAInverter.createInverters(maxNumberToSearch: 1)
+                        
                     }
                     
                     

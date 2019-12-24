@@ -1,0 +1,142 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AppleScriptDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/AppleScriptDriver.git",
+        "state": {
+          "branch": "master",
+          "revision": "23e00dd39cbddccb28dd96a53c22756feb346a62",
+          "version": null
+        }
+      },
+      {
+        "package": "BigInt",
+        "repositoryURL": "https://github.com/Boilertalk/BigInt.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "fd9b2ebff53e7fd211a7d2b2ea682db300a8571b",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Cryptor",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
+        "state": {
+          "branch": null,
+          "revision": "12d2bf3ec7207ec3cd004b9582f69ef5fae1da3b",
+          "version": "1.0.32"
+        }
+      },
+      {
+        "package": "ClibModbus",
+        "repositoryURL": "https://github.com/TheMisfit68/ClibModbus.git",
+        "state": {
+          "branch": "master",
+          "revision": "e94aeadb8928b4d811e9f43c2062b381888a59eb",
+          "version": null
+        }
+      },
+      {
+        "package": "CLibSodium",
+        "repositoryURL": "https://github.com/Bouke/CLibSodium.git",
+        "state": {
+          "branch": null,
+          "revision": "0244e3b03f41bb4e144ea290aeb6c494e5b7e9e0",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "Evergreen",
+        "repositoryURL": "https://github.com/Bouke/Evergreen.git",
+        "state": {
+          "branch": null,
+          "revision": "4d9d17d6efca12398de2b0a4c9c5a4eacc556e03",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "HAP",
+        "repositoryURL": "https://github.com/Bouke/HAP.git",
+        "state": {
+          "branch": null,
+          "revision": "d0304c6cc49e46e2017768b884a3a1241e9bc6bf",
+          "version": "0.6.0"
+        }
+      },
+      {
+        "package": "HKDF",
+        "repositoryURL": "https://github.com/Bouke/HKDF.git",
+        "state": {
+          "branch": null,
+          "revision": "9b9e521b49e5b529c33f4abe35a00e144af51e00",
+          "version": "3.1.0"
+        }
+      },
+      {
+        "package": "JVCocoa",
+        "repositoryURL": "https://github.com/TheMisfit68/JVCocoa.git",
+        "state": {
+          "branch": "master",
+          "revision": "d32cd9c1778dbdf5cf186adcfb4c2c8bf9f155e9",
+          "version": null
+        }
+      },
+      {
+        "package": "MilightDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/MilightDriver.git",
+        "state": {
+          "branch": "master",
+          "revision": "19d3e3b3c7cece443b36aaff99d909ca7206b2f7",
+          "version": null
+        }
+      },
+      {
+        "package": "Regex",
+        "repositoryURL": "https://github.com/crossroadlabs/Regex.git",
+        "state": {
+          "branch": null,
+          "revision": "166728756082a9cac6e4aed3ebbce8e41cb3a945",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "SiriDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/SiriDriver.git",
+        "state": {
+          "branch": "master",
+          "revision": "23c76fe5f33fa3a1f467252c18d5d5b5fb306d42",
+          "version": null
+        }
+      },
+      {
+        "package": "SRP",
+        "repositoryURL": "https://github.com/Bouke/SRP.git",
+        "state": {
+          "branch": null,
+          "revision": "9f3d77de5dbaac52d30b1d51d75e853fabb8fa8b",
+          "version": "3.1.0"
+        }
+      },
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "ba7970fe396e8198b84c6c1b44b38a1d4e2eb6bd",
+          "version": "1.14.1"
+        }
+      },
+      {
+        "package": "swift-nio-zlib-support",
+        "repositoryURL": "https://github.com/apple/swift-nio-zlib-support.git",
+        "state": {
+          "branch": null,
+          "revision": "37760e9a52030bb9011972c5213c3350fa9d41fd",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
