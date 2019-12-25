@@ -12,7 +12,7 @@ import JVCocoa
 import HAP
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, FullyExtendable {
+class AppDelegate: NSObject, NSApplicationDelegate {
     
     var window: NSWindow!
     
