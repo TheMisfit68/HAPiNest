@@ -18,6 +18,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
+        HomeKitServer.shared.bridge = Bridge(
+            bridgeInfo: Service.Info(name: bridgeName, serialNumber: "00001"),
+            setupCode: Bridge.SetupCode(stringLiteral: bridgeSetupCode),
+            storage: HomeKitServer.shared.configFile,
+            accessories: myAccessories)
+        
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
         
@@ -27,26 +33,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered, defer: false)
         window.center()
-        window.title = "HAPiNest testing dashboard 🛋"
+        window.title = "HAPiNest dashboard 🛋"
         window.setFrameAutosaveName(window.title)
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
         
-        HomeKitServer.shared.bridge = Bridge(
-            bridgeInfo: Service.Info(name: "NestBridge", serialNumber: "00001"),
-            setupCode: Bridge.SetupCode("234-56-789"),
-            storage: HomeKitServer.shared.configFile,
-            accessories: myAccessories)
-
     }
-    
-    
-    
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-    
     
 }
 

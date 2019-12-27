@@ -19,6 +19,6 @@ extension SiriDriver:AccessoryDelegate{
         _ characteristic: GenericCharacteristic<T>,
         _ value:T?
     ){
-        print("Didn't implement this driver yet")
+        print("Not handling Characteristic changes for \(String(describing: self)) yet!")
     }
 }

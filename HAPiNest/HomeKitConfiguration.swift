@@ -1,5 +1,5 @@
 //
-//  MyAccessories.swift
+//  HomeKitConfiguration.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 08/11/2019.
@@ -8,17 +8,11 @@
 
 import Foundation
 import HAP
-import AppleScriptDriver
-import SiriDriver
-import MilightDriver
-import ModbusDriver
-
-let milightDriver =  MilightDriverV6(ipAddress: "192.168.0.52")
-let siriDriver = SiriDriver(language: .flemish)
-let appleScripTDriver = AppleScriptDriver()
-let modBusDriver = ModbusDriver(ipAddress: "127.0.0.1", port: 1502)
 
 // Global configInfo
+let bridgeName = "NestBridge"
+let bridgeSetupCode = "234-56-789"
+
 let myAccessories:[Accessory]  = [
     
     // Lights
@@ -30,6 +24,11 @@ let myAccessories:[Accessory]  = [
     
     // Outlets
     
+    //Heating
+    
+    // Solar Inverter
+//    Accessory.Thermometer(info: Service.Info(name: "Zonneënergie", serialNumber: "00020")),
+
     
     //Window coverings
     Accessory.WindowCovering(info: Service.Info(name: "Screen", serialNumber: "00050")),
@@ -40,8 +39,13 @@ let myAccessories:[Accessory]  = [
     
     //Camera's
     
+    //Sprinkler system
+  
 ]
 
+
+
+// Define below wich hardwaredrivers should be notified about events
 protocol AccessoryDelegate{
     
       func handleCharacteristicChange<T>(
@@ -54,9 +58,12 @@ protocol AccessoryDelegate{
     
 }
 
-let AccessoryDelegates:[String:AccessoryDelegate] = [
-    "Balk" : milightDriver,
-    "UFO" : milightDriver,
-    "W.C." : milightDriver,
-    "ModbusSimmulatedLight": modBusDriver
+let AccessoryDelegates:[String:AccessoryDelegate?] = [
+    "Balk" : HomeKitServer.shared.milightDriver,
+    "UFO" : HomeKitServer.shared.milightDriver,
+    "W.C." : HomeKitServer.shared.milightDriver,
+    "ModbusSimmulatedLight": HomeKitServer.shared.modBusDriver,
+    "Zonneënergie": HomeKitServer.shared.yasdiDriver,
+    "Screen": HomeKitServer.shared.modBusDriver,
+    "Rolgrodijn": HomeKitServer.shared.modBusDriver
 ]

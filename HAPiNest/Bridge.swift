@@ -18,13 +18,14 @@ extension Bridge{
     public func printPairingInstructions(){
         if self.isPaired {
             print()
-            print("The bridge is paired, unpair using your iPhone.")
+            JVDebugger.shared.log(debugLevel: .Succes, "The bridge is paired, unpair using your iPhone.")
             print()
         } else {
             print()
-            print("Scan the following QR code using your iPhone to pair this bridge:")
+            JVDebugger.shared.log(debugLevel: .Info, "Scan the following QR code using your iPhone to pair this bridge:")
             print()
             print(self.setupQRCode.asText)
+            print(bridgeSetupCode)
             print()
         }
     }
@@ -48,7 +49,7 @@ class MainBridgeDelegate: BridgeDelegate {
             + "did change: \(String(describing: newValue))")
         
         if let accessoryName = accessory.info.name.value{
-            AccessoryDelegates[accessoryName]?.handleCharacteristicChange(accessory, service, characteristic, newValue)
+            AccessoryDelegates[accessoryName]??.handleCharacteristicChange(accessory, service, characteristic, newValue)
         }
     }
     

@@ -1,16 +1,16 @@
 //
-//  AppleScriptDriver.swift
+//  YASDIDriver.swift
 //  HAPiNest
 //
-//  Created by Jan Verrept on 03/12/2019.
+//  Created by Jan Verrept on 26/12/2019.
 //  Copyright © 2019 Jan Verrept. All rights reserved.
 //
 
 import Foundation
 import HAP
-import AppleScriptDriver
+import YASDIDriver
 
-extension AppleScriptDriver:AccessoryDelegate{
+extension YASDIDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(
         
