@@ -5,7 +5,7 @@
 //  Created by Jan Verrept on 14/10/2019.
 //  Copyright © 2019 Jan Verrept. All rights reserved.
 //
-
+import Foundation
 import Cocoa
 import SwiftUI
 import JVCocoa
@@ -13,11 +13,11 @@ import HAP
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+
     var window: NSWindow!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+
         HomeKitServer.shared.bridge = Bridge(
             bridgeInfo: Service.Info(name: bridgeName, serialNumber: "00001"),
             setupCode: Bridge.SetupCode(stringLiteral: bridgeSetupCode),

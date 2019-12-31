@@ -11,17 +11,17 @@ import HAP
 import Darwin
 import JVCocoa
 
-
-// Homekitserver is a Singleton class that also acts
-// as a container for all related driver-type classes
-// that need to be globaly accessible
-
 import AppleScriptDriver
 import SiriDriver
 import MilightDriver
 import ModbusDriver
 import YASDIDriver
 
+/**
+Homekitserver is a Singleton class that also acts
+as a container for all related driver-type classes
+that need to be globaly accessible
+*/
 public class HomeKitServer:Singleton{
     public static var shared: HomeKitServer = HomeKitServer()
     

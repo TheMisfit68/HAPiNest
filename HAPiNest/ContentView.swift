@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack {
-                HomekitLogoView()
+                HapinestIconView()
                 Spacer()
                 QRCodeView()
             }
@@ -31,20 +31,33 @@ struct ContentView_Previews: PreviewProvider {
 
 extension ContentView {
     
-    struct QRCodeView: View {
+    struct HapinestIconView: View {
         var body: some View {
             VStack {
-                Image(nsImage:HomeKitServer.shared.bridge.setupQRCode.asNSImage!)
-                Text("Scan this QR code using your iPhone to pair with the\n\(bridgeName)\n(or enter setupcode \(bridgeSetupCode))").multilineTextAlignment(.center)
+                Image("DashboardImage").resizable().frame(width: 100, height: 100)
+                HomekitBadgeView()
             }
         }
     }
     
-    struct HomekitLogoView: View {
+    struct HomekitBadgeView: View {
         var body: some View {
-                Image("HomeKitLogo").resizable().frame(width: 100, height: 100)
+            Image("HomeKitLogo").resizable().frame(width: 40, height: 40).clipShape(Circle()).overlay(
+                Circle().stroke(Color.gray, lineWidth: 2)).offset(x:50, y:-50).padding(.bottom, -50)
         }
     }
+    
+    struct QRCodeView: View {
+        var body: some View {
+            VStack {
+                Image(nsImage:HomeKitServer.shared.bridge.setupQRCode.asNSImage!)
+                Text("Scan the code above using your iPhone to pair it with the")
+                Text(bridgeName).bold().font(.system(size: 18))
+                Text("(or enter setupcode \(bridgeSetupCode))")
+            }.multilineTextAlignment(.center)
+        }
+    }
+    
     
 }
 

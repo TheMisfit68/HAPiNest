@@ -11,7 +11,7 @@ import HAP
 
 // Global configInfo
 let bridgeName = "NestBridge"
-let bridgeSetupCode = "234-56-789"
+let bridgeSetupCode = "456-77-890"
 
 let myAccessories:[Accessory]  = [
     
@@ -20,30 +20,31 @@ let myAccessories:[Accessory]  = [
     Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "00003"), type:.color, isDimmable: true),
     Accessory.Lightbulb(info: Service.Info(name: "W.C.", serialNumber: "00004"), type:.color, isDimmable: true),
     
-    Accessory.Lightbulb(info: Service.Info(name: "ModbusSimmulatedLight", serialNumber: "00005")),
+    Accessory.Lightbulb(info: Service.Info(name: "LampViaModbus)", serialNumber: "00005")),
     
     // Outlets
-    
-    //Heating
-    
-    // Solar Inverter
-//    Accessory.Thermometer(info: Service.Info(name: "Zonneënergie", serialNumber: "00020")),
+    Accessory.Outlet(info: Service.Info(name: "StopcontactViaModbus)", serialNumber: "00010")),
 
     
-    //Window coverings
+    // Heating
+    
+    // Solar Inverter
+//    Accessory.PowerInverter(info: Service.Info(name: "Zonneënergie", serialNumber: "00029")),
+
+    
+    // Window coverings
     Accessory.WindowCovering(info: Service.Info(name: "Screen", serialNumber: "00050")),
     Accessory.WindowCovering(info: Service.Info(name: "Rolgrodijn", serialNumber: "00051")),
     
-    //Multimedia
-    Accessory.Television(info: Service.Info(name: "T.V.", serialNumber: "00060"), inputs: [("homeScreen", .homescreen)])
+    // Multimedia
+    Accessory.Television(info: Service.Info(name: "T.V.", serialNumber: "00060"), inputs: [("homeScreen", .homescreen)]),
     
-    //Camera's
+    // Camera's
+//   Accessory.
     
     //Sprinkler system
   
 ]
-
-
 
 // Define below wich hardwaredrivers should be notified about events
 protocol AccessoryDelegate{

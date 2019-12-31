@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "homekit-183.png",
+      "filename" : "ModbusApp.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "homekit-184.png",
+      "filename" : "ModbusApp-1.png",
       "scale" : "2x"
     }
   ],
