@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import YASDIDriver
 
 struct ContentView: View {
     var body: some View {
@@ -15,10 +16,13 @@ struct ContentView: View {
                 HapinestIconView()
                 Spacer()
                 QRCodeView()
+                if (SMAInverter.Inverters.count > 0){
+                    SMAInverter.Inverters[0].display.view.frame(width: 200, height: 200, alignment: .topLeading)
+                }
+                Spacer()
             }
         }
         .padding(20)
-        .frame(width: 450, height: 300, alignment: .center)
     }
 }
 
