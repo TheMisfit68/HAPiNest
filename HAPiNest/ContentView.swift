@@ -7,17 +7,26 @@
 //
 
 import SwiftUI
+import JVCocoa
 import YASDIDriver
 
+// Test view
+let testLive = true
+let testDataToDisplay:DataSummary = DataSummary(channelNames: ["Pac", "Upv-Ist", "E-Total"])
+let testDisplay = DigitalDisplayView(model:testDataToDisplay)
 struct ContentView: View {
+   
+    
     var body: some View {
         ScrollView {
             VStack {
                 HapinestIconView()
                 Spacer()
                 QRCodeView()
-                if (SMAInverter.Inverters.count > 0){
-                    SMAInverter.Inverters[0].display.view.frame(width: 200, height: 200, alignment: .topLeading)
+                if (SMAInverter.Inverters.count > 0) && testLive{
+                    SMAInverter.Inverters[0].display.frame(width: nil, height: 120, alignment: .center)
+                }else{
+                    testDisplay
                 }
                 Spacer()
             }
@@ -26,15 +35,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-
 extension ContentView {
-    
+
     struct HapinestIconView: View {
         var body: some View {
             VStack {
@@ -43,14 +45,14 @@ extension ContentView {
             }
         }
     }
-    
+
     struct HomekitBadgeView: View {
         var body: some View {
             Image("HomeKitLogo").resizable().frame(width: 40, height: 40).clipShape(Circle()).overlay(
                 Circle().stroke(Color.gray, lineWidth: 2)).offset(x:50, y:-50).padding(.bottom, -50)
         }
     }
-    
+
     struct QRCodeView: View {
         var body: some View {
             VStack {
@@ -61,7 +63,12 @@ extension ContentView {
             }.multilineTextAlignment(.center)
         }
     }
-    
-    
+
+
 }
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Text("DumyPreview")
+    }
+}

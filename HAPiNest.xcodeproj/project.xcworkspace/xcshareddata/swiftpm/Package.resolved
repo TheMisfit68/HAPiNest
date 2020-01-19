@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/Bouke/HAP.git",
         "state": {
           "branch": "master",
-          "revision": "82f681166ab2c5b4e0e4ef8b51dc9088e5d09013",
+          "revision": "a494b40ab0c84b729e4a618a132879dcc68265f9",
           "version": null
         }
       },
@@ -105,17 +105,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "ba7970fe396e8198b84c6c1b44b38a1d4e2eb6bd",
-          "version": "1.14.1"
-        }
-      },
-      {
-        "package": "swift-nio-zlib-support",
-        "repositoryURL": "https://github.com/apple/swift-nio-zlib-support.git",
-        "state": {
-          "branch": null,
-          "revision": "37760e9a52030bb9011972c5213c3350fa9d41fd",
-          "version": "1.0.0"
+          "revision": "f6487a11d80bfb9a0a0a752b7442847c7e3a8253",
+          "version": "2.12.0"
         }
       }
     ]

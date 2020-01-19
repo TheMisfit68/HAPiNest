@@ -477,6 +477,14 @@
 		DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModbusDriver.swift; sourceTree = "<group>"; };
 		DCD50B1C2397161000C0CED4 /* SiriDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriDriver.swift; sourceTree = "<group>"; };
 		DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptDriver.swift; sourceTree = "<group>"; };
+		DCD5FD1723D0F1E600797EB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCD5FD1923D0F1E600797EB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DCD5FD1B23D0F1E800797EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCD5FD1E23D0F1E800797EB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DCD5FD2123D0F1E800797EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCD5FD2323D0F1E800797EB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD5FD2423D0F1E800797EB2 /* Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Test.entitlements; sourceTree = "<group>"; };
+		DCD5FD5E23D0F22400797EB2 /* HAPiNest copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HAPiNest copy-Info.plist"; path = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/HomeAutomation/HAPiNest/HAPiNest copy-Info.plist"; sourceTree = "<absolute>"; };
 		DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeKitLogo.png; sourceTree = "<group>"; };
 		DCD79FC923A03EDC002B5523 /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
 		DCD9181623B56F7300C81EB5 /* YASDIDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YASDIDriver.swift; sourceTree = "<group>"; };
@@ -518,10 +526,12 @@
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
 				DCB5F6202354ED7D005F610F /* Documentation */,
+				DCD5FD1623D0F1E600797EB2 /* Test */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 				DC5B4D462357D3A400ED82B3 /* Frameworks */,
 				DC68045A2395B78A006808A3 /* YasdiConfigFile.ini */,
 				DCCC6E5723A054F600E1DA58 /* InvertersData.sqlite */,
+				DCD5FD5E23D0F22400797EB2 /* HAPiNest copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1187,10 +1197,10 @@
 		DCB2240D23997BF000F2EB06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCB2249823997BF100F2EB06 /* libyasdi.dylib */,
-				DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.dylib */,
-				DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.dylib */,
-				DCB2249E23997BF100F2EB06 /* libyasdimaster.dylib */,
+				DCB2249823997BF100F2EB06 /* libyasdi.1.8.1.dylib */,
+				DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.1.8.1.dylib */,
+				DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.1.8.1.dylib */,
+				DCB2249E23997BF100F2EB06 /* libyasdimaster.1.8.1.dylib */,
 				DCB224A023997BF100F2EB06 /* yasdishell */,
 			);
 			name = Products;
@@ -1444,6 +1454,28 @@
 			path = Documentation;
 			sourceTree = "<group>";
 		};
+		DCD5FD1623D0F1E600797EB2 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DCD5FD1723D0F1E600797EB2 /* AppDelegate.swift */,
+				DCD5FD1923D0F1E600797EB2 /* ContentView.swift */,
+				DCD5FD1B23D0F1E800797EB2 /* Assets.xcassets */,
+				DCD5FD2023D0F1E800797EB2 /* Main.storyboard */,
+				DCD5FD2323D0F1E800797EB2 /* Info.plist */,
+				DCD5FD2423D0F1E800797EB2 /* Test.entitlements */,
+				DCD5FD1D23D0F1E800797EB2 /* Preview Content */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		DCD5FD1D23D0F1E800797EB2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DCD5FD1E23D0F1E800797EB2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		DCD60D6723B675DF00CF2C8A /* Homekit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,7 +1522,7 @@
 		DC06CD192354E42A00C8E9F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Jan Verrept";
 				TargetAttributes = {
@@ -1538,34 +1570,30 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		DCB2249823997BF100F2EB06 /* libyasdi.dylib */ = {
+		DCB2249823997BF100F2EB06 /* libyasdi.1.8.1.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = libyasdi.dylib;
 			path = libyasdi.1.8.1.dylib;
 			remoteRef = DCB2249723997BF100F2EB06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.dylib */ = {
+		DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.1.8.1.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = libyasdi_drv_ip.dylib;
 			path = libyasdi_drv_ip.1.8.1.dylib;
 			remoteRef = DCB2249923997BF100F2EB06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.dylib */ = {
+		DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.1.8.1.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = libyasdi_drv_serial.dylib;
 			path = libyasdi_drv_serial.1.8.1.dylib;
 			remoteRef = DCB2249B23997BF100F2EB06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCB2249E23997BF100F2EB06 /* libyasdimaster.dylib */ = {
+		DCB2249E23997BF100F2EB06 /* libyasdimaster.1.8.1.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = libyasdimaster.dylib;
 			path = libyasdimaster.1.8.1.dylib;
 			remoteRef = DCB2249D23997BF100F2EB06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -1624,6 +1652,14 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		DCD5FD2023D0F1E800797EB2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCD5FD2123D0F1E800797EB2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1631,10 +1667,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_OPTIMIZATION = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = $inherited;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1661,12 +1698,13 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1682,9 +1720,13 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1692,10 +1734,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_OPTIMIZATION = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = $inherited;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1726,6 +1769,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1738,7 +1782,9 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1747,13 +1793,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HAPiNest/HAPiNest.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HAPiNest/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
+				ENABLE_PREVIEWS = $inherited;
 				INFOPLIST_FILE = HAPiNest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1772,13 +1818,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HAPiNest/HAPiNest.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HAPiNest/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
+				ENABLE_PREVIEWS = $inherited;
 				INFOPLIST_FILE = HAPiNest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
