@@ -104,6 +104,7 @@
 		DC23FB072370B5D000949B90 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		DC23FB0B2370B5DD00949B90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DC23FB0D2370B70F00949B90 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		DC2BB7ED23D4C1F70062233A /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
 		DC3188CA23B9505400E895C3 /* CustomAccessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAccessories.swift; sourceTree = "<group>"; };
 		DC53018A23B7CC7300982C43 /* homekit-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homekit-180.png"; sourceTree = "<group>"; };
 		DC68044A2395A31B006808A3 /* YASDIDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YASDIDriver; path = ../Drivers/YASDIDriver; sourceTree = "<group>"; };
@@ -477,16 +478,7 @@
 		DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModbusDriver.swift; sourceTree = "<group>"; };
 		DCD50B1C2397161000C0CED4 /* SiriDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriDriver.swift; sourceTree = "<group>"; };
 		DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptDriver.swift; sourceTree = "<group>"; };
-		DCD5FD1723D0F1E600797EB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCD5FD1923D0F1E600797EB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DCD5FD1B23D0F1E800797EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DCD5FD1E23D0F1E800797EB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DCD5FD2123D0F1E800797EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DCD5FD2323D0F1E800797EB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCD5FD2423D0F1E800797EB2 /* Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Test.entitlements; sourceTree = "<group>"; };
-		DCD5FD5E23D0F22400797EB2 /* HAPiNest copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HAPiNest copy-Info.plist"; path = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/HomeAutomation/HAPiNest/HAPiNest copy-Info.plist"; sourceTree = "<absolute>"; };
 		DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeKitLogo.png; sourceTree = "<group>"; };
-		DCD79FC923A03EDC002B5523 /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
 		DCD9181623B56F7300C81EB5 /* YASDIDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YASDIDriver.swift; sourceTree = "<group>"; };
 		DCD9182223B5715000C81EB5 /* PowerInverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerInverter.swift; sourceTree = "<group>"; };
 		DCFCB79A2381AFEB0066E00B /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
@@ -520,18 +512,16 @@
 			isa = PBXGroup;
 			children = (
 				DC6E461523B75BF8006A3E61 /* ToDo.md */,
-				DC1B172B239EE2B80092394E /* ClibYASDI */,
 				DC68044A2395A31B006808A3 /* YASDIDriver */,
-				DCD79FC923A03EDC002B5523 /* JVCocoa */,
+				DC1B172B239EE2B80092394E /* ClibYASDI */,
+				DC2BB7ED23D4C1F70062233A /* JVCocoa */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
 				DCB5F6202354ED7D005F610F /* Documentation */,
-				DCD5FD1623D0F1E600797EB2 /* Test */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 				DC5B4D462357D3A400ED82B3 /* Frameworks */,
 				DC68045A2395B78A006808A3 /* YasdiConfigFile.ini */,
 				DCCC6E5723A054F600E1DA58 /* InvertersData.sqlite */,
-				DCD5FD5E23D0F22400797EB2 /* HAPiNest copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1454,28 +1444,6 @@
 			path = Documentation;
 			sourceTree = "<group>";
 		};
-		DCD5FD1623D0F1E600797EB2 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				DCD5FD1723D0F1E600797EB2 /* AppDelegate.swift */,
-				DCD5FD1923D0F1E600797EB2 /* ContentView.swift */,
-				DCD5FD1B23D0F1E800797EB2 /* Assets.xcassets */,
-				DCD5FD2023D0F1E800797EB2 /* Main.storyboard */,
-				DCD5FD2323D0F1E800797EB2 /* Info.plist */,
-				DCD5FD2423D0F1E800797EB2 /* Test.entitlements */,
-				DCD5FD1D23D0F1E800797EB2 /* Preview Content */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		DCD5FD1D23D0F1E800797EB2 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				DCD5FD1E23D0F1E800797EB2 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		DCD60D6723B675DF00CF2C8A /* Homekit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1652,14 +1620,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DCD5FD2023D0F1E800797EB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DCD5FD2123D0F1E800797EB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1806,7 +1766,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = oneclick.be.HAPiNest;
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1831,7 +1791,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = oneclick.be.HAPiNest;
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

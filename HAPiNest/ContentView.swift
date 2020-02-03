@@ -10,10 +10,6 @@ import SwiftUI
 import JVCocoa
 import YASDIDriver
 
-// Test view
-let testLive = true
-let testDataToDisplay:DataSummary = DataSummary(channelNames: ["Pac", "Upv-Ist", "E-Total"])
-let testDisplay = DigitalDisplayView(model:testDataToDisplay)
 struct ContentView: View {
    
     
@@ -23,10 +19,8 @@ struct ContentView: View {
                 HapinestIconView()
                 Spacer()
                 QRCodeView()
-                if (SMAInverter.Inverters.count > 0) && testLive{
-                    SMAInverter.Inverters[0].display.frame(width: nil, height: 120, alignment: .center)
-                }else{
-                    testDisplay
+                if (SMAInverter.OnlineInverters.count > 0){
+                    SMAInverter.OnlineInverters[0].display.frame(width: nil, height: 120, alignment: .center)
                 }
                 Spacer()
             }

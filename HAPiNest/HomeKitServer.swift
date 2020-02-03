@@ -36,10 +36,16 @@ public class HomeKitServer:Singleton{
         }
     }
     let milightDriver = MilightDriverV6(ipAddress: "192.168.0.52")
+    
     let siriDriver = SiriDriver(language: .flemish)
+    
     let appleScripTDriver = AppleScriptDriver()
+    
     let modBusDriver = ModbusDriver(ipAddress: "127.0.0.1", port: 1502)
+    
     let yasdiDriver = YASDIDriver.InstallDrivers().first
+    let gscNotifier = GSCNotifier()
+    let sunnyPortalReporter:SunnyPortalReporter = SunnyPortalReporter()
     
     init(){
         JVDebugger.shared.log(debugLevel: .Info, "Initializing the server...")
