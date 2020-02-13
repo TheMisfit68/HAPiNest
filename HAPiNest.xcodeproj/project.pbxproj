@@ -19,6 +19,10 @@
 		DC23FB0C2370B5DD00949B90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23FB0B2370B5DD00949B90 /* MapKit.framework */; };
 		DC23FB0E2370B70F00949B90 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23FB0D2370B70F00949B90 /* CloudKit.framework */; };
 		DC3188CB23B9505400E895C3 /* CustomAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3188CA23B9505400E895C3 /* CustomAccessories.swift */; };
+		DC41B1E723F5C40E0012E7FF /* libyasdi_drv_serial.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB2248023997BF100F2EB06 /* libyasdi_drv_serial.dylib */; };
+		DC41B1EA23F5C4230012E7FF /* libyasdimaster.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB2247E23997BF100F2EB06 /* libyasdimaster.dylib */; };
+		DC41B1EB23F5C43C0012E7FF /* libyasdi_drv_ip.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB2248723997BF100F2EB06 /* libyasdi_drv_ip.dylib */; };
+		DC41B1EC23F5C44A0012E7FF /* libyasdi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB2248323997BF100F2EB06 /* libyasdi.dylib */; };
 		DC68044D2395A605006808A3 /* ModbusDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC68044C2395A605006808A3 /* ModbusDriver */; };
 		DC68044F2395A920006808A3 /* YASDIDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC68044E2395A920006808A3 /* YASDIDriver */; };
 		DC6BC8CC2390466800BD9445 /* AppleScriptDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6BC8CB2390466800BD9445 /* AppleScriptDriver */; };
@@ -112,8 +116,6 @@
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC9672FC2376050100917D1B /* HomeKitConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitConfiguration.swift; sourceTree = "<group>"; };
 		DC980B192391D80400EB5D97 /* ModbusDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ModbusDriver; path = ../Drivers/ModbusDriver; sourceTree = "<group>"; };
-		DCB222EF2398364C00F2EB06 /* libyasdi.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.1.8.1.dylib; path = ../../../../../../../../../usr/local/lib/libyasdi.1.8.1.dylib; sourceTree = "<group>"; };
-		DCB222F02398364C00F2EB06 /* libyasdimaster.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.1.8.1.dylib; path = ../../../../../../../../../usr/local/lib/libyasdimaster.1.8.1.dylib; sourceTree = "<group>"; };
 		DCB222F523997BF000F2EB06 /* minmap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = minmap.c; sourceTree = "<group>"; };
 		DCB222F623997BF000F2EB06 /* protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = protocol.h; sourceTree = "<group>"; };
 		DCB222F723997BF000F2EB06 /* timer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = timer.c; sourceTree = "<group>"; };
@@ -502,6 +504,10 @@
 				DC23FB0E2370B70F00949B90 /* CloudKit.framework in Frameworks */,
 				DC6BC8CF2390480500BD9445 /* SiriDriver in Frameworks */,
 				DC6BC8CC2390466800BD9445 /* AppleScriptDriver in Frameworks */,
+				DC41B1E723F5C40E0012E7FF /* libyasdi_drv_serial.dylib in Frameworks */,
+				DC41B1EA23F5C4230012E7FF /* libyasdimaster.dylib in Frameworks */,
+				DC41B1EB23F5C43C0012E7FF /* libyasdi_drv_ip.dylib in Frameworks */,
+				DC41B1EC23F5C44A0012E7FF /* libyasdi.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,8 +579,6 @@
 			isa = PBXGroup;
 			children = (
 				DCB222F323997BF000F2EB06 /* YASDI project */,
-				DCB222EF2398364C00F2EB06 /* libyasdi.1.8.1.dylib */,
-				DCB222F02398364C00F2EB06 /* libyasdimaster.1.8.1.dylib */,
 				DC980B192391D80400EB5D97 /* ModbusDriver */,
 				DC23FB0D2370B70F00949B90 /* CloudKit.framework */,
 				DC23FB0B2370B5DD00949B90 /* MapKit.framework */,
@@ -1187,10 +1191,10 @@
 		DCB2240D23997BF000F2EB06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCB2249823997BF100F2EB06 /* libyasdi.1.8.1.dylib */,
-				DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.1.8.1.dylib */,
-				DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.1.8.1.dylib */,
-				DCB2249E23997BF100F2EB06 /* libyasdimaster.1.8.1.dylib */,
+				DCB2249823997BF100F2EB06 /* libyasdi.dylib */,
+				DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.dylib */,
+				DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.dylib */,
+				DCB2249E23997BF100F2EB06 /* libyasdimaster.dylib */,
 				DCB224A023997BF100F2EB06 /* yasdishell */,
 			);
 			name = Products;
@@ -1538,30 +1542,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		DCB2249823997BF100F2EB06 /* libyasdi.1.8.1.dylib */ = {
+		DCB2249823997BF100F2EB06 /* libyasdi.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
+			name = libyasdi.dylib;
 			path = libyasdi.1.8.1.dylib;
 			remoteRef = DCB2249723997BF100F2EB06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.1.8.1.dylib */ = {
+		DCB2249A23997BF100F2EB06 /* libyasdi_drv_ip.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
+			name = libyasdi_drv_ip.dylib;
 			path = libyasdi_drv_ip.1.8.1.dylib;
 			remoteRef = DCB2249923997BF100F2EB06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.1.8.1.dylib */ = {
+		DCB2249C23997BF100F2EB06 /* libyasdi_drv_serial.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
+			name = libyasdi_drv_serial.dylib;
 			path = libyasdi_drv_serial.1.8.1.dylib;
 			remoteRef = DCB2249B23997BF100F2EB06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCB2249E23997BF100F2EB06 /* libyasdimaster.1.8.1.dylib */ = {
+		DCB2249E23997BF100F2EB06 /* libyasdimaster.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
+			name = libyasdimaster.dylib;
 			path = libyasdimaster.1.8.1.dylib;
 			remoteRef = DCB2249D23997BF100F2EB06 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
