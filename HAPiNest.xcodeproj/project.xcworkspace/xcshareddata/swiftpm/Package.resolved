@@ -74,6 +74,15 @@
         }
       },
       {
+        "package": "JVCocoa",
+        "repositoryURL": "https://github.com/TheMisfit68/JVCocoa.git",
+        "state": {
+          "branch": "master",
+          "revision": "15a5bd7d8a88b793901930f70770fe2f1ac2e346",
+          "version": null
+        }
+      },
+      {
         "package": "LoggerAPI",
         "repositoryURL": "https://github.com/IBM-Swift/LoggerAPI.git",
         "state": {
@@ -88,6 +97,15 @@
         "state": {
           "branch": "master",
           "revision": "19d3e3b3c7cece443b36aaff99d909ca7206b2f7",
+          "version": null
+        }
+      },
+      {
+        "package": "ModbusDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/ModbusDriver.git",
+        "state": {
+          "branch": "master",
+          "revision": "853f6c71a49e2f73abe4703465db3b545c113bb0",
           "version": null
         }
       },
@@ -143,6 +161,15 @@
           "branch": null,
           "revision": "75ba1b9c0f524f9f3a87f19d87c1a3f2dfb8710f",
           "version": "5.1.2"
+        }
+      },
+      {
+        "package": "YASDIDriver",
+        "repositoryURL": "https://github.com/TheMisfit68/YASDIDriver.git",
+        "state": {
+          "branch": "master",
+          "revision": "5a0e873311c26d6983a9ebd77493be328626803e",
+          "version": null
         }
       }
     ]

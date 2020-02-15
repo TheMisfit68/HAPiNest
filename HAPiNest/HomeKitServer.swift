@@ -49,7 +49,7 @@ public class HomeKitServer:Singleton{
     
     init(){
         JVDebugger.shared.log(debugLevel: .Info, "Initializing the server...")
-        SMAInverter.createInverters(maxNumberToSearch: 1)
+        SMAInverter.CreateInverters(maxNumberToSearch: 1)
     }
     
     func resetPairingInfo(){
