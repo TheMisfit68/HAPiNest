@@ -69,7 +69,7 @@
         "repositoryURL": "https://github.com/Bouke/HAP.git",
         "state": {
           "branch": "master",
-          "revision": "a494b40ab0c84b729e4a618a132879dcc68265f9",
+          "revision": "2f7820bcf81478c11128c93bd77bc79fee8be467",
           "version": null
         }
       },
@@ -159,8 +159,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "df9390006bce7da1b6273f804d3acbbfdfcc6154",
-          "version": "2.13.1"
+          "revision": "16ab4d657e1ad4e77bd5f8b94af8538561643053",
+          "version": "2.14.0"
         }
       },
       {
