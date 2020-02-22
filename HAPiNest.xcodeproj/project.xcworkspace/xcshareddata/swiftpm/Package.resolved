@@ -56,6 +56,15 @@
         }
       },
       {
+        "package": "ClibYASDI",
+        "repositoryURL": "https://github.com/TheMisfit68/ClibYASDI.git",
+        "state": {
+          "branch": "master",
+          "revision": "af2a8d89e72ab4c2daf62f9ad69b2d3ee67b9032",
+          "version": null
+        }
+      },
+      {
         "package": "HAP",
         "repositoryURL": "https://github.com/Bouke/HAP.git",
         "state": {
@@ -168,7 +177,7 @@
         "repositoryURL": "https://github.com/TheMisfit68/YASDIDriver.git",
         "state": {
           "branch": "master",
-          "revision": "5a0e873311c26d6983a9ebd77493be328626803e",
+          "revision": "3c1c26148c644a4a6c1ca7e3808c202807ac4532",
           "version": null
         }
       }
