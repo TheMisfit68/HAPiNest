@@ -11,7 +11,8 @@ import JVCocoa
 import YASDIDriver
 
 struct ContentView: View {
-   
+    @State var inverterViewVisible = false
+    let updateTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ScrollView {
@@ -19,18 +20,21 @@ struct ContentView: View {
                 HapinestIconView()
                 Spacer()
                 QRCodeView()
-                if (SMAInverter.OnlineInverters.count > 0){
-                    SMAInverter.OnlineInverters[0].display.frame(width: nil, height: 120, alignment: .center)
+                if (inverterViewVisible){
+                    SMAInverter.OnlineInverters.first?.display.frame(width: nil, height: 120, alignment: .center)
                 }
                 Spacer()
             }
         }
         .padding(20)
+        .onReceive(updateTimer) { _ in
+            self.inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
+        }
     }
 }
 
 extension ContentView {
-
+    
     struct HapinestIconView: View {
         var body: some View {
             VStack {
@@ -39,14 +43,14 @@ extension ContentView {
             }
         }
     }
-
+    
     struct HomekitBadgeView: View {
         var body: some View {
             Image("HomeKitLogo").resizable().frame(width: 40, height: 40).clipShape(Circle()).overlay(
                 Circle().stroke(Color.gray, lineWidth: 2)).offset(x:50, y:-50).padding(.bottom, -50)
         }
     }
-
+    
     struct QRCodeView: View {
         var body: some View {
             VStack {
@@ -57,8 +61,8 @@ extension ContentView {
             }.multilineTextAlignment(.center)
         }
     }
-
-
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
