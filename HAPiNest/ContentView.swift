@@ -11,7 +11,8 @@ import JVCocoa
 import YASDIDriver
 
 struct ContentView: View {
-    @State var inverterViewVisible = false
+    @State var showResetPairingsButton = HomeKitServer.shared.bridge.isPaired
+    @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
     let updateTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -19,7 +20,7 @@ struct ContentView: View {
             VStack {
                 HapinestIconView()
                 Spacer()
-                QRCodeView()
+                QRCodeView(showResetPairingsButton:$showResetPairingsButton)
                 if (inverterViewVisible){
                     SMAInverter.OnlineInverters.first?.display.frame(width: nil, height: 120, alignment: .center)
                 }
@@ -28,6 +29,8 @@ struct ContentView: View {
         }
         .padding(20)
         .onReceive(updateTimer) { _ in
+            self.showResetPairingsButton = HomeKitServer.shared.bridge.isPaired
+            print("\(self.showResetPairingsButton)")
             self.inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
         }
     }
@@ -51,13 +54,21 @@ extension ContentView {
         }
     }
     
-    struct QRCodeView: View {
+    struct QRCodeView: View{
+        @Binding var showResetPairingsButton: Bool
         var body: some View {
             VStack {
                 Image(nsImage:HomeKitServer.shared.bridge.setupQRCode.asNSImage!)
                 Text("Scan the code above using your iPhone to pair it with the")
                 Text(bridgeName).bold().font(.system(size: 18))
                 Text("(or enter setupcode \(bridgeSetupCode))")
+                if showResetPairingsButton {
+                    Button(action: {
+                        HomeKitServer.shared.resetPairingInfo()
+                        self.showResetPairingsButton = false
+                    }) {Text("Reset all pairings")}
+                }
+                
             }.multilineTextAlignment(.center)
         }
     }

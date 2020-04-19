@@ -20,16 +20,16 @@ let myAccessories:[Accessory]  = [
     Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "00003"), type:.color, isDimmable: true),
     Accessory.Lightbulb(info: Service.Info(name: "W.C.", serialNumber: "00004"), type:.color, isDimmable: true),
     
-    Accessory.Lightbulb(info: Service.Info(name: "LampViaModbus)", serialNumber: "00005")),
+    Accessory.Lightbulb(info: Service.Info(name: "MBLamp", serialNumber: "00005")),
     
     // Outlets
-    Accessory.Outlet(info: Service.Info(name: "StopcontactViaModbus)", serialNumber: "00010")),
+    Accessory.Outlet(info: Service.Info(name: "MBStopcontact", serialNumber: "00010")),
 
     
     // Heating
     
     // Solar Inverter
-//    Accessory.PowerInverter(info: Service.Info(name: "Zonneënergie", serialNumber: "00029")),
+    PowerBankAccessory(info: Service.Info(name: "Zonneënergie", serialNumber: "00029")),
 
     
     // Window coverings
@@ -37,13 +37,26 @@ let myAccessories:[Accessory]  = [
     Accessory.WindowCovering(info: Service.Info(name: "Rolgrodijn", serialNumber: "00051")),
     
     // Multimedia
-    Accessory.Television(info: Service.Info(name: "T.V.", serialNumber: "00060"), inputs: [("homeScreen", .homescreen)]),
-    
+    Accessory.Television(info: Service.Info(name: "T.V.", serialNumber: "00060"), inputs: [
+        ("homeScreen", .homescreen),
+        ("Eén", .application),
+        ("Q2", .usb),
+        ("VTM", .homescreen),
+        ("Vier", .homescreen),
+        ("Vijf", .homescreen),
+        ("Zes", .homescreen),
+        ("Canvas", .homescreen),
+        ("Discovery", .homescreen),
+        ("National Geographic", .homescreen),
+        ("Animal planet", .homescreen)
+    ]),
+
     // Camera's
 //   Accessory.
     
     //Sprinkler system
-  
+    Accessory.Outlet(info: Service.Info(name: "Sproeiers", serialNumber: "00080")),
+
 ]
 
 // Define below wich hardwaredrivers should be notified about events
@@ -64,7 +77,9 @@ let AccessoryDelegates:[String:AccessoryDelegate?] = [
     "UFO" : HomeKitServer.shared.milightDriver,
     "W.C." : HomeKitServer.shared.milightDriver,
     "ModbusSimmulatedLight": HomeKitServer.shared.modBusDriver,
-    "Zonneënergie": HomeKitServer.shared.yasdiDriver,
+//    "Zonneënergie": HomeKitServer.shared.yasdiDriver,
     "Screen": HomeKitServer.shared.modBusDriver,
-    "Rolgrodijn": HomeKitServer.shared.modBusDriver
+    "Rolgrodijn": HomeKitServer.shared.modBusDriver,
+    "T.V.": HomeKitServer.shared.tizenDriver1,
+    "T.V. boven": HomeKitServer.shared.tizenDriver2
 ]

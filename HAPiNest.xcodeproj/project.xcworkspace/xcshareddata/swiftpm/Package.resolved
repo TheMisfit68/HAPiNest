@@ -56,21 +56,21 @@
         }
       },
       {
-        "package": "ClibYASDI",
-        "repositoryURL": "https://github.com/TheMisfit68/ClibYASDI.git",
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
-          "branch": "master",
-          "revision": "af2a8d89e72ab4c2daf62f9ad69b2d3ee67b9032",
-          "version": null
+          "branch": null,
+          "revision": "a44caef0550c346e0ab9172f7c9a3852c1833599",
+          "version": "1.3.0"
         }
       },
       {
         "package": "HAP",
         "repositoryURL": "https://github.com/Bouke/HAP.git",
         "state": {
-          "branch": "master",
-          "revision": "2f7820bcf81478c11128c93bd77bc79fee8be467",
-          "version": null
+          "branch": null,
+          "revision": "f0ffaa2f3a0cd364ade2b33263ca7a3f21ab3834",
+          "version": "0.7.0"
         }
       },
       {
@@ -146,6 +146,15 @@
         }
       },
       {
+        "package": "Starscream",
+        "repositoryURL": "https://github.com/daltoniam/Starscream.git",
+        "state": {
+          "branch": null,
+          "revision": "850f6204411cde04d16c129b70a2b9d1beba3a95",
+          "version": "4.0.0"
+        }
+      },
+      {
         "package": "swift-log",
         "repositoryURL": "https://github.com/apple/swift-log.git",
         "state": {
@@ -164,21 +173,21 @@
         }
       },
       {
+        "package": "swift-nio-zlib-support",
+        "repositoryURL": "https://github.com/apple/swift-nio-zlib-support.git",
+        "state": {
+          "branch": null,
+          "revision": "37760e9a52030bb9011972c5213c3350fa9d41fd",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "SwiftSMTP",
         "repositoryURL": "https://github.com/IBM-Swift/Swift-SMTP.git",
         "state": {
           "branch": null,
           "revision": "75ba1b9c0f524f9f3a87f19d87c1a3f2dfb8710f",
           "version": "5.1.2"
-        }
-      },
-      {
-        "package": "YASDIDriver",
-        "repositoryURL": "https://github.com/TheMisfit68/YASDIDriver.git",
-        "state": {
-          "branch": "master",
-          "revision": "3c1c26148c644a4a6c1ca7e3808c202807ac4532",
-          "version": null
         }
       }
     ]

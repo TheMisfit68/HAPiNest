@@ -14,12 +14,15 @@
 		DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD3D2354E61600C8E9F9 /* JVCocoa */; };
 		DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD462354E72F00C8E9F9 /* HAP */; };
 		DC0F906F23F7F19C005567A9 /* YASDIDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC0F906E23F7F19C005567A9 /* YASDIDriver */; };
+		DC218A1B2409B27E00494074 /* TizenDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC218A1A2409B27E00494074 /* TizenDriver */; };
+		DC290B73240F155400DBBC6A /* TizenDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC290B72240F155400DBBC6A /* TizenDriver.swift */; };
 		DC29565C23FB206D00EB0515 /* InvertersData.sqlite in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC29565B23FB206C00EB0515 /* InvertersData.sqlite */; };
 		DC29565E23FB20EA00EB0515 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC29565D23FB20EA00EB0515 /* YasdiConfigFile.ini */; };
 		DC3188CB23B9505400E895C3 /* CustomAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3188CA23B9505400E895C3 /* CustomAccessories.swift */; };
 		DC68044D2395A605006808A3 /* ModbusDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC68044C2395A605006808A3 /* ModbusDriver */; };
 		DC6BC8CC2390466800BD9445 /* AppleScriptDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6BC8CB2390466800BD9445 /* AppleScriptDriver */; };
 		DC6BC8CF2390480500BD9445 /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6BC8CE2390480500BD9445 /* SiriDriver */; };
+		DC6F65A2242C11840045B716 /* LeafDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6F65A1242C11840045B716 /* LeafDriver */; };
 		DC9672FD2376050100917D1B /* HomeKitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9672FC2376050100917D1B /* HomeKitConfiguration.swift */; };
 		DCB5F6272354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */; };
 		DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
@@ -35,6 +38,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		DC601E0B2405DD4100FE7659 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC6804582395B702006808A3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -56,11 +68,15 @@
 		DC06CD2E2354E42B00C8E9F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC06CD302354E42B00C8E9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC06CD312354E42B00C8E9F9 /* HAPiNest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HAPiNest.entitlements; sourceTree = "<group>"; };
+		DC218A182409A63700494074 /* TizenDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TizenDriver; path = ../Drivers/TizenDriver; sourceTree = "<group>"; };
+		DC290B72240F155400DBBC6A /* TizenDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TizenDriver.swift; sourceTree = "<group>"; };
 		DC29565B23FB206C00EB0515 /* InvertersData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = InvertersData.sqlite; path = ../Drivers/YASDIDriver/InvertersData.sqlite; sourceTree = "<group>"; };
 		DC29565D23FB20EA00EB0515 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = YasdiConfigFile.ini; path = ../Drivers/YASDIDriver/YasdiConfigFile.ini; sourceTree = "<group>"; };
 		DC3188CA23B9505400E895C3 /* CustomAccessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAccessories.swift; sourceTree = "<group>"; };
 		DC53018A23B7CC7300982C43 /* homekit-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homekit-180.png"; sourceTree = "<group>"; };
+		DC601E072405DB4C00FE7659 /* ClibYASDI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ClibYASDI; path = "../../C-based Packages/ClibYASDI"; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
+		DC6F65A0242C0E8F0045B716 /* LeafDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LeafDriver; path = ../Drivers/LeafDriver; sourceTree = "<group>"; };
 		DC9672FC2376050100917D1B /* HomeKitConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitConfiguration.swift; sourceTree = "<group>"; };
 		DC9BF36D2403255E00B9159F /* YASDIDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YASDIDriver; path = ../Drivers/YASDIDriver; sourceTree = "<group>"; };
 		DCB5F61A2354ED7D005F610F /* Modbus Config.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Modbus Config.psd"; sourceTree = "<group>"; };
@@ -88,10 +104,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC68044D2395A605006808A3 /* ModbusDriver in Frameworks */,
+				DC218A1B2409B27E00494074 /* TizenDriver in Frameworks */,
 				DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */,
 				DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */,
 				DC0F906F23F7F19C005567A9 /* YASDIDriver in Frameworks */,
 				DCE471C72390386B0059036D /* MilightDriver in Frameworks */,
+				DC6F65A2242C11840045B716 /* LeafDriver in Frameworks */,
 				DC6BC8CF2390480500BD9445 /* SiriDriver in Frameworks */,
 				DC6BC8CC2390466800BD9445 /* AppleScriptDriver in Frameworks */,
 			);
@@ -106,11 +124,15 @@
 				DC29565D23FB20EA00EB0515 /* YasdiConfigFile.ini */,
 				DC29565B23FB206C00EB0515 /* InvertersData.sqlite */,
 				DC6E461523B75BF8006A3E61 /* ToDo.md */,
+				DC6F65A0242C0E8F0045B716 /* LeafDriver */,
+				DC218A182409A63700494074 /* TizenDriver */,
 				DC9BF36D2403255E00B9159F /* YASDIDriver */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
 				DCB5F6202354ED7D005F610F /* Documentation */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
+				DC601E072405DB4C00FE7659 /* ClibYASDI */,
+				DC601E082405DC9600FE7659 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +180,13 @@
 			path = "Custom accessories";
 			sourceTree = "<group>";
 		};
+		DC601E082405DC9600FE7659 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCA8654323972DE700E319C0 /* Hardware Drivers */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +195,7 @@
 				DCD50B1C2397161000C0CED4 /* SiriDriver.swift */,
 				DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */,
 				DCD9181623B56F7300C81EB5 /* YASDIDriver.swift */,
+				DC290B72240F155400DBBC6A /* TizenDriver.swift */,
 			);
 			path = "Hardware Drivers";
 			sourceTree = "<group>";
@@ -228,6 +258,7 @@
 				DC06CD1D2354E42A00C8E9F9 /* Sources */,
 				DC06CD1E2354E42A00C8E9F9 /* Frameworks */,
 				DC06CD1F2354E42A00C8E9F9 /* Resources */,
+				DC601E0B2405DD4100FE7659 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -242,6 +273,8 @@
 				DC6BC8CE2390480500BD9445 /* SiriDriver */,
 				DC68044C2395A605006808A3 /* ModbusDriver */,
 				DC0F906E23F7F19C005567A9 /* YASDIDriver */,
+				DC218A1A2409B27E00494074 /* TizenDriver */,
+				DC6F65A1242C11840045B716 /* LeafDriver */,
 			);
 			productName = HAPiNest;
 			productReference = DC06CD212354E42A00C8E9F9 /* HAPiNest.app */;
@@ -254,7 +287,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Jan Verrept";
 				TargetAttributes = {
 					DC06CD202354E42A00C8E9F9 = {
@@ -279,6 +312,7 @@
 				DC6BC8CD2390480500BD9445 /* XCRemoteSwiftPackageReference "SiriDriver" */,
 				DC68044B2395A605006808A3 /* XCRemoteSwiftPackageReference "ModbusDriver" */,
 				DC0F906D23F7F19C005567A9 /* XCRemoteSwiftPackageReference "YASDIDriver" */,
+				DC218A192409B27E00494074 /* XCRemoteSwiftPackageReference "TizenDriver" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
@@ -310,6 +344,7 @@
 			files = (
 				DCD9181723B56F7300C81EB5 /* YASDIDriver.swift in Sources */,
 				DCD50B192397146400C0CED4 /* MilightDriver.swift in Sources */,
+				DC290B73240F155400DBBC6A /* TizenDriver.swift in Sources */,
 				DCFCB79B2381AFEB0066E00B /* Bridge.swift in Sources */,
 				DCD9182323B5715000C81EB5 /* PowerInverter.swift in Sources */,
 				DC9672FD2376050100917D1B /* HomeKitConfiguration.swift in Sources */,
@@ -373,6 +408,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -389,6 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib/;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -397,7 +434,6 @@
 				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
@@ -440,6 +476,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -450,6 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib/;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -548,13 +586,21 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Bouke/HAP.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
 			};
 		};
 		DC0F906D23F7F19C005567A9 /* XCRemoteSwiftPackageReference "YASDIDriver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TheMisfit68/YASDIDriver.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DC218A192409B27E00494074 /* XCRemoteSwiftPackageReference "TizenDriver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TheMisfit68/TizenDriver.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -610,6 +656,11 @@
 			package = DC0F906D23F7F19C005567A9 /* XCRemoteSwiftPackageReference "YASDIDriver" */;
 			productName = YASDIDriver;
 		};
+		DC218A1A2409B27E00494074 /* TizenDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC218A192409B27E00494074 /* XCRemoteSwiftPackageReference "TizenDriver" */;
+			productName = TizenDriver;
+		};
 		DC68044C2395A605006808A3 /* ModbusDriver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC68044B2395A605006808A3 /* XCRemoteSwiftPackageReference "ModbusDriver" */;
@@ -624,6 +675,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC6BC8CD2390480500BD9445 /* XCRemoteSwiftPackageReference "SiriDriver" */;
 			productName = SiriDriver;
+		};
+		DC6F65A1242C11840045B716 /* LeafDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LeafDriver;
 		};
 		DCE471C62390386B0059036D /* MilightDriver */ = {
 			isa = XCSwiftPackageProductDependency;

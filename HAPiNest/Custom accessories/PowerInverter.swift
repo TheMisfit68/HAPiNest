@@ -5,9 +5,9 @@
 //  Created by Jan Verrept on 26/12/2019.
 //  Copyright © 2019 Jan Verrept. All rights reserved.
 //
-//import Foundation
-//import HAP
-//
+import Foundation
+import HAP
+
 //extension Accessory{
 //    open class PowerInverter: Accessory {
 //        public let powerMeter = Service.PowerMeter()
@@ -32,22 +32,22 @@
 //    public let energyDaily: GenericCharacteristic<Double>?
 //    public let energyTotal: GenericCharacteristic<Double>?
 //}
-    
+//
 //    public init(characteristics: [AnyCharacteristic] = []) {
 //        var unwrapped = characteristics.map { $0.wrapped }
 //        power = getOrCreateAppend(
 //                    type: .currentTemperature,
 //                    characteristics: &unwrapped,
 //                    generator: { PredefinedCharacteristic.currentTemperature() })
-        //        name = get(type: .name, characteristics: unwrapped)
-        //        powerState = get(type: .statusActive, characteristics: unwrapped)
-        //        energyDaily = get(type: .statusFault, characteristics: unwrapped)
-        //        energyTotal = get(type: .statusLowBattery, characteristics: unwrapped)
-        //        statusTampered = get(type: .statusTampered, characteristics: unwrapped)
-        //        super.init(type: .temperatureSensor, characteristics: unwrapped)
-        //    }
-        
-        
+//                name = get(type: .name, characteristics: unwrapped)
+//                powerState = get(type: .statusActive, characteristics: unwrapped)
+//                energyDaily = get(type: .statusFault, characteristics: unwrapped)
+//                energyTotal = get(type: .statusLowBattery, characteristics: unwrapped)
+//                statusTampered = get(type: .statusTampered, characteristics: unwrapped)
+//                super.init(type: .temperatureSensor, characteristics: unwrapped)
+//            }
+//
+//
 //
 //    init() {
 //        var unwrapped = characteristics.map { $0.wrapped }
@@ -61,47 +61,25 @@
 //        super.init(type: .powerMeterService, characteristics: characteristics)
 //    }
 //}
+//
 
 
+class PowerBankAccessory: Accessory {
+    let service = PowerBankService()
+    init(info: Service.Info) {
+        super.init(info: info, type: .outlet, services: [service])
+    }
+}
+class PowerBankService: Service {
+   
+    public let power = GenericCharacteristic<Double>(
+        type: .power,
+        value: 100,
+        permissions: [.read, .events])
 
-//extension Accessory {
-//    open class Thermometer: Accessory {
-//        public let temperatureSensor = Service.TemperatureSensor()
-//
-//        public init(info: Service.Info, additionalServices: [Service] = []) {
-//            super.init(info: info, type: .sensor, services: [temperatureSensor] + additionalServices)
-//        }
-//    }
-//}
-//
-//extension Service {
-//    open class TemperatureSensor: TemperatureSensorBase {
-//
-//    }
-//}
-
-//open class TemperatureSensorBase: Service {
-//    // Required Characteristics
-//    public let currentTemperature: GenericCharacteristic<Float>
-//
-//    // Optional Characteristics
-//    public let name: GenericCharacteristic<String>?
-//    public let statusActive: GenericCharacteristic<Bool>?
-//    public let statusFault: GenericCharacteristic<UInt8>?
-//    public let statusLowBattery: GenericCharacteristic<Enums.StatusLowBattery>?
-//    public let statusTampered: GenericCharacteristic<UInt8>?
-//
-//    public init(characteristics: [AnyCharacteristic] = []) {
-//        var unwrapped = characteristics.map { $0.wrapped }
-//        currentTemperature = getOrCreateAppend(
-//            type: .currentTemperature,
-//            characteristics: &unwrapped,
-//            generator: { PredefinedCharacteristic.currentTemperature() })
-//        name = get(type: .name, characteristics: unwrapped)
-//        statusActive = get(type: .statusActive, characteristics: unwrapped)
-//        statusFault = get(type: .statusFault, characteristics: unwrapped)
-//        statusLowBattery = get(type: .statusLowBattery, characteristics: unwrapped)
-//        statusTampered = get(type: .statusTampered, characteristics: unwrapped)
-//        super.init(type: .temperatureSensor, characteristics: unwrapped)
-//    }
-//}
+    init() {
+        super.init(type: .powerMeterService, characteristics: [
+            AnyCharacteristic(power)
+        ])
+    }
+}

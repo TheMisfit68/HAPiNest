@@ -16,6 +16,8 @@ import SiriDriver
 import MilightDriver
 import ModbusDriver
 import YASDIDriver
+import TizenDriver
+import LeafDriver
 
 /**
 Homekitserver is a Singleton class that also acts
@@ -45,10 +47,18 @@ public class HomeKitServer:Singleton{
     
     let yasdiDriver = YASDIDriver.InstallDrivers().first
     let gscNotifier = GSCNotifier()
-    let sunnyPortalReporter:SunnyPortalReporter = SunnyPortalReporter()
+    let sunnyPortalReporter = SunnyPortalReporter()
+        
+    let tizenDriver1 = TizenDriver(tvName:"T.V. living", macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: "HAPiNestServer")
+    let tizenDriver2 = TizenDriver(tvName:"T.V. slaapkamer", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.140", port: 8002, deviceName: "HAPiNestServer")
+
+    let leafDriver =  LeafDriver(leafProtocol: LeafProtocolV2())
+
     
     init(){
         JVDebugger.shared.log(debugLevel: .Info, "Initializing the server...")
+        leafDriver.getBatteryStatus()
+//        tizenDriver1.executeCommands([.KEY_VOLDOWN, .KEY_VOLUP])
         SMAInverter.CreateInverters()
     }
     
