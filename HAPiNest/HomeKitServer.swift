@@ -57,9 +57,9 @@ public class HomeKitServer:Singleton{
     
     init(){
         JVDebugger.shared.log(debugLevel: .Info, "Initializing the server...")
-        leafDriver.getBatteryStatus()
-//        tizenDriver1.executeCommands([.KEY_VOLDOWN, .KEY_VOLUP])
-        SMAInverter.CreateInverters()
+        leafDriver.batteryChecker.getBatteryStatus()
+        tizenDriver1.queue(commands: [.KEY_VOLUP, .KEY_VOLDOWN])
+//        SMAInverter.CreateInverters()
     }
     
     func resetPairingInfo(){

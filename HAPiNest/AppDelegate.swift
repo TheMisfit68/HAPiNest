@@ -13,18 +13,17 @@ import HAP
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    
     var window: NSWindow!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
+        
         HomeKitServer.shared.bridge = Bridge(
             bridgeInfo: Service.Info(name: bridgeName, serialNumber: "00001"),
             setupCode: Bridge.SetupCode(stringLiteral: bridgeSetupCode),
             storage: HomeKitServer.shared.configFile,
             accessories: myAccessories)
         
-    
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
         
@@ -39,8 +38,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
         
-        
-
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
