@@ -1,13 +1,13 @@
-# ToDo for HAPiNest
+# *ToDo for HAPiNest
 ## A personal Home Automation System
 
-- [] Implement ClibYASDI as a binary package
+- [ ] Implement ClibYASDI as a binary package
 
-- [] Complete driver for Tizen TV
-- [] Complete driver for Nissan Leaf
+- [ ] Complete driver for Tizen TV
+- [ ] Complete driver for Nissan Leaf
 
-- [] Add driver for IP Cams
-- [] consider a seperate bridge for each individual driver 
+- [ ] Add driver for IP Cams
+- [ ] consider a seperate bridge for each individual driver 
 
 ## Longterm
 - [] implement IFTTT-webhooks
