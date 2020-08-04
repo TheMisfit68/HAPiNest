@@ -38,6 +38,24 @@
         }
       },
       {
+        "package": "ClibModbus",
+        "repositoryURL": "https://github.com/TheMisfit68/ClibModbus.git",
+        "state": {
+          "branch": "master",
+          "revision": "af52333a3a54b2727975d12d995d1d91c612236f",
+          "version": null
+        }
+      },
+      {
+        "package": "ClibYASDI",
+        "repositoryURL": "https://github.com/TheMisfit68/ClibYASDI.git",
+        "state": {
+          "branch": "master",
+          "revision": "7bcba8264df9746f1e078066f89c6a165c6701a2",
+          "version": null
+        }
+      },
+      {
         "package": "CryptoSwift",
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
