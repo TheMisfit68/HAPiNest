@@ -22,7 +22,7 @@ extension ModbusDriver:AccessoryDelegate{
     ){
         
         let digitalInputModule:ioLogicE1210 = ioLogicE1210(ipAddress:"127.0.0.1", port:1502)
-        let digitalOutputModule:ioLogicE1216 = ioLogicE1216(ipAddress:"127.0.0.1", port:1502)
+        let digitalOutputModule:ioLogicE1211 = ioLogicE1211(ipAddress:"127.0.0.1", port:1502)
         digitalInputModule.modbusDriver.readAllInputs()
         
         if let accessoryName = accessory.info.name.value{
