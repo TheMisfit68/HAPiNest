@@ -18,11 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        HomeKitServer.shared.bridge = Bridge(
-            bridgeInfo: Service.Info(name: bridgeName, serialNumber: "00001"),
-            setupCode: Bridge.SetupCode(stringLiteral: bridgeSetupCode),
-            storage: HomeKitServer.shared.configFile,
-            accessories: myAccessories)
+        HomeKitServer.shared.mainBridge = Bridge(name:bridgeName, setupCode:bridgeSetupCode)
+        HomeKitServer.shared.addAccessories()
         
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()

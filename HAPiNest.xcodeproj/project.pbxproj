@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC00173D24DEEB4B0045A3F8 /* Modbus4Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00173C24DEEB4B0045A3F8 /* Modbus4Delegate.swift */; };
+		DC00173F24DEEBF80045A3F8 /* Modbus5Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00173E24DEEBF80045A3F8 /* Modbus5Delegate.swift */; };
+		DC00174124DEEC0A0045A3F8 /* Modbus6Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00174024DEEC0A0045A3F8 /* Modbus6Delegate.swift */; };
+		DC00174324DEEC210045A3F8 /* Modbus0Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00174224DEEC210045A3F8 /* Modbus0Delegate.swift */; };
 		DC06CD252354E42A00C8E9F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06CD242354E42A00C8E9F9 /* AppDelegate.swift */; };
 		DC06CD292354E42B00C8E9F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD282354E42B00C8E9F9 /* Assets.xcassets */; };
 		DC06CD2C2354E42B00C8E9F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD2B2354E42B00C8E9F9 /* Preview Assets.xcassets */; };
@@ -14,8 +18,14 @@
 		DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD3D2354E61600C8E9F9 /* JVCocoa */; };
 		DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD462354E72F00C8E9F9 /* HAP */; };
 		DC0F906F23F7F19C005567A9 /* YASDIDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC0F906E23F7F19C005567A9 /* YASDIDriver */; };
-		DC290B73240F155400DBBC6A /* TizenDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC290B72240F155400DBBC6A /* TizenDriver.swift */; };
+		DC197CA624D9A67F00C07E90 /* YASDIDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CA024D9A67F00C07E90 /* YASDIDriver.swift */; };
+		DC197CA724D9A67F00C07E90 /* SiriDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CA124D9A67F00C07E90 /* SiriDriver.swift */; };
+		DC197CA924D9A67F00C07E90 /* AppleScriptDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */; };
+		DC197CAC24D9A74300C07E90 /* MilightDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CAA24D9A74300C07E90 /* MilightDelegate.swift */; };
+		DC197CAD24D9A74300C07E90 /* ModbusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CAB24D9A74300C07E90 /* ModbusDelegate.swift */; };
+		DC197CAF24D9A75E00C07E90 /* AccessoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CAE24D9A75E00C07E90 /* AccessoryDelegate.swift */; };
 		DC3188CB23B9505400E895C3 /* CustomAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3188CA23B9505400E895C3 /* CustomAccessories.swift */; };
+		DC5A4C2424D9A952001CF95B /* TizenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */; };
 		DC68044D2395A605006808A3 /* ModbusDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC68044C2395A605006808A3 /* ModbusDriver */; };
 		DC6BC8CC2390466800BD9445 /* AppleScriptDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6BC8CB2390466800BD9445 /* AppleScriptDriver */; };
 		DC6BC8CF2390480500BD9445 /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6BC8CE2390480500BD9445 /* SiriDriver */; };
@@ -23,11 +33,6 @@
 		DC9672FD2376050100917D1B /* HomeKitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9672FC2376050100917D1B /* HomeKitConfiguration.swift */; };
 		DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
 		DCCDC11C24A2AFD7007BB403 /* TizenDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCCDC11B24A2AFD7007BB403 /* TizenDriver */; };
-		DCD50B192397146400C0CED4 /* MilightDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B182397146400C0CED4 /* MilightDriver.swift */; };
-		DCD50B1B2397152100C0CED4 /* ModbusDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */; };
-		DCD50B1D2397161000C0CED4 /* SiriDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B1C2397161000C0CED4 /* SiriDriver.swift */; };
-		DCD50B1F239716C100C0CED4 /* AppleScriptDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */; };
-		DCD9181723B56F7300C81EB5 /* YASDIDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD9181623B56F7300C81EB5 /* YASDIDriver.swift */; };
 		DCD9182323B5715000C81EB5 /* PowerInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD9182223B5715000C81EB5 /* PowerInverter.swift */; };
 		DCE471C72390386B0059036D /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCE471C62390386B0059036D /* MilightDriver */; };
 		DCFCB79B2381AFEB0066E00B /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB79A2381AFEB0066E00B /* Bridge.swift */; };
@@ -47,6 +52,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC00173C24DEEB4B0045A3F8 /* Modbus4Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modbus4Delegate.swift; sourceTree = "<group>"; };
+		DC00173E24DEEBF80045A3F8 /* Modbus5Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modbus5Delegate.swift; sourceTree = "<group>"; };
+		DC00174024DEEC0A0045A3F8 /* Modbus6Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modbus6Delegate.swift; sourceTree = "<group>"; };
+		DC00174224DEEC210045A3F8 /* Modbus0Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modbus0Delegate.swift; sourceTree = "<group>"; };
 		DC06CD212354E42A00C8E9F9 /* HAPiNest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAPiNest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC06CD242354E42A00C8E9F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC06CD282354E42B00C8E9F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,12 +63,25 @@
 		DC06CD2E2354E42B00C8E9F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC06CD302354E42B00C8E9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC06CD312354E42B00C8E9F9 /* HAPiNest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HAPiNest.entitlements; sourceTree = "<group>"; };
+		DC197CA024D9A67F00C07E90 /* YASDIDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YASDIDriver.swift; sourceTree = "<group>"; };
+		DC197CA124D9A67F00C07E90 /* SiriDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiriDriver.swift; sourceTree = "<group>"; };
+		DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScriptDriver.swift; sourceTree = "<group>"; };
+		DC197CAA24D9A74300C07E90 /* MilightDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilightDelegate.swift; sourceTree = "<group>"; };
+		DC197CAB24D9A74300C07E90 /* ModbusDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModbusDelegate.swift; sourceTree = "<group>"; };
+		DC197CAE24D9A75E00C07E90 /* AccessoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryDelegate.swift; sourceTree = "<group>"; };
 		DC218A182409A63700494074 /* TizenDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TizenDriver; path = ../Drivers/TizenDriver; sourceTree = "<group>"; };
-		DC290B72240F155400DBBC6A /* TizenDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TizenDriver.swift; sourceTree = "<group>"; };
+		DC2B8D8624DC799E00F159AC /* HomekitConfiguratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitConfiguratorApp.swift; sourceTree = "<group>"; };
+		DC2B8D8724DC799E00F159AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC2B8D8824DC799F00F159AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC2B8D8F24DC799F00F159AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC2B8D9624DC799F00F159AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC2B8D9724DC799F00F159AC /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		DC2B8DA524DC79B600F159AC /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
 		DC3188CA23B9505400E895C3 /* CustomAccessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAccessories.swift; sourceTree = "<group>"; };
 		DC3C2E0F24A2A8F400A824B3 /* MilightDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MilightDriver; path = ../Drivers/MilightDriver; sourceTree = "<group>"; };
 		DC3C2E1024A2A90900A824B3 /* AppleScriptDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppleScriptDriver; path = ../Drivers/AppleScriptDriver; sourceTree = "<group>"; };
 		DC53018A23B7CC7300982C43 /* homekit-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homekit-180.png"; sourceTree = "<group>"; };
+		DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenDelegate.swift; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC6F65A0242C0E8F0045B716 /* LeafDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LeafDriver; path = ../Drivers/LeafDriver; sourceTree = "<group>"; };
 		DC72B697245F740300D8045E /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
@@ -68,12 +90,7 @@
 		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
 		DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "HAP-Specification-Non-Commercial-Version.pdf"; sourceTree = "<group>"; };
 		DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
-		DCD50B182397146400C0CED4 /* MilightDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilightDriver.swift; sourceTree = "<group>"; };
-		DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModbusDriver.swift; sourceTree = "<group>"; };
-		DCD50B1C2397161000C0CED4 /* SiriDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriDriver.swift; sourceTree = "<group>"; };
-		DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptDriver.swift; sourceTree = "<group>"; };
 		DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeKitLogo.png; sourceTree = "<group>"; };
-		DCD9181623B56F7300C81EB5 /* YASDIDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YASDIDriver.swift; sourceTree = "<group>"; };
 		DCD9182223B5715000C81EB5 /* PowerInverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerInverter.swift; sourceTree = "<group>"; };
 		DCDAF5AD24586D2600C279D9 /* SiriDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SiriDriver; path = ../Drivers/SiriDriver; sourceTree = "<group>"; };
 		DCF7A41C24A29A1A007BDC38 /* ModbusDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ModbusDriver; path = ../Drivers/ModbusDriver; sourceTree = "<group>"; };
@@ -108,6 +125,9 @@
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
 				DCB5F6202354ED7D005F610F /* Documentation */,
+				DC2B8D8524DC799E00F159AC /* Shared */,
+				DC2B8D8E24DC799F00F159AC /* iOS */,
+				DC2B8D9524DC799F00F159AC /* macOS */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 				DC601E082405DC9600FE7659 /* Frameworks */,
 				DC3C2E1024A2A90900A824B3 /* AppleScriptDriver */,
@@ -137,8 +157,9 @@
 				DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */,
 				DCFDA85323B69D7E0079F733 /* ContentView.swift */,
 				DCFCB79A2381AFEB0066E00B /* Bridge.swift */,
+				DC197C9D24D9A67F00C07E90 /* AccessoryDelegates */,
+				DC5A4C2524D9A98B001CF95B /* AccessoryCandidates */,
 				DC4D0C8B23B8C95000A2077C /* Custom accessories */,
-				DCA8654323972DE700E319C0 /* Hardware Drivers */,
 				DC06CD282354E42B00C8E9F9 /* Assets.xcassets */,
 				DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */,
 				DC06CD302354E42B00C8E9F9 /* Info.plist */,
@@ -156,6 +177,48 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DC197C9D24D9A67F00C07E90 /* AccessoryDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				DC197CAE24D9A75E00C07E90 /* AccessoryDelegate.swift */,
+				DC197CAA24D9A74300C07E90 /* MilightDelegate.swift */,
+				DC197CAB24D9A74300C07E90 /* ModbusDelegate.swift */,
+				DC00174224DEEC210045A3F8 /* Modbus0Delegate.swift */,
+				DC00173C24DEEB4B0045A3F8 /* Modbus4Delegate.swift */,
+				DC00173E24DEEBF80045A3F8 /* Modbus5Delegate.swift */,
+				DC00174024DEEC0A0045A3F8 /* Modbus6Delegate.swift */,
+				DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */,
+			);
+			path = AccessoryDelegates;
+			sourceTree = "<group>";
+		};
+		DC2B8D8524DC799E00F159AC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DC2B8D8624DC799E00F159AC /* HomekitConfiguratorApp.swift */,
+				DC2B8D8724DC799E00F159AC /* ContentView.swift */,
+				DC2B8D8824DC799F00F159AC /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DC2B8D8E24DC799F00F159AC /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DC2B8D8F24DC799F00F159AC /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		DC2B8D9524DC799F00F159AC /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				DC2B8D9624DC799F00F159AC /* Info.plist */,
+				DC2B8D9724DC799F00F159AC /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
 		DC4D0C8B23B8C95000A2077C /* Custom accessories */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,24 +228,22 @@
 			path = "Custom accessories";
 			sourceTree = "<group>";
 		};
+		DC5A4C2524D9A98B001CF95B /* AccessoryCandidates */ = {
+			isa = PBXGroup;
+			children = (
+				DC197CA024D9A67F00C07E90 /* YASDIDriver.swift */,
+				DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */,
+				DC197CA124D9A67F00C07E90 /* SiriDriver.swift */,
+			);
+			path = AccessoryCandidates;
+			sourceTree = "<group>";
+		};
 		DC601E082405DC9600FE7659 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC2B8DA524DC79B600F159AC /* HomeKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DCA8654323972DE700E319C0 /* Hardware Drivers */ = {
-			isa = PBXGroup;
-			children = (
-				DCD50B182397146400C0CED4 /* MilightDriver.swift */,
-				DCD50B1A2397152100C0CED4 /* ModbusDriver.swift */,
-				DCD50B1C2397161000C0CED4 /* SiriDriver.swift */,
-				DCD50B1E239716C100C0CED4 /* AppleScriptDriver.swift */,
-				DCD9181623B56F7300C81EB5 /* YASDIDriver.swift */,
-				DC290B72240F155400DBBC6A /* TizenDriver.swift */,
-			);
-			path = "Hardware Drivers";
 			sourceTree = "<group>";
 		};
 		DCB5F6182354ED7D005F610F /* Artwork */ = {
@@ -312,18 +373,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCD9181723B56F7300C81EB5 /* YASDIDriver.swift in Sources */,
-				DCD50B192397146400C0CED4 /* MilightDriver.swift in Sources */,
-				DC290B73240F155400DBBC6A /* TizenDriver.swift in Sources */,
+				DC00174124DEEC0A0045A3F8 /* Modbus6Delegate.swift in Sources */,
+				DC197CA624D9A67F00C07E90 /* YASDIDriver.swift in Sources */,
+				DC197CAC24D9A74300C07E90 /* MilightDelegate.swift in Sources */,
 				DCFCB79B2381AFEB0066E00B /* Bridge.swift in Sources */,
 				DCD9182323B5715000C81EB5 /* PowerInverter.swift in Sources */,
+				DC00173D24DEEB4B0045A3F8 /* Modbus4Delegate.swift in Sources */,
+				DC197CAD24D9A74300C07E90 /* ModbusDelegate.swift in Sources */,
 				DC9672FD2376050100917D1B /* HomeKitConfiguration.swift in Sources */,
+				DC197CA924D9A67F00C07E90 /* AppleScriptDriver.swift in Sources */,
+				DC197CA724D9A67F00C07E90 /* SiriDriver.swift in Sources */,
 				DC3188CB23B9505400E895C3 /* CustomAccessories.swift in Sources */,
+				DC00173F24DEEBF80045A3F8 /* Modbus5Delegate.swift in Sources */,
+				DC197CAF24D9A75E00C07E90 /* AccessoryDelegate.swift in Sources */,
+				DC00174324DEEC210045A3F8 /* Modbus0Delegate.swift in Sources */,
 				DCFDA85423B69D7F0079F733 /* ContentView.swift in Sources */,
-				DCD50B1B2397152100C0CED4 /* ModbusDriver.swift in Sources */,
-				DCD50B1F239716C100C0CED4 /* AppleScriptDriver.swift in Sources */,
+				DC5A4C2424D9A952001CF95B /* TizenDelegate.swift in Sources */,
 				DC06CD252354E42A00C8E9F9 /* AppDelegate.swift in Sources */,
-				DCD50B1D2397161000C0CED4 /* SiriDriver.swift in Sources */,
 				DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

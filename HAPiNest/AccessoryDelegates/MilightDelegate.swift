@@ -1,5 +1,5 @@
 //
-//  MilightDriver.swift
+//  MilightDelegate.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 03/12/2019.
@@ -30,8 +30,6 @@ extension MilightDriver:AccessoryDelegate{
                 zone = MilightZone.zone01
             case "UFO":
                 zone = MilightZone.zone02
-            case "W.C.":
-                zone = MilightZone.zone03
             default:
                 JVDebugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
             }

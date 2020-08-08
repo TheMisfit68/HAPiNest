@@ -1,11 +1,10 @@
-# *ToDo for HAPiNest
+# ToDo for HAPiNest
 ## A personal Home Automation System
 
 - [ ] Complete driver for Tizen TV
 - [ ] Complete driver for Nissan Leaf
 
 - [ ] Add driver for IP Cams
-- [ ] Consider a seperate bridge for each individual driver 
 
 ## Longterm
 - [ ] Implement IFTTT-webhooks
@@ -20,3 +19,8 @@
 - [ ] Implement rerences trough Swiftui scenes
 - [ ] Use gauges in SwiftUI to represent al kinds of numeric data
 
+
+
+Testen Puls
+Testen Ingangen
+Bestellen Relais' allemaal NO

@@ -11,7 +11,7 @@ import JVCocoa
 import YASDIDriver
 
 struct ContentView: View {
-    @State var showResetPairingsButton = HomeKitServer.shared.bridge.isPaired
+    @State var showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
     @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
     let updateTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
     
@@ -29,7 +29,7 @@ struct ContentView: View {
         }
         .padding(20)
         .onReceive(updateTimer) { _ in
-            self.showResetPairingsButton = HomeKitServer.shared.bridge.isPaired
+            self.showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
             print("\(self.showResetPairingsButton)")
             self.inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
         }
@@ -58,13 +58,13 @@ extension ContentView {
         @Binding var showResetPairingsButton: Bool
         var body: some View {
             VStack {
-                Image(nsImage:HomeKitServer.shared.bridge.setupQRCode.asNSImage!)
+                Image(nsImage:HomeKitServer.shared.mainBridge.setupQRCode.asNSImage!)
                 Text("Scan the code above using your iPhone to pair it with the")
                 Text(bridgeName).bold().font(.system(size: 18))
                 Text("(or enter setupcode \(bridgeSetupCode))")
                 if showResetPairingsButton {
                     Button(action: {
-                        HomeKitServer.shared.resetPairingInfo()
+                        HomeKitServer.shared.mainBridge.resetPairingInfo()
                         self.showResetPairingsButton = false
                     }) {Text("Reset all pairings")}
                 }

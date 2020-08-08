@@ -8,8 +8,8 @@
 
 import Foundation
 import HAP
-import TizenDriver
 import JVCocoa
+import TizenDriver
 
 extension TizenDriver:AccessoryDelegate{
     
