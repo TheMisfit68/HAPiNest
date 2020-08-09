@@ -20,7 +20,3 @@
 - [ ] Use gauges in SwiftUI to represent al kinds of numeric data
 
 
-
-Testen Puls
-Testen Ingangen
-Bestellen Relais' allemaal NO

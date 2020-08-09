@@ -25,15 +25,15 @@ extension ModbusDriver:AccessoryDelegate{
 
         if let accessoryName = accessory.info.name.value{
             if self === HomeKitServer.shared.modBusDriver0 {
-                handleModule0(accessoryName: accessoryName, characteristic:characteristic as! GenericCharacteristic<Float>)
+                handleModule0(accessoryName: accessoryName, characteristic:characteristic)
             }else if self === HomeKitServer.shared.modBusDriver4 {
-                handleModule4(accessoryName: accessoryName, characteristic:characteristic as! GenericCharacteristic<Bool>)
+                handleModule4(accessoryName: accessoryName, characteristic:characteristic)
             }
             else if self === HomeKitServer.shared.modBusDriver5 {
-                handleModule5(accessoryName: accessoryName, characteristic:characteristic as! GenericCharacteristic<Bool>)
+                handleModule5(accessoryName: accessoryName, characteristic:characteristic)
             }
             else if self === HomeKitServer.shared.modBusDriver6 {
-                handleModule6(accessoryName: accessoryName, characteristic:characteristic as! GenericCharacteristic<Bool>)
+                handleModule6(accessoryName: accessoryName, characteristic:characteristic)
             }
         }
         

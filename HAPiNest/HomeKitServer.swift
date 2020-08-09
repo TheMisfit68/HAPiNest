@@ -44,9 +44,9 @@ public class HomeKitServer:Singleton{
     let modBusDriver0 = ioLogicE1241(ipAddress: "192.168.0.150").modbusDriver
     let modBusDriver1 = ioLogicE1210(ipAddress: "192.168.0.151").modbusDriver
     let modBusDriver2 = ioLogicE1210(ipAddress: "192.168.0.152").modbusDriver
-    let modBusDriver3 = ioLogicE1210(ipAddress: "127.0.0.1").modbusDriver
+    let modBusDriver3 = ioLogicE1210(ipAddress: "127.0.0.1",port: 1502).modbusDriver
     let modBusDriver4 = ioLogicE1211(ipAddress: "192.168.0.154").modbusDriver
-    let modBusDriver5 = ioLogicE1211(ipAddress: "127.0.0.1").modbusDriver
+    let modBusDriver5 = ioLogicE1211(ipAddress: "127.0.0.1",port: 1502).modbusDriver
     let modBusDriver6 = ioLogicE1211(ipAddress: "192.168.0.156").modbusDriver
     
     let yasdiDriver = YASDIDriver.InstallDrivers().first

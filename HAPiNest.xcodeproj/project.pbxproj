@@ -82,6 +82,7 @@
 		DC3C2E1024A2A90900A824B3 /* AppleScriptDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppleScriptDriver; path = ../Drivers/AppleScriptDriver; sourceTree = "<group>"; };
 		DC53018A23B7CC7300982C43 /* homekit-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homekit-180.png"; sourceTree = "<group>"; };
 		DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenDelegate.swift; sourceTree = "<group>"; };
+		DC69FA1B24E0741100506AA7 /* ToDo domotica.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ToDo domotica.md"; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC6F65A0242C0E8F0045B716 /* LeafDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LeafDriver; path = ../Drivers/LeafDriver; sourceTree = "<group>"; };
 		DC72B697245F740300D8045E /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		DC06CD182354E42A00C8E9F9 = {
 			isa = PBXGroup;
 			children = (
+				DC69FA1B24E0741100506AA7 /* ToDo domotica.md */,
 				DC6E461523B75BF8006A3E61 /* ToDo.md */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
