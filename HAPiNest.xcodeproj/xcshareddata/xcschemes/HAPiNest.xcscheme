@@ -40,8 +40,57 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "NO">
+      shouldUseLaunchSchemeArgsEnv = "NO"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DC06CD202354E42A00C8E9F9"
+            BuildableName = "HAPiNest.app"
+            BlueprintName = "HAPiNest"
+            ReferencedContainer = "container:HAPiNest.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "LeafDriver"
+            BuildableName = "LeafDriver"
+            BlueprintName = "LeafDriver"
+            ReferencedContainer = "container:../Drivers/LeafDriver">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "YASDIDriver"
+            BuildableName = "YASDIDriver"
+            BlueprintName = "YASDIDriver"
+            ReferencedContainer = "container:../Drivers/YASDIDriver">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "ModbusDriver"
+            BuildableName = "ModbusDriver"
+            BlueprintName = "ModbusDriver"
+            ReferencedContainer = "container:../Drivers/ModbusDriver">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "MilightDriver"
+            BuildableName = "MilightDriver"
+            BlueprintName = "MilightDriver"
+            ReferencedContainer = "container:../Drivers/MilightDriver">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DC7CFA9A24E34D1100181309"
+               BuildableName = "HAPiNestTests.xctest"
+               BlueprintName = "HAPiNestTests"
+               ReferencedContainer = "container:HAPiNest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

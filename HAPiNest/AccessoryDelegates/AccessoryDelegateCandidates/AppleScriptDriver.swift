@@ -1,5 +1,5 @@
 //
-//  SiriDriver.swift
+//  AppleScriptDriver.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 03/12/2019.
@@ -8,9 +8,10 @@
 
 import Foundation
 import HAP
-import SiriDriver
+import JVCocoa
+import AppleScriptDriver
 
-extension SiriDriver:AccessoryDelegate{
+extension AppleScriptDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(
         
@@ -19,6 +20,8 @@ extension SiriDriver:AccessoryDelegate{
         _ characteristic: GenericCharacteristic<T>,
         _ value:T?
     ){
-        print("Not handling Characteristic changes for \(String(describing: self)) yet!")
+        let accessoryName = accessory.info.name.value!
+
+        JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
     }
 }

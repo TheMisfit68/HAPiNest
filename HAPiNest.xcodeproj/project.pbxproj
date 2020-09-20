@@ -22,22 +22,42 @@
 		DC197CA724D9A67F00C07E90 /* SiriDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CA124D9A67F00C07E90 /* SiriDriver.swift */; };
 		DC197CA924D9A67F00C07E90 /* AppleScriptDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */; };
 		DC197CAC24D9A74300C07E90 /* MilightDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CAA24D9A74300C07E90 /* MilightDelegate.swift */; };
-		DC197CAD24D9A74300C07E90 /* ModbusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CAB24D9A74300C07E90 /* ModbusDelegate.swift */; };
+		DC197CAD24D9A74300C07E90 /* PLCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CAB24D9A74300C07E90 /* PLCDelegate.swift */; };
 		DC197CAF24D9A75E00C07E90 /* AccessoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CAE24D9A75E00C07E90 /* AccessoryDelegate.swift */; };
+		DC23DF8A24E7322300DD8371 /* LeafDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF8924E7322300DD8371 /* LeafDriver.swift */; };
+		DC23DF8D24E73F8600DD8371 /* DimmableLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */; };
+		DC23DF8F24E73FB900DD8371 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF8E24E73FB900DD8371 /* Light.swift */; };
+		DC23DF9124E73FE300DD8371 /* WindowCovering.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9024E73FE300DD8371 /* WindowCovering.swift */; };
+		DC23DF9324E7400D00DD8371 /* Outlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9224E7400D00DD8371 /* Outlet.swift */; };
+		DC23DF9524E7499A00DD8371 /* PLCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */; };
+		DC23DF9924E7D26100DD8371 /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DC23DF9824E7D26100DD8371 /* SoftPLC */; };
 		DC3188CB23B9505400E895C3 /* CustomAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3188CA23B9505400E895C3 /* CustomAccessories.swift */; };
 		DC5A4C2424D9A952001CF95B /* TizenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */; };
-		DC68044D2395A605006808A3 /* ModbusDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC68044C2395A605006808A3 /* ModbusDriver */; };
 		DC6BC8CC2390466800BD9445 /* AppleScriptDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6BC8CB2390466800BD9445 /* AppleScriptDriver */; };
 		DC6BC8CF2390480500BD9445 /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6BC8CE2390480500BD9445 /* SiriDriver */; };
 		DC6F65A2242C11840045B716 /* LeafDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6F65A1242C11840045B716 /* LeafDriver */; };
-		DC9672FD2376050100917D1B /* HomeKitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9672FC2376050100917D1B /* HomeKitConfiguration.swift */; };
+		DC7CFA9E24E34D1100181309 /* HAPiNestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CFA9D24E34D1100181309 /* HAPiNestTests.swift */; };
+		DC9672FD2376050100917D1B /* MainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9672FC2376050100917D1B /* MainConfiguration.swift */; };
+		DC9EFF2124F312F0001B70EE /* GaragePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EFF2024F312F0001B70EE /* GaragePort.swift */; };
+		DC9EFF2324F3131F001B70EE /* DoorLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EFF2224F3131F001B70EE /* DoorLock.swift */; };
 		DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
 		DCCDC11C24A2AFD7007BB403 /* TizenDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCCDC11B24A2AFD7007BB403 /* TizenDriver */; };
 		DCD9182323B5715000C81EB5 /* PowerInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD9182223B5715000C81EB5 /* PowerInverter.swift */; };
 		DCE471C72390386B0059036D /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCE471C62390386B0059036D /* MilightDriver */; };
 		DCFCB79B2381AFEB0066E00B /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB79A2381AFEB0066E00B /* Bridge.swift */; };
+		DCFD428E24FAB5A8000320E0 /* HomekitControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD428D24FAB5A8000320E0 /* HomekitControllable.swift */; };
 		DCFDA85423B69D7F0079F733 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDA85323B69D7E0079F733 /* ContentView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC7CFAA024E34D1100181309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC06CD192354E42A00C8E9F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC06CD202354E42A00C8E9F9;
+			remoteInfo = HAPiNest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DC601E0B2405DD4100FE7659 /* CopyFiles */ = {
@@ -67,9 +87,17 @@
 		DC197CA124D9A67F00C07E90 /* SiriDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiriDriver.swift; sourceTree = "<group>"; };
 		DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScriptDriver.swift; sourceTree = "<group>"; };
 		DC197CAA24D9A74300C07E90 /* MilightDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilightDelegate.swift; sourceTree = "<group>"; };
-		DC197CAB24D9A74300C07E90 /* ModbusDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModbusDelegate.swift; sourceTree = "<group>"; };
+		DC197CAB24D9A74300C07E90 /* PLCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLCDelegate.swift; sourceTree = "<group>"; };
 		DC197CAE24D9A75E00C07E90 /* AccessoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryDelegate.swift; sourceTree = "<group>"; };
 		DC218A182409A63700494074 /* TizenDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TizenDriver; path = ../Drivers/TizenDriver; sourceTree = "<group>"; };
+		DC23DF8924E7322300DD8371 /* LeafDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafDriver.swift; sourceTree = "<group>"; };
+		DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmableLight.swift; sourceTree = "<group>"; };
+		DC23DF8E24E73FB900DD8371 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		DC23DF9024E73FE300DD8371 /* WindowCovering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCovering.swift; sourceTree = "<group>"; };
+		DC23DF9224E7400D00DD8371 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
+		DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLCConfiguration.swift; sourceTree = "<group>"; };
+		DC23DF9A24E835E500DD8371 /* SoftPLC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SoftPLC; path = ../SoftPLC; sourceTree = "<group>"; };
+		DC23DF9B24E8379500DD8371 /* ModbusDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ModbusDriver; path = ../Drivers/ModbusDriver; sourceTree = "<group>"; };
 		DC2B8D8624DC799E00F159AC /* HomekitConfiguratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitConfiguratorApp.swift; sourceTree = "<group>"; };
 		DC2B8D8724DC799E00F159AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC2B8D8824DC799F00F159AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,16 +114,21 @@
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC6F65A0242C0E8F0045B716 /* LeafDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LeafDriver; path = ../Drivers/LeafDriver; sourceTree = "<group>"; };
 		DC72B697245F740300D8045E /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
-		DC9672FC2376050100917D1B /* HomeKitConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitConfiguration.swift; sourceTree = "<group>"; };
+		DC7CFA9B24E34D1100181309 /* HAPiNestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAPiNestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7CFA9D24E34D1100181309 /* HAPiNestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPiNestTests.swift; sourceTree = "<group>"; };
+		DC7CFA9F24E34D1100181309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9672FC2376050100917D1B /* MainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguration.swift; sourceTree = "<group>"; };
 		DC9BF36D2403255E00B9159F /* YASDIDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YASDIDriver; path = ../Drivers/YASDIDriver; sourceTree = "<group>"; };
+		DC9EFF2024F312F0001B70EE /* GaragePort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePort.swift; sourceTree = "<group>"; };
+		DC9EFF2224F3131F001B70EE /* DoorLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLock.swift; sourceTree = "<group>"; };
 		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
 		DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "HAP-Specification-Non-Commercial-Version.pdf"; sourceTree = "<group>"; };
 		DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
 		DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeKitLogo.png; sourceTree = "<group>"; };
 		DCD9182223B5715000C81EB5 /* PowerInverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerInverter.swift; sourceTree = "<group>"; };
 		DCDAF5AD24586D2600C279D9 /* SiriDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SiriDriver; path = ../Drivers/SiriDriver; sourceTree = "<group>"; };
-		DCF7A41C24A29A1A007BDC38 /* ModbusDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ModbusDriver; path = ../Drivers/ModbusDriver; sourceTree = "<group>"; };
 		DCFCB79A2381AFEB0066E00B /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		DCFD428D24FAB5A8000320E0 /* HomekitControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControllable.swift; sourceTree = "<group>"; };
 		DCFDA85323B69D7E0079F733 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,8 +137,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC68044D2395A605006808A3 /* ModbusDriver in Frameworks */,
 				DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */,
+				DC23DF9924E7D26100DD8371 /* SoftPLC in Frameworks */,
 				DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */,
 				DC0F906F23F7F19C005567A9 /* YASDIDriver in Frameworks */,
 				DCCDC11C24A2AFD7007BB403 /* TizenDriver in Frameworks */,
@@ -113,6 +146,13 @@
 				DC6F65A2242C11840045B716 /* LeafDriver in Frameworks */,
 				DC6BC8CF2390480500BD9445 /* SiriDriver in Frameworks */,
 				DC6BC8CC2390466800BD9445 /* AppleScriptDriver in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7CFA9824E34D1100181309 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,11 +170,13 @@
 				DC2B8D8524DC799E00F159AC /* Shared */,
 				DC2B8D8E24DC799F00F159AC /* iOS */,
 				DC2B8D9524DC799F00F159AC /* macOS */,
+				DC7CFA9C24E34D1100181309 /* HAPiNestTests */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 				DC601E082405DC9600FE7659 /* Frameworks */,
+				DC23DF9A24E835E500DD8371 /* SoftPLC */,
+				DC23DF9B24E8379500DD8371 /* ModbusDriver */,
 				DC3C2E1024A2A90900A824B3 /* AppleScriptDriver */,
 				DC3C2E0F24A2A8F400A824B3 /* MilightDriver */,
-				DCF7A41C24A29A1A007BDC38 /* ModbusDriver */,
 				DC6F65A0242C0E8F0045B716 /* LeafDriver */,
 				DCDAF5AD24586D2600C279D9 /* SiriDriver */,
 				DC218A182409A63700494074 /* TizenDriver */,
@@ -147,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				DC06CD212354E42A00C8E9F9 /* HAPiNest.app */,
+				DC7CFA9B24E34D1100181309 /* HAPiNestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,14 +197,15 @@
 		DC06CD232354E42A00C8E9F9 /* HAPiNest */ = {
 			isa = PBXGroup;
 			children = (
-				DC9672FC2376050100917D1B /* HomeKitConfiguration.swift */,
+				DC9672FC2376050100917D1B /* MainConfiguration.swift */,
+				DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */,
 				DC06CD242354E42A00C8E9F9 /* AppDelegate.swift */,
-				DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */,
 				DCFDA85323B69D7E0079F733 /* ContentView.swift */,
+				DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */,
 				DCFCB79A2381AFEB0066E00B /* Bridge.swift */,
 				DC197C9D24D9A67F00C07E90 /* AccessoryDelegates */,
-				DC5A4C2524D9A98B001CF95B /* AccessoryCandidates */,
 				DC4D0C8B23B8C95000A2077C /* Custom accessories */,
+				DC23DF8B24E73F5500DD8371 /* PLC Functionality */,
 				DC06CD282354E42B00C8E9F9 /* Assets.xcassets */,
 				DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */,
 				DC06CD302354E42B00C8E9F9 /* Info.plist */,
@@ -184,14 +228,37 @@
 			children = (
 				DC197CAE24D9A75E00C07E90 /* AccessoryDelegate.swift */,
 				DC197CAA24D9A74300C07E90 /* MilightDelegate.swift */,
-				DC197CAB24D9A74300C07E90 /* ModbusDelegate.swift */,
+				DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */,
+				DC197CAB24D9A74300C07E90 /* PLCDelegate.swift */,
+				DC5A4C2524D9A98B001CF95B /* AccessoryDelegateCandidates */,
+			);
+			path = AccessoryDelegates;
+			sourceTree = "<group>";
+		};
+		DC23DF8824E731AA00DD8371 /* PLCdeprecated */ = {
+			isa = PBXGroup;
+			children = (
 				DC00174224DEEC210045A3F8 /* Modbus0Delegate.swift */,
 				DC00173C24DEEB4B0045A3F8 /* Modbus4Delegate.swift */,
 				DC00173E24DEEBF80045A3F8 /* Modbus5Delegate.swift */,
 				DC00174024DEEC0A0045A3F8 /* Modbus6Delegate.swift */,
-				DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */,
 			);
-			path = AccessoryDelegates;
+			path = PLCdeprecated;
+			sourceTree = "<group>";
+		};
+		DC23DF8B24E73F5500DD8371 /* PLC Functionality */ = {
+			isa = PBXGroup;
+			children = (
+				DCFD428D24FAB5A8000320E0 /* HomekitControllable.swift */,
+				DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */,
+				DC23DF8E24E73FB900DD8371 /* Light.swift */,
+				DC23DF9024E73FE300DD8371 /* WindowCovering.swift */,
+				DC9EFF2024F312F0001B70EE /* GaragePort.swift */,
+				DC9EFF2224F3131F001B70EE /* DoorLock.swift */,
+				DC23DF9224E7400D00DD8371 /* Outlet.swift */,
+				DC23DF8824E731AA00DD8371 /* PLCdeprecated */,
+			);
+			path = "PLC Functionality";
 			sourceTree = "<group>";
 		};
 		DC2B8D8524DC799E00F159AC /* Shared */ = {
@@ -230,14 +297,15 @@
 			path = "Custom accessories";
 			sourceTree = "<group>";
 		};
-		DC5A4C2524D9A98B001CF95B /* AccessoryCandidates */ = {
+		DC5A4C2524D9A98B001CF95B /* AccessoryDelegateCandidates */ = {
 			isa = PBXGroup;
 			children = (
-				DC197CA024D9A67F00C07E90 /* YASDIDriver.swift */,
-				DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */,
 				DC197CA124D9A67F00C07E90 /* SiriDriver.swift */,
+				DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */,
+				DC23DF8924E7322300DD8371 /* LeafDriver.swift */,
+				DC197CA024D9A67F00C07E90 /* YASDIDriver.swift */,
 			);
-			path = AccessoryCandidates;
+			path = AccessoryDelegateCandidates;
 			sourceTree = "<group>";
 		};
 		DC601E082405DC9600FE7659 /* Frameworks */ = {
@@ -246,6 +314,15 @@
 				DC2B8DA524DC79B600F159AC /* HomeKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC7CFA9C24E34D1100181309 /* HAPiNestTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC7CFA9D24E34D1100181309 /* HAPiNestTests.swift */,
+				DC7CFA9F24E34D1100181309 /* Info.plist */,
+			);
+			path = HAPiNestTests;
 			sourceTree = "<group>";
 		};
 		DCB5F6182354ED7D005F610F /* Artwork */ = {
@@ -305,14 +382,32 @@
 				DCE471C62390386B0059036D /* MilightDriver */,
 				DC6BC8CB2390466800BD9445 /* AppleScriptDriver */,
 				DC6BC8CE2390480500BD9445 /* SiriDriver */,
-				DC68044C2395A605006808A3 /* ModbusDriver */,
 				DC0F906E23F7F19C005567A9 /* YASDIDriver */,
 				DC6F65A1242C11840045B716 /* LeafDriver */,
 				DCCDC11B24A2AFD7007BB403 /* TizenDriver */,
+				DC23DF9824E7D26100DD8371 /* SoftPLC */,
 			);
 			productName = HAPiNest;
 			productReference = DC06CD212354E42A00C8E9F9 /* HAPiNest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DC7CFA9A24E34D1100181309 /* HAPiNestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC7CFAA424E34D1100181309 /* Build configuration list for PBXNativeTarget "HAPiNestTests" */;
+			buildPhases = (
+				DC7CFA9724E34D1100181309 /* Sources */,
+				DC7CFA9824E34D1100181309 /* Frameworks */,
+				DC7CFA9924E34D1100181309 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC7CFAA124E34D1100181309 /* PBXTargetDependency */,
+			);
+			name = HAPiNestTests;
+			productName = HAPiNestTests;
+			productReference = DC7CFA9B24E34D1100181309 /* HAPiNestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -326,6 +421,10 @@
 				TargetAttributes = {
 					DC06CD202354E42A00C8E9F9 = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					DC7CFA9A24E34D1100181309 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = DC06CD202354E42A00C8E9F9;
 					};
 				};
 			};
@@ -344,15 +443,16 @@
 				DCE471C52390386B0059036D /* XCRemoteSwiftPackageReference "MilightDriver" */,
 				DC6BC8CA2390466800BD9445 /* XCRemoteSwiftPackageReference "AppleScriptDriver" */,
 				DC6BC8CD2390480500BD9445 /* XCRemoteSwiftPackageReference "SiriDriver" */,
-				DC68044B2395A605006808A3 /* XCRemoteSwiftPackageReference "ModbusDriver" */,
 				DC0F906D23F7F19C005567A9 /* XCRemoteSwiftPackageReference "YASDIDriver" */,
 				DC218A192409B27E00494074 /* XCRemoteSwiftPackageReference "TizenDriver" */,
+				DC23DF9724E7D26100DD8371 /* XCRemoteSwiftPackageReference "SoftPLC" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DC06CD202354E42A00C8E9F9 /* HAPiNest */,
+				DC7CFA9A24E34D1100181309 /* HAPiNestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +468,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC7CFA9924E34D1100181309 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -376,19 +483,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC00174124DEEC0A0045A3F8 /* Modbus6Delegate.swift in Sources */,
+				DC23DF8A24E7322300DD8371 /* LeafDriver.swift in Sources */,
 				DC197CA624D9A67F00C07E90 /* YASDIDriver.swift in Sources */,
+				DC23DF9124E73FE300DD8371 /* WindowCovering.swift in Sources */,
+				DCFD428E24FAB5A8000320E0 /* HomekitControllable.swift in Sources */,
 				DC197CAC24D9A74300C07E90 /* MilightDelegate.swift in Sources */,
 				DCFCB79B2381AFEB0066E00B /* Bridge.swift in Sources */,
+				DC23DF9524E7499A00DD8371 /* PLCConfiguration.swift in Sources */,
 				DCD9182323B5715000C81EB5 /* PowerInverter.swift in Sources */,
 				DC00173D24DEEB4B0045A3F8 /* Modbus4Delegate.swift in Sources */,
-				DC197CAD24D9A74300C07E90 /* ModbusDelegate.swift in Sources */,
-				DC9672FD2376050100917D1B /* HomeKitConfiguration.swift in Sources */,
+				DC197CAD24D9A74300C07E90 /* PLCDelegate.swift in Sources */,
+				DC9672FD2376050100917D1B /* MainConfiguration.swift in Sources */,
 				DC197CA924D9A67F00C07E90 /* AppleScriptDriver.swift in Sources */,
 				DC197CA724D9A67F00C07E90 /* SiriDriver.swift in Sources */,
 				DC3188CB23B9505400E895C3 /* CustomAccessories.swift in Sources */,
+				DC23DF9324E7400D00DD8371 /* Outlet.swift in Sources */,
 				DC00173F24DEEBF80045A3F8 /* Modbus5Delegate.swift in Sources */,
+				DC9EFF2324F3131F001B70EE /* DoorLock.swift in Sources */,
 				DC197CAF24D9A75E00C07E90 /* AccessoryDelegate.swift in Sources */,
+				DC23DF8F24E73FB900DD8371 /* Light.swift in Sources */,
+				DC9EFF2124F312F0001B70EE /* GaragePort.swift in Sources */,
 				DC00174324DEEC210045A3F8 /* Modbus0Delegate.swift in Sources */,
+				DC23DF8D24E73F8600DD8371 /* DimmableLight.swift in Sources */,
 				DCFDA85423B69D7F0079F733 /* ContentView.swift in Sources */,
 				DC5A4C2424D9A952001CF95B /* TizenDelegate.swift in Sources */,
 				DC06CD252354E42A00C8E9F9 /* AppDelegate.swift in Sources */,
@@ -396,7 +512,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC7CFA9724E34D1100181309 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC7CFA9E24E34D1100181309 /* HAPiNestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC7CFAA124E34D1100181309 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC06CD202354E42A00C8E9F9 /* HAPiNest */;
+			targetProxy = DC7CFAA024E34D1100181309 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */ = {
@@ -589,6 +721,51 @@
 			};
 			name = Release;
 		};
+		DC7CFAA224E34D1100181309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = HAPiNestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oneclick.be.HAPiNestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HAPiNest.app/Contents/MacOS/HAPiNest";
+			};
+			name = Debug;
+		};
+		DC7CFAA324E34D1100181309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				INFOPLIST_FILE = HAPiNestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oneclick.be.HAPiNestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HAPiNest.app/Contents/MacOS/HAPiNest";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -606,6 +783,15 @@
 			buildConfigurations = (
 				DC06CD352354E42B00C8E9F9 /* Debug */,
 				DC06CD362354E42B00C8E9F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC7CFAA424E34D1100181309 /* Build configuration list for PBXNativeTarget "HAPiNestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC7CFAA224E34D1100181309 /* Debug */,
+				DC7CFAA324E34D1100181309 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -645,9 +831,9 @@
 				kind = branch;
 			};
 		};
-		DC68044B2395A605006808A3 /* XCRemoteSwiftPackageReference "ModbusDriver" */ = {
+		DC23DF9724E7D26100DD8371 /* XCRemoteSwiftPackageReference "SoftPLC" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TheMisfit68/ModbusDriver.git";
+			repositoryURL = "https://github.com/TheMisfit68/SoftPLC.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -695,10 +881,10 @@
 			package = DC0F906D23F7F19C005567A9 /* XCRemoteSwiftPackageReference "YASDIDriver" */;
 			productName = YASDIDriver;
 		};
-		DC68044C2395A605006808A3 /* ModbusDriver */ = {
+		DC23DF9824E7D26100DD8371 /* SoftPLC */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC68044B2395A605006808A3 /* XCRemoteSwiftPackageReference "ModbusDriver" */;
-			productName = ModbusDriver;
+			package = DC23DF9724E7D26100DD8371 /* XCRemoteSwiftPackageReference "SoftPLC" */;
+			productName = SoftPLC;
 		};
 		DC6BC8CB2390466800BD9445 /* AppleScriptDriver */ = {
 			isa = XCSwiftPackageProductDependency;

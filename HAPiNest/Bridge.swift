@@ -15,7 +15,7 @@ import JVCocoa
 // Bridge is a just wrapper around it
 
 class Bridge:DeviceDelegate{
-        
+    
     public let device:Device
     
     public var setupCode: String {
@@ -28,7 +28,7 @@ class Bridge:DeviceDelegate{
         device.isPaired
     }
     
-   
+    
     
     private let serialNumber = "00001"
     private let configFile = FileStorage(filename: "configuration.json")
@@ -46,7 +46,7 @@ class Bridge:DeviceDelegate{
     }
     
     public func addDriver(_ driver:AccessoryDelegate, withAcccesories acccesories:[Accessory]){
-
+        
         device.addAccessories(acccesories)
         acccesories.forEach{ accessory in
             if let accessoryName = accessory.info.name.value{
@@ -57,7 +57,7 @@ class Bridge:DeviceDelegate{
     }
     
     // MARK: - Pairing Info
-
+    
     public func printPairingInstructions(){
         if isPaired {
             print()
@@ -78,46 +78,46 @@ class Bridge:DeviceDelegate{
         try? configFile.write(Data())
     }
     
-  
+    
     
     
     // MARK: - DeviceDelegate functions
-
+    
     func characteristic<T>(_ characteristic: GenericCharacteristic<T>,
                            ofService service: Service,
                            ofAccessory accessory: Accessory,
                            didChangeValue newValue: T?) {
-        JVDebugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
-                                + "in service \(service.type) "
-                                + "of accessory \(accessory.info.name.value ?? "") "
-                                + "did change: \(String(describing: newValue))")
+        let accessoryName = accessory.info.name.value ?? ""
+        let characteristicName = characteristic.description ?? ""
+        let valueString = newValue != nil ? "\(newValue!)" : "nil"
+        JVDebugger.shared.log(debugLevel: .Info, "Accessory \(accessoryName): Characteristic '\(characteristicName)' did change to \(valueString)")
         
-        if let accessoryName = accessory.info.name.value{
-            accessorryDelegates[accessoryName]?.handleCharacteristicChange(accessory, service, characteristic, newValue)
+        if let accessoryDelegate = accessorryDelegates[accessoryName]{
+            accessoryDelegate.handleCharacteristicChange(accessory, service, characteristic, newValue)
         }
     }
     
     func didRequestIdentificationOf(_ accessory: Accessory) {
-        JVDebugger.shared.log(debugLevel: .Info,"Requested identification "
-                                + "of accessory \(String(describing: accessory.info.name.value ?? ""))")
+//        JVDebugger.shared.log(debugLevel: .Info,"Requested identification "
+//                                + "of accessory \(String(describing: accessory.info.name.value ?? ""))")
     }
     
     func characteristicListenerDidSubscribe(_ accessory: Accessory,
                                             service: Service,
                                             characteristic: AnyCharacteristic) {
-        JVDebugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
-                                + "in service \(service.type) "
-                                + "of accessory \(accessory.info.name.value ?? "") "
-                                + "got a subscriber")
+//        JVDebugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
+//                                + "in service \(service.type) "
+//                                + "of accessory \(accessory.info.name.value ?? "") "
+//                                + "got a subscriber")
     }
     
     func characteristicListenerDidUnsubscribe(_ accessory: Accessory,
                                               service: Service,
                                               characteristic: AnyCharacteristic) {
-        JVDebugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
-                                + "in service \(service.type) "
-                                + "of accessory \(accessory.info.name.value ?? "") "
-                                + "lost a subscriber")
+//        JVDebugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
+//                                + "in service \(service.type) "
+//                                + "of accessory \(accessory.info.name.value ?? "") "
+//                                + "lost a subscriber")
     }
     
     func didChangePairingState(from: PairingState, to: PairingState) {

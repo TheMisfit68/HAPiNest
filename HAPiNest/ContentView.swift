@@ -30,7 +30,6 @@ struct ContentView: View {
         .padding(20)
         .onReceive(updateTimer) { _ in
             self.showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
-            print("\(self.showResetPairingsButton)")
             self.inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
         }
     }
@@ -60,8 +59,8 @@ extension ContentView {
             VStack {
                 Image(nsImage:HomeKitServer.shared.mainBridge.setupQRCode.asNSImage!)
                 Text("Scan the code above using your iPhone to pair it with the")
-                Text(bridgeName).bold().font(.system(size: 18))
-                Text("(or enter setupcode \(bridgeSetupCode))")
+                Text(MainConfiguration.HomeKit.BridgeName).bold().font(.system(size: 18))
+                Text("(or enter setupcode \(MainConfiguration.HomeKit.BridgeSetupCode))")
                 if showResetPairingsButton {
                     Button(action: {
                         HomeKitServer.shared.mainBridge.resetPairingInfo()

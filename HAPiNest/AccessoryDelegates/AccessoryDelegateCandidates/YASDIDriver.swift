@@ -8,6 +8,7 @@
 
 import Foundation
 import HAP
+import JVCocoa
 import YASDIDriver
 
 extension YASDIDriver:AccessoryDelegate{
@@ -19,6 +20,8 @@ extension YASDIDriver:AccessoryDelegate{
         _ characteristic: GenericCharacteristic<T>,
         _ value:T?
     ){
-        print("Not handling Characteristic changes for \(String(describing: self)) yet!")
+        let accessoryName = accessory.info.name.value!
+
+        JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
     }
 }

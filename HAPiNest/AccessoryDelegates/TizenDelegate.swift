@@ -20,36 +20,47 @@ extension TizenDriver:AccessoryDelegate{
         _ characteristic: GenericCharacteristic<T>,
         _ value:T?
     ){
-        if let accessoryName = accessory.info.name.value{
+        let accessoryName = accessory.info.name.value!
+        
+        // Handle Characteristic change depending on its type
+        switch characteristic.type{
+        case CharacteristicType.active:
             
-            // Define additional addressing based on the accessoryname
-            switch accessoryName {
-            case "T.V.":
-                if characteristic is HAP.GenericCharacteristic<HAP.Enums.Active>{
-                    let status = value as! HAP.Enums.Active
-                    switch status{
-                    case .active:
-                        self.powerState = .poweringUp
-                    case .inactive:
-                        self.powerState = .poweringDown
-                    }
-                }
-                
-                if characteristic is HAP.GenericCharacteristic<Swift.UInt32>{
-                    let channelNumber = value as! UInt32
-                    switch channelNumber {
-                    default:
-                        if let keyCommand = TizenCommand(rawValue:"KEY_\(channelNumber)"){
-                            queue(commands:[keyCommand])
-                        }
-                    }
-                }
-            case "T.V. boven":
-                break
-            default:
-                JVDebugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
+            let status = value as! Enums.Active
+            switch status{
+            case .active:
+                self.powerState = .poweringUp
+            case .inactive:
+                self.powerState = .poweringDown
             }
             
+            
+        case CharacteristicType.activeIdentifier:
+            
+            // Use 'InputSource'-selector to switch channels instead
+            let channelNumber = value as! UInt32
+            switch channelNumber {
+//            case 11:
+//                // NetFlix
+//                let appCommand = TizenCommand(rawValue:"KEY_HDMI")!
+//
+//                
+//            case 12:
+//                // YouTube
+//                let appCommand = TizenCommand(rawValue:"KEY_HDMI")!
+
+            default:
+                if let keyCommand = TizenCommand(rawValue:"KEY_\(channelNumber)"){
+                    
+                    let hdmiSourceCommand = TizenCommand(rawValue:"KEY_HDMI")!
+                    queue(commands:[hdmiSourceCommand, keyCommand])
+                }
+            }
+            
+        default:
+            JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+            
         }
+        
     }
 }

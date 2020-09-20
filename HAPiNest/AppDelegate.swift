@@ -10,16 +10,30 @@ import Cocoa
 import SwiftUI
 import JVCocoa
 import HAP
+import SoftPLC
+import ModbusDriver
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var window: NSWindow!
     
+    var homekitServer:HomeKitServer! = nil
+    var plc:SoftPLC! = nil
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        HomeKitServer.shared.mainBridge = Bridge(name:bridgeName, setupCode:bridgeSetupCode)
-        HomeKitServer.shared.addAccessories()
+        plc = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList)
+        plc.plcObjects = MainConfiguration.PLC.PLCobjects
+        plc.run()
+        
+        homekitServer = HomeKitServer.shared
+        homekitServer.mainBridge = Bridge(
+            name:MainConfiguration.HomeKit.BridgeName,
+            setupCode:MainConfiguration.HomeKit.BridgeSetupCode
+        )
+        MainConfiguration.HomeKit.AddAccessories()
+        
         
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
