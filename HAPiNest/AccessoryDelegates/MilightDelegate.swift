@@ -10,7 +10,9 @@ import Foundation
 import HAP
 import JVCocoa
 import MilightDriver
+import os.log
 
+@available(OSX 11.0, *)
 extension MilightDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(
@@ -31,7 +33,7 @@ extension MilightDriver:AccessoryDelegate{
             case "UFO":
                 return MilightZone.zone02
             default:
-                JVDebugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
+                Debugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
                 return nil
             }
         }
@@ -57,12 +59,12 @@ extension MilightDriver:AccessoryDelegate{
                 if (saturation > 0){
                     executeCommand(mode: .rgbwwcw, action: .hue, value: saturation, zone: zone)
                 }else{
-                    JVDebugger.shared.log(debugLevel: .Info, "Switching to dedicated whitemode a.k.a cold white)")
+                    Debugger.shared.log(debugLevel:.Native(logType:.info), "Switching to dedicated whitemode a.k.a cold white)")
                     executeCommand(mode: .rgbwwcw, action: .temperature, value:100,  zone: zone)
                 }
                 
             default:
-                JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+                Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
             }
         }
     }

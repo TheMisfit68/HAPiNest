@@ -10,6 +10,7 @@ import SwiftUI
 import JVCocoa
 import YASDIDriver
 
+@available(OSX 11.0, *)
 struct ContentView: View {
     @State var showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
     @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
@@ -35,6 +36,7 @@ struct ContentView: View {
     }
 }
 
+@available(OSX 11.0, *)
 extension ContentView {
     
     struct HapinestIconView: View {

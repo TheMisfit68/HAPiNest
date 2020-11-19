@@ -15,8 +15,8 @@
 		DC06CD292354E42B00C8E9F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD282354E42B00C8E9F9 /* Assets.xcassets */; };
 		DC06CD2C2354E42B00C8E9F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD2B2354E42B00C8E9F9 /* Preview Assets.xcassets */; };
 		DC06CD2F2354E42B00C8E9F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */; };
-		DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD3D2354E61600C8E9F9 /* JVCocoa */; };
 		DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC06CD462354E72F00C8E9F9 /* HAP */; };
+		DC089BCF253E578900057C65 /* OpenWeatherReporter in Frameworks */ = {isa = PBXBuildFile; productRef = DC089BCE253E578900057C65 /* OpenWeatherReporter */; };
 		DC0F906F23F7F19C005567A9 /* YASDIDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC0F906E23F7F19C005567A9 /* YASDIDriver */; };
 		DC197CA624D9A67F00C07E90 /* YASDIDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CA024D9A67F00C07E90 /* YASDIDriver.swift */; };
 		DC197CA724D9A67F00C07E90 /* SiriDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CA124D9A67F00C07E90 /* SiriDriver.swift */; };
@@ -38,6 +38,7 @@
 		DC6F65A2242C11840045B716 /* LeafDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC6F65A1242C11840045B716 /* LeafDriver */; };
 		DC7CFA9E24E34D1100181309 /* HAPiNestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CFA9D24E34D1100181309 /* HAPiNestTests.swift */; };
 		DC9672FD2376050100917D1B /* MainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9672FC2376050100917D1B /* MainConfiguration.swift */; };
+		DC9A4940253F97820041DF0B /* SmartSprinklerDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */; };
 		DC9EFF2124F312F0001B70EE /* GaragePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EFF2024F312F0001B70EE /* GaragePort.swift */; };
 		DC9EFF2324F3131F001B70EE /* DoorLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EFF2224F3131F001B70EE /* DoorLock.swift */; };
 		DCCBA6FD23755BB0002F6854 /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
@@ -106,11 +107,12 @@
 		DC2B8D9724DC799F00F159AC /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		DC2B8DA524DC79B600F159AC /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
 		DC3188CA23B9505400E895C3 /* CustomAccessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAccessories.swift; sourceTree = "<group>"; };
+		DC39A15D253E3FB400839AAD /* OpenWeatherReporter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OpenWeatherReporter; path = ../OpenWeatherReporter; sourceTree = "<group>"; };
 		DC3C2E0F24A2A8F400A824B3 /* MilightDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MilightDriver; path = ../Drivers/MilightDriver; sourceTree = "<group>"; };
 		DC3C2E1024A2A90900A824B3 /* AppleScriptDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppleScriptDriver; path = ../Drivers/AppleScriptDriver; sourceTree = "<group>"; };
 		DC53018A23B7CC7300982C43 /* homekit-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homekit-180.png"; sourceTree = "<group>"; };
 		DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenDelegate.swift; sourceTree = "<group>"; };
-		DC69FA1B24E0741100506AA7 /* ToDo domotica.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ToDo domotica.md"; sourceTree = "<group>"; };
+		DC69FA1B24E0741100506AA7 /* ToDo domotica shortterm.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ToDo domotica shortterm.md"; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC6F65A0242C0E8F0045B716 /* LeafDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LeafDriver; path = ../Drivers/LeafDriver; sourceTree = "<group>"; };
 		DC72B697245F740300D8045E /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		DC7CFA9D24E34D1100181309 /* HAPiNestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPiNestTests.swift; sourceTree = "<group>"; };
 		DC7CFA9F24E34D1100181309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC9672FC2376050100917D1B /* MainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguration.swift; sourceTree = "<group>"; };
+		DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerDriver.swift; sourceTree = "<group>"; };
 		DC9BF36D2403255E00B9159F /* YASDIDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YASDIDriver; path = ../Drivers/YASDIDriver; sourceTree = "<group>"; };
 		DC9EFF2024F312F0001B70EE /* GaragePort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePort.swift; sourceTree = "<group>"; };
 		DC9EFF2224F3131F001B70EE /* DoorLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLock.swift; sourceTree = "<group>"; };
@@ -137,9 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC089BCF253E578900057C65 /* OpenWeatherReporter in Frameworks */,
 				DC06CD472354E72F00C8E9F9 /* HAP in Frameworks */,
 				DC23DF9924E7D26100DD8371 /* SoftPLC in Frameworks */,
-				DC06CD3E2354E61600C8E9F9 /* JVCocoa in Frameworks */,
 				DC0F906F23F7F19C005567A9 /* YASDIDriver in Frameworks */,
 				DCCDC11C24A2AFD7007BB403 /* TizenDriver in Frameworks */,
 				DCE471C72390386B0059036D /* MilightDriver in Frameworks */,
@@ -162,7 +165,7 @@
 		DC06CD182354E42A00C8E9F9 = {
 			isa = PBXGroup;
 			children = (
-				DC69FA1B24E0741100506AA7 /* ToDo domotica.md */,
+				DC69FA1B24E0741100506AA7 /* ToDo domotica shortterm.md */,
 				DC6E461523B75BF8006A3E61 /* ToDo.md */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
@@ -175,6 +178,7 @@
 				DC601E082405DC9600FE7659 /* Frameworks */,
 				DC23DF9A24E835E500DD8371 /* SoftPLC */,
 				DC23DF9B24E8379500DD8371 /* ModbusDriver */,
+				DC39A15D253E3FB400839AAD /* OpenWeatherReporter */,
 				DC3C2E1024A2A90900A824B3 /* AppleScriptDriver */,
 				DC3C2E0F24A2A8F400A824B3 /* MilightDriver */,
 				DC6F65A0242C0E8F0045B716 /* LeafDriver */,
@@ -204,8 +208,8 @@
 				DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */,
 				DCFCB79A2381AFEB0066E00B /* Bridge.swift */,
 				DC197C9D24D9A67F00C07E90 /* AccessoryDelegates */,
-				DC4D0C8B23B8C95000A2077C /* Custom accessories */,
 				DC23DF8B24E73F5500DD8371 /* PLC Functionality */,
+				DC4D0C8B23B8C95000A2077C /* Custom accessories */,
 				DC06CD282354E42B00C8E9F9 /* Assets.xcassets */,
 				DC06CD2D2354E42B00C8E9F9 /* Main.storyboard */,
 				DC06CD302354E42B00C8E9F9 /* Info.plist */,
@@ -300,6 +304,7 @@
 		DC5A4C2524D9A98B001CF95B /* AccessoryDelegateCandidates */ = {
 			isa = PBXGroup;
 			children = (
+				DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */,
 				DC197CA124D9A67F00C07E90 /* SiriDriver.swift */,
 				DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */,
 				DC23DF8924E7322300DD8371 /* LeafDriver.swift */,
@@ -377,7 +382,6 @@
 			);
 			name = HAPiNest;
 			packageProductDependencies = (
-				DC06CD3D2354E61600C8E9F9 /* JVCocoa */,
 				DC06CD462354E72F00C8E9F9 /* HAP */,
 				DCE471C62390386B0059036D /* MilightDriver */,
 				DC6BC8CB2390466800BD9445 /* AppleScriptDriver */,
@@ -386,6 +390,7 @@
 				DC6F65A1242C11840045B716 /* LeafDriver */,
 				DCCDC11B24A2AFD7007BB403 /* TizenDriver */,
 				DC23DF9824E7D26100DD8371 /* SoftPLC */,
+				DC089BCE253E578900057C65 /* OpenWeatherReporter */,
 			);
 			productName = HAPiNest;
 			productReference = DC06CD212354E42A00C8E9F9 /* HAPiNest.app */;
@@ -416,7 +421,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Jan Verrept";
 				TargetAttributes = {
 					DC06CD202354E42A00C8E9F9 = {
@@ -438,7 +443,6 @@
 			);
 			mainGroup = DC06CD182354E42A00C8E9F9;
 			packageReferences = (
-				DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */,
 				DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */,
 				DCE471C52390386B0059036D /* XCRemoteSwiftPackageReference "MilightDriver" */,
 				DC6BC8CA2390466800BD9445 /* XCRemoteSwiftPackageReference "AppleScriptDriver" */,
@@ -446,6 +450,7 @@
 				DC0F906D23F7F19C005567A9 /* XCRemoteSwiftPackageReference "YASDIDriver" */,
 				DC218A192409B27E00494074 /* XCRemoteSwiftPackageReference "TizenDriver" */,
 				DC23DF9724E7D26100DD8371 /* XCRemoteSwiftPackageReference "SoftPLC" */,
+				DC089BCD253E578900057C65 /* XCRemoteSwiftPackageReference "OpenWeatherReporter" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
@@ -496,6 +501,7 @@
 				DC9672FD2376050100917D1B /* MainConfiguration.swift in Sources */,
 				DC197CA924D9A67F00C07E90 /* AppleScriptDriver.swift in Sources */,
 				DC197CA724D9A67F00C07E90 /* SiriDriver.swift in Sources */,
+				DC9A4940253F97820041DF0B /* SmartSprinklerDriver.swift in Sources */,
 				DC3188CB23B9505400E895C3 /* CustomAccessories.swift in Sources */,
 				DC23DF9324E7400D00DD8371 /* Outlet.swift in Sources */,
 				DC00173F24DEEBF80045A3F8 /* Modbus5Delegate.swift in Sources */,
@@ -578,6 +584,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = YES;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -647,6 +654,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -799,20 +807,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TheMisfit68/JVCocoa.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Bouke/HAP.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.7.0;
+			};
+		};
+		DC089BCD253E578900057C65 /* XCRemoteSwiftPackageReference "OpenWeatherReporter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TheMisfit68/OpenWeatherReporter.git";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		DC0F906D23F7F19C005567A9 /* XCRemoteSwiftPackageReference "YASDIDriver" */ = {
@@ -866,15 +874,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DC06CD3D2354E61600C8E9F9 /* JVCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC06CD3C2354E61600C8E9F9 /* XCRemoteSwiftPackageReference "JVCocoa" */;
-			productName = JVCocoa;
-		};
 		DC06CD462354E72F00C8E9F9 /* HAP */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */;
 			productName = HAP;
+		};
+		DC089BCE253E578900057C65 /* OpenWeatherReporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC089BCD253E578900057C65 /* XCRemoteSwiftPackageReference "OpenWeatherReporter" */;
+			productName = OpenWeatherReporter;
 		};
 		DC0F906E23F7F19C005567A9 /* YASDIDriver */ = {
 			isa = XCSwiftPackageProductDependency;

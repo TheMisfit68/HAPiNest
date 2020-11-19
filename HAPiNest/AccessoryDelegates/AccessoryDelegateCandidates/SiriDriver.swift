@@ -11,6 +11,7 @@ import HAP
 import JVCocoa
 import SiriDriver
 
+@available(OSX 11.0, *)
 extension SiriDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(
@@ -22,5 +23,5 @@ extension SiriDriver:AccessoryDelegate{
     ){
         let accessoryName = accessory.info.name.value!
 
-        JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")    }
+        Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")    }
 }

@@ -13,6 +13,7 @@ import HAP
 import SoftPLC
 import ModbusDriver
 
+@available(OSX 11.0, *)
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
@@ -48,6 +49,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName(window.title)
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
+        
+        homekitServer.leafDriver.batteryChecker.getBatteryStatus()
         
     }
     

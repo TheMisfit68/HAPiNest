@@ -10,6 +10,7 @@ import Foundation
 import SoftPLC
 import ModbusDriver
 
+@available(OSX 11.0, *)
 extension MainConfiguration{
     
      struct PLC{

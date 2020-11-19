@@ -10,6 +10,7 @@ import Foundation
 import HAP
 import Darwin
 import JVCocoa
+import os.log
 
 import AppleScriptDriver
 import SiriDriver
@@ -24,6 +25,7 @@ import LeafDriver
  as a container for all related driver-type classes
  that need to be globaly accessible
  */
+@available(OSX 11.0, *)
 public class HomeKitServer:Singleton{
     
     public static var shared: HomeKitServer = HomeKitServer()
@@ -45,9 +47,10 @@ public class HomeKitServer:Singleton{
     let yasdiDriver = YASDIDriver.InstallDrivers().first
     let gscNotifier = GSCNotifier()
     let sunnyPortalReporter = SunnyPortalReporter()
+    let sprinklerDriver = SmartSprinklerDriver()
         
     private init(){
-        JVDebugger.shared.log(debugLevel: .Info, "Initializing the server...")
+        Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server...")
     }
     
 }

@@ -11,6 +11,7 @@ import HAP
 import JVCocoa
 import SoftPLC
 
+@available(OSX 11.0, *)
 extension CharacteristicType{
     
     var parameterName:PLCclass.HomekitParameterName{
@@ -23,7 +24,7 @@ extension CharacteristicType{
         case CharacteristicType.targetPosition:
             return .setPoint
         default:
-            JVDebugger.shared.log(debugLevel: .Warning, "No parameter name found for type \(self)")
+            Debugger.shared.log(debugLevel: .Warning, "No parameter name found for type \(self)")
             return .unKnown
         }
         
@@ -31,6 +32,7 @@ extension CharacteristicType{
     
 }
 
+@available(OSX 11.0, *)
 extension SoftPLC:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(
@@ -44,7 +46,7 @@ extension SoftPLC:AccessoryDelegate{
         if var circuit = plcObjects[accessoryName] as? HomekitControllable{
             circuit.homekitParameters[characteristic.type.parameterName] = value
         }else{
-            JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+            Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
         }
         
     }

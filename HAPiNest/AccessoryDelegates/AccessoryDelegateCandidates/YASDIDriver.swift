@@ -11,6 +11,7 @@ import HAP
 import JVCocoa
 import YASDIDriver
 
+@available(OSX 11.0, *)
 extension YASDIDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(
@@ -22,6 +23,6 @@ extension YASDIDriver:AccessoryDelegate{
     ){
         let accessoryName = accessory.info.name.value!
 
-        JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+        Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
     }
 }

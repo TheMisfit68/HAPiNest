@@ -11,9 +11,10 @@ import JVCocoa
 import HAP
 import SoftPLC
 
+@available(OSX 11.0, *)
 struct MainConfiguration{
     
-     struct HomeKit{
+    struct HomeKit{
         
         static let BridgeName = "NestBridge"
         static let BridgeSetupCode = "456-77-890"

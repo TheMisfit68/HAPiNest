@@ -11,6 +11,7 @@ import HAP
 import JVCocoa
 import TizenDriver
 
+@available(OSX 11.0, *)
 extension TizenDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(
@@ -58,7 +59,7 @@ extension TizenDriver:AccessoryDelegate{
             }
             
         default:
-            JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+            Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
             
         }
         

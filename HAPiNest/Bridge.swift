@@ -14,6 +14,7 @@ import JVCocoa
 // Therefore it can't be subclassed and
 // Bridge is a just wrapper around it
 
+@available(OSX 11.0, *)
 class Bridge:DeviceDelegate{
     
     public let device:Device
@@ -31,7 +32,7 @@ class Bridge:DeviceDelegate{
     
     
     private let serialNumber = "00001"
-    private let configFile = FileStorage(filename: "configuration.json")
+    private let configFile = FileStorage(filename: "testconfiguration.json")
     private var accessorryDelegates:[String:AccessoryDelegate] = [:]
     
     public init(name:String, setupCode:String) {
@@ -61,11 +62,11 @@ class Bridge:DeviceDelegate{
     public func printPairingInstructions(){
         if isPaired {
             print()
-            JVDebugger.shared.log(debugLevel: .Succes, "The bridge is paired, unpair using your iPhone.")
+            Debugger.shared.log(debugLevel: .Succes, "The bridge is paired, unpair using your iPhone.")
             print()
         } else {
             print()
-            JVDebugger.shared.log(debugLevel: .Info, "Scan the following QR code using your iPhone to pair this bridge:")
+            Debugger.shared.log(debugLevel: .Native(logType:.info), "Scan the following QR code using your iPhone to pair this bridge:")
             print()
             print(setupQRCode.asText)
             print(setupCode)
@@ -74,7 +75,7 @@ class Bridge:DeviceDelegate{
     }
     
     public func resetPairingInfo(){
-        JVDebugger.shared.log(debugLevel: .Info, "Dropping all pairings, keys")
+        Debugger.shared.log(debugLevel: .Native(logType:.info), "Dropping all pairings, keys")
         try? configFile.write(Data())
     }
     
@@ -90,7 +91,7 @@ class Bridge:DeviceDelegate{
         let accessoryName = accessory.info.name.value ?? ""
         let characteristicName = characteristic.description ?? ""
         let valueString = newValue != nil ? "\(newValue!)" : "nil"
-        JVDebugger.shared.log(debugLevel: .Info, "Accessory \(accessoryName): Characteristic '\(characteristicName)' did change to \(valueString)")
+        Debugger.shared.log(debugLevel: .Native(logType:.info), "Accessory \(accessoryName): Characteristic '\(characteristicName)' did change to \(valueString)")
         
         if let accessoryDelegate = accessorryDelegates[accessoryName]{
             accessoryDelegate.handleCharacteristicChange(accessory, service, characteristic, newValue)
@@ -98,14 +99,14 @@ class Bridge:DeviceDelegate{
     }
     
     func didRequestIdentificationOf(_ accessory: Accessory) {
-//        JVDebugger.shared.log(debugLevel: .Info,"Requested identification "
+//        Debugger.shared.log(debugLevel: .Info,"Requested identification "
 //                                + "of accessory \(String(describing: accessory.info.name.value ?? ""))")
     }
     
     func characteristicListenerDidSubscribe(_ accessory: Accessory,
                                             service: Service,
                                             characteristic: AnyCharacteristic) {
-//        JVDebugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
+//        Debugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
 //                                + "in service \(service.type) "
 //                                + "of accessory \(accessory.info.name.value ?? "") "
 //                                + "got a subscriber")
@@ -114,7 +115,7 @@ class Bridge:DeviceDelegate{
     func characteristicListenerDidUnsubscribe(_ accessory: Accessory,
                                               service: Service,
                                               characteristic: AnyCharacteristic) {
-//        JVDebugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
+//        Debugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
 //                                + "in service \(service.type) "
 //                                + "of accessory \(accessory.info.name.value ?? "") "
 //                                + "lost a subscriber")

@@ -43,7 +43,7 @@
 //            case "Voordeur":
 //                return 15
 //            default:
-//                JVDebugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
+//                Debugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
 //                return nil
 //            }
 //        }
@@ -64,7 +64,7 @@
 //               print("The accessory \(accessoryName) actually moved somehow")
 //            
 //            default:
-//                JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+//                Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
 //            }
 //        }
 //        

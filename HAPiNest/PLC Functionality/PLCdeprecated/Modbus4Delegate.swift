@@ -50,7 +50,7 @@
 //            case "Dressing Licht":
 //                return 13
 //            default:
-//                JVDebugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
+//                Debugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
 //                return nil
 //            }
 //            
@@ -69,7 +69,7 @@
 //                outputSignal.logicalValue = poweredOn
 //                
 //            default:
-//                JVDebugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+//                Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
 //            }
 //        }
 //        

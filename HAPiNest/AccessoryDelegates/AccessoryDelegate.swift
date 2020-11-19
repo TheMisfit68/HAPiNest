@@ -9,6 +9,7 @@
 import Foundation
 import HAP
 
+@available(OSX 11.0, *)
 protocol AccessoryDelegate{
         
       func handleCharacteristicChange<T>(

@@ -26,7 +26,7 @@
 //            case "Slaapkamer Licht":
 //                return 1
 //            default:
-//                JVDebugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
+//                Debugger.shared.log(debugLevel: .Warning, "Unknown accessory \(accessoryName)")
 //                return nil
 //            }
 //            
