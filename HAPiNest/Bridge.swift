@@ -32,7 +32,7 @@ class Bridge:DeviceDelegate{
     
     
     private let serialNumber = "00001"
-    private let configFile = FileStorage(filename: "testconfiguration.json")
+    private let configFile = FileStorage(filename: "configuration.json")
     private var accessorryDelegates:[String:AccessoryDelegate] = [:]
     
     public init(name:String, setupCode:String) {

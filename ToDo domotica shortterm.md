@@ -1,6 +1,5 @@
 #  ToDo Domotica
 
-- [ ]  UnwrapIfOptional Herimplementeren in JVCocoa
 - [ ]  Array of partial keypaths meegeven als parameter aan SQLite.autoCreateTableFor<T:SQLRecordable> in JVCocoa
 - [ ]  SmartsprinklerDriver afwerken
 - [ ]  Aantal 220 v relais' bepalen voor feedback, leds etc en kast uitwerken
