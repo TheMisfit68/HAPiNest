@@ -1,6 +1,6 @@
 //
-//  HAPiNest2App.swift
-//  HAPiNest2
+//  HAPiNestApp.swift
+//  HAPiNest
 //
 //  Created by Jan Verrept on 26/11/2020.
 //  Copyright © 2020 Jan Verrept. All rights reserved.
@@ -15,7 +15,7 @@ import SoftPLC
 import SwiftUI
 
 @main
-struct HAPiNest2App: App {
+struct HAPiNestApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     init() {

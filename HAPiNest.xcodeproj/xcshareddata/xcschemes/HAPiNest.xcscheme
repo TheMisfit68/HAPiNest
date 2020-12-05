@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC06CD202354E42A00C8E9F9"
+               BlueprintIdentifier = "DC54B6BA2570586D00D9169F"
                BuildableName = "HAPiNest.app"
                BlueprintName = "HAPiNest"
                ReferencedContainer = "container:HAPiNest.xcodeproj">
@@ -28,23 +28,12 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC7CFA9A24E34D1100181309"
-               BuildableName = "HAPiNestTests.xctest"
-               BlueprintName = "HAPiNestTests"
-               ReferencedContainer = "container:HAPiNest.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      customLLDBInitFile = "/Users/janverrept/Desktop"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
       customWorkingDirectory = "$(PROJECT_DIR)"
@@ -56,7 +45,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC06CD202354E42A00C8E9F9"
+            BlueprintIdentifier = "DC54B6BA2570586D00D9169F"
             BuildableName = "HAPiNest.app"
             BlueprintName = "HAPiNest"
             ReferencedContainer = "container:HAPiNest.xcodeproj">
@@ -73,7 +62,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC06CD202354E42A00C8E9F9"
+            BlueprintIdentifier = "DC54B6BA2570586D00D9169F"
             BuildableName = "HAPiNest.app"
             BlueprintName = "HAPiNest"
             ReferencedContainer = "container:HAPiNest.xcodeproj">

@@ -21,13 +21,11 @@ struct MainConfiguration{
         
         static public func AddAccessories(){
             
-            let appDelegate:AppDelegate = (NSApplication.shared.delegate) as! AppDelegate
-            let plc:SoftPLC = appDelegate.plc!
-                    
+            let plc:SoftPLC = AppState.shared.plc
             HomeKitServer.shared.mainBridge.addDriver(plc, withAcccesories:
                                     [
                                         // Dimmable Lights
-                                        Accessory.Lightbulb(info: Service.Info(name: "Badkamer Sfeerlichtjes", serialNumber: "00002"), type:.monochrome, isDimmable: true),
+                                        Accessory.Lightbulb(info: Service.Info (name: "Badkamer Sfeerlichtjes", serialNumber: "00002"), type:.monochrome, isDimmable: true),
                                         Accessory.Lightbulb(info: Service.Info(name: "Slaapkamer Licht", serialNumber: "00003"), type:.monochrome, isDimmable: true),
                                     ]
             )
