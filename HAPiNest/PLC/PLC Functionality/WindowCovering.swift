@@ -39,6 +39,7 @@ extension WindowCovering:Parameterizable{
     
 }
 
+
 class WindowCovering:OpenCloseWithSetpoint, HomekitControllable{
     
     var homekitParameters:[HomekitParameterName:Any] = [:]

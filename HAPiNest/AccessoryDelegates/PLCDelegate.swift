@@ -11,7 +11,7 @@ import HAP
 import JVCocoa
 import SoftPLC
 
-@available(OSX 11.0, *)
+
 extension CharacteristicType{
     
     var parameterName:PLCclass.HomekitParameterName{
@@ -32,7 +32,7 @@ extension CharacteristicType{
     
 }
 
-@available(OSX 11.0, *)
+
 extension SoftPLC:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(

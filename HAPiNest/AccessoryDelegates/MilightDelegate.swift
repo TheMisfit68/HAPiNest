@@ -12,7 +12,7 @@ import JVCocoa
 import MilightDriver
 import os.log
 
-@available(OSX 11.0, *)
+
 extension MilightDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(

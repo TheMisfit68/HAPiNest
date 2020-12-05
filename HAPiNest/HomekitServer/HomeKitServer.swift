@@ -25,7 +25,7 @@ import LeafDriver
  as a container for all related driver-type classes
  that need to be globaly accessible
  */
-@available(OSX 11.0, *)
+
 public class HomeKitServer:Singleton{
     
     public static var shared: HomeKitServer = HomeKitServer()
@@ -49,8 +49,11 @@ public class HomeKitServer:Singleton{
     let sunnyPortalReporter = SunnyPortalReporter()
     let sprinklerDriver = SmartSprinklerDriver()
         
+    
+    
     private init(){
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server...")
+        let _ = SMAInverter.CreateInverters()
     }
     
 }

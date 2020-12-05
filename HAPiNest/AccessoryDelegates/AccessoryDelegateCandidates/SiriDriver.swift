@@ -11,7 +11,7 @@ import HAP
 import JVCocoa
 import SiriDriver
 
-@available(OSX 11.0, *)
+
 extension SiriDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(

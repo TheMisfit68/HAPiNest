@@ -10,7 +10,7 @@ import Foundation
 import OpenWeatherReporter
 import JVCocoa
 
-@available(OSX 11.0, *)
+
 class SmartSprinklerDriver{
     
     var weatherForecast24Timer:Timer! = nil

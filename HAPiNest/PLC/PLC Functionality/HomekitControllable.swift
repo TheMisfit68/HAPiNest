@@ -11,6 +11,7 @@ import HAP
 import SoftPLC
 import JVCocoa
 
+
 extension PLCclass{
 
     enum HomekitParameterName{
@@ -21,6 +22,7 @@ extension PLCclass{
     }
     
 }
+
 
 protocol HomekitControllable{
     

@@ -14,7 +14,7 @@ import JVCocoa
 // Therefore it can't be subclassed and
 // Bridge is a just wrapper around it
 
-@available(OSX 11.0, *)
+
 class Bridge:DeviceDelegate{
     
     public let device:Device

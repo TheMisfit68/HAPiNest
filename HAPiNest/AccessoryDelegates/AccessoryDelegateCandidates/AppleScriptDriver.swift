@@ -11,7 +11,7 @@ import HAP
 import JVCocoa
 import AppleScriptDriver
 
-@available(OSX 11.0, *)
+
 extension AppleScriptDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(

@@ -1,9 +1,9 @@
 //
 //  ContentView.swift
-//  HAPiNest
+//  testviewx
 //
-//  Created by Jan Verrept on 27/12/2019.
-//  Copyright © 2019 Jan Verrept. All rights reserved.
+//  Created by Jan Verrept on 04/12/2020.
+//  Copyright © 2020 Jan Verrept. All rights reserved.
 //
 
 import SwiftUI
@@ -11,8 +11,7 @@ import YASDIDriver
 import SoftPLC
 import JVCocoa
 
-
-struct ContentView: View {
+struct DashBoardView: View {
     @State var showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
     //    @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
     let updateTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
@@ -48,8 +47,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct DashBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        DashBoardView()
     }
 }

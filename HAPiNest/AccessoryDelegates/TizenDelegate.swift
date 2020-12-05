@@ -11,7 +11,7 @@ import HAP
 import JVCocoa
 import TizenDriver
 
-@available(OSX 11.0, *)
+
 extension TizenDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(

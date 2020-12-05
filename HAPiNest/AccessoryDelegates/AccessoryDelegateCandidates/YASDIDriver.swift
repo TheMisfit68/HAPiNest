@@ -11,7 +11,6 @@ import HAP
 import JVCocoa
 import YASDIDriver
 
-@available(OSX 11.0, *)
 extension YASDIDriver:AccessoryDelegate{
     
     func handleCharacteristicChange<T>(

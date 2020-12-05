@@ -47,15 +47,6 @@
         }
       },
       {
-        "package": "ClibYASDI",
-        "repositoryURL": "https://github.com/TheMisfit68/ClibYASDI.git",
-        "state": {
-          "branch": "master",
-          "revision": "7bcba8264df9746f1e078066f89c6a165c6701a2",
-          "version": null
-        }
-      },
-      {
         "package": "CryptoSwift",
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
@@ -89,6 +80,15 @@
           "branch": null,
           "revision": "3357dd9526cdf9436fa63bb792b669e6efdc43da",
           "version": "1.9.0"
+        }
+      },
+      {
+        "package": "Neumorphic",
+        "repositoryURL": "git@github.com:costachung/neumorphic.git",
+        "state": {
+          "branch": "master",
+          "revision": "143b67e5bcd5a81ed8b050c2301ceb01ed33e4cd",
+          "version": null
         }
       },
       {

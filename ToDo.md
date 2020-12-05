@@ -11,9 +11,6 @@
 
 ## Longterm OS11
 - [ ]  add playgrounds to all packages for example/documentation
-
-- [ ] Add target to use SwiftUI lifecycle instead of working with App-delegate
-- [ ] Implement rerences trough Swiftui scenes
 - [ ] Use gauges in SwiftUI to represent al kinds of numeric data
 
 - [ ] Bundle ClibYASDI as a binary package bij creating a new binary-target for the package (do not includeczip archive in git, upload to seperate server LFS)
