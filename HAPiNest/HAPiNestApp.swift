@@ -20,11 +20,10 @@ struct HAPiNestApp: App {
     
     init() {
         
-        let appState = AppState.shared
-        appState.plc.plcObjects = MainConfiguration.PLC.PLCobjects
-        appState.plc.run()
+        AppState.shared.plc.plcObjects = MainConfiguration.PLC.PLCobjects
+        AppState.shared.plc.run()
         
-        appState.homekitServer.mainBridge = Bridge(
+        AppState.shared.homekitServer.mainBridge = Bridge(
             name:MainConfiguration.HomeKit.BridgeName,
             setupCode:MainConfiguration.HomeKit.BridgeSetupCode)
         

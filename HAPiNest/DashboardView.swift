@@ -32,7 +32,7 @@ struct DashBoardView: View {
                 }
             //            }
             
-//            ((NSApplication.shared.delegate) as! AppDelegate).plc.controlPanel
+            AppState.shared.plc.controlPanel
                 .tabItem {
                     Text("PLC")
                 }

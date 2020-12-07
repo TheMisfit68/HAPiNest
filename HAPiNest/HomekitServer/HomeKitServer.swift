@@ -48,8 +48,6 @@ public class HomeKitServer:Singleton{
     let gscNotifier = GSCNotifier()
     let sunnyPortalReporter = SunnyPortalReporter()
     let sprinklerDriver = SmartSprinklerDriver()
-        
-    
     
     private init(){
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server...")

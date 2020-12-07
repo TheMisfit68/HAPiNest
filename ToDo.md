@@ -1,6 +1,8 @@
 # ToDo for HAPiNest
 ## A personal Home Automation System
 
+- [ ] Create Preference  Window
+
 - [ ] Complete driver for Tizen TV
 - [ ] Complete driver for Nissan Leaf
 
