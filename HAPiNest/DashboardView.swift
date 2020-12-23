@@ -7,20 +7,21 @@
 //
 
 import SwiftUI
+import Neumorphic
 import YASDIDriver
 import SoftPLC
 import JVCocoa
 
 struct DashBoardView: View {
-    @State var showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
-    //    @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
-    let updateTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+//    @State var showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
+//      @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
     
     var body: some View {
-        
-        TabView {
+        Neumorphic.shared.colorScheme = colorScheme
+        return TabView {
             
-            ServerView(showResetPairingsButton:true)
+            ServerView()
                 .tabItem {
                     Text("HomeKit Server")
                 }
@@ -35,20 +36,29 @@ struct DashBoardView: View {
             AppState.shared.plc.controlPanel
                 .tabItem {
                     Text("PLC")
-                }
-            
-        }
-//        .onReceive(updateTimer) { _ in
-//            self.showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
-//            //            self.inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
-//        }
-    .padding()
+                }.background(Neumorphic.shared.mainColor())
+
         
+        }
+        .padding()
+        .background(Neumorphic.shared.mainColor())
     }
+    
 }
 
+
+// MARK: - Previews
 struct DashBoardView_Previews: PreviewProvider {
+
     static var previews: some View {
-        DashBoardView()
+        
+        Group {
+            DashBoardView()
+              .environment(\.colorScheme, .light)
+
+            DashBoardView()
+              .environment(\.colorScheme, .dark)
+
+        }
     }
 }

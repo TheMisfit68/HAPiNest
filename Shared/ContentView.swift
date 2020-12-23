@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by Jan Verrept on 06/08/2020.
+//  Created by Jan Verrept on 15/12/2020.
 //  Copyright © 2020 Jan Verrept. All rights reserved.
 //
 
@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!").padding()
+        Text("Hello, world!")
+            .padding()
     }
 }
 

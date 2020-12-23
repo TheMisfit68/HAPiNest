@@ -12,14 +12,12 @@ import SwiftUI
 import JVCocoa
 import HAP
 import SoftPLC
-import SwiftUI
 
 @main
 struct HAPiNestApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     init() {
-        
         AppState.shared.plc.plcObjects = MainConfiguration.PLC.PLCobjects
         AppState.shared.plc.run()
         
@@ -37,7 +35,8 @@ struct HAPiNestApp: App {
                 .onAppear(perform: {
                     AppState.shared.homekitServer.leafDriver.batteryChecker.getBatteryStatus()
                 })
-        }.onChange(of: scenePhase) { newScenePhase in
+        }
+        .onChange(of: scenePhase) { newScenePhase in
             switch newScenePhase {
             case .active:
                 print("App became active")

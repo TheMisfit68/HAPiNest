@@ -40,24 +40,23 @@ public class DimmableLight:PLCclass, HomekitControllable{
     var homekitParameters:[HomekitParameterName:Any] = [:]
     
     var ioSignal:AnalogOutputSignal? = nil
+    private let switchOffLevelDimmer:Int = 15
+    private var previousBrightness:Int = 0
     
     public enum PowerState{
         case on
         case off
     }
     
-    public var powerState:PowerState = .off{
+    public var powerState:PowerState = .off
+
+    public var brightness:Int = 0{
         
         didSet{
-            if powerState == .on{
-                brightness = max(switchOffLevelDimmer+1, Int(previousBrightness))
-            }else{
+            guard powerState == .on else {
                 brightness = 0
+                return
             }
-        }
-    }
-    public var brightness:Int = 0{
-        didSet{
             // When swicthed on, remember the brightnesslevel,
             // to be used as a startlevel later on
             if brightness > switchOffLevelDimmer{
@@ -65,7 +64,6 @@ public class DimmableLight:PLCclass, HomekitControllable{
             }
         }
     }
-    private let switchOffLevelDimmer:Int = 15
-    private var previousBrightness:Int = 0
+    
 }
 

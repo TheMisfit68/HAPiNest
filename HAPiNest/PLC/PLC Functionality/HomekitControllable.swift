@@ -23,7 +23,6 @@ extension PLCclass{
     
 }
 
-
 protocol HomekitControllable{
     
     var homekitParameters:[PLCclass.HomekitParameterName:Any] { get set }

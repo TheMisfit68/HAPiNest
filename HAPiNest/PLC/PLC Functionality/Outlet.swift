@@ -34,7 +34,7 @@ extension Outlet:Parameterizable{
 
 class Outlet:PLCclass, HomekitControllable{
     
-    var output:Bool = false
+    var output:Bool = true
     var homekitParameters:[HomekitParameterName:Any] = [:]
     
 }

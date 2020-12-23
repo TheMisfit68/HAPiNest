@@ -14,6 +14,7 @@
 ## Longterm OS11
 - [ ]  add playgrounds to all packages for example/documentation
 - [ ] Use gauges in SwiftUI to represent al kinds of numeric data
+- [ ]  improve neumorphic design based on example screenshot
 
 - [ ] Bundle ClibYASDI as a binary package bij creating a new binary-target for the package (do not includeczip archive in git, upload to seperate server LFS)
 

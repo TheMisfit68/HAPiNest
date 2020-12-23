@@ -26,7 +26,6 @@
 		DC4D6E0E25713E720087E51D /* MilightDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC197CAA24D9A74300C07E90 /* MilightDelegate.swift */; };
 		DC4D6E1125713E840087E51D /* CustomAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3188CA23B9505400E895C3 /* CustomAccessories.swift */; };
 		DC4D6E1425713E870087E51D /* PowerInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD9182223B5715000C81EB5 /* PowerInverter.swift */; };
-		DC51E10C2576D9FA00E76C46 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = DC51E10B2576D9FA00E76C46 /* Neumorphic */; };
 		DC54B6BE2570586D00D9169F /* HAPiNestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54B6BD2570586D00D9169F /* HAPiNestApp.swift */; };
 		DC54B6C02570586D00D9169F /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54B6BF2570586D00D9169F /* DashboardView.swift */; };
 		DC54B6C22570586E00D9169F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC54B6C12570586E00D9169F /* Assets.xcassets */; };
@@ -41,11 +40,21 @@
 		DC54B6E82570619800D9169F /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DC54B6E72570619800D9169F /* SoftPLC */; };
 		DC54B6EA2570619800D9169F /* TizenDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC54B6E92570619800D9169F /* TizenDriver */; };
 		DC54B6EC2570619800D9169F /* YASDIDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC54B6EB2570619800D9169F /* YASDIDriver */; };
-		DC54B6EE2570619800D9169F /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC54B6ED2570619800D9169F /* HAP */; };
 		DC54B6F12570628700D9169F /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB79A2381AFEB0066E00B /* Bridge.swift */; };
 		DC54B6F42570628B00D9169F /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
 		DC54B6F72570628E00D9169F /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* ServerView.swift */; };
 		DC54B6FD2570686D00D9169F /* PLCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */; };
+		DC5B1CC225842164004A5FD7 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC5B1CC125842164004A5FD7 /* HAP */; };
+		DC76ED662588406000824159 /* HAPiNestMPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76ED542588405F00824159 /* HAPiNestMPApp.swift */; };
+		DC76ED672588406000824159 /* HAPiNestMPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76ED542588405F00824159 /* HAPiNestMPApp.swift */; };
+		DC76ED682588406000824159 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76ED552588405F00824159 /* ContentView.swift */; };
+		DC76ED692588406000824159 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76ED552588405F00824159 /* ContentView.swift */; };
+		DC76ED6A2588406000824159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC76ED562588406000824159 /* Assets.xcassets */; };
+		DC76ED6B2588406000824159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC76ED562588406000824159 /* Assets.xcassets */; };
+		DCCC255725897A6200915AE3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54B6BF2570586D00D9169F /* DashboardView.swift */; };
+		DCCC255D25897CED00915AE3 /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DCCC255C25897CED00915AE3 /* SoftPLC */; };
+		DCCC256125897D5E00915AE3 /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* ServerView.swift */; };
+		DCFB4E0E258FFE8B007A812D /* Cryptor in Frameworks */ = {isa = PBXBuildFile; productRef = DCFB4E0D258FFE8B007A812D /* Cryptor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +62,6 @@
 		DC00173E24DEEBF80045A3F8 /* Modbus5Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modbus5Delegate.swift; sourceTree = "<group>"; };
 		DC00174024DEEC0A0045A3F8 /* Modbus6Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modbus6Delegate.swift; sourceTree = "<group>"; };
 		DC00174224DEEC210045A3F8 /* Modbus0Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modbus0Delegate.swift; sourceTree = "<group>"; };
-		DC015F0E257B0C9000CDC8A3 /* Points of attention.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Points of attention.md"; sourceTree = "<group>"; };
 		DC197CA024D9A67F00C07E90 /* YASDIDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YASDIDriver.swift; sourceTree = "<group>"; };
 		DC197CA124D9A67F00C07E90 /* SiriDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiriDriver.swift; sourceTree = "<group>"; };
 		DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScriptDriver.swift; sourceTree = "<group>"; };
@@ -95,6 +103,14 @@
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC6F65A0242C0E8F0045B716 /* LeafDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LeafDriver; path = ../Drivers/LeafDriver; sourceTree = "<group>"; };
 		DC72B697245F740300D8045E /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
+		DC76ED542588405F00824159 /* HAPiNestMPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPiNestMPApp.swift; sourceTree = "<group>"; };
+		DC76ED552588405F00824159 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC76ED562588406000824159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC76ED5B2588406000824159 /* HAPiNestMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAPiNestMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC76ED5D2588406000824159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC76ED622588406000824159 /* HAPiNestMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAPiNestMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC76ED642588406000824159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC76ED652588406000824159 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerDriver.swift; sourceTree = "<group>"; };
 		DC9BF36D2403255E00B9159F /* YASDIDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YASDIDriver; path = ../Drivers/YASDIDriver; sourceTree = "<group>"; };
 		DC9EFF2024F312F0001B70EE /* GaragePort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePort.swift; sourceTree = "<group>"; };
@@ -103,6 +119,7 @@
 		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
 		DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "HAP-Specification-Non-Commercial-Version.pdf"; sourceTree = "<group>"; };
 		DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
+		DCCC255B25897AB200915AE3 /* neumorphic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = neumorphic; path = "/Users/janverrept/Library/Developer/Xcode/DerivedData/HAPiNest-crukdtrwbewkcmcylhayambkinrt/SourcePackages/checkouts/neumorphic"; sourceTree = "<absolute>"; };
 		DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeKitLogo.png; sourceTree = "<group>"; };
 		DCD9182223B5715000C81EB5 /* PowerInverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerInverter.swift; sourceTree = "<group>"; };
 		DCDAF5AD24586D2600C279D9 /* SiriDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SiriDriver; path = ../Drivers/SiriDriver; sourceTree = "<group>"; };
@@ -115,18 +132,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC54B6EE2570619800D9169F /* HAP in Frameworks */,
 				DC54B6DC2570619800D9169F /* JVCocoa in Frameworks */,
 				DC54B6E02570619800D9169F /* MilightDriver in Frameworks */,
 				DC54B6E22570619800D9169F /* ModbusDriver in Frameworks */,
 				DC54B6D82570619800D9169F /* AppleScriptDriver in Frameworks */,
 				DC54B6EC2570619800D9169F /* YASDIDriver in Frameworks */,
 				DC54B6DE2570619800D9169F /* LeafDriver in Frameworks */,
+				DCFB4E0E258FFE8B007A812D /* Cryptor in Frameworks */,
 				DC54B6EA2570619800D9169F /* TizenDriver in Frameworks */,
-				DC51E10C2576D9FA00E76C46 /* Neumorphic in Frameworks */,
 				DC54B6E62570619800D9169F /* SiriDriver in Frameworks */,
 				DC54B6E82570619800D9169F /* SoftPLC in Frameworks */,
+				DC5B1CC225842164004A5FD7 /* HAP in Frameworks */,
 				DC54B6E42570619800D9169F /* OpenWeatherReporter in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC76ED582588406000824159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCCC255D25897CED00915AE3 /* SoftPLC in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC76ED5F2588406000824159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,13 +170,15 @@
 			children = (
 				DC69FA1B24E0741100506AA7 /* ToDo domotica shortterm.md */,
 				DC6E461523B75BF8006A3E61 /* ToDo.md */,
-				DC015F0E257B0C9000CDC8A3 /* Points of attention.md */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
 				DCB5F6202354ED7D005F610F /* Documentation */,
 				DC2B8D8524DC799E00F159AC /* Shared */,
 				DC2B8D8E24DC799F00F159AC /* iOS */,
 				DC2B8D9524DC799F00F159AC /* macOS */,
+				DC76ED532588405F00824159 /* Shared */,
+				DC76ED5C2588406000824159 /* iOS */,
+				DC76ED632588406000824159 /* macOS */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 				DC601E082405DC9600FE7659 /* Frameworks */,
 				DC23DF9A24E835E500DD8371 /* SoftPLC */,
@@ -165,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				DC54B6BB2570586D00D9169F /* HAPiNest.app */,
+				DC76ED5B2588406000824159 /* HAPiNestMP.app */,
+				DC76ED622588406000824159 /* HAPiNestMP.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -303,9 +339,37 @@
 		DC601E082405DC9600FE7659 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCCC255B25897AB200915AE3 /* neumorphic */,
 				DC2B8DA524DC79B600F159AC /* HomeKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC76ED532588405F00824159 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DC76ED542588405F00824159 /* HAPiNestMPApp.swift */,
+				DC76ED552588405F00824159 /* ContentView.swift */,
+				DC76ED562588406000824159 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DC76ED5C2588406000824159 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DC76ED5D2588406000824159 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		DC76ED632588406000824159 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				DC76ED642588406000824159 /* Info.plist */,
+				DC76ED652588406000824159 /* macOS.entitlements */,
+			);
+			path = macOS;
 			sourceTree = "<group>";
 		};
 		DCB5F6182354ED7D005F610F /* Artwork */ = {
@@ -369,11 +433,48 @@
 				DC54B6E72570619800D9169F /* SoftPLC */,
 				DC54B6E92570619800D9169F /* TizenDriver */,
 				DC54B6EB2570619800D9169F /* YASDIDriver */,
-				DC54B6ED2570619800D9169F /* HAP */,
-				DC51E10B2576D9FA00E76C46 /* Neumorphic */,
+				DC5B1CC125842164004A5FD7 /* HAP */,
+				DCFB4E0D258FFE8B007A812D /* Cryptor */,
 			);
 			productName = HAPiNest2;
 			productReference = DC54B6BB2570586D00D9169F /* HAPiNest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC76ED5A2588406000824159 /* HAPiNestMP (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC76ED702588406000824159 /* Build configuration list for PBXNativeTarget "HAPiNestMP (iOS)" */;
+			buildPhases = (
+				DC76ED572588406000824159 /* Sources */,
+				DC76ED582588406000824159 /* Frameworks */,
+				DC76ED592588406000824159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HAPiNestMP (iOS)";
+			packageProductDependencies = (
+				DCCC255C25897CED00915AE3 /* SoftPLC */,
+			);
+			productName = "HAPiNestMP (iOS)";
+			productReference = DC76ED5B2588406000824159 /* HAPiNestMP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC76ED612588406000824159 /* HAPiNestMP (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC76ED712588406000824159 /* Build configuration list for PBXNativeTarget "HAPiNestMP (macOS)" */;
+			buildPhases = (
+				DC76ED5E2588406000824159 /* Sources */,
+				DC76ED5F2588406000824159 /* Frameworks */,
+				DC76ED602588406000824159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HAPiNestMP (macOS)";
+			productName = "HAPiNestMP (macOS)";
+			productReference = DC76ED622588406000824159 /* HAPiNestMP.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -383,10 +484,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Jan Verrept";
 				TargetAttributes = {
 					DC54B6BA2570586D00D9169F = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					DC76ED5A2588406000824159 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					DC76ED612588406000824159 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -401,7 +508,6 @@
 			);
 			mainGroup = DC06CD182354E42A00C8E9F9;
 			packageReferences = (
-				DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */,
 				DCE471C52390386B0059036D /* XCRemoteSwiftPackageReference "MilightDriver" */,
 				DC6BC8CA2390466800BD9445 /* XCRemoteSwiftPackageReference "AppleScriptDriver" */,
 				DC6BC8CD2390480500BD9445 /* XCRemoteSwiftPackageReference "SiriDriver" */,
@@ -409,13 +515,16 @@
 				DC218A192409B27E00494074 /* XCRemoteSwiftPackageReference "TizenDriver" */,
 				DC23DF9724E7D26100DD8371 /* XCRemoteSwiftPackageReference "SoftPLC" */,
 				DC089BCD253E578900057C65 /* XCRemoteSwiftPackageReference "OpenWeatherReporter" */,
-				DC51E10A2576D9FA00E76C46 /* XCRemoteSwiftPackageReference "neumorphic" */,
+				DC5B1CC025842164004A5FD7 /* XCRemoteSwiftPackageReference "HAP" */,
+				DCFB4E0C258FFE8B007A812D /* XCRemoteSwiftPackageReference "BlueCryptor" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DC54B6BA2570586D00D9169F /* HAPiNest */,
+				DC76ED5A2588406000824159 /* HAPiNestMP (iOS) */,
+				DC76ED612588406000824159 /* HAPiNestMP (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -427,6 +536,22 @@
 			files = (
 				DC54B6C52570586E00D9169F /* Preview Assets.xcassets in Resources */,
 				DC54B6C22570586E00D9169F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC76ED592588406000824159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC76ED6A2588406000824159 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC76ED602588406000824159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC76ED6B2588406000824159 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +587,26 @@
 				DC4D6DD425710B410087E51D /* MainConfiguration.swift in Sources */,
 				DC4D6E0E25713E720087E51D /* MilightDelegate.swift in Sources */,
 				DC4D6DFD25713D390087E51D /* LeafDriver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC76ED572588406000824159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC76ED682588406000824159 /* ContentView.swift in Sources */,
+				DCCC256125897D5E00915AE3 /* ServerView.swift in Sources */,
+				DCCC255725897A6200915AE3 /* DashboardView.swift in Sources */,
+				DC76ED662588406000824159 /* HAPiNestMPApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC76ED5E2588406000824159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC76ED692588406000824159 /* ContentView.swift in Sources */,
+				DC76ED672588406000824159 /* HAPiNestMPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +766,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNest2;
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -647,8 +792,113 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNest2;
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DC76ED6C2588406000824159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				ENABLE_PREVIEWS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNestMP;
+				PRODUCT_NAME = HAPiNestMP;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC76ED6D2588406000824159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNestMP;
+				PRODUCT_NAME = HAPiNestMP;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC76ED6E2588406000824159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNestMP;
+				PRODUCT_NAME = HAPiNestMP;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DC76ED6F2588406000824159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNestMP;
+				PRODUCT_NAME = HAPiNestMP;
+				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -676,17 +926,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DC76ED702588406000824159 /* Build configuration list for PBXNativeTarget "HAPiNestMP (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC76ED6C2588406000824159 /* Debug */,
+				DC76ED6D2588406000824159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC76ED712588406000824159 /* Build configuration list for PBXNativeTarget "HAPiNestMP (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC76ED6E2588406000824159 /* Debug */,
+				DC76ED6F2588406000824159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Bouke/HAP.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.0;
-			};
-		};
 		DC089BCD253E578900057C65 /* XCRemoteSwiftPackageReference "OpenWeatherReporter" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TheMisfit68/OpenWeatherReporter.git";
@@ -719,12 +979,12 @@
 				kind = branch;
 			};
 		};
-		DC51E10A2576D9FA00E76C46 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+		DC5B1CC025842164004A5FD7 /* XCRemoteSwiftPackageReference "HAP" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:costachung/neumorphic.git";
+			repositoryURL = "https://github.com/Bouke/HAP.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
 			};
 		};
 		DC6BC8CA2390466800BD9445 /* XCRemoteSwiftPackageReference "AppleScriptDriver" */ = {
@@ -751,14 +1011,17 @@
 				kind = branch;
 			};
 		};
+		DCFB4E0C258FFE8B007A812D /* XCRemoteSwiftPackageReference "BlueCryptor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/BlueCryptor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.200;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DC51E10B2576D9FA00E76C46 /* Neumorphic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC51E10A2576D9FA00E76C46 /* XCRemoteSwiftPackageReference "neumorphic" */;
-			productName = Neumorphic;
-		};
 		DC54B6D72570619800D9169F /* AppleScriptDriver */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppleScriptDriver;
@@ -799,10 +1062,19 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = YASDIDriver;
 		};
-		DC54B6ED2570619800D9169F /* HAP */ = {
+		DC5B1CC125842164004A5FD7 /* HAP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC06CD452354E72F00C8E9F9 /* XCRemoteSwiftPackageReference "HAP" */;
+			package = DC5B1CC025842164004A5FD7 /* XCRemoteSwiftPackageReference "HAP" */;
 			productName = HAP;
+		};
+		DCCC255C25897CED00915AE3 /* SoftPLC */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SoftPLC;
+		};
+		DCFB4E0D258FFE8B007A812D /* Cryptor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCFB4E0C258FFE8B007A812D /* XCRemoteSwiftPackageReference "BlueCryptor" */;
+			productName = Cryptor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
