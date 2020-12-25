@@ -47,7 +47,7 @@ extension ServerView{
     }
     
     struct QRCodeView: View{
-        @State private var showAlert: Bool = false
+        @State private var showResetAlert: Bool = false
         var body: some View {
             VStack {
                 Image(nsImage:HomeKitServer.shared.mainBridge.setupQRCode.asNSImage!)
@@ -56,10 +56,10 @@ extension ServerView{
                 Text("(or enter setupcode \(MainConfiguration.HomeKit.BridgeSetupCode))")
                     .padding(.bottom, 15)
                 Button(action: {
-                    self.showAlert = true
+                    self.showResetAlert = true
                 }) {Text("Reset all pairings")}
                 .softButtonStyle(RoundedRectangle(cornerRadius: 8),padding: 8, pressedEffect: .hard)
-                .alert(isPresented: $showAlert) {
+                .alert(isPresented: $showResetAlert) {
                     
                     let cancelButton = Alert.Button.cancel(Text("Cancel"))
                     let actionButton = Alert.Button.default(Text("Reset")) {

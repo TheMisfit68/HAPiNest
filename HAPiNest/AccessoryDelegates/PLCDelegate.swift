@@ -44,6 +44,7 @@ extension SoftPLC:AccessoryDelegate{
     ){
         let accessoryName = accessory.info.name.value!
         if var circuit = plcObjects[accessoryName] as? HomekitControllable{
+            print("----\(characteristic.type.parameterName)")
             circuit.homekitParameters[characteristic.type.parameterName] = value
         }else{
             Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")

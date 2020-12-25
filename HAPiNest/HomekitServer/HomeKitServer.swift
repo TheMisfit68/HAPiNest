@@ -47,7 +47,7 @@ public class HomeKitServer:Singleton{
     let yasdiDriver = YASDIDriver.InstallDrivers().first
     let gscNotifier = GSCNotifier()
     let sunnyPortalReporter = SunnyPortalReporter()
-//    let sprinklerDriver = SmartSprinklerDriver()
+    let sprinklerDriver = SmartSprinklerDriver()
     
     private init(){
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server...")

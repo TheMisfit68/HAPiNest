@@ -17,8 +17,7 @@ extension Light:Parameterizable{
     public func assignInputParameters(){
         
         if let hkState  = homekitParameters[.powerState] as? Bool{
-            self.start = (hkState == true)
-            self.stop =  (hkState == false)
+            self.output = hkState
         }
         
         if let ioSignal = plc.signal(ioSymbol:instanceName+" ingeschakeld") as? DigitalInputSignal{
@@ -29,7 +28,10 @@ extension Light:Parameterizable{
     
     public func assignOutputParameters(){
         if let ioSignal = plc.signal(ioSymbol:instanceName) as? DigitalOutputSignal{
-            ioSignal.logicalValue = self.puls(for: 0.25)
+        
+            output = output && !(feedbackValue ?? false) // Reset if the output and its feedback are the same
+            ioSignal.logicalValue = output.timed(using: pulsTimer)
+            
         }
     }
     
@@ -38,9 +40,6 @@ extension Light:Parameterizable{
 public class Light:StartStop, HomekitControllable{
     
     var homekitParameters:[HomekitParameterName:Any] = [:]
-    
-    override init(){
-        super.init()
-    }
-    
+    let pulsTimer = DigitalTimer(type: .pulsLimition, time: 0.25)
+        
 }

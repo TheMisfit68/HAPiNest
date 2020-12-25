@@ -39,7 +39,6 @@ public class DimmableLight:PLCclass, HomekitControllable{
     
     var homekitParameters:[HomekitParameterName:Any] = [:]
     
-    var ioSignal:AnalogOutputSignal? = nil
     private let switchOffLevelDimmer:Int = 15
     private var previousBrightness:Int = 0
     
