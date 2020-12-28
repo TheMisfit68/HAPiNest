@@ -51,6 +51,7 @@
 		DC76ED692588406000824159 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76ED552588405F00824159 /* ContentView.swift */; };
 		DC76ED6A2588406000824159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC76ED562588406000824159 /* Assets.xcassets */; };
 		DC76ED6B2588406000824159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC76ED562588406000824159 /* Assets.xcassets */; };
+		DC8B28F52597C77B00266BD3 /* PulsOperatedCircuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */; };
 		DCCC255725897A6200915AE3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54B6BF2570586D00D9169F /* DashboardView.swift */; };
 		DCCC255D25897CED00915AE3 /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DCCC255C25897CED00915AE3 /* SoftPLC */; };
 		DCCC256125897D5E00915AE3 /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* ServerView.swift */; };
@@ -111,6 +112,7 @@
 		DC76ED622588406000824159 /* HAPiNestMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAPiNestMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC76ED642588406000824159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC76ED652588406000824159 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsOperatedCircuit.swift; sourceTree = "<group>"; };
 		DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerDriver.swift; sourceTree = "<group>"; };
 		DC9BF36D2403255E00B9159F /* YASDIDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YASDIDriver; path = ../Drivers/YASDIDriver; sourceTree = "<group>"; };
 		DC9EFF2024F312F0001B70EE /* GaragePort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePort.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				DCFD428D24FAB5A8000320E0 /* HomekitControllable.swift */,
+				DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */,
 				DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */,
 				DC23DF8E24E73FB900DD8371 /* Light.swift */,
 				DC23DF9024E73FE300DD8371 /* WindowCovering.swift */,
@@ -579,6 +582,7 @@
 				DC4D6E1425713E870087E51D /* PowerInverter.swift in Sources */,
 				DC4D6DEB25713CDA0087E51D /* GaragePort.swift in Sources */,
 				DC4D6DE525713CD40087E51D /* Light.swift in Sources */,
+				DC8B28F52597C77B00266BD3 /* PulsOperatedCircuit.swift in Sources */,
 				DC4D6E0025713D3C0087E51D /* YASDIDriver.swift in Sources */,
 				DC4D6E1125713E840087E51D /* CustomAccessories.swift in Sources */,
 				DC54B6F12570628700D9169F /* Bridge.swift in Sources */,

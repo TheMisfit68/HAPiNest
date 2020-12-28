@@ -26,7 +26,7 @@ struct HAPiNestApp: App {
             setupCode:MainConfiguration.HomeKit.BridgeSetupCode)
         
         MainConfiguration.HomeKit.AddAccessories()
-        
+                
     }
     
     var body: some Scene {
@@ -55,12 +55,19 @@ struct HAPiNestApp: App {
         }
         #endif
     }
+    
 }
 
-class AppState:Singleton{
+// In Apps with a swiftUI lifecyle,
+// APP is a struct wich can't be presented as a singleton and therefore that can't be referenced globally
+// Appstate however is a singleton and therefore can get referenced globally
+class AppState{
     
     static let shared:AppState = AppState()
+    private init(){}
+
     let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList)
     let homekitServer:HomeKitServer = HomeKitServer.shared
+    let appNapController: AppNapController = AppNapController.shared
     
 }

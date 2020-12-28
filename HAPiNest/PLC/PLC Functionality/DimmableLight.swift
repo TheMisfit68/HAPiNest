@@ -34,7 +34,6 @@ extension DimmableLight:Parameterizable{
     
 }
 
-
 public class DimmableLight:PLCclass, HomekitControllable{
     
     var homekitParameters:[HomekitParameterName:Any] = [:]

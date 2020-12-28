@@ -29,6 +29,7 @@ import LeafDriver
 public class HomeKitServer:Singleton{
     
     public static var shared: HomeKitServer = HomeKitServer()
+    
     private var HAPserver:Server!
     var mainBridge:Bridge!{
         didSet{

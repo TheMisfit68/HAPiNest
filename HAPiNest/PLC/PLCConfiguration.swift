@@ -134,9 +134,9 @@ extension MainConfiguration{
             
             // Varia
             IOList[0][5][9] = "Compressor"
-            IOList[0][5][10] = "Disable Sprinklersysteem"
-            IOList[0][5][11] = "Voordeur"
-            IOList[0][5][12] = "Garage Poort"
+            IOList[0][5][10] = nil
+            IOList[0][5][11] = nil
+            IOList[0][5][12] = nil
             IOList[0][5][13] = nil
             IOList[0][5][14] = nil
             IOList[0][5][15] = nil
@@ -155,10 +155,10 @@ extension MainConfiguration{
             IOList[0][6][10] = "Slaapkamer Stopcontact Bed links"
             IOList[0][6][11] = "Slaapkamer Stopcontact T.V."
             IOList[0][6][12] = "Overloop Stopcontact"
-            IOList[0][6][13] = nil
-            IOList[0][6][14] = nil
-            IOList[0][6][15] = nil
-            
+            IOList[0][6][13] = "Voordeur"
+            IOList[0][6][14] = "Garage Poort"
+            IOList[0][6][15] = "Disable Sprinklersysteem"
+
             return IOList
         }
         

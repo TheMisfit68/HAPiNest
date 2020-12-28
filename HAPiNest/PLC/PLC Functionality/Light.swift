@@ -28,18 +28,25 @@ extension Light:Parameterizable{
     
     public func assignOutputParameters(){
         if let ioSignal = plc.signal(ioSymbol:instanceName) as? DigitalOutputSignal{
-        
-            output = output && !(feedbackValue ?? false) // Reset if the output and its feedback are the same
-            ioSignal.logicalValue = output.timed(using: pulsTimer)
+            
+            ioSignal.logicalValue = outputAsPuls
             
         }
     }
     
 }
 
-public class Light:StartStop, HomekitControllable{
+public class Light:PLCclass, HomekitControllable, PulsOperatedCircuit{
     
     var homekitParameters:[HomekitParameterName:Any] = [:]
+    var output:Bool = false
+    var feedbackValue:Bool? = nil
+
     let pulsTimer = DigitalTimer(type: .pulsLimition, time: 0.25)
+    var outputAsPuls:Bool{
+        // Only toggle if the output and its feedback are not already in sync
+        var puls = (self.output != (feedbackValue ?? false))
+        return puls.timed(using: pulsTimer)
+    }
         
 }

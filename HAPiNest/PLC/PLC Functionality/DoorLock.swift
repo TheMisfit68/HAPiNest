@@ -17,8 +17,7 @@ extension Doorlock:Parameterizable{
     public func assignInputParameters(){
         
         if let hkState  = homekitParameters[.unKnown] as? Enums.LockTargetState{
-            let unlock:Bool = (hkState == .unsecured)
-            self.output = edgeDetection.risingEdge(onBoolean: unlock)
+            self.output = (hkState == .unsecured)
         }
         
     }
@@ -26,19 +25,23 @@ extension Doorlock:Parameterizable{
     public func assignOutputParameters(){
         
         if let ioSignal = plc.signal(ioSymbol:instanceName) as? DigitalOutputSignal{
-            ioSignal.logicalValue = output.timed(using: pulsTimer)
+            ioSignal.logicalValue = outputAsPuls
         }
         
     }
     
 }
 
-class Doorlock:StartStop, HomekitControllable{
+class Doorlock:PLCclass, HomekitControllable, PulsOperatedCircuit{
     
     var homekitParameters:[HomekitParameterName:Any] = [:]
-    let pulsTimer = DigitalTimer(type: .exactPuls, time: 2.0)
-
-    private var edgeDetection:EBool = EBool()
-
+    var output:Bool = false
     
+    let pulsTimer = DigitalTimer(type: .exactPuls, time: 2.0)
+    var outputAsPuls:Bool{
+        // Puls every time the door needs to open
+        var puls = output
+        return puls.timed(using: pulsTimer)
+    }
+
 }
