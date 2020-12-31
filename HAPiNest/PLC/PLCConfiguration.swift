@@ -188,15 +188,15 @@ extension MainConfiguration{
             PLCobjects["W.C. Licht"] = Light()
             
             // Window Coverings
-            PLCobjects["Keuken Screens"] = WindowCovering()
-            PLCobjects["Living Screens"] = WindowCovering()
-            PLCobjects["Slaapkamer Screen"] = WindowCovering()
-            PLCobjects["Vide Screen"] = WindowCovering()
-            PLCobjects["Keuken Rolgordijnen"] = WindowCovering()
-            PLCobjects["Living Rolgordijnen"] = WindowCovering()
-            PLCobjects["Slaapkamer Rolgordijn"] = WindowCovering()
-            PLCobjects["Vide Rolgordijn"] = WindowCovering()
-            PLCobjects["Overloop Rolgordijn"] = WindowCovering()
+//            PLCobjects["Keuken Screens"] = WindowCovering()
+//            PLCobjects["Living Screens"] = WindowCovering()
+//            PLCobjects["Slaapkamer Screen"] = WindowCovering()
+//            PLCobjects["Vide Screen"] = WindowCovering()
+//            PLCobjects["Keuken Rolgordijnen"] = WindowCovering()
+//            PLCobjects["Living Rolgordijnen"] = WindowCovering()
+//            PLCobjects["Slaapkamer Rolgordijn"] = WindowCovering()
+//            PLCobjects["Vide Rolgordijn"] = WindowCovering()
+//            PLCobjects["Overloop Rolgordijn"] = WindowCovering()
             
             // Varia
             PLCobjects["Voordeur"] = Doorlock()
