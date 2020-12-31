@@ -16,23 +16,23 @@ extension WindowCovering:Parameterizable{
     
     public func assignInputParameters(){
         
-        if let hksetpoint  = homekitParameters[.setPoint] as? Float{
-            self.setPoint = hksetpoint
-        }
-        
-        if let ioSignal = plc.signal(ioSymbol:instanceName+" Op") as? DigitalInputSignal{
-            self.isOpening = ioSignal.logicalValue
-        }
-        if let ioSignal = plc.signal(ioSymbol:instanceName+" Neer") as? DigitalInputSignal{
-            self.isclosing = ioSignal.logicalValue
-        }
+//        if let hksetpoint  = homekitParameters[.setPoint] as? Float{
+//            self.setPoint = hksetpoint
+//        }
+//
+//        if let ioSignal = plc.signal(ioSymbol:instanceName+" Op") as? DigitalInputSignal{
+//            self.isOpening = ioSignal.logicalValue
+//        }
+//        if let ioSignal = plc.signal(ioSymbol:instanceName+" Neer") as? DigitalInputSignal{
+//            self.isclosing = ioSignal.logicalValue
+//        }
   
     }
     
     public func assignOutputParameters(){
         
         if let ioSignal = plc.signal(ioSymbol:instanceName) as? DigitalOutputSignal{
-            ioSignal.logicalValue = outputAsPuls
+//            ioSignal.logicalValue = outputAsPuls
         }
         
     }
@@ -40,15 +40,15 @@ extension WindowCovering:Parameterizable{
 }
 
 
-class WindowCovering:OpenCloseWithSetpoint, HomekitControllable, PulsOperatedCircuit{
+class WindowCovering:OpenCloseWithSetpoint, HomekitControllable{
     
     var homekitParameters:[HomekitParameterName:Any] = [:]
     
     let pulsTimer = DigitalTimer(type: .pulsLimition, time: 0.25)
-    var outputAsPuls:Bool{
-        // Only toggle if the outputs and their feedbacks are not already in sync
-        var puls = (self.outputOpen != (self.isOpening ?? false)) || (self.outputClose != (self.isclosing ?? false))
-        return puls.timed(using: pulsTimer)
-    }
+//    var outputAsPuls:Bool{
+//        // Only toggle if the outputs and their feedbacks are not already in sync
+//        var puls = (self.outputOpen != (self.isOpening ?? false)) || (self.outputClose != (self.isclosing ?? false))
+//        return puls.timed(using: pulsTimer)
+//    }
     
 }
