@@ -35,7 +35,7 @@ extension GaragePort:Parameterizable{
 class GaragePort:PLCclass, HomekitControllable, PulsOperatedCircuit{
     
     var homekitParameters:[HomekitParameterName:Any] = [:]
-    var edgeDetection:EBool = EBool()
+    var edgeDetection:EdgeDetection = EBool()
     var output:Bool = false
 
     let pulsTimer = DigitalTimer(type: .exactPuls, time: 1.0)
