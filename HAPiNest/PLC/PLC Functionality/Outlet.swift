@@ -12,13 +12,25 @@ import SoftPLC
 import ModbusDriver
 import JVCocoa
 
-extension Outlet:Parameterizable{
+class Outlet:PLCclass, HomekitControllable{
+
+    var homeKitEvents:[CharacteristicType:Any] = [:]
+    var homekitFeedbacks:[CharacteristicType:Any] = [:]
+
+    var output:Bool = true
+    
+    internal func parseNewHomeKitEvents(){
+        
+        if let hkState  = homeKitEvents[.powerState] as? Bool{
+            self.output = hkState
+        }
+        
+        homeKitEvents = [:]
+    }
     
     public func assignInputParameters(){
         
-        if let hkState  = homekitParameters[.powerState] as? Bool{
-            self.output = hkState
-        }
+        parseNewHomeKitEvents()
         
     }
     
@@ -29,12 +41,5 @@ extension Outlet:Parameterizable{
             ioSignal.logicalValue = output
         }
     }
-    
-}
-
-class Outlet:PLCclass, HomekitControllable{
-    
-    var homekitParameters:[HomekitParameterName:Any] = [:]
-    var output:Bool = true
     
 }

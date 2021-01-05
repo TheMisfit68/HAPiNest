@@ -1,8 +1,16 @@
 #  ToDo Domotica
 
-###### PLC kringen uitwerken
+###### Provide feedback of currenstate to HomeKit
 - [ ]  currentposition.value implementeren
 - [ ]  enum PositionState implementeren
+
+###### PLC kringen verder uitwerken
+- [ ]  Ebools herwerken (pijlsymbolen gebruiken als functienaam)
+- [ ]  Screens en rolgordijnen uitwerken
+
+
+- [ ]  Knoppen implementeren voor opvrgan informatie leaf
+
 
 
 - [ ]  Array of partial keypaths meegeven als parameter aan SQLite.autoCreateTableFor<T:SQLRecordable> in JVCocoa

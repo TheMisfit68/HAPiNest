@@ -1,5 +1,5 @@
 //
-//  YASDIDriver.swift
+//  YASDIDelegate.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 26/12/2019.
@@ -20,8 +20,15 @@ extension YASDIDriver:AccessoryDelegate{
         _ characteristic: GenericCharacteristic<T>,
         _ value:T?
     ){
+        
         let accessoryName = accessory.info.name.value!
+            
+            switch characteristic.type{
+            case CharacteristicType.powerState:
+                    break //TODO: - Implment info request on YASDI driver for Solarpanels
+            default:
+                Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+            }
+        }
 
-        Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
-    }
 }

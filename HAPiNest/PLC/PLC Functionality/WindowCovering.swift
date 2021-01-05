@@ -12,11 +12,30 @@ import SoftPLC
 import ModbusDriver
 import JVCocoa
 
-extension WindowCovering:Parameterizable{
+class WindowCovering:OpenCloseWithSetpoint, HomekitControllable{
+    
+    var homeKitEvents:[CharacteristicType:Any] = [:]
+    var homekitFeedbacks:[CharacteristicType:Any] = [:]
+    
+    let pulsTimer = DigitalTimer(type: .pulsLimition, time: 0.25)
+//    var outputAsPuls:Bool{
+//        // Only toggle if the outputs and their feedbacks are not already in sync
+//        var puls = (self.outputOpen != (self.isOpening ?? false)) || (self.outputClose != (self.isclosing ?? false))
+//        return puls.timed(using: pulsTimer)
+//    }
+    
+    
+    internal func parseNewHomeKitEvents(){
+        
+    
+    }
+    
     
     public func assignInputParameters(){
         
-//        if let hksetpoint  = homekitParameters[.setPoint] as? Float{
+        parseNewHomeKitEvents()
+        
+//        if let hksetpoint  = homeKitEvents[.setPoint] as? Float{
 //            self.setPoint = hksetpoint
 //        }
 //
@@ -36,19 +55,5 @@ extension WindowCovering:Parameterizable{
         }
         
     }
-    
-}
-
-
-class WindowCovering:OpenCloseWithSetpoint, HomekitControllable{
-    
-    var homekitParameters:[HomekitParameterName:Any] = [:]
-    
-    let pulsTimer = DigitalTimer(type: .pulsLimition, time: 0.25)
-//    var outputAsPuls:Bool{
-//        // Only toggle if the outputs and their feedbacks are not already in sync
-//        var puls = (self.outputOpen != (self.isOpening ?? false)) || (self.outputClose != (self.isclosing ?? false))
-//        return puls.timed(using: pulsTimer)
-//    }
     
 }

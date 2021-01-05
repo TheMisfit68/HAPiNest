@@ -12,31 +12,10 @@ import SoftPLC
 import ModbusDriver
 import JVCocoa
 
-extension DimmableLight:Parameterizable{
-    
-    public func assignInputParameters(){
-        
-        if let hkState  = homekitParameters[.powerState] as? Bool{
-            self.powerState = hkState ? .on : .off
-        }
-        if let hkBrightNess = homekitParameters[.brightness] as? Int{
-            self.brightness = hkBrightNess
-        }
-        
-    }
-    
-    public func assignOutputParameters(){
-        
-        if let ioSignal = plc.signal(ioSymbol:instanceName) as? AnalogOutputSignal{
-            ioSignal.scaledValue = Float(brightness)
-        }
-    }
-    
-}
-
 public class DimmableLight:PLCclass, HomekitControllable{
     
-    var homekitParameters:[HomekitParameterName:Any] = [:]
+    var homeKitEvents:[CharacteristicType:Any] = [:]
+    var homekitFeedbacks:[CharacteristicType:Any] = [:]
     
     private let switchOffLevelDimmer:Int = 15
     private var previousBrightness:Int = 0
@@ -47,7 +26,7 @@ public class DimmableLight:PLCclass, HomekitControllable{
     }
     
     public var powerState:PowerState = .off
-
+    
     public var brightness:Int = 0{
         
         didSet{
@@ -60,6 +39,31 @@ public class DimmableLight:PLCclass, HomekitControllable{
             if brightness > switchOffLevelDimmer{
                 previousBrightness = brightness
             }
+        }
+    }
+    
+    internal func parseNewHomeKitEvents(){
+        
+        if let hkState  = homeKitEvents[.powerState] as? Bool{
+            self.powerState = hkState ? .on : .off
+        }
+        if let hkBrightNess = homeKitEvents[.brightness] as? Int{
+            self.brightness = hkBrightNess
+        }
+        
+        homeKitEvents = [:]
+    }
+    
+    public func assignInputParameters(){
+        
+        parseNewHomeKitEvents()
+        
+    }
+    
+    public func assignOutputParameters(){
+        
+        if let ioSignal = plc.signal(ioSymbol:instanceName) as? AnalogOutputSignal{
+            ioSignal.scaledValue = Float(brightness)
         }
     }
     

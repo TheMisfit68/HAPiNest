@@ -14,7 +14,6 @@ import JVCocoa
 
 struct DashBoardView: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-//    @State var showResetPairingsButton = HomeKitServer.shared.mainBridge.isPaired
 //      @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
     
     var body: some View {

@@ -139,7 +139,23 @@ struct MainConfiguration{
                                     ]
             )
             
-            // Solar Panels
+            
+            // Solar Panels Info
+            HomeKitServer.shared.mainBridge.addDriver(plc, withAcccesories:
+                                    [
+                                        Accessory.Switch(info: Service.Info(name: "Informatie Zonnepanelen", serialNumber: "30000")),
+                                    ]
+            )
+            
+            // Car Info
+            HomeKitServer.shared.mainBridge.addDriver(HomeKitServer.shared.leafDriver, withAcccesories:
+                                    [
+                                        Accessory.Switch(info: Service.Info(name: "Informatie Leaf", serialNumber: "40000")),
+                                    ]
+            )
+            
+            
+            
 //            if let yasdiDriver=HomeKitServer.shared.yasdiDriver{
 //                HomeKitServer.shared.mainBridge.addDriver(yasdiDriver, withAcccesories:
 //                                        [

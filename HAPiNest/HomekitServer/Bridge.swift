@@ -14,7 +14,6 @@ import JVCocoa
 // Therefore it can't be subclassed and
 // Bridge is a just wrapper around it
 
-
 class Bridge:DeviceDelegate{
     
     public let device:Device
@@ -28,7 +27,6 @@ class Bridge:DeviceDelegate{
     public var isPaired:Bool{
         device.isPaired
     }
-    
     
     
     private let serialNumber = "00001"
@@ -83,7 +81,6 @@ class Bridge:DeviceDelegate{
     
     
     // MARK: - DeviceDelegate functions
-    
     func characteristic<T>(_ characteristic: GenericCharacteristic<T>,
                            ofService service: Service,
                            ofAccessory accessory: Accessory,
@@ -99,26 +96,17 @@ class Bridge:DeviceDelegate{
     }
     
     func didRequestIdentificationOf(_ accessory: Accessory) {
-//        Debugger.shared.log(debugLevel: .Info,"Requested identification "
-//                                + "of accessory \(String(describing: accessory.info.name.value ?? ""))")
+
     }
     
     func characteristicListenerDidSubscribe(_ accessory: Accessory,
                                             service: Service,
                                             characteristic: AnyCharacteristic) {
-//        Debugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
-//                                + "in service \(service.type) "
-//                                + "of accessory \(accessory.info.name.value ?? "") "
-//                                + "got a subscriber")
     }
     
     func characteristicListenerDidUnsubscribe(_ accessory: Accessory,
                                               service: Service,
                                               characteristic: AnyCharacteristic) {
-//        Debugger.shared.log(debugLevel: .Info, "Characteristic \(characteristic) "
-//                                + "in service \(service.type) "
-//                                + "of accessory \(accessory.info.name.value ?? "") "
-//                                + "lost a subscriber")
     }
     
     func didChangePairingState(from: PairingState, to: PairingState) {

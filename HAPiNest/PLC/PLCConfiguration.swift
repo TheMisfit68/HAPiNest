@@ -97,10 +97,10 @@ extension MainConfiguration{
             IOList[0][3][9] = nil
             IOList[0][3][10] = nil
             IOList[0][3][11] = nil
-            IOList[0][3][12] = "Functietoets Voordeur"
-            IOList[0][3][13] = "Functietoets Bed Anja"
-            IOList[0][3][14] = "Functietoets Bed Jan"
-            IOList[0][3][15] = "Functietoets Overloop"
+            IOList[0][3][12] = "Hal Functietoets Voordeur"
+            IOList[0][3][13] = "SlaapKamer Functietoets Bed Anja"
+            IOList[0][3][14] = "SlaapKamer Functietoets Bed Jan"
+            IOList[0][3][15] = "Overloop Functietoets"
             
             // Digital outputput 4...6
             // Lights
@@ -166,6 +166,12 @@ extension MainConfiguration{
             
             var PLCobjects:[SoftPLC.Symbol:PLCclass] = [:]
             
+            // Function keys / Switches
+            PLCobjects["Hall Functietoets Voordeur"] = Switch()
+            PLCobjects["SlaapKamer Functietoets Bed Anja"] = Switch()
+            PLCobjects["SlaapKamer Functietoets Bed Jan"] = Switch()
+            PLCobjects["Overloop Functietoets"] = Switch()
+            
             // Dimmable lights
             PLCobjects["Badkamer Sfeerlichtjes"] = DimmableLight()
             PLCobjects["Slaapkamer Licht"] = DimmableLight()
@@ -212,6 +218,10 @@ extension MainConfiguration{
             PLCobjects["Bureau Stopcontact whiteboard"] = Outlet()
             PLCobjects["Bureau Stopcontact"] = Outlet()
             PLCobjects["Hal Stopcontact"] = Outlet()
+            PLCobjects["Slaapkamer Stopcontact bed rechts"] = Outlet()
+            PLCobjects["Slaapkamer Stopcontact Bed links"] = Outlet()
+            PLCobjects["Slaapkamer Stopcontact T.V."] = Outlet()
+            PLCobjects["Overloop Stopcontact"] = Outlet()
             PLCobjects["Slaapkamer Stopcontact bed rechts"] = Outlet()
             PLCobjects["Slaapkamer Stopcontact Bed links"] = Outlet()
             PLCobjects["Slaapkamer Stopcontact T.V."] = Outlet()

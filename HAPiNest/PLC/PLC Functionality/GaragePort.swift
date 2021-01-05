@@ -12,29 +12,11 @@ import SoftPLC
 import ModbusDriver
 import JVCocoa
 
-extension GaragePort:Parameterizable{
-    
-    public func assignInputParameters(){
-        
-        if let hkState  = homekitParameters[.unKnown] as? Enums.TargetDoorState{
-            self.output = (hkState == .open)
-        }
-        
-    }
-    
-    public func assignOutputParameters(){
-        
-        if let ioSignal = plc.signal(ioSymbol:instanceName) as? DigitalOutputSignal{
-            ioSignal.logicalValue = outputAsPuls
-        }
-        
-    }
-    
-}
-
 class GaragePort:PLCclass, HomekitControllable, PulsOperatedCircuit{
     
-    var homekitParameters:[HomekitParameterName:Any] = [:]
+    var homeKitEvents:[CharacteristicType:Any] = [:]
+    var homekitFeedbacks:[CharacteristicType:Any] = [:]
+    
     var edgeDetection:EdgeDetection = EBool()
     var output:Bool = false
 
@@ -43,6 +25,27 @@ class GaragePort:PLCclass, HomekitControllable, PulsOperatedCircuit{
         // Puls every time the door needs to be operated
         var puls = edgeDetection.anyEdge(onBoolean: output)
         return puls.timed(using: pulsTimer)
+    }
+    
+    
+    internal func parseNewHomeKitEvents(){
+        
+        if let hkState  = homeKitEvents[CharacteristicType.targetDoorState] as? Enums.TargetDoorState{
+            self.output = (hkState == .open)
+        }
+        homeKitEvents = [:]
+    }
+    
+    public func assignInputParameters(){        
+       parseNewHomeKitEvents()
+    }
+    
+    public func assignOutputParameters(){
+        
+        if let ioSignal = plc.signal(ioSymbol:instanceName) as? DigitalOutputSignal{
+            ioSignal.logicalValue = outputAsPuls
+        }
+        
     }
 
     

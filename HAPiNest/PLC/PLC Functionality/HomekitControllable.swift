@@ -11,20 +11,15 @@ import HAP
 import SoftPLC
 import JVCocoa
 
-
-extension PLCclass{
-
-    enum HomekitParameterName{
-        case powerState
-        case brightness
-        case setPoint
-        case unKnown
-    }
+protocol HomekitControllable:Parameterizable{
+    
+    var service:HAP.Service {get}
+    var homeKitEvents:[Accessory:Any] { get set }
+    var homekitFeedbacks:[CharacteristicType:Any] { get set }
+    
+    func parseNewHomeKitEvents()
+    func feedbackHomeKitState()
     
 }
 
-protocol HomekitControllable{
-    
-    var homekitParameters:[PLCclass.HomekitParameterName:Any] { get set }
-    
-}
+ 
