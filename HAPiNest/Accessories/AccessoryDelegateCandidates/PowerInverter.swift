@@ -5,8 +5,8 @@
 //  Created by Jan Verrept on 26/12/2019.
 //  Copyright © 2019 Jan Verrept. All rights reserved.
 //
-import Foundation
-import HAP
+//import Foundation
+//import HAP
 
 //extension Accessory{
 //    open class PowerInverter: Accessory {
@@ -63,23 +63,23 @@ import HAP
 //}
 //
 
-
-class PowerBankAccessory: Accessory {
-    let service = PowerBankService()
-    init(info: Service.Info) {
-        super.init(info: info, type: .outlet, services: [service])
-    }
-}
-class PowerBankService: Service {
-   
-    public let power = GenericCharacteristic<Double>(
-        type: .power,
-        value: 100,
-        permissions: [.read, .events])
-
-    init() {
-        super.init(type: .powerMeterService, characteristics: [
-            AnyCharacteristic(power)
-        ])
-    }
-}
+//
+//class PowerBankAccessory: Accessory {
+//    let service = PowerBankService()
+//    init(info: Service.Info) {
+//        super.init(info: info, type: .outlet, services: [service])
+//    }
+//}
+//class PowerBankService: Service {
+//   
+//    public let power = GenericCharacteristic<Double>(
+//        type: .power,
+//        value: 100,
+//        permissions: [.read, .events])
+//
+//    init() {
+//        super.init(type: .powerMeterService, characteristics: [
+//            AnyCharacteristic(power)
+//        ])
+//    }
+//}
