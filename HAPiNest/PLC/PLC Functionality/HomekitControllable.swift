@@ -12,14 +12,17 @@ import SoftPLC
 import JVCocoa
 
 protocol HomekitControllable:Parameterizable{
-    
-    var service:HAP.Service {get}
-    var homeKitEvents:[Accessory:Any] { get set }
-    var homekitFeedbacks:[CharacteristicType:Any] { get set }
-    
-    func parseNewHomeKitEvents()
-    func feedbackHomeKitState()
-    
+    associatedtype AccessoryType
+
+    var connectedAccessory:AccessoryType? {get}
 }
 
+
+extension HomekitControllable{
+    
+    var connectedAccessory:AccessoryType? {
+        HomeKitServer.shared.mainBridge.accessory(named: self.instanceName) as? Self.AccessoryType
+    }
+    
+}
  
