@@ -1,4 +1,8 @@
 #  ToDo Domotica
+  
+Subscript voorzien voor accessories op naam
+cleanup bridge en merge/typealias wit delegate
+Pushbutton voorzien als subscript van Switch?
 
 ###### Provide feedback of currenstate to HomeKit
 - [ ]  currentposition.value implementeren
@@ -8,11 +12,11 @@
 - [ ]  Ebools herwerken (pijlsymbolen gebruiken als functienaam)
 - [ ]  Screens en rolgordijnen uitwerken
 
+###### Scenes definiëren volgens Things
+
+
 
 - [ ]  Knoppen implementeren voor opvrgan informatie leaf
-
-
-
 - [ ]  Array of partial keypaths meegeven als parameter aan SQLite.autoCreateTableFor<T:SQLRecordable> in JVCocoa
 - [ ]  SmartsprinklerDriver afwerken
 
