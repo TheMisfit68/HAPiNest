@@ -39,8 +39,8 @@ public class HomeKitServer:Singleton{
     }
     
     let milightDriver = MilightDriverV6(ipAddress: "192.168.0.52")
-    let tizenDriver1 = TizenDriver(tvName:"T.V. living", macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: "HAPiNestServer")
-    let tizenDriver2 = TizenDriver(tvName:"T.V. slaapkamer", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.140", port: 8002, deviceName: "HAPiNestServer")
+    let tizenDriver1 = TizenDriver(tvName:"T.V. Living", macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: "HAPiNestServer")
+    let tizenDriver2 = TizenDriver(tvName:"T.V. Slaapkamer", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.140", port: 8002, deviceName: "HAPiNestServer")
     
     let siriDriver = SiriDriver(language: .flemish)
     let appleScripTDriver = AppleScriptDriver()
@@ -48,7 +48,7 @@ public class HomeKitServer:Singleton{
     let yasdiDriver = YASDIDriver.InstallDrivers().first
     let gscNotifier = GSCNotifier()
     let sunnyPortalReporter = SunnyPortalReporter()
-    let sprinklerDriver = SmartSprinklerDriver()
+//    let sprinklerDriver = SmartSprinklerDriver()
     
     private init(){
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server...")

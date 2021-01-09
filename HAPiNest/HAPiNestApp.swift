@@ -19,14 +19,15 @@ struct HAPiNestApp: App {
     
     init() {
         AppState.shared.plc.plcObjects = MainConfiguration.PLC.PLCobjects
-        AppState.shared.plc.run()
         
         AppState.shared.homekitServer.mainBridge = Bridge(
             name:MainConfiguration.HomeKit.BridgeName,
-            setupCode:MainConfiguration.HomeKit.BridgeSetupCode)
+            setupCode:MainConfiguration.HomeKit.BridgeSetupCode,
+            accessories: MainConfiguration.HomeKit.Accessories)
         
-        MainConfiguration.HomeKit.AddAccessories()
-                
+        
+        // Only fire Up PLC after all components are initialized
+        AppState.shared.plc.run()
     }
     
     var body: some Scene {
