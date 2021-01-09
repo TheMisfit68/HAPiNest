@@ -49,22 +49,22 @@ extension MainConfiguration{
             
             // Digital inputs 1...3
             // Lights
-            IOList[0][1][0] = "Buiten Licht enabled"
-            IOList[0][1][1] = "Overloop Licht enabled"
-            IOList[0][1][2] = "Badkamer Licht ingeschakeld"
-            IOList[0][1][3] = "Badkamer Licht spiegel ingeschakeld"
-            IOList[0][1][4] = "Kelder Licht ingeschakeld"
-            IOList[0][1][5] = "Garage Licht ingeschakeld"
-            IOList[0][1][6] = "Garage Licht Werkbank ingeschakeld"
-            IOList[0][1][7] = "Keuken Licht ingeschakeld"
-            IOList[0][1][8] = "Keuken Licht kast ingeschakeld"
-            IOList[0][1][9] = "Bureau Licht ingeschakeld"
-            IOList[0][1][10] = "Eetkamer Licht ingeschakeld"
-            IOList[0][1][11] = "Dressing Licht ingeschakeld"
-            IOList[0][1][12] = "Buiten Licht ingeschakeld"
-            IOList[0][1][13] = "Overloop Licht ingeschakeld"
-            IOList[0][1][14] = "Hal Licht ingeschakeld"
-            IOList[0][1][15] = "W.C. Licht ingeschakeld"
+            IOList[0][1][0] = "Buiten Licht Enabled"
+            IOList[0][1][1] = "Overloop Licht Enabled"
+            IOList[0][1][2] = "Badkamer Licht Ingeschakeld"
+            IOList[0][1][3] = "Badkamer Licht spiegel Ingeschakeld"
+            IOList[0][1][4] = "Kelder Licht Ingeschakeld"
+            IOList[0][1][5] = "Garage Licht Ingeschakeld"
+            IOList[0][1][6] = "Garage Licht Werkbank Ingeschakeld"
+            IOList[0][1][7] = "Keuken Licht Ingeschakeld"
+            IOList[0][1][8] = "Keuken Licht kast Ingeschakeld"
+            IOList[0][1][9] = "Bureau Licht Ingeschakeld"
+            IOList[0][1][10] = "Eetkamer Licht Ingeschakeld"
+            IOList[0][1][11] = "Dressing Licht Ingeschakeld"
+            IOList[0][1][12] = "Buiten Licht Ingeschakeld"
+            IOList[0][1][13] = "Overloop Licht Ingeschakeld"
+            IOList[0][1][14] = "Hal Licht Ingeschakeld"
+            IOList[0][1][15] = "W.C. Licht Ingeschakeld"
 
             // Window Coverings feedback Up
             IOList[0][2][0] = "Keuken Screen Op"
@@ -76,7 +76,7 @@ extension MainConfiguration{
             IOList[0][2][6] = "Slaapkamer Rolgordijn Op"
             IOList[0][2][7] = "Vide Rolgordijn Op"
             IOList[0][2][8] = "Overloop Rolgordijn Op"
-            IOList[0][2][9] = "Compressor ingeschakeld"
+            IOList[0][2][9] = "Compressor Ingeschakeld"
             IOList[0][2][10] = nil
             IOList[0][2][11] = nil
             IOList[0][2][12] = nil
@@ -104,8 +104,8 @@ extension MainConfiguration{
             
             // Digital outputput 4...6
             // Lights
-            IOList[0][4][14] = "Enable Buiten Licht"
-            IOList[0][4][15] = "Enable Overloop Licht"
+            IOList[0][4][14] = "Buiten Licht Enable"
+            IOList[0][4][15] = "Overloop Licht Enable"
             IOList[0][4][2] = "Badkamer Licht"
             IOList[0][4][3] = "Badkamer Licht spiegel"
             IOList[0][4][4] = "Kelder Licht"
@@ -167,7 +167,7 @@ extension MainConfiguration{
             var PLCobjects:[SoftPLC.Symbol:PLCclass] = [:]
             
             // Function keys / Switches
-            PLCobjects["Hall Functietoets Voordeur"] = Switch()
+            PLCobjects["Hal Functietoets Voordeur"] = Switch()
             PLCobjects["SlaapKamer Functietoets Bed Anja"] = Switch()
             PLCobjects["SlaapKamer Functietoets Bed Jan"] = Switch()
             PLCobjects["Overloop Functietoets"] = Switch()
@@ -188,7 +188,6 @@ extension MainConfiguration{
             PLCobjects["Eetkamer Licht"] = Light()
             PLCobjects["Dressing Licht"] = Light()
 
-            PLCobjects["Buiten Licht"] = Light()
             PLCobjects["Overloop Licht"] = Light()
             PLCobjects["Hal Licht"] = Light()
             PLCobjects["W.C. Licht"] = Light()
@@ -223,6 +222,10 @@ extension MainConfiguration{
             PLCobjects["Slaapkamer Stopcontact T.V."] = Outlet()
             PLCobjects["Overloop Stopcontact"] = Outlet()
             PLCobjects["Slaapkamer Stopcontact bed rechts"] = Outlet()
+            PLCobjects["Slaapkamer Stopcontact Bed links"] = Outlet()
+            PLCobjects["Slaapkamer Stopcontact T.V."] = Outlet()
+            PLCobjects["Overloop Stopcontact"] = Outlet()
+            
             PLCobjects["Slaapkamer Stopcontact Bed links"] = Outlet()
             PLCobjects["Slaapkamer Stopcontact T.V."] = Outlet()
             PLCobjects["Overloop Stopcontact"] = Outlet()
