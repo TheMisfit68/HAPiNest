@@ -9,8 +9,12 @@
 import Cocoa
 import JVCocoa
 import HAP
-import SoftPLC
 
+import SoftPLC
+import MilightDriver
+import TizenDriver
+import LeafDriver
+import YASDIDriver
 
 struct MainConfiguration{
     
@@ -19,130 +23,138 @@ struct MainConfiguration{
         static let BridgeName = "NestBridge"
         static let BridgeSetupCode = "456-77-890"
         
-        static let Accessories = [
+        static let PLCobjects = PLC.PLCobjects.mapValues{$0 as! AccessoryDelegate}
+        static let Accessories:[ (Accessory,AccessoryDelegate?) ] = [
             
-            // Lights
-            Accessory.Lightbulb(info: Service.Info (name: "Badkamer Sfeerlichtjes", serialNumber: "00002"), isDimmable: true),
-            Accessory.Lightbulb(info: Service.Info(name: "Slaapkamer Licht", serialNumber: "00003"), isDimmable: true),
+            // MARK: - Dimmable Lights
+            ( Accessory.Lightbulb(info: Service.Info (name: "Badkamer Sfeerlichtjes", serialNumber: "00002", manufacturer: "MOXA"), isDimmable: true),   PLCobjects["Badkamer Sfeerlichtjes"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Slaapkamer Licht", serialNumber: "00003", manufacturer: "MOXA"), isDimmable: true),          PLCobjects["Slaapkamer Licht"] ),
             
-            Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht", serialNumber: "00400")),
-            Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht spiegel", serialNumber: "00401")),
-            Accessory.Lightbulb(info: Service.Info(name: "Kelder Licht", serialNumber: "00402")),
-            Accessory.Lightbulb(info: Service.Info(name: "Buiten Licht", serialNumber: "00403")),
-            Accessory.Lightbulb(info: Service.Info(name: "Garage Licht", serialNumber: "00404")),
-            Accessory.Lightbulb(info: Service.Info(name: "Garage Licht Werkbank", serialNumber: "00405")),
-            Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht kast", serialNumber: "00406")),
-            Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht", serialNumber: "00407")),
-            Accessory.Lightbulb(info: Service.Info(name: "Bureau Licht", serialNumber: "00408")),
-            Accessory.Lightbulb(info: Service.Info(name: "Eetkamer Licht", serialNumber: "00409")),
-            Accessory.Lightbulb(info: Service.Info(name: "Hal Licht", serialNumber: "00410")),
-            Accessory.Lightbulb(info: Service.Info(name: "W.C. Licht", serialNumber: "00411")),
-            Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht", serialNumber: "00412")),
-            Accessory.Lightbulb(info: Service.Info(name: "Dressing Licht", serialNumber: "00413")),
-            
-            
-//            // Window coverings
-//            Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")),
-//            Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),
-//            Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),
-//            Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),
-//            Accessory.WindowCovering(info: Service.Info(name: "Keuken Rolgordijnen", serialNumber: "00504")),
-//            Accessory.WindowCovering(info: Service.Info(name: "Living Rolgordijnen", serialNumber: "00505")),
-//            Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolgordijn", serialNumber: "00506")),
-//            Accessory.WindowCovering(info: Service.Info(name: "Vide Rolgordijn", serialNumber: "00507")),
-//            Accessory.WindowCovering(info: Service.Info(name: "Overloop Rolgordijn", serialNumber: "00508")),
+            // MARK: - Lights
+            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht", serialNumber: "00400")),            PLCobjects["Badkamer Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht spiegel", serialNumber: "00401")),    PLCobjects["Badkamer Licht spiegel"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Kelder Licht", serialNumber: "00402")),              PLCobjects["Kelder Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Buiten Licht", serialNumber: "00403")),              PLCobjects["Buiten Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht", serialNumber: "00404")),              PLCobjects["Garage Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht Werkbank", serialNumber: "00405")),     PLCobjects["Garage Licht Werkbank"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht kast", serialNumber: "00406")),         PLCobjects["Keuken Licht kast"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht", serialNumber: "00407")),              PLCobjects["Keuken Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Bureau Licht", serialNumber: "00408")),              PLCobjects["Bureau Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Eetkamer Licht", serialNumber: "00409")),            PLCobjects["Eetkamer Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Hal Licht", serialNumber: "00410")),                 PLCobjects["Hal Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "W.C. Licht", serialNumber: "00411")),                PLCobjects["W.C. Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht", serialNumber: "00412")),            PLCobjects["Overloop Licht"] ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Dressing Licht", serialNumber: "00413")),            PLCobjects["Dressing Licht"] ),
             
             
-            // Security
-            Accessory.GarageDoorOpener(info: Service.Info(name: "Garage Poort", serialNumber: "00514")),
-            Accessory.LockMechanism(info: Service.Info(name: "Voordeur", serialNumber: "00515")),
+            //            // Window coverings
+            //            Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")), PLCobjects["Slaapkamer Licht"] ),
+            //            Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")), PLCobjects["Slaapkamer Licht"] ),
+            //            Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")), PLCobjects["Slaapkamer Licht"] ),
+            //            Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")), PLCobjects["Slaapkamer Licht"] ),
+            //            Accessory.WindowCovering(info: Service.Info(name: "Keuken Rolgordijnen", serialNumber: "00504")), PLCobjects["Slaapkamer Licht"] ),
+            //            Accessory.WindowCovering(info: Service.Info(name: "Living Rolgordijnen", serialNumber: "00505")), PLCobjects["Slaapkamer Licht"] ),
+            //            Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolgordijn", serialNumber: "00506")), PLCobjects["Slaapkamer Licht"] ),
+            //            Accessory.WindowCovering(info: Service.Info(name: "Vide Rolgordijn", serialNumber: "00507")), PLCobjects["Slaapkamer Licht"] ),
+            //            Accessory.WindowCovering(info: Service.Info(name: "Overloop Rolgordijn", serialNumber: "00508")), PLCobjects["Slaapkamer Licht"] ),
             
+            
+            // MARK: - Security
+//            ( Accessory.GarageDoorOpener.Basic(info: Service.Info(name: "Garage Poort", serialNumber: "00514")), PLCobjects["Slaapkamer Licht"] ),
+            ( Accessory.LockMechanism(info: Service.Info(name: "Voordeur", serialNumber: "00515")), PLCobjects["Slaapkamer Licht"] ),
+            
+            // MARK: - Sprinkler
+            ( Accessory.SmartSprinkler(info: Service.Info(name: "Vrijgave beregening", serialNumber: "00516", manufacturer: "Hunter")), PLCobjects["Vrijgave beregening"] ),
             
             // Outlets
-            Accessory.Outlet(info: Service.Info(name: "Kelder Compressor", serialNumber: "00600")),
-            Accessory.Outlet(info: Service.Info(name: "Buiten Stopcontact", serialNumber: "00601")),
-            Accessory.Outlet(info: Service.Info(name: "Garage Droogkast", serialNumber: "00602")),
-            Accessory.Outlet(info: Service.Info(name: "Garage Ventilatie", serialNumber: "00603")),
-            Accessory.Outlet(info: Service.Info(name: "Keuken Powerport", serialNumber: "00604")),
-            Accessory.Outlet(info: Service.Info(name: "Living Stopcontact", serialNumber: "00605")),
-            Accessory.Outlet(info: Service.Info(name: "Eetkamer Stopcontact", serialNumber: "00606")),
-            Accessory.Outlet(info: Service.Info(name: "Bureau Stopcontact whiteboard", serialNumber: "00607")),
-            Accessory.Outlet(info: Service.Info(name: "Bureau Stopcontact", serialNumber: "00608")),
-            Accessory.Outlet(info: Service.Info(name: "Hal Stopcontact", serialNumber: "00609")),
-            Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact bed rechts", serialNumber: "00610")),
-            Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact Bed links", serialNumber: "00611")),
-            Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact T.V.", serialNumber: "00612")),
-            Accessory.Outlet(info: Service.Info(name: "Overloop Stopcontact", serialNumber: "00613")),
-     
-            // Lights
-            Accessory.Lightbulb.Milight(info: Service.Info(name: "Balk", serialNumber: "10000"), driver: HomeKitServer.shared.milightDriver, zone:.zone01),
-            Accessory.Lightbulb.Milight(info: Service.Info(name: "UFO", serialNumber: "10002"), driver: HomeKitServer.shared.milightDriver, zone:.zone02),
-       
-            // Multimedia
-            // Use 'InputSource'-selector to switch channels instead
-            Accessory.Television.Tizen(info: Service.Info(name: "T.V.", serialNumber: "20000"), inputs: [
-                ("homeScreen", .hdmi),
-                ("Eén", .hdmi),
-                ("Q2", .hdmi),
-                ("VTM", .hdmi),
-                ("Vier", .hdmi),
-                ("Vijf", .hdmi),
-                ("Zes", .hdmi),
-                ("Canvas", .hdmi),
-                ("Discovery", .hdmi),
-                ("National Geographic", .hdmi),
-                ("Animal planet", .hdmi),
-                ("Netflix", .application),
-                ("YouTube", .application)
-            ], driver:HomeKitServer.shared.tizenDriver1),
-            
-            Accessory.Television.Tizen(info: Service.Info(name: "T.V. Boven", serialNumber: "20001"), inputs: [
-                ("homeScreen", .hdmi),
-                ("Eén", .hdmi),
-                ("Q2", .hdmi),
-                ("VTM", .hdmi),
-                ("Vier", .hdmi),
-                ("Vijf", .hdmi),
-                ("Zes", .hdmi),
-                ("Canvas", .hdmi),
-                ("Discovery", .hdmi),
-                ("National Geographic", .hdmi),
-                ("Animal planet", .hdmi),
-                ("Netflix", .application),
-                ("YouTube", .application)
-            ], driver:HomeKitServer.shared.tizenDriver2),
+            ( Accessory.Outlet(info: Service.Info(name: "Kelder Compressor", serialNumber: "00600", manufacturer: "Niko")),                 PLCobjects["Kelder Compressor"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Buiten Stopcontact", serialNumber: "00601", manufacturer: "Niko")),                PLCobjects["Buiten Stopcontact"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Garage Droogkast", serialNumber: "00602", manufacturer: "Niko")),                  PLCobjects["Garage Droogkast"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Garage Ventilatie", serialNumber: "00603", manufacturer: "Niko")),                 PLCobjects["Garage Ventilatie"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Keuken Powerport", serialNumber: "00604", manufacturer: "Niko")),                  PLCobjects["Keuken Powerport"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Living Stopcontact", serialNumber: "00605", manufacturer: "Niko")),                PLCobjects["Living Stopcontact"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Eetkamer Stopcontact", serialNumber: "00606", manufacturer: "Niko")),              PLCobjects["Eetkamer Stopcontact"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Bureau Stopcontact whiteboard", serialNumber: "00607", manufacturer: "Niko")),     PLCobjects["Bureau Stopcontact whiteboard"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Bureau Stopcontact", serialNumber: "00608", manufacturer: "Niko")),                PLCobjects["Bureau Stopcontact"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Hal Stopcontact", serialNumber: "00609", manufacturer: "Niko")),                   PLCobjects["Hal Stopcontact"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact bed rechts", serialNumber: "00610", manufacturer: "Niko")), PLCobjects["Slaapkamer Stopcontact bed rechts"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact Bed links", serialNumber: "00611", manufacturer: "Niko")),  PLCobjects["Slaapkamer Stopcontact Bed links"] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact T.V.", serialNumber: "00612", manufacturer: "Niko")),       PLCobjects["Slaapkamer Stopcontact T.V."] ),
+            ( Accessory.Outlet(info: Service.Info(name: "Overloop Stopcontact", serialNumber: "00613", manufacturer: "Niko")),              PLCobjects["Overloop Stopcontact"] ),
             
             
-            //            // Solar Panels Info
-            //            HomeKitServer.shared.mainBridge.addDriver(plc, withAcccesories:
-            //                                    [
-            //                                        Accessory.Switch(info: Service.Info(name: "Informatie Zonnepanelen", serialNumber: "30000")),
-            //                                    ]
-            //            )
-            //
-            //            // Car Info
-            //            HomeKitServer.shared.mainBridge.addDriver(HomeKitServer.shared.leafDriver, withAcccesories:
-            //                                    [
-            //                                        Accessory.Switch(info: Service.Info(name: "Informatie Leaf", serialNumber: "40000")),
-            //                                    ]
-            //            )
-            //
+            // MARK: - Smart Lights
+            ( Accessory.Lightbulb(info: Service.Info(name: "Balk", serialNumber: "10000", manufacturer: "Milight")),     MilightDelegate(name: "Balk", driver:MilightDriver(milightProtocol:MilightProtocolV6(), ipAddress:"192.168.0.52"), zone: .zone01) ),
+            ( Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "10002", manufacturer: "Milight")),     MilightDelegate(name: "UFO", driver:MilightDriver(milightProtocol:MilightProtocolV6(), ipAddress:"192.168.0.52"), zone: .zone02) ),
+
             
+            // MARK: - T.V.s
+            // Use 'InputSource'-selectors to switch channels instead
+           (  Accessory.Television(info: Service.Info(name: "T.V.", serialNumber: "20000", manufacturer: "Samsung"),
+                                       inputs: [
+                                        ("homeScreen", .hdmi),
+                                        ("Eén", .hdmi),
+                                        ("Q2", .hdmi),
+                                        ("VTM", .hdmi),
+                                        ("Vier", .hdmi),
+                                        ("Vijf", .hdmi),
+                                        ("Zes", .hdmi),
+                                        ("Canvas", .hdmi),
+                                        ("Discovery", .hdmi),
+                                        ("National Geographic", .hdmi),
+                                        ("Animal planet", .hdmi),
+                                        ("Netflix", .application),
+                                        ("YouTube", .application)
+                                       ]),
+              TizenDelegate(name: "T.V.", driver: TizenDriver(tvName:"T.V. Living", macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: "HAPiNestServer"))
+                
+            ),
             
-            //            if let yasdiDriver=HomeKitServer.shared.yasdiDriver{
-            //                HomeKitServer.shared.mainBridge.addDriver(yasdiDriver, withAcccesories:
-            //                                        [
-            //                                            // Solar Inverter
-            //                                            PowerBankAccessory(info: Service.Info(name: "Zonneënergie", serialNumber: "30000"))
-            //                                        ]
-            //                )
-            //            }
+            (  Accessory.Television(info: Service.Info(name: "T.V. Boven", serialNumber: "20001", manufacturer: "Samsung"),
+                                        inputs: [
+                                         ("homeScreen", .hdmi),
+                                         ("Eén", .hdmi),
+                                         ("Q2", .hdmi),
+                                         ("VTM", .hdmi),
+                                         ("Vier", .hdmi),
+                                         ("Vijf", .hdmi),
+                                         ("Zes", .hdmi),
+                                         ("Canvas", .hdmi),
+                                         ("Discovery", .hdmi),
+                                         ("National Geographic", .hdmi),
+                                         ("Animal planet", .hdmi),
+                                         ("Netflix", .application),
+                                         ("YouTube", .application)
+                                        ]),
+               TizenDelegate(name: "T.V.", driver: TizenDriver(tvName:"T.V. Boven", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer"))
+                 
+             ),
             
+
+//            // MARK: - Other
+//            Accessory.init(info: Service.Info(name: "Auto", serialNumber: "30000", manufacturer: "Nissan"),
+//                           type: .other,
+//                           services: [
+//                            // TODO: - Insert Service.Battery or Service.EnergyMeter,
+//                            // once it gets supported by Apples 'Home'-App
+//                            .ThermostatBase(characteristics:[.name("Gewenste Temperatuur")] ),
+//                            .SwitchBase(characteristics:[.name("Airco inschakelen")] ),
+//                            .SwitchBase(characteristics:[.name("Start opladen")] ),
+//                           ] ),
+//            LeafDriver(leafProtocol: LeafProtocolV2())
+//            ),
+//            
+//            Accessory.init(info: Service.Info(name: "Zonnepanelen", serialNumber: "30001", manufacturer: "SMA"),
+//                           type: .other,
+//                           services: [
+//                            // TODO: - Insert a Service.EnergyMeter and Service.PowerMeter,
+//                            // once it gets supported by Apples 'Home'-App
+//                            .SwitchBase(characteristics:[.name("Opbrengst opvragen")] ),
+//                           ] ),
+//            YASDIDriver.InstallDrivers().first!
+//            )
         ]
-        //    }
-        //
+        
     }
-    
-    
 }
 

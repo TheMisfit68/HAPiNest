@@ -10,52 +10,24 @@ import Foundation
 import HAP
 import JVCocoa
 
-// Device its not declared Open bij te developer of HAP
-// Therefore it can't be subclassed and
-// Bridge is a just wrapper around it
-class Bridge{
 
-//class Bridge:DeviceDelegate{
+typealias Bridge = Device
+
+extension Bridge{
     
-    public let device:Device
+    static let serialNumber = "00001"
+    static let configFile =  FileStorage(filename: "configuration.json")
     
-    public var setupCode: String {
-        return device.setupCode
-    }
-    public var setupQRCode: QRCode {
-        return device.setupQRCode
-    }
-    public var isPaired:Bool{
-        device.isPaired
-    }
-    
-    
-    private let serialNumber = "00001"
-    private let configFile = FileStorage(filename: "configuration.json")
-//    private var accessorryDelegates:[String:AccessoryDelegate] = [:]
-    
-    public init(name:String, setupCode:String, accessories:[HAP.Accessory]) {
+    convenience init(name:String, setupCode:String, accessories:[HAP.Accessory]) {
         
-        device = Device(
-            bridgeInfo: Service.Info(name: name, serialNumber: serialNumber),
+        self.init(
+            bridgeInfo: Service.Info(name: name, serialNumber: Self.serialNumber),
             setupCode: Device.SetupCode(stringLiteral: setupCode),
-            storage: configFile,
+            storage: Self.configFile,
             accessories: accessories)
-//        device.delegate = self
-        
+        printPairingInstructions()
+        delegate = self
     }
-    
-//    public func addDriver(_ driver:AccessoryDelegate, withAcccesories acccesories:[Accessory]){
-//        public func addDriver(_ driver:Any, withAcccesories acccesories:[Accessory]){
-//
-//        device.addAccessories(acccesories)
-//        acccesories.forEach{ accessory in
-//            if let accessoryName = accessory.info.name.value{
-////                accessorryDelegates[accessoryName] = driver
-//            }
-//        }
-//        
-//    }
     
     // MARK: - Pairing Info
     
@@ -76,48 +48,44 @@ class Bridge{
     
     public func resetPairingInfo(){
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Dropping all pairings, keys")
-        try? configFile.write(Data())
+        try? Self.configFile.write(Data())
     }
     
-    public func accessory(named accessoryName:String)->Accessory{
-        return device.accessories.first(where: {$0.info.name.value == accessoryName })!
+    public func accessory(named accessoryName:String)->Accessory?{
+        return accessories.first(where: {$0.info.name.value == accessoryName })
     }
     
+    public func removeAccessoryWith(SerialNumbers:[String]){
+        
+        let unwantedAccessories = accessories.filter{SerialNumbers.contains($0.info.serialNumber.value!)}
+        removeAccessories(unwantedAccessories, andForgetSerialNumbers: true)
+        
+    }
     
+}
+
+
+// MARK: - BridgeDelegate
+
+typealias BridgeDelegate = DeviceDelegate
+
+extension Bridge:BridgeDelegate{
     
-//    // MARK: - DeviceDelegate functions
-//    func characteristic<T>(_ characteristic: GenericCharacteristic<T>,
-//                           ofService service: Service,
-//                           ofAccessory accessory: Accessory,
-//                           didChangeValue newValue: T?) {
-//        let accessoryName = accessory.info.name.value ?? ""
-//        let characteristicName = characteristic.description ?? ""
-//        let valueString = newValue != nil ? "\(newValue!)" : "nil"
-//        Debugger.shared.log(debugLevel: .Native(logType:.info), "Accessory \(accessoryName): Characteristic '\(characteristicName)' did change to \(valueString)")
-//
-//        if let accessoryDelegate = accessorryDelegates[accessoryName]{
-//            accessoryDelegate.handleCharacteristicChange(accessory, service, characteristic, newValue)
-//        }
-//    }
-//
-//    func didRequestIdentificationOf(_ accessory: Accessory) {
-//
-//    }
-//
-//    func characteristicListenerDidSubscribe(_ accessory: Accessory,
-//                                            service: Service,
-//                                            characteristic: AnyCharacteristic) {
-//    }
-//
-//    func characteristicListenerDidUnsubscribe(_ accessory: Accessory,
-//                                              service: Service,
-//                                              characteristic: AnyCharacteristic) {
-//    }
-//
-//    func didChangePairingState(from: PairingState, to: PairingState) {
-//        if to == .notPaired {
-//            printPairingInstructions()
-//        }
-//    }
+    func accessoryDelegate(named delegateName:String)->AccessoryDelegate?{
+        return MainConfiguration.HomeKit.Accessories.compactMap{$0.1}.first(where: {$0.name == delegateName})
+    }
+    
+    public func characteristic<T>(
+        _ characteristic: GenericCharacteristic<T>,
+        ofService: Service,
+        ofAccessory: Accessory,
+        didChangeValue: T?){
+        
+        // Forward all characteristic changes
+        // to the Accessory delegate with the same name as the Accessory
+        let accessoryName = ofAccessory.info.name.value!
+        Debugger.shared.log(debugLevel: .Event, "Value '\(characteristic.description ?? "")' of '\(accessoryName)' changed to \(didChangeValue ?? "" as! T)")
+        accessoryDelegate(named:accessoryName)?.handleCharacteristicChange(accessory:ofAccessory, service: ofService, characteristic: characteristic, to: didChangeValue)
+    }
     
 }

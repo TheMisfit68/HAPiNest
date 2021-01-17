@@ -11,7 +11,9 @@ import SoftPLC
 
 protocol PulsOperatedCircuit{
     
-    var pulsTimer:DigitalTimer { get }
-    var outputAsPuls:Bool { get }
+    associatedtype DigitalTimerType
+    
+    var pulsTimer:DigitalTimerType { get }
+    var puls:Bool { get }
     
 }

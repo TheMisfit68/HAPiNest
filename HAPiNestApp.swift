@@ -23,8 +23,8 @@ struct HAPiNestApp: App {
         AppState.shared.homekitServer.mainBridge = Bridge(
             name:MainConfiguration.HomeKit.BridgeName,
             setupCode:MainConfiguration.HomeKit.BridgeSetupCode,
-            accessories: MainConfiguration.HomeKit.Accessories)
-        
+            accessories: MainConfiguration.HomeKit.Accessories.map{$0.0}
+        )
         
         // Only fire Up PLC after all components are initialized
         AppState.shared.plc.run()
@@ -34,7 +34,7 @@ struct HAPiNestApp: App {
         WindowGroup("HAPiNest dashboard 🛋") {
             DashBoardView()
                 .onAppear(perform: {
-                    AppState.shared.homekitServer.leafDriver.batteryChecker.getBatteryStatus()
+                    //                    AppState.shared.homekitServer.leafDriver.batteryChecker.getBatteryStatus()
                 })
         }
         .onChange(of: scenePhase) { newScenePhase in
@@ -66,7 +66,7 @@ class AppState{
     
     static let shared:AppState = AppState()
     private init(){}
-
+    
     let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList)
     let homekitServer:HomeKitServer = HomeKitServer.shared
     let appNapController: AppNapController = AppNapController.shared

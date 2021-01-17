@@ -1,22 +1,19 @@
-#  ToDo Domotica
+#  ToDo Domotica shortterm
   
-Subscript voorzien voor accessories op naam
-cleanup bridge en merge/typealias wit delegate
-Pushbutton voorzien als subscript van Switch?
+Pushbutton voorzien als subcass van Switch?
 
-###### Provide feedback of currenstate to HomeKit
-- [ ]  currentposition.value implementeren
-- [ ]  enum PositionState implementeren
+### Redsign garageDoor accesory subclass .toggled
+### Screens en rolgordijnen uitwerken
 
 ###### PLC kringen verder uitwerken
-- [ ]  Ebools herwerken (pijlsymbolen gebruiken als functienaam)
-- [ ]  Screens en rolgordijnen uitwerken
 
 ###### Scenes definiëren volgens Things
 
 
 
-- [ ]  Knoppen implementeren voor opvrgan informatie leaf
+- [ ] In bridge /device 'Subscript' voorzien voor accessories op naam
+
+- [ ]  Knoppen implementeren voor opvragen informatie leaf
 - [ ]  Array of partial keypaths meegeven als parameter aan SQLite.autoCreateTableFor<T:SQLRecordable> in JVCocoa
 - [ ]  SmartsprinklerDriver afwerken
 

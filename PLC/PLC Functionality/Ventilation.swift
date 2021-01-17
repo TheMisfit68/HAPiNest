@@ -1,5 +1,5 @@
 //
-//  Outlet.swift
+//  Ventilation.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 14/08/2020.
@@ -16,7 +16,7 @@ public class Outlet:PLCclass, HomekitControllable{
     
     // MARK: - HomeKit Acessory binding
     
-    typealias AccessoryType = Accessory.Outlet
+    typealias AccessoryType = Accessory.Fan
     
     var hkAccessoryState:Bool{
         get{
@@ -30,9 +30,6 @@ public class Outlet:PLCclass, HomekitControllable{
     }
     
     var enableHkfeedback:Bool{
-        // Only when circuit is idle
-        // send the feedback upstream to the Homekit accessory
-        // provides for a more stable feedback
         !hkStateChanged && !feedbackChanged
     }
     
