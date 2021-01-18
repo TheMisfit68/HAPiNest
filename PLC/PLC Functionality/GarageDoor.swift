@@ -1,8 +1,8 @@
 //
-//  Light.swift
+//  GarageDoor.swift
 //  HAPiNest
 //
-//  Created by Jan Verrept on 14/08/2020.
+//  Created by Jan Verrept on 23/08/2020.
 //  Copyright © 2020 Jan Verrept. All rights reserved.
 //
 
@@ -12,20 +12,20 @@ import SoftPLC
 import ModbusDriver
 import JVCocoa
 
-public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{
+class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{
     
     // MARK: - HomeKit Accessory binding
-    
-    typealias AccessorySubclass = Accessory.Lightbulb
-    
+
+    typealias AccessorySubclass = Accessory.GarageDoorOpener.StatelessGarageDoorOpener
+
     private var characteristicChanged:Bool = false
     var hkAccessoryPowerState:Bool = false{
         didSet{
             // Only when circuit is idle
             // send the hardwareFeedback upstream to the Homekit accessory,
             // provides for a more stable hardwareFeedback
-            if  !characteristicChanged && !hardwareFeedbackChanged{
-                accessory.lightbulb.powerState.value = hkAccessoryPowerState
+            if  !characteristicChanged{
+                accessory.statelessGarageDoorOpener.powerState.value = hkAccessoryPowerState
             }
         }
     }
@@ -40,73 +40,51 @@ public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, A
         // Handle Characteristic change depending on its type
         switch characteristic.type{
         case CharacteristicType.powerState:
-            
+
             hkAccessoryPowerState = value as? Bool ?? hkAccessoryPowerState
             
         default:
             Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
         }
-        }
-    
+    }
     
     // MARK: - PLC IO-Signal assignment
-    
+
     var outputSignal:DigitalOutputSignal{
         plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
     }
     
-    var feedbackSignal:DigitalInputSignal?{
-        let nameFeedBackSignal:String
-        if instanceName.contains("Enable"){
-            nameFeedBackSignal = instanceName.replacingOccurrences(of: "Enable", with: "Enabled")
-        }else{
-            nameFeedBackSignal = instanceName+" Ingeschakeld"
-        }
-        return plc.signal(ioSymbol:nameFeedBackSignal) as? DigitalInputSignal
-    }
-    
-    // MARK: - PLC parameter assignment
+    // MARK: - PLC Parameter assignment
     
     public func assignInputParameters(){
-        
-        hardwareFeedback = feedbackSignal?.logicalValue ?? false
-        
         if characteristicChanged{
             powerState = hkAccessoryPowerState
-        }else if hardwareFeedbackChanged{
-            powerState = hardwareFeedback
         }
         
     }
     
     public func assignOutputParameters(){
         outputSignal.logicalValue = puls
+        if !puls{
+            powerState = false
+        }
         
         hkAccessoryPowerState = powerState
+        
         characteristicChanged.reset()
     }
-    
-    var hardwareFeedback:Bool = false{
-        didSet{
-            hardwareFeedbackChanged = (hardwareFeedback != oldValue)
-        }
-    }
-    private var hardwareFeedbackChanged:Bool = false
-    
+        
     // MARK: - PLC Processing
-    private var powerState:Bool = false
-    
-    let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
+    var powerState:Bool = false
+        
+    let pulsTimer = DigitalTimer.ExactPuls(time: 1.0)
     var puls:Bool{
         get{
-            var puls = (powerState != hardwareFeedback) // Only toggle if the powerState and its hardwareFeedback are not already in sync
+            var puls = powerState
             return puls.timed(using: pulsTimer)
         }
     }
-    
-    // MARK: - Simulation
-    public func simulateHardwareFeedback() {
-        feedbackSignal?.logicalValue = powerState
-    }
-    
+
 }
+
+

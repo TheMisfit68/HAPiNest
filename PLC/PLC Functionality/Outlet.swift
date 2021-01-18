@@ -64,7 +64,6 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
             
         if characteristicChanged{
             powerState = hkAccessoryPowerState
-            characteristicChanged.reset()
         }
         
     }
@@ -74,6 +73,7 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
         outputSignal.logicalValue = powerState
         
         hkAccessoryPowerState = powerState
+        characteristicChanged.reset()  
     }
         
     // MARK: - PLC Processing

@@ -24,7 +24,7 @@ protocol AccessoryDelegate{
 extension AccessoryDelegate where Self:PLCclass{
     
     var name:String{
-        instanceName
+        self.instanceName
     }
     
 }

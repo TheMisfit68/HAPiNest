@@ -156,7 +156,7 @@ extension MainConfiguration{
             IOList[0][6][11] =  "Slaapkamer Stopcontact T.V."
             IOList[0][6][12] =  "Overloop Stopcontact"
             IOList[0][6][13] =  "Voordeur"
-            IOList[0][6][14] =  "Garage Poort"
+            IOList[0][6][14] =  "Garagepoort"
             IOList[0][6][15] =  "Vrijgave beregening"
             
             return IOList
@@ -219,7 +219,7 @@ extension MainConfiguration{
             
             // Varia
             "Voordeur" : Doorlock(),
-//            "Garage Poort" : GaragePort(),
+            "Garagepoort" : GarageDoor(),
             "Vrijgave beregening" : SmartSprinkler(),
 
         ]

@@ -12,7 +12,7 @@
 		DC4D6DE225713CD00087E51D /* DimmableLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */; };
 		DC4D6DE525713CD40087E51D /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF8E24E73FB900DD8371 /* Light.swift */; };
 		DC4D6DE825713CD70087E51D /* WindowCovering.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9024E73FE300DD8371 /* WindowCovering.swift */; };
-		DC4D6DEB25713CDA0087E51D /* GaragePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EFF2024F312F0001B70EE /* GaragePort.swift */; };
+		DC4D6DEB25713CDA0087E51D /* GarageDoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EFF2024F312F0001B70EE /* GarageDoor.swift */; };
 		DC4D6DEE25713CDE0087E51D /* DoorLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9EFF2224F3131F001B70EE /* DoorLock.swift */; };
 		DC4D6DF125713CE10087E51D /* Outlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9224E7400D00DD8371 /* Outlet.swift */; };
 		DC4D6DF425713D2F0087E51D /* SmartSprinklerDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */; };
@@ -56,7 +56,7 @@
 		DCCC255725897A6200915AE3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54B6BF2570586D00D9169F /* DashboardView.swift */; };
 		DCCC255D25897CED00915AE3 /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DCCC255C25897CED00915AE3 /* SoftPLC */; };
 		DCCC256125897D5E00915AE3 /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* ServerView.swift */; };
-		DCD1231025ACE01C00060708 /* BasicGarageDoorOpenerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1230F25ACE01C00060708 /* BasicGarageDoorOpenerAccessory.swift */; };
+		DCD1231025ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1230F25ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift */; };
 		DCFB4E0E258FFE8B007A812D /* Cryptor in Frameworks */ = {isa = PBXBuildFile; productRef = DCFB4E0D258FFE8B007A812D /* Cryptor */; };
 /* End PBXBuildFile section */
 
@@ -114,7 +114,7 @@
 		DC8D0F68259DAA6A00DD04E4 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerDriver.swift; sourceTree = "<group>"; };
 		DC9BF36D2403255E00B9159F /* YASDIDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YASDIDriver; path = ../Drivers/YASDIDriver; sourceTree = "<group>"; };
-		DC9EFF2024F312F0001B70EE /* GaragePort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaragePort.swift; sourceTree = "<group>"; };
+		DC9EFF2024F312F0001B70EE /* GarageDoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoor.swift; sourceTree = "<group>"; };
 		DC9EFF2224F3131F001B70EE /* DoorLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLock.swift; sourceTree = "<group>"; };
 		DCA9CBE625687BC1008EBEB9 /* ClibYASDI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ClibYASDI; path = "../../C-based Packages/Third-Party-Binaries/ClibYASDI"; sourceTree = "<group>"; };
 		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinkler.swift; sourceTree = "<group>"; };
 		DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
 		DCCC255B25897AB200915AE3 /* neumorphic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = neumorphic; path = "/Users/janverrept/Library/Developer/Xcode/DerivedData/HAPiNest-crukdtrwbewkcmcylhayambkinrt/SourcePackages/checkouts/neumorphic"; sourceTree = "<absolute>"; };
-		DCD1230F25ACE01C00060708 /* BasicGarageDoorOpenerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGarageDoorOpenerAccessory.swift; sourceTree = "<group>"; };
+		DCD1230F25ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatelessGarageDoorOpenerAccessory.swift; sourceTree = "<group>"; };
 		DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeKitLogo.png; sourceTree = "<group>"; };
 		DCD9182223B5715000C81EB5 /* PowerInverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerInverter.swift; sourceTree = "<group>"; };
 		DCDAF5AD24586D2600C279D9 /* SiriDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SiriDriver; path = ../Drivers/SiriDriver; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 				DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */,
 				DC23DF8E24E73FB900DD8371 /* Light.swift */,
 				DC23DF9024E73FE300DD8371 /* WindowCovering.swift */,
-				DC9EFF2024F312F0001B70EE /* GaragePort.swift */,
+				DC9EFF2024F312F0001B70EE /* GarageDoor.swift */,
 				DC9EFF2224F3131F001B70EE /* DoorLock.swift */,
 				DC23DF9224E7400D00DD8371 /* Outlet.swift */,
 				DC8D0F68259DAA6A00DD04E4 /* Switch.swift */,
@@ -349,8 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				DC746D7225ACA97A00B33314 /* SprinklerAccessory.swift */,
-				DC54FA9C25B1207D00F9334C /* YASDIaccessory.swift */,
-				DCD1230F25ACE01C00060708 /* BasicGarageDoorOpenerAccessory.swift */,
+				DCD1230F25ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift */,
 			);
 			path = Accessories;
 			sourceTree = "<group>";
@@ -383,6 +382,7 @@
 		DCD122F825ACD5E100060708 /* Deprecated Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				DC54FA9C25B1207D00F9334C /* YASDIaccessory.swift */,
 				DC197CA124D9A67F00C07E90 /* SiriDriver.swift */,
 				DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */,
 				DCD9182223B5715000C81EB5 /* PowerInverter.swift */,
@@ -564,7 +564,7 @@
 				DC54B6FD2570686D00D9169F /* PLCConfiguration.swift in Sources */,
 				DC4D6DE825713CD70087E51D /* WindowCovering.swift in Sources */,
 				DC4D6DEE25713CDE0087E51D /* DoorLock.swift in Sources */,
-				DCD1231025ACE01C00060708 /* BasicGarageDoorOpenerAccessory.swift in Sources */,
+				DCD1231025ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift in Sources */,
 				DC4D6DF425713D2F0087E51D /* SmartSprinklerDriver.swift in Sources */,
 				DC54B6BE2570586D00D9169F /* HAPiNestApp.swift in Sources */,
 				DC4D6DFA25713D350087E51D /* AppleScriptDriver.swift in Sources */,
@@ -575,7 +575,7 @@
 				DC54B6F42570628B00D9169F /* HomeKitServer.swift in Sources */,
 				DC4D6DE225713CD00087E51D /* DimmableLight.swift in Sources */,
 				DC4D6E1425713E870087E51D /* PowerInverter.swift in Sources */,
-				DC4D6DEB25713CDA0087E51D /* GaragePort.swift in Sources */,
+				DC4D6DEB25713CDA0087E51D /* GarageDoor.swift in Sources */,
 				DC4D6DE525713CD40087E51D /* Light.swift in Sources */,
 				DC8B28F52597C77B00266BD3 /* PulsOperatedCircuit.swift in Sources */,
 				DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */,

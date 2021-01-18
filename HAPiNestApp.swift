@@ -18,6 +18,7 @@ struct HAPiNestApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     init() {
+        
         AppState.shared.plc.plcObjects = MainConfiguration.PLC.PLCobjects
         
         AppState.shared.homekitServer.mainBridge = Bridge(

@@ -71,8 +71,8 @@ typealias BridgeDelegate = DeviceDelegate
 
 extension Bridge:BridgeDelegate{
     
-    func accessoryDelegate(named delegateName:String)->AccessoryDelegate?{
-        return MainConfiguration.HomeKit.Accessories.compactMap{$0.1}.first(where: {$0.name == delegateName})
+    func accessoryDelegateFor(accesoryNamed accessoryName:String)->AccessoryDelegate?{
+        return MainConfiguration.HomeKit.Accessories.first(where: {$0.0.info.name.value! == accessoryName} )?.1
     }
     
     public func characteristic<T>(
@@ -81,11 +81,11 @@ extension Bridge:BridgeDelegate{
         ofAccessory: Accessory,
         didChangeValue: T?){
         
-        // Forward all characteristic changes
-        // to the Accessory delegate with the same name as the Accessory
         let accessoryName = ofAccessory.info.name.value!
         Debugger.shared.log(debugLevel: .Event, "Value '\(characteristic.description ?? "")' of '\(accessoryName)' changed to \(didChangeValue ?? "" as! T)")
-        accessoryDelegate(named:accessoryName)?.handleCharacteristicChange(accessory:ofAccessory, service: ofService, characteristic: characteristic, to: didChangeValue)
+        
+        // Forward all characteristic changes to the corresponding delegate
+        accessoryDelegateFor(accesoryNamed:accessoryName)?.handleCharacteristicChange(accessory:ofAccessory, service: ofService, characteristic: characteristic, to: didChangeValue)
     }
     
 }

@@ -1,14 +1,14 @@
 #  ToDo Domotica shortterm
   
-Pushbutton voorzien als subcass van Switch?
+Repair dimmable light on on/Of switch
 
+Pushbutton voorzien als subcass van Switch?
 ### Redsign garageDoor accesory subclass .toggled
 ### Screens en rolgordijnen uitwerken
 
 ###### PLC kringen verder uitwerken
 
 ###### Scenes definiëren volgens Things
-
 
 
 - [ ] In bridge /device 'Subscript' voorzien voor accessories op naam

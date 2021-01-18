@@ -30,6 +30,17 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
         }
     }
     
+    var hkAccessoryLockCurrentState:Enums.LockCurrentState = .secured{
+        didSet{
+            // Only when circuit is idle
+            // send the feedback upstream to the Homekit accessory,
+            // provides for a more stable feedback
+            if  !characteristicChanged{
+                accessory.lockMechanism.lockCurrentState.value = hkAccessoryLockCurrentState
+            }
+        }
+    }
+    
     func handleCharacteristicChange<T>(accessory:Accessory,
                                        service: Service,
                                        characteristic: GenericCharacteristic<T>,
@@ -41,34 +52,42 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
         switch characteristic.type{
         case CharacteristicType.lockTargetState:
             
-            hkAccessoryLockTargetState = characteristic.value as? Enums.LockTargetState ?? hkAccessoryLockTargetState
-            
+            hkAccessoryLockTargetState = value as? Enums.LockTargetState ?? hkAccessoryLockTargetState
+
         default:
             Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
         }
     }
     
     // MARK: - PLC IO-Signal assignment
-    
+
     var outputSignal:DigitalOutputSignal{
         plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
     }
     
-    // MARK: - PLC parameter assignment
+    // MARK: - PLC Parameter assignment
     
     public func assignInputParameters(){
-        
+            
         if characteristicChanged{
             lockTargetState = hkAccessoryLockTargetState
         }
         
-        characteristicChanged.reset()
     }
     
     public func assignOutputParameters(){
+        
         outputSignal.logicalValue = puls
+        if !puls{
+            lockTargetState = .secured
+        }
+        
+        hkAccessoryLockTargetState = lockTargetState
+        hkAccessoryLockCurrentState = puls ? .unsecured : .secured
+        
+        characteristicChanged.reset()
     }
-    
+        
     // MARK: - PLC Processing
     var lockTargetState:Enums.LockTargetState = .secured
         
@@ -79,5 +98,6 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
             return puls.timed(using: pulsTimer)
         }
     }
-    
+
 }
+

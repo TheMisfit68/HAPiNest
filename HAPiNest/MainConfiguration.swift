@@ -60,11 +60,12 @@ struct MainConfiguration{
             
             
             // MARK: - Security
-//            ( Accessory.GarageDoorOpener.Basic(info: Service.Info(name: "Garage Poort", serialNumber: "00514")), PLCobjects["Slaapkamer Licht"] ),
-            ( Accessory.LockMechanism(info: Service.Info(name: "Voordeur", serialNumber: "00515")), PLCobjects["Slaapkamer Licht"] ),
+            ( Accessory.LockMechanism(info: Service.Info(name: "Voordeur", serialNumber: "00501")), PLCobjects["Voordeur"] ),
+            ( Accessory.GarageDoorOpener.StatelessGarageDoorOpener(info: Service.Info(name: "Garagepoort", serialNumber: "00502")), PLCobjects["Garagepoort"] ),
+
             
             // MARK: - Sprinkler
-            ( Accessory.SmartSprinkler(info: Service.Info(name: "Vrijgave beregening", serialNumber: "00516", manufacturer: "Hunter")), PLCobjects["Vrijgave beregening"] ),
+            ( Accessory.SmartSprinkler(info: Service.Info(name: "Vrijgave beregening", serialNumber: "00503", manufacturer: "Hunter")), PLCobjects["Vrijgave beregening"] ),
             
             // Outlets
             ( Accessory.Outlet(info: Service.Info(name: "Kelder Compressor", serialNumber: "00600", manufacturer: "Niko")),                 PLCobjects["Kelder Compressor"] ),

@@ -12,15 +12,33 @@ import SoftPLC
 import ModbusDriver
 import JVCocoa
 
-public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate{
+public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource{
     
     // MARK: - HomeKit Accessory binding
     
     typealias AccessorySubclass = Accessory.Lightbulb
     
     private var characteristicChanged:Bool = false
-    var hkAccessoryPowerState:Bool = false
-    var hkAccessoryBrightness:Int = 100
+    var hkAccessoryPowerState:Bool = false{
+        didSet{
+            // Only when circuit is idle
+            // send the feedback upstream to the Homekit accessory,
+            // provides for a more stable feedback
+            if  !characteristicChanged{
+                accessory.lightbulb.powerState.value = hkAccessoryPowerState
+            }
+        }
+    }
+    var hkAccessoryBrightness:Int = 100{
+        didSet{
+            // Only when circuit is idle
+            // send the feedback upstream to the Homekit accessory,
+            // provides for a more stable feedback
+            if  !characteristicChanged{
+                accessory.lightbulb.brightness?.value = hkAccessoryBrightness
+            }
+        }
+    }
     
     func handleCharacteristicChange<T>(accessory:Accessory,
                                        service: Service,
@@ -58,20 +76,24 @@ public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate{
         if characteristicChanged{
             powerState = hkAccessoryPowerState
             brightness = hkAccessoryBrightness
+            
+            characteristicChanged.reset()
         }
         
-        characteristicChanged.reset()
     }
     
     public func assignOutputParameters(){
         outputSignal.scaledValue = Float(brightness)
+        
+        hkAccessoryPowerState = powerState
+        hkAccessoryBrightness = brightness
     }
     
     
     // MARK: - PLC Processing
     
     private let switchOffLevelDimmer:Int = 15
-    private var previousbrightness:Int = 0
+    private var previousbrightness:Int = 15
         
     var powerState:Bool = false{
         didSet{

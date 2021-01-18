@@ -67,11 +67,12 @@ public class SmartSprinkler:PLCclass, AccessoryDelegate, AccessorySource{
         
         if characteristicChanged{
             active = hkAccessoryActive
+            
+            characteristicChanged.reset()
         }else if feedbackChanged{
             active = feedback
         }
         
-        characteristicChanged.reset()
     }
     
     public func assignOutputParameters(){

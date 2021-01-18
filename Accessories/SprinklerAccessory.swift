@@ -9,14 +9,12 @@
 import Foundation
 import HAP
 
-// MARK: - Accessory definition
-
 extension Accessory {
     
     open class SmartSprinkler: Accessory {
         
         let irrigationSystem = Service.IrrigationSystem()
-        let additionalServices = [Service.Switch()]
+        let additionalServices:[Service] = [Service.Switch()]
 
         public init(info: Service.Info) {
             super.init(info: info, type: .sprinkler, services: [irrigationSystem] + additionalServices)
