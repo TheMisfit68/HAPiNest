@@ -23,7 +23,7 @@ public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, A
         didSet{
             // Only when circuit is idle
             // send the hardwareFeedback upstream to the Homekit accessory,
-            // provides for a more stable hardwareFeedback
+            // provides a more stable experience
             if  !characteristicChanged && !hardwareFeedbackChanged{
                 accessory.lightbulb.powerState.value = hkAccessoryPowerState
             }
@@ -46,7 +46,7 @@ public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, A
         default:
             Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
         }
-        }
+    }
     
     
     // MARK: - PLC IO-Signal assignment
@@ -60,7 +60,7 @@ public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, A
         if instanceName.contains("Enable"){
             nameFeedBackSignal = instanceName.replacingOccurrences(of: "Enable", with: "Enabled")
         }else{
-            nameFeedBackSignal = instanceName+" Ingeschakeld"
+            nameFeedBackSignal = instanceName+" On"
         }
         return plc.signal(ioSymbol:nameFeedBackSignal) as? DigitalInputSignal
     }
@@ -104,9 +104,16 @@ public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, A
         }
     }
     
-    // MARK: - Simulation
+    // MARK: - Simulation hardware
+	
+	// When in simulation mode,
+	// provide the hardwarefeedback yourself
+	private var teleruptor = ImpulsRelais()
     public func simulateHardwareFeedback() {
-        feedbackSignal?.logicalValue = powerState
+		
+		teleruptor.toggle = outputSignal.logicalValue
+		feedbackSignal?.logicalValue = teleruptor.output
+		
     }
     
 }

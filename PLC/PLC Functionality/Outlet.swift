@@ -23,7 +23,7 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
         didSet{
             // Only when circuit is idle
             // send the feedback upstream to the Homekit accessory,
-            // provides for a more stable feedback
+			// provides a more stable experience
             if  !characteristicChanged{
                 accessory.outlet.powerState.value = hkAccessoryPowerState
             }

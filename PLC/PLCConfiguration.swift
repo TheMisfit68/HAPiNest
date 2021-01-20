@@ -51,32 +51,34 @@ extension MainConfiguration{
             // Lights
             IOList[0][1][0] =  "Buiten Licht Enabled"
             IOList[0][1][1] =  "Overloop Licht Enabled"
-            IOList[0][1][2] =  "Badkamer Licht Ingeschakeld"
-            IOList[0][1][3] =  "Badkamer Licht spiegel Ingeschakeld"
-            IOList[0][1][4] =  "Kelder Licht Ingeschakeld"
-            IOList[0][1][5] =  "Garage Licht Ingeschakeld"
-            IOList[0][1][6] =  "Garage Licht Werkbank Ingeschakeld"
-            IOList[0][1][7] =  "Keuken Licht Ingeschakeld"
-            IOList[0][1][8] =  "Keuken Licht kast Ingeschakeld"
-            IOList[0][1][9] =  "Bureau Licht Ingeschakeld"
-            IOList[0][1][10] =  "Eetkamer Licht Ingeschakeld"
-            IOList[0][1][11] =  "Dressing Licht Ingeschakeld"
-            IOList[0][1][12] =  "Buiten Licht Ingeschakeld"
-            IOList[0][1][13] =  "Overloop Licht Ingeschakeld"
-            IOList[0][1][14] =  "Hal Licht Ingeschakeld"
-            IOList[0][1][15] =  "W.C. Licht Ingeschakeld"
+            IOList[0][1][2] =  "Badkamer Licht On"
+            IOList[0][1][3] =  "Badkamer Licht spiegel On"
+            IOList[0][1][4] =  "Kelder Licht On"
+            IOList[0][1][5] =  "Garage Licht On"
+            IOList[0][1][6] =  "Garage Licht Werkbank On"
+            IOList[0][1][7] =  "Keuken Licht On"
+            IOList[0][1][8] =  "Keuken Licht kast On"
+            IOList[0][1][9] =  "Bureau Licht On"
+            IOList[0][1][10] =  "Eetkamer Licht On"
+            IOList[0][1][11] =  "Dressing Licht On"
+            IOList[0][1][12] =  "Buiten Licht On"
+            IOList[0][1][13] =  "Overloop Licht On"
+            IOList[0][1][14] =  "Hal Licht On"
+            IOList[0][1][15] =  "W.C. Licht On"
             
             // Window Coverings feedback Up
-            IOList[0][2][0] =  "Keuken Screen Op"
-            IOList[0][2][1] =  "Living Screen Op"
-            IOList[0][2][2] =  "Slaapkamer Screen Op"
-            IOList[0][2][3] =  "Vide Screen Op"
-            IOList[0][2][4] =  "Keuken Rolgordijn Op"
-            IOList[0][2][5] =  "Living Rolgordijn Op"
-            IOList[0][2][6] =  "Slaapkamer Rolgordijn Op"
-            IOList[0][2][7] =  "Vide Rolgordijn Op"
-            IOList[0][2][8] =  "Overloop Rolgordijn Op"
-            IOList[0][2][9] =  "Compressor Ingeschakeld"
+            IOList[0][2][0] =  "Keuken Screens Open"
+            IOList[0][2][1] =  "Living Screens Open"
+            IOList[0][2][2] =  "Slaapkamer Screen Open"
+            IOList[0][2][3] =  "Vide Screen Open"
+            IOList[0][2][4] =  "Keuken Rolgordijnen Open"
+            IOList[0][2][5] =  "Living Rolgordijnen Open"
+            IOList[0][2][6] =  "Slaapkamer Rolgordijn Open"
+            IOList[0][2][7] =  "Vide Rolgordijn Open"
+            IOList[0][2][8] =  "Overloop Rolgordijn Open"
+			
+			// Varia
+            IOList[0][2][9] =  "Kelder Compressor On"
             IOList[0][2][10] =  nil
             IOList[0][2][11] =  nil
             IOList[0][2][12] =  nil
@@ -85,15 +87,15 @@ extension MainConfiguration{
             IOList[0][2][15] =  nil
             
             // Window Coverings feedback Down
-            IOList[0][3][0] =  "Keuken Screen Neer"
-            IOList[0][3][1] =  "Living Screen Neer"
-            IOList[0][3][2] =  "Slaapkamer Screen Neer"
-            IOList[0][3][3] =  "Vide Screen Neer"
-            IOList[0][3][4] =  "Keuken Rolgordijn Neer"
-            IOList[0][3][5] =  "Living Rolgordijn Neer"
-            IOList[0][3][6] =  "Slaapkamer Rolgordijn Neer"
-            IOList[0][3][7] =  "Vide Rolgordijn Neer"
-            IOList[0][3][8] =  "Overloop Rolgordijn Neer"
+            IOList[0][3][0] =  "Keuken Screens Close"
+            IOList[0][3][1] =  "Living Screens Close"
+            IOList[0][3][2] =  "Slaapkamer Screen Close"
+            IOList[0][3][3] =  "Vide Screen Close"
+            IOList[0][3][4] =  "Keuken Rolgordijnen Close"
+            IOList[0][3][5] =  "Living Rolgordijnen Close"
+            IOList[0][3][6] =  "Slaapkamer Rolgordijn Close"
+            IOList[0][3][7] =  "Vide Rolgordijn Close"
+            IOList[0][3][8] =  "Overloop Rolgordijn Close"
             IOList[0][3][9] =  nil
             IOList[0][3][10] =  nil
             IOList[0][3][11] =  nil
@@ -133,7 +135,7 @@ extension MainConfiguration{
             IOList[0][5][8] =  "Overloop Rolgordijn"
             
             // Varia
-            IOList[0][5][9] =  "Compressor"
+            IOList[0][5][9] =  "Kelder Compressor"
             IOList[0][5][10] =  nil
             IOList[0][5][11] =  nil
             IOList[0][5][12] =  nil
@@ -191,15 +193,18 @@ extension MainConfiguration{
             "W.C. Licht" : Light(),
             
             // Window Coverings
-            //            "Keuken Screens" : WindowCovering()
-            //            "Living Screens" : WindowCovering()
-            //            "Slaapkamer Screen" : WindowCovering()
-            //            "Vide Screen" : WindowCovering()
-            //            "Keuken Rolgordijnen" : WindowCovering()
-            //            "Living Rolgordijnen" : WindowCovering()
-            //            "Slaapkamer Rolgordijn" : WindowCovering()
-            //            "Vide Rolgordijn" : WindowCovering()
-            //            "Overloop Rolgordijn" : WindowCovering()
+            "Keuken Screens" : WindowCovering(secondsToOpen: 35, secondsToClose: 35),
+            "Living Screens" : WindowCovering(secondsToOpen: 50, secondsToClose: 50),
+            "Slaapkamer Screen" : WindowCovering(secondsToOpen: 50, secondsToClose: 50),
+            "Vide Screen" : WindowCovering(secondsToOpen: 35, secondsToClose: 35),
+            "Keuken Rolgordijnen" : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
+            "Living Rolgordijnen" : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
+            "Slaapkamer Rolgordijn" : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
+            "Vide Rolgordijn" : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
+            "Overloop Rolgordijn" : WindowCovering(),
+
+			// Varia
+			"Kelder Compressor" : ToggleableOutlet(),
             
             
             // Outlets
@@ -220,7 +225,7 @@ extension MainConfiguration{
             // Varia
             "Voordeur" : Doorlock(),
             "Garagepoort" : GarageDoor(),
-            "Vrijgave beregening" : SmartSprinkler(),
+//            "Vrijgave beregening" : SmartSprinkler(),
 
         ]
     }

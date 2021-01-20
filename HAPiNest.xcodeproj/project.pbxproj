@@ -53,6 +53,7 @@
 		DC8B28F52597C77B00266BD3 /* PulsOperatedCircuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */; };
 		DC8D0F69259DAA6A00DD04E4 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D0F68259DAA6A00DD04E4 /* Switch.swift */; };
 		DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */; };
+		DCCBE29C25B8B7D800BAED50 /* ToggleableOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBE29B25B8B7D800BAED50 /* ToggleableOutlet.swift */; };
 		DCCC255725897A6200915AE3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54B6BF2570586D00D9169F /* DashboardView.swift */; };
 		DCCC255D25897CED00915AE3 /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DCCC255C25897CED00915AE3 /* SoftPLC */; };
 		DCCC256125897D5E00915AE3 /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* ServerView.swift */; };
@@ -121,6 +122,7 @@
 		DCB5F6212354ED7D005F610F /* HAP-Specification-Non-Commercial-Version.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "HAP-Specification-Non-Commercial-Version.pdf"; sourceTree = "<group>"; };
 		DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinkler.swift; sourceTree = "<group>"; };
 		DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServer.swift; sourceTree = "<group>"; };
+		DCCBE29B25B8B7D800BAED50 /* ToggleableOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleableOutlet.swift; sourceTree = "<group>"; };
 		DCCC255B25897AB200915AE3 /* neumorphic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = neumorphic; path = "/Users/janverrept/Library/Developer/Xcode/DerivedData/HAPiNest-crukdtrwbewkcmcylhayambkinrt/SourcePackages/checkouts/neumorphic"; sourceTree = "<absolute>"; };
 		DCD1230F25ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatelessGarageDoorOpenerAccessory.swift; sourceTree = "<group>"; };
 		DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeKitLogo.png; sourceTree = "<group>"; };
@@ -244,12 +246,12 @@
 				DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */,
 				DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */,
 				DC23DF8E24E73FB900DD8371 /* Light.swift */,
-				DC23DF9024E73FE300DD8371 /* WindowCovering.swift */,
-				DC9EFF2024F312F0001B70EE /* GarageDoor.swift */,
-				DC9EFF2224F3131F001B70EE /* DoorLock.swift */,
 				DC23DF9224E7400D00DD8371 /* Outlet.swift */,
-				DC8D0F68259DAA6A00DD04E4 /* Switch.swift */,
-				DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */,
+				DC9EFF2224F3131F001B70EE /* DoorLock.swift */,
+				DC9EFF2024F312F0001B70EE /* GarageDoor.swift */,
+				DC23DF9024E73FE300DD8371 /* WindowCovering.swift */,
+				DCCBE29B25B8B7D800BAED50 /* ToggleableOutlet.swift */,
+				DCDBFCA825B6493D0039D938 /* ToDo */,
 			);
 			path = "PLC Functionality";
 			sourceTree = "<group>";
@@ -400,6 +402,15 @@
 				DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */,
 			);
 			path = Homekit;
+			sourceTree = "<group>";
+		};
+		DCDBFCA825B6493D0039D938 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */,
+				DC8D0F68259DAA6A00DD04E4 /* Switch.swift */,
+			);
+			path = ToDo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +582,7 @@
 				DC54B6F72570628E00D9169F /* ServerView.swift in Sources */,
 				DC746D7325ACA97A00B33314 /* SprinklerAccessory.swift in Sources */,
 				DC8D0F69259DAA6A00DD04E4 /* Switch.swift in Sources */,
+				DCCBE29C25B8B7D800BAED50 /* ToggleableOutlet.swift in Sources */,
 				DC54FA9D25B1207D00F9334C /* YASDIaccessory.swift in Sources */,
 				DC54B6F42570628B00D9169F /* HomeKitServer.swift in Sources */,
 				DC4D6DE225713CD00087E51D /* DimmableLight.swift in Sources */,

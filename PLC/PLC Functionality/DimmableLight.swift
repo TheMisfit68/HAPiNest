@@ -23,7 +23,7 @@ public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate, Accesso
         didSet{
             // Only when circuit is idle
             // send the feedback upstream to the Homekit accessory,
-            // provides for a more stable feedback
+			// provides a more stable experience
             if  !characteristicChanged{
                 accessory.lightbulb.powerState.value = hkAccessoryPowerState
             }
@@ -33,7 +33,7 @@ public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate, Accesso
         didSet{
             // Only when circuit is idle
             // send the feedback upstream to the Homekit accessory,
-            // provides for a more stable feedback
+			// provides a more stable experience
             if  !characteristicChanged{
                 accessory.lightbulb.brightness?.value = hkAccessoryBrightness
             }

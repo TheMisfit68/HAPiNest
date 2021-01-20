@@ -23,7 +23,7 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
         didSet{
             // Only when circuit is idle
             // send the feedback upstream to the Homekit accessory,
-            // provides for a more stable feedback
+			// provides a more stable experience
             if  !characteristicChanged{
                 accessory.lockMechanism.lockTargetState.value = hkAccessoryLockTargetState
             }
@@ -34,7 +34,7 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
         didSet{
             // Only when circuit is idle
             // send the feedback upstream to the Homekit accessory,
-            // provides for a more stable feedback
+			// provides a more stable experience
             if  !characteristicChanged{
                 accessory.lockMechanism.lockCurrentState.value = hkAccessoryLockCurrentState
             }

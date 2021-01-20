@@ -47,25 +47,25 @@ struct MainConfiguration{
             ( Accessory.Lightbulb(info: Service.Info(name: "Dressing Licht", serialNumber: "00413")),            PLCobjects["Dressing Licht"] ),
             
             
-            //            // Window coverings
-            //            Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")), PLCobjects["Slaapkamer Licht"] ),
-            //            Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")), PLCobjects["Slaapkamer Licht"] ),
-            //            Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")), PLCobjects["Slaapkamer Licht"] ),
-            //            Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")), PLCobjects["Slaapkamer Licht"] ),
-            //            Accessory.WindowCovering(info: Service.Info(name: "Keuken Rolgordijnen", serialNumber: "00504")), PLCobjects["Slaapkamer Licht"] ),
-            //            Accessory.WindowCovering(info: Service.Info(name: "Living Rolgordijnen", serialNumber: "00505")), PLCobjects["Slaapkamer Licht"] ),
-            //            Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolgordijn", serialNumber: "00506")), PLCobjects["Slaapkamer Licht"] ),
-            //            Accessory.WindowCovering(info: Service.Info(name: "Vide Rolgordijn", serialNumber: "00507")), PLCobjects["Slaapkamer Licht"] ),
-            //            Accessory.WindowCovering(info: Service.Info(name: "Overloop Rolgordijn", serialNumber: "00508")), PLCobjects["Slaapkamer Licht"] ),
+            // Window coverings
+            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")),			PLCobjects["Keuken Screens"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),			PLCobjects["Living Screens"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),		PLCobjects["Slaapkamer Screen"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),				PLCobjects["Vide Screen"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Rolgordijnen", serialNumber: "00504")),		PLCobjects["Keuken Rolgordijnen"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Living Rolgordijnen", serialNumber: "00505")),		PLCobjects["Living Rolgordijnen"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolgordijn", serialNumber: "00506")),	PLCobjects["Slaapkamer Rolgordijn"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Rolgordijn", serialNumber: "00507")),      	PLCobjects["Vide Rolgordijn"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Overloop Rolgordijn", serialNumber: "00508")),  	PLCobjects["Overloop Rolgordijn"] ),
             
             
             // MARK: - Security
-            ( Accessory.LockMechanism(info: Service.Info(name: "Voordeur", serialNumber: "00501")), PLCobjects["Voordeur"] ),
-            ( Accessory.GarageDoorOpener.StatelessGarageDoorOpener(info: Service.Info(name: "Garagepoort", serialNumber: "00502")), PLCobjects["Garagepoort"] ),
+            ( Accessory.LockMechanism(info: Service.Info(name: "Voordeur", serialNumber: "00550")), PLCobjects["Voordeur"] ),
+            ( Accessory.GarageDoorOpener.StatelessGarageDoorOpener(info: Service.Info(name: "Garagepoort", serialNumber: "00551")), PLCobjects["Garagepoort"] ),
 
             
             // MARK: - Sprinkler
-            ( Accessory.SmartSprinkler(info: Service.Info(name: "Vrijgave beregening", serialNumber: "00503", manufacturer: "Hunter")), PLCobjects["Vrijgave beregening"] ),
+            ( Accessory.SmartSprinkler(info: Service.Info(name: "Vrijgave beregening", serialNumber: "00552", manufacturer: "Hunter")), PLCobjects["Vrijgave beregening"] ),
             
             // Outlets
             ( Accessory.Outlet(info: Service.Info(name: "Kelder Compressor", serialNumber: "00600", manufacturer: "Niko")),                 PLCobjects["Kelder Compressor"] ),
