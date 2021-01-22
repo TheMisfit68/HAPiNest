@@ -71,11 +71,11 @@ extension MainConfiguration{
             IOList[0][2][1] =  "Living Screens Open"
             IOList[0][2][2] =  "Slaapkamer Screen Open"
             IOList[0][2][3] =  "Vide Screen Open"
-            IOList[0][2][4] =  "Keuken Rolgordijnen Open"
-            IOList[0][2][5] =  "Living Rolgordijnen Open"
-            IOList[0][2][6] =  "Slaapkamer Rolgordijn Open"
-            IOList[0][2][7] =  "Vide Rolgordijn Open"
-            IOList[0][2][8] =  "Overloop Rolgordijn Open"
+            IOList[0][2][4] =  "Keuken Rollekes Open"
+            IOList[0][2][5] =  "Living Rollekes Open"
+            IOList[0][2][6] =  "Slaapkamer Rolleke Open"
+            IOList[0][2][7] =  "Vide Rolleke Open"
+            IOList[0][2][8] =  "Overloop Rolleke Open"
 			
 			// Varia
             IOList[0][2][9] =  "Kelder Compressor On"
@@ -91,11 +91,11 @@ extension MainConfiguration{
             IOList[0][3][1] =  "Living Screens Close"
             IOList[0][3][2] =  "Slaapkamer Screen Close"
             IOList[0][3][3] =  "Vide Screen Close"
-            IOList[0][3][4] =  "Keuken Rolgordijnen Close"
-            IOList[0][3][5] =  "Living Rolgordijnen Close"
-            IOList[0][3][6] =  "Slaapkamer Rolgordijn Close"
-            IOList[0][3][7] =  "Vide Rolgordijn Close"
-            IOList[0][3][8] =  "Overloop Rolgordijn Close"
+            IOList[0][3][4] =  "Keuken Rollekes Close"
+            IOList[0][3][5] =  "Living Rollekes Close"
+            IOList[0][3][6] =  "Slaapkamer Rolleke Close"
+            IOList[0][3][7] =  "Vide Rolleke Close"
+            IOList[0][3][8] =  "Overloop Rolleke Close"
             IOList[0][3][9] =  nil
             IOList[0][3][10] =  nil
             IOList[0][3][11] =  nil
@@ -128,11 +128,11 @@ extension MainConfiguration{
             IOList[0][5][1] =  "Living Screens"
             IOList[0][5][2] =  "Slaapkamer Screen"
             IOList[0][5][3] =  "Vide Screen"
-            IOList[0][5][4] =  "Keuken Rolgordijnen"
-            IOList[0][5][5] =  "Living Rolgordijnen"
-            IOList[0][5][6] =  "Slaapkamer Rolgordijn"
-            IOList[0][5][7] =  "Vide Rolgordijn"
-            IOList[0][5][8] =  "Overloop Rolgordijn"
+            IOList[0][5][4] =  "Keuken Rollekes"
+            IOList[0][5][5] =  "Living Rollekes"
+            IOList[0][5][6] =  "Slaapkamer Rolleke"
+            IOList[0][5][7] =  "Vide Rolleke"
+            IOList[0][5][8] =  "Overloop Rolleke"
             
             // Varia
             IOList[0][5][9] =  "Kelder Compressor"
@@ -197,11 +197,11 @@ extension MainConfiguration{
             "Living Screens" : WindowCovering(secondsToOpen: 50, secondsToClose: 50),
             "Slaapkamer Screen" : WindowCovering(secondsToOpen: 50, secondsToClose: 50),
             "Vide Screen" : WindowCovering(secondsToOpen: 35, secondsToClose: 35),
-            "Keuken Rolgordijnen" : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
-            "Living Rolgordijnen" : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
-            "Slaapkamer Rolgordijn" : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
-            "Vide Rolgordijn" : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
-            "Overloop Rolgordijn" : WindowCovering(),
+            "Keuken Rollekes" : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
+            "Living Rollekes" : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
+            "Slaapkamer Rolleke" : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
+            "Vide Rolleke" : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
+            "Overloop Rolleke" : WindowCovering(),
 
 			// Varia
 			"Kelder Compressor" : ToggleableOutlet(),

@@ -1,11 +1,9 @@
 #  ToDo Domotica shortterm
 
-### Screens en rolgordijnen verder uitwerken met synchronistatie (stop voor herstart geeft betere synchronisatie)
-### Repair dimmable light 
+### Screens en Rollekes testen op synchronistatie
+### Gargepoort en Slot voordeur aansluiten en testen
 
 ###### Scenes definiëren volgens Things
-
-
 
 ###### PLC kringen verder uitwerken
 - [ ]   Pushbutton voorzien als subcass van Switch?

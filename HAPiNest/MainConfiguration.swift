@@ -52,11 +52,11 @@ struct MainConfiguration{
             ( Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),			PLCobjects["Living Screens"] ),
             ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),		PLCobjects["Slaapkamer Screen"] ),
             ( Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),				PLCobjects["Vide Screen"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Rolgordijnen", serialNumber: "00504")),		PLCobjects["Keuken Rolgordijnen"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Living Rolgordijnen", serialNumber: "00505")),		PLCobjects["Living Rolgordijnen"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolgordijn", serialNumber: "00506")),	PLCobjects["Slaapkamer Rolgordijn"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Rolgordijn", serialNumber: "00507")),      	PLCobjects["Vide Rolgordijn"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Overloop Rolgordijn", serialNumber: "00508")),  	PLCobjects["Overloop Rolgordijn"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Rollekes", serialNumber: "00504")),		PLCobjects["Keuken Rollekes"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Living Rollekes", serialNumber: "00505")),		PLCobjects["Living Rollekes"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolleke", serialNumber: "00506")),	PLCobjects["Slaapkamer Rolleke"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Rolleke", serialNumber: "00507")),      	PLCobjects["Vide Rolleke"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Overloop Rolleke", serialNumber: "00508")),  	PLCobjects["Overloop Rolleke"] ),
             
             
             // MARK: - Security
