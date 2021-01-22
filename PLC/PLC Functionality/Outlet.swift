@@ -54,10 +54,6 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
         plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
     }
     
-    var feedbackSignal:DigitalOutputSignal?{
-        outputSignal
-    }
-    
     // MARK: - PLC Parameter assignment
     
     public func assignInputParameters(){
