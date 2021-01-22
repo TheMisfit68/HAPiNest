@@ -62,7 +62,9 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
     
     public func assignInputParameters(){
             
-        if characteristicChanged{
+		if powerState == nil {
+			powerState = outputSignal.logicalValue
+		}else if characteristicChanged{
             powerState = hkAccessoryPowerState
         }
         
@@ -72,11 +74,11 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
         outputSignal.outputLogic = .inverse
         outputSignal.logicalValue = powerState
         
-        hkAccessoryPowerState = powerState
+		hkAccessoryPowerState = powerState
         characteristicChanged.reset()  
     }
         
     // MARK: - PLC Processing
-    private var powerState:Bool = false // Ensure outlet deafult hKState is Off (SAFETY CONDITION)
+    private var powerState:Bool! = nil
 
 }

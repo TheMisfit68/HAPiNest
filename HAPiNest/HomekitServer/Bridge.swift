@@ -50,11 +50,11 @@ extension Bridge{
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Dropping all pairings, keys")
         try? Self.configFile.write(Data())
     }
-    
-    public func accessory(named accessoryName:String)->Accessory?{
-        return accessories.first(where: {$0.info.name.value == accessoryName })
-    }
-    
+	
+	subscript(accessoryName: String) -> Accessory?{
+		return accessories.first(where: {$0.info.name.value == accessoryName })
+	}
+	
     public func removeAccessoryWith(SerialNumbers:[String]){
         
         let unwantedAccessories = accessories.filter{SerialNumbers.contains($0.info.serialNumber.value!)}

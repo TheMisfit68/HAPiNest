@@ -57,7 +57,10 @@ class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, 
     // MARK: - PLC Parameter assignment
     
     public func assignInputParameters(){
-        if characteristicChanged{
+		
+		if powerState == nil {
+			powerState = false
+		}else if characteristicChanged{
             powerState = hkAccessoryPowerState
         }
         
@@ -75,12 +78,12 @@ class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, 
     }
         
     // MARK: - PLC Processing
-    var powerState:Bool = false
+    var powerState:Bool! = nil
         
     let pulsTimer = DigitalTimer.ExactPuls(time: 1.0)
     var puls:Bool{
         get{
-            var puls = powerState
+			var puls:Bool = powerState
             return puls.timed(using: pulsTimer)
         }
     }

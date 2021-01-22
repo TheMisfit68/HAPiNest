@@ -14,18 +14,34 @@ import JVCocoa
 
 class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{
 	
-	 init(secondsToOpen:Int = 15, secondsToClose:Int = 15){
+	
+	
+	init(secondsToOpen:Int = 15, secondsToClose:Int = 15){
 		
 		self.secondsToOpen = Double(secondsToOpen)
 		self.secondsToClose = Double(secondsToClose)
+		self.hardwareTrigger = EBool(&hardwarePuls)
 		
 		super.init()
 		
 		currentPositionTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-			if self.hardwareFeedbackIsOpening{
-				self.currentPosition = min(self.currentPosition+(1/self.secondsToOpen*100.0), 100.0)
-			}else if self.hardwareFeedbackIsClosing{
-				self.currentPosition = max(0, self.currentPosition-(1/self.secondsToClose*100.0))
+			self.updateCurrentPosition()
+		}
+	}
+	
+	private func updateCurrentPosition() {
+		
+		if self.currentPosition != nil{
+			if (!self.hardwareFeedbackIsOpening &&  !self.hardwareFeedbackIsClosing) || (abs(deviation) <= deadband){
+				self.positionState = .stopped
+			}else if self.hardwareFeedbackIsOpening && (self.currentPosition < 100.0){
+				self.positionState = .increasing
+				self.currentPosition += (1/self.secondsToOpen*100.0)
+				self.currentPosition = min(self.currentPosition, 100.0)
+			}else if self.hardwareFeedbackIsClosing && (self.currentPosition > 0.0){
+				self.positionState = .decreasing
+				self.currentPosition -= (1/self.secondsToClose*100.0)
+				self.currentPosition = max(0.0, self.currentPosition)
 			}
 		}
 		
@@ -41,7 +57,7 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 			// Only when circuit is idle
 			// send the hardwareFeedback upstream to the Homekit accessory,
 			// provides for a more stable hardwareFeedback
-			if  !characteristicChanged{
+			if  !characteristicChanged && !hardwareFeedbackChanged{
 				accessory.windowCovering.targetPosition.value = hkAccessoryTargetPosition
 			}
 		}
@@ -51,7 +67,7 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 			// Only when circuit is idle
 			// send the hardwareFeedback upstream to the Homekit accessory,
 			// provides for a more stable hardwareFeedback
-			if  !characteristicChanged{
+			if  !characteristicChanged && !hardwareFeedbackChanged{
 				accessory.windowCovering.currentPosition.value = hkAccessoryCurrentPosition
 			}
 		}
@@ -62,7 +78,7 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 			// Only when circuit is idle
 			// send the hardwareFeedback upstream to the Homekit accessory,
 			// provides for a more stable hardwareFeedback
-			if  !characteristicChanged{
+			if  !characteristicChanged && !hardwareFeedbackChanged{
 				accessory.windowCovering.positionState.value = hkAccessoryPositionState
 			}
 		}
@@ -112,30 +128,28 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		hardwareFeedbackIsOpening = feedbackSignalIsOpening?.logicalValue ?? false
 		hardwareFeedbackIsClosing = feedbackSignalIsClosing?.logicalValue ?? false
 		
-		if characteristicChanged{
-			if instanceName == "Living Screens"{
-				print("***new position \(hkAccessoryTargetPosition)")
-			}
-			targetPosition = hkAccessoryTargetPosition
-		}else if hardwareFeedbackChanged{
-			
+		if currentPosition == nil {
+			positionState = .stopped
 			if hardwareFeedbackIsOpening{
-				positionState = .increasing
+				currentPosition = 100.0
 			}else if hardwareFeedbackIsClosing{
-				positionState = .decreasing
+				currentPosition = 0.0
 			}else{
-				positionState = .stopped
-				targetPosition = UInt8(currentPosition)
+				currentPosition = 50.0
 			}
-			
+			targetPosition = currentPosition
+		}else if characteristicChanged{
+			targetPosition = Double(hkAccessoryTargetPosition)
+		}else if hardwareFeedbackChanged{
+			// Will be handled by the currentPositionTimer in a timely fashion
 		}
 		
 	}
 	
 	public func assignOutputParameters(){
 		outputSignal.logicalValue = puls
-		
-		hkAccessoryTargetPosition = targetPosition
+				
+		hkAccessoryTargetPosition = UInt8(targetPosition)
 		hkAccessoryCurrentPosition = UInt8(currentPosition)
 		hkAccessoryPositionState = positionState
 		characteristicChanged.reset()
@@ -153,53 +167,34 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 	}
 	private var hardwareFeedbackChanged:Bool = false
 	
-	var hardwareFeedbackIsStopped:Bool{
-		!hardwareFeedbackIsOpening && !hardwareFeedbackIsClosing
-	}
-	
 	// MARK: - PLC Processing
-	private var targetPosition:UInt8 = 100
+	private var targetPosition:Double = 100.0
 	private var currentPositionTimer:Timer!
-	private var currentPosition:Double = 100.0
+	private var currentPosition:Double! = nil
+	private var positionState:Enums.PositionState = .stopped
 	private let secondsToOpen:Double
 	private let secondsToClose:Double
-	private var positionState:Enums.PositionState = .stopped
+	private var deviation:Double{
+		currentPosition-targetPosition
+	}
+	private var deadband:Double{
+		if (targetPosition < 1.0) || (targetPosition > 99.0){
+			return 0.0
+		}else{
+			return 100/min(secondsToOpen, secondsToClose)
+		}
+	}
 	
 	let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
 	var puls:Bool{
 		get{
-			let deviation:Double = Double(currentPosition)-Double(targetPosition)
-			var deadband:Double{
-				if (targetPosition != 0) && (targetPosition != 100){
-					return 100/min(secondsToOpen, secondsToClose)
-				}else{
-					return 0
-				}
-			}
 			let shouldOpen:Bool = deviation < -deadband
-			let shouldStop:Bool = abs(deviation) <= deadband
 			let shouldClose:Bool = deviation > +deadband
 			
-			if instanceName == "Living Screens"{
-				print("***position \(self.currentPosition)-\(self.targetPosition) = \(deviation) => \(shouldOpen)|\(shouldStop)|\(shouldClose) \(hardwareFeedbackIsOpening)|\(hardwareFeedbackIsStopped)|\(hardwareFeedbackIsClosing)")
-			}
-			
 			// Only toggle if the state and its hardwareFeedback are not already in sync
-			var puls =  !outputSignal.logicalValue && ( (shouldOpen && !hardwareFeedbackIsOpening) ||
-															(shouldStop && !hardwareFeedbackIsStopped) ||
-															(shouldClose && !hardwareFeedbackIsClosing) )
+			var puls =  !outputSignal.logicalValue && ( (shouldOpen && !hardwareFeedbackIsOpening) || (shouldClose && !hardwareFeedbackIsClosing) )
 			
-			
-			
-			let test = puls.timed(using: pulsTimer)
-			if instanceName == "Living Screens"{
-				if test{
-					print("***Puls On")
-				}else{
-					print("****Puls Off")
-				}
-			}
-			return test
+			return puls.timed(using: pulsTimer)
 		}
 	}
 	
@@ -207,8 +202,11 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 	
 	// When in simulation mode,
 	// provide the hardwarefeedback yourself
+	private var hardwarePuls:Bool = false
+	private var hardwareTrigger:EBool
+	
 	private var hardwareState:WindowCoveringState = .stoppedAfterOpening
-	enum WindowCoveringState{
+	private enum WindowCoveringState{
 		
 		case opening
 		case stoppedAfterOpening
@@ -231,20 +229,18 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		
 	}
 	
-	private var previousPuls:Bool = false
 	public func simulateHardwareFeedback() {
 		
-		if puls && !previousPuls{
+		hardwarePuls = outputSignal.logicalValue
+		
+		if hardwareTrigger.🔼{
 			hardwareState = hardwareState.nextState()
-			if instanceName == "Living Screens"{
-				print("***New State \(hardwareState)")
-			}
 		}
-		previousPuls = puls
 		feedbackSignalIsOpening?.logicalValue = (hardwareState == .opening)
 		feedbackSignalIsClosing?.logicalValue = (hardwareState == .closing)
 		
 	}
 	
 }
+
 

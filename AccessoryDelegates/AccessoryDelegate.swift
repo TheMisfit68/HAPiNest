@@ -38,7 +38,7 @@ protocol AccessorySource:AccessoryDelegate{
 extension AccessorySource{
     
     var accessory:AccessorySubclass{
-        HomeKitServer.shared.mainBridge.accessory(named: name) as! AccessorySubclass
+        HomeKitServer.shared.mainBridge[name] as! AccessorySubclass
     }
     
 }

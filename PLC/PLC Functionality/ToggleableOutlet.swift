@@ -71,7 +71,9 @@ public class ToggleableOutlet:PLCclass, Parameterizable, Simulateable, Accessory
 		
 		hardwareFeedback = feedbackSignal?.logicalValue ?? false
 		
-		if characteristicChanged{
+		if powerState == nil {
+			powerState = hardwareFeedback
+		}else if characteristicChanged{
 			powerState = hkAccessoryPowerState
 		}else if hardwareFeedbackChanged{
 			powerState = hardwareFeedback
@@ -91,10 +93,10 @@ public class ToggleableOutlet:PLCclass, Parameterizable, Simulateable, Accessory
 			hardwareFeedbackChanged = (hardwareFeedback != oldValue)
 		}
 	}
-	private var hardwareFeedbackChanged:Bool = false
+	private var hardwareFeedbackChanged:Bool! = false
 	
 	// MARK: - PLC Processing
-	private var powerState:Bool = false
+	private var powerState:Bool! = nil
 	
 	let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
 	var puls:Bool{

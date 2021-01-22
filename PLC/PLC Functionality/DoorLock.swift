@@ -69,7 +69,9 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
     
     public func assignInputParameters(){
             
-        if characteristicChanged{
+		if lockTargetState == nil {
+			lockTargetState = .secured
+		}else if characteristicChanged{
             lockTargetState = hkAccessoryLockTargetState
         }
         
@@ -89,7 +91,7 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
     }
         
     // MARK: - PLC Processing
-    var lockTargetState:Enums.LockTargetState = .secured
+    var lockTargetState:Enums.LockTargetState! = nil
         
     let pulsTimer = DigitalTimer.ExactPuls(time: 2.0)
     var puls:Bool{

@@ -1,18 +1,14 @@
 #  ToDo Domotica shortterm
-  
-Repair dimmable light on on/Of switch
 
-Pushbutton voorzien als subcass van Switch?
-### Redsign garageDoor accesory subclass .toggled
-### Screens en rolgordijnen uitwerken
-
-###### PLC kringen verder uitwerken
+### Screens en rolgordijnen verder uitwerken met synchronistatie (stop voor herstart geeft betere synchronisatie)
+### Repair dimmable light 
 
 ###### Scenes definiëren volgens Things
 
 
-- [ ] In bridge /device 'Subscript' voorzien voor accessories op naam
 
+###### PLC kringen verder uitwerken
+- [ ]   Pushbutton voorzien als subcass van Switch?
 - [ ]  Knoppen implementeren voor opvragen informatie leaf
 - [ ]  Array of partial keypaths meegeven als parameter aan SQLite.autoCreateTableFor<T:SQLRecordable> in JVCocoa
 - [ ]  SmartsprinklerDriver afwerken
