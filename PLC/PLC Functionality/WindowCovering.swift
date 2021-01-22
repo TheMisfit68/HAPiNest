@@ -34,6 +34,7 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		if self.currentPosition != nil{
 			if (!self.hardwareFeedbackIsOpening &&  !self.hardwareFeedbackIsClosing) || (abs(deviation) <= deadband){
 				self.positionState = .stopped
+				self.targetPosition = currentPosition
 			}else if self.hardwareFeedbackIsOpening && (self.currentPosition < 100.0){
 				self.positionState = .increasing
 				self.currentPosition += (1/self.secondsToOpen*100.0)
