@@ -44,6 +44,7 @@
 		DC54FA9D25B1207D00F9334C /* YASDIaccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54FA9C25B1207D00F9334C /* YASDIaccessory.swift */; };
 		DC5B1CC225842164004A5FD7 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC5B1CC125842164004A5FD7 /* HAP */; };
 		DC746D7325ACA97A00B33314 /* SprinklerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D7225ACA97A00B33314 /* SprinklerAccessory.swift */; };
+		DC74B24225C57BFD0039E229 /* LeafDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC74B24125C57BFD0039E229 /* LeafDriver */; };
 		DC8B28F52597C77B00266BD3 /* PulsOperatedCircuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */; };
 		DC8D0F69259DAA6A00DD04E4 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D0F68259DAA6A00DD04E4 /* Switch.swift */; };
 		DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */; };
@@ -134,6 +135,7 @@
 				DC54B6DE2570619800D9169F /* LeafDriver in Frameworks */,
 				DCFB4E0E258FFE8B007A812D /* Cryptor in Frameworks */,
 				DC54B6EA2570619800D9169F /* TizenDriver in Frameworks */,
+				DC74B24225C57BFD0039E229 /* LeafDriver in Frameworks */,
 				DC54B6E62570619800D9169F /* SiriDriver in Frameworks */,
 				DC54B6E82570619800D9169F /* SoftPLC in Frameworks */,
 				DC5B1CC225842164004A5FD7 /* HAP in Frameworks */,
@@ -414,6 +416,7 @@
 				DC54B6EB2570619800D9169F /* YASDIDriver */,
 				DC5B1CC125842164004A5FD7 /* HAP */,
 				DCFB4E0D258FFE8B007A812D /* Cryptor */,
+				DC74B24125C57BFD0039E229 /* LeafDriver */,
 			);
 			productName = HAPiNest2;
 			productReference = DC54B6BB2570586D00D9169F /* HAPiNest.app */;
@@ -453,6 +456,7 @@
 				DC089BCD253E578900057C65 /* XCRemoteSwiftPackageReference "OpenWeatherReporter" */,
 				DC5B1CC025842164004A5FD7 /* XCRemoteSwiftPackageReference "HAP" */,
 				DCFB4E0C258FFE8B007A812D /* XCRemoteSwiftPackageReference "BlueCryptor" */,
+				DC74B24025C57BFD0039E229 /* XCRemoteSwiftPackageReference "LeafDriver" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
@@ -790,6 +794,14 @@
 				kind = branch;
 			};
 		};
+		DC74B24025C57BFD0039E229 /* XCRemoteSwiftPackageReference "LeafDriver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:TheMisfit68/LeafDriver.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		DCE471C52390386B0059036D /* XCRemoteSwiftPackageReference "MilightDriver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TheMisfit68/MilightDriver.git";
@@ -853,6 +865,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC5B1CC025842164004A5FD7 /* XCRemoteSwiftPackageReference "HAP" */;
 			productName = HAP;
+		};
+		DC74B24125C57BFD0039E229 /* LeafDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC74B24025C57BFD0039E229 /* XCRemoteSwiftPackageReference "LeafDriver" */;
+			productName = LeafDriver;
 		};
 		DCFB4E0D258FFE8B007A812D /* Cryptor */ = {
 			isa = XCSwiftPackageProductDependency;
