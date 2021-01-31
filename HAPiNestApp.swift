@@ -15,63 +15,83 @@ import SoftPLC
 
 @main
 struct HAPiNestApp: App {
-    @Environment(\.scenePhase) var scenePhase
-    
-    init() {
-        
-        AppState.shared.plc.plcObjects = MainConfiguration.PLC.PLCobjects
-        
-        AppState.shared.homekitServer.mainBridge = Bridge(
-            name:MainConfiguration.HomeKit.BridgeName,
-            setupCode:MainConfiguration.HomeKit.BridgeSetupCode,
-            accessories: MainConfiguration.HomeKit.Accessories.map{$0.0}
-        )
-        
-        // Only fire Up PLC after all components are initialized
-        AppState.shared.plc.run()
+	@Environment(\.scenePhase) var scenePhase
+	
+	static var InDeveloperMode:Bool{
+		return (Host.current().localizedName ?? "")  == "MacBook Pro"
+	}
+	
+	init() {
 		
-//		AppState.shared.homekitServer.mainBridge.removeAccessoryWith(SerialNumbers: ["00501"])
-    }
-    
-    var body: some Scene {
-        WindowGroup("HAPiNest dashboard 🛋") {
-            DashBoardView()
-                .onAppear(perform: {
-                    //                    AppState.shared.homekitServer.leafDriver.batteryChecker.getBatteryStatus()
-                })
-        }
-        .onChange(of: scenePhase) { newScenePhase in
-            switch newScenePhase {
-            case .active:
-                print("App became active")
-            case .inactive:
-                print("App became inactive")
-            case .background:
-                print("App sent to background")
-            @unknown default:
-                break
-            }
-        }
-        
-        // PrefereceWindow
-        #if os(macOS)
-        Settings{
-        }
-        #endif
-    }
-    
+		AppState.shared.plc.plcObjects = MainConfiguration.PLC.PLCobjects
+		
+		var bridgename = MainConfiguration.HomeKit.BridgeName
+		var setupCode = MainConfiguration.HomeKit.BridgeSetupCode
+		#if DEBUG
+		if HAPiNestApp.InDeveloperMode{
+			bridgename += "Test"
+			setupCode = "012-34-567"
+		}
+		#endif
+		
+		AppState.shared.homekitServer.mainBridge = Bridge(
+			name:bridgename,
+			setupCode:setupCode,
+			accessories: MainConfiguration.HomeKit.Accessories.map{$0.0}
+		)
+
+		#if DEBUG
+		AppState.shared.plc.executionType = HAPiNestApp.InDeveloperMode ? .simulated : .normal
+		#else
+		AppState.shared.plc.executionType = .normal
+		#endif
+		
+		// Only fire Up PLC after all components are initialized
+		AppState.shared.plc.run()
+		
+		//		AppState.shared.homekitServer.mainBridge.removeAccessoryWith(SerialNumbers: ["00501"])
+	}
+	
+	
+	var body: some Scene {
+		WindowGroup("HAPiNest dashboard 🛋") {
+			DashBoardView()
+				.onAppear(perform: {
+					//                    AppState.shared.homekitServer.leafDriver.batteryChecker.getBatteryStatus()
+				})
+		}
+		.onChange(of: scenePhase) { newScenePhase in
+			switch newScenePhase {
+				case .active:
+					print("App became active")
+				case .inactive:
+					print("App became inactive")
+				case .background:
+					print("App sent to background")
+				@unknown default:
+					break
+			}
+		}
+		
+		// PrefereceWindow
+		#if os(macOS)
+		Settings{
+		}
+		#endif
+	}
+	
 }
 
 // In Apps with a swiftUI lifecyle,
 // APP is a struct wich can't be presented as a singleton and therefore that can't be referenced globally
 // Appstate however is a singleton and therefore can get referenced globally
 class AppState{
-    
-    static let shared:AppState = AppState()
-    private init(){}
-    
-    let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList)
-    let homekitServer:HomeKitServer = HomeKitServer.shared
-    let appNapController: AppNapController = AppNapController.shared
-    
+	
+	static let shared:AppState = AppState()
+	private init(){}
+	
+	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList)
+	let homekitServer:HomeKitServer = HomeKitServer.shared
+	let appNapController: AppNapController = AppNapController.shared
+	
 }
