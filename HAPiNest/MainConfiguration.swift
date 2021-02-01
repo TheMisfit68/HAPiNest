@@ -85,8 +85,8 @@ struct MainConfiguration{
             
             
             // MARK: - Smart Lights
-            ( Accessory.Lightbulb(info: Service.Info(name: "Balk", serialNumber: "10000", manufacturer: "Milight"), type: .color),    MilightDelegate(name: "Balk", driver:MilightDriverV6(ipAddress:"192.168.0.52"), zone: .zone01) ),
-			( Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "10002", manufacturer: "Milight"), type: .color),     MilightDelegate(name: "UFO", driver:MilightDriverV6(ipAddress:"192.168.0.52"), zone: .zone02) ),
+			( Accessory.Lightbulb(info: Service.Info(name: "Balk", serialNumber: "10000", manufacturer: "Milight"), type: .color, isDimmable: true),  MilightDelegate(name: "Balk", driver:MilightDriverV6(ipAddress:"192.168.0.52"), zone: .zone01) ),
+			( Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "10002", manufacturer: "Milight"), type: .color, isDimmable: true),     MilightDelegate(name: "UFO", driver:MilightDriverV6(ipAddress:"192.168.0.52"), zone: .zone02) ),
 
             
             // MARK: - T.V.s

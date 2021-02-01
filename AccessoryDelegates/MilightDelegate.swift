@@ -17,6 +17,46 @@ class MilightDelegate:AccessoryDelegate {
 	let driver:MilightDriver
 	let zone:MilightZone
 	
+	var brightness:Int = 100{
+		didSet{
+			print("*** brightness is \(brightness)")
+			driver.executeCommand(mode: .rgbwwcw, action: .brightNess, value: brightness, zone: zone)
+		}
+	}
+	var hue:Int = 0{
+		didSet{
+			if inWhiteMode{
+				hue = 0
+			}else{
+				driver.executeCommand(mode: .rgbwwcw, action: .hue, value: hue, zone: zone)
+			}
+			print("*** hue is \(hue)")
+		}
+	}
+	var saturation:Int = 0{
+		didSet{
+			print("*** saturation is \(saturation)")
+			driver.executeCommand(mode: .rgbwwcw, action: .saturation, value: saturation, zone: zone)
+			inWhiteMode = (saturation <= 16)
+		}
+	}
+	var inWhiteMode:Bool = true{
+		didSet{
+			if inWhiteMode != oldValue{
+				let currentBrightness = brightness
+				if inWhiteMode{
+					Debugger.shared.log(debugLevel:.Native(logType:.info), "Switching to dedicated whitemode")
+					hue = 0
+					saturation = 0
+					driver.executeCommand(mode: .rgbwwcw, action: .whiteOnlyMode,  zone: zone)
+					driver.executeCommand(mode: .rgbwwcw, action: .temperature, value:100,  zone: zone)
+				}
+				brightness = currentBrightness
+			}
+		}
+	}
+	
+	
 	public init(name:String,
 				driver:MilightDriver,
 				zone:MilightZone
@@ -41,23 +81,15 @@ class MilightDelegate:AccessoryDelegate {
 				
 			case CharacteristicType.brightness:
 				
-				let brightness = characteristic.value as! Int
-				driver.executeCommand(mode: .rgbwwcw, action: .brightNess, value: brightness, zone: zone)
+				brightness = characteristic.value as! Int
 				
 			case CharacteristicType.hue:
 				
-				let hue = characteristic.value as! Int
-				driver.executeCommand(mode: .rgbwwcw, action: .hue, value: hue, zone: zone)
-
+				hue = Int(characteristic.value as! Float)
+				
 			case CharacteristicType.saturation:
 				
-				let saturation = characteristic.value as! Int
-				if (saturation > 0){
-					driver.executeCommand(mode: .rgbwwcw, action: .hue, value: saturation, zone: zone)
-				}else{
-					Debugger.shared.log(debugLevel:.Native(logType:.info), "Switching to dedicated whitemode a.k.a cold white)")
-					driver.executeCommand(mode: .rgbwwcw, action: .temperature, value:100,  zone: zone)
-				}
+				saturation = Int(characteristic.value as! Float)
 				
 			default:
 				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
