@@ -42,16 +42,16 @@ class MilightDelegate:AccessoryDelegate {
 			case CharacteristicType.brightness:
 				
 				let brightness = characteristic.value as! Int
-				driver.executeCommand(mode: .rgbwwcw, action: .brightNess,value: brightness, zone: zone)
+				driver.executeCommand(mode: .rgbwwcw, action: .brightNess, value: brightness, zone: zone)
 				
 			case CharacteristicType.hue:
 				
-				let hue = characteristic.value as! Float
+				let hue = characteristic.value as! Int
 				driver.executeCommand(mode: .rgbwwcw, action: .hue, value: hue, zone: zone)
 
 			case CharacteristicType.saturation:
 				
-				let saturation = characteristic.value as! Float
+				let saturation = characteristic.value as! Int
 				if (saturation > 0){
 					driver.executeCommand(mode: .rgbwwcw, action: .hue, value: saturation, zone: zone)
 				}else{
