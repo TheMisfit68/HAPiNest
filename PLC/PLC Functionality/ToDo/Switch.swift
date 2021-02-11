@@ -12,6 +12,7 @@ import Cocoa
 import HAP
 import SoftPLC
 import ModbusDriver
+import IOTypes
 import JVCocoa
 
 class Switch:PLCclass, Parameterizable{

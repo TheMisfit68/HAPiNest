@@ -10,6 +10,7 @@ import Cocoa
 import HAP
 import SoftPLC
 import ModbusDriver
+import IOTypes
 import JVCocoa
 
 class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{

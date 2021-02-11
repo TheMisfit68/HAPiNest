@@ -10,6 +10,7 @@ import Cocoa
 import HAP
 import SoftPLC
 import ModbusDriver
+import IOTypes
 import JVCocoa
 
 class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{

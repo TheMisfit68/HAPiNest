@@ -12,6 +12,7 @@ import SwiftUI
 import JVCocoa
 import HAP
 import SoftPLC
+import ModbusDriver
 
 @main
 struct HAPiNestApp: App {
@@ -90,7 +91,7 @@ class AppState{
 	static let shared:AppState = AppState()
 	private init(){}
 	
-	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList)
+	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList, simulator:ModbusSimulator())
 	let homekitServer:HomeKitServer = HomeKitServer.shared
 	let appNapController: AppNapController = AppNapController.shared
 	
