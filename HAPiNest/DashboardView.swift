@@ -13,11 +13,10 @@ import SoftPLC
 import JVCocoa
 
 struct DashBoardView: View {
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
 //      @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
     
     var body: some View {
-        Neumorphic.shared.colorScheme = colorScheme
+		
         return TabView {
             
             ServerView()
@@ -35,12 +34,12 @@ struct DashBoardView: View {
             AppState.shared.plc.controlPanel
                 .tabItem {
                     Text("PLC")
-                }.background(Neumorphic.shared.mainColor())
+				}.background(Color.Neumorphic.main)
 
         
         }
         .padding()
-        .background(Neumorphic.shared.mainColor())
+        .background(Color.Neumorphic.main)
     }
     
 }

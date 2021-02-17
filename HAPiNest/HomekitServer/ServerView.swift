@@ -10,9 +10,10 @@ import SwiftUI
 import Neumorphic
 
 struct ServerView: View {
+
     var body: some View {
-        
-        VStack {
+
+        return VStack {
             HapinestIconView()
             QRCodeView()
             Spacer()
@@ -49,7 +50,7 @@ extension ServerView{
     struct QRCodeView: View{
         @State private var showResetAlert: Bool = false
         var body: some View {
-            VStack {
+            return VStack {
                 Image(nsImage:HomeKitServer.shared.mainBridge.setupQRCode.asNSImage!)
                 Text("Scan the code above using your iPhone to pair it with the")
                 Text(MainConfiguration.HomeKit.BridgeName).bold().font(.system(size: 18))

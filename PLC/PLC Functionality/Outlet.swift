@@ -59,9 +59,9 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
     
     public func assignInputParameters(){
             
-		if powerState == nil {
+		if (powerState == nil){
 			powerState = outputSignal.logicalValue
-		}else if characteristicChanged{
+		}else if characteristicChanged && (hkAccessoryPowerState != nil){
             powerState = hkAccessoryPowerState
         }
         
@@ -71,7 +71,7 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
         outputSignal.outputLogic = .inverse
         outputSignal.logicalValue = powerState
         
-		hkAccessoryPowerState = powerState
+		hkAccessoryPowerState = powerState ?? false
         characteristicChanged.reset()  
     }
         

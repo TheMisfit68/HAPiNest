@@ -29,7 +29,7 @@ class Switch:PLCclass, Parameterizable{
         // Switches have no outputs associated with them!
     }
     
-    var action:Bool = false{
+    var action:Bool?{
         didSet{
             if action != oldValue{
                 // Perform some action
