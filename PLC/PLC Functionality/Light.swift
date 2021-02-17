@@ -14,109 +14,112 @@ import IOTypes
 import JVCocoa
 
 public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{
-    
-    // MARK: - HomeKit Accessory binding
-    
-    typealias AccessorySubclass = Accessory.Lightbulb
-    
-    private var characteristicChanged:Bool = false
-    var hkAccessoryPowerState:Bool = false{
-        didSet{
-            // Only when circuit is idle
-            // send the hardwareFeedback upstream to the Homekit accessory,
-            // provides a more stable experience
-            if  !characteristicChanged && !hardwareFeedbackChanged{
-                accessory.lightbulb.powerState.value = hkAccessoryPowerState
-            }
-        }
-    }
-    
-    func handleCharacteristicChange<T>(accessory:Accessory,
-                                       service: Service,
-                                       characteristic: GenericCharacteristic<T>,
-                                       to value: T?){
-        
-        characteristicChanged.set()
-        
-        // Handle Characteristic change depending on its type
-        switch characteristic.type{
-        case CharacteristicType.powerState:
-            
-            hkAccessoryPowerState = value as? Bool ?? hkAccessoryPowerState
-            
-        default:
-            Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
-        }
-    }
-    
-    
-    // MARK: - PLC IO-Signal assignment
-    
-    var outputSignal:DigitalOutputSignal{
-        plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
-    }
-    
-    var feedbackSignal:DigitalInputSignal?{
-        let nameFeedBackSignal:String
-        if instanceName.contains("Enable"){
-            nameFeedBackSignal = instanceName.replacingOccurrences(of: "Enable", with: "Enabled")
-        }else{
-            nameFeedBackSignal = instanceName+" On"
-        }
-        return plc.signal(ioSymbol:nameFeedBackSignal) as? DigitalInputSignal
-    }
-    
-    // MARK: - PLC parameter assignment
-    
-    public func assignInputParameters(){
-        
-        hardwareFeedback = feedbackSignal?.logicalValue ?? false
+	
+	// MARK: - HomeKit Accessory binding
+	
+	typealias AccessorySubclass = Accessory.Lightbulb
+	
+	private var characteristicChanged:Bool = false
+	var hkAccessoryPowerState:Bool = false{
+		didSet{
+			// Only when circuit is idle
+			// send the hardwareFeedback upstream to the Homekit accessory,
+			// provides a more stable experience
+			if  !characteristicChanged && !hardwareFeedbackChanged{
+				accessory.lightbulb.powerState.value = hkAccessoryPowerState
+			}
+		}
+	}
+	
+	func handleCharacteristicChange<T>(accessory:Accessory,
+									   service: Service,
+									   characteristic: GenericCharacteristic<T>,
+									   to value: T?){
 		
-		if powerState == nil {
+		characteristicChanged.set()
+		
+		// Handle Characteristic change depending on its type
+		switch characteristic.type{
+			case CharacteristicType.powerState:
+				
+				hkAccessoryPowerState = value as? Bool ?? hkAccessoryPowerState
+				
+			default:
+				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
+		}
+	}
+	
+	
+	// MARK: - PLC IO-Signal assignment
+	
+	var outputSignal:DigitalOutputSignal{
+		plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
+	}
+	
+	var feedbackSignal:DigitalInputSignal?{
+		let nameFeedBackSignal:String
+		if instanceName.contains("Enable"){
+			nameFeedBackSignal = instanceName.replacingOccurrences(of: "Enable", with: "Enabled")
+		}else{
+			nameFeedBackSignal = instanceName+" On"
+		}
+		return plc.signal(ioSymbol:nameFeedBackSignal) as? DigitalInputSignal
+	}
+	
+	// MARK: - PLC parameter assignment
+	
+	public func assignInputParameters(){
+		
+		hardwareFeedback = feedbackSignal?.logicalValue
+		
+		if (powerState == nil) && (hardwareFeedback != nil) && hardwareFeedbackChanged{
+			if  instanceName == "Badkamer Licht" {
+				print("***\(hardwareFeedback)")
+			}
 			powerState = hardwareFeedback
-		}else if characteristicChanged{
-            powerState = hkAccessoryPowerState
-        }else if hardwareFeedbackChanged{
-            powerState = hardwareFeedback
-        }
-        
-    }
-    
-    public func assignOutputParameters(){
-        outputSignal.logicalValue = puls
-        
-        hkAccessoryPowerState = powerState
-        characteristicChanged.reset()
-    }
-    
-    var hardwareFeedback:Bool = false{
-        didSet{
-            hardwareFeedbackChanged = (hardwareFeedback != oldValue)
-        }
-    }
-    private var hardwareFeedbackChanged:Bool = false
-    
-    // MARK: - PLC Processing
-    private var powerState:Bool! = nil
-    
-    let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
-    var puls:Bool{
-        get{
-            var puls = (powerState != hardwareFeedback) // Only toggle if the powerState and its hardwareFeedback are not already in sync
-            return puls.timed(using: pulsTimer)
-        }
-    }
-    
-    // MARK: - Simulation hardware
+		}else if (powerState != nil) && characteristicChanged{
+			powerState = hkAccessoryPowerState
+		}else if (powerState != nil) && (hardwareFeedback != nil) && hardwareFeedbackChanged{
+			powerState = hardwareFeedback
+		}
+		
+	}
+	
+	public func assignOutputParameters(){
+		outputSignal.logicalValue = puls
+		
+		hkAccessoryPowerState = powerState ?? false
+		characteristicChanged.reset()
+	}
+	
+	var hardwareFeedback:Bool?{
+		didSet{
+			hardwareFeedbackChanged = (hardwareFeedback != oldValue)
+		}
+	}
+	private var hardwareFeedbackChanged:Bool = false
+	
+	// MARK: - PLC Processing
+	private var powerState:Bool! = nil
+	
+	let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
+	var puls:Bool{
+		get{
+			var puls = (powerState != nil) && (hardwareFeedback != nil) && (powerState != hardwareFeedback) // Only toggle if the powerState and its hardwareFeedback are not already in sync
+			return puls.timed(using: pulsTimer)
+		}
+	}
+	
+	// MARK: - Simulation hardware
 	
 	// When in simulation mode,
 	// provide the hardwarefeedback yourself
 	private var teleruptor = ImpulsRelais()
-    public func simulateHardwareFeedback() {
+	public func simulateHardwareFeedback() {
 		
 		teleruptor.toggle = outputSignal.logicalValue
 		feedbackSignal?.logicalValue = teleruptor.output
 		
-    }
-    
+	}
+	
 }

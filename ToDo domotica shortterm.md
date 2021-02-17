@@ -1,7 +1,9 @@
 #  ToDo Domotica shortterm
 
-### Screens en Rollekes testen op synchronistatie
 
+### nil on inputs when any error occurs, optional acts as quality-bit
+
+### Screens en Rollekes testen op synchronistatie
 ###### Scenes definiëren volgens Things
 
 ###### PLC kringen verder uitwerken
