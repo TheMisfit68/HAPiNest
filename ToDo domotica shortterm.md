@@ -1,6 +1,6 @@
 #  ToDo Domotica shortterm
 
-#### Dimmable light, outlet, Screens, Rollekes testen op synchronistatie
+#### Dimmable light, Windowcoverings testen op synchronistatie
 
 #### Check modbus resume
 
