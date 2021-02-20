@@ -1,9 +1,13 @@
 #  ToDo Domotica shortterm
 
+#### Dimmable light, outlet, Screens, Rollekes testen op synchronistatie
 
-### nil on inputs when any error occurs, optional acts as quality-bit
+#### Check modbus resume
 
-### Screens en Rollekes testen op synchronistatie
+### deploy on server
+
+### C-based-sytem-targets mee in swift-based-packages opnemen (modbus)
+
 ###### Scenes definiëren volgens Things
 
 ###### PLC kringen verder uitwerken

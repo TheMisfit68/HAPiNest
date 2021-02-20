@@ -72,14 +72,11 @@ public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, A
 		
 		hardwareFeedback = feedbackSignal?.logicalValue
 		
-		if (powerState == nil) && (hardwareFeedback != nil) && hardwareFeedbackChanged{
-			if  instanceName == "Badkamer Licht" {
-				print("***\(hardwareFeedback)")
-			}
+		if (powerState == nil) && hardwareFeedbackChanged{
 			powerState = hardwareFeedback
 		}else if (powerState != nil) && characteristicChanged{
 			powerState = hkAccessoryPowerState
-		}else if (powerState != nil) && (hardwareFeedback != nil) && hardwareFeedbackChanged{
+		}else if (powerState != nil) && hardwareFeedbackChanged{
 			powerState = hardwareFeedback
 		}
 		
@@ -94,13 +91,13 @@ public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, A
 	
 	var hardwareFeedback:Bool?{
 		didSet{
-			hardwareFeedbackChanged = (hardwareFeedback != oldValue)
+			hardwareFeedbackChanged = (hardwareFeedback != oldValue) && (hardwareFeedback != nil)
 		}
 	}
 	private var hardwareFeedbackChanged:Bool = false
 	
 	// MARK: - PLC Processing
-	private var powerState:Bool! = nil
+	private var powerState:Bool? = nil
 	
 	let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
 	var puls:Bool{

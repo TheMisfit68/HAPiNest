@@ -25,7 +25,7 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
             // Only when circuit is idle
             // send the feedback upstream to the Homekit accessory,
 			// provides a more stable experience
-            if  !characteristicChanged{
+			if  !characteristicChanged && !hardwareFeedbackChanged{
                 accessory.outlet.powerState.value = hkAccessoryPowerState
             }
         }
@@ -58,24 +58,34 @@ public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySourc
     // MARK: - PLC Parameter assignment
     
     public func assignInputParameters(){
-            
-		if (powerState == nil){
+        		
+		hardwareFeedback = outputSignal.logicalFeedbackValue
+
+		if (powerState == nil) && hardwareFeedbackChanged{
 			powerState = outputSignal.logicalValue
-		}else if characteristicChanged && (hkAccessoryPowerState != nil){
+		}else if (powerState != nil) && characteristicChanged{
             powerState = hkAccessoryPowerState
         }
         
     }
     
     public func assignOutputParameters(){
+		
         outputSignal.outputLogic = .inverse
-        outputSignal.logicalValue = powerState
-        
+        outputSignal.logicalValue = powerState ?? false
+
 		hkAccessoryPowerState = powerState ?? false
-        characteristicChanged.reset()  
+        characteristicChanged.reset()
     }
-        
+	        
+	var hardwareFeedback:Bool?{
+		didSet{
+			hardwareFeedbackChanged = (hardwareFeedback != oldValue) && (hardwareFeedback != nil)
+		}
+	}
+	private var hardwareFeedbackChanged:Bool = false
+	
     // MARK: - PLC Processing
-    private var powerState:Bool! = nil
+    private var powerState:Bool? = nil
 
 }

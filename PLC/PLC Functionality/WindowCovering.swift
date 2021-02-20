@@ -15,8 +15,6 @@ import JVCocoa
 
 class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{
 	
-	
-	
 	init(secondsToOpen:Int = 15, secondsToClose:Int = 15){
 		
 		self.secondsToOpen = Double(secondsToOpen)
@@ -33,14 +31,14 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 	private func updateCurrentPosition() {
 		
 		if self.currentPosition != nil{
-			if (!self.hardwareFeedbackIsOpening &&  !self.hardwareFeedbackIsClosing) || (abs(deviation) <= deadband){
+			if (self.hardwareFeedbackIsOpening != true) &&  (self.hardwareFeedbackIsClosing != true) || (abs(deviation) <= deadband){
 				self.positionState = .stopped
 				self.targetPosition = currentPosition
-			}else if self.hardwareFeedbackIsOpening && (self.currentPosition < 100.0){
+			}else if (self.hardwareFeedbackIsOpening == true) && (self.currentPosition < 100.0){
 				self.positionState = .increasing
 				self.currentPosition += (1/self.secondsToOpen*100.0)
 				self.currentPosition = min(self.currentPosition, 100.0)
-			}else if self.hardwareFeedbackIsClosing && (self.currentPosition > 0.0){
+			}else if (self.hardwareFeedbackIsClosing == true) && (self.currentPosition > 0.0){
 				self.positionState = .decreasing
 				self.currentPosition -= (1/self.secondsToClose*100.0)
 				self.currentPosition = max(0.0, self.currentPosition)
@@ -127,22 +125,22 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 	
 	public func assignInputParameters(){
 		
-		hardwareFeedbackIsOpening = feedbackSignalIsOpening?.logicalValue ?? false
-		hardwareFeedbackIsClosing = feedbackSignalIsClosing?.logicalValue ?? false
+		hardwareFeedbackIsOpening = feedbackSignalIsOpening?.logicalValue
+		hardwareFeedbackIsClosing = feedbackSignalIsClosing?.logicalValue
 		
-		if currentPosition == nil {
-			positionState = .stopped
-			if hardwareFeedbackIsOpening{
-				currentPosition = 100.0
-			}else if hardwareFeedbackIsClosing{
-				currentPosition = 0.0
-			}else{
-				currentPosition = 50.0
-			}
+		if (currentPosition == nil) && (hardwareFeedbackIsClosing == true){
+			currentPosition = 100.0
 			targetPosition = currentPosition
-		}else if characteristicChanged{
+		}else if (currentPosition == nil) && (hardwareFeedbackIsClosing == true){
+			currentPosition = 0.0
+			targetPosition = currentPosition
+		}else if (currentPosition == nil){
+			currentPosition = 50.0
+			targetPosition = currentPosition
+			
+		}else if (currentPosition != nil) && characteristicChanged{
 			targetPosition = Double(hkAccessoryTargetPosition)
-		}else if hardwareFeedbackChanged{
+		}else if (currentPosition != nil) && hardwareFeedbackChanged{
 			// Will be handled by the currentPositionTimer in a timely fashion
 		}
 		
@@ -150,21 +148,21 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 	
 	public func assignOutputParameters(){
 		outputSignal.logicalValue = puls
-				
+		
 		hkAccessoryTargetPosition = UInt8(targetPosition)
 		hkAccessoryCurrentPosition = UInt8(currentPosition)
 		hkAccessoryPositionState = positionState
 		characteristicChanged.reset()
 	}
 	
-	var hardwareFeedbackIsOpening:Bool = false{
+	var hardwareFeedbackIsOpening:Bool? = false{
 		didSet{
-			hardwareFeedbackChanged = (hardwareFeedbackIsOpening != oldValue)
+			hardwareFeedbackChanged = (hardwareFeedbackIsOpening != oldValue) && (hardwareFeedbackIsOpening != nil)
 		}
 	}
-	var hardwareFeedbackIsClosing:Bool = false{
+	var hardwareFeedbackIsClosing:Bool? = false{
 		didSet{
-			hardwareFeedbackChanged = (hardwareFeedbackIsClosing != oldValue)
+			hardwareFeedbackChanged = (hardwareFeedbackIsClosing != oldValue) && (hardwareFeedbackIsClosing != nil)
 		}
 	}
 	private var hardwareFeedbackChanged:Bool = false
@@ -194,7 +192,7 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 			let shouldClose:Bool = deviation > +deadband
 			
 			// Only toggle if the state and its hardwareFeedback are not already in sync
-			var puls =  !outputSignal.logicalValue && ( (shouldOpen && !hardwareFeedbackIsOpening) || (shouldClose && !hardwareFeedbackIsClosing) )
+			var puls =  !outputSignal.logicalValue && ( (shouldOpen && (hardwareFeedbackIsOpening == false)) || (shouldClose && hardwareFeedbackIsClosing == false) )
 			
 			return puls.timed(using: pulsTimer)
 		}

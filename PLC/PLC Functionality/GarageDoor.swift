@@ -25,7 +25,7 @@ class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, 
             // Only when circuit is idle
             // send the hardwareFeedback upstream to the Homekit accessory,
             // provides for a more stable hardwareFeedback
-            if  !characteristicChanged{
+			if  !characteristicChanged && !hardwareFeedbackChanged{
                 accessory.statelessGarageDoorOpener.powerState.value = hkAccessoryPowerState
             }
         }
@@ -59,32 +59,42 @@ class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, 
     
     public func assignInputParameters(){
 		
-		if powerState == nil {
-			powerState = false
-		}else if characteristicChanged{
-            powerState = hkAccessoryPowerState
-        }
+		hardwareFeedback = outputSignal.logicalFeedbackValue
+
+		if (powerState == nil) && hardwareFeedbackChanged{
+			powerState = outputSignal.logicalValue
+		}else if (powerState != nil) && characteristicChanged{
+			powerState = hkAccessoryPowerState
+		}
         
     }
     
     public func assignOutputParameters(){
+		
         outputSignal.logicalValue = puls
         if !puls{
             powerState = false
         }
         
-        hkAccessoryPowerState = powerState
+        hkAccessoryPowerState = powerState ?? false
         
         characteristicChanged.reset()
     }
         
+	var hardwareFeedback:Bool?{
+		didSet{
+			hardwareFeedbackChanged = (hardwareFeedback != oldValue) && (hardwareFeedback != nil)
+		}
+	}
+	private var hardwareFeedbackChanged:Bool = false
+	
     // MARK: - PLC Processing
     var powerState:Bool! = nil
         
     let pulsTimer = DigitalTimer.ExactPuls(time: 1.0)
     var puls:Bool{
         get{
-			var puls:Bool = powerState
+			var puls:Bool = powerState ?? false
             return puls.timed(using: pulsTimer)
         }
     }

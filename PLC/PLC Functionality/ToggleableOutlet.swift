@@ -72,11 +72,11 @@ public class ToggleableOutlet:PLCclass, Parameterizable, Simulateable, Accessory
 		
 		hardwareFeedback = feedbackSignal?.logicalValue ?? false
 		
-		if powerState == nil {
+		if (powerState == nil) && hardwareFeedbackChanged{
 			powerState = hardwareFeedback
-		}else if characteristicChanged{
+		}else if (powerState != nil) && characteristicChanged{
 			powerState = hkAccessoryPowerState
-		}else if hardwareFeedbackChanged{
+		}else if (powerState != nil) && hardwareFeedbackChanged{
 			powerState = hardwareFeedback
 		}
 		
@@ -85,24 +85,24 @@ public class ToggleableOutlet:PLCclass, Parameterizable, Simulateable, Accessory
 	public func assignOutputParameters(){
 		outputSignal.logicalValue = puls
 		
-		hkAccessoryPowerState = powerState
+		hkAccessoryPowerState = powerState ?? false
 		characteristicChanged.reset()
 	}
 	
-	var hardwareFeedback:Bool = false{
+	var hardwareFeedback:Bool?{
 		didSet{
-			hardwareFeedbackChanged = (hardwareFeedback != oldValue)
+			hardwareFeedbackChanged = (hardwareFeedback != oldValue) && (hardwareFeedback != nil)
 		}
 	}
 	private var hardwareFeedbackChanged:Bool! = false
 	
 	// MARK: - PLC Processing
-	private var powerState:Bool! = nil
+	private var powerState:Bool? = nil
 	
 	let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
 	var puls:Bool{
 		get{
-			var puls = (powerState != hardwareFeedback) // Only toggle if the powerState and its hardwareFeedback are not already in sync
+			var puls = (powerState != nil) && (hardwareFeedback != nil) && (powerState != hardwareFeedback) // Only toggle if the powerState and its hardwareFeedback are not already in sync
 			return puls.timed(using: pulsTimer)
 		}
 	}
