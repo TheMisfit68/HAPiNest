@@ -42,7 +42,7 @@ struct HAPiNestApp: App {
 		)
 
 		#if DEBUG
-		AppState.shared.plc.executionType = HAPiNestApp.InDeveloperMode ? .simulated : .normal
+		AppState.shared.plc.executionType = HAPiNestApp.InDeveloperMode ? .normal : .normal
 		#else
 		AppState.shared.plc.executionType = .normal
 		#endif
