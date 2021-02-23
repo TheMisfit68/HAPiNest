@@ -1,12 +1,11 @@
 #  ToDo Domotica shortterm
 
-#### Dimmable light, Windowcoverings testen op synchronistatie
+#### Lichten, SmartSprinkler and Windowcoverings testen op synchronistatie
 
-#### Check modbus resume
 
-### deploy on server
+### Bind observable object and cleanup code in PLCview
+### Implement validation of Maxcycletime with color and warning
 
-### C-based-sytem-targets mee in swift-based-packages opnemen (modbus)
 
 ###### Scenes definiëren volgens Things
 
