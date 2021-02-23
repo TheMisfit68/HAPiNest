@@ -19,7 +19,6 @@ class MilightDelegate:AccessoryDelegate {
 	
 	var brightness:Int = 100{
 		didSet{
-			print("*** brightness is \(brightness)")
 			driver.executeCommand(mode: .rgbwwcw, action: .brightNess, value: brightness, zone: zone)
 		}
 	}
@@ -30,12 +29,10 @@ class MilightDelegate:AccessoryDelegate {
 			}else{
 				driver.executeCommand(mode: .rgbwwcw, action: .hue, value: hue, zone: zone)
 			}
-			print("*** hue is \(hue)")
 		}
 	}
 	var saturation:Int = 0{
 		didSet{
-			print("*** saturation is \(saturation)")
 			driver.executeCommand(mode: .rgbwwcw, action: .saturation, value: saturation, zone: zone)
 			inWhiteMode = (saturation <= 16)
 		}
