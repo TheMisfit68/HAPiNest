@@ -147,7 +147,6 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		// MARK: - PLC parameter assignment
 		
 		if (currentPosition == nil) && hardwareFeedbackChanged{
-			
 			if (hardwareFeedbackIsOpening == true)  && (hardwareFeedbackIsClosing == false){
 				currentPosition = 100.0
 				targetPosition = currentPosition!
@@ -221,11 +220,11 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 			
 			let shouldOpen:Bool = (deviation < -deadband) && (hardwareFeedbackIsOpening == false)
 			let shouldClose:Bool = (deviation > +deadband) && (hardwareFeedbackIsClosing == false)
-			let shouldStop:Bool = (targetPosition > 0) && (targetPosition < 100) && ((hardwareFeedbackIsOpening == true) && !shouldOpen) && ((hardwareFeedbackIsClosing == true) && !shouldClose) // Only stop in mid positions
-			
+			// Only stop in mid positions
+			let shouldStop:Bool = (targetPosition > 0.0) && (targetPosition < 100.0) && (abs(deviation) <= deadband) && ( (hardwareFeedbackIsOpening == true) || (hardwareFeedbackIsClosing == true) )
 			// Only toggle if the state and its hardwareFeedback are not already in sync
 			var puls =  !outputSignal.logicalValue && (shouldOpen || shouldClose || shouldStop )
-			
+
 			return puls.timed(using: pulsTimer)
 		}
 	}
