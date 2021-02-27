@@ -19,31 +19,48 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		
 		self.secondsToOpen = Double(secondsToOpen)
 		self.secondsToClose = Double(secondsToClose)
-		self.hardwareTrigger = EBool(&hardwarePuls)
-		
+		self.hardwareTrigger = EBool(&hardwarePuls)		
 		super.init()
 		
 		currentPositionTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
 			self.updateCurrentPosition()
 		}
+		
 	}
 	
 	private func updateCurrentPosition() {
 		
-		if self.currentPosition != nil{
-			if (self.hardwareFeedbackIsOpening != true) &&  (self.hardwareFeedbackIsClosing != true) || (abs(deviation) <= deadband){
+		if (self.currentPosition != nil){
+			
+			if (self.positionState != .stopped) && ((self.hardwareFeedbackIsOpening != true) && (self.hardwareFeedbackIsClosing != true)){
+				
 				self.positionState = .stopped
-				self.targetPosition = currentPosition
-			}else if (self.hardwareFeedbackIsOpening == true) && (self.currentPosition < 100.0){
+				
+			}else if (self.positionState != .stopped) && (abs(deviation) <= deadband){
+				
+				self.positionState = .stopped
+				
+			}else if (self.positionState == .stopped) && (abs(deviation) <= deadband){
+				
+				// Correct the target position to the exact final position that was reached
+				self.targetPosition = self.currentPosition!
+				
+			}else if (self.hardwareFeedbackIsOpening == true) && (self.currentPosition! < 100.0){
+				
 				self.positionState = .increasing
-				self.currentPosition += (1/self.secondsToOpen*100.0)
-				self.currentPosition = min(self.currentPosition, 100.0)
-			}else if (self.hardwareFeedbackIsClosing == true) && (self.currentPosition > 0.0){
+				self.currentPosition! += (1/self.secondsToOpen*100.0)
+				self.currentPosition! = min(self.currentPosition!, 100.0)
+				
+			}else if (self.hardwareFeedbackIsClosing == true) && (self.currentPosition! > 0.0){
+				
 				self.positionState = .decreasing
-				self.currentPosition -= (1/self.secondsToClose*100.0)
-				self.currentPosition = max(0.0, self.currentPosition)
+				self.currentPosition! -= (1/self.secondsToClose*100.0)
+				self.currentPosition! = max(0.0, self.currentPosition!)
+				
 			}
+			
 		}
+		
 		
 	}
 	
@@ -102,7 +119,6 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		}
 	}
 	
-	
 	// MARK: - PLC IO-Signal assignment
 	
 	var outputSignal:DigitalOutputSignal{
@@ -121,25 +137,31 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		
 	}
 	
-	// MARK: - PLC parameter assignment
-	
 	public func assignInputParameters(){
 		
 		hardwareFeedbackIsOpening = feedbackSignalIsOpening?.logicalValue
 		hardwareFeedbackIsClosing = feedbackSignalIsClosing?.logicalValue
 		
-		if (currentPosition == nil) && (hardwareFeedbackIsClosing == true){
-			currentPosition = 100.0
-			targetPosition = currentPosition
-		}else if (currentPosition == nil) && (hardwareFeedbackIsClosing == true){
-			currentPosition = 0.0
-			targetPosition = currentPosition
-		}else if (currentPosition == nil){
-			currentPosition = 50.0
-			targetPosition = currentPosition
+		
+		
+		// MARK: - PLC parameter assignment
+		
+		if (currentPosition == nil) && hardwareFeedbackChanged{
 			
+			if (hardwareFeedbackIsOpening == true)  && (hardwareFeedbackIsClosing == false){
+				currentPosition = 100.0
+				targetPosition = currentPosition!
+			}else if (hardwareFeedbackIsClosing == true) && (hardwareFeedbackIsOpening == false){
+				currentPosition = 0.0
+				targetPosition = currentPosition!
+			}else if (hardwareFeedbackIsOpening == false) && (hardwareFeedbackIsClosing == false){
+				currentPosition = 50.0
+				targetPosition = currentPosition!
+			}
 		}else if (currentPosition != nil) && characteristicChanged{
+			
 			targetPosition = Double(hkAccessoryTargetPosition)
+			
 		}else if (currentPosition != nil) && hardwareFeedbackChanged{
 			// Will be handled by the currentPositionTimer in a timely fashion
 		}
@@ -149,33 +171,41 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 	public func assignOutputParameters(){
 		outputSignal.logicalValue = puls
 		
+		hkAccessoryCurrentPosition = UInt8(currentPosition ?? 50.0)
 		hkAccessoryTargetPosition = UInt8(targetPosition)
-		hkAccessoryCurrentPosition = UInt8(currentPosition)
 		hkAccessoryPositionState = positionState
 		characteristicChanged.reset()
 	}
 	
-	var hardwareFeedbackIsOpening:Bool? = false{
+	var hardwareFeedbackIsOpening:Bool?{
 		didSet{
-			hardwareFeedbackChanged = (hardwareFeedbackIsOpening != oldValue) && (hardwareFeedbackIsOpening != nil)
+			hardwareFeedbackIsOpeningChanged = (hardwareFeedbackIsOpening != oldValue) && (hardwareFeedbackIsOpening != nil)
 		}
 	}
-	var hardwareFeedbackIsClosing:Bool? = false{
+	var hardwareFeedbackIsClosing:Bool?{
 		didSet{
-			hardwareFeedbackChanged = (hardwareFeedbackIsClosing != oldValue) && (hardwareFeedbackIsClosing != nil)
+			hardwareFeedbackIsClosingChanged = (hardwareFeedbackIsClosing != oldValue) && (hardwareFeedbackIsClosing != nil)
 		}
 	}
-	private var hardwareFeedbackChanged:Bool = false
+	private var hardwareFeedbackIsOpeningChanged:Bool = false
+	private var hardwareFeedbackIsClosingChanged:Bool = false
+	private var hardwareFeedbackChanged:Bool{
+		hardwareFeedbackIsOpeningChanged || hardwareFeedbackIsClosingChanged
+	}
 	
 	// MARK: - PLC Processing
-	private var targetPosition:Double = 100.0
+	private var currentPosition:Double? = nil
 	private var currentPositionTimer:Timer!
-	private var currentPosition:Double! = nil
+	private var targetPosition:Double = 100.0
 	private var positionState:Enums.PositionState = .stopped
 	private let secondsToOpen:Double
 	private let secondsToClose:Double
 	private var deviation:Double{
-		currentPosition-targetPosition
+		if let currentPosition = self.currentPosition{
+			return currentPosition-targetPosition
+		}else{
+			return 0
+		}
 	}
 	private var deadband:Double{
 		if (targetPosition < 1.0) || (targetPosition > 99.0){
@@ -188,11 +218,13 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 	let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
 	var puls:Bool{
 		get{
-			let shouldOpen:Bool = deviation < -deadband
-			let shouldClose:Bool = deviation > +deadband
+			
+			let shouldOpen:Bool = (deviation < -deadband) && (hardwareFeedbackIsOpening == false)
+			let shouldClose:Bool = (deviation > +deadband) && (hardwareFeedbackIsClosing == false)
+			let shouldStop:Bool = (targetPosition > 0) && (targetPosition < 100) && ((hardwareFeedbackIsOpening == true) && !shouldOpen) && ((hardwareFeedbackIsClosing == true) && !shouldClose) // Only stop in mid positions
 			
 			// Only toggle if the state and its hardwareFeedback are not already in sync
-			var puls =  !outputSignal.logicalValue && ( (shouldOpen && (hardwareFeedbackIsOpening == false)) || (shouldClose && hardwareFeedbackIsClosing == false) )
+			var puls =  !outputSignal.logicalValue && (shouldOpen || shouldClose || shouldStop )
 			
 			return puls.timed(using: pulsTimer)
 		}

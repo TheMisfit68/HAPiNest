@@ -19,7 +19,7 @@ struct HAPiNestApp: App {
 	@Environment(\.scenePhase) var scenePhase
 	
 	static var InDeveloperMode:Bool{
-		return (Host.current().localizedName ?? "")  == "MacBook Pro"
+		return (Host.current().localizedName ?? "") == "MacBook Pro"
 	}
 	
 	init() {
@@ -42,7 +42,7 @@ struct HAPiNestApp: App {
 		)
 
 		#if DEBUG
-		AppState.shared.plc.executionType = HAPiNestApp.InDeveloperMode ? .normal : .normal
+		AppState.shared.plc.executionType = HAPiNestApp.InDeveloperMode ? .simulated : .normal
 		#else
 		AppState.shared.plc.executionType = .normal
 		#endif

@@ -94,7 +94,7 @@ public class ToggleableOutlet:PLCclass, Parameterizable, Simulateable, Accessory
 			hardwareFeedbackChanged = (hardwareFeedback != oldValue) && (hardwareFeedback != nil)
 		}
 	}
-	private var hardwareFeedbackChanged:Bool! = false
+	private var hardwareFeedbackChanged:Bool = false
 	
 	// MARK: - PLC Processing
 	private var powerState:Bool? = nil

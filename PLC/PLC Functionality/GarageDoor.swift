@@ -89,7 +89,7 @@ class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, 
 	private var hardwareFeedbackChanged:Bool = false
 	
     // MARK: - PLC Processing
-    var powerState:Bool! = nil
+    var powerState:Bool? = nil
         
     let pulsTimer = DigitalTimer.ExactPuls(time: 1.0)
     var puls:Bool{

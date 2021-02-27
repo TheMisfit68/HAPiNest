@@ -77,7 +77,7 @@ public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate, Accesso
 		
 		if brightness == nil {
 			brightness = Int(outputSignal.scaledValue)
-			powerState = (brightness >= switchOffLevelDimmer)
+			powerState = (brightness! >= switchOffLevelDimmer)
 		}else if characteristicChanged{
 			
 			if powerState != hkAccessoryPowerState{
@@ -90,10 +90,10 @@ public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate, Accesso
 	}
 	
 	public func assignOutputParameters(){
-		outputSignal.scaledValue = Float(brightness)
+		outputSignal.scaledValue = Float(brightness ?? 100)
 		
 		hkAccessoryPowerState = powerState
-		hkAccessoryBrightness = brightness
+		hkAccessoryBrightness = brightness ?? 100
 		characteristicChanged.reset()
 	}
 	
@@ -111,12 +111,12 @@ public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate, Accesso
 		}
 	}
 	
-	var brightness:Int! = nil{
+	var brightness:Int? = nil{
 		didSet{
 			if brightness != oldValue{
 				// When swicthed on, remember each new brightnesslevel,
 				// to be used as a startlevel later on
-				if brightness > switchOffLevelDimmer{
+				if let brightness = brightness, brightness > switchOffLevelDimmer{
 					previousbrightness = brightness
 				}
 			}

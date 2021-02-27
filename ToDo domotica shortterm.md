@@ -1,9 +1,11 @@
 #  ToDo Domotica shortterm
 
-#### Lichten, SmartSprinkler and Windowcoverings testen op synchronistatie
+#### Windowcoverings testen op synchronistatie
+#### Reenable max cycletime
+#### Test PLC off => Stop
 
 
-### Bind observable object and cleanup code in PLCview
+### In PLCview:  Bind observable object and cleanup code 
 ### Implement validation of Maxcycletime with color and warning
 
 
