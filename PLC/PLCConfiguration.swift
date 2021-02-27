@@ -73,7 +73,7 @@ extension MainConfiguration{
             IOList[0][2][3] =  "Vide Screen Open"
             IOList[0][2][4] =  "Keuken Rollekes Open"
             IOList[0][2][5] =  "Living Rollekes Open"
-            IOList[0][2][6] =  "Slaapkamer Rolleke Open"
+            IOList[0][2][6] =  "Slaapkamer Rolleke Close" // This wires of this motor are connected reveresed
             IOList[0][2][7] =  "Vide Rolleke Open"
             IOList[0][2][8] =  "Overloop Rolleke Open"
 			
@@ -93,7 +93,7 @@ extension MainConfiguration{
             IOList[0][3][3] =  "Vide Screen Close"
             IOList[0][3][4] =  "Keuken Rollekes Close"
             IOList[0][3][5] =  "Living Rollekes Close"
-            IOList[0][3][6] =  "Slaapkamer Rolleke Close"
+            IOList[0][3][6] =  "Slaapkamer Rolleke Open" // This wires of this motor are connected reveresed
             IOList[0][3][7] =  "Vide Rolleke Close"
             IOList[0][3][8] =  "Overloop Rolleke Close"
             IOList[0][3][9] =  nil
