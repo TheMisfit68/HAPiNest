@@ -30,8 +30,8 @@ public class HomeKitServer:Singleton{
     let appleScripTDriver = AppleScriptDriver()
     
   
-//    let gscNotifier = GSCNotifier()
-//    let sunnyPortalReporter = SunnyPortalReporter()
+	//    let gscNotifier = GSCNotifier()
+	//    let sunnyPortalReporter = SunnyPortalReporter()
     //    let sprinklerDriver = SmartSprinklerDriver()
     
     

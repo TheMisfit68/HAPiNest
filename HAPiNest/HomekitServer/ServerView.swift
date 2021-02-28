@@ -53,8 +53,8 @@ extension ServerView{
             return VStack {
                 Image(nsImage:HomeKitServer.shared.mainBridge.setupQRCode.asNSImage!)
                 Text("Scan the code above using your iPhone to pair it with the")
-                Text(MainConfiguration.HomeKit.BridgeName).bold().font(.system(size: 18))
-                Text("(or enter setupcode \(MainConfiguration.HomeKit.BridgeSetupCode))")
+                Text(HomeKitServer.shared.mainBridge.name).bold().font(.system(size: 18))
+				Text("(or enter setupcode \(HomeKitServer.shared.mainBridge.setupCode))")
                     .padding(.bottom, 15)
                 Button(action: {
                     self.showResetAlert = true
