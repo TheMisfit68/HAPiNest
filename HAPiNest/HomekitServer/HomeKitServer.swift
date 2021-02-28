@@ -22,7 +22,7 @@ public class HomeKitServer:Singleton{
     
     var mainBridge:Bridge!{
         didSet{
-            HAPserver = try? Server(device: mainBridge, listenPort: 8000)
+			HAPserver = try? Server(device: mainBridge, listenPort: MainConfiguration.HomeKit.ServerPort)
         }
     }
     

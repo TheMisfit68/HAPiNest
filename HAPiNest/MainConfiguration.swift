@@ -14,12 +14,13 @@ import SoftPLC
 import MilightDriver
 import TizenDriver
 import LeafDriver
-import YASDIDriver
+//import YASDIDriver
 
 struct MainConfiguration{
     
     struct HomeKit{
         
+		static let ServerPort = 8888
         static let BridgeName = "NestBridge"
         static let BridgeSetupCode = "456-77-890"
         
