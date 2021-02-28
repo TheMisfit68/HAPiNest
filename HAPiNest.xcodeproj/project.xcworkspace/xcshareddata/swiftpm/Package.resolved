@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "ClibYASDI",
+        "repositoryURL": "https://github.com/TheMisfit68/ClibYASDI.git",
+        "state": {
+          "branch": "master",
+          "revision": "7bcba8264df9746f1e078066f89c6a165c6701a2",
+          "version": null
+        }
+      },
+      {
         "package": "CryptoSwift",
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
@@ -134,6 +143,15 @@
           "branch": null,
           "revision": "d892f67ddbdde635787a1f2f96e654e91a2edbaa",
           "version": "5.1.200"
+        }
+      },
+      {
+        "package": "YASDIDriver",
+        "repositoryURL": "git@github.com:TheMisfit68/YASDIDriver.git",
+        "state": {
+          "branch": "master",
+          "revision": "310d52fb9f1394ac9b781f98018cbde6a82f6260",
+          "version": null
         }
       }
     ]
