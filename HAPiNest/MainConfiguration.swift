@@ -32,10 +32,11 @@ struct MainConfiguration{
             ( Accessory.Lightbulb(info: Service.Info(name: "Slaapkamer Licht", serialNumber: "00003", manufacturer: "MOXA"), isDimmable: true),          PLCobjects["Slaapkamer Licht"] ),
             
             // MARK: - Lights
+			( Accessory.Lightbulb(info: Service.Info(name: "Schemerschakelaar Enable", serialNumber: "00403")),  PLCobjects["Schemerschakelaar Enable"] ),
+			
             ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht", serialNumber: "00400")),            PLCobjects["Badkamer Licht"] ),
             ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht spiegel", serialNumber: "00401")),    PLCobjects["Badkamer Licht spiegel"] ),
             ( Accessory.Lightbulb(info: Service.Info(name: "Kelder Licht", serialNumber: "00402")),              PLCobjects["Kelder Licht"] ),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Buiten Licht", serialNumber: "00403")),              PLCobjects["Buiten Licht"] ),
             ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht", serialNumber: "00404")),              PLCobjects["Garage Licht"] ),
             ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht Werkbank", serialNumber: "00405")),     PLCobjects["Garage Licht Werkbank"] ),
             ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht kast", serialNumber: "00406")),         PLCobjects["Keuken Licht kast"] ),

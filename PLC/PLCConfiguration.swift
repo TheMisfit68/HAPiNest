@@ -49,7 +49,7 @@ extension MainConfiguration{
             
             // Digital inputs 1...3
             // Lights
-            IOList[0][1][0] =  "Buiten Licht Enabled"
+            IOList[0][1][0] =  "Schemerschakelaar Enabled"
             IOList[0][1][1] =  "Overloop Licht Enabled"
             IOList[0][1][2] =  "Badkamer Licht On"
             IOList[0][1][3] =  "Badkamer Licht spiegel On"
@@ -106,8 +106,8 @@ extension MainConfiguration{
             
             // Digital outputput 4...6
             // Lights
-            IOList[0][4][14] =  "Buiten Licht Enable"
-            IOList[0][4][15] =  "Overloop Licht Enable"
+            IOList[0][4][0] =  "Schemerschakelaar Enable"
+            IOList[0][4][1] =  "Overloop Licht Enable"
             IOList[0][4][2] =  "Badkamer Licht"
             IOList[0][4][3] =  "Badkamer Licht spiegel"
             IOList[0][4][4] =  "Kelder Licht"
@@ -166,6 +166,8 @@ extension MainConfiguration{
         
         static var PLCobjects:[String:PLCclass] = [
             
+			"Schemerschakelaar Enable" : Light(),
+
             // Function keys / Switches
 //            "Hal Functietoets Voordeur" : Switch(),
 //            "SlaapKamer Functietoets Bed Anja" : Switch(),
@@ -187,7 +189,7 @@ extension MainConfiguration{
             "Bureau Licht" : Light(),
             "Eetkamer Licht" : Light(),
             "Dressing Licht" : Light(),
-
+			
             "Overloop Licht" : Light(),
             "Hal Licht" : Light(),
             "W.C. Licht" : Light(),

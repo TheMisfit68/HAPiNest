@@ -1,7 +1,6 @@
 #  ToDo Domotica shortterm
 
-### Test devserver
-###  infinite loop in setten en lezen maxcycletime tussen backroungd en plc oplossen
+### resolve MAxcycletime problem on PLC/serverside (check for "multilple" .. in the same loop warning)
 ### In PLCview:  Bind observable object and cleanup code 
 ### Implement validation of Maxcycletime with color and warning
 
