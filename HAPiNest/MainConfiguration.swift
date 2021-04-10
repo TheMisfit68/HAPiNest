@@ -23,6 +23,7 @@ struct MainConfiguration{
 		static let ServerPort = 8888
         static let BridgeName = "NestBridge"
         static let BridgeSetupCode = "456-77-890"
+		static let BridgeConfigFile = "configuration.json"
         
         static let PLCobjects = PLC.PLCobjects.mapValues{$0 as! AccessoryDelegate}
         static let Accessories:[ (Accessory,AccessoryDelegate?) ] = [

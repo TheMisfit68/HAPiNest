@@ -28,17 +28,20 @@ struct HAPiNestApp: App {
 		
 		var bridgename = MainConfiguration.HomeKit.BridgeName
 		var setupCode = MainConfiguration.HomeKit.BridgeSetupCode
+		var configFile = MainConfiguration.HomeKit.BridgeConfigFile
 		#if DEBUG
 		if HAPiNestApp.InDeveloperMode{
-			bridgename += "Test"
+			bridgename += "Development"
 			setupCode = "012-34-567"
+			configFile = "developmentConfiguration.json"
 		}
 		#endif
 		
 		AppState.shared.homekitServer.mainBridge = Bridge(
 			name:bridgename,
 			setupCode:setupCode,
-			accessories: MainConfiguration.HomeKit.Accessories.map{$0.0}
+			accessories: MainConfiguration.HomeKit.Accessories.map{$0.0},
+			configfileName: configFile
 		)
 
 		#if DEBUG

@@ -16,14 +16,16 @@ typealias Bridge = Device
 extension Bridge{
     
     static let serialNumber = "00001"
-    static let configFile =  FileStorage(filename: "configuration.json")
-    
-    convenience init(name:String, setupCode:String, accessories:[HAP.Accessory]) {
-        
+	static var configFile:Storage!
+
+	convenience init(name:String, setupCode:String, accessories:[HAP.Accessory], configfileName:String) {
+		
+		Self.configFile = FileStorage(filename: configfileName)
+		
         self.init(
-            bridgeInfo: Service.Info(name: name, serialNumber: Self.serialNumber),
+			bridgeInfo: Service.Info(name: name, serialNumber: Self.serialNumber),
             setupCode: Device.SetupCode(stringLiteral: setupCode),
-            storage: Self.configFile,
+			storage: Self.configFile,
             accessories: accessories)
         printPairingInstructions()
         delegate = self
