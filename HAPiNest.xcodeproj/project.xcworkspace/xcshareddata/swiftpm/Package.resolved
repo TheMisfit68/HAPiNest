@@ -68,9 +68,9 @@
         "package": "HAP",
         "repositoryURL": "https://github.com/Bouke/HAP.git",
         "state": {
-          "branch": null,
-          "revision": "f0ffaa2f3a0cd364ade2b33263ca7a3f21ab3834",
-          "version": "0.7.0"
+          "branch": "master",
+          "revision": "7f4cca4ea2bc406df410566bcf925b40ad1a9fbe",
+          "version": null
         }
       },
       {

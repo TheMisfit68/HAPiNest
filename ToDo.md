@@ -19,5 +19,3 @@
 
 - [ ] Bundle ClibYASDI as a binary package bij creating a new binary-target for the package (do not includeczip archive in git, upload to seperate server LFS)
 
-
-

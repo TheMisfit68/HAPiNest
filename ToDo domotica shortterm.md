@@ -1,9 +1,7 @@
 #  ToDo Domotica shortterm
 
-### resolve MAxcycletime problem on PLC/serverside (check for "multilple" .. in the same loop warning)
-### In PLCview:  Bind observable object and cleanup code 
 ### Implement validation of Maxcycletime with color and warning
-
+### In PLCview:  Bind observable object and cleanup code 
 ###### Scenes definiëren volgens Things
 
 ###### PLC kringen verder uitwerken

@@ -770,8 +770,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Bouke/HAP.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 		DC6BC8CA2390466800BD9445 /* XCRemoteSwiftPackageReference "AppleScriptDriver" */ = {
