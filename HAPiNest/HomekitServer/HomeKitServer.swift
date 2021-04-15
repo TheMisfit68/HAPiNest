@@ -18,6 +18,7 @@ import SiriDriver
 public class HomeKitServer:Singleton{
     
     public static var shared: HomeKitServer = HomeKitServer()
+	public var name:String
     private var HAPserver:Server!
     
     var mainBridge:Bridge!{
@@ -43,8 +44,14 @@ public class HomeKitServer:Singleton{
     
     
     private init(){
+		self.name = MainConfiguration.HomeKit.ServerName
+		#if DEBUG
+		if HAPiNestApp.InDeveloperMode{
+			self.name = "Development\(self.name)"
+		}
+		#endif
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server...")
-//        let _ = SMAInverter.CreateInverters()
+//      let _ = SMAInverter.CreateInverters()
         
     }
     

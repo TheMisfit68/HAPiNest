@@ -20,6 +20,7 @@ struct MainConfiguration{
     
     struct HomeKit{
         
+		static let ServerName:String = "HAPiNestServer"
 		static let ServerPort = 8888
         static let BridgeName = "NestBridge"
         static let BridgeSetupCode = "456-77-890"

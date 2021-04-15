@@ -31,9 +31,9 @@ struct HAPiNestApp: App {
 		var configFile = MainConfiguration.HomeKit.BridgeConfigFile
 		#if DEBUG
 		if HAPiNestApp.InDeveloperMode{
-			bridgename += "Development"
+			bridgename = "development\(bridgename)"
 			setupCode = "012-34-567"
-			configFile = "developmentConfiguration.json"
+			configFile = "development\(configFile)"
 		}
 		#endif
 		
