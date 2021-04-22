@@ -1,11 +1,9 @@
 #  ToDo Domotica shortterm
 
-### Implement validation of Maxcycletime with color and warning
 ### In PLCview:  Bind observable object and cleanup code 
-###### Scenes definiëren volgens Things
 
 ###### PLC kringen verder uitwerken
-- [ ]   Pushbutton voorzien als subcass van Switch?
+- [ ]   Pushbutton voorzien als subclass van Switch?
 - [ ]  Knoppen implementeren voor opvragen informatie leaf
 - [ ]  Array of partial keypaths meegeven als parameter aan SQLite.autoCreateTableFor<T:SQLRecordable> in JVCocoa
 - [ ]  SmartsprinklerDriver afwerken

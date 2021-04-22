@@ -1,8 +1,7 @@
 #  Points of attention
 
-
 ## About Accessories
-An acccessories Type are of little or no influence on its representation in the Home-App 
+An acccessories Type is of little or no influence on its representation in the Home-App 
 Custom accessories should be of type .other
 Custom accessories can only be an array of 1 or more of several Apples standard Services and Characteristics
 Custom accessories that don't make use of those standard are not supported by Apples Home-App at all
