@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Neumorphic
-import YASDIDriver
+//import YASDIDriver
 import SoftPLC
 import JVCocoa
 
@@ -25,10 +25,10 @@ struct DashBoardView: View {
                 }
             
             //            if (inverterViewVisible){
-            SMAInverter.OnlineInverters.first?.display.frame(width: nil, height: 120, alignment: .center)
-                .tabItem {
-                    Text("Solar panels")
-                }
+//            SMAInverter.OnlineInverters.first?.display.frame(width: nil, height: 120, alignment: .center)
+//                .tabItem {
+//                    Text("Solar panels")
+//                }
             //            }
             
             AppState.shared.plc.controlPanel
