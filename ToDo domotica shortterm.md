@@ -1,4 +1,7 @@
 #  ToDo Domotica shortterm
+
+### Auo run using archive in bot instead of using branch 'onserver'
+ 
 ### Tizendriver nakijken
 ### Milightdriver nakijken
 ### Leafdriver herintroduceren

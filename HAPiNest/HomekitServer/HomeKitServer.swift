@@ -50,7 +50,7 @@ public class HomeKitServer:Singleton{
 			self.name = "Development\(self.name)"
 		}
 		#endif
-        Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server...")
+        Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server \(self.name)...")
 //      let _ = SMAInverter.CreateInverters()
         
     }

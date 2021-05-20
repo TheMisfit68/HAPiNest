@@ -14,6 +14,18 @@ import IOTypes
 import JVCocoa
 
 public class Outlet:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource{
+	
+	// Intializer that forces the outlets powerState On or Off at startup
+	// (instead of using the existing hardwareFeedback as its starting point)
+	public init(defaultPowerState:Bool){
+		powerState = defaultPowerState
+		super.init()
+	}
+	
+	public override init(){
+		powerState = nil
+		super.init()
+	}
     
     // MARK: - HomeKit Accessory binding
     

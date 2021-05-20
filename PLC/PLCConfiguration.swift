@@ -210,9 +210,9 @@ extension MainConfiguration{
             
             
             // Outlets
-            "Buiten Stopcontact" : Outlet(),
+            "Buiten Stopcontact" : Outlet(defaultPowerState: true),
             "Garage Droogkast" : Outlet(),
-            "Garage Ventilatie" : Outlet(),
+            "Garage Ventilatie" : Outlet(defaultPowerState: true),
             "Keuken Powerport" : Outlet(),
             "Living Stopcontact" : Outlet(),
             "Eetkamer Stopcontact" : Outlet(),
@@ -220,15 +220,14 @@ extension MainConfiguration{
             "Bureau Stopcontact" : Outlet(),
             "Hal Stopcontact" : Outlet(),
             "Slaapkamer Stopcontact bed rechts" : Outlet(),
-            "Slaapkamer Stopcontact Bed links" : Outlet(),
-            "Slaapkamer Stopcontact T.V." : Outlet(),
+            "Slaapkamer Stopcontact Bed links" : Outlet(defaultPowerState: true),
+            "Slaapkamer Stopcontact T.V." : Outlet(defaultPowerState: true),
             "Overloop Stopcontact" : Outlet(),
             
             // Varia
             "Voordeur" : Doorlock(),
             "Garagepoort" : GarageDoor(),
 //            "Vrijgave beregening" : SmartSprinkler(),
-
         ]
     }
     
