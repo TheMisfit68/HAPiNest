@@ -64,12 +64,6 @@
 		DC23DF9024E73FE300DD8371 /* WindowCovering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCovering.swift; sourceTree = "<group>"; };
 		DC23DF9224E7400D00DD8371 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
 		DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLCConfiguration.swift; sourceTree = "<group>"; };
-		DC2B8D8624DC799E00F159AC /* HomekitConfiguratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitConfiguratorApp.swift; sourceTree = "<group>"; };
-		DC2B8D8724DC799E00F159AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DC2B8D8824DC799F00F159AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DC2B8D8F24DC799F00F159AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC2B8D9624DC799F00F159AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC2B8D9724DC799F00F159AC /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		DC3626EF256D9B0800F0AC35 /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
 		DC4828AB265717A500E0DD64 /* neumorphic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = neumorphic; path = "../../../../Third Party Code/neumorphic"; sourceTree = "<group>"; };
 		DC4828AC265717BA00E0DD64 /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
@@ -93,12 +87,6 @@
 		DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenDelegate.swift; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC746D7225ACA97A00B33314 /* SprinklerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprinklerAccessory.swift; sourceTree = "<group>"; };
-		DC76ED542588405F00824159 /* HAPiNestMPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPiNestMPApp.swift; sourceTree = "<group>"; };
-		DC76ED552588405F00824159 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DC76ED562588406000824159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DC76ED5D2588406000824159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC76ED642588406000824159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC76ED652588406000824159 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsOperatedCircuit.swift; sourceTree = "<group>"; };
 		DC8D0F68259DAA6A00DD04E4 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerDriver.swift; sourceTree = "<group>"; };
@@ -152,12 +140,6 @@
 				DC2D4573256E48C100DF3EC5 /* PLC */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
 				DCB5F6202354ED7D005F610F /* Documentation */,
-				DC2B8D8524DC799E00F159AC /* Shared */,
-				DC2B8D8E24DC799F00F159AC /* iOS */,
-				DC2B8D9524DC799F00F159AC /* macOS */,
-				DC76ED532588405F00824159 /* Shared */,
-				DC76ED5C2588406000824159 /* iOS */,
-				DC76ED632588406000824159 /* macOS */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 				DC601E082405DC9600FE7659 /* Frameworks */,
 			);
@@ -212,33 +194,6 @@
 			path = "PLC Functionality";
 			sourceTree = "<group>";
 		};
-		DC2B8D8524DC799E00F159AC /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				DC2B8D8624DC799E00F159AC /* HomekitConfiguratorApp.swift */,
-				DC2B8D8724DC799E00F159AC /* ContentView.swift */,
-				DC2B8D8824DC799F00F159AC /* Assets.xcassets */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		DC2B8D8E24DC799F00F159AC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				DC2B8D8F24DC799F00F159AC /* Info.plist */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		DC2B8D9524DC799F00F159AC /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				DC2B8D9624DC799F00F159AC /* Info.plist */,
-				DC2B8D9724DC799F00F159AC /* macOS.entitlements */,
-			);
-			path = macOS;
-			sourceTree = "<group>";
-		};
 		DC2D4572256E486D00DF3EC5 /* HomekitServer */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,33 +237,6 @@
 				DC4828AB265717A500E0DD64 /* neumorphic */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DC76ED532588405F00824159 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				DC76ED542588405F00824159 /* HAPiNestMPApp.swift */,
-				DC76ED552588405F00824159 /* ContentView.swift */,
-				DC76ED562588406000824159 /* Assets.xcassets */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		DC76ED5C2588406000824159 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				DC76ED5D2588406000824159 /* Info.plist */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		DC76ED632588406000824159 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				DC76ED642588406000824159 /* Info.plist */,
-				DC76ED652588406000824159 /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		DCA8FA1B25B2FE0900532E4A /* Accessories */ = {
