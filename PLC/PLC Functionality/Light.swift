@@ -115,7 +115,7 @@ public class Light:PLCclass, Parameterizable, Simulateable, AccessoryDelegate, A
 	public func simulateHardwareFeedback() {
 		
 		teleruptor.toggle = outputSignal.logicalValue
-		feedbackSignal?.logicalValue = teleruptor.output
+		feedbackSignal?.ioValue = teleruptor.output
 		
 	}
 	

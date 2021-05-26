@@ -115,7 +115,7 @@ public class ToggleableOutlet:PLCclass, Parameterizable, Simulateable, Accessory
 	public func simulateHardwareFeedback() {
 		
 		teleruptor.toggle = outputSignal.logicalValue
-		feedbackSignal?.logicalValue = teleruptor.output
+		feedbackSignal?.ioValue = teleruptor.output
 		
 	}
 	
