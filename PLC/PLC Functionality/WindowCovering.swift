@@ -43,7 +43,7 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 				self.currentPosition! = max(0.0, self.currentPosition!)
 				
 			}
-			
+						
 		}
 		
 		
@@ -57,11 +57,15 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 			self.positionState = .increasing
 		}else if (hardwareFeedbackIsClosing == true) && (hardwareFeedbackIsOpening == false){
 			self.positionState = .decreasing
-		}else{
+		}else if (hardwareFeedbackIsClosing == false) && (hardwareFeedbackIsOpening == false){
 			self.positionState = .stopped
+			
 		}
 		
-		
+		if (self.positionState == .stopped) && (abs(self.deviation) < deadband){
+			self.targetPosition = currentPosition!
+		}
+				
 	}
 	
 	// MARK: - HomeKit Accessory binding
