@@ -32,28 +32,13 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		
 		if (self.currentPosition != nil){
 			
-			if (self.positionState != .stopped) && ((self.hardwareFeedbackIsOpening != true) && (self.hardwareFeedbackIsClosing != true)){
+			if (self.positionState == .increasing) && (self.currentPosition! < 100.0){
 				
-				self.positionState = .stopped
-				
-			}else if (self.positionState != .stopped) && (abs(deviation) <= deadband){
-				
-				self.positionState = .stopped
-				
-			}else if (self.positionState == .stopped) && (abs(deviation) <= deadband){
-				
-				// Correct the target position to the exact final position that was reached
-				self.targetPosition = self.currentPosition!
-				
-			}else if (self.hardwareFeedbackIsOpening == true) && (self.currentPosition! < 100.0){
-				
-				self.positionState = .increasing
 				self.currentPosition! += (1/self.secondsToOpen*100.0)
 				self.currentPosition! = min(self.currentPosition!, 100.0)
 				
-			}else if (self.hardwareFeedbackIsClosing == true) && (self.currentPosition! > 0.0){
+			}else if (self.positionState == .decreasing) && (self.currentPosition! > 0.0){
 				
-				self.positionState = .decreasing
 				self.currentPosition! -= (1/self.secondsToClose*100.0)
 				self.currentPosition! = max(0.0, self.currentPosition!)
 				
@@ -64,36 +49,16 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		
 	}
 	
-	private func readTargetPositionFromHardware(){
+	private func readPositionStateFromFeedbacks(){
 		
 		// Currentposition will be updated by the currentPositionTimer in a timely fashion,
 		// but synchronise the targetposition and positionstate with the new hardwarefeedback
 		if (hardwareFeedbackIsOpening == true)  && (hardwareFeedbackIsClosing == false){
-			if(instanceName == "Keuken Screens"){
-				print("*** \(instanceName) hardware changed to opening")
-			}
 			self.positionState = .increasing
-			targetPosition = 100.0
-			
 		}else if (hardwareFeedbackIsClosing == true) && (hardwareFeedbackIsOpening == false){
-			if(instanceName == "Keuken Screens"){
-				print("*** \(instanceName) hardware changed to closing")
-			}
 			self.positionState = .decreasing
-			targetPosition = 0.0
-			
-		}else if (hardwareFeedbackIsOpening == false) && (hardwareFeedbackIsClosing == false){
-			
-			if(instanceName == "Keuken Screens"){
-				print("*** \(instanceName) hardware changed to stop")
-			}
+		}else{
 			self.positionState = .stopped
-			if let currentPosition = self.currentPosition{
-				targetPosition = currentPosition
-			}else{
-				targetPosition = 50.0
-			}
-			
 		}
 		
 		
@@ -174,25 +139,35 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		
 		hardwareFeedbackIsOpening = feedbackSignalIsOpening?.logicalValue
 		hardwareFeedbackIsClosing = feedbackSignalIsClosing?.logicalValue
+		readPositionStateFromFeedbacks()
 		
 		// MARK: - PLC parameter assignment
 		
 		if (currentPosition == nil) && hardwareFeedbackChanged{
 			
-			if(instanceName == "Keuken Screens"){
-				print("*** \(instanceName) initialising")
+			if self.positionState == .increasing{
+				currentPosition = 100.0
+			}else if self.positionState == .decreasing{
+				currentPosition = 0.0
+			}else if self.positionState == . stopped{
+				currentPosition = 50.0
 			}
-			readTargetPositionFromHardware()
-			currentPosition = targetPosition
+			self.targetPosition = currentPosition!
 			
 		}else if (currentPosition != nil) && characteristicChanged{
-			if(instanceName == "Keuken Screens"){
-				print("*** \(instanceName) changed from app")
-			}
+			
 			targetPosition = Double(hkAccessoryTargetPosition)
 			
-		}else if (currentPosition != nil) && !characteristicChanged && hardwareFeedbackChanged{
-			readTargetPositionFromHardware()
+		}else if (currentPosition != nil) && hardwareFeedbackChanged{
+			
+			if self.positionState == .increasing{
+				targetPosition = 100.0
+			}else if self.positionState == .decreasing{
+				targetPosition = 0.0
+			}else if (self.positionState == . stopped){
+				targetPosition = currentPosition!
+			}
+			
 		}
 		
 	}
@@ -204,9 +179,7 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 		hkAccessoryTargetPosition = UInt8(targetPosition)
 		hkAccessoryPositionState = positionState
 		
-		if self.positionState != .stopped{
-			characteristicChanged.reset()
-		}
+		characteristicChanged.reset()
 	}
 	
 	var hardwareFeedbackIsOpening:Bool?{
@@ -222,7 +195,9 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 	private var hardwareFeedbackIsOpeningChanged:Bool = false
 	private var hardwareFeedbackIsClosingChanged:Bool = false
 	private var hardwareFeedbackChanged:Bool{
-		hardwareFeedbackIsOpeningChanged || hardwareFeedbackIsClosingChanged
+		// Don't capture any changes in hardware feedback that originated after a puls from this accesory
+		let notHandlingPuls:Bool = (!outputSignal.logicalValue && !pulsTimer.input)
+		return notHandlingPuls && (hardwareFeedbackIsOpeningChanged || hardwareFeedbackIsClosingChanged)
 	}
 	
 	// MARK: - PLC Processing
@@ -253,8 +228,9 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, AccessoryDelegate,
 			
 			let shouldOpen:Bool = (deviation < -deadband) && (hardwareFeedbackIsOpening == false)
 			let shouldClose:Bool = (deviation > +deadband) && (hardwareFeedbackIsClosing == false)
-			// Only stop in mid positions
+			// Only stop in between end-positions
 			let shouldStop:Bool = (targetPosition > 0.0) && (targetPosition < 100.0) && (abs(deviation) <= deadband) && ( (hardwareFeedbackIsOpening == true) || (hardwareFeedbackIsClosing == true) )
+			
 			// Only toggle if the state and its hardwareFeedback are not already in sync
 			var puls =  !outputSignal.logicalValue && (shouldOpen || shouldClose || shouldStop )
 			
