@@ -12,35 +12,38 @@ import SoftPLC
 
 
 protocol AccessoryDelegate{
-        
-    var name:String{get}
-    
-    func handleCharacteristicChange<T>(accessory:Accessory,
-                                       service: Service,
-                                       characteristic: GenericCharacteristic<T>,
-                                       to value: T?)
+	
+	var name:String{get}
+	func handleCharacteristicChange<T>(accessory:Accessory,
+									   service: Service,
+									   characteristic: GenericCharacteristic<T>,
+									   to value: T?)
 }
 
 extension AccessoryDelegate where Self:PLCclass{
-    
-    var name:String{
-        self.instanceName
-    }
-    
+	
+	var name:String{
+		self.instanceName
+	}
+	
 }
 
 protocol AccessorySource:AccessoryDelegate{
-    
-    associatedtype AccessorySubclass
-    var accessory:AccessorySubclass{get}
+	
+	associatedtype AccessorySubclass
+	var accessory:AccessorySubclass{get}
+	
+	func writeCharacteristic<T>(_ characteristic: GenericCharacteristic<T>,
+							 to value: T?)
 }
 
 extension AccessorySource{
-    
-    var accessory:AccessorySubclass{
-        HomeKitServer.shared.mainBridge[name] as! AccessorySubclass
-    }
-    
+	
+	var accessory:AccessorySubclass{
+		HomeKitServer.shared.mainBridge[name] as! AccessorySubclass
+	}
+	
+	
 }
 
 
