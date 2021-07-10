@@ -13,10 +13,11 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-// MARK: - Accesory bindings
+// MARK: - Accessory bindings
 extension Outlet:AccessoryDelegate, AccessorySource{
 	
 	typealias AccessorySubclass = Accessory.Outlet
+	
 	func handleCharacteristicChange<T>(accessory:Accessory,
 									   service: Service,
 									   characteristic: GenericCharacteristic<T>,
@@ -56,13 +57,13 @@ public class Outlet:PLCclass, Parameterizable{
 	public var powerState:Bool? = nil
 	
 	// Accessory state
-	private var accessoryPowerState:Bool = true
+	private var accessoryPowerState:Bool = false
 	private var characteristicChanged:Bool = false
 	
 	// Hardware feedback state
 	private var hardwarePowerState:Bool?{
 		didSet{
-			hardwareFeedbackChanged = (oldValue != nil) && (hardwarePowerState != nil) && (hardwarePowerState != oldValue)
+			hardwareFeedbackChanged = (hardwarePowerState != nil) && (oldValue != nil) &&  (hardwarePowerState != oldValue)
 		}
 	}
 	private var hardwareFeedbackChanged:Bool = false
@@ -99,11 +100,8 @@ public class Outlet:PLCclass, Parameterizable{
 		}else if let newAccessoryPowerSate = powerState{
 			// Only write back to the Homekit accessory,
 			// when the circuit is completely idle
-			// (this garantees a stable user experience)
+			// (this garantees a more stable user experience)
 			writeCharacteristic(accessory.outlet.powerState, to: newAccessoryPowerSate)
-			if instanceName == "Buiten Stopcontact"{
-				print("***send upstream")
-			}
 		}
 		
 	}
