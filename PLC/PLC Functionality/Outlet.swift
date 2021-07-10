@@ -97,11 +97,11 @@ public class Outlet:PLCclass, Parameterizable{
 			powerState = accessoryPowerState
 		}else if (powerState != nil) && hardwareFeedbackChanged{
 			powerState = hardwarePowerState
-		}else if let newAccessoryPowerSate = powerState{
+		}else if let newAccessoryPowerState = powerState{
 			// Only write back to the Homekit accessory,
 			// when the circuit is completely idle
 			// (this garantees a more stable user experience)
-			writeCharacteristic(accessory.outlet.powerState, to: newAccessoryPowerSate)
+			writeCharacteristic(accessory.outlet.powerState, to: newAccessoryPowerState)
 		}
 		
 	}
