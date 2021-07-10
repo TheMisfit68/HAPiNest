@@ -13,55 +13,69 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{
-	
-	// MARK: - HomeKit Accessory binding
+// MARK: - Accessory bindings
+extension Doorlock:AccessoryDelegate, AccessorySource{
 	
 	typealias AccessorySubclass = Accessory.LockMechanism
-	
-	private var characteristicChanged:Bool = false
-	var hkAccessoryLockTargetState:Enums.LockTargetState = .secured{
-		didSet{
-			// Only when circuit is idle
-			// send the feedback upstream to the Homekit accessory,
-			// provides a more stable experience
-			if  !characteristicChanged && !hardwareFeedbackChanged{
-				accessory.lockMechanism.lockTargetState.value = hkAccessoryLockTargetState
-			}
-		}
-	}
-	
-	var hkAccessoryLockCurrentState:Enums.LockCurrentState = .secured{
-		didSet{
-			// Only when circuit is idle
-			// send the feedback upstream to the Homekit accessory,
-			// provides a more stable experience
-			if  !characteristicChanged && !hardwareFeedbackChanged{
-				accessory.lockMechanism.lockCurrentState.value = hkAccessoryLockCurrentState
-			}
-		}
-	}
-	
+
 	func handleCharacteristicChange<T>(accessory:Accessory,
 									   service: Service,
 									   characteristic: GenericCharacteristic<T>,
 									   to value: T?){
-		
-		characteristicChanged.set()
-		
+				
 		// Handle Characteristic change depending on its type
 		switch characteristic.type{
 			case CharacteristicType.lockTargetState:
 				
-				hkAccessoryLockTargetState = value as? Enums.LockTargetState ?? hkAccessoryLockTargetState
+				accessoryTargetState = value as? Enums.LockTargetState ?? accessoryTargetState
 				
+			default:
+				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
+		}
+		
+		characteristicChanged.set()
+	}
+	
+	public func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
+		
+		switch characteristic.type{
+			case CharacteristicType.lockTargetState:
+				
+				accessory.lockMechanism.lockTargetState.value = value as? Enums.LockTargetState
+
+			case CharacteristicType.lockCurrentState:
+				
+				accessory.lockMechanism.lockCurrentState.value = value as? Enums.LockCurrentState
+
 			default:
 				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
 		}
 	}
 	
-	// MARK: - PLC IO-Signal assignment
+}
+
+// MARK: - PLC level class
+class Doorlock:PLCclass, Parameterizable, PulsOperatedCircuit{
 	
+	// MARK: - State
+	var targetState:Enums.LockTargetState = .secured
+	var currentState:Enums.LockCurrentState? = nil
+	
+	// Accessory state
+	var accessoryTargetState:Enums.LockTargetState = .secured
+	var accessoryCurrentState:Enums.LockCurrentState = .secured
+	private var characteristicChanged:Bool = false
+	
+	// Hardware feedback state
+	var hardwareCurrentState:Enums.LockCurrentState?{
+		didSet{
+			hardwareFeedbackChanged = (hardwareCurrentState != nil) && (oldValue != nil) &&  (hardwareCurrentState != oldValue)
+		}
+	}
+	private var hardwareFeedbackChanged:Bool = false
+	
+	
+	// MARK: - PLC IO-Signal assignment
 	var outputSignal:DigitalOutputSignal{
 		plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
 	}
@@ -70,16 +84,22 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
 	
 	public func assignInputParameters(){
 		
-		if let feedbackBit = outputSignal.logicalFeedbackValue{
-			hardwareFeedback =  feedbackBit ? .unsecured : .secured
-		}else{
-			hardwareFeedback = nil
-		}
-		
-		if (lockTargetState == nil) && hardwareFeedbackChanged{
-			lockTargetState = hardwareFeedback
-		}else if (lockTargetState != nil) && characteristicChanged{
-			lockTargetState = hkAccessoryLockTargetState
+		hardwareCurrentState = outputSignal.logicalValue ? .unsecured : .secured
+
+		if (currentState == nil) && (hardwareCurrentState != nil){
+			currentState = hardwareCurrentState
+			targetState = (currentState! == .unsecured ? .unsecured : .secured)
+		}else if (currentState != nil) && characteristicChanged{
+			targetState = accessoryTargetState
+			characteristicChanged.reset()
+		}else if (currentState != nil) && hardwareFeedbackChanged{
+			currentState = hardwareCurrentState
+		}else if let accessoryFeedback = currentState {
+			// Only write back to the Homekit accessory,
+			// when the circuit is completely idle
+			// (this garantees a more stable user experience)
+			writeCharacteristic(accessory.lockMechanism.lockCurrentState, to: accessoryFeedback)
+			writeCharacteristic(accessory.lockMechanism.lockTargetState, to: targetState)
 		}
 		
 	}
@@ -88,29 +108,17 @@ class Doorlock:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, Pu
 		
 		outputSignal.logicalValue = puls
 		if !puls{
-			lockTargetState = .secured
+			targetState = .secured
 		}
 		
-		hkAccessoryLockTargetState = lockTargetState ?? .secured
-		hkAccessoryLockCurrentState = puls ? .unsecured : .secured
-		
-		characteristicChanged.reset()
 	}
-	
-	var hardwareFeedback:Enums.LockTargetState?{
-		didSet{
-			hardwareFeedbackChanged = (hardwareFeedback != oldValue) && (hardwareFeedback != nil)
-		}
-	}
-	private var hardwareFeedbackChanged:Bool = false
 	
 	// MARK: - PLC Processing
-	var lockTargetState:Enums.LockTargetState? = nil
 	
 	let pulsTimer = DigitalTimer.ExactPuls(time: 2.0)
 	var puls:Bool{
 		get{
-			var puls = (lockTargetState == .unsecured) // Only toggle if lockTargetState changed to .unsecured
+			var puls = (targetState == .unsecured) // Only toggle if targetState changed to .unsecured
 			return puls.timed(using: pulsTimer)
 		}
 	}
