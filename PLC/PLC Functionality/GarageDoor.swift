@@ -13,41 +13,60 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, PulsOperatedCircuit{
-    
-    // MARK: - HomeKit Accessory binding
+// MARK: - Accessory bindings
+extension GarageDoor:AccessoryDelegate, AccessorySource{
+	
+	typealias AccessorySubclass = Accessory.GarageDoorOpener.StatelessGarageDoorOpener
+	
+	func handleCharacteristicChange<T>(accessory:Accessory,
+									   service: Service,
+									   characteristic: GenericCharacteristic<T>,
+									   to value: T?){
+		
+		// Handle Characteristic change depending on its type
+		switch characteristic.type{
+			case CharacteristicType.powerState:
+				
+				accessoryPowerState = value as? Bool ?? accessoryPowerState
+				
+			default:
+				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
+		}
+		
+		characteristicChanged.set()
+	}
+	
+	public func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
+		
+		switch characteristic.type{
+			case CharacteristicType.powerState:
+				
+				accessory.statelessGarageDoorOpener.powerState.value = value as? Bool
+				
+			default:
+				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
+		}
+	}
+	
+}
 
-    typealias AccessorySubclass = Accessory.GarageDoorOpener.StatelessGarageDoorOpener
-
-    private var characteristicChanged:Bool = false
-    var hkAccessoryPowerState:Bool = false{
-        didSet{
-            // Only when circuit is idle
-            // send the hardwareFeedback upstream to the Homekit accessory,
-            // provides for a more stable hardwareFeedback
-			if  !characteristicChanged && !hardwareFeedbackChanged{
-                accessory.statelessGarageDoorOpener.powerState.value = hkAccessoryPowerState
-            }
-        }
-    }
-    
-    func handleCharacteristicChange<T>(accessory:Accessory,
-                                       service: Service,
-                                       characteristic: GenericCharacteristic<T>,
-                                       to value: T?){
-        
-        characteristicChanged.set()
-        
-        // Handle Characteristic change depending on its type
-        switch characteristic.type{
-        case CharacteristicType.powerState:
-
-            hkAccessoryPowerState = value as? Bool ?? hkAccessoryPowerState
-            
-        default:
-            Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
-        }
-    }
+// MARK: - PLC level class
+class GarageDoor:PLCclass, Parameterizable, PulsOperatedCircuit{
+	
+	// MARK: - State
+	public var powerState:Bool? = nil
+	
+	// Accessory state
+	private var accessoryPowerState:Bool = false
+	private var characteristicChanged:Bool = false
+	
+	// Hardware feedback state
+	private var hardwarePowerState:Bool?{
+		didSet{
+			hardwareFeedbackChanged = (hardwarePowerState != nil) && (oldValue != nil) &&  (hardwarePowerState != oldValue)
+		}
+	}
+	private var hardwareFeedbackChanged:Bool = false
     
     // MARK: - PLC IO-Signal assignment
 
@@ -59,12 +78,21 @@ class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, 
     
     public func assignInputParameters(){
 		
-		hardwareFeedback = outputSignal.logicalFeedbackValue
-
-		if (powerState == nil) && hardwareFeedbackChanged{
-			powerState = outputSignal.logicalValue
+		hardwarePowerState = outputSignal.logicalFeedbackValue
+		
+		if (powerState == nil) && (hardwarePowerState != nil){
+			powerState = false
 		}else if (powerState != nil) && characteristicChanged{
-			powerState = hkAccessoryPowerState
+			powerState = accessoryPowerState
+			characteristicChanged.reset()
+		}else if (powerState != nil) && hardwareFeedbackChanged{
+			powerState = hardwarePowerState
+			hardwareFeedbackChanged.reset()
+		}else if let accessoryFeedback = powerState{
+			// Only write back to the Homekit accessory,
+			// when the circuit is completely idle
+			// (this garantees a more stable user experience)
+			writeCharacteristic(accessory.statelessGarageDoorOpener.powerState, to: accessoryFeedback)
 		}
         
     }
@@ -75,26 +103,14 @@ class GarageDoor:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource, 
         if !puls{
             powerState = false
         }
-        
-        hkAccessoryPowerState = powerState ?? false
-        
-        characteristicChanged.reset()
+		
     }
-        
-	var hardwareFeedback:Bool?{
-		didSet{
-			hardwareFeedbackChanged = (hardwareFeedback != oldValue) && (hardwareFeedback != nil)
-		}
-	}
-	private var hardwareFeedbackChanged:Bool = false
 	
-    // MARK: - PLC Processing
-    var powerState:Bool? = nil
-        
+    // MARK: - PLC Processing        
     let pulsTimer = DigitalTimer.ExactPuls(time: 1.0)
     var puls:Bool{
         get{
-			var puls:Bool = powerState ?? false
+			var puls:Bool = (powerState == true)
             return puls.timed(using: pulsTimer)
         }
     }
