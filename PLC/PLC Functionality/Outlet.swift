@@ -98,6 +98,7 @@ public class Outlet:PLCclass, Parameterizable{
 			characteristicChanged.reset()
 		}else if (powerState != nil) && hardwareFeedbackChanged{
 			powerState = hardwarePowerState
+			hardwareFeedbackChanged.reset()
 		}else if let accessoryFeedback = powerState{
 			// Only write back to the Homekit accessory,
 			// when the circuit is completely idle
@@ -109,6 +110,7 @@ public class Outlet:PLCclass, Parameterizable{
 	
 	public func assignOutputParameters(){
 		outputSignal.logicalValue = powerState ?? false
+		hardwareFeedbackChanged.reset()
 	}
 	
 }
