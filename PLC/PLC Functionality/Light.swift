@@ -122,7 +122,7 @@ public class Light:PLCclass, Parameterizable, Simulateable, PulsOperatedCircuit{
 	// When in simulation mode,
 	// provide the hardwareFeedback yourself
 	private var teleruptor = ImpulsRelais()
-	public func simulateHardwareFeedback() {
+	public func simulateHardwareInputs() {
 		
 		teleruptor.toggle = outputSignal.logicalValue
 		feedbackSignal?.ioValue = teleruptor.output

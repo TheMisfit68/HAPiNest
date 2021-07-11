@@ -126,7 +126,7 @@ public class ToggleableOutlet:PLCclass, Parameterizable, Simulateable, PulsOpera
 	// When in simulation mode,
 	// provide the hardwarefeedback yourself
 	private var teleruptor = ImpulsRelais()
-	public func simulateHardwareFeedback() {
+	public func simulateHardwareInputs() {
 		
 		teleruptor.toggle = outputSignal.logicalValue
 		feedbackSignal?.ioValue = teleruptor.output
