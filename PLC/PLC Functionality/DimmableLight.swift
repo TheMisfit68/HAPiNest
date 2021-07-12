@@ -109,7 +109,6 @@ public class DimmableLight:PLCclass, Parameterizable{
 	
 	public func assignInputParameters(){
 		
-		
 		hardwareBrightness = outputSignal.scaledFeedBackValue?.rounded()
 		
 		if (brightness == nil) && (hardwareBrightness != nil), let hardwareBrightness = hardwareBrightness{
