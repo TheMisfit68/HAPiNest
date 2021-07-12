@@ -13,99 +13,59 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate, AccessorySource{
-	
-	// MARK: - HomeKit Accessory binding
+// MARK: - Accessory bindings
+extension DimmableLight:AccessoryDelegate, AccessorySource{
 	
 	typealias AccessorySubclass = Accessory.Lightbulb
-	
-	private var characteristicChanged:Bool = false
-	
-	var hkAccessoryPowerState:Bool = false{
-		didSet{
-			// Only when circuit is idle
-			// send the feedback upstream to the Homekit accessory,
-			// provides a more stable experience
-			if  !characteristicChanged{
-				accessory.lightbulb.powerState.value = hkAccessoryPowerState
-			}
-		}
-	}
-	var hkAccessoryBrightness:Int = 100{
-		didSet{
-			// Only when circuit is idle
-			// send the feedback upstream to the Homekit accessory,
-			// provides a more stable experience
-			if  !characteristicChanged{
-				accessory.lightbulb.brightness?.value = hkAccessoryBrightness
-			}
-		}
-	}
 	
 	func handleCharacteristicChange<T>(accessory:Accessory,
 									   service: Service,
 									   characteristic: GenericCharacteristic<T>,
 									   to value: T?){
-		characteristicChanged.set()
 		
 		// Handle Characteristic change depending on its type
 		switch characteristic.type{
+				
 			case CharacteristicType.powerState:
 				
-				hkAccessoryPowerState = value as? Bool ?? hkAccessoryPowerState
+				accessoryPowerState = value as? Bool ?? accessoryPowerState
 				
 			case CharacteristicType.brightness:
 				
-				hkAccessoryBrightness = value as? Int ?? hkAccessoryBrightness
+				accessoryBrightness = value as? Int ?? accessoryBrightness
+				
+			default:
+				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
+		}
+		
+		characteristicChanged.set()
+	}
+	
+	public func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
+		
+		switch characteristic.type{
+			case CharacteristicType.powerState:
+				
+				accessory.lightbulb.powerState.value = value as? Bool
+				
+			case CharacteristicType.brightness:
+				
+				accessory.lightbulb.brightness!.value = value as? Int
 				
 			default:
 				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
 		}
 	}
 	
+}
+
+// MARK: - PLC level class
+public class DimmableLight:PLCclass, Parameterizable{
 	
-	// MARK: - PLC IO-Signal assignment
-	
-	var outputSignal:AnalogOutputSignal{
-		plc.signal(ioSymbol:instanceName) as! AnalogOutputSignal
-	}
-	
-	
-	// MARK: - PLC Parameter assignment
-	
-	public func assignInputParameters(){
-		
-		if brightness == nil {
-			brightness = Int(outputSignal.scaledValue)
-			powerState = (brightness! >= switchOffLevelDimmer)
-		}else if characteristicChanged{
-			
-			if powerState != hkAccessoryPowerState{
-				powerState = hkAccessoryPowerState
-			}else{
-				brightness = hkAccessoryBrightness
-			}
-		}
-		
-	}
-	
-	public func assignOutputParameters(){
-		outputSignal.scaledValue = Float(brightness ?? 100)
-		
-		hkAccessoryPowerState = powerState
-		hkAccessoryBrightness = brightness ?? 100
-		characteristicChanged.reset()
-	}
-	
-	
-	// MARK: - PLC Processing
-	
-	private let switchOffLevelDimmer:Int = 15
-	private var previousbrightness:Int = 15
-	
-	var powerState:Bool = false{
+	// MARK: - State
+	var powerState:Bool? = nil{
 		didSet{
-			if powerState != oldValue{
+			if let powerState = powerState , powerState != oldValue{
 				brightness = powerState ? previousbrightness : 0
 			}
 		}
@@ -122,7 +82,59 @@ public class DimmableLight:PLCclass, Parameterizable, AccessoryDelegate, Accesso
 			}
 		}
 	}
+	private let switchOffLevelDimmer:Int = 15
+	private var previousbrightness:Int = 15
 	
+	// Accessory state
+	private var accessoryPowerState:Bool = false
+	private var accessoryBrightness:Int = 100
+	private var characteristicChanged:Bool = false
+	
+	// Hardware feedback state
+	private var hardwareBrightness:Float?{
+		didSet{
+			hardwareFeedbackChanged = (hardwareBrightness != nil) && (oldValue != nil) &&  (hardwareBrightness != oldValue)
+		}
+	}
+	private var hardwareFeedbackChanged:Bool = false
+	
+	// MARK: - PLC IO-Signal assignment
+	
+	var outputSignal:AnalogOutputSignal{
+		plc.signal(ioSymbol:instanceName) as! AnalogOutputSignal
+	}
+	
+	
+	// MARK: - PLC Parameter assignment
+	
+	public func assignInputParameters(){
+		
+		
+		hardwareBrightness = outputSignal.scaledFeedBackValue?.rounded()
+		
+		if (brightness == nil) && (hardwareBrightness != nil), let hardwareBrightness = hardwareBrightness{
+			brightness = Int(value: hardwareBrightness)
+			powerState = (brightness! >= switchOffLevelDimmer)
+		}else if (brightness != nil) && characteristicChanged{
+			powerState = accessoryPowerState
+			brightness = accessoryBrightness
+			characteristicChanged.reset()
+		}else if (brightness != nil) && hardwareFeedbackChanged, let hardwareBrightness = hardwareBrightness{
+			brightness = Int(value: hardwareBrightness)
+			hardwareFeedbackChanged.reset()
+		}else if let accessoryPowerstate = powerState, let accessoryBrightness = brightness{
+			// Only write back to the Homekit accessory,
+			// when the circuit is completely idle
+			// (this garantees a more stable user experience)
+			writeCharacteristic(accessory.lightbulb.powerState, to: accessoryPowerstate)
+			writeCharacteristic(accessory.lightbulb.brightness!, to: accessoryBrightness)
+		}
+		
+	}
+	
+	public func assignOutputParameters(){
+		outputSignal.scaledValue = Float(brightness ?? 100)
+	}
 	
 }
 

@@ -96,11 +96,11 @@ public class Light:PLCclass, Parameterizable, Simulateable, PulsOperatedCircuit{
 		}else if (powerState != nil) && hardwareFeedbackChanged{
 			powerState = hardwarePowerState
 			hardwareFeedbackChanged.reset()
-		}else if let accessoryFeedback = powerState{
+		}else if let accessoryPowerstate = powerState{
 			// Only write back to the Homekit accessory,
 			// when the circuit is completely idle
 			// (this garantees a more stable user experience)
-			writeCharacteristic(accessory.lightbulb.powerState, to: accessoryFeedback)
+			writeCharacteristic(accessory.lightbulb.powerState, to: accessoryPowerstate)
 		}
 		
 	}

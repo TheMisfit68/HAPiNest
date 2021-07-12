@@ -58,7 +58,7 @@ extension Doorlock:AccessoryDelegate, AccessorySource{
 class Doorlock:PLCclass, Parameterizable, PulsOperatedCircuit{
 	
 	// MARK: - State
-	var targetState:Enums.LockTargetState = .secured
+	var targetState:Enums.LockTargetState? = .secured
 	var currentState:Enums.LockCurrentState? = nil
 	
 	// Accessory state
@@ -95,12 +95,12 @@ class Doorlock:PLCclass, Parameterizable, PulsOperatedCircuit{
 		}else if (currentState != nil) && hardwareFeedbackChanged{
 			currentState = hardwareCurrentState
 			hardwareFeedbackChanged.reset()
-		}else if let accessoryFeedback = currentState {
+		}else if let accessoryTargetState = targetState, let accessoryCurrentState = currentState {
 			// Only write back to the Homekit accessory,
 			// when the circuit is completely idle
 			// (this garantees a more stable user experience)
-			writeCharacteristic(accessory.lockMechanism.lockCurrentState, to: accessoryFeedback)
-			writeCharacteristic(accessory.lockMechanism.lockTargetState, to: targetState)
+			writeCharacteristic(accessory.lockMechanism.lockTargetState, to: accessoryTargetState)
+			writeCharacteristic(accessory.lockMechanism.lockCurrentState, to: accessoryCurrentState)
 		}
 		
 	}
