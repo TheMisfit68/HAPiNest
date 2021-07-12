@@ -41,8 +41,6 @@ public class HomeKitServer:Singleton{
 	//    let sunnyPortalReporter = SunnyPortalReporter()
     //    let sprinklerDriver = SmartSprinklerDriver()
     
-    
-    
     private init(){
 		self.name = MainConfiguration.HomeKit.ServerName
 		#if DEBUG

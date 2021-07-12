@@ -53,7 +53,6 @@ struct HAPiNestApp: App {
 		// Only fire Up PLC after all components are initialized
 		AppState.shared.plc.run()
 		
-//				AppState.shared.homekitServer.mainBridge.removeAccessoryWith(SerialNumbers: ["00001"])
 	}
 	
 	

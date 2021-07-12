@@ -2,7 +2,7 @@
   "object": {
     "pins": [
       {
-        "package": "BigInt",
+        "package": "BigInt.swift",
         "repositoryURL": "https://github.com/Boilertalk/BigInt.swift.git",
         "state": {
           "branch": null,
@@ -11,7 +11,7 @@
         }
       },
       {
-        "package": "Cryptor",
+        "package": "BlueCryptor",
         "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
         "state": {
           "branch": null,
@@ -35,15 +35,6 @@
           "branch": null,
           "revision": "4e31051c63cc0ddf10a25cf5318856c510cf77f4",
           "version": "1.4.0"
-        }
-      },
-      {
-        "package": "HAP",
-        "repositoryURL": "https://github.com/Bouke/HAP.git",
-        "state": {
-          "branch": "master",
-          "revision": "7f4cca4ea2bc406df410566bcf925b40ad1a9fbe",
-          "version": null
         }
       },
       {
@@ -87,8 +78,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "d161bf658780b209c185994528e7e24376cf7283",
-          "version": "2.29.0"
+          "revision": "d79e33308b0ac83326b0ead0ea6446e604b8162d",
+          "version": "2.30.0"
         }
       }
     ]

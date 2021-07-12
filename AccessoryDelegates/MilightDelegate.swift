@@ -11,6 +11,9 @@ import HAP
 import JVCocoa
 import MilightDriver
 
+/// Handles characteristic changes for a Homekit Accessory.
+/// It uses the MilightDriver to pass those changes to  the hardware
+
 class MilightDelegate:AccessoryDelegate {
 	
 	let name:String

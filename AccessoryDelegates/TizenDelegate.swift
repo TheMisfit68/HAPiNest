@@ -11,11 +11,13 @@ import HAP
 import JVCocoa
 import TizenDriver
 
-class TizenDelegate:AccessoryDelegate {
+class TizenDelegate:AccessoryDelegate, AccessorySource{
+	
+	typealias AccessorySubclass = Accessory.GarageDoorOpener.Television
 
-    let name:String
+	let name:String
     let driver:TizenDriver
-    
+		
     public init(name: String,
                 driver:TizenDriver
     ) {
@@ -69,7 +71,34 @@ class TizenDelegate:AccessoryDelegate {
         }
         
     }
+	
+	public func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
+		
+		switch characteristic.type{
+			case CharacteristicType.active:
+				
+				accessory.television.active.value = value as? Enums.Active
+				
+			default:
+				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
+		}
+	}
+	
 }
     
-
-
+//extension TizenDelegate: AccessorySource{
+//	
+//
+//	var hkAccessoryPowerState:Bool = true{
+//		didSet{
+//			// Only when circuit is idle
+//			// send the feedback upstream to the Homekit accessory,
+//			// provides a more stable experience
+//			if  !characteristicChanged && !hardwareFeedbackChanged{
+//				accessory.television.powerState.value = hkAccessoryPowerState
+//			}
+//		}
+//	}
+//	
+//
+//}

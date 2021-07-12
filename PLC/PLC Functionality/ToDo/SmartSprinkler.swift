@@ -49,6 +49,10 @@ public class SmartSprinkler:PLCclass, AccessoryDelegate, AccessorySource{
             Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
         }
     }
+	
+	// TODO: - Implement this part
+	public func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
+	}
     
     // MARK: - PLC IO-Signal assignment
 
