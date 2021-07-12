@@ -95,7 +95,8 @@ class Doorlock:PLCclass, Parameterizable, PulsOperatedCircuit{
 		}else if (currentState != nil) && hardwareFeedbackChanged{
 			currentState = hardwareCurrentState
 			hardwareFeedbackChanged.reset()
-		}else if let accessoryTargetState = targetState, let accessoryCurrentState = currentState {
+		}else if let accessoryTargetState = self.targetState,
+				 let accessoryCurrentState = self.currentState {
 			// Only write back to the Homekit accessory,
 			// when the circuit is completely idle
 			// (this garantees a more stable user experience)

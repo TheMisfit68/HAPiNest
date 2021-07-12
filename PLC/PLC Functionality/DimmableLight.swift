@@ -122,7 +122,8 @@ public class DimmableLight:PLCclass, Parameterizable{
 		}else if (brightness != nil) && hardwareFeedbackChanged, let hardwareBrightness = hardwareBrightness{
 			brightness = Int(value: hardwareBrightness)
 			hardwareFeedbackChanged.reset()
-		}else if let accessoryPowerstate = powerState, let accessoryBrightness = brightness{
+		}else if let accessoryPowerstate = self.powerState,
+				 let accessoryBrightness = self.brightness{
 			// Only write back to the Homekit accessory,
 			// when the circuit is completely idle
 			// (this garantees a more stable user experience)

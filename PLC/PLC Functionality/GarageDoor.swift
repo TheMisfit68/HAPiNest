@@ -88,7 +88,7 @@ class GarageDoor:PLCclass, Parameterizable, PulsOperatedCircuit{
 		}else if (powerState != nil) && hardwareFeedbackChanged{
 			powerState = hardwarePowerState
 			hardwareFeedbackChanged.reset()
-		}else if let accessoryPowerstate = powerState{
+		}else if let accessoryPowerstate = self.powerState{
 			// Only write back to the Homekit accessory,
 			// when the circuit is completely idle
 			// (this garantees a more stable user experience)
