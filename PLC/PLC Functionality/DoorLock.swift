@@ -36,7 +36,7 @@ extension Doorlock:AccessoryDelegate, AccessorySource{
 		characteristicChanged.set()
 	}
 	
-	public func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
+	func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
 		
 		switch characteristic.type{
 			case CharacteristicType.lockTargetState:
