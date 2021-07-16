@@ -87,7 +87,8 @@ extension Bridge:BridgeDelegate{
         Debugger.shared.log(debugLevel: .Event, "Value '\(characteristic.description ?? "")' of '\(accessoryName)' changed to \(didChangeValue ?? "" as! T)")
         
         // Forward all characteristic changes to the corresponding delegate
-        accessoryDelegateFor(accesoryNamed:accessoryName)?.handleCharacteristicChange(accessory:ofAccessory, service: ofService, characteristic: characteristic, to: didChangeValue)
+		let accessoryDelegate = accessoryDelegateFor(accesoryNamed:accessoryName)
+		accessoryDelegate?.handleCharacteristicChange(accessory:ofAccessory, service: ofService, characteristic: characteristic, to: didChangeValue)
     }
     
 }
