@@ -164,7 +164,7 @@ extension MainConfiguration{
             return IOList
         }
         
-        static var PLCobjects:[String:PLCclass] = [
+        static var PLCobjects:[String:PLCClass] = [
             
 			"Schemerschakelaar Enable" : Light(),
 
