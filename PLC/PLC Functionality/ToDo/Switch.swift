@@ -15,7 +15,7 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-class Switch:PLCclass, Parameterizable{
+class Switch:PLCClass, Parameterizable{
     
     var inputSignal:DigitalInputSignal{
         plc.signal(ioSymbol:instanceName) as! DigitalInputSignal

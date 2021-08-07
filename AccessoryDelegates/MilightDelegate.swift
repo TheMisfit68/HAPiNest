@@ -20,6 +20,8 @@ class MilightDelegate:AccessoryDelegate {
 	let driver:MilightDriver
 	let zone:MilightZone
 	
+	var characteristicChanged: Bool = false
+	
 	var brightness:Int = 100{
 		didSet{
 			driver.executeCommand(mode: .rgbwwcw, action: .brightNess, value: brightness, zone: zone)

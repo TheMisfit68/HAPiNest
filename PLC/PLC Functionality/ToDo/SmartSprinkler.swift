@@ -14,20 +14,24 @@ import IOTypes
 import JVCocoa
 
 
-public class SmartSprinkler:PLCclass, AccessoryDelegate, AccessorySource{
+public class SmartSprinkler:PLCClass, AccessoryDelegate, AccessorySource{
+	
     
     // MARK: - HomeKit Accessory binding
     
     typealias AccessorySubclass = Accessory.SmartSprinkler
+
     
-    private var characteristicChanged:Bool = false
+    var characteristicChanged:Bool = false
+	var hardwareFeedbackChanged: Bool = false
+
     var hkAccessoryActive:Enums.Active = .inactive{
         didSet{
             // Only when circuit is idle
             // send the feedback upstream to the Homekit accessory,
             // provides for a more stable feedback
             if  !characteristicChanged && !feedbackChanged{
-                accessory.irrigationSystem.active.value = active
+//                accessory.irrigationSystem.active.value = active
             }
         }
     }
@@ -51,7 +55,8 @@ public class SmartSprinkler:PLCclass, AccessoryDelegate, AccessorySource{
     }
 	
 	// TODO: - Implement this part
-	public func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
+	func writeCharacteristic<CT, PT>(_ characteristic: GenericCharacteristic<CT>,
+								to value: PT){
 	}
     
     // MARK: - PLC IO-Signal assignment

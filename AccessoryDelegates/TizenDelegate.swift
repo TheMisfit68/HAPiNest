@@ -11,19 +11,14 @@ import HAP
 import JVCocoa
 import TizenDriver
 
-class TizenDelegate:AccessoryDelegate, AccessorySource{
+// MARK: - Accessory bindings
+extension TizenDelegate:AccessoryDelegate, AccessorySource{
 	
-	typealias AccessorySubclass = Accessory.GarageDoorOpener.Television
-
-	let name:String
-    let driver:TizenDriver
-		
-    public init(name: String,
-                driver:TizenDriver
-    ) {
-        self.name = name
-        self.driver = driver
-    }
+	var name: String {
+		self.tvName
+	}
+	
+	typealias AccessorySubclass = Accessory.Television
     
     func handleCharacteristicChange<T>(accessory:Accessory,
                                        service: Service,
@@ -37,9 +32,9 @@ class TizenDelegate:AccessoryDelegate, AccessorySource{
             let status = value as! Enums.Active
             switch status{
             case .active:
-                driver.powerState = .poweringUp
+					powerState = .poweringUp
             case .inactive:
-                driver.powerState = .poweringDown
+					powerState = .poweringDown
             }
             
             
@@ -61,7 +56,7 @@ class TizenDelegate:AccessoryDelegate, AccessorySource{
                 if let keyCommand = TizenCommand(rawValue:"KEY_\(channelNumber)"){
                     
                     let hdmiSourceCommand = TizenCommand(rawValue:"KEY_HDMI")!
-                    driver.queue(commands:[hdmiSourceCommand, keyCommand])
+                    queue(commands:[hdmiSourceCommand, keyCommand])
                 }
             }
             
@@ -69,10 +64,11 @@ class TizenDelegate:AccessoryDelegate, AccessorySource{
             Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
             
         }
-        
+		characteristicChanged.set()
     }
 	
-	public func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
+	func writeCharacteristic<CT, PT>(_ characteristic: GenericCharacteristic<CT>,
+								to value: PT){
 		
 		switch characteristic.type{
 			case CharacteristicType.active:
@@ -85,20 +81,38 @@ class TizenDelegate:AccessoryDelegate, AccessorySource{
 	}
 	
 }
-    
-//extension TizenDelegate: AccessorySource{
-//	
-//
-//	var hkAccessoryPowerState:Bool = true{
-//		didSet{
-//			// Only when circuit is idle
-//			// send the feedback upstream to the Homekit accessory,
-//			// provides a more stable experience
-//			if  !characteristicChanged && !hardwareFeedbackChanged{
-//				accessory.television.powerState.value = hkAccessoryPowerState
-//			}
-//		}
-//	}
-//	
-//
-//}
+
+class TizenDelegate:TizenDriver{
+	
+	// MARK: - State
+	override var powerState:PowerState{
+		
+		get{ return super.powerState }
+		
+		set{
+			super.powerState = newValue
+			if  super.powerState == .poweredOn{
+				writeCharacteristic(accessory.television.active, to: HAP.Enums.Active.active)
+			}else if super.powerState == .poweredOff{
+				writeCharacteristic(accessory.television.active, to: HAP.Enums.Active.inactive)
+			}
+		}
+	
+	}
+	
+//	public var powerState:PowerState? = nil
+	
+	// Accessory state
+	private var accessoryPowerState:PowerState = .undefined
+	var characteristicChanged:Bool = false
+
+	// Hardware feedback state
+	private var hardwarePowerState:Bool?{
+		didSet{
+			hardwareFeedbackChanged = (hardwarePowerState != nil) && (oldValue != nil) &&  (hardwarePowerState != oldValue)
+		}
+	}
+	var hardwareFeedbackChanged:Bool = false
+	
+}
+
