@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC0CA92A268BBC9500E5AB06 /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC0CA929268BBC9500E5AB06 /* SiriDriver */; };
 		DC0CA92C268BBD0700E5AB06 /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC0CA92B268BBD0700E5AB06 /* MilightDriver */; };
+		DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC2C19BE26BB3BD400A3AB83 /* HAP */; };
 		DC4D6DD425710B410087E51D /* MainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D6DD325710B410087E51D /* MainConfiguration.swift */; };
 		DC4D6DDF25713CCD0087E51D /* AccessoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD428D24FAB5A8000320E0 /* AccessoryDelegate.swift */; };
 		DC4D6DE225713CD00087E51D /* DimmableLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */; };
@@ -37,11 +37,12 @@
 		DC746D7325ACA97A00B33314 /* SprinklerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D7225ACA97A00B33314 /* SprinklerAccessory.swift */; };
 		DC8B28F52597C77B00266BD3 /* PulsOperatedCircuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */; };
 		DC8D0F69259DAA6A00DD04E4 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D0F68259DAA6A00DD04E4 /* Switch.swift */; };
+		DCA37CF926BB29EF003CC3BF /* HAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA37CF826BB29EF003CC3BF /* HAPTests.swift */; };
 		DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */; };
 		DCC9603D2670305000FB84BC /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = DCC9603C2670305000FB84BC /* Documentation.docc */; };
 		DCCBE29C25B8B7D800BAED50 /* ToggleableOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBE29B25B8B7D800BAED50 /* ToggleableOutlet.swift */; };
 		DCD1231025ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1230F25ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift */; };
-		DCF031E026868BC2005B5E88 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031DF26868BC2005B5E88 /* HAP */; };
+		DCDC9CD0269E0F2000D52BBE /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCDC9CCF269E0F2000D52BBE /* SiriDriver */; };
 		DCF031E226868C87005B5E88 /* ModbusDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E126868C87005B5E88 /* ModbusDriver */; };
 		DCF031E426868C8B005B5E88 /* LeafDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E326868C8B005B5E88 /* LeafDriver */; };
 		DCF031E62687061B005B5E88 /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E52687061B005B5E88 /* SoftPLC */; };
@@ -49,6 +50,16 @@
 		DCF031EA2687064D005B5E88 /* TizenDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E92687064D005B5E88 /* TizenDriver */; };
 		DCF031EC2687066F005B5E88 /* Awake in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031EB2687066F005B5E88 /* Awake */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCA37CFA26BB29EF003CC3BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC06CD192354E42A00C8E9F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC54B6BA2570586D00D9169F;
+			remoteInfo = HAPiNest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DC197CA024D9A67F00C07E90 /* YASDIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YASDIDelegate.swift; sourceTree = "<group>"; };
@@ -79,9 +90,12 @@
 		DC746D7225ACA97A00B33314 /* SprinklerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprinklerAccessory.swift; sourceTree = "<group>"; };
 		DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsOperatedCircuit.swift; sourceTree = "<group>"; };
 		DC8D0F68259DAA6A00DD04E4 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
+		DC95E18526BB1A12009D8BDD /* HAP */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HAP; path = "../../../../Third Party Code/HAP"; sourceTree = "<group>"; };
 		DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerDriver.swift; sourceTree = "<group>"; };
 		DC9EFF2024F312F0001B70EE /* GarageDoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoor.swift; sourceTree = "<group>"; };
 		DC9EFF2224F3131F001B70EE /* DoorLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLock.swift; sourceTree = "<group>"; };
+		DCA37CF626BB29EF003CC3BF /* HAPiNestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAPiNestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA37CF826BB29EF003CC3BF /* HAPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPTests.swift; sourceTree = "<group>"; };
 		DCB5F61F2354ED7D005F610F /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
 		DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinkler.swift; sourceTree = "<group>"; };
 		DCC1FBE0268664CA00201913 /* Awake */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Awake; path = "../../../../Third Party Code/Awake"; sourceTree = "<group>"; };
@@ -93,7 +107,6 @@
 		DCD6FDBB25D1AD8D0049A3F5 /* ToDo domotica shortterm.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ToDo domotica shortterm.md"; sourceTree = "<group>"; };
 		DCD9182223B5715000C81EB5 /* PowerInverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerInverter.swift; sourceTree = "<group>"; };
 		DCF031DE2686857E005B5E88 /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
-		DCFB54692683F12300406E12 /* HAP */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HAP; path = "../../../../Third Party Code/HAP"; sourceTree = "<group>"; };
 		DCFB546A2683F17500406E12 /* OpenWeatherReporter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OpenWeatherReporter; path = ../OpenWeatherReporter; sourceTree = "<group>"; };
 		DCFB546B2683F1B500406E12 /* SoftPLC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SoftPLC; path = ../SoftPLC; sourceTree = "<group>"; };
 		DCFB546C2683F1EB00406E12 /* AppleScriptDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppleScriptDriver; path = ../Drivers/AppleScriptDriver; sourceTree = "<group>"; };
@@ -113,15 +126,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */,
 				DCF031E426868C8B005B5E88 /* LeafDriver in Frameworks */,
 				DCF031EA2687064D005B5E88 /* TizenDriver in Frameworks */,
 				DCF031E226868C87005B5E88 /* ModbusDriver in Frameworks */,
 				DCF031E62687061B005B5E88 /* SoftPLC in Frameworks */,
 				DCF031EC2687066F005B5E88 /* Awake in Frameworks */,
-				DC0CA92A268BBC9500E5AB06 /* SiriDriver in Frameworks */,
 				DC0CA92C268BBD0700E5AB06 /* MilightDriver in Frameworks */,
-				DCF031E026868BC2005B5E88 /* HAP in Frameworks */,
 				DCF031E82687063B005B5E88 /* AppleScriptDriver in Frameworks */,
+				DCDC9CD0269E0F2000D52BBE /* SiriDriver in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCA37CF326BB29EF003CC3BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +162,7 @@
 				DC197C9D24D9A67F00C07E90 /* AccessoryDelegates */,
 				DC2D4573256E48C100DF3EC5 /* PLC */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
+				DCA37CF726BB29EF003CC3BF /* HAPiNestTests */,
 				DC06CD222354E42A00C8E9F9 /* Products */,
 				DC601E082405DC9600FE7659 /* Frameworks */,
 			);
@@ -151,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				DC54B6BB2570586D00D9169F /* HAPiNest.app */,
+				DCA37CF626BB29EF003CC3BF /* HAPiNestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +253,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DCA37CF726BB29EF003CC3BF /* HAPiNestTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCA37CF826BB29EF003CC3BF /* HAPTests.swift */,
+			);
+			path = HAPiNestTests;
+			sourceTree = "<group>";
+		};
 		DCA8FA1B25B2FE0900532E4A /* Accessories */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,7 +322,6 @@
 		DCFB54682683F12300406E12 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				DCFB54692683F12300406E12 /* HAP */,
 				DCFB546A2683F17500406E12 /* OpenWeatherReporter */,
 				DCFB546B2683F1B500406E12 /* SoftPLC */,
 				DCFB546C2683F1EB00406E12 /* AppleScriptDriver */,
@@ -306,6 +335,7 @@
 				DCC1FBE0268664CA00201913 /* Awake */,
 				DCF031DE2686857E005B5E88 /* JVCocoa */,
 				DC58B388268BBBA600B87177 /* SiriDriver */,
+				DC95E18526BB1A12009D8BDD /* HAP */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -327,19 +357,37 @@
 			);
 			name = HAPiNest;
 			packageProductDependencies = (
-				DCF031DF26868BC2005B5E88 /* HAP */,
 				DCF031E126868C87005B5E88 /* ModbusDriver */,
 				DCF031E326868C8B005B5E88 /* LeafDriver */,
 				DCF031E52687061B005B5E88 /* SoftPLC */,
 				DCF031E72687063B005B5E88 /* AppleScriptDriver */,
 				DCF031E92687064D005B5E88 /* TizenDriver */,
 				DCF031EB2687066F005B5E88 /* Awake */,
-				DC0CA929268BBC9500E5AB06 /* SiriDriver */,
 				DC0CA92B268BBD0700E5AB06 /* MilightDriver */,
+				DCDC9CCF269E0F2000D52BBE /* SiriDriver */,
+				DC2C19BE26BB3BD400A3AB83 /* HAP */,
 			);
 			productName = HAPiNest2;
 			productReference = DC54B6BB2570586D00D9169F /* HAPiNest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DCA37CF526BB29EF003CC3BF /* HAPiNestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCA37CFC26BB29EF003CC3BF /* Build configuration list for PBXNativeTarget "HAPiNestTests" */;
+			buildPhases = (
+				DCA37CF226BB29EF003CC3BF /* Sources */,
+				DCA37CF326BB29EF003CC3BF /* Frameworks */,
+				DCA37CF426BB29EF003CC3BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCA37CFB26BB29EF003CC3BF /* PBXTargetDependency */,
+			);
+			name = HAPiNestTests;
+			productName = HAPiNestTests;
+			productReference = DCA37CF626BB29EF003CC3BF /* HAPiNestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -347,17 +395,21 @@
 		DC06CD192354E42A00C8E9F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1220;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Jan Verrept";
 				TargetAttributes = {
 					DC54B6BA2570586D00D9169F = {
 						CreatedOnToolsVersion = 12.2;
 					};
+					DCA37CF526BB29EF003CC3BF = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = DC54B6BA2570586D00D9169F;
+					};
 				};
 			};
 			buildConfigurationList = DC06CD1C2354E42A00C8E9F9 /* Build configuration list for PBXProject "HAPiNest" */;
-			compatibilityVersion = "Xcode 11.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -372,6 +424,7 @@
 			projectRoot = "";
 			targets = (
 				DC54B6BA2570586D00D9169F /* HAPiNest */,
+				DCA37CF526BB29EF003CC3BF /* HAPiNestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -383,6 +436,13 @@
 			files = (
 				DC4E82B825AD93FA00A6043E /* Preview Assets.xcassets in Resources */,
 				DC54B6C22570586E00D9169F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCA37CF426BB29EF003CC3BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +486,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCA37CF226BB29EF003CC3BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA37CF926BB29EF003CC3BF /* HAPTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCA37CFB26BB29EF003CC3BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC54B6BA2570586D00D9169F /* HAPiNest */;
+			targetProxy = DCA37CFA26BB29EF003CC3BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DC06CD322354E42B00C8E9F9 /* Debug */ = {
@@ -489,7 +565,7 @@
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib/;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -557,7 +633,7 @@
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib/;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -589,7 +665,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -616,13 +692,68 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DCA37CFD26BB29EF003CC3BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y7A29RG88E;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HAPiNest.app/Contents/MacOS/HAPiNest";
+			};
+			name = Debug;
+		};
+		DCA37CFE26BB29EF003CC3BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.HAPiNestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HAPiNest.app/Contents/MacOS/HAPiNest";
 			};
 			name = Release;
 		};
@@ -647,20 +778,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DCA37CFC26BB29EF003CC3BF /* Build configuration list for PBXNativeTarget "HAPiNestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCA37CFD26BB29EF003CC3BF /* Debug */,
+				DCA37CFE26BB29EF003CC3BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DC0CA929268BBC9500E5AB06 /* SiriDriver */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SiriDriver;
-		};
 		DC0CA92B268BBD0700E5AB06 /* MilightDriver */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MilightDriver;
 		};
-		DCF031DF26868BC2005B5E88 /* HAP */ = {
+		DC2C19BE26BB3BD400A3AB83 /* HAP */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HAP;
+		};
+		DCDC9CCF269E0F2000D52BBE /* SiriDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SiriDriver;
 		};
 		DCF031E126868C87005B5E88 /* ModbusDriver */ = {
 			isa = XCSwiftPackageProductDependency;

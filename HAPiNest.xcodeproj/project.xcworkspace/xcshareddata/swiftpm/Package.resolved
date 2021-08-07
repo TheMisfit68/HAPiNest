@@ -2,21 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "BigInt.swift",
-        "repositoryURL": "https://github.com/Boilertalk/BigInt.swift.git",
+        "package": "BigInt",
+        "repositoryURL": "https://github.com/attaswift/BigInt.git",
         "state": {
           "branch": null,
-          "revision": "fd9b2ebff53e7fd211a7d2b2ea682db300a8571b",
-          "version": "1.0.0"
-        }
-      },
-      {
-        "package": "BlueCryptor",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
-        "state": {
-          "branch": null,
-          "revision": "ee5880e031da4c609f372cf7472476ab51d5dd19",
-          "version": "1.0.200"
+          "revision": "889a1ecacd73ccc189c5cb29288048f186c44ed9",
+          "version": "5.2.1"
         }
       },
       {
@@ -33,17 +24,8 @@
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
           "branch": null,
-          "revision": "4e31051c63cc0ddf10a25cf5318856c510cf77f4",
-          "version": "1.4.0"
-        }
-      },
-      {
-        "package": "HKDF",
-        "repositoryURL": "https://github.com/Bouke/HKDF.git",
-        "state": {
-          "branch": null,
-          "revision": "9b9e521b49e5b529c33f4abe35a00e144af51e00",
-          "version": "3.1.0"
+          "revision": "8d4f6384e0a8cc41f2005247241dd553963a492a",
+          "version": "1.4.1"
         }
       },
       {
@@ -60,8 +42,17 @@
         "repositoryURL": "https://github.com/Bouke/SRP.git",
         "state": {
           "branch": null,
-          "revision": "9f3d77de5dbaac52d30b1d51d75e853fabb8fa8b",
-          "version": "3.1.0"
+          "revision": "c01934477cb0aa14b4da5c3cb61d447bd6393ce0",
+          "version": "3.2.1"
+        }
+      },
+      {
+        "package": "swift-crypto",
+        "repositoryURL": "https://github.com/apple/swift-crypto.git",
+        "state": {
+          "branch": null,
+          "revision": "3bea268b223651c4ab7b7b9ad62ef9b2d4143eb6",
+          "version": "1.1.6"
         }
       },
       {
@@ -78,8 +69,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "d79e33308b0ac83326b0ead0ea6446e604b8162d",
-          "version": "2.30.0"
+          "revision": "87c532383a149264561a85824222004af6262ccb",
+          "version": "2.31.0"
         }
       }
     ]

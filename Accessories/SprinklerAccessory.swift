@@ -17,12 +17,7 @@ extension Accessory {
         let additionalServices:[Service] = [Service.Switch()]
 
         public init(info: Service.Info) {
-            super.init(info: info, type: .sprinkler, services: [irrigationSystem] + additionalServices)
+			super.init(info: info, type: .sprinkler, services: [irrigationSystem] + additionalServices)
         }
-    }
-}
-
-extension Service {
-    open class IrrigationSystem: IrrigationSystemBase {
     }
 }
