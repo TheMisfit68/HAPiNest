@@ -13,56 +13,15 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-// MARK: - Accessory bindings
-extension WindowCovering:AccessoryDelegate, AccessorySource{
-	
-	typealias AccessorySubclass = Accessory.WindowCovering
-	
-	func handleCharacteristicChange<T>(accessory:Accessory,
-									   service: Service,
-									   characteristic: GenericCharacteristic<T>,
-									   to value: T?){
-		
-		// Handle Characteristic change depending on its type
-		switch characteristic.type{
-			case CharacteristicType.targetPosition:
-				accessoryTargetPosition = value as? UInt8 ?? accessoryTargetPosition
-				
-				
-			default:
-				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
-		}
-		
-		characteristicChanged.set()
-	}
-	
-	func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
-		
-		switch characteristic.type{
-			case CharacteristicType.targetPosition:
-				
-				accessory.windowCovering.targetPosition.value = value as? UInt8
-				
-			case CharacteristicType.currentPosition:
-				
-				accessory.windowCovering.currentPosition.value = value as? UInt8
-				
-			case CharacteristicType.positionState:
-				
-				accessory.windowCovering.positionState.value = value as? Enums.PositionState
-				
-			default:
-				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
-		}
-	}
-	
-}
-
 // MARK: - PLC level class
-class WindowCovering:PLCclass, Parameterizable, Simulateable, PulsOperatedCircuit{
+class WindowCovering:PLCClass, AccessoryDelegate, AccessorySource, Parameterizable, CyclicRunnable, PulsOperatedCircuit, Simulateable{
+	
+	// Accessory binding
+	typealias AccessorySubclass = Accessory.WindowCovering
+	var characteristicChanged:Bool = false
 	
 	// MARK: - State
-	private var targetPosition:Int? = 100
+	private var targetPosition:Int? = 100 // Default to open on startup, not to current state
 	private var currentPosition:Float? = nil
 	private var positionState:Enums.PositionState? = .stopped
 	
@@ -84,30 +43,51 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, PulsOperatedCircui
 		}
 	}
 	
-	// Accessory state
-	private var accessoryTargetPosition:UInt8 = 100
-	private var accessoryCurrentPosition:UInt8 = 100
-	private var accessoryPositionState:Enums.PositionState = .stopped
-	private var characteristicChanged:Bool = false
-	
 	// Hardware feedback state
 	var hardwareFeedbackIsOpening:Bool?{
 		didSet{
 			let hardwareFeedbackIsOpeningChanged = (hardwareFeedbackIsOpening != nil) && (oldValue != nil) && (hardwareFeedbackIsOpening != oldValue)
-			// Don't capture any changes in hardware feedback that originated after a puls from this accesory
-			hardwareFeedbackChanged.setConditional( hardwareFeedbackIsOpeningChanged &&
-												   (!outputSignal.logicalValue && !pulsTimer.input) )
+			//Don't capture any changes in hardware feedback that originated after a puls from this accesory
+			hardwareFeedbackChanged.set( hardwareFeedbackIsOpeningChanged &&
+										 (!outputSignal.logicalValue && !pulsTimer.input) )
 		}
 	}
 	var hardwareFeedbackIsClosing:Bool?{
 		didSet{
 			let hardwareFeedbackIsClosingChanged = (hardwareFeedbackIsClosing != nil) && (oldValue != nil) && (hardwareFeedbackIsClosing != oldValue)
 			// Don't capture any changes in hardware feedback that originated after a puls from this accesory
-			hardwareFeedbackChanged.setConditional( hardwareFeedbackIsClosingChanged &&
-													(!outputSignal.logicalValue && !pulsTimer.input) )
+			hardwareFeedbackChanged.set( hardwareFeedbackIsClosingChanged &&
+										 (!outputSignal.logicalValue && !pulsTimer.input) )
+			
 		}
 	}
-	private var hardwareFeedbackChanged:Bool = false
+	var hardwareFeedbackChanged:Bool = false
+	
+	private var hardwarePositionState:Enums.PositionState{
+		
+		if (hardwareFeedbackIsOpening == true)  && (hardwareFeedbackIsClosing == false){
+			return .increasing
+		}else if (hardwareFeedbackIsClosing == true) && (hardwareFeedbackIsOpening == false){
+			return .decreasing
+		}else{
+			return .stopped
+		}
+		
+	}
+	
+	private var hardwareTargetPosition:Int?{
+				
+		if hardwareFeedbackChanged && (hardwarePositionState == .increasing){
+			return 100
+		}else if hardwareFeedbackChanged && (hardwarePositionState == .decreasing){
+			return 0
+		}else if hardwarePositionState == .stopped, let currentPosition = self.currentPosition{
+			return Int(currentPosition)
+		}else{
+			return nil
+		}
+		
+	}
 	
 	init(secondsToOpen:Int = 15, secondsToClose:Int = 15){
 		
@@ -125,48 +105,46 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, PulsOperatedCircui
 	// MARK: - Subroutines
 	private func updateCurrentPosition() {
 		
-		if (self.currentPosition != nil){
+		if (self.currentPosition == nil){
 			
-			if (self.positionState == .increasing) && (self.currentPosition! < 100.0){
+			if (hardwarePositionState == .increasing){
+				
+				self.currentPosition = 100.0
+				
+			}else if (hardwarePositionState == .decreasing){
+				
+				self.currentPosition = 0.0
+				
+			}else if (hardwarePositionState == .stopped){
+				
+				self.currentPosition = 50.0
+				
+			}
+			
+			
+		}else{
+			
+			if (hardwarePositionState == .increasing) && (self.currentPosition! < 100.0){
 				
 				self.currentPosition! += (1/self.secondsToOpen)*100.0
 				self.currentPosition! = min(self.currentPosition!, 100.0)
 				
-			}else if (self.positionState == .decreasing) && (self.currentPosition! > 0.0){
+			}else if (hardwarePositionState == .decreasing) && (self.currentPosition! > 0.0){
 				
 				self.currentPosition! -= (1/self.secondsToClose)*100.0
 				self.currentPosition! = max(0.0, self.currentPosition!)
 				
+			}else if (hardwarePositionState == .stopped) && (abs(self.deviation) < deadband), let currentPosition = self.currentPosition{
+				self.targetPosition = Int(currentPosition)
 			}
 			
 		}
 		
-		
 	}
 	
-	private func readPositionStateFromFeedbacks(){
-		
-		// Currentposition will be updated by the currentPositionTimer in a timely fashion,
-		// but synchronise the targetposition and positionstate with the new hardwarefeedback
-		if (hardwareFeedbackIsOpening == true)  && (hardwareFeedbackIsClosing == false){
-			self.positionState = .increasing
-		}else if (hardwareFeedbackIsClosing == true) && (hardwareFeedbackIsOpening == false){
-			self.positionState = .decreasing
-		}else if (hardwareFeedbackIsClosing == false) && (hardwareFeedbackIsOpening == false){
-			self.positionState = .stopped
-		}
-		
-		if (self.positionState == .stopped) && (abs(self.deviation) < deadband),
-			let currentPosition = self.currentPosition{
-			
-			self.targetPosition = Int(currentPosition)
-			
-		}
-		
-	}
+	
 	
 	// MARK: - PLC IO-Signal assignment
-	
 	var outputSignal:DigitalOutputSignal{
 		plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
 	}
@@ -181,46 +159,8 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, PulsOperatedCircui
 	
 	// MARK: - Parameter assignment
 	public func assignInputParameters(){
-		
 		hardwareFeedbackIsOpening = feedbackSignalIsOpening?.logicalValue
 		hardwareFeedbackIsClosing = feedbackSignalIsClosing?.logicalValue
-		readPositionStateFromFeedbacks()
-		
-		if (currentPosition == nil) && (positionState != nil){
-			if positionState == .increasing{
-				currentPosition = 100.0
-			}else if positionState == .decreasing{
-				currentPosition = 0.0
-			}else if positionState == . stopped{
-				currentPosition = 50.0
-			}
-			if let currentPosition = self.currentPosition {
-				self.targetPosition = Int(currentPosition)
-			}
-		}else if (currentPosition != nil) && characteristicChanged{
-			targetPosition = Int(accessoryTargetPosition)
-			characteristicChanged.reset()
-		}else if (currentPosition != nil) && hardwareFeedbackChanged{
-			if positionState == .increasing{
-				targetPosition = 100
-			}else if positionState == .decreasing{
-				targetPosition = 0
-			}else if positionState == . stopped,
-					 let currentPosition = self.currentPosition{
-				targetPosition = Int(currentPosition)
-			}
-			hardwareFeedbackChanged.reset()
-		}else if let accessoryTargetPosition = self.targetPosition,
-				 let accessoryCurrentPosition = self.currentPosition,
-				 let accessoryPositionState = self.positionState{
-			// Only write back to the Homekit accessory,
-			// when the circuit is completely idle
-			// (this garantees a more stable user experience)
-			writeCharacteristic(accessory.windowCovering.targetPosition, to: UInt8(accessoryTargetPosition) )
-			writeCharacteristic(accessory.windowCovering.currentPosition, to: UInt8(accessoryCurrentPosition) )
-			writeCharacteristic(accessory.windowCovering.positionState, to: accessoryPositionState)
-		}
-		
 	}
 	
 	public func assignOutputParameters(){
@@ -229,6 +169,20 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, PulsOperatedCircui
 	
 	
 	// MARK: - PLC Processing
+	func runCycle() {
+		
+		reevaluate(&positionState, initialValue: hardwarePositionState,
+				   characteristic:accessory.windowCovering.positionState, hardwareFeedback: hardwarePositionState)
+		reevaluate(&currentPosition, characteristic:accessory.windowCovering.currentPosition, hardwareFeedback:nil, typeTranslators: ( {Float($0)} , {UInt8($0)} ) )
+		reevaluate(&targetPosition, characteristic:accessory.windowCovering.targetPosition, hardwareFeedback: hardwareTargetPosition,
+				   typeTranslators: ( {Int($0)} , {UInt8($0)} )
+		)
+		
+		characteristicChanged.reset()
+		hardwareFeedbackChanged.reset()
+		
+	}
+	
 	let pulsTimer = DigitalTimer.PulsLimition(time: 0.25)
 	var puls:Bool{
 		get{
@@ -288,5 +242,6 @@ class WindowCovering:PLCclass, Parameterizable, Simulateable, PulsOperatedCircui
 	}
 	
 }
+
 
 

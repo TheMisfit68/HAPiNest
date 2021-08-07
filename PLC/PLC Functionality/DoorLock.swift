@@ -13,109 +13,56 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-// MARK: - Accessory bindings
-extension Doorlock:AccessoryDelegate, AccessorySource{
-	
-	typealias AccessorySubclass = Accessory.LockMechanism
-
-	func handleCharacteristicChange<T>(accessory:Accessory,
-									   service: Service,
-									   characteristic: GenericCharacteristic<T>,
-									   to value: T?){
-				
-		// Handle Characteristic change depending on its type
-		switch characteristic.type{
-			case CharacteristicType.lockTargetState:
-				
-				accessoryTargetState = value as? Enums.LockTargetState ?? accessoryTargetState
-				
-			default:
-				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
-		}
-		
-		characteristicChanged.set()
-	}
-	
-	func writeCharacteristic<T>(_ characteristic:GenericCharacteristic<T>, to value: T?) {
-		
-		switch characteristic.type{
-			case CharacteristicType.lockTargetState:
-				
-				accessory.lockMechanism.lockTargetState.value = value as? Enums.LockTargetState
-
-			case CharacteristicType.lockCurrentState:
-				
-				accessory.lockMechanism.lockCurrentState.value = value as? Enums.LockCurrentState
-
-			default:
-				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
-		}
-	}
-	
-}
-
 // MARK: - PLC level class
-class Doorlock:PLCclass, Parameterizable, PulsOperatedCircuit{
+class Doorlock:PLCClass, AccessoryDelegate, AccessorySource, Parameterizable, CyclicRunnable, PulsOperatedCircuit{
+	
+	// Accessory binding
+	typealias AccessorySubclass = Accessory.LockMechanism
+	var characteristicChanged:Bool = false
 	
 	// MARK: - State
 	var targetState:Enums.LockTargetState? = .secured
 	var currentState:Enums.LockCurrentState? = nil
-	
-	// Accessory state
-	var accessoryTargetState:Enums.LockTargetState = .secured
-	var accessoryCurrentState:Enums.LockCurrentState = .secured
-	private var characteristicChanged:Bool = false
-	
+		
 	// Hardware feedback state
 	var hardwareCurrentState:Enums.LockCurrentState?{
 		didSet{
 			hardwareFeedbackChanged = (hardwareCurrentState != nil) && (oldValue != nil) &&  (hardwareCurrentState != oldValue)
 		}
 	}
-	private var hardwareFeedbackChanged:Bool = false
-	
+	var hardwareFeedbackChanged:Bool = false
 	
 	// MARK: - PLC IO-Signal assignment
 	var outputSignal:DigitalOutputSignal{
 		plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
 	}
 	
-	// MARK: - PLC Parameter assignment
-	
+	// MARK: - PLC Parameter assignment	
 	public func assignInputParameters(){
-		
 		hardwareCurrentState = outputSignal.logicalValue ? .unsecured : .secured
-
-		if (currentState == nil) && (hardwareCurrentState != nil){
-			currentState = hardwareCurrentState
-			targetState = (currentState! == .unsecured ? .unsecured : .secured)
-		}else if (currentState != nil) && characteristicChanged{
-			targetState = accessoryTargetState
-			characteristicChanged.reset()
-		}else if (currentState != nil) && hardwareFeedbackChanged{
-			currentState = hardwareCurrentState
-			hardwareFeedbackChanged.reset()
-		}else if let accessoryTargetState = self.targetState,
-				 let accessoryCurrentState = self.currentState {
-			// Only write back to the Homekit accessory,
-			// when the circuit is completely idle
-			// (this garantees a more stable user experience)
-			writeCharacteristic(accessory.lockMechanism.lockTargetState, to: accessoryTargetState)
-			writeCharacteristic(accessory.lockMechanism.lockCurrentState, to: accessoryCurrentState)
-		}
-		
 	}
 	
 	public func assignOutputParameters(){
 		
 		outputSignal.logicalValue = puls
-		if !puls{
-			targetState = .secured
-		}
+		
+		// TODO: - hardwrecuurnstate is evaluated constan , remove after test
+//		if !puls{
+//			hardwareCurrentState = .secured
+//		}
 		
 	}
 	
 	// MARK: - PLC Processing
+	public func runCycle(){
+		
+		reevaluate(&currentState, characteristic:accessory.lockMechanism.lockCurrentState, hardwareFeedback: hardwareCurrentState)
+		reevaluate(&targetState, initialValue: (currentState ?? .secured == .unsecured ? .unsecured : .secured), characteristic:accessory.lockMechanism.lockTargetState, hardwareFeedback: nil)
+
+		characteristicChanged.reset()
+		hardwareFeedbackChanged.reset()
+		
+	}
 	
 	let pulsTimer = DigitalTimer.ExactPuls(time: 2.0)
 	var puls:Bool{

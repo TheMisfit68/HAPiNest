@@ -10,15 +10,26 @@ import Foundation
 import HAP
 import SoftPLC
 
-// A type capable of receving events from a HomeKit-Accessory
-protocol AccessoryDelegate{
+// A Class capable of receving events from a HomeKit-Accessory
+protocol AccessoryDelegate: AnyObject{
 	
 	var name:String{get}
+	var characteristicChanged:Bool{get set}
 	func handleCharacteristicChange<T>(accessory:Accessory,
 									   service: Service,
 									   characteristic: GenericCharacteristic<T>,
 									   to value: T?)
-	var characteristicChanged:Bool{get set}
+}
+
+extension AccessoryDelegate{
+	
+	func handleCharacteristicChange<T>(accessory:Accessory,
+									   service: Service,
+									   characteristic: GenericCharacteristic<T>,
+									   to value: T?){
+		characteristicChanged.set()
+	}
+	
 }
 
 extension AccessoryDelegate where Self:PLCClass{
@@ -29,6 +40,8 @@ extension AccessoryDelegate where Self:PLCClass{
 	
 }
 
+
+// A Class capable of writing values to a HomeKit-Accessory
 protocol AccessorySource:AccessoryDelegate{
 	
 	var hardwareFeedbackChanged:Bool{get set}
@@ -36,33 +49,38 @@ protocol AccessorySource:AccessoryDelegate{
 	associatedtype AccessorySubclass
 	var accessory:AccessorySubclass{get}
 	
-	
-	func writeCharacteristic<T>(_ characteristic: GenericCharacteristic<T>,
-								to value: T?)
+	func reevaluate<PT, CT>(_ property:inout PT?, initialValue:PT?, characteristic:GenericCharacteristic<CT>?, hardwareFeedback:PT?, typeTranslators:((CT)->PT, (PT)->CT)?)
+
 }
 
-// A type capable of writing values to a HomeKit-Accessory
 extension AccessorySource{
 	
 	var accessory:AccessorySubclass{
 		HomeKitServer.shared.mainBridge[name] as! AccessorySubclass
 	}
 	
-	func reevaluate<T>(_ property:inout T?, initialValue:T? = nil, characteristic:GenericCharacteristic<T>?, hardwareFeedback:T?){
+	func reevaluate<PT, CT>(_ property:inout PT?, initialValue:PT? = nil, characteristic:GenericCharacteristic<CT>?, hardwareFeedback:PT?, typeTranslators:((CT)->PT, (PT)->CT)? = nil){
 		
 		if (property == nil), let initialValue = initialValue{
 			property = initialValue
 		}else if (property == nil), let initialValue = hardwareFeedback{
 			property = initialValue
-		}else if (property != nil) && characteristicChanged, let characteristictValue = characteristic?.value {
-			property = characteristictValue
+		}else if (property != nil) && characteristicChanged, let characteristicvalue = characteristic?.value{
+			if let propertyValue = characteristicvalue as? PT{
+				property = propertyValue
+			}else if let propertyValue = typeTranslators?.0(characteristicvalue){
+				property = propertyValue
+			}
 		}else if (property != nil) && hardwareFeedbackChanged, let hardwareValue = hardwareFeedback{
 			property = hardwareValue
-		}else if let characteristic = characteristic, let characteristictValue = property{
-			// Only write back to the Homekit accessory,
-			// when the circuit is completely idle
-			// (this garantees a more stable user experience)
-			writeCharacteristic(characteristic, to: characteristictValue)
+		}else if let characteristic = characteristic, let propertyValue = property{
+			
+			if let characteristictValue = propertyValue as? CT{
+				characteristic.value = characteristictValue
+			}else if let characteristictValue = typeTranslators?.1(propertyValue){
+				characteristic.value = characteristictValue
+			}
+
 		}
 		
 	}
