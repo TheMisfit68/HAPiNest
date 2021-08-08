@@ -24,8 +24,16 @@ public class DimmableLight:PLCClass, AccessoryDelegate, AccessorySource, Paramet
 	var powerState:Bool? = nil
 	{
 		didSet{
-			if let powerState = powerState , powerState != oldValue{
-				brightness = powerState ? previousbrightness : 0
+			if let powerState = powerState, powerState != oldValue {
+				
+				if powerState == true{
+					brightness = previousbrightness
+					// Don't process the 100% brightness that comes with every new on-state
+					characteristicChanged.reset()
+				}else{
+					brightness = 0
+				}
+				
 			}
 		}
 	}
@@ -45,10 +53,10 @@ public class DimmableLight:PLCClass, AccessoryDelegate, AccessorySource, Paramet
 	private var previousbrightness:Int = 15
 	
 	// Hardware feedback state
-	private var hardwareBrightness:Float?{
+	private var hardwareBrightness:Int?{
 		didSet{
 			hardwareFeedbackChanged = (hardwareBrightness != nil) && (oldValue != nil) &&  (hardwareBrightness != oldValue)
-		}  
+		}
 	}
 	var hardwareFeedbackChanged:Bool = false
 	
@@ -59,17 +67,23 @@ public class DimmableLight:PLCClass, AccessoryDelegate, AccessorySource, Paramet
 	
 	// MARK: - PLC Parameter assignment
 	public func assignInputParameters(){
-		hardwareBrightness = outputSignal.scaledFeedBackValue?.rounded()
+		hardwareBrightness = Int(value: outputSignal.scaledFeedBackValue?.rounded() as Any)
 	}
 	
 	public func assignOutputParameters(){
-		outputSignal.scaledValue = Float(brightness ?? 100)
+		outputSignal.scaledValue = Float(powerState == true ? (brightness ?? 0) : 0 )
 	}
 	
 	// MARK: - Processing
 	public func runCycle() {
-		reevaluate(&powerState, initialValue: (Int(hardwareBrightness ?? 0.0) > switchOffLevelDimmer),characteristic:accessory.lightbulb.powerState, hardwareFeedback: nil)
-		reevaluate(&brightness, characteristic:accessory.lightbulb.brightness, hardwareFeedback: Int(value:hardwareBrightness as Any) )
+		
+		reevaluate(&powerState, initialValue: (hardwareBrightness ?? 0 > switchOffLevelDimmer),characteristic:accessory.lightbulb.powerState, hardwareFeedback: nil)
+		reevaluate(&brightness, characteristic:accessory.lightbulb.brightness, hardwareFeedback:hardwareBrightness)
+		
+		characteristicChanged.reset()
+		hardwareFeedbackChanged.reset()
+		
 	}
 }
+
 
