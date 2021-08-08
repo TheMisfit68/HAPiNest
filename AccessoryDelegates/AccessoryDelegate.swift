@@ -86,3 +86,9 @@ extension AccessorySource{
 	}
 	
 }
+
+protocol CyclicRunnable:AccessorySource{
+	
+	func runCycle()
+	
+}
