@@ -27,7 +27,7 @@ public class DimmableLight:PLCClass, AccessoryDelegate, AccessorySource, Paramet
 			if let powerState = powerState, powerState != oldValue {
 				
 				if powerState == true{
-					brightness = previousbrightness
+					brightness = previousOnLevel
 					// Don't process the 100% brightness that comes with every new on-state
 					characteristicChanged.reset()
 				}else{
@@ -40,17 +40,19 @@ public class DimmableLight:PLCClass, AccessoryDelegate, AccessorySource, Paramet
 	
 	var brightness:Int? = nil{
 		didSet{
-			if brightness != oldValue{
-				// When swicthed on, remember each new brightnesslevel,
-				// (to be used as a startlevel later on)
-				if let brightness = brightness, brightness > switchOffLevelDimmer{
-					previousbrightness = brightness
+			if let brightness = brightness, brightness != oldValue{
+				
+				if brightness > switchOffLevelDimmer{
+					previousOnLevel = max(switchOffLevelDimmer+1, brightness)
+				}else{
+					powerState?.reset()
 				}
+				
 			}
 		}
 	}
-	private let switchOffLevelDimmer:Int = 15
-	private var previousbrightness:Int = 15
+	private let switchOffLevelDimmer:Int = 14
+	private var previousOnLevel:Int = 15
 	
 	// Hardware feedback state
 	private var hardwareBrightness:Int?{
@@ -71,7 +73,7 @@ public class DimmableLight:PLCClass, AccessoryDelegate, AccessorySource, Paramet
 	}
 	
 	public func assignOutputParameters(){
-		outputSignal.scaledValue = Float(powerState == true ? (brightness ?? 0) : 0 )
+		outputSignal.scaledValue = Float(powerState == true ? (brightness ?? switchOffLevelDimmer+1) : 0)
 	}
 	
 	// MARK: - Processing
