@@ -43,10 +43,11 @@ public class DimmableLight:PLCClass, AccessoryDelegate, AccessorySource, Paramet
 			if let brightness = brightness, brightness != oldValue{
 				
 				if brightness > switchOffLevelDimmer{
-					previousOnLevel = max(switchOffLevelDimmer+1, brightness)
+					previousOnLevel = brightness
 				}else{
 					powerState?.reset()
 				}
+
 				
 			}
 		}
