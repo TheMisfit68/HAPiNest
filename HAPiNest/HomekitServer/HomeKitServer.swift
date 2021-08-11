@@ -46,6 +46,7 @@ public class HomeKitServer:Singleton{
 		#if DEBUG
 		if HAPiNestApp.InDeveloperMode{
 			self.name = "Development\(self.name)"
+			AppController(name: "Home", location: .systemApps).startIfInstalled()
 		}
 		#endif
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server \(self.name)...")
