@@ -53,6 +53,10 @@ struct HAPiNestApp: App {
 		// Only fire Up PLC after all components are initialized
 		AppState.shared.plc.run()
 		
+		// Start an extra background cycle indepent of the PLCs backroundCycle
+		// (to poll for harware changes on behalf of the other type acessoryDelegates)
+		AppState.shared.cyclicPoller.run()
+		
 	}
 	
 	
@@ -91,10 +95,12 @@ struct HAPiNestApp: App {
 class AppState:Singleton{
 	
 	static let shared:AppState = AppState()
-	private init(){}
-	
 	let appNapController: AppNapController = AppNapController.shared
+	
 	let homekitServer:HomeKitServer = HomeKitServer.shared
+	let cyclicPoller:CyclicPoller = CyclicPoller(timeInterval: 1.0)
 	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList, simulator:ModbusSimulator())
 	
+	private init(){}
 }
+
