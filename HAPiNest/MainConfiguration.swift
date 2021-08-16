@@ -110,7 +110,8 @@ struct MainConfiguration{
                                         ("Animal planet", .hdmi),
                                         ("Netflix", .application),
                                         ("YouTube", .application),
-										("Camera's", .application)
+										("Camera straat", .application),
+										("Camera tuin", .application)
                                        ]),
               TizenDelegate(tvName:"T.V.", macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: "HAPiNestServer")
                 
@@ -131,8 +132,8 @@ struct MainConfiguration{
                                          ("Animal planet", .hdmi),
                                          ("Netflix", .application),
                                          ("YouTube", .application),
-										 ("Camera's", .application)
-                                        ]),
+										 ("Camera straat", .application),
+										 ("Camera tuin", .application)                                        ]),
                TizenDelegate(tvName:"T.V. Boven", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer")
                  
              ),
