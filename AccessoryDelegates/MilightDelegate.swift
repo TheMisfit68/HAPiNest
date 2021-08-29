@@ -15,10 +15,10 @@ import MilightDriver
 /// It uses the MilightDriver to pass those changes to  the hardware
 
 class MilightDelegate:AccessoryDelegate {
-	
+
 	let name:String
 	let driver:MilightDriver
-	let zone:MilightZone
+	let zone:MilightDriver.Zone
 	
 	var characteristicChanged: Bool = false
 	
@@ -61,7 +61,7 @@ class MilightDelegate:AccessoryDelegate {
 	
 	public init(name:String,
 				driver:MilightDriver,
-				zone:MilightZone
+				zone:MilightDriver.Zone
 	) {
 		self.name = name
 		self.driver = driver
@@ -78,7 +78,7 @@ class MilightDelegate:AccessoryDelegate {
 			case CharacteristicType.powerState:
 				
 				let poweredOn = characteristic.value as! Bool
-				let action = poweredOn ? MilightAction.on : MilightAction.off
+				let action = poweredOn ? MilightDriver.Action.on : MilightDriver.Action.off
 				driver.executeCommand(mode: .rgbwwcw, action: action, zone: zone)
 				
 			case CharacteristicType.brightness:
@@ -98,6 +98,7 @@ class MilightDelegate:AccessoryDelegate {
 		}
 		
 	}
+	
 	
 }
 

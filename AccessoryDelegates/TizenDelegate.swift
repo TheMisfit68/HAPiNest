@@ -11,108 +11,86 @@ import HAP
 import JVCocoa
 import TizenDriver
 
-// MARK: - Accessory bindings
-extension TizenDelegate:AccessoryDelegate, AccessorySource{
+class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicRunnable{
 	
-	var name: String {
-		self.tvName
+	var name: String{
+		super.tvName
 	}
 	
+	// Accessory binding
 	typealias AccessorySubclass = Accessory.Television
-    
-    func handleCharacteristicChange<T>(accessory:Accessory,
-                                       service: Service,
-                                       characteristic: GenericCharacteristic<T>,
-                                       to value: T?){
-        
-        // Handle Characteristic change depending on its type
-        switch characteristic.type{
-        case CharacteristicType.active:
-            
-            let status = value as! Enums.Active
-            switch status{
-            case .active:
-					powerState = .poweringUp
-            case .inactive:
-					powerState = .poweringDown
-            }
-            
-            
-        case CharacteristicType.activeIdentifier:
-            
-            // Use 'InputSource'-selector to switch channels instead
-            let channelNumber = value as! UInt32
-            switch channelNumber {
-            //            case 11:
-            //                // NetFlix
-            //                let appCommand = TizenCommand(rawValue:"KEY_HDMI")!
-            //
-            //
-            //            case 12:
-            //                // YouTube
-            //                let appCommand = TizenCommand(rawValue:"KEY_HDMI")!
-            
-            default:
-                if let keyCommand = TizenCommand(rawValue:"KEY_\(channelNumber)"){
-                    
-                    let hdmiSourceCommand = TizenCommand(rawValue:"KEY_HDMI")!
-                    queue(commands:[hdmiSourceCommand, keyCommand])
-                }
-            }
-            
-        default:
-            Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
-            
-        }
-		characteristicChanged.set()
-    }
+	var characteristicChanged:Bool = false
 	
-	func writeCharacteristic<CT, PT>(_ characteristic: GenericCharacteristic<CT>,
-								to value: PT){
+	func handleCharacteristicChange<T>(accessory:Accessory,
+									   service: Service,
+									   characteristic: GenericCharacteristic<T>,
+									   to value: T?){
 		
+		// Handle Characteristic change depending on its type
 		switch characteristic.type{
+				
 			case CharacteristicType.active:
 				
-				accessory.television.active.value = value as? Enums.Active
+				let status = value as! Enums.Active
+				switch status{
+					case .active:
+						super.powerOn()
+					case .inactive:
+						super.powerOff()
+				}
+				
+				
+			case CharacteristicType.activeIdentifier:
+				
+				// Use 'InputSource'-selector to switch channels instead
+				let channelNumber = value as! UInt32
+				switch channelNumber {
+						
+					case 11:
+						super.openApp(.Netflix)
+					case 12:
+						super.openApp(.YouTube)
+					case 13:
+						super.openURL("http://192.168.0.10:8000/live?cameraNum=0&viewMethod=0&windowWidth=1920&windowHeight=840&auth=R1VFU1Q6R1VFU1Q=")
+					case 14:
+						super.openURL("http://192.168.0.10:8000/live?cameraNum=2&viewMethod=0&windowWidth=1920&windowHeight=840&auth=R1VFU1Q6R1VFU1Q=")
+					default:
+						super.gotoChannel(Int(channelNumber))
+				}
 				
 			default:
 				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
+				
 		}
+		characteristicChanged.set()
 	}
-	
-}
-
-class TizenDelegate:TizenDriver{
 	
 	// MARK: - State
-	override var powerState:PowerState{
-		
-		get{ return super.powerState }
-		
-		set{
-			super.powerState = newValue
-			if  super.powerState == .poweredOn{
-				writeCharacteristic(accessory.television.active, to: HAP.Enums.Active.active)
-			}else if super.powerState == .poweredOff{
-				writeCharacteristic(accessory.television.active, to: HAP.Enums.Active.inactive)
-			}
-		}
+	public var activeState:Enums.Active? = nil
+	var activeIdentifier:Int? = nil
 	
-	}
-	
-//	public var powerState:PowerState? = nil
-	
-	// Accessory state
-	private var accessoryPowerState:PowerState = .undefined
-	var characteristicChanged:Bool = false
-
 	// Hardware feedback state
-	private var hardwarePowerState:Bool?{
+	private var hardwareActiveState:Enums.Active?{
 		didSet{
-			hardwareFeedbackChanged = (hardwarePowerState != nil) && (oldValue != nil) &&  (hardwarePowerState != oldValue)
+			hardwareFeedbackChanged = (hardwareActiveState != nil) && (oldValue != nil) && (hardwareActiveState != oldValue)
 		}
 	}
 	var hardwareFeedbackChanged:Bool = false
 	
+	func runCycle() {
+				
+		let initialActiveState:Enums.Active? = super.tvIsReachable ? .active : .inactive
+		hardwareActiveState = super.tvIsReachable ? activeState : .inactive
+		
+		reevaluate(&activeState, initialValue: initialActiveState, characteristic: accessory.television.active, hardwareFeedback: hardwareActiveState)
+		reevaluate(&activeIdentifier, characteristic: accessory.television.activeIdentifier, hardwareFeedback: nil)
+		
+		characteristicChanged.reset()
+		hardwareFeedbackChanged.reset()
+	}
+	
 }
+
+
+
 

@@ -43,17 +43,17 @@ extension AccessoryDelegate where Self:PLCClass{
 
 // A Class capable of writing values to a HomeKit-Accessory
 protocol AccessorySource:AccessoryDelegate{
-	
-	var hardwareFeedbackChanged:Bool{get set}
-	
+		
 	associatedtype AccessorySubclass
 	var accessory:AccessorySubclass{get}
+	
+	var hardwareFeedbackChanged:Bool{get set}
 	
 	func reevaluate<PT, CT>(_ property:inout PT?, initialValue:PT?, characteristic:GenericCharacteristic<CT>?, hardwareFeedback:PT?, typeTranslators:((CT)->PT, (PT)->CT)?)
 
 }
 
-extension AccessorySource{
+extension AccessorySource {
 	
 	var accessory:AccessorySubclass{
 		HomeKitServer.shared.mainBridge[name] as! AccessorySubclass
@@ -87,8 +87,9 @@ extension AccessorySource{
 	
 }
 
+// A Class capable of reacting to changes in the field
 protocol CyclicRunnable:AccessorySource{
-	
+		
 	func runCycle()
 	
 }

@@ -1,9 +1,9 @@
 # ToDo for HAPiNest
 ## A personal Home Automation System
 
-- [ ] Create Preference  Window
+- [ ] Check standalone on server
 
-- [ ] Complete driver for Tizen TV
+- [ ] Create Preference Window
 - [ ] Complete driver for Nissan Leaf
 
 - [ ] Add driver for IP Cams
