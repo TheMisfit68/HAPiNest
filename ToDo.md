@@ -1,9 +1,11 @@
 # ToDo for HAPiNest
 ## A personal Home Automation System
 
-- [ ] Check standalone on server
-
-- [ ] Create Preference Window
+- [ ] Create a View/Container and Preference view/container for each module
+- [ ] Create Preference Window that show those views in a their own tab
+- [ ] Refactor JVCocoa to Async Await
+- [ ] Refactor TizenDriver to Async Await
+- [ ] Refactor Milightdriver to Async Await en retest against stalling
 - [ ] Complete driver for Nissan Leaf
 
 - [ ] Add driver for IP Cams
@@ -15,5 +17,5 @@
 ## Longterm OS11
 - [ ] Use gauges in SwiftUI to represent al kinds of numeric data
 
-- [ ] Bundle ClibYASDI as a binary package bij creating a new binary-target for the package (do not includeczip archive in git, upload to seperate server LFS)
+- [ ] Bundle ClibYASDI as a binary package by creating a new binary-target for the package (do not includeczip archive in git, upload to seperate server LFS)
 

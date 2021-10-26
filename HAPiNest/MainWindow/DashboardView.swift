@@ -17,11 +17,11 @@ struct DashBoardView: View {
     
     var body: some View {
 		
-        return TabView {
+        TabView {
             
             ServerView()
                 .tabItem {
-                    Text("HomeKit Server")
+					Label("Homekit Server", systemImage:"server.rack")
                 }
             
             //            if (inverterViewVisible){
@@ -33,7 +33,7 @@ struct DashBoardView: View {
             
             AppState.shared.plc.controlPanel
                 .tabItem {
-                    Text("PLC")
+					Label("PLC", systemImage:"play.circle")
 				}.background(Color.Neumorphic.main)
 
         
