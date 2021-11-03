@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class WindowCovering:PLCClass, AccessoryDelegate, AccessorySource, Parameterizable, CyclicRunnable, PulsOperatedCircuit, Simulateable{
+class WindowCovering:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.WindowCovering
@@ -169,7 +169,7 @@ class WindowCovering:PLCClass, AccessoryDelegate, AccessorySource, Parameterizab
 	
 	
 	// MARK: - PLC Processing
-	func runCycle() {
+	public func runCycle() {
 		
 		reevaluate(&positionState, initialValue: hardwarePositionState,
 				   characteristic:accessory.windowCovering.positionState, hardwareFeedback: hardwarePositionState)

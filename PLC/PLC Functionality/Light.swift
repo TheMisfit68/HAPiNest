@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-public class Light:PLCClass, AccessoryDelegate, AccessorySource, Parameterizable, CyclicRunnable, PulsOperatedCircuit, Simulateable{
+class Light:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
 
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.Lightbulb

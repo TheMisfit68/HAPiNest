@@ -11,7 +11,7 @@ import HAP
 import JVCocoa
 import TizenDriver
 
-class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicRunnable{
+class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPollable{
 	
 	var name: String{
 		super.tvName
@@ -77,7 +77,7 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicRunna
 	}
 	var hardwareFeedbackChanged:Bool = false
 	
-	func runCycle() {
+	func pollCycle() {
 				
 		let initialActiveState:Enums.Active? = super.tvIsReachable ? .active : .inactive
 		hardwareActiveState = super.tvIsReachable ? activeState : .inactive

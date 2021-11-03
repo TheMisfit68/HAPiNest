@@ -15,7 +15,7 @@ import JVCocoa
 
 
 // MARK: - PLC level class
-public class Outlet:PLCClass, AccessoryDelegate, AccessorySource, Parameterizable, CyclicRunnable{
+class Outlet:PLCaccessoryDelegate{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.Outlet
