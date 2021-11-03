@@ -53,7 +53,7 @@ struct HAPiNestApp: App {
 		// Only fire Up PLC after all components are initialized
 		AppState.shared.plc.run()
 		
-		// Start an extra background cycle indepent of the PLCs backroundCycle
+		// Start an extra background cycle indepedent of the PLCs backroundCycle
 		// (to poll for harware changes on behalf of the other type acessoryDelegates)
 		AppState.shared.cyclicPoller.run()
 		

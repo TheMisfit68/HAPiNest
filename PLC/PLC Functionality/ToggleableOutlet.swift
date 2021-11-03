@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-public class ToggleableOutlet:PLCClass, AccessoryDelegate, AccessorySource, Parameterizable, CyclicRunnable, PulsOperatedCircuit, Simulateable{
+class ToggleableOutlet:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.Outlet

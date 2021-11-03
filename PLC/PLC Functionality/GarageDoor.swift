@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class GarageDoor:PLCClass, AccessoryDelegate, AccessorySource, Parameterizable, CyclicRunnable, PulsOperatedCircuit{
+class GarageDoor:PLCaccessoryDelegate, PulsOperatedCircuit{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.GarageDoorOpener.StatelessGarageDoorOpener

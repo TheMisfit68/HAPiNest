@@ -51,6 +51,7 @@
 		DCF031E82687063B005B5E88 /* AppleScriptDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E72687063B005B5E88 /* AppleScriptDriver */; };
 		DCF031EA2687064D005B5E88 /* TizenDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E92687064D005B5E88 /* TizenDriver */; };
 		DCF031EC2687066F005B5E88 /* Awake in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031EB2687066F005B5E88 /* Awake */; };
+		DCF758202731F48200DDA408 /* PLCaccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7581F2731F48200DDA408 /* PLCaccessory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		DCD60D6823B6760000CF2C8A /* HomeKitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeKitLogo.png; sourceTree = "<group>"; };
 		DCD6FDBB25D1AD8D0049A3F5 /* ToDo domotica shortterm.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ToDo domotica shortterm.md"; sourceTree = "<group>"; };
 		DCD9182223B5715000C81EB5 /* PowerInverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerInverter.swift; sourceTree = "<group>"; };
+		DCF7581F2731F48200DDA408 /* PLCaccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLCaccessory.swift; sourceTree = "<group>"; };
 		DCFB546A2683F17500406E12 /* OpenWeatherReporter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OpenWeatherReporter; path = ../OpenWeatherReporter; sourceTree = "<group>"; };
 		DCFB546B2683F1B500406E12 /* SoftPLC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SoftPLC; path = ../SoftPLC; sourceTree = "<group>"; };
 		DCFB546C2683F1EB00406E12 /* AppleScriptDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppleScriptDriver; path = ../Drivers/AppleScriptDriver; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		DC23DF8B24E73F5500DD8371 /* PLC Functionality */ = {
 			isa = PBXGroup;
 			children = (
+				DCF7581F2731F48200DDA408 /* PLCaccessory.swift */,
 				DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */,
 				DC23DF8C24E73F8600DD8371 /* DimmableLight.swift */,
 				DC9EFF2024F312F0001B70EE /* GarageDoor.swift */,
@@ -481,6 +484,7 @@
 				DC4D6DE525713CD40087E51D /* Light.swift in Sources */,
 				DC8B28F52597C77B00266BD3 /* PulsOperatedCircuit.swift in Sources */,
 				DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */,
+				DCF758202731F48200DDA408 /* PLCaccessory.swift in Sources */,
 				DC4D6E0025713D3C0087E51D /* YASDIDelegate.swift in Sources */,
 				DC54B6F12570628700D9169F /* Bridge.swift in Sources */,
 				DC4D6DDF25713CCD0087E51D /* AccessoryDelegate.swift in Sources */,

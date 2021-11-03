@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class Doorlock:PLCClass, AccessoryDelegate, AccessorySource, Parameterizable, CyclicRunnable, PulsOperatedCircuit{
+class Doorlock:PLCaccessoryDelegate, PulsOperatedCircuit{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.LockMechanism

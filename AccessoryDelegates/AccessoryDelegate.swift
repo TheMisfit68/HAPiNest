@@ -88,8 +88,8 @@ extension AccessorySource {
 }
 
 // A Class capable of reacting to changes in the field
-protocol CyclicRunnable:AccessorySource{
+protocol CyclicPollable:AccessorySource{
 		
-	func runCycle()
+	func pollCycle()
 	
 }

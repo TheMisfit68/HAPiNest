@@ -28,17 +28,17 @@ class CyclicPoller{
 		timer.schedule(deadline: .now(), repeating:self.timeInterval)
 		timer.setEventHandler(handler: { [weak self] in
 			
-			self?.runCycle()
+			self?.pollCycle()
 			
 		})
 		return timer
 	}()
 	
-	private func runCycle(){
+	private func pollCycle(){
 		
 		let nonPLCaccessories = MainConfiguration.HomeKit.Accessories.map{$0.1}.filter{!($0 is PLCClass)}
 		nonPLCaccessories.forEach {
-			($0 as? CyclicRunnable)?.runCycle()
+			($0 as? CyclicPollable)?.pollCycle()
 		}
 	}
 	
