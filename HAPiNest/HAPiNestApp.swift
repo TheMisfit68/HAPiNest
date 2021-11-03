@@ -83,7 +83,7 @@ struct HAPiNestApp: App {
 		// PrefereceWindow
 		#if os(macOS)
 		Settings{
-			DashBoardView()
+			PreferencesView()
 		}
 		#endif
 	}

@@ -26,7 +26,7 @@ struct PreferencesView: View {
 					}
 				OpenWeatherSettingsView()
 					.tabItem {
-						Label("OpenWeather", systemImage: "sunrise")
+						Label("OpenWeather", systemImage: "cloud.sun.rain")
 					}
 				SunnyPortalSettingsView()
 					.tabItem {
