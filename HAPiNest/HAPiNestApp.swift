@@ -16,14 +16,7 @@ import ModbusDriver
 
 @main
 struct HAPiNestApp: App {
-	// Single source of truth for the App's state
 	@Environment(\.scenePhase) var scenePhase
-	// TODO: - Add a global keychain instance here
-	// TODO: - Add global app prefences here
-	@StateObject private var appNapController = AppNapController.shared
-	@StateObject private var homekitServer:HomeKitServer = HomeKitServer.shared
-	@StateObject private var cyclicPoller:CyclicPoller = CyclicPoller(timeInterval: 1.0)
-	@StateObject private var plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList, simulator:ModbusSimulator())
 	
 	static var InDeveloperMode:Bool{
 		return (Host.current().localizedName ?? "") == "MacBook Pro"
