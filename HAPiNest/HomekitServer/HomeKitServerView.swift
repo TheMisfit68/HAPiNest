@@ -1,5 +1,5 @@
 //
-//  ServerView.swift
+//  HomeKitServerView.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 24/11/2020.
@@ -9,20 +9,34 @@
 import SwiftUI
 import Neumorphic
 
-struct ServerView: View {
+public struct HomeKitServerView: View {
+	
+	let qrCode:NSImage
 
-    var body: some View {
-
-        return VStack {
+	public var body: some View {
+		
+		VStack {
             HapinestIconView()
-            QRCodeView()
+			QRCodeView(qrCode: Image(nsImage: qrCode))
             Spacer()
         }
         
     }
 }
 
-extension ServerView{
+extension HomeKitServerView{
+	
+	struct HomekitBadgeView: View {
+		var body: some View {
+			Image("HomeKitLogo").resizable()
+				.frame(width: 40, height: 40)
+				.clipShape(Circle())
+				.overlay(Circle()
+							.stroke(Color.gray, lineWidth: 2))
+				.offset(x:50, y:-50)
+				.padding(.bottom, -50)
+		}
+	}
     
     struct HapinestIconView: View {
         var body: some View {
@@ -30,28 +44,19 @@ extension ServerView{
                 Image("DashboardImage")
                     .resizable()
                     .frame(width: 100, height: 100)
-                HomekitBadgeView()
+					HomekitBadgeView()
             }
         }
     }
     
-    struct HomekitBadgeView: View {
-        var body: some View {
-            Image("HomeKitLogo").resizable()
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
-                .overlay(Circle()
-                            .stroke(Color.gray, lineWidth: 2))
-                .offset(x:50, y:-50)
-                .padding(.bottom, -50)
-        }
-    }
-    
     struct QRCodeView: View{
+		
+		let qrCode:Image
+
         @State private var showResetAlert: Bool = false
         var body: some View {
             return VStack {
-                Image(nsImage:HomeKitServer.shared.mainBridge.setupQRCode.asNSImage!)
+				qrCode
                 Text("Scan the code above using your iPhone to pair it with the")
                 Text(HomeKitServer.shared.mainBridge.name).bold().font(.system(size: 18))
 				Text("(or enter setupcode \(HomeKitServer.shared.mainBridge.setupCode))")
@@ -81,8 +86,10 @@ extension ServerView{
 }
 
 // MARK: - Previews
-struct ServerView_Previews: PreviewProvider {
+#if DEBUG
+struct HomeKitServerView_Previews: PreviewProvider {
     static var previews: some View {
-        ServerView()
+		HomeKitServerView.preview
     }
 }
+#endif

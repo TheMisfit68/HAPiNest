@@ -1,62 +1,53 @@
 //
-//  ContentView.swift
-//  testviewx
+//  DashboardView.swift
 //
 //  Created by Jan Verrept on 04/12/2020.
 //  Copyright © 2020 Jan Verrept. All rights reserved.
 //
 
 import SwiftUI
-import Neumorphic
-//import YASDIDriver
 import SoftPLC
-import JVCocoa
+struct DashboardView: View {
+	
+	let serverView:HomeKitServerView
+	let plcView:SoftPLCView
+	// TODO: - Implement Inverter Display again
+	// let inverterView:
 
-struct DashBoardView: View {
-//      @State var inverterViewVisible = (SMAInverter.OnlineInverters.count > 0)
-    
-    var body: some View {
+	var body: some View {
 		
-        TabView {
-            
-            ServerView()
-                .tabItem {
+		TabView {
+			
+			serverView
+				.tabItem {
 					Label("Homekit Server", systemImage:"server.rack")
-                }
-            
-            //            if (inverterViewVisible){
-//            SMAInverter.OnlineInverters.first?.display.frame(width: nil, height: 120, alignment: .center)
-//                .tabItem {
-//                    Text("Solar panels")
-//                }
-            //            }
-            
-            AppState.shared.plc.controlPanel
-                .tabItem {
+				}
+			
+			//            if (inverterViewVisible){
+			//            SMAInverter.OnlineInverters.first?.display.frame(width: nil, height: 120, alignment: .center)
+			//                .tabItem {
+			//                    		Label("SolarPanels", systemImage:"sun.max")
+			//                }
+			//            }
+			
+			plcView
+				.tabItem {
 					Label("PLC", systemImage:"play.circle")
 				}.background(Color.Neumorphic.main)
-
-        
-        }
-        .padding()
-        .background(Color.Neumorphic.main)
-    }
-    
+			
+			
+		}
+	}
 }
 
 
 // MARK: - Previews
-struct DashBoardView_Previews: PreviewProvider {
+#if DEBUG
+struct DashboardView_Previews: PreviewProvider {
 
-    static var previews: some View {
-        
-        Group {
-            DashBoardView()
-              .environment(\.colorScheme, .light)
+	static var previews: some View {
 
-            DashBoardView()
-              .environment(\.colorScheme, .dark)
-
-        }
-    }
+		return	DashboardView.preview
+	}
 }
+#endif
