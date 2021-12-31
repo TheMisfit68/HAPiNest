@@ -1,10 +1,11 @@
 # ToDo for HAPiNest
 ## A personal Home Automation System
 
+
+
 - [ ] Create a View/Container and Preference view/container for each module
 - [ ] Create Preference Window that show those views in a their own tab
-- [ ] Refactor JVCocoa to Async Await
-- [ ] Refactor TizenDriver to Async Await
+- [ ] Refactor TizenDriver/Websocket to Async Await
 - [ ] Refactor Milightdriver to Async Await en retest against stalling
 - [ ] Complete driver for Nissan Leaf
 

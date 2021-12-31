@@ -30,9 +30,10 @@
 		DC54B6C22570586E00D9169F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC54B6C12570586E00D9169F /* Assets.xcassets */; };
 		DC54B6F12570628700D9169F /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFCB79A2381AFEB0066E00B /* Bridge.swift */; };
 		DC54B6F42570628B00D9169F /* HomeKitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */; };
-		DC54B6F72570628E00D9169F /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* ServerView.swift */; };
+		DC54B6F72570628E00D9169F /* HomeKitServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* HomeKitServerView.swift */; };
 		DC54B6FD2570686D00D9169F /* PLCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */; };
 		DC54FA9D25B1207D00F9334C /* YASDIaccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54FA9C25B1207D00F9334C /* YASDIaccessory.swift */; };
+		DC58BF7F277DCAE200046BA4 /* DashboardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC58BF7E277DCAE200046BA4 /* DashboardPreview.swift */; };
 		DC746D7325ACA97A00B33314 /* SprinklerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D7225ACA97A00B33314 /* SprinklerAccessory.swift */; };
 		DC846E3A26D996E9002CEDFB /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC846E3926D996E9002CEDFB /* JVCocoa */; };
 		DC8B28F52597C77B00266BD3 /* PulsOperatedCircuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8B28F42597C77B00266BD3 /* PulsOperatedCircuit.swift */; };
@@ -44,6 +45,7 @@
 		DC90DA682732817000068839 /* SunnyPortalSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA622732817000068839 /* SunnyPortalSettingsView.swift */; };
 		DC90DA692732817000068839 /* OpenWeatherSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA632732817000068839 /* OpenWeatherSettingsView.swift */; };
 		DC90DA6C2732828200068839 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA6B2732828200068839 /* DashboardView.swift */; };
+		DC9753AF277DBCC000ED1C6F /* HomeKitServerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9753AE277DBCC000ED1C6F /* HomeKitServerPreview.swift */; };
 		DCA37CF926BB29EF003CC3BF /* HAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA37CF826BB29EF003CC3BF /* HAPTests.swift */; };
 		DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */; };
 		DCC9603D2670305000FB84BC /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = DCC9603C2670305000FB84BC /* Documentation.docc */; };
@@ -82,7 +84,7 @@
 		DC23DF9224E7400D00DD8371 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
 		DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLCConfiguration.swift; sourceTree = "<group>"; };
 		DC3498A726C0346E002D214F /* CyclicPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclicPoller.swift; sourceTree = "<group>"; };
-		DC3626EF256D9B0800F0AC35 /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
+		DC3626EF256D9B0800F0AC35 /* HomeKitServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServerView.swift; sourceTree = "<group>"; };
 		DC4D0CCF25ADEE9900F89989 /* Points of attention.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Points of attention.md"; sourceTree = "<group>"; };
 		DC4D6DD325710B410087E51D /* MainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguration.swift; sourceTree = "<group>"; };
 		DC4E82B725AD93FA00A6043E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		DC54B6C72570586E00D9169F /* HAPiNest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HAPiNest.entitlements; sourceTree = "<group>"; };
 		DC54FA9C25B1207D00F9334C /* YASDIaccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YASDIaccessory.swift; sourceTree = "<group>"; };
 		DC58B388268BBBA600B87177 /* SiriDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SiriDriver; path = ../Drivers/SiriDriver; sourceTree = "<group>"; };
+		DC58BF7E277DCAE200046BA4 /* DashboardPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPreview.swift; sourceTree = "<group>"; };
 		DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenDelegate.swift; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC746D7225ACA97A00B33314 /* SprinklerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprinklerAccessory.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		DC90DA632732817000068839 /* OpenWeatherSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherSettingsView.swift; sourceTree = "<group>"; };
 		DC90DA6B2732828200068839 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		DC95E18526BB1A12009D8BDD /* HAP */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HAP; path = "../../../../Third Party Code/HAP"; sourceTree = "<group>"; };
+		DC9753AE277DBCC000ED1C6F /* HomeKitServerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServerPreview.swift; sourceTree = "<group>"; };
 		DC9A493F253F97820041DF0B /* SmartSprinklerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerDriver.swift; sourceTree = "<group>"; };
 		DC9EFF2024F312F0001B70EE /* GarageDoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoor.swift; sourceTree = "<group>"; };
 		DC9EFF2224F3131F001B70EE /* DoorLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLock.swift; sourceTree = "<group>"; };
@@ -241,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				DCCBA6FC23755BB0002F6854 /* HomeKitServer.swift */,
-				DC3626EF256D9B0800F0AC35 /* ServerView.swift */,
+				DC3626EF256D9B0800F0AC35 /* HomeKitServerView.swift */,
 				DCFCB79A2381AFEB0066E00B /* Bridge.swift */,
 				DC3498A726C0346E002D214F /* CyclicPoller.swift */,
 			);
@@ -261,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				DC4E82B725AD93FA00A6043E /* Preview Assets.xcassets */,
+				DC9753AE277DBCC000ED1C6F /* HomeKitServerPreview.swift */,
+				DC58BF7E277DCAE200046BA4 /* DashboardPreview.swift */,
 			);
 			name = "Preview Content";
 			path = "HAPiNest/Preview Content";
@@ -504,9 +510,10 @@
 				DCD1231025ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift in Sources */,
 				DC4D6DF425713D2F0087E51D /* SmartSprinklerDriver.swift in Sources */,
 				DC4D6DFA25713D350087E51D /* AppleScriptDriver.swift in Sources */,
-				DC54B6F72570628E00D9169F /* ServerView.swift in Sources */,
+				DC54B6F72570628E00D9169F /* HomeKitServerView.swift in Sources */,
 				DC746D7325ACA97A00B33314 /* SprinklerAccessory.swift in Sources */,
 				DC3498A826C0346E002D214F /* CyclicPoller.swift in Sources */,
+				DC9753AF277DBCC000ED1C6F /* HomeKitServerPreview.swift in Sources */,
 				DC8D0F69259DAA6A00DD04E4 /* Switch.swift in Sources */,
 				DCC9603D2670305000FB84BC /* Documentation.docc in Sources */,
 				DCCBE29C25B8B7D800BAED50 /* ToggleableOutlet.swift in Sources */,
@@ -528,6 +535,7 @@
 				DC54B6F12570628700D9169F /* Bridge.swift in Sources */,
 				DC4D6DDF25713CCD0087E51D /* AccessoryDelegate.swift in Sources */,
 				DC4D6DF725713D320087E51D /* SiriDriver.swift in Sources */,
+				DC58BF7F277DCAE200046BA4 /* DashboardPreview.swift in Sources */,
 				DC4D6DD425710B410087E51D /* MainConfiguration.swift in Sources */,
 				DC4D6E0E25713E720087E51D /* MilightDelegate.swift in Sources */,
 				DC90DA6C2732828200068839 /* DashboardView.swift in Sources */,
