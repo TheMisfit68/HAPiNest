@@ -18,6 +18,7 @@ import SiriDriver
 public class HomeKitServer:Singleton{
     
     public static var shared: HomeKitServer = HomeKitServer()
+	public var dashboard:HomeKitServerView?
 	public var name:String
     private var HAPserver:Server!
     
@@ -30,6 +31,7 @@ public class HomeKitServer:Singleton{
 			}
 			#endif
 			HAPserver = try? Server(device: mainBridge, listenPort: serverPort)
+			dashboard = HomeKitServerView(qrCode: mainBridge.setupQRCode.asNSImage!)
         }
     }
     

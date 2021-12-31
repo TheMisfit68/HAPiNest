@@ -18,54 +18,70 @@ import ModbusDriver
 struct HAPiNestApp: App {
 	@Environment(\.scenePhase) var scenePhase
 	
+	let appNapController: AppNapController = AppNapController.shared
+	
+	let homekitServer:HomeKitServer = HomeKitServer.shared
+	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList, simulator:ModbusSimulator())
+	let cyclicPoller:CyclicPoller = CyclicPoller(timeInterval: 1.0)
+	
 	static var InDeveloperMode:Bool{
 		return (Host.current().localizedName ?? "") == "MacBook Pro"
 	}
 	
 	init() {
 		
-		AppState.shared.plc.plcObjects = MainConfiguration.PLC.PLCobjects
+		plc.plcObjects = MainConfiguration.PLC.PLCobjects
 		
 		var bridgename = MainConfiguration.HomeKit.BridgeName
 		var setupCode = MainConfiguration.HomeKit.BridgeSetupCode
 		var configFile = MainConfiguration.HomeKit.BridgeConfigFile
-		#if DEBUG
+#if DEBUG
 		if HAPiNestApp.InDeveloperMode{
 			bridgename 	= "development\(bridgename)"
 			setupCode 	= "012-34-567"
 			configFile 	= "development\(configFile)"
 		}
-		#endif
+#endif
 		
-		AppState.shared.homekitServer.mainBridge = Bridge(
+		homekitServer.mainBridge = Bridge(
 			name:bridgename,
 			setupCode:setupCode,
 			accessories: MainConfiguration.HomeKit.Accessories.map{$0.0},
 			configfileName: configFile
 		)
-
-		#if DEBUG
-		AppState.shared.plc.executionType = HAPiNestApp.InDeveloperMode ? .simulated(withHardware:true) : .normal
-		#else
-		AppState.shared.plc.executionType = .normal
-		#endif
+		
+#if DEBUG
+		if HAPiNestApp.InDeveloperMode{
+			plc.toggleSimulator(true)
+			plc.toggleHardwareSimulation(true)
+		}else{
+			plc.toggleSimulator(false)
+		}
+#else
+		plc.toggleSimulator(false)
+#endif
 		
 		// Only fire Up PLC after all components are initialized
-		AppState.shared.plc.run()
+		plc.run()
 		
 		// Start an extra background cycle indepedent of the PLCs backroundCycle
 		// (to poll for harware changes on behalf of the other type acessoryDelegates)
-		AppState.shared.cyclicPoller.run()
+		cyclicPoller.run()
 		
 	}
 	
 	
 	var body: some Scene {
 		WindowGroup("HAPiNest dashboard 🛋") {
-			DashBoardView()
-				.onAppear(perform: {
-					//                    AppState.shared.homekitServer.leafDriver.batteryChecker.getBatteryStatus()
-				})
+			DashboardView(
+				serverView: homekitServer.dashboard!,
+				plcView: plc.controlPanel
+			)
+			.padding()
+			.background(Color.Neumorphic.main)
+			.onAppear(perform: {
+				//                    AppState.shared.homekitServer.leafDriver.batteryChecker.getBatteryStatus()
+			})
 		}
 		.onChange(of: scenePhase) { newScenePhase in
 			switch newScenePhase {
@@ -81,27 +97,13 @@ struct HAPiNestApp: App {
 		}
 		
 		// PrefereceWindow
-		#if os(macOS)
+#if os(macOS)
 		Settings{
 			PreferencesView()
 		}
-		#endif
+#endif
 	}
 	
 }
 
-// In Apps with a swiftUI lifecyle,
-// APP is a struct wich can't be presented as a singleton and therefore that can't be referenced globally
-// Appstate however is a singleton and therefore can get referenced globally
-class AppState:Singleton{
-	
-	static let shared:AppState = AppState()
-	let appNapController: AppNapController = AppNapController.shared
-	
-	let homekitServer:HomeKitServer = HomeKitServer.shared
-	let cyclicPoller:CyclicPoller = CyclicPoller(timeInterval: 1.0)
-	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList, simulator:ModbusSimulator())
-	
-	private init(){}
-}
 
