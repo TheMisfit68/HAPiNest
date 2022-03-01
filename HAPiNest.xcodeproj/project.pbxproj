@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC0719DB27CEBF0700AF0D68 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC0719DA27CEBF0700AF0D68 /* HAP */; };
 		DC0CA92C268BBD0700E5AB06 /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC0CA92B268BBD0700E5AB06 /* MilightDriver */; };
-		DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC2C19BE26BB3BD400A3AB83 /* HAP */; };
 		DC3498A826C0346E002D214F /* CyclicPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3498A726C0346E002D214F /* CyclicPoller.swift */; };
 		DC4D6DD425710B410087E51D /* MainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D6DD325710B410087E51D /* MainConfiguration.swift */; };
 		DC4D6DDF25713CCD0087E51D /* AccessoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD428D24FAB5A8000320E0 /* AccessoryDelegate.swift */; };
@@ -52,7 +52,6 @@
 		DCCBE29C25B8B7D800BAED50 /* ToggleableOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCBE29B25B8B7D800BAED50 /* ToggleableOutlet.swift */; };
 		DCD1231025ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1230F25ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift */; };
 		DCD592F9270A6C2600882387 /* HAPiNestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD592F8270A6C2600882387 /* HAPiNestApp.swift */; };
-		DCDC9CD0269E0F2000D52BBE /* SiriDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCDC9CCF269E0F2000D52BBE /* SiriDriver */; };
 		DCF031E226868C87005B5E88 /* ModbusDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E126868C87005B5E88 /* ModbusDriver */; };
 		DCF031E426868C8B005B5E88 /* LeafDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E326868C8B005B5E88 /* LeafDriver */; };
 		DCF031E62687061B005B5E88 /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E52687061B005B5E88 /* SoftPLC */; };
@@ -93,7 +92,6 @@
 		DC54B6C62570586E00D9169F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC54B6C72570586E00D9169F /* HAPiNest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HAPiNest.entitlements; sourceTree = "<group>"; };
 		DC54FA9C25B1207D00F9334C /* YASDIaccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YASDIaccessory.swift; sourceTree = "<group>"; };
-		DC58B388268BBBA600B87177 /* SiriDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SiriDriver; path = ../Drivers/SiriDriver; sourceTree = "<group>"; };
 		DC58BF7E277DCAE200046BA4 /* DashboardPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPreview.swift; sourceTree = "<group>"; };
 		DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenDelegate.swift; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
@@ -142,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */,
+				DC0719DB27CEBF0700AF0D68 /* HAP in Frameworks */,
 				DCF031E426868C8B005B5E88 /* LeafDriver in Frameworks */,
 				DC846E3A26D996E9002CEDFB /* JVCocoa in Frameworks */,
 				DCF031EA2687064D005B5E88 /* TizenDriver in Frameworks */,
@@ -150,7 +148,6 @@
 				DCF031E62687061B005B5E88 /* SoftPLC in Frameworks */,
 				DC0CA92C268BBD0700E5AB06 /* MilightDriver in Frameworks */,
 				DCF031E82687063B005B5E88 /* AppleScriptDriver in Frameworks */,
-				DCDC9CD0269E0F2000D52BBE /* SiriDriver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +369,6 @@
 				DCFB546F2683F25D00406E12 /* ModbusDriver */,
 				DCFB54702683F28400406E12 /* SiriDriver */,
 				DCFB54712683F2A800406E12 /* TizenDriver */,
-				DC58B388268BBBA600B87177 /* SiriDriver */,
 				DC7FB14026C99142003CAFB0 /* JVCocoa */,
 			);
 			name = Packages;
@@ -401,9 +397,8 @@
 				DCF031E72687063B005B5E88 /* AppleScriptDriver */,
 				DCF031E92687064D005B5E88 /* TizenDriver */,
 				DC0CA92B268BBD0700E5AB06 /* MilightDriver */,
-				DCDC9CCF269E0F2000D52BBE /* SiriDriver */,
-				DC2C19BE26BB3BD400A3AB83 /* HAP */,
 				DC846E3926D996E9002CEDFB /* JVCocoa */,
+				DC0719DA27CEBF0700AF0D68 /* HAP */,
 			);
 			productName = HAPiNest2;
 			productReference = DC54B6BB2570586D00D9169F /* HAPiNest.app */;
@@ -456,7 +451,7 @@
 			);
 			mainGroup = DC06CD182354E42A00C8E9F9;
 			packageReferences = (
-				DC71671D27A6C83A00D16745 /* XCRemoteSwiftPackageReference "HAP" */,
+				DC0719D927CEBF0700AF0D68 /* XCRemoteSwiftPackageReference "HAP" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
@@ -839,9 +834,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DC71671D27A6C83A00D16745 /* XCRemoteSwiftPackageReference "HAP" */ = {
+		DC0719D927CEBF0700AF0D68 /* XCRemoteSwiftPackageReference "HAP" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Bouke/HAP.git";
+			repositoryURL = "https://github.com/TheMisfit68/HAP.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -850,21 +845,18 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DC0719DA27CEBF0700AF0D68 /* HAP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC0719D927CEBF0700AF0D68 /* XCRemoteSwiftPackageReference "HAP" */;
+			productName = HAP;
+		};
 		DC0CA92B268BBD0700E5AB06 /* MilightDriver */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MilightDriver;
 		};
-		DC2C19BE26BB3BD400A3AB83 /* HAP */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HAP;
-		};
 		DC846E3926D996E9002CEDFB /* JVCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = JVCocoa;
-		};
-		DCDC9CCF269E0F2000D52BBE /* SiriDriver */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SiriDriver;
 		};
 		DCF031E126868C87005B5E88 /* ModbusDriver */ = {
 			isa = XCSwiftPackageProductDependency;
