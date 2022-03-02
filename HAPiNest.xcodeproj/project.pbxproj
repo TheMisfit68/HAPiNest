@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC0719DB27CEBF0700AF0D68 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC0719DA27CEBF0700AF0D68 /* HAP */; };
 		DC0CA92C268BBD0700E5AB06 /* MilightDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DC0CA92B268BBD0700E5AB06 /* MilightDriver */; };
+		DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC2C19BE26BB3BD400A3AB83 /* HAP */; };
 		DC3498A826C0346E002D214F /* CyclicPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3498A726C0346E002D214F /* CyclicPoller.swift */; };
 		DC4D6DD425710B410087E51D /* MainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D6DD325710B410087E51D /* MainConfiguration.swift */; };
 		DC4D6DDF25713CCD0087E51D /* AccessoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD428D24FAB5A8000320E0 /* AccessoryDelegate.swift */; };
@@ -141,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0719DB27CEBF0700AF0D68 /* HAP in Frameworks */,
+				DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */,
 				DCF031E426868C8B005B5E88 /* LeafDriver in Frameworks */,
 				DC846E3A26D996E9002CEDFB /* JVCocoa in Frameworks */,
 				DCF031EA2687064D005B5E88 /* TizenDriver in Frameworks */,
@@ -397,6 +399,7 @@
 				DCF031E72687063B005B5E88 /* AppleScriptDriver */,
 				DCF031E92687064D005B5E88 /* TizenDriver */,
 				DC0CA92B268BBD0700E5AB06 /* MilightDriver */,
+				DC2C19BE26BB3BD400A3AB83 /* HAP */,
 				DC846E3926D996E9002CEDFB /* JVCocoa */,
 				DC0719DA27CEBF0700AF0D68 /* HAP */,
 			);
@@ -853,6 +856,10 @@
 		DC0CA92B268BBD0700E5AB06 /* MilightDriver */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MilightDriver;
+		};
+		DC2C19BE26BB3BD400A3AB83 /* HAP */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HAP;
 		};
 		DC846E3926D996E9002CEDFB /* JVCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
