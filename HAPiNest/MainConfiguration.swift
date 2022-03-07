@@ -25,6 +25,7 @@ struct MainConfiguration{
         static let BridgeName = "NestBridge"
         static let BridgeSetupCode = "456-77-890"
 		static let BridgeConfigFile = "configuration.json"
+		static let MilightWifiBoxDriver = MilightDriverV6(ipAddress:"192.168.0.52")
         
         static let PLCobjects = PLC.PLCobjects.mapValues{$0 as! AccessoryDelegate}
         static let Accessories:[ (Accessory,AccessoryDelegate?) ] = [
@@ -89,8 +90,8 @@ struct MainConfiguration{
             
             
             // MARK: - Smart Lights
-			( Accessory.Lightbulb(info: Service.Info(name: "Balk", serialNumber: "10000", manufacturer: "Milight"), type: .color, isDimmable: true),  MilightDelegate(name: "Balk", driver:MilightDriverV6(ipAddress:"192.168.0.52"), zone: .zone01) ),
-			( Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "10002", manufacturer: "Milight"), type: .color, isDimmable: true),     MilightDelegate(name: "UFO", driver:MilightDriverV6(ipAddress:"192.168.0.52"), zone: .zone02) ),
+			( Accessory.Lightbulb(info: Service.Info(name: "Balk", serialNumber: "10000", manufacturer: "Milight"), type: .color, isDimmable: true),  MilightDelegate(name: "Balk", driver: MilightWifiBoxDriver, zone: .zone01) ),
+			( Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "10002", manufacturer: "Milight"), type: .color, isDimmable: true),     MilightDelegate(name: "UFO", driver: MilightWifiBoxDriver, zone: .zone02) ),
 
             
             // MARK: - T.V.s
