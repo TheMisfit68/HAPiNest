@@ -79,9 +79,10 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPolla
 	
 	func pollCycle() {
 		
+		// Constantly check the T.V.'s reachability
 		let reachability = super.tvIsReachable
 
-		// Don't eveluate the hardwarestate during (unstable) power transitions
+		// But don't replicate it into the hardwareActiveState during (unstable) power transitions
 		if (powerState != .poweringUp) && (powerState != .poweringDown){
 			hardwareActiveState = reachability ? .active : .inactive
 		}
