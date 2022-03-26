@@ -51,9 +51,9 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPolla
 					case 12:
 						super.openApp(.YouTube)
 					case 13:
-						super.openURL("http://192.168.0.10:8000/live?cameraNum=0&viewMethod=0&windowWidth=1920&windowHeight=840&auth=R1VFU1Q6R1VFU1Q=")
+						super.openURL("http://192.168.0.10:8001/live?cameraNum=0&viewMethod=0&windowWidth=1920&windowHeight=840&auth=R1VFU1Q6R1VFU1Q=")
 					case 14:
-						super.openURL("http://192.168.0.10:8000/live?cameraNum=2&viewMethod=0&windowWidth=1920&windowHeight=840&auth=R1VFU1Q6R1VFU1Q=")
+						super.openURL("http://192.168.0.10:8001/live?cameraNum=2&viewMethod=0&windowWidth=1920&windowHeight=840&auth=R1VFU1Q6R1VFU1Q=")
 					default:
 						super.gotoChannel(Int(channelNumber))
 				}
@@ -70,19 +70,26 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPolla
 	var activeIdentifier:Int? = nil
 	
 	// Hardware feedback state
+	//FIXME: - After hardwarestate was COMPLETELY off, driver doesn't reconnect
+	
+	
 	private var hardwareActiveState:Enums.Active?{
 		didSet{
-			hardwareFeedbackChanged = (hardwareActiveState != nil) && (oldValue != nil) && (hardwareActiveState != oldValue)
+			hardwareFeedbackChanged.set(  (hardwareActiveState != nil) && (oldValue != nil) && (hardwareActiveState != oldValue) )
 		}
 	}
 	var hardwareFeedbackChanged:Bool = false
 	
 	func pollCycle() {
-				
-		let initialActiveState:Enums.Active? = super.tvIsReachable ? .active : .inactive
-		hardwareActiveState = super.tvIsReachable ? activeState : .inactive
 		
-		reevaluate(&activeState, initialValue: initialActiveState, characteristic: accessory.television.active, hardwareFeedback: hardwareActiveState)
+		// Don't eveluate the (unstable) hardwarestate during power transitions
+		if (powerState == .poweringUp) || (powerState == .poweringDown){
+			_ = super.tvIsReachable
+		}else{
+			hardwareActiveState = super.tvIsReachable ? .active : .inactive
+		}
+		
+		reevaluate(&activeState, characteristic: accessory.television.active, hardwareFeedback: hardwareActiveState)
 		reevaluate(&activeIdentifier, characteristic: accessory.television.activeIdentifier, hardwareFeedback: nil)
 		
 		characteristicChanged.reset()
@@ -90,7 +97,4 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPolla
 	}
 	
 }
-
-
-
 
