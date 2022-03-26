@@ -17,14 +17,27 @@ import LeafDriver
 //import YASDIDriver
 
 struct MainConfiguration{
+	
+	static var InDeveloperMode:Bool{
+		return (Host.current().localizedName ?? "") == "MacBook Pro"
+	}
     
     struct HomeKit{
         
+#if DEBUG
+		static let ServerName:String = "DevHAPiNestServer"
+		static let ServerPort = 8123
+		static let BridgeName = "DevelopmentNestBridge"
+		static let BridgeSetupCode = "012-34-567"
+		static let BridgeConfigFile = "DevelopmentConfiguration.json"
+#else
 		static let ServerName:String = "HAPiNestServer"
 		static let ServerPort = 8888
-        static let BridgeName = "NestBridge"
-        static let BridgeSetupCode = "456-77-890"
+		static let BridgeName = "NestBridge"
+		static let BridgeSetupCode = "456-77-890"
 		static let BridgeConfigFile = "configuration.json"
+#endif
+		
 		static let MilightWifiBoxDriver = MilightDriverV6(ipAddress:"192.168.0.52")
         
         static let PLCobjects = PLC.PLCobjects.mapValues{$0 as! AccessoryDelegate}
@@ -53,10 +66,10 @@ struct MainConfiguration{
             
             
             // Window coverings
-            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")),			PLCobjects["Keuken Screens"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),			PLCobjects["Living Screens"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),		PLCobjects["Slaapkamer Screen"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),				PLCobjects["Vide Screen"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")),		PLCobjects["Keuken Screens"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),		PLCobjects["Living Screens"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),	PLCobjects["Slaapkamer Screen"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),			PLCobjects["Vide Screen"] ),
             ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Rollekes", serialNumber: "00504")),		PLCobjects["Keuken Rollekes"] ),
             ( Accessory.WindowCovering(info: Service.Info(name: "Living Rollekes", serialNumber: "00505")),		PLCobjects["Living Rollekes"] ),
             ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolleke", serialNumber: "00506")),	PLCobjects["Slaapkamer Rolleke"] ),
@@ -98,23 +111,24 @@ struct MainConfiguration{
             // Use 'InputSource'-selectors to switch channels instead
            (  Accessory.Television(info: Service.Info(name: "T.V.", serialNumber: "20000", manufacturer: "Samsung"),
                                        inputs: [
-                                        ("homeScreen", .hdmi),
-                                        ("Eén", .hdmi),
-                                        ("Q2", .hdmi),
+                                        ("HomeScreen", .hdmi),
+										("Eén", .hdmi),
+                                        ("BBC First", .hdmi),
+                                        ("BBC Entertainment", .hdmi),
+                                        ("PLAY 4", .hdmi),
+                                        ("PLAY 5", .hdmi),
+                                        ("PLAY 6", .hdmi),
+                                        ("PLAY 7", .hdmi),
+                                        ("FOX", .hdmi),
+                                        ("RTV", .hdmi),
+                                        ("CANVAS", .hdmi),
                                         ("VTM", .hdmi),
-                                        ("Vier", .hdmi),
-                                        ("Vijf", .hdmi),
-                                        ("Zes", .hdmi),
-                                        ("Canvas", .hdmi),
-                                        ("Discovery", .hdmi),
-                                        ("National Geographic", .hdmi),
-                                        ("Animal planet", .hdmi),
                                         ("Netflix", .application),
                                         ("YouTube", .application),
 										("Camera straat", .application),
 										("Camera tuin", .application)
-                                       ]),
-              TizenDelegate(tvName:"T.V.", macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: "HAPiNestServer")
+									   ]),
+              TizenDelegate(tvName:"T.V.", macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: ServerName)
                 
             ),
             
@@ -135,7 +149,7 @@ struct MainConfiguration{
                                          ("YouTube", .application),
 										 ("Camera straat", .application),
 										 ("Camera tuin", .application)                                        ]),
-               TizenDelegate(tvName:"T.V. Boven", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer")
+               TizenDelegate(tvName:"T.V. Boven", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.101)", port: 8002, deviceName: ServerName)
                  
              ),
             

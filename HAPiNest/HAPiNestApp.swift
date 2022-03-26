@@ -24,24 +24,15 @@ struct HAPiNestApp: App {
 	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList, simulator:ModbusSimulator())
 	let cyclicPoller:CyclicPoller = CyclicPoller(timeInterval: 1.0)
 	
-	static var InDeveloperMode:Bool{
-		return (Host.current().localizedName ?? "") == "MacBook Pro"
-	}
+	
 	
 	init() {
 		
 		plc.plcObjects = MainConfiguration.PLC.PLCobjects
 		
-		var bridgename = MainConfiguration.HomeKit.BridgeName
-		var setupCode = MainConfiguration.HomeKit.BridgeSetupCode
-		var configFile = MainConfiguration.HomeKit.BridgeConfigFile
-#if DEBUG
-		if HAPiNestApp.InDeveloperMode{
-			bridgename 	= "development\(bridgename)"
-			setupCode 	= "012-34-567"
-			configFile 	= "development\(configFile)"
-		}
-#endif
+		let bridgename = MainConfiguration.HomeKit.BridgeName
+		let setupCode = MainConfiguration.HomeKit.BridgeSetupCode
+		let configFile = MainConfiguration.HomeKit.BridgeConfigFile
 		
 		homekitServer.mainBridge = Bridge(
 			name:bridgename,
@@ -51,12 +42,9 @@ struct HAPiNestApp: App {
 		)
 		
 #if DEBUG
-		if HAPiNestApp.InDeveloperMode{
-			plc.toggleSimulator(true)
-			plc.toggleHardwareSimulation(true)
-		}else{
-			plc.toggleSimulator(false)
-		}
+		plc.toggleSimulator(true)
+		plc.toggleHardwareSimulation(true)
+		
 #else
 		plc.toggleSimulator(false)
 #endif
