@@ -70,9 +70,6 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPolla
 	var activeIdentifier:Int? = nil
 	
 	// Hardware feedback state
-	//FIXME: - After hardwarestate was COMPLETELY off, driver doesn't reconnect
-	
-	
 	private var hardwareActiveState:Enums.Active?{
 		didSet{
 			hardwareFeedbackChanged.set(  (hardwareActiveState != nil) && (oldValue != nil) && (hardwareActiveState != oldValue) )
