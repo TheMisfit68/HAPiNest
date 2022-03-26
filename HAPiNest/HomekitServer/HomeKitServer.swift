@@ -24,17 +24,12 @@ public class HomeKitServer:Singleton{
     
     var mainBridge:Bridge!{
         didSet{
-			var serverPort = MainConfiguration.HomeKit.ServerPort
-			#if DEBUG
-			if HAPiNestApp.InDeveloperMode{
-				serverPort = 8123
-			}
-			#endif
+			let serverPort = MainConfiguration.HomeKit.ServerPort
 			HAPserver = try? Server(device: mainBridge, listenPort: serverPort)
 			dashboard = HomeKitServerView(qrCode: mainBridge.setupQRCode.asNSImage!)
         }
     }
-    
+
     let siriDriver = SiriDriver(language: .flemish)
     let appleScripTDriver = AppleScriptDriver()
     
@@ -46,10 +41,7 @@ public class HomeKitServer:Singleton{
     private init(){
 		self.name = MainConfiguration.HomeKit.ServerName
 		#if DEBUG
-		if HAPiNestApp.InDeveloperMode{
-			self.name = "Development\(self.name)"
 			AppController(name: "Home", location: .systemApps).startIfInstalled()
-		}
 		#endif
         Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server \(self.name)...")
 //      let _ = SMAInverter.CreateInverters()
