@@ -82,11 +82,11 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPolla
 	
 	func pollCycle() {
 		
-		// Don't eveluate the (unstable) hardwarestate during power transitions
-		if (powerState == .poweringUp) || (powerState == .poweringDown){
-			_ = super.tvIsReachable
-		}else{
-			hardwareActiveState = super.tvIsReachable ? .active : .inactive
+		let reachability = super.tvIsReachable
+
+		// Don't eveluate the hardwarestate during (unstable) power transitions
+		if (powerState != .poweringUp) && (powerState != .poweringDown){
+			hardwareActiveState = reachability ? .active : .inactive
 		}
 		
 		reevaluate(&activeState, characteristic: accessory.television.active, hardwareFeedback: hardwareActiveState)
