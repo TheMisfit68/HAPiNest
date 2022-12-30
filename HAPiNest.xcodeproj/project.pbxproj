@@ -213,7 +213,7 @@
 				DCFD428D24FAB5A8000320E0 /* AccessoryDelegate.swift */,
 				DC197CAA24D9A74300C07E90 /* MilightDelegate.swift */,
 				DC5A4C2324D9A952001CF95B /* TizenDelegate.swift */,
-				DCD122F825ACD5E100060708 /* Deprecated Delegates */,
+				DCD122F825ACD5E100060708 /* Deprecated (archived) Delegates */,
 			);
 			path = AccessoryDelegates;
 			sourceTree = "<group>";
@@ -328,7 +328,7 @@
 			path = Iconset;
 			sourceTree = "<group>";
 		};
-		DCD122F825ACD5E100060708 /* Deprecated Delegates */ = {
+		DCD122F825ACD5E100060708 /* Deprecated (archived) Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				DC54FA9C25B1207D00F9334C /* YASDIaccessory.swift */,
@@ -339,7 +339,7 @@
 				DC197CA324D9A67F00C07E90 /* AppleScriptDriver.swift */,
 				DC23DF8924E7322300DD8371 /* LeafDelegate.swift */,
 			);
-			path = "Deprecated Delegates";
+			path = "Deprecated (archived) Delegates";
 			sourceTree = "<group>";
 		};
 		DCD60D6723B675DF00CF2C8A /* Homekit */ = {
