@@ -167,6 +167,7 @@ extension MainConfiguration{
         static var PLCobjects:[String:PLCClass] = [
             
 			"Schemerschakelaar Enable" : Light(),
+			"Overloop Licht Enable" : Light(),
 
             // Function keys / Switches
 //            "Hal Functietoets Voordeur" : Switch(),
@@ -208,7 +209,6 @@ extension MainConfiguration{
 			// Varia
 			"Kelder Compressor" : ToggleableOutlet(),
             
-            
             // Outlets
             "Buiten Stopcontact" : Outlet(),
             "Garage Droogkast" : Outlet(defaultPowerState: true),
@@ -227,7 +227,7 @@ extension MainConfiguration{
             // Varia
             "Voordeur" : Doorlock(),
             "Garagepoort" : GarageDoor(),
-//            "Vrijgave beregening" : SmartSprinkler(),
+			"Vrijgave beregening" : SmartSprinkler(),
         ]
     }
     

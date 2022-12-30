@@ -10,4 +10,3 @@ import Foundation
 import SoftPLC
 
 typealias PLCaccessoryDelegate = PLCClass & Parameterizable & CyclicRunnable & AccessoryDelegate & AccessorySource
-
