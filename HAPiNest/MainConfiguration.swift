@@ -14,6 +14,7 @@ import SoftPLC
 import MilightDriver
 import TizenDriver
 import LeafDriver
+import Network
 //import YASDIDriver
 
 struct MainConfiguration{
@@ -35,7 +36,9 @@ struct MainConfiguration{
             ( Accessory.Lightbulb(info: Service.Info(name: "Slaapkamer Licht", serialNumber: "00003", manufacturer: "MOXA"), isDimmable: true),          PLCobjects["Slaapkamer Licht"] ),
             
             // MARK: - Lights
-			( Accessory.Lightbulb(info: Service.Info(name: "Schemerschakelaar Enable", serialNumber: "00403")),  PLCobjects["Schemerschakelaar Enable"] ),
+			( Accessory.Lightbulb(info: Service.Info(name: "Schemerschakelaar Enable", serialNumber: "00400")),  PLCobjects["Schemerschakelaar Enable"] ),
+			( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht Enable", serialNumber: "00414")),  PLCobjects["Overloop Licht Enable"] ),
+			
 			
             ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht", serialNumber: "00400")),            PLCobjects["Badkamer Licht"] ),
             ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht spiegel", serialNumber: "00401")),    PLCobjects["Badkamer Licht spiegel"] ),
@@ -53,10 +56,10 @@ struct MainConfiguration{
             
             
             // Window coverings
-            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")),			PLCobjects["Keuken Screens"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),			PLCobjects["Living Screens"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),		PLCobjects["Slaapkamer Screen"] ),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),				PLCobjects["Vide Screen"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")),		PLCobjects["Keuken Screens"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),		PLCobjects["Living Screens"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),	PLCobjects["Slaapkamer Screen"] ),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),			PLCobjects["Vide Screen"] ),
             ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Rollekes", serialNumber: "00504")),		PLCobjects["Keuken Rollekes"] ),
             ( Accessory.WindowCovering(info: Service.Info(name: "Living Rollekes", serialNumber: "00505")),		PLCobjects["Living Rollekes"] ),
             ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolleke", serialNumber: "00506")),	PLCobjects["Slaapkamer Rolleke"] ),
@@ -72,8 +75,8 @@ struct MainConfiguration{
             // MARK: - Sprinkler
             ( Accessory.SmartSprinkler(info: Service.Info(name: "Vrijgave beregening", serialNumber: "00552", manufacturer: "Hunter")), PLCobjects["Vrijgave beregening"] ),
             
-            // Outlets
-            ( Accessory.Outlet(info: Service.Info(name: "Kelder Compressor", serialNumber: "00600", manufacturer: "Niko")),                 PLCobjects["Kelder Compressor"] ),
+			// MARK: - Outlet
+			( Accessory.Outlet(info: Service.Info(name: "Kelder Compressor", serialNumber: "00600", manufacturer: "Niko")),                 PLCobjects["Kelder Compressor"] ),
             ( Accessory.Outlet(info: Service.Info(name: "Buiten Stopcontact", serialNumber: "00601", manufacturer: "Niko")),                PLCobjects["Buiten Stopcontact"] ),
             ( Accessory.Outlet(info: Service.Info(name: "Garage Droogkast", serialNumber: "00602", manufacturer: "Niko")),                  PLCobjects["Garage Droogkast"] ),
             ( Accessory.Outlet(info: Service.Info(name: "Garage Ventilatie", serialNumber: "00603", manufacturer: "Niko")),                 PLCobjects["Garage Ventilatie"] ),
@@ -140,7 +143,7 @@ struct MainConfiguration{
              ),
             
 
-//            // MARK: - Other
+            // MARK: - Other
 //            Accessory.init(info: Service.Info(name: "Auto", serialNumber: "30000", manufacturer: "Nissan"),
 //                           type: .other,
 //                           services: [
