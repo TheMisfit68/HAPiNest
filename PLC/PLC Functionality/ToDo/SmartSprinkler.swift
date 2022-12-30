@@ -13,16 +13,20 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-
-public class SmartSprinkler:PLCClass, AccessoryDelegate, AccessorySource{
+// MARK: - PLC level class
+class SmartSprinkler:PLCaccessoryDelegate{
+	func runCycle() {
+		//
+	}
+	
 	
     
     // MARK: - HomeKit Accessory binding
-    
     typealias AccessorySubclass = Accessory.SmartSprinkler
-
-    
     var characteristicChanged:Bool = false
+	
+	
+	
 	var hardwareFeedbackChanged: Bool = false
 
     var hkAccessoryActive:Enums.Active = .inactive{
