@@ -8,49 +8,52 @@
 
 import Foundation
 import HAP
+import JVCocoa
 import SoftPLC
 
-// A Class capable of receving events from a HomeKit-Accessory
-protocol AccessoryDelegate: AnyObject{
+
+// MARK: -  Accessory Delegate
+
+// Any object capable of receving events from a HomeKit-Accessory
+public protocol AccessoryDelegate: HAP.AccessoryDelegate{
 	
 	var name:String{get}
 	var characteristicChanged:Bool{get set}
-	func handleCharacteristicChange<T>(accessory:Accessory,
-									   service: Service,
-									   characteristic: GenericCharacteristic<T>,
+	func handleCharacteristicChange<T>(accessory:HAP.Accessory,
+									   service: HAP.Service,
+									   characteristic: HAP.GenericCharacteristic<T>,
 									   to value: T?)
 }
 
 extension AccessoryDelegate{
 	
-	func handleCharacteristicChange<T>(accessory:Accessory,
-									   service: Service,
-									   characteristic: GenericCharacteristic<T>,
-									   to value: T?){
-		characteristicChanged.set()
-	}
-	
-}
-
-extension AccessoryDelegate where Self:PLCClass{
-	
-	var name:String{
-		self.instanceName
-	}
-	
-}
-
-
-// A Class capable of writing values to a HomeKit-Accessory
-protocol AccessorySource:AccessoryDelegate{
+	public func characteristic<T>(_ characteristic: HAP.GenericCharacteristic<T>,
+								  ofService: HAP.Service,
+								  ofAccessory: HAP.Accessory,
+								  didChangeValue: T?){
 		
+		Debugger.shared.log(debugLevel: .Event, "Value '\(characteristic.description ?? "")' of '\(ofAccessory.info.name)' changed to \(didChangeValue ?? "" as! T)")
+		characteristicChanged.set()
+		
+		handleCharacteristicChange(accessory:ofAccessory, service: ofService, characteristic: characteristic, to: didChangeValue)
+		
+	}
+	
+	
+}
+
+// MARK: - Accessory Source
+
+// Any object capable of writing values to a HomeKit-Accessory
+protocol AccessorySource:AccessoryDelegate{
+	
 	associatedtype AccessorySubclass
 	var accessory:AccessorySubclass{get}
 	
 	var hardwareFeedbackChanged:Bool{get set}
 	
 	func reevaluate<PT, CT>(_ property:inout PT?, initialValue:PT?, characteristic:GenericCharacteristic<CT>?, hardwareFeedback:PT?, typeTranslators:((CT)->PT, (PT)->CT)?)
-
+	
 }
 
 extension AccessorySource {
@@ -80,16 +83,31 @@ extension AccessorySource {
 			}else if let characteristictValue = typeTranslators?.1(propertyValue){
 				characteristic.value = characteristictValue
 			}
-
+			
 		}
 		
 	}
 	
 }
 
-// A Class capable of reacting to changes in the field
+// MARK: - PLC based Accessory Delegate
+
+extension AccessoryDelegate where Self:PLCClass{
+	
+	public var name:String{
+		self.instanceName
+	}
+	
+	func handleCharacteristicChange<T>(accessory:HAP.Accessory, service: HAP.Service, characteristic: HAP.GenericCharacteristic<T>, to value: T?){
+		// Characteristc are reevaluated by the PLCClasses in a cyclic manner
+	}
+}
+
+// Any object capable of reacting to changes in the field
 protocol CyclicPollable:AccessorySource{
-		
+	
 	func pollCycle()
 	
 }
+
+typealias PLCaccessoryDelegate = PLCClass & Parameterizable & CyclicRunnable & AccessoryDelegate & AccessorySource

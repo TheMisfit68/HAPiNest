@@ -54,7 +54,7 @@ class GarageDoor:PLCaccessoryDelegate, PulsOperatedCircuit{
     // MARK: - PLC Processing
 	public func runCycle() {
 		 
-		reevaluate(&powerState, characteristic:accessory.statelessGarageDoorOpener.powerState, hardwareFeedback: hardwarePowerState)
+		reevaluate(&powerState, characteristic:accessory.toggleButton.powerState, hardwareFeedback: hardwarePowerState)
 		
 		characteristicChanged.reset()
 		hardwareFeedbackChanged.reset()

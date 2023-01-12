@@ -22,7 +22,7 @@ public class HomeKitServer:Singleton{
 	public var name:String
     private var HAPserver:Server!
     
-    var mainBridge:Bridge!{
+	var mainBridge:Bridge!{
         didSet{
 			var serverPort = MainConfiguration.HomeKit.ServerPort
 			#if DEBUG
@@ -36,7 +36,7 @@ public class HomeKitServer:Singleton{
     }
     
     let siriDriver = SiriDriver(language: .flemish)
-    let appleScripTDriver = AppleScriptDriver()
+    let appleScriptDriver = AppleScriptDriver()
     
   
 	//    let gscNotifier = GSCNotifier()

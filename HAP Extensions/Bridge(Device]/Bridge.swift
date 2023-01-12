@@ -9,6 +9,7 @@
 import Foundation
 import HAP
 import JVCocoa
+import SoftPLC
 
 
 typealias Bridge = Device
@@ -41,9 +42,22 @@ extension Bridge{
 			bridgeInfo: Service.Info(name: name, serialNumber: Self.serialNumber),
 			setupCode: Device.SetupCode(stringLiteral: setupCode),
 			storage: Self.configFile,
-			accessories: accessories)
+			accessories: accessories
+		)
+		
 		printPairingInstructions()
+		
+		// Set the delegate for the bridge itself and for the individual accessories
 		delegate = self
+		MainConfiguration.HomeKit.Accessories.forEach{accessory, delegate in
+			accessory.delegate = delegate
+			
+			if (delegate as? PLCClass) != nil,
+				let plcBasedDelegate = (MainConfiguration.PLC.PLCobjects[accessory.name] as? AccessoryDelegate){
+				// Set the delegate to the PLC-object (and with a name equal the accessories name)
+				accessory.delegate = plcBasedDelegate
+			}
+		}
 	}
 	
 	// MARK: - Pairing Info
@@ -81,29 +95,3 @@ extension Bridge{
 	
 }
 
-
-// MARK: - BridgeDelegate
-
-typealias BridgeDelegate = DeviceDelegate
-
-extension Bridge:BridgeDelegate{
-	
-	func accessoryDelegateFor(accesoryNamed accessoryName:String)->AccessoryDelegate?{
-		return MainConfiguration.HomeKit.Accessories.first(where: {$0.0.info.name.value! == accessoryName} )?.1
-	}
-	
-	public func characteristic<T>(
-		_ characteristic: GenericCharacteristic<T>,
-		ofService: Service,
-		ofAccessory: Accessory,
-		didChangeValue: T?){
-		
-		let accessoryName = ofAccessory.info.name.value!
-		Debugger.shared.log(debugLevel: .Event, "Value '\(characteristic.description ?? "")' of '\(accessoryName)' changed to \(didChangeValue ?? "" as! T)")
-		
-		// Forward all characteristic changes to the corresponding delegate
-		let accessoryDelegate = accessoryDelegateFor(accesoryNamed:accessoryName)
-		accessoryDelegate?.handleCharacteristicChange(accessory:ofAccessory, service: ofService, characteristic: characteristic, to: didChangeValue)
-	}
-	
-}

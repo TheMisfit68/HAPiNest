@@ -13,7 +13,6 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
-
 // MARK: - PLC level class
 class Outlet:PLCaccessoryDelegate{
 	
