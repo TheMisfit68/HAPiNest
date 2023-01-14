@@ -80,7 +80,7 @@ class DimmableLight:PLCaccessoryDelegate{
 	// MARK: - Processing
 	public func runCycle() {
 			
-		reevaluate(&powerState, initialValue: (hardwareBrightness ?? 0 > switchOffLevelDimmer),characteristic:accessory.lightbulb.powerState, hardwareFeedback: nil)
+		reevaluate(&powerState, initialValue: (hardwareBrightness ?? 0 > switchOffLevelDimmer), characteristic:accessory.lightbulb.powerState, hardwareFeedback: nil)
 		reevaluate(&brightness, characteristic:accessory.lightbulb.brightness, hardwareFeedback:hardwareBrightness)
 		
 		characteristicChanged.reset()
