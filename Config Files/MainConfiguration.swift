@@ -26,86 +26,87 @@ struct MainConfiguration{
         static let BridgeName = "NestBridge"
         static let BridgeSetupCode = "456-77-890"
 		static let BridgeConfigFile = "configuration.json"
+		static let PLCBasedDelegate = PLCClass() as? AccessoryDelegate
 		static let MilightWifiBoxDriver = MilightDriverV6(ipAddress:"192.168.0.52")
-        		
-        static let Accessories:[ (Accessory,AccessoryDelegate?) ] = [
-            
-            // MARK: - Dimmable Lights
-            ( Accessory.Lightbulb(info: Service.Info (name: "Badkamer Sfeerlichtjes", serialNumber: "00002", manufacturer: "MOXA"), isDimmable: true),
-																												PLCClass() as? AccessoryDelegate),
-			( Accessory.Lightbulb(info: Service.Info(name: "Slaapkamer Licht", serialNumber: "00003", manufacturer: "MOXA"), isDimmable: true),
-																												PLCClass() as? AccessoryDelegate),
-            
-            // MARK: - Lights
-			( Accessory.Lightbulb(info: Service.Info(name: "Schemerschakelaar Enable", serialNumber: "00400")),	PLCClass() as? AccessoryDelegate),
-			( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht Enable", serialNumber: "00414")),	PLCClass() as? AccessoryDelegate),
+				
+		static let Accessories:[ (Accessory,AccessoryDelegate?) ] = [
 			
-            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht", serialNumber: "00400")),            PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht spiegel", serialNumber: "00401")),    PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Kelder Licht", serialNumber: "00402")),              PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht", serialNumber: "00404")),              PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht Werkbank", serialNumber: "00405")),     PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht kast", serialNumber: "00406")),         PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht", serialNumber: "00407")),              PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Bureau Licht", serialNumber: "00408")),              PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Eetkamer Licht", serialNumber: "00409")),            PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Hal Licht", serialNumber: "00410")),                 PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "W.C. Licht", serialNumber: "00411")),                PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht", serialNumber: "00412")),            PLCClass() as? AccessoryDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Dressing Licht", serialNumber: "00413")),            PLCClass() as? AccessoryDelegate),
+			// MARK: - Dimmable Lights
+			( Accessory.Lightbulb(info: Service.Info (name: "Badkamer Sfeerlichtjes", serialNumber: "00002", manufacturer: "MOXA"), isDimmable: true),
+																												PLCBasedDelegate),
+			( Accessory.Lightbulb(info: Service.Info(name: "Slaapkamer Licht", serialNumber: "00003", manufacturer: "MOXA"), isDimmable: true),
+																												PLCBasedDelegate),
+
+            // MARK: - Lights
+			( Accessory.Lightbulb(info: Service.Info(name: "Schemerschakelaar Enable", serialNumber: "00400")),	PLCBasedDelegate),
+			( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht Enable", serialNumber: "00414")),	PLCBasedDelegate),
+			
+            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht", serialNumber: "00400")),           PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht spiegel", serialNumber: "00401")),   PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Kelder Licht", serialNumber: "00402")),             PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht", serialNumber: "00404")),             PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht Werkbank", serialNumber: "00405")),    PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht kast", serialNumber: "00406")),        PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht", serialNumber: "00407")),             PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Bureau Licht", serialNumber: "00408")),             PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Eetkamer Licht", serialNumber: "00409")),           PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Hal Licht", serialNumber: "00410")),                PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "W.C. Licht", serialNumber: "00411")),               PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht", serialNumber: "00412")),           PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Dressing Licht", serialNumber: "00413")),           PLCBasedDelegate),
             
             
             // Window coverings
-            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")),		PLCClass() as? AccessoryDelegate),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),		PLCClass() as? AccessoryDelegate),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),	PLCClass() as? AccessoryDelegate),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),			PLCClass() as? AccessoryDelegate),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Rollekes", serialNumber: "00504")),		PLCClass() as? AccessoryDelegate),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Living Rollekes", serialNumber: "00505")),		PLCClass() as? AccessoryDelegate),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolleke", serialNumber: "00506")),	PLCClass() as? AccessoryDelegate),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Rolleke", serialNumber: "00507")),      	PLCClass() as? AccessoryDelegate),
-            ( Accessory.WindowCovering(info: Service.Info(name: "Overloop Rolleke", serialNumber: "00508")),  	PLCClass() as? AccessoryDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Screens", serialNumber: "00500")),		PLCBasedDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Living Screens", serialNumber: "00501")),		PLCBasedDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Screen", serialNumber: "00502")),	PLCBasedDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Screen", serialNumber: "00503")),			PLCBasedDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Keuken Rollekes", serialNumber: "00504")),		PLCBasedDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Living Rollekes", serialNumber: "00505")),		PLCBasedDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Slaapkamer Rolleke", serialNumber: "00506")),	PLCBasedDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Vide Rolleke", serialNumber: "00507")),      	PLCBasedDelegate),
+            ( Accessory.WindowCovering(info: Service.Info(name: "Overloop Rolleke", serialNumber: "00508")),  	PLCBasedDelegate),
             
             
             // MARK: - Security
-            ( Accessory.LockMechanism(info: Service.Info(name: "Voordeur", serialNumber: "00550")), 			PLCClass() as? AccessoryDelegate),
+            ( Accessory.LockMechanism(info: Service.Info(name: "Voordeur", serialNumber: "00550")), 			PLCBasedDelegate),
             ( Accessory.GarageDoorOpener.StatelessGarageDoorOpener(info: Service.Info(name: "Garagepoort", serialNumber: "00551")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
 
             
             // MARK: - Sprinkler
             ( Accessory.SmartSprinkler(info: Service.Info(name: "Vrijgave beregening", serialNumber: "00552", manufacturer: "Hunter")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             
 			// MARK: - Outlet
 			( Accessory.Outlet(info: Service.Info(name: "Kelder Compressor", serialNumber: "00600", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Buiten Stopcontact", serialNumber: "00601", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Garage Droogkast", serialNumber: "00602", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Garage Ventilatie", serialNumber: "00603", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Keuken Powerport", serialNumber: "00604", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Living Stopcontact", serialNumber: "00605", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Eetkamer Stopcontact", serialNumber: "00606", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Bureau Stopcontact whiteboard", serialNumber: "00607", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Bureau Stopcontact", serialNumber: "00608", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Hal Stopcontact", serialNumber: "00609", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact bed rechts", serialNumber: "00610", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact Bed links", serialNumber: "00611", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Slaapkamer Stopcontact T.V.", serialNumber: "00612", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             ( Accessory.Outlet(info: Service.Info(name: "Overloop Stopcontact", serialNumber: "00613", manufacturer: "Niko")),
-																												PLCClass() as? AccessoryDelegate),
+																												PLCBasedDelegate),
             
             
             // MARK: - Smart Lights
