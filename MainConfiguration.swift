@@ -35,7 +35,8 @@ struct MainConfiguration{
 		static let BridgeConfigFile = "configuration.json"
 #endif
     
-		static let PLCBasedDelegate = PLCClass() as? AccessoryDelegate
+
+		static let PLCBasedDelegate:AccessoryDelegate? = nil // Acts as a placeholder for a PLC-object with the correct name
 		static let MilightWifiBoxDriver = MilightDriverV6(ipAddress:"192.168.0.52")
 				
 		static let Accessories:[ (Accessory,AccessoryDelegate?) ] = [
@@ -48,21 +49,21 @@ struct MainConfiguration{
 
             // MARK: - Lights
 			( Accessory.Lightbulb(info: Service.Info(name: "Schemerschakelaar Enable", serialNumber: "00400")),	PLCBasedDelegate),
-			( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht Enable", serialNumber: "00414")),	PLCBasedDelegate),
+			( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht Enable", serialNumber: "00401")),	PLCBasedDelegate),
 			
-            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht", serialNumber: "00400")),           PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht spiegel", serialNumber: "00401")),   PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Kelder Licht", serialNumber: "00402")),             PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht", serialNumber: "00404")),             PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht Werkbank", serialNumber: "00405")),    PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht kast", serialNumber: "00406")),        PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht", serialNumber: "00407")),             PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Bureau Licht", serialNumber: "00408")),             PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Eetkamer Licht", serialNumber: "00409")),           PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Hal Licht", serialNumber: "00410")),                PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "W.C. Licht", serialNumber: "00411")),               PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht", serialNumber: "00412")),           PLCBasedDelegate),
-            ( Accessory.Lightbulb(info: Service.Info(name: "Dressing Licht", serialNumber: "00413")),           PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht", serialNumber: "00402")),           PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Badkamer Licht spiegel", serialNumber: "00403")),   PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Kelder Licht", serialNumber: "00404")),             PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht", serialNumber: "00405")),             PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Garage Licht Werkbank", serialNumber: "00406")),    PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht kast", serialNumber: "00407")),        PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Keuken Licht", serialNumber: "00408")),             PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Bureau Licht", serialNumber: "00409")),             PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Eetkamer Licht", serialNumber: "00410")),           PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Hal Licht", serialNumber: "00411")),                PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "W.C. Licht", serialNumber: "00412")),               PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Overloop Licht", serialNumber: "00413")),           PLCBasedDelegate),
+            ( Accessory.Lightbulb(info: Service.Info(name: "Dressing Licht", serialNumber: "00414")),           PLCBasedDelegate),
             
             
             // Window coverings
@@ -121,7 +122,7 @@ struct MainConfiguration{
             // MARK: - Smart Lights
 			( Accessory.Lightbulb(info: Service.Info(name: "Balk", serialNumber: "10000", manufacturer: "Milight"), type: .color, isDimmable: true),
 																		MilightDelegate(name: "Balk", driver: MilightWifiBoxDriver, zone: .zone01) ),
-			( Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "10002", manufacturer: "Milight"), type: .color, isDimmable: true),
+			( Accessory.Lightbulb(info: Service.Info(name: "UFO", serialNumber: "10001", manufacturer: "Milight"), type: .color, isDimmable: true),
 																		MilightDelegate(name: "UFO", driver: MilightWifiBoxDriver, zone: .zone02) ),
 
             

@@ -52,7 +52,7 @@ extension Bridge{
 		MainConfiguration.HomeKit.Accessories.forEach{accessory, delegate in
 			accessory.delegate = delegate
 			
-			if (delegate as? PLCClass) != nil,
+			if delegate == nil,
 				let plcBasedDelegate = (MainConfiguration.PLC.PLCobjects[accessory.name] as? AccessoryDelegate){
 				// Set the delegate to the PLC-object (and with a name equal the accessories name)
 				accessory.delegate = plcBasedDelegate

@@ -179,8 +179,9 @@
 				DCC9603C2670305000FB84BC /* Documentation.docc */,
 				DCD6FDBB25D1AD8D0049A3F5 /* ToDo domotica shortterm.md */,
 				DC6E461523B75BF8006A3E61 /* ToDo.md */,
+				DC4D6DD325710B410087E51D /* MainConfiguration.swift */,
+				DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */,
 				DC06CD232354E42A00C8E9F9 /* HAPiNest */,
-				DCBCFB56296789BE000F0376 /* Config Files */,
 				DCBCFB5329678609000F0376 /* HAP Extensions */,
 				DC197C9D24D9A67F00C07E90 /* Accessory Delegates */,
 				DCB5F6182354ED7D005F610F /* Artwork */,
@@ -355,15 +356,6 @@
 				DC2707842968696D004EFF79 /* Custom Enums */,
 			);
 			path = "HAP Extensions";
-			sourceTree = "<group>";
-		};
-		DCBCFB56296789BE000F0376 /* Config Files */ = {
-			isa = PBXGroup;
-			children = (
-				DC4D6DD325710B410087E51D /* MainConfiguration.swift */,
-				DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */,
-			);
-			path = "Config Files";
 			sourceTree = "<group>";
 		};
 		DCCF8CCA296B221D00B1C50F /* Bridge(Device] */ = {
