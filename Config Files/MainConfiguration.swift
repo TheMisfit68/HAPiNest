@@ -18,14 +18,23 @@ import Network
 //import YASDIDriver
 
 struct MainConfiguration{
-    
-    struct HomeKit{
-        
+	
+	struct HomeKit{
+		
+#if DEBUG
+		static let ServerName:String = "DevHAPiNestServer"
+		static let ServerPort = 8123
+		static let BridgeName = "DevelopmentNestBridge"
+		static let BridgeSetupCode = "012-34-567"
+		static let BridgeConfigFile = "DevelopmentConfiguration.json"
+#else
 		static let ServerName:String = "HAPiNestServer"
 		static let ServerPort = 8888
-        static let BridgeName = "NestBridge"
-        static let BridgeSetupCode = "456-77-890"
+		static let BridgeName = "NestBridge"
+		static let BridgeSetupCode = "456-77-890"
 		static let BridgeConfigFile = "configuration.json"
+#endif
+    
 		static let PLCBasedDelegate = PLCClass() as? AccessoryDelegate
 		static let MilightWifiBoxDriver = MilightDriverV6(ipAddress:"192.168.0.52")
 				
