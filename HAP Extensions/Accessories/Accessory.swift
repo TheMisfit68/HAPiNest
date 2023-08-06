@@ -13,7 +13,7 @@ import JVCocoa
 
 extension HAP.Accessory{
 	
-	open var name:String {
+    public var name:String {
 		info.name.value!
 	}
 	

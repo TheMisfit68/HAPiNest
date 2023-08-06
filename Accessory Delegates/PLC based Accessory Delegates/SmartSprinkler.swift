@@ -13,7 +13,7 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 #if canImport(WeatherKit)
-import Weatherkit
+import WeatherKit
 #endif
 
 // MARK: - PLC level class
@@ -62,30 +62,30 @@ class SmartSprinkler:PLCaccessoryDelegate{
 	func runCycle() {
 		
 		// As a best effort, set the intialValue for the enable button to the latest value of the ('inUse') output
-		reevaluate(&activeState, initialValue: hardwareInUseState,  characteristic:accessory.irrigationSystem.active, hardwareFeedback: nil,
-				   typeTranslators:({$0==Enums.Active.active}, {$0 ? Enums.Active.active : Enums.Active.inactive })
-				   )
-
-		#if !canImport(WeatherKit)
-			let needsIrrigation:Bool = true
-		#else
-			var needsIrrigation:Bool = false // TODO: - Implement weatherkit data here
-		#endif
-		inUseState = ((activeState ?? false) && needsIrrigation)
-	   print("***** \(activeState) \(inUseState)")
-		
-		reevaluate(&inUseState, characteristic:accessory.irrigationSystem.inUse, hardwareFeedback: hardwareInUseState,
-				   typeTranslators:({$0==Enums.InUse.inUse.rawValue}, {$0 ? Enums.InUse.inUse.rawValue : Enums.InUse.notInUse.rawValue})
-				   )
-		func handleCharacteristicChange<T>(accessory:Accessory,
-										   service: Service,
-										   characteristic: GenericCharacteristic<T>,
-										   to value: T?){
-			// overried test for protocol extension
-		}
-		
-		characteristicChanged.reset()
-		hardwareFeedbackChanged.reset()
+//		reevaluate(&activeState, initialValue: hardwareInUseState,  characteristic:accessory.irrigationSystem.active, hardwareFeedback: nil,
+//				   typeTranslators:({$0==Enums.Active.active}, {$0 ? Enums.Active.active : Enums.Active.inactive })
+//				   )
+//
+//		#if !canImport(WeatherKit)
+//			let needsIrrigation:Bool = true
+//		#else
+//			var needsIrrigation:Bool = false // TODO: - Implement weatherkit data here
+//		#endif
+//		inUseState = ((activeState ?? false) && needsIrrigation)
+//	   print("***** \(activeState) \(inUseState)")
+//
+//		reevaluate(&inUseState, characteristic:accessory.irrigationSystem.inUse, hardwareFeedback: hardwareInUseState,
+//				   typeTranslators:({$0==Enums.InUse.inUse.rawValue}, {$0 ? Enums.InUse.inUse.rawValue : Enums.InUse.notInUse.rawValue})
+//				   )
+//		func handleCharacteristicChange<T>(accessory:Accessory,
+//										   service: Service,
+//										   characteristic: GenericCharacteristic<T>,
+//										   to value: T?){
+//			// overried test for protocol extension
+//		}
+//		
+//		characteristicChanged.reset()
+//		hardwareFeedbackChanged.reset()
 	}
 }
 

@@ -12,6 +12,7 @@ import HAP
 extension Service.Switch {
 	
 	open class EnableSwitch: Service {
+		
 		public let enabled:GenericCharacteristic<Bool>
 		
 		init() {

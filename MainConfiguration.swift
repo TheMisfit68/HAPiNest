@@ -85,7 +85,7 @@ struct MainConfiguration{
 
             
             // MARK: - Sprinkler
-            ( Accessory.SmartSprinkler(info: Service.Info(name: "Vrijgave beregening", serialNumber: "00552", manufacturer: "Hunter")),
+            ( Accessory.SmartSprinkler(info: Service.Info(name: "test", serialNumber: "00557", manufacturer: "Hunter")),
 																												PLCBasedDelegate),
             
 			// MARK: - Outlet
@@ -150,42 +150,34 @@ struct MainConfiguration{
                 
             ),
 			
-            ( Accessory.Television(info: Service.Info(name: "T.V. Boven", serialNumber: "20001", manufacturer: "Samsung"),
-                                        inputs: [
-                                         ("homeScreen", .hdmi),
-                                         ("Eén", .hdmi),
-                                         ("Q2", .hdmi),
-                                         ("VTM", .hdmi),
-                                         ("Vier", .hdmi),
-                                         ("Vijf", .hdmi),
-                                         ("Zes", .hdmi),
-                                         ("Canvas", .hdmi),
-                                         ("Discovery", .hdmi),
-                                         ("National Geographic", .hdmi),
-                                         ("Animal planet", .hdmi),
-                                         ("Netflix", .application),
-                                         ("YouTube", .application),
+			( Accessory.Television(info: Service.Info(name: "T.V. Boven", serialNumber: "20001", manufacturer: "Samsung"),
+										inputs: [
+										 ("homeScreen", .hdmi),
+										 ("Eén", .hdmi),
+										 ("Q2", .hdmi),
+										 ("VTM", .hdmi),
+										 ("Vier", .hdmi),
+										 ("Vijf", .hdmi),
+										 ("Zes", .hdmi),
+										 ("Canvas", .hdmi),
+										 ("Discovery", .hdmi),
+										 ("National Geographic", .hdmi),
+										 ("Animal planet", .hdmi),
+										 ("Netflix", .application),
+										 ("YouTube", .application),
 										 ("Camera straat", .application),
-										 ("Camera tuin", .application)                                        ]),
-					TizenDelegate(tvName:"T.V. Boven", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer")
-                 
-             ),
-            
+										 ("Camera tuin", .application)
+										]),
+				TizenDelegate(tvName:"T.V. Boven", macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer")
 
+			 ),
+		
             // MARK: - Other
-//            Accessory.init(info: Service.Info(name: "Auto", serialNumber: "30000", manufacturer: "Nissan"),
-//                           type: .other,
-//                           services: [
-//                            // TODO: - Insert Service.Battery or Service.EnergyMeter,
-//                            // once it gets supported by Apples 'Home'-App
-//                            .ThermostatBase(characteristics:[.name("Gewenste Temperatuur")] ),
-//                            .SwitchBase(characteristics:[.name("Airco inschakelen")] ),
-//                            .SwitchBase(characteristics:[.name("Start opladen")] ),
-//                           ] ),
-//            LeafDriver(leafProtocol: LeafProtocolV2())
-//            ),
-//            
-//            Accessory.init(info: Service.Info(name: "Zonnepanelen", serialNumber: "30001", manufacturer: "SMA"),
+            ( Accessory.ElectricCar(info: Service.Info(name: "Onze Leaf", serialNumber: "30002", manufacturer: "Nissan")),
+					LeafDelegate(leafProtocol: LeafProtocolV2())
+            ),
+            
+//            (Accessory.init(info: Service.Info(name: "Zonnepanelen", serialNumber: "30001", manufacturer: "SMA"),
 //                           type: .other,
 //                           services: [
 //                            // TODO: - Insert a Service.EnergyMeter and Service.PowerMeter,
