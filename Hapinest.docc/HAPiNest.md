@@ -1,19 +1,19 @@
 # ``HAPiNest``
 
-@Metadata {
-    @PageKind(article)
-    @PageImage(
-           purpose: icon, 
-           source: "HomeKitLogo", 
-           alt: "Some generic Homekit logo")
-    @PageColor(yellow)
-}
+<!--@Metadata {-->
+<!--    @PageKind(article)-->
+<!--    @PageImage(-->
+<!--           purpose: icon, -->
+<!--           source: "HomeKitLogo", -->
+<!--           alt: "Some generic Homekit logo")-->
+<!--    @PageColor(yellow)-->
+<!--}-->
 
 HAPiNest is a my personal Home-automation system compatible with Apples HomeKit.
 
 ## Overview
 
-![The HAPiNest icon](icon_256x256.png)
+<!--![The HAPiNest icon](icon_256x256.png)-->
 
 
 <!--The program implements the  [HomeKit Accessory Protocol (HAP)](../Resources/HAP-Specification-Non-Commercial-Version.pdf).  -->
