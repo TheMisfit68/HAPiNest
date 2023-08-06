@@ -38,7 +38,7 @@ class CyclicPoller{
 		
 		let nonPLCaccessories = MainConfiguration.HomeKit.Accessories.map{$0.1}.filter{!($0 is PLCClass)}
 		nonPLCaccessories.forEach {
-			($0 as? CyclicPollable)?.pollCycle()
+            ($0 as? (any CyclicPollable))?.pollCycle()
 		}
 	}
 	
