@@ -46,6 +46,7 @@
 		DC90DA6C2732828200068839 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA6B2732828200068839 /* DashboardView.swift */; };
 		DC9753AF277DBCC000ED1C6F /* HomeKitServerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9753AE277DBCC000ED1C6F /* HomeKitServerPreview.swift */; };
 		DCA37CF926BB29EF003CC3BF /* HAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA37CF826BB29EF003CC3BF /* HAPTests.swift */; };
+		DCAB996A2A816734005FCC29 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DCAB99692A816734005FCC29 /* README.md */; };
 		DCBCFB5529678657000F0376 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBCFB5429678657000F0376 /* Enums.swift */; };
 		DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */; };
 		DCC1D8C529886687000067D0 /* LeafDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1D8C429886687000067D0 /* LeafDelegate.swift */; };
@@ -114,6 +115,7 @@
 		DC9EFF2224F3131F001B70EE /* DoorLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLock.swift; sourceTree = "<group>"; };
 		DCA37CF626BB29EF003CC3BF /* HAPiNestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAPiNestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA37CF826BB29EF003CC3BF /* HAPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPTests.swift; sourceTree = "<group>"; };
+		DCAB99692A816734005FCC29 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCBCFB5429678657000F0376 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinkler.swift; sourceTree = "<group>"; };
 		DCC1D8C429886687000067D0 /* LeafDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		DC06CD182354E42A00C8E9F9 = {
 			isa = PBXGroup;
 			children = (
+				DCAB99692A816734005FCC29 /* README.md */,
 				DCC9603C2670305000FB84BC /* Hapinest.docc */,
 				DCD6FDBB25D1AD8D0049A3F5 /* ToDo domotica shortterm.md */,
 				DC6E461523B75BF8006A3E61 /* ToDo.md */,
@@ -493,6 +496,7 @@
 			files = (
 				DC4F89CC2A7E79770074D641 /* Iconset in Resources */,
 				DC4F89CE2A7E80100074D641 /* homekit-180.png in Resources */,
+				DCAB996A2A816734005FCC29 /* README.md in Resources */,
 				DC4E82B825AD93FA00A6043E /* Preview Assets.xcassets in Resources */,
 				DC54B6C22570586E00D9169F /* Assets.xcassets in Resources */,
 			);
