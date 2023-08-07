@@ -48,7 +48,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>CryptoSwift (Playground) 1.xcscheme</key>
 		<dict>
@@ -286,7 +286,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 		<key>HAPiNest copy.xcscheme_^#shared#^_</key>
 		<dict>
@@ -452,7 +452,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>8</integer>
 		</dict>
 		<key>testapp.xcscheme_^#shared#^_</key>
 		<dict>
