@@ -1,8 +1,5 @@
 {
     "theme": {
-        "color": {
-            "standard-green": "#83ac38"
-        },
         "typography": {
             "html-font": "serif"
         }
