@@ -1,7 +1,7 @@
 {
-    "theme": {
-        "typography": {
-            "html-font": "serif"
-        }
+  "theme" : {
+    "typography" : {
+      "html-font" : "serif"
     }
+  }
 }

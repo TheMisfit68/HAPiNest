@@ -1,1 +1,74 @@
-{"number":1,"pairings":["NjYyRDAwNTUtQkY1Ny00REQwLUEzRjMtOEY0RENGQ0M3NkQ5",{"role":1,"publicKey":"eWAu8Zfi\/8KzwfD2URbYlBZ9Nap6H5PEl6GdO+ReIzg=","identifier":"NjYyRDAwNTUtQkY1Ny00REQwLUEzRjMtOEY0RENGQ0M3NkQ5"},"OTUxRUE0NEYtODUzRC00MjI4LTlDM0UtOTQ2MkZCQzc2QkNE",{"role":0,"publicKey":"9XrtUjZ8SL2uFMiHM7fdFi0ezCKZKDGoli00gjBDU74=","identifier":"OTUxRUE0NEYtODUzRC00MjI4LTlDM0UtOTQ2MkZCQzc2QkNE"}],"aidForAccessorySerialNumber":{"00408":12,"20001":47,"00502":20,"00406":10,"00500":18,"00609":39,"00404":8,"00413":17,"00607":37,"00402":7,"00411":15,"00605":35,"00400":5,"00552":29,"00612":42,"00603":33,"00003":3,"00550":27,"00507":25,"00610":40,"00601":31,"00505":23,"00409":13,"00503":21,"00407":11,"20000":46,"00501":19,"00405":9,"00608":38,"10002":45,"00412":16,"00403":4,"00606":36,"10000":44,"00401":6,"00410":14,"00613":43,"00604":34,"00551":28,"00508":26,"00611":41,"00602":32,"00002":2,"00506":24,"00600":30,"00504":22},"setupCode":"456-77-890","stableHash":597,"identifier":"E2:D9:C9:8A:A1:B0","setupKey":"JH8A","publicKey":"VPAE18avojXKvmedizCCt98cULCCXNHI2SraPohsyoE=","privateKey":"tMFoYvdkDXkSJRVihSFgtRBsmrtiT2X4QGJZUQqTWN1U8ATXxq+iNcq+Z52LMIK33xxQsIJc0cjZKto+iGzKgQ==","aidGenerator":{"lastAID":47}}
+{
+  "number" : 1,
+  "pairings" : [
+    "NjYyRDAwNTUtQkY1Ny00REQwLUEzRjMtOEY0RENGQ0M3NkQ5",
+    {
+      "identifier" : "NjYyRDAwNTUtQkY1Ny00REQwLUEzRjMtOEY0RENGQ0M3NkQ5",
+      "role" : 1,
+      "publicKey" : "eWAu8Zfi\/8KzwfD2URbYlBZ9Nap6H5PEl6GdO+ReIzg="
+    },
+    "OTUxRUE0NEYtODUzRC00MjI4LTlDM0UtOTQ2MkZCQzc2QkNE",
+    {
+      "identifier" : "OTUxRUE0NEYtODUzRC00MjI4LTlDM0UtOTQ2MkZCQzc2QkNE",
+      "role" : 0,
+      "publicKey" : "9XrtUjZ8SL2uFMiHM7fdFi0ezCKZKDGoli00gjBDU74="
+    }
+  ],
+  "aidForAccessorySerialNumber" : {
+    "00408" : 12,
+    "20001" : 47,
+    "00502" : 20,
+    "00406" : 10,
+    "00500" : 18,
+    "00609" : 39,
+    "00404" : 8,
+    "00413" : 17,
+    "00607" : 37,
+    "00402" : 7,
+    "00411" : 15,
+    "00605" : 35,
+    "00400" : 5,
+    "00552" : 29,
+    "00612" : 42,
+    "00603" : 33,
+    "00003" : 3,
+    "00550" : 27,
+    "00507" : 25,
+    "00610" : 40,
+    "00601" : 31,
+    "00505" : 23,
+    "00409" : 13,
+    "00503" : 21,
+    "00407" : 11,
+    "20000" : 46,
+    "00501" : 19,
+    "00405" : 9,
+    "00608" : 38,
+    "10002" : 45,
+    "00412" : 16,
+    "00403" : 4,
+    "00606" : 36,
+    "10000" : 44,
+    "00401" : 6,
+    "00410" : 14,
+    "00613" : 43,
+    "00604" : 34,
+    "00551" : 28,
+    "00508" : 26,
+    "00611" : 41,
+    "00602" : 32,
+    "00002" : 2,
+    "00506" : 24,
+    "00600" : 30,
+    "00504" : 22
+  },
+  "setupCode" : "456-77-890",
+  "stableHash" : 597,
+  "identifier" : "E2:D9:C9:8A:A1:B0",
+  "setupKey" : "JH8A",
+  "publicKey" : "VPAE18avojXKvmedizCCt98cULCCXNHI2SraPohsyoE=",
+  "privateKey" : "tMFoYvdkDXkSJRVihSFgtRBsmrtiT2X4QGJZUQqTWN1U8ATXxq+iNcq+Z52LMIK33xxQsIJc0cjZKto+iGzKgQ==",
+  "aidGenerator" : {
+    "lastAID" : 47
+  }
+}
