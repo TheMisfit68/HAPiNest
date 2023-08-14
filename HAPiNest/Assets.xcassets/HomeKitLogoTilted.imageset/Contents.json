@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "HomeKitLogo.png",
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "HomeKitLogo 1.png",
+      "idiom" : "mac",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
