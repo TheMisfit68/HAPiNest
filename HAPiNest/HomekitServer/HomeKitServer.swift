@@ -10,7 +10,7 @@ import Foundation
 import HAP
 import Darwin
 import JVCocoa
-import os.log
+import OSLog
 
 import AppleScriptDriver
 import SiriDriver
@@ -43,12 +43,11 @@ public class HomeKitServer:Singleton{
 		#if DEBUG
 			AppController(name: "Home", location: .systemApps).startIfInstalled()
 		#endif
-        Debugger.shared.log(debugLevel: .Native(logType:.info), "Initializing the server \(self.name)...")
+        let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "HomeKitServer")
+        logger.info("Initializing the server \(self.name, privacy: .public)...")
+
 //      let _ = SMAInverter.CreateInverters()
         
     }
     
 }
-
-
-

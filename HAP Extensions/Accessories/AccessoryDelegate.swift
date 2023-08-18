@@ -10,6 +10,7 @@ import Foundation
 import HAP
 import JVCocoa
 import SoftPLC
+import OSLog
 
 
 // MARK: -  Accessory Delegate
@@ -31,8 +32,9 @@ extension AccessoryDelegate{
 								  ofService: HAP.Service,
 								  ofAccessory: HAP.Accessory,
 								  didChangeValue: T?){
-		
-		Debugger.shared.log(debugLevel: .Event, "Value '\(characteristic.description ?? "")' of '\(ofAccessory.info.name)' changed to \(didChangeValue ?? "" as! T)")
+        let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "AccessoryDelegate")
+        
+        logger.info("✴️\tValue '\(characteristic.description ?? "")' of '\(ofAccessory.info.name.value ?? "")' changed to \(String(describing:didChangeValue) )")
 		characteristicChanged.set()
 		
 		handleCharacteristicChange(accessory:ofAccessory, service: ofService, characteristic: characteristic, to: didChangeValue)

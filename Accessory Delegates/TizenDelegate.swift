@@ -10,6 +10,7 @@ import Foundation
 import HAP
 import JVCocoa
 import TizenDriver
+import OSLog
 
 class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPollable{
 	
@@ -55,14 +56,14 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPolla
 					case 14:
 						super.openURL("http://192.168.0.10:8001/live?cameraNum=2&viewMethod=0&windowWidth=1920&windowHeight=840&auth=R1VFU1Q6R1VFU1Q=")
 					default:
-						super.gotoChannel(Int(channelNumber))
-				}
-				
-			default:
-				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(name)")
-				
-		}
-		characteristicChanged.set()
+                    super.gotoChannel(Int(channelNumber))
+                }
+            
+        default:
+            let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "TizenDelegate")
+            logger.warning("Unhandled characteristic change for accessory \(self.name)")
+        }
+        characteristicChanged.set()
 	}
 	
 	// MARK: - State

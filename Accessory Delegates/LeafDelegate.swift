@@ -10,6 +10,7 @@ import Foundation
 import HAP
 import JVCocoa
 import LeafDriver
+import OSLog
 
 class LeafDelegate:LeafDriver, AccessoryDelegate, AccessorySource, CyclicPollable{
 	
@@ -27,7 +28,8 @@ class LeafDelegate:LeafDriver, AccessoryDelegate, AccessorySource, CyclicPollabl
 					break
 //				self.batteryChecker.getBatteryStatus()
 			default:
-				Debugger.shared.log(debugLevel: .Warning, "Unhandled characteristic change for accessory \(accessoryName)")
+                let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "LeafDelegate")
+                logger.warning( "Unhandled characteristic change for accessory \(accessoryName)")
 			}
 	}
 	
