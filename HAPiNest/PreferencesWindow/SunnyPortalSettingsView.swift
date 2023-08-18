@@ -14,8 +14,6 @@ struct SunnyPortalSettingsView: View {
     }
 }
 
-struct SunnyPortalSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SunnyPortalSettingsView()
-    }
+#Preview {
+    SunnyPortalSettingsView()
 }

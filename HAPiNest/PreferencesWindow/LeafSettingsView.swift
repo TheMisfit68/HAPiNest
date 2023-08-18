@@ -14,8 +14,7 @@ struct LeafSettingsView: View {
     }
 }
 
-struct LeafSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        LeafSettingsView()
-    }
+#Preview {
+    LeafSettingsView()
 }
+

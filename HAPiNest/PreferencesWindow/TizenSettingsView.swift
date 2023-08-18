@@ -14,8 +14,6 @@ struct TizenSettingsView: View {
     }
 }
 
-struct TizenSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        TizenSettingsView()
-    }
+#Preview {
+    TizenSettingsView()
 }

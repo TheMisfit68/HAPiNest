@@ -14,8 +14,6 @@ struct OpenWeatherSettingsView: View {
     }
 }
 
-struct OpenWeatherSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        OpenWeatherSettingsView()
-    }
+#Preview {
+    OpenWeatherSettingsView()
 }

@@ -56,7 +56,7 @@ extension HomeKitServerView{
         @State private var showResetAlert: Bool = false
         var body: some View {
             return VStack {
-				qrCode
+                qrCode.aspectRatio(contentMode: .fill).frame(width: 64)
                 Text("Scan the code above using your iPhone to pair it with the")
                 Text(HomeKitServer.shared.mainBridge.name).bold().font(.system(size: 18))
 				Text("(or enter setupcode \(HomeKitServer.shared.mainBridge.setupCode))")
@@ -85,11 +85,6 @@ extension HomeKitServerView{
     
 }
 
-// MARK: - Previews
-#if DEBUG
-struct HomeKitServerView_Previews: PreviewProvider {
-    static var previews: some View {
-		HomeKitServerView.preview
-    }
+#Preview {
+    HomeKitServerView.preview
 }
-#endif

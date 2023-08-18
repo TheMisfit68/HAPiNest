@@ -40,14 +40,6 @@ struct DashboardView: View {
 	}
 }
 
-
-// MARK: - Previews
-#if DEBUG
-struct DashboardView_Previews: PreviewProvider {
-
-	static var previews: some View {
-
-		return	DashboardView.preview
-	}
+#Preview {
+    DashboardView.preview
 }
-#endif

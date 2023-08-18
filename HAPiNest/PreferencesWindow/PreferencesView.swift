@@ -38,8 +38,6 @@ struct PreferencesView: View {
 		}
 }
 
-struct PreferencesView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
         PreferencesView()
-    }
 }
