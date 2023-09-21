@@ -4,7 +4,7 @@
     @PageKind(article)
     @PageImage(
            purpose: icon, 
-           source: "HomeKitLogo", 
+           source: "HomeKitLogoTiled", 
            alt: "Some generic Homekit logo")
     @PageColor(yellow)
 }
