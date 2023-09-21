@@ -1,0 +1,546 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Basement Compressor" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelder Compressor"
+          }
+        }
+      }
+    },
+    "Basement Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelder Licht"
+          }
+        }
+      }
+    },
+    "Bathroom Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badkamer Licht"
+          }
+        }
+      }
+    },
+    "Bathroom mirror Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badkamer Licht spiegel"
+          }
+        }
+      }
+    },
+    "Bathroom Mood Lights" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badkamer Sfeerlichtjes"
+          }
+        }
+      }
+    },
+    "Beam" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balk"
+          }
+        }
+      }
+    },
+    "Bedroom Blinds" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer Rolleke"
+          }
+        }
+      }
+    },
+    "Bedroom Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer Licht"
+          }
+        }
+      }
+    },
+    "Bedroom Lights" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer Licht"
+          }
+        }
+      }
+    },
+    "Bedroom Power Outlet bed left side" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer Stopcontact bed links"
+          }
+        }
+      }
+    },
+    "Bedroom Power Outlet bed right side" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer Stopcontact bed rechts"
+          }
+        }
+      }
+    },
+    "Bedroom Power Outlet TV" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer Stopcontact T.V."
+          }
+        }
+      }
+    },
+    "Bedroom Screen" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer Screen"
+          }
+        }
+      }
+    },
+    "Dining room Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eetkamer Licht"
+          }
+        }
+      }
+    },
+    "Dining Room Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eetkamer Licht"
+          }
+        }
+      }
+    },
+    "Dining room Power Outlet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eetkamer Stopcontact"
+          }
+        }
+      }
+    },
+    "Dining Room Power Outlet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eetkamer Stopcontact"
+          }
+        }
+      }
+    },
+    "Dressing room Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dressing Licht"
+          }
+        }
+      }
+    },
+    "Dressing Room Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dressing Licht"
+          }
+        }
+      }
+    },
+    "Front Door" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voordeur"
+          }
+        }
+      }
+    },
+    "Garage Door" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garagepoort"
+          }
+        }
+      }
+    },
+    "Garage Dryer" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garage Droogkast"
+          }
+        }
+      }
+    },
+    "Garage Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garage Licht"
+          }
+        }
+      }
+    },
+    "Garage Ventilation" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garage Ventilatie"
+          }
+        }
+      }
+    },
+    "Garage workbench Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garage Licht werkbank"
+          }
+        }
+      }
+    },
+    "Hallway Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hal Licht"
+          }
+        }
+      }
+    },
+    "Hallway Power Outlet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hal Stopcontact"
+          }
+        }
+      }
+    },
+    "Kitchen Blinds" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keuken Rollekes"
+          }
+        }
+      }
+    },
+    "Kitchen cabinet Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keuken Licht kast"
+          }
+        }
+      }
+    },
+    "Kitchen Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keuken Licht"
+          }
+        }
+      }
+    },
+    "Kitchen Powerport" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keuken Powerport"
+          }
+        }
+      }
+    },
+    "Kitchen Screens" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keuken Screens"
+          }
+        }
+      }
+    },
+    "Landing Blinds" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overloop Rolleke"
+          }
+        }
+      }
+    },
+    "Landing Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overloop Licht"
+          }
+        }
+      }
+    },
+    "Landing Light Enable" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overloop Licht Activeren"
+          }
+        }
+      }
+    },
+    "Landing Power Outlet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overloop Stopcontact"
+          }
+        }
+      }
+    },
+    "Living room Blinds" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Living Rollekes"
+          }
+        }
+      }
+    },
+    "Living Room Blinds" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Living Rollekes"
+          }
+        }
+      }
+    },
+    "Living room Power Outlet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Living Stopcontact"
+          }
+        }
+      }
+    },
+    "Living Room Power Outlet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Living Stopcontact"
+          }
+        }
+      }
+    },
+    "Living room Screens" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Living Screens"
+          }
+        }
+      }
+    },
+    "Living Room Screens" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Living Screens"
+          }
+        }
+      }
+    },
+    "Loft Blinds" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vide Rolleke"
+          }
+        }
+      }
+    },
+    "Loft Screen" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vide Screen"
+          }
+        }
+      }
+    },
+    "Office Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bureau Licht"
+          }
+        }
+      }
+    },
+    "Office Power Outlet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bureau Stopcontact"
+          }
+        }
+      }
+    },
+    "Office Power Outlet whiteboard" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bureau Stopcontact whiteboard"
+          }
+        }
+      }
+    },
+    "Outdoor Power Outlet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buiten Stopcontact"
+          }
+        }
+      }
+    },
+    "Smart Sprinklers" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprinklers"
+          }
+        }
+      }
+    },
+    "Toilet Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W.C. Licht"
+          }
+        }
+      }
+    },
+    "TV" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T.V."
+          }
+        }
+      }
+    },
+    "TV Upstairs" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T.V. Boven"
+          }
+        }
+      }
+    },
+    "Twilight Sensor Enable" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schemerschakelaar Activeren"
+          }
+        }
+      }
+    },
+    "UFO" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UFO"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

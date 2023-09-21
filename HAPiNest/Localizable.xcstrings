@@ -1,0 +1,212 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "(or enter setupcode %@)" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(of geef de code %@ in)"
+          }
+        }
+      }
+    },
+    "%lld percent or %lld kilometers remaining" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld percent or %2$lld kilometers remaining"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog  %1$lld percent of %2$lld kilometer"
+          }
+        }
+      }
+    },
+    "Are you sure?" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bent U zeker?"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuleer"
+          }
+        }
+      }
+    },
+    "Enable" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vrijgave"
+          }
+        }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algemeen"
+          }
+        }
+      }
+    },
+    "HAPiNest dashboard 🛋" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HAPiNest dashboard 🛋"
+          }
+        }
+      }
+    },
+    "Hello, World!" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, World!"
+          }
+        }
+      }
+    },
+    "Homekit Server" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HomeKit Server"
+          }
+        }
+      }
+    },
+    "Manual" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hand in"
+          }
+        }
+      }
+    },
+    "Nissan Leaf" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nissan Leaf"
+          }
+        }
+      }
+    },
+    "PLC" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PLC"
+          }
+        }
+      }
+    },
+    "Reset" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koppel los"
+          }
+        }
+      }
+    },
+    "Reset all paired accesories?" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle gekoppelde accesoires loskoppelen?"
+          }
+        }
+      }
+    },
+    "Reset all pairings" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles loskoppelen"
+          }
+        }
+      }
+    },
+    "Samsung Tizen" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samsung Tizen"
+          }
+        }
+      }
+    },
+    "Scan the code above using your iPhone to pair it with the" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan bovenstaande code met je iPone om het te koppelen met "
+          }
+        }
+      }
+    },
+    "Sprinklers" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sproeisysteem"
+          }
+        }
+      }
+    },
+    "SunnyPortal" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SunnyPortal"
+          }
+        }
+      }
+    },
+    "WeatherKit" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WeatherKit"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
