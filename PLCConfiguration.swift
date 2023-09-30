@@ -42,43 +42,43 @@ extension MainConfiguration{
             
             // Analog Output 0
             // Dimmable lights
-            IOList[0][0][0] = "Badkamer Sfeerlichtjes"
-            IOList[0][0][1 ] = "Slaapkamer Licht"
+            IOList[0][0][0] = String(localized: "Bathroom Mood Lights", table:"SignalNames")
+            IOList[0][0][1] = String(localized: "Bedroom Lights", table:"SignalNames")
             IOList[0][0][2] =  nil
             IOList[0][0][3] =  nil
             
             // Digital inputs 1...3
             // Lights
-            IOList[0][1][0] =  "Schemerschakelaar Enabled"
-            IOList[0][1][1] =  "Overloop Licht Enabled"
-            IOList[0][1][2] =  "Badkamer Licht On"
-            IOList[0][1][3] =  "Badkamer Licht spiegel On"
-            IOList[0][1][4] =  "Kelder Licht On"
-            IOList[0][1][5] =  "Garage Licht On"
-            IOList[0][1][6] =  "Garage Licht Werkbank On"
-            IOList[0][1][7] =  "Keuken Licht On"
-            IOList[0][1][8] =  "Keuken Licht kast On"
-            IOList[0][1][9] =  "Bureau Licht On"
-            IOList[0][1][10] =  "Eetkamer Licht On"
-            IOList[0][1][11] =  "Dressing Licht On"
-            IOList[0][1][12] =  "Buiten Licht On"
-            IOList[0][1][13] =  "Overloop Licht On"
-            IOList[0][1][14] =  "Hal Licht On"
-            IOList[0][1][15] =  "W.C. Licht On"
+            IOList[0][1][0] = String(localized: "Twilight Sensor Enabled", table:"SignalNames")
+            IOList[0][1][1] = String(localized: "Landing Light Enabled", table:"SignalNames")
+            IOList[0][1][2] = String(localized: "Bathroom Light On", table:"SignalNames")
+            IOList[0][1][3] = String(localized: "Bathroom mirror Light On", table:"SignalNames")
+            IOList[0][1][4] = String(localized: "Basement Light On", table:"SignalNames")
+            IOList[0][1][5] = String(localized: "Garage Light On", table:"SignalNames")
+            IOList[0][1][6] = String(localized: "Garage workbench Licht On", table:"SignalNames")
+            IOList[0][1][7] = String(localized: "Kitchen Light On", table:"SignalNames")
+            IOList[0][1][8] = String(localized: "Kitchen cabinet Light On", table:"SignalNames")
+            IOList[0][1][9] = String(localized: "Office Light On", table:"SignalNames")
+            IOList[0][1][10] = String(localized: "Dining Room Light On", table:"SignalNames")
+            IOList[0][1][11] = String(localized: "Dressing Room Light On", table:"SignalNames")
+            IOList[0][1][12] = String(localized: "Buiten Licht On", table:"SignalNames")
+            IOList[0][1][13] = String(localized: "Landing Light On", table:"SignalNames")
+            IOList[0][1][14] = String(localized: "Hallway Light", table:"SignalNames")
+            IOList[0][1][15] = String(localized: "Toilet Light On", table:"SignalNames")
             
             // Window Coverings feedback Up
-            IOList[0][2][0] =  "Keuken Screens Open"
-            IOList[0][2][1] =  "Living Screens Open"
-            IOList[0][2][2] =  "Slaapkamer Screen Open"
-            IOList[0][2][3] =  "Vide Screen Open"
-            IOList[0][2][4] =  "Keuken Rollekes Open"
-            IOList[0][2][5] =  "Living Rollekes Open"
-            IOList[0][2][6] =  "Slaapkamer Rolleke Close" // This wires of this motor are connected reveresed
-            IOList[0][2][7] =  "Vide Rolleke Open"
-            IOList[0][2][8] =  "Overloop Rolleke Open"
+            IOList[0][2][0] = String(localized: "Kitchen Screens Open", table:"SignalNames")
+            IOList[0][2][1] = String(localized: "Living Room Screens Open", table:"SignalNames")
+            IOList[0][2][2] = String(localized: "Bedroom Screen Open", table:"SignalNames")
+            IOList[0][2][3] = String(localized: "Loft Screen Open", table:"SignalNames")
+            IOList[0][2][4] = String(localized: "Kitchen Blinds Open", table:"SignalNames")
+            IOList[0][2][5] = String(localized: "Living Room Blinds Open", table:"SignalNames")
+            IOList[0][2][6] = String(localized: "Bedroom Blinds Close", table:"SignalNames") // This wires of this motor are connected reveresed
+            IOList[0][2][7] = String(localized: "Loft Blinds Open", table:"SignalNames")
+            IOList[0][2][8] = String(localized: "Landing Blinds Open", table:"SignalNames")
 			
 			// Varia
-            IOList[0][2][9] =  "Kelder Compressor On"
+            IOList[0][2][9] = String(localized: "Basement Compressor On", table:"SignalNames")
             IOList[0][2][10] =  nil
             IOList[0][2][11] =  nil
             IOList[0][2][12] =  nil
@@ -87,55 +87,55 @@ extension MainConfiguration{
             IOList[0][2][15] =  nil
             
             // Window Coverings feedback Down
-            IOList[0][3][0] =  "Keuken Screens Close"
-            IOList[0][3][1] =  "Living Screens Close"
-            IOList[0][3][2] =  "Slaapkamer Screen Close"
-            IOList[0][3][3] =  "Vide Screen Close"
-            IOList[0][3][4] =  "Keuken Rollekes Close"
-            IOList[0][3][5] =  "Living Rollekes Close"
-            IOList[0][3][6] =  "Slaapkamer Rolleke Open" // This wires of this motor are connected reveresed
-            IOList[0][3][7] =  "Vide Rolleke Close"
-            IOList[0][3][8] =  "Overloop Rolleke Close"
+            IOList[0][3][0] = String(localized: "Kitchen Screens Close", table:"SignalNames")
+            IOList[0][3][1] = String(localized: "Living Room Screens Close", table:"SignalNames")
+            IOList[0][3][2] = String(localized: "Bedroom Screen Close", table:"SignalNames")
+            IOList[0][3][3] = String(localized: "Loft Screen Close", table:"SignalNames")
+            IOList[0][3][4] = String(localized: "Kitchen Blinds Close", table:"SignalNames")
+            IOList[0][3][5] = String(localized: "Living Room Blinds Close", table:"SignalNames")
+            IOList[0][3][6] = String(localized: "Bedroom Blinds Open", table:"SignalNames") // This wires of this motor are connected reveresed
+            IOList[0][3][7] = String(localized: "Loft Blinds Close", table:"SignalNames")
+            IOList[0][3][8] = String(localized: "Landing Blinds Close", table:"SignalNames")
             IOList[0][3][9] =  nil
             IOList[0][3][10] =  nil
             IOList[0][3][11] =  nil
-            IOList[0][3][12] =  "Hal Functietoets Voordeur"
-            IOList[0][3][13] =  "SlaapKamer Functietoets Bed Anja"
-            IOList[0][3][14] =  "SlaapKamer Functietoets Bed Jan"
-            IOList[0][3][15] =  "Overloop Functietoets"
+            IOList[0][3][12] = String(localized: "Hallway Function Key front door", table:"SignalNames")
+            IOList[0][3][13] = String(localized: "Bedroom Function Key bed left side", table:"SignalNames")
+            IOList[0][3][14] = String(localized: "Bedroom Function Key bed right side", table:"SignalNames")
+            IOList[0][3][15] = String(localized: "Landing Function Key", table:"SignalNames")
             
-            // Digital outputput 4...6
+            // Digital outputs 4...6
             // Lights
-            IOList[0][4][0] =  "Schemerschakelaar Enable"
-            IOList[0][4][1] =  "Overloop Licht Enable"
-            IOList[0][4][2] =  "Badkamer Licht"
-            IOList[0][4][3] =  "Badkamer Licht spiegel"
-            IOList[0][4][4] =  "Kelder Licht"
-            IOList[0][4][5] =  "Garage Licht"
-            IOList[0][4][6] =  "Garage Licht Werkbank"
-            IOList[0][4][7] =  "Keuken Licht"
-            IOList[0][4][8] =  "Keuken Licht kast"
-            IOList[0][4][9] =  "Bureau Licht"
-            IOList[0][4][10] =  "Eetkamer Licht"
-            IOList[0][4][11] =  "Dressing Licht"
+            IOList[0][4][0] = String(localized: "Twilight Sensor Enable", table:"SignalNames")
+            IOList[0][4][1] = String(localized: "Landing Light Enable", table:"SignalNames")
+            IOList[0][4][2] = String(localized: "Bathroom Light", table:"SignalNames")
+            IOList[0][4][3] = String(localized: "Bathroom mirror Light", table:"SignalNames")
+            IOList[0][4][4] = String(localized: "Basement Light", table:"SignalNames")
+            IOList[0][4][5] = String(localized: "Garage Light", table:"SignalNames")
+            IOList[0][4][6] = String(localized: "Garage workbench Light", table:"SignalNames")
+            IOList[0][4][7] = String(localized: "Kitchen Light", table:"SignalNames")
+            IOList[0][4][8] = String(localized: "Kitchen cabinet Light", table:"SignalNames")
+            IOList[0][4][9] = String(localized: "Office Light", table:"SignalNames")
+            IOList[0][4][10] = String(localized: "Dining Room Light", table:"SignalNames")
+            IOList[0][4][11] = String(localized: "Dressing Room Light", table:"SignalNames")
             IOList[0][4][12] =  nil
-            IOList[0][4][13] =  "Overloop Licht"
-            IOList[0][4][14] =  "Hal Licht"
-            IOList[0][4][15] =  "W.C. Licht"
+            IOList[0][4][13] = String(localized: "Landing Light", table:"SignalNames")
+            IOList[0][4][14] = String(localized: "Hallway Light", table:"SignalNames")
+            IOList[0][4][15] = String(localized: "Toilet Light", table:"SignalNames")
             
             // Window Coverings
-            IOList[0][5][0] =  "Keuken Screens"
-            IOList[0][5][1] =  "Living Screens"
-            IOList[0][5][2] =  "Slaapkamer Screen"
-            IOList[0][5][3] =  "Vide Screen"
-            IOList[0][5][4] =  "Keuken Rollekes"
-            IOList[0][5][5] =  "Living Rollekes"
-            IOList[0][5][6] =  "Slaapkamer Rolleke"
-            IOList[0][5][7] =  "Vide Rolleke"
-            IOList[0][5][8] =  "Overloop Rolleke"
+            IOList[0][5][0] = String(localized: "Kitchen Screens", table:"SignalNames")
+            IOList[0][5][1] = String(localized: "Living Room Screens", table:"SignalNames")
+            IOList[0][5][2] = String(localized: "Bedroom Screen", table:"SignalNames")
+            IOList[0][5][3] = String(localized: "Loft Screen", table:"SignalNames")
+            IOList[0][5][4] = String(localized: "Kitchen Blinds", table:"SignalNames")
+            IOList[0][5][5] = String(localized: "Living Room Blinds", table:"SignalNames")
+            IOList[0][5][6] = String(localized: "Bedroom Blinds", table:"SignalNames")
+            IOList[0][5][7] = String(localized: "Loft Blinds", table:"SignalNames")
+            IOList[0][5][8] = String(localized: "Landing Blinds", table:"SignalNames")
             
             // Varia
-            IOList[0][5][9] =  "Kelder Compressor"
+            IOList[0][5][9] = String(localized: "Basement Compressor", table:"SignalNames")
             IOList[0][5][10] =  nil
             IOList[0][5][11] =  nil
             IOList[0][5][12] =  nil
@@ -144,90 +144,90 @@ extension MainConfiguration{
             IOList[0][5][15] =  nil
             
             // Outlets
-            IOList[0][6][0] =  "Buiten Stopcontact"
-            IOList[0][6][1] =  "Garage Droogkast"
-            IOList[0][6][2] =  "Garage Ventilatie"
-            IOList[0][6][3] =  "Keuken Powerport"
-            IOList[0][6][4] =  "Living Stopcontact"
-            IOList[0][6][5] =  "Eetkamer Stopcontact"
-            IOList[0][6][6] =  "Bureau Stopcontact whiteboard"
-            IOList[0][6][7] =  "Bureau Stopcontact"
-            IOList[0][6][8] =  "Hal Stopcontact"
-            IOList[0][6][9] =  "Slaapkamer Stopcontact bed rechts"
-            IOList[0][6][10] =  "Slaapkamer Stopcontact Bed links"
-            IOList[0][6][11] =  "Slaapkamer Stopcontact T.V."
-            IOList[0][6][12] =  "Overloop Stopcontact"
-            IOList[0][6][13] =  "Voordeur"
-            IOList[0][6][14] =  "Garagepoort"
-            IOList[0][6][15] =  "Vrijgave beregening"
+            IOList[0][6][0] = String(localized: "Outdoor Power Outlet", table:"SignalNames")
+            IOList[0][6][1] = String(localized: "Garage Dryer", table:"SignalNames")
+            IOList[0][6][2] = String(localized: "Garage Ventilation", table:"SignalNames")
+            IOList[0][6][3] = String(localized: "Kitchen Powerport", table:"SignalNames")
+            IOList[0][6][4] = String(localized: "Living Room Power Outlet", table:"SignalNames")
+            IOList[0][6][5] = String(localized: "Dining Room Power Outlet", table:"SignalNames")
+            IOList[0][6][6] = String(localized: "Office Power Outlet whiteboard", table:"SignalNames")
+            IOList[0][6][7] = String(localized: "Office Power Outlet", table:"SignalNames")
+            IOList[0][6][8] = String(localized: "Hallway Power Outlet", table:"SignalNames")
+            IOList[0][6][9] = String(localized: "Bedroom Power Outlet bed right side", table:"SignalNames")
+            IOList[0][6][10] = String(localized: "Bedroom Power Outlet bed left side", table:"SignalNames")
+            IOList[0][6][11] = String(localized: "Bedroom Power Outlet TV", table:"SignalNames")
+            IOList[0][6][12] = String(localized: "Landing Power Outlet", table:"SignalNames")
+            IOList[0][6][13] = String(localized: "Front Door", table:"SignalNames")
+            IOList[0][6][14] = String(localized: "Garage Door", table:"SignalNames")
+            IOList[0][6][15] = String(localized: "Smart Sprinklers", table:"SignalNames")
             
             return IOList
         }
         
         static var PLCobjects:[String:PLCClass] = [
             
-			"Schemerschakelaar Enable" : Light(),
-			"Overloop Licht Enable" : Light(),
+            String(localized:"Twilight Sensor Enable", table:"AccessoryNames") : Light(),
+			String(localized:"Landing Light Enable", table:"AccessoryNames") : Light(),
 
             // Function keys / Switches
-//            "Hal Functietoets Voordeur" : Switch(),
-//            "SlaapKamer Functietoets Bed Anja" : Switch(),
-//            "SlaapKamer Functietoets Bed Jan" : Switch(),
-//            "Overloop Functietoets" : Switch(),
+//            String(localized:"Hal Functietoets Voordeur", table:"AccessoryNames") : Switch(),
+//            String(localized:"SlaapKamer Functietoets Bed Anja", table:"AccessoryNames") : Switch(),
+//            String(localized:"SlaapKamer Functietoets Bed Jan", table:"AccessoryNames") : Switch(),
+//            String(localized:"Overloop Functietoets", table:"AccessoryNames") : Switch(),
 
             // Dimmable lights
-            "Badkamer Sfeerlichtjes" : DimmableLight(),
-            "Slaapkamer Licht" : DimmableLight(),
+            String(localized:"Bathroom Mood Lights", table:"AccessoryNames") : DimmableLight(),
+            String(localized:"Bedroom Light", table:"AccessoryNames") : DimmableLight(),
 
             // Lights
-            "Badkamer Licht" : Light(),
-            "Badkamer Licht spiegel" : Light(),
-            "Kelder Licht" : Light(),
-            "Garage Licht" : Light(),
-            "Garage Licht Werkbank" : Light(),
-            "Keuken Licht kast" : Light(),
-            "Keuken Licht" : Light(),
-            "Bureau Licht" : Light(),
-            "Eetkamer Licht" : Light(),
-            "Dressing Licht" : Light(),
+            String(localized:"Bathroom Light", table:"AccessoryNames") : Light(),
+            String(localized:"Bathroom mirror Light", table:"AccessoryNames") : Light(),
+            String(localized:"Basement Light", table:"AccessoryNames") : Light(),
+            String(localized:"Garage Light", table:"AccessoryNames") : Light(),
+            String(localized:"Garage workbench Light", table:"AccessoryNames") : Light(),
+            String(localized:"Kitchen cabinet Light", table:"AccessoryNames") : Light(),
+            String(localized:"Kitchen Light", table:"AccessoryNames") : Light(),
+            String(localized:"Office Light", table:"AccessoryNames") : Light(),
+            String(localized:"Dining Room Light", table:"AccessoryNames") : Light(),
+            String(localized:"Dressing Room Light", table:"AccessoryNames") : Light(),
 			
-            "Overloop Licht" : Light(),
-            "Hal Licht" : Light(),
-            "W.C. Licht" : Light(),
+            String(localized:"Landing Light", table:"AccessoryNames") : Light(),
+            String(localized:"Hallway Light", table:"AccessoryNames") : Light(),
+            String(localized:"Toilet Light", table:"AccessoryNames") : Light(),
             
             // Window Coverings
-            "Keuken Screens" : WindowCovering(secondsToOpen: 35, secondsToClose: 35),
-            "Living Screens" : WindowCovering(secondsToOpen: 50, secondsToClose: 50),
-            "Slaapkamer Screen" : WindowCovering(secondsToOpen: 50, secondsToClose: 50),
-            "Vide Screen" : WindowCovering(secondsToOpen: 35, secondsToClose: 35),
-            "Keuken Rollekes" : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
-            "Living Rollekes" : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
-            "Slaapkamer Rolleke" : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
-            "Vide Rolleke" : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
-            "Overloop Rolleke" : WindowCovering(),
+            String(localized:"Kitchen Screens", table:"AccessoryNames") : WindowCovering(secondsToOpen: 35, secondsToClose: 35),
+            String(localized:"Living Room Screens", table:"AccessoryNames") : WindowCovering(secondsToOpen: 50, secondsToClose: 50),
+            String(localized:"Bedroom Screen", table:"AccessoryNames") : WindowCovering(secondsToOpen: 50, secondsToClose: 50),
+            String(localized:"Loft Screen", table:"AccessoryNames") : WindowCovering(secondsToOpen: 35, secondsToClose: 35),
+            String(localized:"Kitchen Blinds", table:"AccessoryNames") : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
+            String(localized:"Living Room Blinds", table:"AccessoryNames") : WindowCovering(secondsToOpen: 30, secondsToClose: 30),
+            String(localized:"Bedroom Blinds", table:"AccessoryNames") : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
+            String(localized:"Loft Blinds", table:"AccessoryNames") : WindowCovering(secondsToOpen: 25, secondsToClose: 25),
+            String(localized:"Landing Blinds", table:"AccessoryNames") : WindowCovering(),
 
 			// Varia
-			"Kelder Compressor" : ToggleableOutlet(),
+			String(localized:"Basement Compressor", table:"AccessoryNames") : ToggleableOutlet(),
             
             // Outlets
-            "Buiten Stopcontact" : Outlet(),
-            "Garage Droogkast" : Outlet(defaultPowerState: true),
-            "Garage Ventilatie" :Outlet(defaultPowerState: true),
-            "Keuken Powerport" : Outlet(defaultPowerState: true),
-            "Living Stopcontact" : Outlet(),
-            "Eetkamer Stopcontact" : Outlet(),
-            "Bureau Stopcontact whiteboard" : Outlet(),
-            "Bureau Stopcontact" : Outlet(),
-            "Hal Stopcontact" : Outlet(),
-            "Slaapkamer Stopcontact bed rechts" : Outlet(),
-            "Slaapkamer Stopcontact Bed links" : Outlet(),
-            "Slaapkamer Stopcontact T.V." : Outlet(defaultPowerState: true),
-            "Overloop Stopcontact" : Outlet(),
+            String(localized:"Outdoor Power Outlet", table:"AccessoryNames") : Outlet(),
+            String(localized:"Garage Dryer", table:"AccessoryNames") : Outlet(defaultPowerState: true),
+            String(localized:"Garage Ventilation", table:"AccessoryNames") : Outlet(defaultPowerState: true),
+            String(localized:"Kitchen Powerport", table:"AccessoryNames") : Outlet(defaultPowerState: true),
+            String(localized:"Living Room Power Outlet", table:"AccessoryNames") : Outlet(),
+            String(localized:"Dining Room Power Outlet", table:"AccessoryNames") : Outlet(),
+            String(localized:"Office Power Outlet whiteboard", table:"AccessoryNames") : Outlet(),
+            String(localized:"Office Power Outlet", table:"AccessoryNames") : Outlet(),
+            String(localized:"Hallway Power Outlet", table:"AccessoryNames") : Outlet(),
+            String(localized:"Bedroom Power Outlet bed right side", table:"AccessoryNames") : Outlet(),
+            String(localized:"Bedroom Power Outlet bed left side", table:"AccessoryNames") : Outlet(),
+            String(localized:"Bedroom Power Outlet TV", table:"AccessoryNames") : Outlet(defaultPowerState: true),
+            String(localized:"Landing Power Outlet", table:"AccessoryNames") : Outlet(),
             
             // Varia
-            "Voordeur" : Doorlock(),
-            "Garagepoort" : GarageDoor(),
-			"Vrijgave beregening" : SmartSprinkler(),
+            String(localized:"Front Door", table:"AccessoryNames") : Doorlock(),
+            String(localized:"Garage Door", table:"AccessoryNames") : GarageDoor(),
+			String(localized:"Smart Sprinklers", table:"AccessoryNames") : SmartSprinkler(),
         ]
     }
     
