@@ -11,9 +11,11 @@ import HAP
 import Darwin
 import JVCocoa
 import OSLog
-
+import SwiftUI
 import AppleScriptDriver
 import SiriDriver
+
+import LeafDriver
 
 public class HomeKitServer:Singleton{
     
@@ -24,30 +26,34 @@ public class HomeKitServer:Singleton{
     
 	var mainBridge:Bridge!{
         didSet{
-			let serverPort = MainConfiguration.HomeKit.ServerPort
+			let serverPort = MainConfiguration.HomeKitServer.ServerPort
 			HAPserver = try? Server(device: mainBridge, listenPort: serverPort)
-			dashboard = HomeKitServerView(qrCode: mainBridge.setupQRCode.asNSImage!)
+            dashboard = HomeKitServerView(qrCode: Image(nsImage:mainBridge.setupQRCode.asNSImage!))
         }
     }
 
-    let siriDriver = SiriDriver(language: .flemish)
+    let siriDriver = SiriDriver()
     let appleScriptDriver = AppleScriptDriver()
     
-  
 	//    let gscNotifier = GSCNotifier()
 	//    let sunnyPortalReporter = SunnyPortalReporter()
     //    let sprinklerDriver = SmartSprinklerDriver()
     
     private init(){
-		self.name = MainConfiguration.HomeKit.ServerName
+        
+		self.name = MainConfiguration.HomeKitServer.ServerName
 		#if DEBUG
 			AppController(name: "Home", location: .systemApps).startIfInstalled()
 		#endif
         let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "HomeKitServer")
         logger.info("Initializing the server \(self.name, privacy: .public)...")
 
+        #warning("TODO") // TODO: - reimplement SMAInverter
 //      let _ = SMAInverter.CreateInverters()
         
+    }
+    
+    deinit{
     }
     
 }

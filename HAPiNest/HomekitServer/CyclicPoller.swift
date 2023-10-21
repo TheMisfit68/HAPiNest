@@ -34,12 +34,13 @@ class CyclicPoller{
 		return timer
 	}()
 	
-	private func pollCycle(){
+    private func pollCycle(){
 		
-		let nonPLCaccessories = MainConfiguration.HomeKit.Accessories.map{$0.1}.filter{!($0 is PLCClass)}
+        let nonPLCaccessories = MainConfiguration.Accessories.values.filter{ !($0 is PLCAccessoryDelegate) }
 		nonPLCaccessories.forEach {
             ($0 as? (any CyclicPollable))?.pollCycle()
 		}
+        
 	}
 	
 	// MARK: - Cycle Control

@@ -21,8 +21,8 @@ extension Bridge{
     static var configFile:Storage!
     
     convenience init(name:String, setupCode:String, accessories:[HAP.Accessory], configfileName:String) {
-        
-            // Use the Application support folder to hold the HAP-configuration-data
+                
+        // Use the Application support folder to hold the HAP-configuration-data
         let fileManager = FileManager.default
         if let hapSupportDir = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?.appendingPathComponent("HAP"){
             
@@ -46,25 +46,19 @@ extension Bridge{
             accessories: accessories
         )
         
-        printPairingInstructions()
+        showPairingInstructions()
         
-            // Set the delegate for the bridge itself and for the individual accessories
+        // Set the delegate for the bridge itself and for the individual accessories
         delegate = self
-        MainConfiguration.HomeKit.Accessories.forEach{accessory, delegate in
-            accessory.delegate = delegate
-            
-            if delegate == nil,
-               let plcBasedDelegate = (MainConfiguration.PLC.PLCobjects[accessory.name] as? AccessoryDelegate){
-                    // Set the delegate to the PLC-object (and with a name equal the accessories name)
-                accessory.delegate = plcBasedDelegate
-            }
+        MainConfiguration.Accessories.forEach{ accessory, accessoryDelegate in
+            accessory.delegate = accessoryDelegate
         }
     }
     
-        // MARK: - Pairing Info
+    // MARK: - Pairing Info
     
-    public func printPairingInstructions(){
-        let logger = Logger(subsystem: "be.oneclick.HAPiNestBridge", category: "Pairing")
+    public func showPairingInstructions(){
+        let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "Bridge Pairing")
         if isPaired {
             logger.info("✅\tThe bridge is paired, unpair using your iPhone.")
         } else {
@@ -82,7 +76,7 @@ extension Bridge{
     }
     
     public func resetPairingInfo(){
-        let logger = Logger(subsystem: "be.oneclick.HAPiNestBridge", category: "Pairing")
+        let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "Bridge Pairing")
         logger.info("Dropping all pairings, keys")
         try? Self.configFile.write(Data())
     }

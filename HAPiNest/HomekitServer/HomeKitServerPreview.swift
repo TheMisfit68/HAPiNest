@@ -9,8 +9,6 @@
 import SwiftUI
 
 extension HomeKitServerView {
-	
-	public static let preview = HomeKitServerView(qrCode: NSImage.init(imageLiteralResourceName: "qrcode"))
-	
+        public static let preview = HomeKitServerView(qrCode: Image(systemName: "qrcode"))
 }
 

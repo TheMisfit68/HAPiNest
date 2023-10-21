@@ -11,13 +11,13 @@ import Neumorphic
 
 public struct HomeKitServerView: View {
 	
-	let qrCode:NSImage
+	let qrCode:Image
 
 	public var body: some View {
 		
 		VStack {
             HapinestIconView()
-			QRCodeView(qrCode: Image(nsImage: qrCode))
+            QRCodeView(qrCode: qrCode)
             Spacer()
         }
         
@@ -28,7 +28,8 @@ extension HomeKitServerView{
 	
 	struct HomekitBadgeView: View {
 		var body: some View {
-			Image("HomeKitLogo").resizable()
+            Image(.homeKitLogo)
+                .resizable()
 				.frame(width: 40, height: 40)
 				.clipShape(Circle())
 				.overlay(Circle()
@@ -41,7 +42,7 @@ extension HomeKitServerView{
     struct HapinestIconView: View {
         var body: some View {
             VStack {
-                Image("DashboardImage")
+                Image(.dashboard)
                     .resizable()
                     .frame(width: 100, height: 100)
 					HomekitBadgeView()
@@ -56,7 +57,7 @@ extension HomeKitServerView{
         @State private var showResetAlert: Bool = false
         var body: some View {
             return VStack {
-                qrCode.aspectRatio(contentMode: .fill).frame(width: 64)
+                qrCode.font(.system(size: 80))
                 Text("Scan the code above using your iPhone to pair it with the")
                 Text(HomeKitServer.shared.mainBridge.name).bold().font(.system(size: 18))
 				Text("(or enter setupcode \(HomeKitServer.shared.mainBridge.setupCode))")
