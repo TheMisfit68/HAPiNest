@@ -24,9 +24,9 @@ struct PreferencesView: View {
 					.tabItem {
 						Label("Nissan Leaf", systemImage: "bolt.car")
 					}
-				OpenWeatherSettingsView()
+                WeatherKitSettingsView()
 					.tabItem {
-						Label("OpenWeather", systemImage: "cloud.sun.rain")
+						Label("WeatherKit", systemImage: "cloud.sun.rain")
 					}
 				SunnyPortalSettingsView()
 					.tabItem {
