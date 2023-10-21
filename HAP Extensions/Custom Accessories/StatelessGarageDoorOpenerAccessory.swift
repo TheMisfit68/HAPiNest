@@ -11,16 +11,15 @@ import HAP
 
 extension Accessory.GarageDoorOpener {
 	
-	open class StatelessGarageDoorOpener: Accessory{
-		
-		public let toggleButton:Service.Switch
-		
-		public init( info: Service.Info,
-					 additionalServices: [Service] = []
-		) {
-			toggleButton = Service.Switch()
-			super.init(info: info, type: .garageDoorOpener, services: [toggleButton] + additionalServices)
-		}
-		
-	}
+    class StatelessGarageDoorOpener:Accessory{
+        
+        let primaryService:Service.Switch = Service.Switch(characteristics: [.name(String(localized:"Switch on",table: "ServiceNames"))])
+        
+        init(info: Service.Info) {
+            super.init(info: info, type: .garageDoorOpener, services: [primaryService])
+        }
+        
+    }
+    
 }
+

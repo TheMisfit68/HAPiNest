@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
     "Basement Compressor" : {
       "localizations" : {
         "nl" : {
@@ -61,6 +71,26 @@
         }
       }
     },
+    "Bedroom bed left side" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer linkerzijde bed"
+          }
+        }
+      }
+    },
+    "Bedroom bed right side" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slaapkamer rechterzijde bed"
+          }
+        }
+      }
+    },
     "Bedroom Blinds" : {
       "localizations" : {
         "nl" : {
@@ -72,16 +102,6 @@
       }
     },
     "Bedroom Light" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Slaapkamer Licht"
-          }
-        }
-      }
-    },
-    "Bedroom Lights" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -141,27 +161,7 @@
         }
       }
     },
-    "Dining Room Light" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eetkamer Licht"
-          }
-        }
-      }
-    },
     "Dining room Power Outlet" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eetkamer Stopcontact"
-          }
-        }
-      }
-    },
-    "Dining Room Power Outlet" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -181,12 +181,12 @@
         }
       }
     },
-    "Dressing Room Light" : {
+    "Electric Car" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dressing Licht"
+            "value" : "Elektrische auto"
           }
         }
       }
@@ -247,6 +247,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Garage Licht werkbank"
+          }
+        }
+      }
+    },
+    "Hallway front door" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voordeur"
           }
         }
       }
@@ -321,6 +331,16 @@
         }
       }
     },
+    "Landing area" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overloop"
+          }
+        }
+      }
+    },
     "Landing Blinds" : {
       "localizations" : {
         "nl" : {
@@ -371,16 +391,6 @@
         }
       }
     },
-    "Living Room Blinds" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Living Rollekes"
-          }
-        }
-      }
-    },
     "Living room Power Outlet" : {
       "localizations" : {
         "nl" : {
@@ -391,27 +401,7 @@
         }
       }
     },
-    "Living Room Power Outlet" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Living Stopcontact"
-          }
-        }
-      }
-    },
     "Living room Screens" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Living Screens"
-          }
-        }
-      }
-    },
-    "Living Room Screens" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -477,6 +467,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Buiten Stopcontact"
+          }
+        }
+      }
+    },
+    "Outside Light" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buitenverlichting"
           }
         }
       }

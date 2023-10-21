@@ -1,188 +1,152 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "(or enter setupcode %@)" : {
+    "App01" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "(of geef de code %@ in)"
+            "value" : "Netflix"
           }
         }
       }
     },
-    "%lld percent or %lld kilometers remaining" : {
+    "App02" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld percent or %2$lld kilometers remaining"
-          }
-        },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nog  %1$lld percent of %2$lld kilometer"
+            "value" : "YouTube"
           }
         }
       }
     },
-    "Are you sure?" : {
+    "App03" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bent U zeker?"
+            "value" : "Camera straat"
           }
         }
       }
     },
-    "Cancel" : {
+    "App04" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Annuleer"
+            "value" : "Camera tuin"
           }
         }
       }
     },
-    "Electric Car" : {
+    "Channel00" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Electrische auto"
+            "value" : "Home Screen"
           }
         }
       }
     },
-    "General" : {
+    "Channel01" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Algemeen"
+            "value" : "Eén"
           }
         }
       }
     },
-    "HAPiNest dashboard 🛋" : {
+    "Channel02" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HAPiNest dashboard 🛋"
+            "value" : "Q2"
           }
         }
       }
     },
-    "Hello, World!" : {
+    "Channel03" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hello, World!"
+            "value" : "VTM"
           }
         }
       }
     },
-    "Homekit Server" : {
+    "Channel04" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HomeKit Server"
+            "value" : "Vier"
           }
         }
       }
     },
-    "Nissan Leaf" : {
+    "Channel05" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nissan Leaf"
+            "value" : "Vijf"
           }
         }
       }
     },
-    "PLC" : {
+    "Channel06" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "PLC"
+            "value" : "Zes"
           }
         }
       }
     },
-    "Reset" : {
+    "Channel07" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Koppel los"
+            "value" : "Canvas"
           }
         }
       }
     },
-    "Reset all paired accesories?" : {
+    "Channel08" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alle gekoppelde accesoires loskoppelen?"
+            "value" : "Discovery"
           }
         }
       }
     },
-    "Reset all pairings" : {
+    "Channel09" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alles loskoppelen"
+            "value" : "National Geographic"
           }
         }
       }
     },
-    "Samsung Tizen" : {
+    "Channel10" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Samsung Tizen"
-          }
-        }
-      }
-    },
-    "Scan the code above using your iPhone to pair it with the" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scan bovenstaande code met je iPone om het te koppelen met "
-          }
-        }
-      }
-    },
-    "SunnyPortal" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SunnyPortal"
-          }
-        }
-      }
-    },
-    "WeatherKit" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WeatherKit"
+            "value" : "Animal Planet"
           }
         }
       }

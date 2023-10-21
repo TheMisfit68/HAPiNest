@@ -1,0 +1,76 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Battery status" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batterijstatus"
+          }
+        }
+      }
+    },
+    "Enable" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activeer"
+          }
+        }
+      }
+    },
+    "Manual" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Handmatig"
+          }
+        }
+      }
+    },
+    "Sprinklers" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sproeisysteem"
+          }
+        }
+      }
+    },
+    "Start Airco" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start airco"
+          }
+        }
+      }
+    },
+    "Start Charging" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start opladen"
+          }
+        }
+      }
+    },
+    "Switch on" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schakel in"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

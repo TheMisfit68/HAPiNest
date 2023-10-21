@@ -11,12 +11,12 @@ import HAP
 
 extension Accessory {
     
-	class SmartSprinkler: Accessory  {
+    class SmartSprinkler:Accessory{
         
-        let primaryService:Service.IrrigationSystem = Service.IrrigationSystem(characteristics: [.name(String(localized:"Sprinklers"))])
+        let primaryService:Service.IrrigationSystem = Service.IrrigationSystem(characteristics: [.name(String(localized:"Sprinklers",table: "ServiceNames"))])
 
         let enableAutoService:Service.Switch.EnableSwitch = Service.Switch.EnableSwitch()
-        var manualOverrideService:Service.Switch = Service.Switch(characteristics: [.name(String(localized:"Manual"))])
+        let manualOverrideService:Service.Switch = Service.Switch(characteristics: [.name(String(localized:"Manual",table: "ServiceNames"))])
 
 		init(info: Service.Info) {
             super.init(info: info, type: .sprinkler, services: [primaryService, enableAutoService, manualOverrideService])

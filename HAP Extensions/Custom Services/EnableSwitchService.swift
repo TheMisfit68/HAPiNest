@@ -11,12 +11,12 @@ import HAP
 
 extension Service.Switch {
 	
-    open class EnableSwitch: Service.Switch {
+    class EnableSwitch: Service.Switch{
 		
         public let enabled:GenericCharacteristic<Enums.Active> = GenericCharacteristic<Enums.Active>(type: .active, value: .inactive)
 		
 		init() {
-            super.init(characteristics: [.name(String(localized:"Enable")),AnyCharacteristic(enabled)])
+            super.init(characteristics: [.name(String(localized:"Enable",table: "ServiceNames")), AnyCharacteristic(enabled)] )
 		}
                 
 	}
