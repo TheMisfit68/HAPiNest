@@ -7,13 +7,17 @@
 //
 
 import SwiftUI
+import OSLog
+import WeatherKit
 
-struct OpenWeatherSettingsView: View {
+struct WeatherKitSettingsView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        WeatherService.CreditsView()
     }
+
 }
 
 #Preview {
-    OpenWeatherSettingsView()
+    WeatherKitSettingsView()
 }
