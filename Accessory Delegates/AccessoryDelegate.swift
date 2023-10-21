@@ -35,6 +35,7 @@ extension AccessoryDelegate{
         
         let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "AccessoryDelegate")
         logger.info("✴️\tValue '\(characteristic.description ?? "", privacy: .public)' of '\(accessory.info.name.value ?? "", privacy: .public)/\(service.label ?? "", privacy: .public)' changed to \(String(describing:newValue), privacy: .public)")
+        
         characteristicChanged.set()
         
         handleCharacteristicChange(accessory:accessory, service: service, characteristic: characteristic, to: newValue)
@@ -92,24 +93,3 @@ extension AccessorySource {
     
 }
 
-// MARK: - PLC based Accessory Delegate
-
-extension AccessoryDelegate where Self:PLCClass{
-    
-    public var name:String{
-        self.instanceName
-    }
-    
-    func handleCharacteristicChange<T>(accessory:HAP.Accessory, service: HAP.Service, characteristic: HAP.GenericCharacteristic<T>, to value: T?){
-        // Characteristc are reevaluated by the PLCClasses in a cyclic manner
-    }
-}
-
-// Any object capable of reacting to changes in the field
-protocol CyclicPollable:AccessorySource{
-    
-    func pollCycle()
-    
-}
-
-typealias PLCaccessoryDelegate = PLCClass & Parameterizable & CyclicRunnable & AccessoryDelegate & AccessorySource

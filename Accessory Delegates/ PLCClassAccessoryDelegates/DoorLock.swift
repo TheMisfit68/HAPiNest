@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class Doorlock:PLCaccessoryDelegate, PulsOperatedCircuit{
+class Doorlock:PLCClassAccessoryDelegate, PulsOperatedCircuit{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.LockMechanism
@@ -34,7 +34,7 @@ class Doorlock:PLCaccessoryDelegate, PulsOperatedCircuit{
 	
 	// MARK: - PLC IO-Signal assignment
 	var outputSignal:DigitalOutputSignal{
-		plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
+        return plc.signal(ioSymbol:.on(circuit:instanceName)) as! DigitalOutputSignal
 	}
 	
 	// MARK: - PLC Parameter assignment	
@@ -46,20 +46,19 @@ class Doorlock:PLCaccessoryDelegate, PulsOperatedCircuit{
 		
 		outputSignal.logicalValue = puls
 		
-		// TODO: - hardwrecuurnstate is evaluated constan , remove after test
-//		if !puls{
-//			hardwareCurrentState = .secured
-//		}
-		
 	}
 	
 	// MARK: - PLC Processing
 	public func runCycle(){
 		
-		reevaluate(&currentState, characteristic:accessory.lockMechanism.lockCurrentState, hardwareFeedback: hardwareCurrentState)
-		reevaluate(&targetState, initialValue: (currentState ?? .secured == .unsecured ? .unsecured : .secured), characteristic:accessory.lockMechanism.lockTargetState, hardwareFeedback: nil)
+        
+        // In the latest versions of the Home-App the targetstate should be kept in synch with the hardwareCurrentState
+        // once the puls changed to false again
+        reevaluate(&targetState, initialValue: (currentState ?? .secured == .unsecured ? .unsecured : .secured), characteristic:accessory.lockMechanism.lockTargetState, hardwareFeedback: (hardwareCurrentState ?? .secured == .unsecured ? .unsecured : .secured))
 
-		characteristicChanged.reset()
+		reevaluate(&currentState, characteristic:accessory.lockMechanism.lockCurrentState, hardwareFeedback: hardwareCurrentState)
+        
+        characteristicChanged.reset()
 		hardwareFeedbackChanged.reset()
 		
 	}

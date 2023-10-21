@@ -1,5 +1,5 @@
 //
-//  MilightDelegate.swift
+//  MilightAccessoryDelegate.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 03/12/2019.
@@ -15,17 +15,23 @@ import OSLog
 /// Handles characteristic changes for a Homekit Accessory.
 /// It uses the MilightDriver to pass those changes to  the hardware
 
-class MilightDelegate:AccessoryDelegate {
+class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate {
     
-    let name:String
-    let driver:MilightDriver
     let zone:MilightDriver.Zone
+    var name: String{
+        return zone.name
+    }
+    
+    init(ipAddress: String, zone:MilightDriver.Zone){
+        self.zone = zone
+        super.init(ipAddress: ipAddress)
+    }
     
     var characteristicChanged: Bool = false
     
     var brightness:Int = 100{
         didSet{
-            driver.executeCommand(mode: .rgbwwcw, action: .brightNess, value: brightness, zone: zone)
+            executeCommand(mode: .rgbwwcw, action: .brightNess, value: brightness, zone: zone)
         }
     }
     var hue:Int = 0{
@@ -33,13 +39,13 @@ class MilightDelegate:AccessoryDelegate {
             if inWhiteMode{
                 hue = 0
             }else{
-                driver.executeCommand(mode: .rgbwwcw, action: .hue, value: hue, zone: zone)
+                executeCommand(mode: .rgbwwcw, action: .hue, value: hue, zone: zone)
             }
         }
     }
     var saturation:Int = 0{
         didSet{
-            driver.executeCommand(mode: .rgbwwcw, action: .saturation, value: saturation, zone: zone)
+            executeCommand(mode: .rgbwwcw, action: .saturation, value: saturation, zone: zone)
             inWhiteMode = (saturation <= 16)
         }
     }
@@ -53,22 +59,12 @@ class MilightDelegate:AccessoryDelegate {
 
                     hue = 0
                     saturation = 0
-                    driver.executeCommand(mode: .rgbwwcw, action: .whiteOnlyMode,  zone: zone)
-                    driver.executeCommand(mode: .rgbwwcw, action: .temperature, value:100,  zone: zone)
+                    executeCommand(mode: .rgbwwcw, action: .whiteOnlyMode,  zone: zone)
+                    executeCommand(mode: .rgbwwcw, action: .temperature, value:100,  zone: zone)
                 }
                 brightness = currentBrightness
             }
         }
-    }
-    
-    
-    public init(name:String,
-                driver:MilightDriver,
-                zone:MilightDriver.Zone
-    ) {
-        self.name = name
-        self.driver = driver
-        self.zone = zone
     }
     
     func handleCharacteristicChange<T>(accessory:Accessory,
@@ -82,7 +78,7 @@ class MilightDelegate:AccessoryDelegate {
             
             let poweredOn = characteristic.value as! Bool
             let action = poweredOn ? MilightDriver.Action.on : MilightDriver.Action.off
-            driver.executeCommand(mode: .rgbwwcw, action: action, zone: zone)
+            executeCommand(mode: .rgbwwcw, action: action, zone: zone)
             
         case CharacteristicType.brightness:
             
@@ -97,7 +93,7 @@ class MilightDelegate:AccessoryDelegate {
             saturation = Int(characteristic.value as! Float)
             
         default:
-            let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "MilightDelegate")
+            let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "MilightAccessoryDelegate")
             logger.warning("Unhandled characteristic change for accessory \(self.name)")
         }
         

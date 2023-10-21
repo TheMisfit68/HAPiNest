@@ -15,10 +15,13 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
+#warning("TODO") // TODO: - Implement this class
+
 class Switch:PLCClass, Parameterizable{
     
     var inputSignal:DigitalInputSignal{
-        plc.signal(ioSymbol:instanceName) as! DigitalInputSignal
+        let ioSymbol:SoftPLC.IOSymbol = .on(circuit:String(localized: "\(instanceName)", table:"AccessoryNames"))
+        return plc.signal(ioSymbol:ioSymbol) as! DigitalInputSignal
     }
     
     public func assignInputParameters(){

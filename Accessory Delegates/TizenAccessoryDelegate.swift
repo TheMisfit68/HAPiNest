@@ -1,5 +1,5 @@
 //
-//  TizenDelegate.swift
+//  TizenAccessoryDelegate.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 03/03/2020.
@@ -12,7 +12,7 @@ import JVCocoa
 import TizenDriver
 import OSLog
 
-class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPollable{
+class TizenAccessoryDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPollable{
 	
 	var name: String{
 		super.tvName
@@ -60,7 +60,7 @@ class TizenDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPolla
                 }
             
         default:
-            let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "TizenDelegate")
+            let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "TizenAccessoryDelegate")
             logger.warning("Unhandled characteristic change for accessory \(self.name)")
         }
         characteristicChanged.set()

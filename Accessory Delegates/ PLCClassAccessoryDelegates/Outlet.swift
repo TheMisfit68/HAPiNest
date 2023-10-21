@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class Outlet:PLCaccessoryDelegate{
+class Outlet:PLCClassAccessoryDelegate{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.Outlet
@@ -45,7 +45,7 @@ class Outlet:PLCaccessoryDelegate{
 	
 	// MARK: - IO-Signal assignment
 	var outputSignal:DigitalOutputSignal{
-		plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
+        return plc.signal(ioSymbol:.on(circuit:instanceName)) as! DigitalOutputSignal
 	}
 	
 	// MARK: - Parameter assignment	

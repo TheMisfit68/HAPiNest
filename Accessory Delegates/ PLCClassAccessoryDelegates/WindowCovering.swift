@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class WindowCovering:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
+class WindowCovering:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateable{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.WindowCovering
@@ -146,15 +146,15 @@ class WindowCovering:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
 	
 	// MARK: - PLC IO-Signal assignment
 	var outputSignal:DigitalOutputSignal{
-		plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
+        return plc.signal(ioSymbol:.toggle(circuit:instanceName)) as! DigitalOutputSignal
 	}
 	
 	var feedbackSignalIsOpening:DigitalInputSignal?{
-		plc.signal(ioSymbol:instanceName+" Open") as? DigitalInputSignal
+        return plc.signal(ioSymbol:.feedbackOpening(circuit:instanceName)) as? DigitalInputSignal
 	}
 	
 	var feedbackSignalIsClosing:DigitalInputSignal?{
-		plc.signal(ioSymbol:instanceName+" Close") as? DigitalInputSignal
+        return plc.signal(ioSymbol:.feedbackClosing(circuit:instanceName)) as? DigitalInputSignal
 	}
 	
 	// MARK: - Parameter assignment
@@ -229,6 +229,9 @@ class WindowCovering:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
 		
 	}
 	
+    // MARK: - Hardware simulation
+    // When in simulation mode,
+    // provide the hardwareFeedback yourself
 	public func simulateHardwareInputs() {
 		
 		hardwarePuls = outputSignal.logicalValue

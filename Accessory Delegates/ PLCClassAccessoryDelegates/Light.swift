@@ -1,5 +1,5 @@
 //
-//  ToggleableOutlet.swift
+//  Light.swift
 //  HAPiNest
 //
 //  Created by Jan Verrept on 14/08/2020.
@@ -12,44 +12,36 @@ import SoftPLC
 import ModbusDriver
 import IOTypes
 import JVCocoa
+import OSLog
 
 // MARK: - PLC level class
-class ToggleableOutlet:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
-	
+class Light:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateable{
+
 	// Accessory binding
-	typealias AccessorySubclass = Accessory.Outlet
+	typealias AccessorySubclass = Accessory.Lightbulb
 	var characteristicChanged:Bool = false
-	
+
 	// MARK: - State
 	public var powerState:Bool? = nil
-		
+	
 	// Hardware feedback state
 	private var hardwarePowerState:Bool?{
 		didSet{
-			hardwareFeedbackChanged = (hardwarePowerState != nil) && (oldValue != nil) &&  (hardwarePowerState != oldValue)
+			hardwareFeedbackChanged.set( (hardwarePowerState != nil) && (oldValue != nil) &&  (hardwarePowerState != oldValue) )
 		}
 	}
 	var hardwareFeedbackChanged:Bool = false
 
-	
-	// MARK: - PLC IO-Signal assignment
-	
-	var outputSignal:DigitalOutputSignal{
-		plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
-	}
+	// MARK: IO-Signal assignment
+    var outputSignal:DigitalOutputSignal{
+        return plc.signal(ioSymbol:.toggle(circuit:instanceName)) as! DigitalOutputSignal
+    }
 	
 	var feedbackSignal:DigitalInputSignal?{
-		let nameFeedBackSignal:String
-		if instanceName.contains("Enable"){
-			nameFeedBackSignal = instanceName.replacingOccurrences(of: "Enable", with: "Enabled")
-		}else{
-			nameFeedBackSignal = instanceName+" On"
-		}
-		return plc.signal(ioSymbol:nameFeedBackSignal) as? DigitalInputSignal
+		return plc.signal(ioSymbol:.feedbackOn(circuit:instanceName)) as? DigitalInputSignal
 	}
 	
-	// MARK: - PLC parameter assignment
-	
+	// MARK: - Parameter assignment
 	public func assignInputParameters(){
 		hardwarePowerState = feedbackSignal?.logicalValue
 	}
@@ -58,11 +50,10 @@ class ToggleableOutlet:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
 		outputSignal.logicalValue = puls
 	}
 	
-	
 	// MARK: - Processing
-	public func runCycle() {
-		
-		reevaluate(&powerState, characteristic:accessory.outlet.powerState, hardwareFeedback: hardwarePowerState)
+	public func runCycle(){
+
+		reevaluate(&powerState, characteristic:accessory.lightbulb.powerState, hardwareFeedback: hardwarePowerState)
 		
 		characteristicChanged.reset()
 		hardwareFeedbackChanged.reset()
@@ -77,9 +68,9 @@ class ToggleableOutlet:PLCaccessoryDelegate, PulsOperatedCircuit, Simulateable{
 		}
 	}
 	
-	// MARK: - Simulation hardware
+	// MARK: - Hardware simulation
 	// When in simulation mode,
-	// provide the hardwarefeedback yourself
+	// provide the hardwareFeedback yourself
 	private var teleruptor = ImpulsRelais()
 	public func simulateHardwareInputs() {
 		

@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class GarageDoor:PLCaccessoryDelegate, PulsOperatedCircuit{
+class GarageDoor:PLCClassAccessoryDelegate, PulsOperatedCircuit{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.GarageDoorOpener.StatelessGarageDoorOpener
@@ -33,7 +33,7 @@ class GarageDoor:PLCaccessoryDelegate, PulsOperatedCircuit{
     
     // MARK: - PLC IO-Signal assignment
     var outputSignal:DigitalOutputSignal{
-        plc.signal(ioSymbol:instanceName) as! DigitalOutputSignal
+        return plc.signal(ioSymbol:.toggle(circuit:instanceName)) as! DigitalOutputSignal
     }
     
     // MARK: - PLC Parameter assignment    
@@ -44,18 +44,14 @@ class GarageDoor:PLCaccessoryDelegate, PulsOperatedCircuit{
     public func assignOutputParameters(){
 		
         outputSignal.logicalValue = puls
-		// TODO: - hardwrecuurnstate is evaluated constantly , remove after test
-//        if !puls{
-//            powerState = false
-//        }
-		
+        
     }
 	
     // MARK: - PLC Processing
 	public func runCycle() {
 		 
-		reevaluate(&powerState, characteristic:accessory.toggleButton.powerState, hardwareFeedback: hardwarePowerState)
-		
+    reevaluate(&powerState, characteristic:accessory.primaryService.powerState, hardwareFeedback: hardwarePowerState)
+    
 		characteristicChanged.reset()
 		hardwareFeedbackChanged.reset()
 	}

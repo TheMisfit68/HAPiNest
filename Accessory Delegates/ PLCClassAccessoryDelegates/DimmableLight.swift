@@ -14,7 +14,7 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class DimmableLight:PLCaccessoryDelegate{
+class DimmableLight:PLCClassAccessoryDelegate{
 	
 	// Accessory binding
 	typealias AccessorySubclass = Accessory.Lightbulb
@@ -65,7 +65,7 @@ class DimmableLight:PLCaccessoryDelegate{
 	
 	// MARK: - PLC IO-Signal assignment
 	var outputSignal:AnalogOutputSignal{
-		plc.signal(ioSymbol:instanceName) as! AnalogOutputSignal
+		return plc.signal(ioSymbol:.setpoint(circuit:instanceName)) as! AnalogOutputSignal
 	}
 	
 	// MARK: - PLC Parameter assignment
