@@ -43,6 +43,7 @@ public class HomeKitServer:Singleton{
         
 		self.name = MainConfiguration.HomeKitServer.ServerName
 		#if DEBUG
+            AppController(name: "Console", location: .systemUtilities).startIfInstalled()
 			AppController(name: "Home", location: .systemApps).startIfInstalled()
 		#endif
         let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "HomeKitServer")
