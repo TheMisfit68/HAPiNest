@@ -15,7 +15,7 @@ import OSLog
 
 // MARK: -  Accessory Delegate
 
-// Any object capable of receving events from a HomeKit-Accessory
+/// Any object capable of receving events from a HomeKit-Accessory
 public protocol AccessoryDelegate: HAP.AccessoryDelegate{
     
     var name:String{get}
@@ -36,7 +36,7 @@ extension AccessoryDelegate{
         let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "AccessoryDelegate")
         logger.info("✴️\tValue '\(characteristic.description ?? "", privacy: .public)' of '\(accessory.info.name.value ?? "", privacy: .public)/\(service.label ?? "", privacy: .public)' changed to \(String(describing:newValue), privacy: .public)")
         
-        characteristicChanged.set()
+            characteristicChanged.set()
         
         handleCharacteristicChange(accessory:accessory, service: service, characteristic: characteristic, to: newValue)
         
@@ -47,7 +47,7 @@ extension AccessoryDelegate{
 
 // MARK: - Accessory Source
 
-// Any object capable of writing values to a HomeKit-Accessory
+//? Any object capable of writing values to a HomeKit-Accessory
 protocol AccessorySource:AccessoryDelegate{
     
     associatedtype AccessorySubclass
@@ -65,6 +65,14 @@ extension AccessorySource {
         return HomeKitServer.shared.mainBridge[name] as! AccessorySubclass
     }
     
+    /// Syncs the changes of the accessory itself and or any hardware feedback from the field into a single resulting property,
+    /// keeping the the priority of changes in mind.
+    /// - Parameters:
+    ///   - property: the resulting property that incoporates all the changes
+    ///   - initialValue: the value after a cold restart
+    ///   - characteristic: the accessories characteristic that needs to be associated with this property
+    ///   - hardwareFeedback: a value from the field if available
+    ///   - typeTranslators: an optional tuple of two methods that translates between the type of the property and the type of the characteristic and vice versa
     func reevaluate<PT, CT>(_ property:inout PT?, initialValue:PT? = nil, characteristic:GenericCharacteristic<CT>?, hardwareFeedback:PT?, typeTranslators:((CT)->PT, (PT)->CT)? = nil){
         
         if (property == nil), let initialValue = initialValue{
