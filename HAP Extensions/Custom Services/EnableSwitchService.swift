@@ -12,13 +12,19 @@ import HAP
 extension Service.Switch {
 	
     class EnableSwitch: Service.Switch{
-		
-        public let enabled:GenericCharacteristic<Enums.Active> = GenericCharacteristic<Enums.Active>(type: .active, value: .inactive)
+        
+        // MARK: - Required Characteristics
+        
+        // Simply sync the buttons enabled-characteristic with its primary powerstate-characterisic
+        public var enabled:GenericCharacteristic<Enums.Active>{
+            GenericCharacteristic(type:.active, value: (self.powerState.value ?? false) ? Enums.Active.active : Enums.Active.inactive)
+        }
 		
 		init() {
-            super.init(characteristics: [.name(String(localized:"Enable",table: "ServiceNames")), AnyCharacteristic(enabled)] )
+            super.init(characteristics: [.name(String(localized:"Enable",table: "ServiceNames"))] )
 		}
                 
 	}
 	
+    
 }
