@@ -50,10 +50,8 @@ class Outlet:PLCClassAccessoryDelegate{
 	
 	// MARK: - Parameter assignment	
 	public func assignInputParameters(){
-		
 		outputSignal.outputLogic = .inverse
 		hardwarePowerState = outputSignal.logicalFeedbackValue
-
 	}
 	
 	public func assignOutputParameters(){
