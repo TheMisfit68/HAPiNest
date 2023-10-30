@@ -20,7 +20,6 @@ import ModbusDriver
 /// The hardwaredrivers/Accessory-delegates react to changes made to an accessory when it is controlled in the Home-app,
 /// by translating those changes into actions for the hardware.
 /// The main accessory-delegate in this App is a SoftPLC that can interact with the outside world by means of a number of Input and Output-modules.
- 
 @main
 struct HAPiNestApp: App {
     @Environment(\.scenePhase) var scenePhase
@@ -72,9 +71,9 @@ struct HAPiNestApp: App {
             .onAppear(perform: {
             })
         }
-        .onChange(of: scenePhase) { newScenePhase in
+        .onChange(of: scenePhase) {
             let logger = Logger(subsystem: "be.oneclick.HAPiNest", category:.lifeCycle)
-            switch newScenePhase {
+            switch scenePhase {
             case .active:
                 logger.info("App became active")
             case .inactive:

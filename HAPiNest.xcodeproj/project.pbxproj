@@ -16,6 +16,7 @@
 		DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */ = {isa = PBXBuildFile; productRef = DC2C19BE26BB3BD400A3AB83 /* HAP */; };
 		DC342E0C2AEE74EF00C578A2 /* PLCAccessoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC342E0B2AEE74EF00C578A2 /* PLCAccessoryDelegate.swift */; };
 		DC342E0E2AEE757E00C578A2 /* CyclicPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC342E0D2AEE757E00C578A2 /* CyclicPoller.swift */; };
+		DC342E102AEEF1EC00C578A2 /* HomeKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC342E0F2AEEF1EC00C578A2 /* HomeKitManager.swift */; };
 		DC4D667A2A956AC1004C9D30 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DC4D66792A956AC1004C9D30 /* Localizable.xcstrings */; };
 		DC4D667C2A9571BA004C9D30 /* AccessoryNames.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DC4D667B2A9571BA004C9D30 /* AccessoryNames.xcstrings */; };
 		DC4D6DDF25713CCD0087E51D /* AccessoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD428D24FAB5A8000320E0 /* AccessoryDelegate.swift */; };
@@ -88,6 +89,7 @@
 		DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLCConfiguration.swift; sourceTree = "<group>"; };
 		DC342E0B2AEE74EF00C578A2 /* PLCAccessoryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLCAccessoryDelegate.swift; sourceTree = "<group>"; };
 		DC342E0D2AEE757E00C578A2 /* CyclicPoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclicPoller.swift; sourceTree = "<group>"; };
+		DC342E0F2AEEF1EC00C578A2 /* HomeKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitManager.swift; sourceTree = "<group>"; };
 		DC3626EF256D9B0800F0AC35 /* HomeKitServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServerView.swift; sourceTree = "<group>"; };
 		DC4B0FFA29C5139300EA6E47 /* Awake */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Awake; path = "../../../../Third Party Code/Awake"; sourceTree = "<group>"; };
 		DC4B0FFB29C5175F00EA6E47 /* ClibModbus */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ClibModbus; path = "../../../../Third Party Code/C-based Packages/System-libraries/ClibModbus"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				DCD592F8270A6C2600882387 /* HAPiNestApp.swift */,
 				DC342E0D2AEE757E00C578A2 /* CyclicPoller.swift */,
+				DC342E0F2AEEF1EC00C578A2 /* HomeKitManager.swift */,
 				DC54B6C62570586E00D9169F /* Info.plist */,
 				DC54B6C72570586E00D9169F /* HAPiNest.entitlements */,
 				DC54B6C12570586E00D9169F /* Assets.xcassets */,
@@ -516,6 +519,7 @@
 				DC342E0E2AEE757E00C578A2 /* CyclicPoller.swift in Sources */,
 				DCCF8CCC296B4BB400B1C50F /* Accessory.swift in Sources */,
 				DCC9603D2670305000FB84BC /* Hapinest.docc in Sources */,
+				DC342E102AEEF1EC00C578A2 /* HomeKitManager.swift in Sources */,
 				DCCBE29C25B8B7D800BAED50 /* ToggleableOutlet.swift in Sources */,
 				DC0761B02A8A9DA3009FA191 /* DashboardPreview.swift in Sources */,
 				DC90DA642732817000068839 /* TizenSettingsView.swift in Sources */,
@@ -623,7 +627,7 @@
 				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib/;
 				LIBRARY_SEARCH_PATHS = "";
 				LOCALIZATION_EXPORT_SUPPORTED = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -698,7 +702,7 @@
 				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib/;
 				LIBRARY_SEARCH_PATHS = "";
 				LOCALIZATION_EXPORT_SUPPORTED = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -738,7 +742,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.jan.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -772,7 +776,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.jan.HAPiNest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
