@@ -12,9 +12,7 @@ import Darwin
 import JVCocoa
 import OSLog
 import SwiftUI
-import AppleScriptDriver
 import SiriDriver
-
 import LeafDriver
 
 public class HomeKitServer:Singleton{
@@ -23,6 +21,7 @@ public class HomeKitServer:Singleton{
 	public var dashboard:HomeKitServerView?
 	public var name:String
     private var HAPserver:Server!
+
     
 	var mainBridge:Bridge!{
         didSet{
@@ -33,11 +32,9 @@ public class HomeKitServer:Singleton{
     }
 
     let siriDriver = SiriDriver()
-    let appleScriptDriver = AppleScriptDriver()
     
 	//    let gscNotifier = GSCNotifier()
 	//    let sunnyPortalReporter = SunnyPortalReporter()
-    //    let sprinklerDriver = SmartSprinklerDriver()
     
     private init(){
         
@@ -49,6 +46,7 @@ public class HomeKitServer:Singleton{
         let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "HomeKitServer")
         logger.info("Initializing the server \(self.name, privacy: .public)...")
 
+        
         #warning("TODO") // TODO: - reimplement SMAInverter
 //      let _ = SMAInverter.CreateInverters()
         

@@ -7,7 +7,7 @@ _(Complete ACController with temperature setpoint if Nissan developer account ge
 
 - [ ]  Write DOCC files 
 For Siridriver
-For ApplescriptDriver
+For ScriptsDriver
 For Hapinest with UML diagrams to explain architecture
 
 - [ ] Create a View/Container and Preference view/container for each module,
@@ -15,6 +15,9 @@ use the. WeatherService.CreditsView as an example
 - [ ] Create Preference Window that show those views in a their own tab
 
 - [ ] Add driver for IP Cams
+
+## Testing
+- [ ] Test the smartsprinkler in Auto-enabled mode during dry-season.
 
 ## Longterm MacOS 13
 - [ ] Use gauges and charts in SwiftUI to represent al kinds of numeric data

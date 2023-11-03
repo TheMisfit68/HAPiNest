@@ -57,7 +57,7 @@ struct HAPiNestApp: App {
         // (to poll for harware changes on behalf of the other type acessoryDelegates)
         cyclicPoller.run()
         
-    }
+}
     
     
     var body: some Scene {

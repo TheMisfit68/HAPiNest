@@ -71,26 +71,6 @@
         }
       }
     },
-    "Bedroom bed left side" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Slaapkamer linkerzijde bed"
-          }
-        }
-      }
-    },
-    "Bedroom bed right side" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Slaapkamer rechterzijde bed"
-          }
-        }
-      }
-    },
     "Bedroom Blinds" : {
       "localizations" : {
         "nl" : {
@@ -201,6 +181,46 @@
         }
       }
     },
+    "Function Key Frontdoor" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Functietoets Voordeur"
+          }
+        }
+      }
+    },
+    "Function Key Landing" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Functietoets Overloop"
+          }
+        }
+      }
+    },
+    "Function Key Left side bed" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Functietoets Bed links"
+          }
+        }
+      }
+    },
+    "Function Key Right side bed" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Functietoets Bed rechts"
+          }
+        }
+      }
+    },
     "Garage Door" : {
       "localizations" : {
         "nl" : {
@@ -247,16 +267,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Garage Licht werkbank"
-          }
-        }
-      }
-    },
-    "Hallway front door" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voordeur"
           }
         }
       }
@@ -327,16 +337,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keuken Screens"
-          }
-        }
-      }
-    },
-    "Landing area" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Overloop"
           }
         }
       }

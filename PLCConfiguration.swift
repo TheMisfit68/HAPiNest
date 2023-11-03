@@ -99,10 +99,10 @@ extension MainConfiguration{
             IOList[0][3][9] =  nil
             IOList[0][3][10] = nil
             IOList[0][3][11] = nil
-            IOList[0][3][12] = .functionKey(circuit:String(localized: "Hallway front door", table:"AccessoryNames"))
-            IOList[0][3][13] = .functionKey(circuit:String(localized: "Bedroom bed left side", table:"AccessoryNames"))
-            IOList[0][3][14] = .functionKey(circuit:String(localized: "Bedroom bed right side", table:"AccessoryNames"))
-            IOList[0][3][15] = .functionKey(circuit:String(localized: "Landing area", table:"AccessoryNames"))
+            IOList[0][3][12] = .functionKey(circuit:String(localized: "Function Key Frontdoor", table:"AccessoryNames"))
+            IOList[0][3][13] = .functionKey(circuit:String(localized: "Function Key Left side bed", table:"AccessoryNames"))
+            IOList[0][3][14] = .functionKey(circuit:String(localized: "Function Key Right side bed", table:"AccessoryNames"))
+            IOList[0][3][15] = .functionKey(circuit:String(localized: "Function Key Landing", table:"AccessoryNames"))
             
             // Digital outputs 4...6
             // Lights
@@ -169,11 +169,27 @@ extension MainConfiguration{
             String(localized:"Twilight Sensor Enable", table:"AccessoryNames") : CirtcuitEnabler(),
             String(localized:"Landing Light Enable", table:"AccessoryNames") : CirtcuitEnabler(),
             
-            // Function keys / Switches
-            //            String(localized:"Hal Functietoets Voordeur", table:"AccessoryNames") : Switch(),
-            //            String(localized:"SlaapKamer Functietoets Bed Anja", table:"AccessoryNames") : Switch(),
-            //            String(localized:"SlaapKamer Functietoets Bed Jan", table:"AccessoryNames") : Switch(),
-            //            String(localized:"Overloop Functietoets", table:"AccessoryNames") : Switch(),
+            // Function keys
+            String(localized:"Function Key Frontdoor", table:"AccessoryNames") : FunctionKey(
+                clicked:String(localized: "Scene 01", table: "SceneNames"),
+                doubleClicked: nil,
+                longPress: String(localized: "Scene 01L", table: "SceneNames")
+            ),
+            String(localized:"Function Key Left side bed", table:"AccessoryNames") : FunctionKey(
+                clicked:String(localized: "Scene 02", table: "SceneNames"),
+                doubleClicked: nil,
+                longPress:String(localized: "Scene 02L", table: "SceneNames")
+            ),
+            String(localized:"Function Key Right side bed", table:"AccessoryNames") : FunctionKey(
+                clicked:String(localized: "Scene 03", table: "SceneNames"),
+                doubleClicked: nil,
+                longPress: String(localized: "Scene 03L", table: "SceneNames")
+            ),
+            String(localized:"Function Key Landing", table:"AccessoryNames") :  FunctionKey(
+                clicked:String(localized: "Scene 04", table: "SceneNames"),
+                doubleClicked: nil,
+                longPress: nil
+            ),
             
             // Dimmable lights
             String(localized:"Bathroom Mood Lights", table:"AccessoryNames") : DimmableLight(),
