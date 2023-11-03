@@ -10,11 +10,18 @@ import Foundation
 import JVCocoa
 import SoftPLC
 
+// Any object capable of reacting to changes in the field
+protocol CyclicPollable:AccessorySource{
+    func pollCycle()
+}
+
 public enum Status:Equatable{
 	case running
 	case stopped
 }
 
+/// Start an extra background cycle indepedent of the PLCs backroundCycle
+/// (to poll for hardware changes on behalf of acessoryDelegates that are not PLC-based)
 class CyclicPoller{
 	
 	private let timeInterval: TimeInterval

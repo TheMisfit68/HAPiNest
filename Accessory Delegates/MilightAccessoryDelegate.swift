@@ -71,7 +71,7 @@ class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate {
                                        service: Service,
                                        characteristic: GenericCharacteristic<T>,
                                        to value: T?){
-        
+
         // Handle Characteristic change depending on its type
         switch characteristic.type{
         case CharacteristicType.powerState:

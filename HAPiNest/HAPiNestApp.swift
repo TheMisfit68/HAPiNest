@@ -15,6 +15,11 @@ import HAP
 import SoftPLC
 import ModbusDriver
 
+/// The main App that sets up a HomeKit-server together with its HomeKit-bridge
+/// and a number of hardwaredrivers that will act as Accessory-delegates.
+/// The hardwaredrivers/Accessory-delegates react to changes made to an accessory when it is controlled in the Home-app,
+/// by translating those changes into actions for the hardware.
+/// The main accessory-delegate in this App is a SoftPLC that can interact with the outside world by means of a number of Input and Output-modules.
 @main
 struct HAPiNestApp: App {
     @Environment(\.scenePhase) var scenePhase
@@ -27,8 +32,6 @@ struct HAPiNestApp: App {
     
     init() {
         
-        plc.plcObjects = MainConfiguration.PLC.PLCobjects
-        
         let bridgename = MainConfiguration.HomeKitServer.BridgeName
         let setupCode = MainConfiguration.HomeKitServer.BridgeSetupCode
         let configFile = MainConfiguration.HomeKitServer.BridgeConfigFile
@@ -40,13 +43,13 @@ struct HAPiNestApp: App {
             configfileName: configFile
         )
         
+        plc.plcObjects = MainConfiguration.PLC.PLCobjects
 #if DEBUG
         plc.toggleSimulator(true)
         plc.toggleHardwareSimulation(true)
 #else
         plc.toggleSimulator(false)
 #endif
-        
         // Only fire Up PLC after all components are initialized
         plc.run()
         
@@ -54,7 +57,7 @@ struct HAPiNestApp: App {
         // (to poll for harware changes on behalf of the other type acessoryDelegates)
         cyclicPoller.run()
         
-    }
+}
     
     
     var body: some Scene {
@@ -68,9 +71,9 @@ struct HAPiNestApp: App {
             .onAppear(perform: {
             })
         }
-        .onChange(of: scenePhase) { newScenePhase in
+        .onChange(of: scenePhase) {
             let logger = Logger(subsystem: "be.oneclick.HAPiNest", category:.lifeCycle)
-            switch newScenePhase {
+            switch scenePhase {
             case .active:
                 logger.info("App became active")
             case .inactive:

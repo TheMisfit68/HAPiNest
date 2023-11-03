@@ -49,12 +49,12 @@ class GarageDoor:PLCClassAccessoryDelegate, PulsOperatedCircuit{
 	
     // MARK: - PLC Processing
 	public func runCycle() {
-		 
-    reevaluate(&powerState, characteristic:accessory.primaryService.powerState, hardwareFeedback: hardwarePowerState)
-    
-		characteristicChanged.reset()
-		hardwareFeedbackChanged.reset()
-	}
+        
+        reevaluate(&powerState, characteristic:accessory.primaryService.powerState, hardwareFeedback: hardwarePowerState)
+        
+        characteristicChanged.reset()
+        hardwareFeedbackChanged.reset()
+    }
 	
     let pulsTimer = DigitalTimer.ExactPuls(time: 1.0)
     var puls:Bool{
