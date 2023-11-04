@@ -12,7 +12,6 @@ import Darwin
 import JVCocoa
 import OSLog
 import SwiftUI
-import SiriDriver
 import LeafDriver
 
 public class HomeKitServer:Singleton{
@@ -30,8 +29,6 @@ public class HomeKitServer:Singleton{
             dashboard = HomeKitServerView(qrCode: Image(nsImage:mainBridge.setupQRCode.asNSImage!))
         }
     }
-
-    let siriDriver = SiriDriver()
     
 	//    let gscNotifier = GSCNotifier()
 	//    let sunnyPortalReporter = SunnyPortalReporter()
@@ -49,6 +46,7 @@ public class HomeKitServer:Singleton{
         
         #warning("TODO") // TODO: - reimplement SMAInverter
 //      let _ = SMAInverter.CreateInverters()
+        
         
     }
     

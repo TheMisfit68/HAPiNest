@@ -12,7 +12,7 @@ import JVCocoa
 import TizenDriver
 import OSLog
 
-class TizenAccessoryDelegate:TizenDriver, AccessoryDelegate, AccessorySource, CyclicPollable{
+class TizenAccessoryDelegate:TizenDriver, AccessoryDelegate, AccessorySource{
 	
 	var name: String{
 		super.tvName
@@ -22,7 +22,7 @@ class TizenAccessoryDelegate:TizenDriver, AccessoryDelegate, AccessorySource, Cy
 	typealias AccessorySubclass = Accessory.Television
 	var characteristicChanged:Bool = false
 	
-	func handleCharacteristicChange<T>(accessory:Accessory,
+	func handleCharacteristicChange<T>(accessory:AccessorySubclass,
 									   service: Service,
 									   characteristic: GenericCharacteristic<T>,
 									   to value: T?){

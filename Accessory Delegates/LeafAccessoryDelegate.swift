@@ -12,7 +12,7 @@ import JVCocoa
 import LeafDriver
 import OSLog
 
-class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource, CyclicPollable{
+class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource{
     
     var name: String{
             return String(localized:"Electric Car")
@@ -22,9 +22,10 @@ class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource, Cycl
     
     var characteristicChanged: Bool = false
     
-    func handleCharacteristicChange<T>(accessory: Accessory, service: Service, characteristic: GenericCharacteristic<T>, to value: T?) where T : CharacteristicValueType {
-        let accessoryName = accessory.info.name.value!
+    func handleCharacteristicChange<T>(accessory: AccessorySubclass, service: Service, characteristic: GenericCharacteristic<T>, to value: T?) where T : CharacteristicValueType {
         
+        let test = accessory.aircoService
+        let testSTring:String = accessory.info.name.value ?? ""
         switch characteristic.type{
         case CharacteristicType.powerState:
             //				self.batteryChecker.getBatteryStatus()
@@ -36,7 +37,7 @@ class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource, Cycl
 
         default:
             let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "LeafAccessoryDelegate")
-            logger.warning( "Unhandled characteristic change for accessory \(accessoryName)")
+            logger.warning( "Unhandled characteristic change for accessory \(accessory.info.name.value ?? "")")
         }
     }
     

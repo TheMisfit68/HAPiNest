@@ -33,7 +33,6 @@
 		DC54B6F72570628E00D9169F /* HomeKitServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* HomeKitServerView.swift */; };
 		DC54B6FD2570686D00D9169F /* PLCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */; };
 		DC55156A296AE2A9003432CD /* ElectricCarAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC551569296AE2A9003432CD /* ElectricCarAccessory.swift */; };
-		DC55156C296AE2CA003432CD /* SolarPanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55156B296AE2CA003432CD /* SolarPanels.swift */; };
 		DC746D7325ACA97A00B33314 /* SmartSprinklerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */; };
 		DC846E3A26D996E9002CEDFB /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC846E3926D996E9002CEDFB /* JVCocoa */; };
 		DC87DC852AF31227003ABD83 /* SceneNames.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DC87DC842AF31227003ABD83 /* SceneNames.xcstrings */; };
@@ -99,7 +98,6 @@
 		DC54B6C62570586E00D9169F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC54B6C72570586E00D9169F /* HAPiNest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HAPiNest.entitlements; sourceTree = "<group>"; };
 		DC551569296AE2A9003432CD /* ElectricCarAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricCarAccessory.swift; sourceTree = "<group>"; };
-		DC55156B296AE2CA003432CD /* SolarPanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarPanels.swift; sourceTree = "<group>"; };
 		DC5A4C2324D9A952001CF95B /* TizenAccessoryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenAccessoryDelegate.swift; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerAccessory.swift; sourceTree = "<group>"; };
@@ -231,8 +229,8 @@
 				DCFD428D24FAB5A8000320E0 /* AccessoryDelegate.swift */,
 				DC342E0B2AEE74EF00C578A2 /* PLCAccessoryDelegate.swift */,
 				DC197CAA24D9A74300C07E90 /* MilightAccessoryDelegate.swift */,
-				DC5A4C2324D9A952001CF95B /* TizenAccessoryDelegate.swift */,
 				DCC1D8C429886687000067D0 /* LeafAccessoryDelegate.swift */,
+				DC5A4C2324D9A952001CF95B /* TizenAccessoryDelegate.swift */,
 				DC2D4573256E48C100DF3EC5 /*  PLCClassAccessoryDelegates */,
 			);
 			path = "Accessory Delegates";
@@ -314,7 +312,6 @@
 			children = (
 				DCD1230F25ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift */,
 				DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */,
-				DC55156B296AE2CA003432CD /* SolarPanels.swift */,
 				DC551569296AE2A9003432CD /* ElectricCarAccessory.swift */,
 			);
 			path = "Custom Accessories";
@@ -513,7 +510,6 @@
 				DC54B6F42570628B00D9169F /* HomeKitServer.swift in Sources */,
 				DC4D6DE225713CD00087E51D /* DimmableLight.swift in Sources */,
 				DCD592F9270A6C2600882387 /* HAPiNestApp.swift in Sources */,
-				DC55156C296AE2CA003432CD /* SolarPanels.swift in Sources */,
 				DC90DA652732817000068839 /* PreferencesView.swift in Sources */,
 				DC90DA692732817000068839 /* WeatherKitSettingsView.swift in Sources */,
 				DC1888352961C0CF00D3363D /* EnableSwitchService.swift in Sources */,

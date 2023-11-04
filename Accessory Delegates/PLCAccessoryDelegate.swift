@@ -14,27 +14,32 @@ import OSLog
 
 // MARK: - PLC Accessory Delegate
 /// The only thing the PLCAccessoryDelegate does is pass a 'characteristicChanged'-bit down the chain, to
-/// the PLC-Object (that has the same name as the accessory) and that will act as the final delegate.
-class PLCAccessoryDelegate:AccessoryDelegate {
+/// the PLC-Object that has the same name as the accessory and that will act as the final AccessoryDelegate.
+///
+/// Also most of the functionality that is normally required for an AccessoryDelegate
+/// is already implemented by the PLC and the PLC-Classes by default,
+/// making large parts of the protocol optional.
+
+class PLCAccessoryDelegate:AccessoryDelegate {}
+
+extension AccessoryDelegate where Self:PLCAccessoryDelegate{
+        
+    var name: String {""}
     
-    var name: String = "PLCAccessoryDelegate"
-    
-    public var characteristicChanged:Bool = false{
-        didSet{
-            characteristicChanged = false
-        }
+    var characteristicChanged:Bool{
+        get{false}
+        set{}
     }
     
-    func handleCharacteristicChange<T>(accessory:Accessory,
+    func handleCharacteristicChange<T>(accessory:AccessorySubclass,
                                        service: Service,
                                        characteristic: GenericCharacteristic<T>,
                                        to value: T?){
-        if let plcObject = MainConfiguration.PLC.PLCobjects[accessory.name] as? any AccessoryDelegate{
+        if let plcObject = MainConfiguration.PLC.PLCobjects[accessory.info.name.value ?? ""] as? any AccessoryDelegate{
             plcObject.characteristicChanged.set()
         }
-          
+        
     }
-    
 }
 
 
@@ -45,12 +50,17 @@ extension AccessoryDelegate where Self:PLCClass{
         self.instanceName
     }
     
-    func handleCharacteristicChange<T>(accessory:HAP.Accessory, service: HAP.Service, characteristic: HAP.GenericCharacteristic<T>, to value: T?){
+    func handleCharacteristicChange<T>(accessory:AccessorySubclass, service: HAP.Service, characteristic: HAP.GenericCharacteristic<T>, to value: T?){
         // Dummy method
         // The actual characteristic changes are handled by the PLCClasses in a cyclic manner not through this event
     }
 }
 
+extension AccessorySource where Self:PLCClass{
+    // Dummy method
+    // A PLC-class already has a runCycle so there is no need to implement the extra pollCycle
+    func pollCycle(){}
+}
 
 typealias PLCClassAccessoryDelegate = PLCClass & Parameterizable & CyclicRunnable & AccessoryDelegate & AccessorySource
 

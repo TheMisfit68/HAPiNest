@@ -15,6 +15,10 @@ import ModbusDriver
 import IOTypes
 import JVCocoa
 
+
+/// A PLC-Class type object that is not an Accessory-Delegate
+/// because it has no Accessory associated with it,
+/// it only processes hardware-signals
 class FunctionKey:PLCClass, Parameterizable, CyclicRunnable{
     
     let shorcutDriver:ShortcutsDriver

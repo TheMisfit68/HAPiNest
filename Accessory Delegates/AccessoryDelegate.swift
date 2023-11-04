@@ -15,12 +15,16 @@ import OSLog
 
 // MARK: -  Accessory Delegate
 
-/// Any object capable of receving events from a HomeKit-Accessory
+/// An object (typically some hardware driver) capable of
+/// receiving events from a HomeKit-Accessory and
+/// process them accordingly.
 public protocol AccessoryDelegate: HAP.AccessoryDelegate{
     
     var name:String{get}
+    
+    associatedtype AccessorySubclass = Accessory
     var characteristicChanged:Bool{get set}
-    func handleCharacteristicChange<T>(accessory:HAP.Accessory,
+    func handleCharacteristicChange<T>(accessory:AccessorySubclass,
                                        service: HAP.Service,
                                        characteristic: HAP.GenericCharacteristic<T>,
                                        to value: T?)
@@ -36,9 +40,9 @@ extension AccessoryDelegate{
         let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "AccessoryDelegate")
         logger.info("✴️\tValue '\(characteristic.description ?? "", privacy: .public)' of '\(accessory.info.name.value ?? "", privacy: .public)/\(service.label ?? "", privacy: .public)' changed to \(String(describing:newValue), privacy: .public)")
         
-            characteristicChanged.set()
+        characteristicChanged.set()
         
-        handleCharacteristicChange(accessory:accessory, service: service, characteristic: characteristic, to: newValue)
+        handleCharacteristicChange(accessory:accessory as! Self.AccessorySubclass, service: service, characteristic: characteristic, to: newValue)
         
     }
     
@@ -47,10 +51,11 @@ extension AccessoryDelegate{
 
 // MARK: - Accessory Source
 
-//? Any object capable of writing values to a HomeKit-Accessory
-protocol AccessorySource:AccessoryDelegate{
-    
-    associatedtype AccessorySubclass
+/// An AccessoryDelegate also capable of
+/// reading values from the field and
+/// feed them back to the HomeKit-Accessory.
+protocol AccessorySource:AccessoryDelegate, CyclicPollable{
+        
     var accessory:AccessorySubclass{get}
     
     var hardwareFeedbackChanged:Bool{get set}
@@ -64,6 +69,7 @@ extension AccessorySource {
     var accessory:AccessorySubclass{
         return HomeKitServer.shared.mainBridge[name] as! AccessorySubclass
     }
+    
     
     /// Syncs the changes of the accessory itself and or any hardware feedback from the field into a single resulting property,
     /// keeping the the priority of changes in mind.

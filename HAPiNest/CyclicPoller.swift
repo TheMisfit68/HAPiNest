@@ -10,8 +10,8 @@ import Foundation
 import JVCocoa
 import SoftPLC
 
-// Any object capable of reacting to changes in the field
-protocol CyclicPollable:AccessorySource{
+// Any object that can be polled for changes in a timely matter
+protocol CyclicPollable{
     func pollCycle()
 }
 
