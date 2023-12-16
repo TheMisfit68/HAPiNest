@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import LeafDriver
 
 struct PreferencesView: View {
 	
@@ -20,7 +21,7 @@ struct PreferencesView: View {
 					.tabItem {
 						Label("Samsung Tizen", systemImage: "tv")
 					}
-				LeafSettingsView()
+                LeafSettingsView()
 					.tabItem {
 						Label("Nissan Leaf", systemImage: "bolt.car")
 					}

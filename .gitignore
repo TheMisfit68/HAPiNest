@@ -5,3 +5,4 @@ ToDo domotica shortterm.md
 developmentConfiguration.json
 HAPiNest.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
 be.oneclick.HAPiNest.plist
+*.xcbkptlist
