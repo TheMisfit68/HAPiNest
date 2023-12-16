@@ -108,59 +108,59 @@ struct MainConfiguration{
         
         // MARK: - T.V.s
         // Use 'InputSource'-selectors to switch channels instead
-        Accessory.Television(info: Service.Info(name:String(localized:"TV", table:"AccessoryNames"), serialNumber: "20000", manufacturer: "Samsung"),
-                             inputs: [
-                                (String(localized: "Channel00", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel01", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel02", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel03", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel04", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel05", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel06", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel07", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel08", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel09", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel10", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "App01", table: "TVChannelNames"), .application),
-                                (String(localized: "App02", table: "TVChannelNames"), .application),
-                                (String(localized: "App03", table: "TVChannelNames"), .application),
-                                (String(localized: "App04", table: "TVChannelNames"), .application)
-                             ]) : TizenAccessoryDelegate(tvName:String(localized:"TV", table:"AccessoryNames"), macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: "HAPiNestServer"),
+//        Accessory.Television(info: Service.Info(name:String(localized:"TV", table:"AccessoryNames"), serialNumber: "20000", manufacturer: "Samsung"),
+//                             inputs: [
+//                                (String(localized: "Channel00", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel01", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel02", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel03", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel04", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel05", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel06", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel07", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel08", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel09", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel10", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "App01", table: "TVChannelNames"), .application),
+//                                (String(localized: "App02", table: "TVChannelNames"), .application),
+//                                (String(localized: "App03", table: "TVChannelNames"), .application),
+//                                (String(localized: "App04", table: "TVChannelNames"), .application)
+//                             ]) : TizenAccessoryDelegate(tvName:String(localized:"TV", table:"AccessoryNames"), macAddress: "F8:3F:51:2E:C5:F1", ipAddress: "192.168.0.50", port: 8002, deviceName: "HAPiNestServer"),
+//        
+//        Accessory.Television(info: Service.Info(name:String(localized:"TV Upstairs", table:"AccessoryNames"), serialNumber: "20001", manufacturer: "Samsung"),
+//                             
+//                             inputs: [
+//                                (String(localized: "Channel00", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel01", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel02", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel03", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel04", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel05", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel06", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel07", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel08", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel09", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "Channel10", table: "TVChannelNames"), .hdmi),
+//                                (String(localized: "App01", table: "TVChannelNames"), .application),
+//                                (String(localized: "App02", table: "TVChannelNames"), .application),
+//                                (String(localized: "App03", table: "TVChannelNames"), .application),
+//                                (String(localized: "App04", table: "TVChannelNames"), .application)
+//                             ]) : TizenAccessoryDelegate(tvName:String(localized:"TV Upstairs", table:"AccessoryNames"), macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer"),
         
-        Accessory.Television(info: Service.Info(name:String(localized:"TV Upstairs", table:"AccessoryNames"), serialNumber: "20001", manufacturer: "Samsung"),
-                             
-                             inputs: [
-                                (String(localized: "Channel00", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel01", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel02", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel03", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel04", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel05", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel06", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel07", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel08", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel09", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "Channel10", table: "TVChannelNames"), .hdmi),
-                                (String(localized: "App01", table: "TVChannelNames"), .application),
-                                (String(localized: "App02", table: "TVChannelNames"), .application),
-                                (String(localized: "App03", table: "TVChannelNames"), .application),
-                                (String(localized: "App04", table: "TVChannelNames"), .application)
-                             ]) : TizenAccessoryDelegate(tvName:String(localized:"TV Upstairs", table:"AccessoryNames"), macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer"),
-    
-    // MARK: - Other
+        // MARK: - Other
         Accessory.ElectricCar(info: Service.Info(name: String(localized:"Electric Car", table:"AccessoryNames"), serialNumber: "30003", manufacturer: "Nissan")) : LeafAccessoryDelegate(leafProtocol: LeafProtocolV2())
-
-    
-    
-    //                  (Accessory.init(info: Service.Info(name:String(localized:"Zonnepanelen", table:"AccessoryNames"), serialNumber: "30001", manufacturer: "SMA"),
-    //                                   type: .other,
-    //                                   services: [
-    //                                    // TODO: - Insert a Service.EnergyMeter and Service.PowerMeter,
-    //                                    // once it gets supported by Apples 'Home'-App
-    //                                    .SwitchBase(characteristics:[.name("Opbrengst opvragen")] ),
-    //                                   ] ),
-    //                    YASDIDriver.InstallDrivers().first!
-    //                    )
+        
+        
+        
+        //                  (Accessory.init(info: Service.Info(name:String(localized:"Zonnepanelen", table:"AccessoryNames"), serialNumber: "30001", manufacturer: "SMA"),
+        //                                   type: .other,
+        //                                   services: [
+        //                                    // TODO: - Insert a Service.EnergyMeter and Service.PowerMeter,
+        //                                    // once it gets supported by Apples 'Home'-App
+        //                                    .SwitchBase(characteristics:[.name("Opbrengst opvragen")] ),
+        //                                   ] ),
+        //                    YASDIDriver.InstallDrivers().first!
+        //                    )
     ]
     
 }

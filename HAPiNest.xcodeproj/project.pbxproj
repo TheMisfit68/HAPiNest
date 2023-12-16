@@ -33,19 +33,21 @@
 		DC54B6F72570628E00D9169F /* HomeKitServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* HomeKitServerView.swift */; };
 		DC54B6FD2570686D00D9169F /* PLCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */; };
 		DC55156A296AE2A9003432CD /* ElectricCarAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC551569296AE2A9003432CD /* ElectricCarAccessory.swift */; };
+		DC6FBD1E2B141CD200712136 /* MatterServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FBD1D2B141CD200712136 /* MatterServer.swift */; };
+		DC6FBD202B141F0400712136 /* MatterAddDeviceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FBD1F2B141F0400712136 /* MatterAddDeviceHandler.swift */; };
 		DC746D7325ACA97A00B33314 /* SmartSprinklerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */; };
 		DC846E3A26D996E9002CEDFB /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC846E3926D996E9002CEDFB /* JVCocoa */; };
 		DC87DC852AF31227003ABD83 /* SceneNames.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DC87DC842AF31227003ABD83 /* SceneNames.xcstrings */; };
 		DC8D0F69259DAA6A00DD04E4 /* FunctionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8D0F68259DAA6A00DD04E4 /* FunctionKey.swift */; };
 		DC90DA642732817000068839 /* TizenSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA5E2732817000068839 /* TizenSettingsView.swift */; };
 		DC90DA652732817000068839 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA5F2732817000068839 /* PreferencesView.swift */; };
-		DC90DA662732817000068839 /* LeafSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA602732817000068839 /* LeafSettingsView.swift */; };
 		DC90DA672732817000068839 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA612732817000068839 /* GeneralSettingsView.swift */; };
 		DC90DA682732817000068839 /* SunnyPortalSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA622732817000068839 /* SunnyPortalSettingsView.swift */; };
 		DC90DA692732817000068839 /* WeatherKitSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA632732817000068839 /* WeatherKitSettingsView.swift */; };
 		DC90DA6C2732828200068839 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA6B2732828200068839 /* DashboardView.swift */; };
 		DC9963892AD3073000915EAC /* CirtcuitEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9963882AD3073000915EAC /* CirtcuitEnabler.swift */; };
 		DCA37CF926BB29EF003CC3BF /* HAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA37CF826BB29EF003CC3BF /* HAPTests.swift */; };
+		DCA3DF312B28D97000554A8A /* DimmerTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3DF302B28D97000554A8A /* DimmerTimer.swift */; };
 		DCAB996A2A816734005FCC29 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DCAB99692A816734005FCC29 /* README.md */; };
 		DCBCFB5529678657000F0376 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBCFB5429678657000F0376 /* Enums.swift */; };
 		DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */; };
@@ -100,13 +102,14 @@
 		DC551569296AE2A9003432CD /* ElectricCarAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricCarAccessory.swift; sourceTree = "<group>"; };
 		DC5A4C2324D9A952001CF95B /* TizenAccessoryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenAccessoryDelegate.swift; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
+		DC6FBD1D2B141CD200712136 /* MatterServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterServer.swift; sourceTree = "<group>"; };
+		DC6FBD1F2B141F0400712136 /* MatterAddDeviceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterAddDeviceHandler.swift; sourceTree = "<group>"; };
 		DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerAccessory.swift; sourceTree = "<group>"; };
 		DC7FB14026C99142003CAFB0 /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
 		DC87DC842AF31227003ABD83 /* SceneNames.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = SceneNames.xcstrings; sourceTree = "<group>"; };
 		DC8D0F68259DAA6A00DD04E4 /* FunctionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionKey.swift; sourceTree = "<group>"; };
 		DC90DA5E2732817000068839 /* TizenSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenSettingsView.swift; sourceTree = "<group>"; };
 		DC90DA5F2732817000068839 /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		DC90DA602732817000068839 /* LeafSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeafSettingsView.swift; sourceTree = "<group>"; };
 		DC90DA612732817000068839 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		DC90DA622732817000068839 /* SunnyPortalSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunnyPortalSettingsView.swift; sourceTree = "<group>"; };
 		DC90DA632732817000068839 /* WeatherKitSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherKitSettingsView.swift; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		DC9EFF2224F3131F001B70EE /* DoorLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLock.swift; sourceTree = "<group>"; };
 		DCA37CF626BB29EF003CC3BF /* HAPiNestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAPiNestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA37CF826BB29EF003CC3BF /* HAPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPTests.swift; sourceTree = "<group>"; };
+		DCA3DF302B28D97000554A8A /* DimmerTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmerTimer.swift; sourceTree = "<group>"; };
 		DCAB99692A816734005FCC29 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCBCFB5429678657000F0376 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinkler.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				DC90DA6A2732828200068839 /* MainWindow */,
 				DC90DA5D2732817000068839 /* PreferencesWindow */,
 				DC2D4572256E486D00DF3EC5 /* HomekitServer */,
+				DC6FBD1C2B141CB200712136 /* MatterServer */,
+				DCA3DF322B28D99000554A8A /* AdaptableLightning */,
 			);
 			path = HAPiNest;
 			sourceTree = "<group>";
@@ -277,12 +283,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC6FBD1C2B141CB200712136 /* MatterServer */ = {
+			isa = PBXGroup;
+			children = (
+				DC6FBD1D2B141CD200712136 /* MatterServer.swift */,
+				DC6FBD1F2B141F0400712136 /* MatterAddDeviceHandler.swift */,
+			);
+			path = MatterServer;
+			sourceTree = "<group>";
+		};
 		DC90DA5D2732817000068839 /* PreferencesWindow */ = {
 			isa = PBXGroup;
 			children = (
 				DC90DA5E2732817000068839 /* TizenSettingsView.swift */,
 				DC90DA5F2732817000068839 /* PreferencesView.swift */,
-				DC90DA602732817000068839 /* LeafSettingsView.swift */,
 				DC90DA612732817000068839 /* GeneralSettingsView.swift */,
 				DC90DA622732817000068839 /* SunnyPortalSettingsView.swift */,
 				DC90DA632732817000068839 /* WeatherKitSettingsView.swift */,
@@ -305,6 +319,14 @@
 				DCA37CF826BB29EF003CC3BF /* HAPTests.swift */,
 			);
 			path = HAPiNestTests;
+			sourceTree = "<group>";
+		};
+		DCA3DF322B28D99000554A8A /* AdaptableLightning */ = {
+			isa = PBXGroup;
+			children = (
+				DCA3DF302B28D97000554A8A /* DimmerTimer.swift */,
+			);
+			path = AdaptableLightning;
 			sourceTree = "<group>";
 		};
 		DCA8FA1B25B2FE0900532E4A /* Custom Accessories */ = {
@@ -507,14 +529,16 @@
 				DCCBE29C25B8B7D800BAED50 /* ToggleableOutlet.swift in Sources */,
 				DC0761B02A8A9DA3009FA191 /* DashboardPreview.swift in Sources */,
 				DC90DA642732817000068839 /* TizenSettingsView.swift in Sources */,
+				DC6FBD1E2B141CD200712136 /* MatterServer.swift in Sources */,
 				DC54B6F42570628B00D9169F /* HomeKitServer.swift in Sources */,
 				DC4D6DE225713CD00087E51D /* DimmableLight.swift in Sources */,
+				DCA3DF312B28D97000554A8A /* DimmerTimer.swift in Sources */,
+				DC6FBD202B141F0400712136 /* MatterAddDeviceHandler.swift in Sources */,
 				DCD592F9270A6C2600882387 /* HAPiNestApp.swift in Sources */,
 				DC90DA652732817000068839 /* PreferencesView.swift in Sources */,
 				DC90DA692732817000068839 /* WeatherKitSettingsView.swift in Sources */,
 				DC1888352961C0CF00D3363D /* EnableSwitchService.swift in Sources */,
 				DC4D6DEB25713CDA0087E51D /* GarageDoor.swift in Sources */,
-				DC90DA662732817000068839 /* LeafSettingsView.swift in Sources */,
 				DC4D6DE525713CD40087E51D /* Light.swift in Sources */,
 				DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */,
 				DC54B6F12570628700D9169F /* Bridge.swift in Sources */,
