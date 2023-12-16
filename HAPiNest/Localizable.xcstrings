@@ -11,22 +11,6 @@
         }
       }
     },
-    "%lld percent or %lld kilometers remaining" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld percent or %2$lld kilometers remaining"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nog  %1$lld percent of %2$lld kilometer"
-          }
-        }
-      }
-    },
     "Are you sure?" : {
       "localizations" : {
         "nl" : {

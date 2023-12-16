@@ -33,8 +33,6 @@
 		DC54B6F72570628E00D9169F /* HomeKitServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3626EF256D9B0800F0AC35 /* HomeKitServerView.swift */; };
 		DC54B6FD2570686D00D9169F /* PLCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23DF9424E7499A00DD8371 /* PLCConfiguration.swift */; };
 		DC55156A296AE2A9003432CD /* ElectricCarAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC551569296AE2A9003432CD /* ElectricCarAccessory.swift */; };
-		DC6FBD1E2B141CD200712136 /* MatterServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FBD1D2B141CD200712136 /* MatterServer.swift */; };
-		DC6FBD202B141F0400712136 /* MatterAddDeviceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FBD1F2B141F0400712136 /* MatterAddDeviceHandler.swift */; };
 		DC746D7325ACA97A00B33314 /* SmartSprinklerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */; };
 		DC846E3A26D996E9002CEDFB /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC846E3926D996E9002CEDFB /* JVCocoa */; };
 		DC87DC852AF31227003ABD83 /* SceneNames.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DC87DC842AF31227003ABD83 /* SceneNames.xcstrings */; };
@@ -102,8 +100,6 @@
 		DC551569296AE2A9003432CD /* ElectricCarAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricCarAccessory.swift; sourceTree = "<group>"; };
 		DC5A4C2324D9A952001CF95B /* TizenAccessoryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenAccessoryDelegate.swift; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
-		DC6FBD1D2B141CD200712136 /* MatterServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterServer.swift; sourceTree = "<group>"; };
-		DC6FBD1F2B141F0400712136 /* MatterAddDeviceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterAddDeviceHandler.swift; sourceTree = "<group>"; };
 		DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerAccessory.swift; sourceTree = "<group>"; };
 		DC7FB14026C99142003CAFB0 /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
 		DC87DC842AF31227003ABD83 /* SceneNames.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = SceneNames.xcstrings; sourceTree = "<group>"; };
@@ -215,7 +211,6 @@
 				DC90DA6A2732828200068839 /* MainWindow */,
 				DC90DA5D2732817000068839 /* PreferencesWindow */,
 				DC2D4572256E486D00DF3EC5 /* HomekitServer */,
-				DC6FBD1C2B141CB200712136 /* MatterServer */,
 				DCA3DF322B28D99000554A8A /* AdaptableLightning */,
 			);
 			path = HAPiNest;
@@ -281,15 +276,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DC6FBD1C2B141CB200712136 /* MatterServer */ = {
-			isa = PBXGroup;
-			children = (
-				DC6FBD1D2B141CD200712136 /* MatterServer.swift */,
-				DC6FBD1F2B141F0400712136 /* MatterAddDeviceHandler.swift */,
-			);
-			path = MatterServer;
 			sourceTree = "<group>";
 		};
 		DC90DA5D2732817000068839 /* PreferencesWindow */ = {
@@ -529,11 +515,9 @@
 				DCCBE29C25B8B7D800BAED50 /* ToggleableOutlet.swift in Sources */,
 				DC0761B02A8A9DA3009FA191 /* DashboardPreview.swift in Sources */,
 				DC90DA642732817000068839 /* TizenSettingsView.swift in Sources */,
-				DC6FBD1E2B141CD200712136 /* MatterServer.swift in Sources */,
 				DC54B6F42570628B00D9169F /* HomeKitServer.swift in Sources */,
 				DC4D6DE225713CD00087E51D /* DimmableLight.swift in Sources */,
 				DCA3DF312B28D97000554A8A /* DimmerTimer.swift in Sources */,
-				DC6FBD202B141F0400712136 /* MatterAddDeviceHandler.swift in Sources */,
 				DCD592F9270A6C2600882387 /* HAPiNestApp.swift in Sources */,
 				DC90DA652732817000068839 /* PreferencesView.swift in Sources */,
 				DC90DA692732817000068839 /* WeatherKitSettingsView.swift in Sources */,
