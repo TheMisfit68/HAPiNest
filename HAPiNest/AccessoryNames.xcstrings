@@ -501,6 +501,26 @@
         }
       }
     },
+    "TV" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TV"
+          }
+        }
+      }
+    },
+    "TV Upstairs" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TV Boven"
+          }
+        }
+      }
+    },
     "Twilight Sensor Enable" : {
       "localizations" : {
         "nl" : {

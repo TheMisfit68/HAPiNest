@@ -2,7 +2,6 @@
   "sourceLanguage" : "en",
   "strings" : {
     "App01" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -13,7 +12,6 @@
       }
     },
     "App02" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -24,7 +22,6 @@
       }
     },
     "App03" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -35,7 +32,6 @@
       }
     },
     "App04" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -46,7 +42,6 @@
       }
     },
     "Channel00" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -57,7 +52,6 @@
       }
     },
     "Channel01" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -68,7 +62,6 @@
       }
     },
     "Channel02" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -79,7 +72,6 @@
       }
     },
     "Channel03" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -90,7 +82,6 @@
       }
     },
     "Channel04" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -101,7 +92,6 @@
       }
     },
     "Channel05" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -112,7 +102,6 @@
       }
     },
     "Channel06" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -123,7 +112,6 @@
       }
     },
     "Channel07" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -134,7 +122,6 @@
       }
     },
     "Channel08" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -145,7 +132,6 @@
       }
     },
     "Channel09" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -156,7 +142,6 @@
       }
     },
     "Channel10" : {
-      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {

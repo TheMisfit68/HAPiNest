@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct GeneralSettingsView: View {
-	@AppStorage("showPreview") private var showPreview = true
-	@AppStorage("fontSize") private var fontSize = 12.0
-	
+    @State var test:String = "test"
 	var body: some View {
         Text("Hello, World!")
 	}
