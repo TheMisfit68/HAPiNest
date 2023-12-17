@@ -170,26 +170,10 @@ extension MainConfiguration{
             String(localized:"Landing Light Enable", table:"AccessoryNames") : CirtcuitEnabler(),
             
             // Function keys
-            String(localized:"Function Key Frontdoor", table:"AccessoryNames") : FunctionKey(
-                clicked:String(localized: "Scene 01", table: "SceneNames"),
-                doubleClicked: nil,
-                longPress: String(localized: "Scene 01L", table: "SceneNames")
-            ),
-            String(localized:"Function Key Left side bed", table:"AccessoryNames") : FunctionKey(
-                clicked:String(localized: "Scene 02", table: "SceneNames"),
-                doubleClicked: nil,
-                longPress:String(localized: "Scene 02L", table: "SceneNames")
-            ),
-            String(localized:"Function Key Right side bed", table:"AccessoryNames") : FunctionKey(
-                clicked:String(localized: "Scene 03", table: "SceneNames"),
-                doubleClicked: nil,
-                longPress: String(localized: "Scene 03L", table: "SceneNames")
-            ),
-            String(localized:"Function Key Landing", table:"AccessoryNames") :  FunctionKey(
-                clicked:String(localized: "Scene 04", table: "SceneNames"),
-                doubleClicked: nil,
-                longPress: nil
-            ),
+            String(localized:"Function Key Frontdoor", table:"AccessoryNames") : FunctionKey(),
+            String(localized:"Function Key Left side bed", table:"AccessoryNames") : FunctionKey(),
+            String(localized:"Function Key Right side bed", table:"AccessoryNames") : FunctionKey(),
+            String(localized:"Function Key Landing", table:"AccessoryNames") :  FunctionKey(),
             
             // Dimmable lights
             String(localized:"Bathroom Mood Lights", table:"AccessoryNames") : DimmableLight(),
