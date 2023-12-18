@@ -16,7 +16,7 @@ import JVCocoa
 // MARK: - PLC level class
 class WindowCovering:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateable{
 	
-	// Accessory binding
+	// MARK: - Accessory binding
 	typealias AccessorySubclass = Accessory.WindowCovering
 	var characteristicChanged:Bool = false
 	

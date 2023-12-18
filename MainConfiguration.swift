@@ -39,7 +39,13 @@ struct MainConfiguration{
     
     static let Accessories:[Accessory : any AccessoryDelegate] =
     [
-        
+        // Function Keys
+		Accessory.StatelessProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Frontdoor", table:"AccessoryNames"), serialNumber: "50000")) : PLCAccessoryDelegate(),
+		Accessory.StatelessProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Left side bed", table:"AccessoryNames"), serialNumber: "40001")) : PLCAccessoryDelegate(),
+		Accessory.StatelessProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Right side bed", table:"AccessoryNames"), serialNumber: "40002")) : PLCAccessoryDelegate(),
+		Accessory.StatelessProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Landing", table:"AccessoryNames"), serialNumber: "40003")) : PLCAccessoryDelegate(),
+
+		
         // MARK: - Dimmable Lights
         Accessory.Lightbulb(info: Service.Info(name:String(localized:"Bathroom Mood Lights", table:"AccessoryNames"), serialNumber: "00002", manufacturer: "MOXA"), isDimmable: true) : PLCAccessoryDelegate(),
         
@@ -148,8 +154,8 @@ struct MainConfiguration{
                              ]) : TizenAccessoryDelegate(tvName:String(localized:"TV Upstairs", table:"AccessoryNames"), macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer"),
         
         // MARK: - Other
-        Accessory.ElectricCar(info: Service.Info(name: String(localized:"Electric Car", table:"AccessoryNames"), serialNumber: "30003", manufacturer: "Nissan")) : LeafAccessoryDelegate(leafProtocol: LeafProtocolV2())
-        
+//        Accessory.ElectricCar(info: Service.Info(name: String(localized:"Electric Car", table:"AccessoryNames"), serialNumber: "30003", manufacturer: "Nissan")) : LeafAccessoryDelegate(leafProtocol: LeafProtocolV2())
+//        
         
         
         //                  (Accessory.init(info: Service.Info(name:String(localized:"Zonnepanelen", table:"AccessoryNames"), serialNumber: "30001", manufacturer: "SMA"),

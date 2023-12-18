@@ -14,11 +14,18 @@ import IOTypes
 import JVCocoa
 
 // MARK: - PLC level class
-class DimmableLight:PLCClassAccessoryDelegate{
-    
-    // Accessory binding
+class DimmableLight:PLCClassAccessoryDelegate, DimmedLight{
+	
+	// MARK: - Accessory binding
     typealias AccessorySubclass = Accessory.Lightbulb
     var characteristicChanged: Bool = false
+	
+	var brightnessTimer: BrightnessTimer!
+	
+	override init(){
+		super.init()
+		self.brightnessTimer = BrightnessTimer(dimmer: self)
+	}
     
     // MARK: - State
     var powerState:Bool? = nil
@@ -41,13 +48,12 @@ class DimmableLight:PLCClassAccessoryDelegate{
     var brightness:Int? = nil{
         didSet{
             if let brightness = brightness, brightness != oldValue{
-                
+
                 if brightness > switchOffLevelDimmer{
                     previousOnLevel = brightness
                 }else{
                     powerState?.reset()
                 }
-                
                 
             }
         }
@@ -77,10 +83,11 @@ class DimmableLight:PLCClassAccessoryDelegate{
         outputSignal.scaledValue = Float(powerState == true ? (brightness ?? switchOffLevelDimmer+1) : 0)
     }
     
-    // MARK: - Processing
+	// MARK: - PLC Processing
     public func runCycle() {
         
         reevaluate(&powerState, initialValue: (hardwareBrightness ?? 0 > switchOffLevelDimmer), characteristic:accessory.lightbulb.powerState, hardwareFeedback: nil)
+		
         reevaluate(&brightness, characteristic:accessory.lightbulb.brightness, hardwareFeedback:hardwareBrightness)
         
         characteristicChanged.reset()

@@ -19,7 +19,7 @@ import OSLog
 // MARK: - PLC level class
 class SmartSprinkler:PLCClassAccessoryDelegate{
     
-    // Accessory binding
+	// MARK: - Accessory binding
     typealias AccessorySubclass = Accessory.SmartSprinkler
     var characteristicChanged:Bool = false
     

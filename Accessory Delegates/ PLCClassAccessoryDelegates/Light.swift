@@ -17,7 +17,7 @@ import OSLog
 // MARK: - PLC level class
 class Light:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateable{
 
-	// Accessory binding
+	// MARK: - Accessory binding
 	typealias AccessorySubclass = Accessory.Lightbulb
 	var characteristicChanged:Bool = false
 
@@ -50,7 +50,7 @@ class Light:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateable{
 		outputSignal.logicalValue = puls
 	}
 	
-	// MARK: - Processing
+	// MARK: - PLC Processing
 	public func runCycle(){
 
 		reevaluate(&powerState, characteristic:accessory.lightbulb.powerState, hardwareFeedback: hardwarePowerState)

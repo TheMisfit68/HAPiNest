@@ -16,7 +16,7 @@ import JVCocoa
 // MARK: - PLC level class
 class ToggleableOutlet:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateable{
 	
-	// Accessory binding
+	// MARK: - Accessory binding
 	typealias AccessorySubclass = Accessory.Outlet
 	var characteristicChanged:Bool = false
 	
@@ -57,7 +57,7 @@ class ToggleableOutlet:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulatea
 	}
 	
 	
-	// MARK: - Processing
+	// MARK: - PLC Processing
 	public func runCycle() {
 		
 		reevaluate(&powerState, characteristic:accessory.outlet.powerState, hardwareFeedback: hardwarePowerState)
