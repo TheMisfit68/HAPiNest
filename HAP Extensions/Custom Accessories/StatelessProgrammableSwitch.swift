@@ -8,14 +8,16 @@
 import Foundation
 import HAP
 
-#warning("TODO") // TODO: - Create a pull request to get this implemented by HAP itself
-extension HAP.Accessory {
-	open class ProgrammableSwitch: Accessory {
-		public let primaryService:Service.StatelessProgrammableSwitch = Service.StatelessProgrammableSwitch()
+#warning("TODO") // TODO: - Create a pull request to get this implemented into HAP itself
+extension Accessory {
+	
+	open class StatelessProgrammableSwitch: Accessory {
+		public let primaryService:Service.StatelessProgrammableSwitch = Service.StatelessProgrammableSwitch(characteristics: [.name(String(localized: "Function key",table: "ServiceNames"))])
 		
 		public init(info: Service.Info, additionalServices: [Service] = []) {
 			super.init(info: info, type: .programmableSwitch, services: [primaryService] + additionalServices)
 		}
 	}
+	
 }
 
