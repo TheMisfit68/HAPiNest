@@ -40,10 +40,10 @@ struct MainConfiguration{
     static let Accessories:[Accessory : any AccessoryDelegate] =
     [
         // Function Keys
-		Accessory.ProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Frontdoor", table:"AccessoryNames"), serialNumber: "40000")) : PLCAccessoryDelegate(),
-		Accessory.ProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Left side bed", table:"AccessoryNames"), serialNumber: "40001")) : PLCAccessoryDelegate(),
-		Accessory.ProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Right side bed", table:"AccessoryNames"), serialNumber: "40002")) : PLCAccessoryDelegate(),
-		Accessory.ProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Landing", table:"AccessoryNames"), serialNumber: "40003")) : PLCAccessoryDelegate(),
+		Accessory.StatelessProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Frontdoor", table:"AccessoryNames"), serialNumber: "50000")) : PLCAccessoryDelegate(),
+		Accessory.StatelessProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Left side bed", table:"AccessoryNames"), serialNumber: "40001")) : PLCAccessoryDelegate(),
+		Accessory.StatelessProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Right side bed", table:"AccessoryNames"), serialNumber: "40002")) : PLCAccessoryDelegate(),
+		Accessory.StatelessProgrammableSwitch(info: Service.Info(name:String(localized:"Function Key Landing", table:"AccessoryNames"), serialNumber: "40003")) : PLCAccessoryDelegate(),
 
 		
         // MARK: - Dimmable Lights

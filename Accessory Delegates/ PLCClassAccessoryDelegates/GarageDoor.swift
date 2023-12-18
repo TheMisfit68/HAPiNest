@@ -16,7 +16,7 @@ import JVCocoa
 // MARK: - PLC level class
 class GarageDoor:PLCClassAccessoryDelegate, PulsOperatedCircuit{
 	
-	// Accessory binding
+	// MARK: - Accessory binding
 	typealias AccessorySubclass = Accessory.GarageDoorOpener.StatelessGarageDoorOpener
 	var characteristicChanged: Bool = false
 	

@@ -16,7 +16,7 @@ import JVCocoa
 // MARK: - PLC level class
 class Doorlock:PLCClassAccessoryDelegate, PulsOperatedCircuit{
 	
-	// Accessory binding
+	// MARK: - Accessory binding
 	typealias AccessorySubclass = Accessory.LockMechanism
 	var characteristicChanged:Bool = false
 	
@@ -43,9 +43,7 @@ class Doorlock:PLCClassAccessoryDelegate, PulsOperatedCircuit{
 	}
 	
 	public func assignOutputParameters(){
-		
 		outputSignal.logicalValue = puls
-		
 	}
 	
 	// MARK: - PLC Processing

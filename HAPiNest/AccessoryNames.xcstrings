@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -162,6 +163,7 @@
       }
     },
     "Electric Car" : {
+      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {

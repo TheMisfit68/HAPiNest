@@ -44,6 +44,7 @@
 		DC9963892AD3073000915EAC /* CirtcuitEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9963882AD3073000915EAC /* CirtcuitEnabler.swift */; };
 		DCA37CF926BB29EF003CC3BF /* HAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA37CF826BB29EF003CC3BF /* HAPTests.swift */; };
 		DCA3DF312B28D97000554A8A /* BrightnessTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3DF302B28D97000554A8A /* BrightnessTimer.swift */; };
+		DCA626B12B3083C900BBDD91 /* ServiceNames.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DCA626B02B3083C900BBDD91 /* ServiceNames.xcstrings */; };
 		DCAB996A2A816734005FCC29 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DCAB99692A816734005FCC29 /* README.md */; };
 		DCBBC7082B2EE4D80005EE6E /* StatelessProgrammableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBBC7072B2EE4D80005EE6E /* StatelessProgrammableSwitch.swift */; };
 		DCBCFB5529678657000F0376 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBCFB5429678657000F0376 /* Enums.swift */; };
@@ -115,6 +116,7 @@
 		DCA37CF626BB29EF003CC3BF /* HAPiNestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAPiNestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA37CF826BB29EF003CC3BF /* HAPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPTests.swift; sourceTree = "<group>"; };
 		DCA3DF302B28D97000554A8A /* BrightnessTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessTimer.swift; sourceTree = "<group>"; };
+		DCA626B02B3083C900BBDD91 /* ServiceNames.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = ServiceNames.xcstrings; sourceTree = "<group>"; };
 		DCAB99692A816734005FCC29 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DCBBC7072B2EE4D80005EE6E /* StatelessProgrammableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatelessProgrammableSwitch.swift; sourceTree = "<group>"; };
 		DCBCFB5429678657000F0376 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				DC54B6C12570586E00D9169F /* Assets.xcassets */,
 				DC4D66792A956AC1004C9D30 /* Localizable.xcstrings */,
 				DC4D667B2A9571BA004C9D30 /* AccessoryNames.xcstrings */,
+				DCA626B02B3083C900BBDD91 /* ServiceNames.xcstrings */,
 				DCF7D5AB2AD0D106000010AA /* TVChannelNames.xcstrings */,
 				DC90DA6A2732828200068839 /* MainWindow */,
 				DC90DA5D2732817000068839 /* PreferencesWindow */,
@@ -468,6 +471,7 @@
 				DCAB996A2A816734005FCC29 /* README.md in Resources */,
 				DC54B6C22570586E00D9169F /* Assets.xcassets in Resources */,
 				DC4D667A2A956AC1004C9D30 /* Localizable.xcstrings in Resources */,
+				DCA626B12B3083C900BBDD91 /* ServiceNames.xcstrings in Resources */,
 				DC4D667C2A9571BA004C9D30 /* AccessoryNames.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

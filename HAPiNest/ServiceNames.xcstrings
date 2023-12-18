@@ -21,6 +21,16 @@
         }
       }
     },
+    "Function key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Functietoets"
+          }
+        }
+      }
+    },
     "Manual" : {
       "localizations" : {
         "nl" : {

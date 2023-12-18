@@ -16,7 +16,7 @@ import JVCocoa
 // MARK: - PLC level class
 class CirtcuitEnabler:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateable{
     
-    // Accessory binding
+	// MARK: - Accessory binding
     typealias AccessorySubclass = Accessory.Lightbulb
     var characteristicChanged:Bool = false
     
@@ -49,7 +49,7 @@ class CirtcuitEnabler:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateab
         outputSignal.logicalValue = puls
     }
     
-    // MARK: - Processing
+	// MARK: - PLC Processing
     public func runCycle(){
         
         reevaluate(&powerState, characteristic:accessory.lightbulb.powerState, hardwareFeedback: hardwarePowerState)

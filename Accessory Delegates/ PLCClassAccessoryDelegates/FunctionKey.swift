@@ -16,79 +16,61 @@ import IOTypes
 import JVCocoa
 
 
-/// A PLC-Class type object that is not an Accessory-Delegate
-/// because it has no Accessory associated with it,
-/// it only processes hardware-signals
 class FunctionKey:PLCClassAccessoryDelegate{
 	
+	// MARK: - Accessory binding
+	typealias AccessorySubclass = Accessory.StatelessProgrammableSwitch
 	var characteristicChanged: Bool = false
-	var hardwareFeedbackChanged: Bool = false
 	
-
+	// MARK: - State
+	private enum SwitchEvent:UInt8{
+		case singlePress = 0
+		case doublePress = 1
+		case longPress = 2
+	}
+	
+	private var clicksCounter:Int = 0
+	private var switchEvent:SwitchEvent? = nil{
+		
+		didSet{
+			clicksCounter = 0
+			longPressTimer.reset()
+			doubleClickTimer.reset()
+		}
+	}
+	
+	
 	private var inputPuls:Bool = false
 	private var inputTriggered:EBool
 	
-	var clicked:Bool = false{
-		didSet{
-			if clicked{
-#warning("DEBUGPRINT") // TODO: - remove temp print statement
-				print("🐞\tClicked")
-			}
-			clicked.reset()
-		}
-	}
+	private let doubleclikInterval:TimeInterval = 10.0
+	private let doubleClickTimer:DigitalTimer
 	
-	let doubleclikInterval:TimeInterval
-	let doubleClickTimer:DigitalTimer
-	var doubleClicked:Bool = false{
-		didSet{
-			if doubleClicked{
-#warning("DEBUGPRINT") // TODO: - remove temp print statement
-				print("🐞\tDoubleClicked")
-			}
-			doubleClicked.reset()
-		}
-	}
+	private let longPressTime:TimeInterval = 20.0
+	private let longPressTimer:DigitalTimer
 	
-	let longPressTime:TimeInterval
-	let longPressTimer:DigitalTimer
-	var longPressed:Bool = false{
-		didSet{
-			if longPressed{
-#warning("DEBUGPRINT") // TODO: - remove temp print statement
-				print("🐞\tPressedlong")
-			}
-			longPressed.reset()
-		}
-	}
+	// Hardware feedback state
+	// Function keys only have inputs, no controlable outputs and therefore also no associated hardwarefeedback
+	var hardwareFeedbackChanged:Bool = false
 	
-	
-		override init(){
+	override init(){
 		
-		self.inputTriggered = EBool(&inputPuls)
-				
-		self.doubleclikInterval = 1.0
+		inputTriggered = EBool(&inputPuls)
 		self.doubleClickTimer = DigitalTimer.OffDelay(time: doubleclikInterval)
-		
-		self.longPressTime = 2.0
 		self.longPressTimer = DigitalTimer.OnDelay(time: longPressTime)
 		
 		super.init()
 	}
 	
+	// MARK: - IO-Signal assignment
 	var inputSignal:DigitalInputSignal{
-		let ioSymbol:SoftPLC.IOSymbol = .functionKey(circuit:String(localized: "\(instanceName)", table:"AccessoryNames"))
+		let ioSymbol:SoftPLC.IOSymbol = .functionKey(circuit:String(localized: "\(instanceName)"))
 		return plc.signal(ioSymbol:ioSymbol) as! DigitalInputSignal
 	}
 	
+	// MARK: - PLC Parameter assignment
 	public func assignInputParameters(){
-		
-		if let hardwarePuls = inputSignal.logicalValue{
-			inputPuls = hardwarePuls
-		}else{
-			inputPuls = false
-		}
-		
+		inputPuls = inputSignal.logicalValue ?? false
 	}
 	
 	public func assignOutputParameters(){
@@ -98,24 +80,24 @@ class FunctionKey:PLCClassAccessoryDelegate{
 	// MARK: - PLC Processing
 	public func runCycle() {
 		
-		let risingEdge = inputTriggered.🔼
-		
-		if  risingEdge && !doubleClickTimer.output{
-			clicked.set()
-		}else if risingEdge && doubleClickTimer.output{
-			doubleClicked.set()
-		}else if longPressTimer.output{
-			longPressed.set()
-		}
-		
-//		reevaluate(&clicked, characteristic:accessory.programmableSwitchEvent, hardwareFeedback: hardwarePowerState)
-//		reevaluate(&doubleClicked, characteristic:accessory.outlet.powerState, hardwareFeedback: hardwarePowerState)
-
-		
-		
 		doubleClickTimer.input = inputPuls
 		longPressTimer.input = inputPuls
 		
+		if longPressTimer.output{
+			switchEvent = .longPress
+		}else if (clicksCounter >= 2) {
+			switchEvent = .doublePress
+		}else if (clicksCounter == 1) && !doubleClickTimer.output{
+			switchEvent = .singlePress
+		}
+		
+		if inputTriggered.🔼 {
+			clicksCounter += 1
+		}else if !doubleClickTimer.output{
+			clicksCounter = 0
+		}
+		
+		reevaluate(&switchEvent, characteristic:accessory.primaryService.programmableSwitchEvent, hardwareFeedback: nil)
 	}
 	
 }

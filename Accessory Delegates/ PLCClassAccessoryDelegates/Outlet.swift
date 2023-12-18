@@ -16,7 +16,7 @@ import JVCocoa
 // MARK: - PLC level class
 class Outlet:PLCClassAccessoryDelegate{
 	
-	// Accessory binding
+	// MARK: - Accessory binding
 	typealias AccessorySubclass = Accessory.Outlet
 	var characteristicChanged: Bool = false
 	
@@ -58,7 +58,7 @@ class Outlet:PLCClassAccessoryDelegate{
 		outputSignal.logicalValue = powerState ?? false
 	}
 	
-	// MARK: - Processing
+	// MARK: - PLC Processing
 	public func runCycle() {
 		 
 		reevaluate(&powerState, characteristic:accessory.outlet.powerState, hardwareFeedback: hardwarePowerState)
