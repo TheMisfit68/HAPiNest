@@ -8,6 +8,8 @@
 
 import SwiftUI
 import LeafDriver
+import WeatherKit
+import JVWeather
 
 struct PreferencesView: View {
 	
@@ -21,11 +23,11 @@ struct PreferencesView: View {
 					.tabItem {
 						Label("Samsung Tizen", systemImage: "tv")
 					}
-                LeafSettingsView()
+				LeafDriver.LeafSettingsView()
 					.tabItem {
 						Label("Nissan Leaf", systemImage: "bolt.car")
 					}
-                WeatherKitSettingsView()
+				WeatherService.CreditsView()
 					.tabItem {
 						Label("WeatherKit", systemImage: "cloud.sun.rain")
 					}

@@ -9,7 +9,9 @@
 import Foundation
 import HAP
 import Darwin
-import JVCocoa
+import JVSwift
+import JVSwiftCore
+import JVScripting
 import OSLog
 import SwiftUI
 import LeafDriver
@@ -37,8 +39,8 @@ public class HomeKitServer:Singleton{
         
 		self.name = MainConfiguration.HomeKitServer.ServerName
 		#if DEBUG
-            AppController(name: "Console", location: .systemUtilities).startIfInstalled()
-			AppController(name: "Home", location: .systemApps).startIfInstalled()
+		AppController(name: "Console", location: .systemUtilities, terminal: TerminalDriver()).startIfInstalled()
+		AppController(name: "Home", location: .systemApps, terminal: TerminalDriver()).startIfInstalled()
 		#endif
         let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "HomeKitServer")
         logger.info("Initializing the server \(self.name, privacy: .public)...")

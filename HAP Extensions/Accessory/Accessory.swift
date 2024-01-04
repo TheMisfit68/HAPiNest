@@ -9,7 +9,7 @@
 import Foundation
 import SoftPLC
 import HAP
-import JVCocoa
+import JVSwift
 
 extension HAP.Accessory{
 	

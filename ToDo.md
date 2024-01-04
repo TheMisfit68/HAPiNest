@@ -1,15 +1,15 @@
 # ToDo for HAPiNest
 ## A personal Home Automation System
 
-
-- [ ] Complete the leafDriver1s ACController with temperature setpoint if Nissan developer account gets granted)
+Remove archieved remote for JVCocoa on github
 
 - [ ] Create Preference view/container for each module,
-use the leafsettingsView and to a lesser extend the WeatherService.CreditsView as an example
+use the leafsettingsView and to a lesser extend the WeatherService.CreditsView as an example (the views should be embedded by extensions in the main driver type}
 use those views directly as the tabs from the apps prefs/settings - view
 
 - [ ] Create a Display/View/Container for each module where applicable
 
+- [ ] Complete the leafDriver1s ACController with temperature setpoint if Nissan developer account gets granted)
 
 - [ ]  Write DOCC files 
 For Siridriver

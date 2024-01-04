@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import JVCocoa
+import JVSwift
 import SoftPLC
 
 // Any object that can be polled for changes in a timely matter

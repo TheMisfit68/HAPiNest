@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import JVCocoa
+import JVSwift
 import HAP
 
 import SoftPLC

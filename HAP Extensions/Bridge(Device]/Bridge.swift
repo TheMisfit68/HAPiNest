@@ -7,7 +7,7 @@
     //
 
 import Foundation
-import JVCocoa
+import JVSwift
 import OSLog
 import HAP
 import SoftPLC

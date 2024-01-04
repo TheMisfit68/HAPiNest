@@ -11,8 +11,9 @@ import HAP
 import SoftPLC
 import ModbusDriver
 import IOTypes
-import JVCocoa
+import JVSwift
 import WeatherKit
+import JVWeather
 import CoreLocation
 import OSLog
 

@@ -34,16 +34,14 @@
 		DC55156A296AE2A9003432CD /* ElectricCarAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC551569296AE2A9003432CD /* ElectricCarAccessory.swift */; };
 		DC6DEE212B2E5EE300BDAB31 /* FunctionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6DEE202B2E5EE300BDAB31 /* FunctionKey.swift */; };
 		DC746D7325ACA97A00B33314 /* SmartSprinklerAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */; };
-		DC846E3A26D996E9002CEDFB /* JVCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC846E3926D996E9002CEDFB /* JVCocoa */; };
 		DC90DA642732817000068839 /* TizenSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA5E2732817000068839 /* TizenSettingsView.swift */; };
 		DC90DA652732817000068839 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA5F2732817000068839 /* PreferencesView.swift */; };
 		DC90DA672732817000068839 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA612732817000068839 /* GeneralSettingsView.swift */; };
 		DC90DA682732817000068839 /* SunnyPortalSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA622732817000068839 /* SunnyPortalSettingsView.swift */; };
-		DC90DA692732817000068839 /* WeatherKitSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA632732817000068839 /* WeatherKitSettingsView.swift */; };
 		DC90DA6C2732828200068839 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA6B2732828200068839 /* DashboardView.swift */; };
 		DC9963892AD3073000915EAC /* CirtcuitEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9963882AD3073000915EAC /* CirtcuitEnabler.swift */; };
 		DCA37CF926BB29EF003CC3BF /* HAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA37CF826BB29EF003CC3BF /* HAPTests.swift */; };
-		DCA3DF312B28D97000554A8A /* BrightnessTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3DF302B28D97000554A8A /* BrightnessTimer.swift */; };
+		DCA3DF312B28D97000554A8A /* WakeupLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3DF302B28D97000554A8A /* WakeupLights.swift */; };
 		DCA626B12B3083C900BBDD91 /* ServiceNames.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DCA626B02B3083C900BBDD91 /* ServiceNames.xcstrings */; };
 		DCAB996A2A816734005FCC29 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DCAB99692A816734005FCC29 /* README.md */; };
 		DCBBC7082B2EE4D80005EE6E /* StatelessProgrammableSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBBC7072B2EE4D80005EE6E /* StatelessProgrammableSwitch.swift */; };
@@ -75,6 +73,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC0524D02B3B9C0D002156FC /* JVScripting */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVScripting; path = ../../JVSwift/JVScripting; sourceTree = "<group>"; };
+		DC0524D12B3B9F02002156FC /* JVSecurity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVSecurity; path = ../../JVSwift/JVSecurity; sourceTree = "<group>"; };
+		DC0745772B388A6600C8C4CA /* JVNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVNetworking; path = ../../JVSwift/JVNetworking; sourceTree = "<group>"; };
+		DC0745792B388B5C00C8C4CA /* JVSwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVSwift; path = ../../JVSwift/JVSwift; sourceTree = "<group>"; };
 		DC0761AE2A8A9DA3009FA191 /* HomeKitServerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServerPreview.swift; sourceTree = "<group>"; };
 		DC0761AF2A8A9DA3009FA191 /* DashboardPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPreview.swift; sourceTree = "<group>"; };
 		DC1888342961C0CF00D3363D /* EnableSwitchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableSwitchService.swift; sourceTree = "<group>"; };
@@ -87,8 +89,6 @@
 		DC342E0B2AEE74EF00C578A2 /* PLCAccessoryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLCAccessoryDelegate.swift; sourceTree = "<group>"; };
 		DC342E0D2AEE757E00C578A2 /* CyclicPoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclicPoller.swift; sourceTree = "<group>"; };
 		DC3626EF256D9B0800F0AC35 /* HomeKitServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitServerView.swift; sourceTree = "<group>"; };
-		DC4B0FFA29C5139300EA6E47 /* Awake */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Awake; path = "../../../../Third Party Code/Awake"; sourceTree = "<group>"; };
-		DC4B0FFB29C5175F00EA6E47 /* ClibModbus */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ClibModbus; path = "../../../../Third Party Code/C-based Packages/System-libraries/ClibModbus"; sourceTree = "<group>"; };
 		DC4D66792A956AC1004C9D30 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DC4D667B2A9571BA004C9D30 /* AccessoryNames.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = AccessoryNames.xcstrings; sourceTree = "<group>"; };
 		DC4D6DD325710B410087E51D /* MainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguration.swift; sourceTree = "<group>"; };
@@ -101,12 +101,14 @@
 		DC6DEE202B2E5EE300BDAB31 /* FunctionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionKey.swift; sourceTree = "<group>"; };
 		DC6E461523B75BF8006A3E61 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		DC746D7225ACA97A00B33314 /* SmartSprinklerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinklerAccessory.swift; sourceTree = "<group>"; };
-		DC7FB14026C99142003CAFB0 /* JVCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JVCocoa; path = ../../JVCocoa; sourceTree = "<group>"; };
+		DC880BAF2B3B816800CC3468 /* JVSwiftCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVSwiftCore; path = ../../JVSwift/JVSwiftCore; sourceTree = "<group>"; };
+		DC8EEE002B3F5AF200434343 /* JVData */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVData; path = ../../JVSwift/JVData; sourceTree = "<group>"; };
+		DC8EEE042B3F6F4A00434343 /* JVUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVUI; path = ../../JVSwift/JVUI; sourceTree = "<group>"; };
+		DC8EEE062B3F803D00434343 /* JVLocation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVLocation; path = ../../JVSwift/JVLocation; sourceTree = "<group>"; };
 		DC90DA5E2732817000068839 /* TizenSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TizenSettingsView.swift; sourceTree = "<group>"; };
 		DC90DA5F2732817000068839 /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		DC90DA612732817000068839 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		DC90DA622732817000068839 /* SunnyPortalSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunnyPortalSettingsView.swift; sourceTree = "<group>"; };
-		DC90DA632732817000068839 /* WeatherKitSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherKitSettingsView.swift; sourceTree = "<group>"; };
 		DC90DA6B2732828200068839 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		DC980DF02ABBACC2006EAE8D /* HAP */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HAP; path = "../../../../Third Party Code/HAP"; sourceTree = "<group>"; };
 		DC9963882AD3073000915EAC /* CirtcuitEnabler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirtcuitEnabler.swift; sourceTree = "<group>"; };
@@ -115,9 +117,10 @@
 		DC9EFF2224F3131F001B70EE /* DoorLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLock.swift; sourceTree = "<group>"; };
 		DCA37CF626BB29EF003CC3BF /* HAPiNestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAPiNestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA37CF826BB29EF003CC3BF /* HAPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPTests.swift; sourceTree = "<group>"; };
-		DCA3DF302B28D97000554A8A /* BrightnessTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessTimer.swift; sourceTree = "<group>"; };
+		DCA3DF302B28D97000554A8A /* WakeupLights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeupLights.swift; sourceTree = "<group>"; };
 		DCA626B02B3083C900BBDD91 /* ServiceNames.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = ServiceNames.xcstrings; sourceTree = "<group>"; };
 		DCAB99692A816734005FCC29 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DCB31F4D2B40160300585B13 /* JVWeather */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = JVWeather; path = ../../JVSwift/JVWeather; sourceTree = "<group>"; };
 		DCBBC7072B2EE4D80005EE6E /* StatelessProgrammableSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatelessProgrammableSwitch.swift; sourceTree = "<group>"; };
 		DCBCFB5429678657000F0376 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		DCC01B5725B434BC00984BB5 /* SmartSprinkler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSprinkler.swift; sourceTree = "<group>"; };
@@ -148,7 +151,6 @@
 				DC0719DB27CEBF0700AF0D68 /* HAP in Frameworks */,
 				DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */,
 				DCF031E426868C8B005B5E88 /* LeafDriver in Frameworks */,
-				DC846E3A26D996E9002CEDFB /* JVCocoa in Frameworks */,
 				DCF031EA2687064D005B5E88 /* TizenDriver in Frameworks */,
 				DCF031E226868C87005B5E88 /* ModbusDriver in Frameworks */,
 				DCF031E62687061B005B5E88 /* SoftPLC in Frameworks */,
@@ -209,7 +211,7 @@
 				DC90DA6A2732828200068839 /* MainWindow */,
 				DC90DA5D2732817000068839 /* PreferencesWindow */,
 				DC2D4572256E486D00DF3EC5 /* HomekitServer */,
-				DCA3DF322B28D99000554A8A /* AmbientLightning */,
+				DCA3DF322B28D99000554A8A /* ServerBasedAutomations */,
 			);
 			path = HAPiNest;
 			sourceTree = "<group>";
@@ -284,7 +286,6 @@
 				DC90DA5F2732817000068839 /* PreferencesView.swift */,
 				DC90DA612732817000068839 /* GeneralSettingsView.swift */,
 				DC90DA622732817000068839 /* SunnyPortalSettingsView.swift */,
-				DC90DA632732817000068839 /* WeatherKitSettingsView.swift */,
 			);
 			path = PreferencesWindow;
 			sourceTree = "<group>";
@@ -306,12 +307,12 @@
 			path = HAPiNestTests;
 			sourceTree = "<group>";
 		};
-		DCA3DF322B28D99000554A8A /* AmbientLightning */ = {
+		DCA3DF322B28D99000554A8A /* ServerBasedAutomations */ = {
 			isa = PBXGroup;
 			children = (
-				DCA3DF302B28D97000554A8A /* BrightnessTimer.swift */,
+				DCA3DF302B28D97000554A8A /* WakeupLights.swift */,
 			);
-			path = AmbientLightning;
+			path = ServerBasedAutomations;
 			sourceTree = "<group>";
 		};
 		DCA8FA1B25B2FE0900532E4A /* Custom Accessories */ = {
@@ -357,6 +358,15 @@
 		DCFB54682683F12300406E12 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				DCB31F4D2B40160300585B13 /* JVWeather */,
+				DC8EEE062B3F803D00434343 /* JVLocation */,
+				DC8EEE042B3F6F4A00434343 /* JVUI */,
+				DC8EEE002B3F5AF200434343 /* JVData */,
+				DC0524D12B3B9F02002156FC /* JVSecurity */,
+				DC0524D02B3B9C0D002156FC /* JVScripting */,
+				DC880BAF2B3B816800CC3468 /* JVSwiftCore */,
+				DC0745792B388B5C00C8C4CA /* JVSwift */,
+				DC0745772B388A6600C8C4CA /* JVNetworking */,
 				DC980DF02ABBACC2006EAE8D /* HAP */,
 				DCFB546B2683F1B500406E12 /* SoftPLC */,
 				DCFB546D2683F20C00406E12 /* LeafDriver */,
@@ -364,9 +374,6 @@
 				DCFB546F2683F25D00406E12 /* ModbusDriver */,
 				DCFB54702683F28400406E12 /* SiriDriver */,
 				DCFB54712683F2A800406E12 /* TizenDriver */,
-				DC7FB14026C99142003CAFB0 /* JVCocoa */,
-				DC4B0FFA29C5139300EA6E47 /* Awake */,
-				DC4B0FFB29C5175F00EA6E47 /* ClibModbus */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -394,7 +401,6 @@
 				DCF031E92687064D005B5E88 /* TizenDriver */,
 				DC0CA92B268BBD0700E5AB06 /* MilightDriver */,
 				DC2C19BE26BB3BD400A3AB83 /* HAP */,
-				DC846E3926D996E9002CEDFB /* JVCocoa */,
 				DC0719DA27CEBF0700AF0D68 /* HAP */,
 			);
 			productName = HAPiNest2;
@@ -427,7 +433,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "Jan Verrept";
 				TargetAttributes = {
 					DC54B6BA2570586D00D9169F = {
@@ -517,10 +523,9 @@
 				DC90DA642732817000068839 /* TizenSettingsView.swift in Sources */,
 				DC54B6F42570628B00D9169F /* HomeKitServer.swift in Sources */,
 				DC4D6DE225713CD00087E51D /* DimmableLight.swift in Sources */,
-				DCA3DF312B28D97000554A8A /* BrightnessTimer.swift in Sources */,
+				DCA3DF312B28D97000554A8A /* WakeupLights.swift in Sources */,
 				DCD592F9270A6C2600882387 /* HAPiNestApp.swift in Sources */,
 				DC90DA652732817000068839 /* PreferencesView.swift in Sources */,
-				DC90DA692732817000068839 /* WeatherKitSettingsView.swift in Sources */,
 				DC1888352961C0CF00D3363D /* EnableSwitchService.swift in Sources */,
 				DC4D6DEB25713CDA0087E51D /* GarageDoor.swift in Sources */,
 				DC4D6DE525713CD40087E51D /* Light.swift in Sources */,
@@ -559,6 +564,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				ASSETCATALOG_COMPILER_OPTIMIZATION = "";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -640,6 +646,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				ASSETCATALOG_COMPILER_OPTIMIZATION = "";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -890,10 +897,6 @@
 		DC2C19BE26BB3BD400A3AB83 /* HAP */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HAP;
-		};
-		DC846E3926D996E9002CEDFB /* JVCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = JVCocoa;
 		};
 		DCF031E126868C87005B5E88 /* ModbusDriver */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -8,7 +8,7 @@
 import Foundation
 import HAP
 import XCTest
-import JVCocoa
+import JVSwift
 
 class HAPtests: XCTestCase {
 	

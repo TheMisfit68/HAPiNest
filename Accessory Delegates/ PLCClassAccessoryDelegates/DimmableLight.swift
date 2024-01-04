@@ -11,21 +11,14 @@ import HAP
 import SoftPLC
 import ModbusDriver
 import IOTypes
-import JVCocoa
+import JVSwift
 
 // MARK: - PLC level class
-class DimmableLight:PLCClassAccessoryDelegate, DimmedLight{
+class DimmableLight:PLCClassAccessoryDelegate{
 	
 	// MARK: - Accessory binding
     typealias AccessorySubclass = Accessory.Lightbulb
     var characteristicChanged: Bool = false
-	
-	var brightnessTimer: BrightnessTimer!
-	
-	override init(){
-		super.init()
-		self.brightnessTimer = BrightnessTimer(dimmer: self)
-	}
     
     // MARK: - State
     var powerState:Bool? = nil

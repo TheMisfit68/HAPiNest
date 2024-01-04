@@ -228,6 +228,8 @@ extension MainConfiguration{
             String(localized:"Front Door", table:"AccessoryNames") : Doorlock(),
             String(localized:"Garage Door", table:"AccessoryNames") : GarageDoor(),
             String(localized:"Smart Sprinklers", table:"AccessoryNames") : SmartSprinkler(),
+			
+		
         ]
     }
     

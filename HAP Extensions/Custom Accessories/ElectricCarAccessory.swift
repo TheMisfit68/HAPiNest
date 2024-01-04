@@ -11,8 +11,7 @@ import HAP
 
 extension Accessory {
     
-    class ElectricCar: Accessory{
-        
+    class ElectricCar:Accessory{
         
         let primaryService:Service.Battery = Service.Battery(characteristics: [.name(String(localized: "Battery status",table: "ServiceNames")),
                                                                                AnyCharacteristic(GenericCharacteristic<Double>(

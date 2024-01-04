@@ -8,16 +8,15 @@
 
 import Foundation
 import HAP
-import JVCocoa
+import JVSwift
 import MilightDriver
 import OSLog
 
 /// Handles characteristic changes for a Homekit Accessory.
 /// It uses the MilightDriver to pass those changes to  the hardware
 
-class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate, DimmedLight {
+class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate{
 	
-	var brightnessTimer: BrightnessTimer!
 	
     let zone:MilightDriver.Zone
     var name: String{
@@ -27,7 +26,6 @@ class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate, DimmedLight {
     init(ipAddress: String, zone:MilightDriver.Zone){
         self.zone = zone
         super.init(ipAddress: ipAddress)
-		self.brightnessTimer = BrightnessTimer(dimmer: self)
     }
     
     var characteristicChanged: Bool = false
@@ -85,9 +83,7 @@ class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate, DimmedLight {
             
         case CharacteristicType.brightness:
             
-//            brightness = characteristic.value as! Int
-			self.brightnessTimer.timeFor100percentChange = 1800
-			self.brightnessTimer.targetBrightness = (characteristic.value as! Int)
+            brightness = characteristic.value as! Int
             
         case CharacteristicType.hue:
             

@@ -8,7 +8,7 @@
 
 import Foundation
 import HAP
-import JVCocoa
+import JVSwift
 import SoftPLC
 import OSLog
 

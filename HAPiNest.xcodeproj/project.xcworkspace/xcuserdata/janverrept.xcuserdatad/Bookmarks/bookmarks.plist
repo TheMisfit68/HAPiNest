@@ -15,13 +15,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>44</string>
+							<string>43</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>43</string>
+							<string>42</string>
 							<key>Timestamp</key>
-							<string>715212911.326378</string>
+							<string>725587463.3800499</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -104,15 +104,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>32</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>55</string>
+					<string>57</string>
 					<key>StartingColumnNumber</key>
-					<string>16</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>55</string>
+					<string>56</string>
 					<key>Timestamp</key>
-					<string>721503133.0704319</string>
+					<string>725583443.55126</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -128,15 +128,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>updateIsOutdated</string>
+				<string>    private var updateIsOutdated:Bool{
+</string>
 				<key>leading</key>
 				<string>    }
     
-    private var </string>
+</string>
 				<key>trailing</key>
-				<string>:Bool{
-        
+				<string>        
         let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/mm/dd HH:mm"
 </string>
 			</dict>
 			<key>type</key>
