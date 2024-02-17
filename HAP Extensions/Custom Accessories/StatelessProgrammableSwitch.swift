@@ -8,7 +8,7 @@
 import Foundation
 import HAP
 
-#warning("TODO") // TODO: - Create a pull request to get this implemented into HAP itself
+// TODO: - Create a pull request to get this implemented into HAP itself
 extension Accessory {
 	
 	open class StatelessProgrammableSwitch: Accessory {
