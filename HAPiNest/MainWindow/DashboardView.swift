@@ -11,9 +11,9 @@ struct DashboardView: View {
 	
 	let serverView:HomeKitServerView
 	let plcView:SoftPLCView
-    #warning("TODO") // TODO: - Implement Inverter Display again
+	// TODO: - Implement Inverter Display again
 	// let inverterView:
-
+	
 	var body: some View {
 		
 		TabView {
@@ -41,5 +41,5 @@ struct DashboardView: View {
 }
 
 #Preview {
-    DashboardView.preview
+	DashboardView.preview
 }

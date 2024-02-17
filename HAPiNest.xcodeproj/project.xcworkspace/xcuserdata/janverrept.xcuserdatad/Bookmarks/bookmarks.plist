@@ -80,68 +80,41 @@
 			<string>group</string>
 		</dict>
 		<dict>
-			<key>destination</key>
-			<dict>
-				<key>rebasable-url</key>
+			<key>children</key>
+			<array>
 				<dict>
-					<key>base</key>
-					<string>home-directory</string>
-					<key>payload</key>
+					<key>query-specification</key>
 					<dict>
-						<key>relative-path</key>
-						<string>Documents/Development/Projects/Personal/Xcode/HomeAutomation/Drivers/LeafDriver/Sources/LeafDriver/BatteryChecker.swift</string>
+						<key>query</key>
+						<string>text</string>
+						<key>term</key>
+						<dict>
+							<key>text</key>
+							<string>// FIXME:</string>
+						</dict>
 					</dict>
+					<key>type</key>
+					<string>batch-find-query</string>
 				</dict>
-				<key>type</key>
-				<string>DVTDocumentLocation</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
 				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
-					<string>57</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>56</string>
-					<key>Timestamp</key>
-					<string>725583443.55126</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>home-directory</string>
-					<key>payload</key>
+					<key>query-specification</key>
 					<dict>
-						<key>relative-path</key>
-						<string>Documents/Development/Projects/Personal/Xcode/HomeAutomation/Drivers/LeafDriver/Sources/LeafDriver/BatteryChecker.swift</string>
+						<key>query</key>
+						<string>text</string>
+						<key>term</key>
+						<dict>
+							<key>text</key>
+							<string>// TODO:</string>
+						</dict>
 					</dict>
+					<key>type</key>
+					<string>batch-find-query</string>
 				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>    private var updateIsOutdated:Bool{
-</string>
-				<key>leading</key>
-				<string>    }
-    
-</string>
-				<key>trailing</key>
-				<string>        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/mm/dd HH:mm"
-</string>
-			</dict>
+			</array>
+			<key>title</key>
+			<string>TODO, FIXME, Prints</string>
 			<key>type</key>
-			<string>bookmark</string>
+			<string>group</string>
 		</dict>
 	</array>
 </dict>
