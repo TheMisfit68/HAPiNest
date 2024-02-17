@@ -46,7 +46,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Electrische auto"
+            "value" : "Elektrische auto"
           }
         }
       }
@@ -87,6 +87,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "HomeKit Server"
+          }
+        }
+      }
+    },
+    "MQTT" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MQTT"
           }
         }
       }
