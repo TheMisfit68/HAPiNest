@@ -60,6 +60,7 @@
 		DCF031E62687061B005B5E88 /* SoftPLC in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E52687061B005B5E88 /* SoftPLC */; };
 		DCF031EA2687064D005B5E88 /* TizenDriver in Frameworks */ = {isa = PBXBuildFile; productRef = DCF031E92687064D005B5E88 /* TizenDriver */; };
 		DCF7D5AC2AD0D106000010AA /* TVChannelNames.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DCF7D5AB2AD0D106000010AA /* TVChannelNames.xcstrings */; };
+		DCFAC6CE2B67216A004A7D28 /* MQTTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFAC6CD2B67216A004A7D28 /* MQTTClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		DCD1230F25ACE01C00060708 /* StatelessGarageDoorOpenerAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatelessGarageDoorOpenerAccessory.swift; sourceTree = "<group>"; };
 		DCD592F8270A6C2600882387 /* HAPiNestApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HAPiNestApp.swift; sourceTree = "<group>"; };
 		DCF7D5AB2AD0D106000010AA /* TVChannelNames.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = TVChannelNames.xcstrings; sourceTree = "<group>"; };
+		DCFAC6CD2B67216A004A7D28 /* MQTTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClient.swift; sourceTree = "<group>"; };
 		DCFB546B2683F1B500406E12 /* SoftPLC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SoftPLC; path = ../SoftPLC; sourceTree = "<group>"; };
 		DCFB546D2683F20C00406E12 /* LeafDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LeafDriver; path = ../Drivers/LeafDriver; sourceTree = "<group>"; };
 		DCFB546E2683F23700406E12 /* MilightDriver */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MilightDriver; path = ../Drivers/MilightDriver; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				DCD592F8270A6C2600882387 /* HAPiNestApp.swift */,
 				DC342E0D2AEE757E00C578A2 /* CyclicPoller.swift */,
+				DCFAC6CD2B67216A004A7D28 /* MQTTClient.swift */,
 				DC54B6C62570586E00D9169F /* Info.plist */,
 				DC54B6C72570586E00D9169F /* HAPiNest.entitlements */,
 				DC54B6C12570586E00D9169F /* Assets.xcassets */,
@@ -528,6 +531,7 @@
 				DC90DA652732817000068839 /* PreferencesView.swift in Sources */,
 				DC1888352961C0CF00D3363D /* EnableSwitchService.swift in Sources */,
 				DC4D6DEB25713CDA0087E51D /* GarageDoor.swift in Sources */,
+				DCFAC6CE2B67216A004A7D28 /* MQTTClient.swift in Sources */,
 				DC4D6DE525713CD40087E51D /* Light.swift in Sources */,
 				DCC01B5825B434BC00984BB5 /* SmartSprinkler.swift in Sources */,
 				DC54B6F12570628700D9169F /* Bridge.swift in Sources */,

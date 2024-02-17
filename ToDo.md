@@ -16,6 +16,8 @@ For Siridriver
 For ScriptsDriver
 For Hapinest with UML diagrams to explain architecture
 
+use @observable instead of @Observable object and @publish macros where applicable
+
 
 - [ ] Add driver for IP Cams
 
