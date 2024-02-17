@@ -154,19 +154,22 @@ struct MainConfiguration{
                              ]) : TizenAccessoryDelegate(tvName:String(localized:"TV Upstairs", table:"AccessoryNames"), macAddress: "7C:64:56:80:4E:90", ipAddress: "192.168.0.116", port: 8002, deviceName: "HAPiNestServer"),
         
         // MARK: - Other
-//        Accessory.ElectricCar(info: Service.Info(name: String(localized:"Electric Car", table:"AccessoryNames"), serialNumber: "30003", manufacturer: "Nissan")) : LeafAccessoryDelegate(leafProtocol: LeafProtocolV2())
-//        
+        Accessory.ElectricCar(info: Service.Info(name: String(localized:"Electric Car", table:"AccessoryNames"), serialNumber: "30003", manufacturer: "Nissan")) : LeafAccessoryDelegate(leafProtocol: LeafProtocolV2())
         
         
-        //                  (Accessory.init(info: Service.Info(name:String(localized:"Zonnepanelen", table:"AccessoryNames"), serialNumber: "30001", manufacturer: "SMA"),
-        //                                   type: .other,
-        //                                   services: [
-        //                                    // TODO: - Insert a Service.EnergyMeter and Service.PowerMeter,
-        //                                    // once it gets supported by Apples 'Home'-App
-        //                                    .SwitchBase(characteristics:[.name("Opbrengst opvragen")] ),
-        //                                   ] ),
-        //                    YASDIDriver.InstallDrivers().first!
-        //                    )
+        
+//                          (Accessory.init(info: Service.Info(name:String(localized:"Zonnepanelen", table:"AccessoryNames"), serialNumber: "30001", manufacturer: "SMA"),
+//                                           type: .other,
+//                                           services: [
+//                                            // TODO: - Insert a Service.EnergyMeter and Service.PowerMeter,
+//                                            // once it gets supported by Apples 'Home'-App
+//                                            .SwitchBase(characteristics:[.name("Opbrengst opvragen")] ),
+//                                           ] ),
+//                            YASDIDriver.InstallDrivers().first!
+//                            )
+		
+		
+		
     ]
     
 }

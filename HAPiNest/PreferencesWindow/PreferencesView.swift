@@ -7,9 +7,13 @@
 //
 
 import SwiftUI
-import LeafDriver
 import WeatherKit
 import JVWeather
+import JVNetworking
+
+// Struct specifier needed because compiler can't keep module LeafDriver apart from the Class with the same name
+import struct LeafDriver.LeafSettingsView
+
 
 struct PreferencesView: View {
 	
@@ -18,6 +22,10 @@ struct PreferencesView: View {
 				GeneralSettingsView()
 					.tabItem {
 						Label("General", systemImage: "gearshape")
+					}
+				JVNetworking.MQTTClientSettingsView()
+					.tabItem {
+						Label("MQTT", systemImage: "info.bubble")
 					}
 				TizenSettingsView()
 					.tabItem {

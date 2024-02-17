@@ -30,7 +30,7 @@ struct HAPiNestApp: App {
 	
 	let homekitServer:HomeKitServer = HomeKitServer.shared
 	
-	let mqttCLient = MQTTClient()
+	let mqttCLient =  MQTTClient.shared
 	
 	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList, simulator:ModbusSimulator())
 	let cyclicPoller:CyclicPoller = CyclicPoller(timeInterval: 1.0)
@@ -47,7 +47,6 @@ struct HAPiNestApp: App {
 			accessories: MainConfiguration.Accessories.map{accessory, delegate in return accessory},
 			configfileName: configFile
 		)
-		mqttCLient.connect()
 		
 		plc.plcObjects = MainConfiguration.PLC.PLCobjects
 #if DEBUG
@@ -73,8 +72,12 @@ struct HAPiNestApp: App {
 			)
 			.padding()
 			.background(Color.Neumorphic.main)
-			.onAppear(perform: {
-			})
+			.onAppear(perform:
+						{ mqttCLient.connect() }
+			)
+			.onDisappear(perform:
+							{ mqttCLient.disconnect() }
+			)
 		}
 		.onChange(of: scenePhase) {
 			let logger = Logger(subsystem: "be.oneclick.HAPiNest", category:.lifeCycle)
