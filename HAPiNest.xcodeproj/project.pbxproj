@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,7 @@
 		DC90DA672732817000068839 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA612732817000068839 /* GeneralSettingsView.swift */; };
 		DC90DA682732817000068839 /* SunnyPortalSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA622732817000068839 /* SunnyPortalSettingsView.swift */; };
 		DC90DA6C2732828200068839 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90DA6B2732828200068839 /* DashboardView.swift */; };
+		DC9129342B895533009BFDF0 /* JVSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9129332B895533009BFDF0 /* JVSwift */; };
 		DC9963892AD3073000915EAC /* CirtcuitEnabler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9963882AD3073000915EAC /* CirtcuitEnabler.swift */; };
 		DCA37CF926BB29EF003CC3BF /* HAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA37CF826BB29EF003CC3BF /* HAPTests.swift */; };
 		DCA3DF312B28D97000554A8A /* WakeupLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3DF302B28D97000554A8A /* WakeupLights.swift */; };
@@ -154,6 +155,7 @@
 				DC2C19BF26BB3BD400A3AB83 /* HAP in Frameworks */,
 				DCF031E426868C8B005B5E88 /* LeafDriver in Frameworks */,
 				DCF031EA2687064D005B5E88 /* TizenDriver in Frameworks */,
+				DC9129342B895533009BFDF0 /* JVSwift in Frameworks */,
 				DCF031E226868C87005B5E88 /* ModbusDriver in Frameworks */,
 				DCF031E62687061B005B5E88 /* SoftPLC in Frameworks */,
 				DC0CA92C268BBD0700E5AB06 /* MilightDriver in Frameworks */,
@@ -405,6 +407,7 @@
 				DC0CA92B268BBD0700E5AB06 /* MilightDriver */,
 				DC2C19BE26BB3BD400A3AB83 /* HAP */,
 				DC0719DA27CEBF0700AF0D68 /* HAP */,
+				DC9129332B895533009BFDF0 /* JVSwift */,
 			);
 			productName = HAPiNest2;
 			productReference = DC54B6BB2570586D00D9169F /* HAPiNest.app */;
@@ -460,6 +463,7 @@
 			mainGroup = DC06CD182354E42A00C8E9F9;
 			packageReferences = (
 				DC0719D927CEBF0700AF0D68 /* XCRemoteSwiftPackageReference "HAP" */,
+				DC9129322B895533009BFDF0 /* XCLocalSwiftPackageReference "../../JVSwift/JVSwift" */,
 			);
 			productRefGroup = DC06CD222354E42A00C8E9F9 /* Products */;
 			projectDirPath = "";
@@ -877,6 +881,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		DC9129322B895533009BFDF0 /* XCLocalSwiftPackageReference "../../JVSwift/JVSwift" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../JVSwift/JVSwift;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		DC0719D927CEBF0700AF0D68 /* XCRemoteSwiftPackageReference "HAP" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -901,6 +912,10 @@
 		DC2C19BE26BB3BD400A3AB83 /* HAP */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HAP;
+		};
+		DC9129332B895533009BFDF0 /* JVSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = JVSwift;
 		};
 		DCF031E126868C87005B5E88 /* ModbusDriver */ = {
 			isa = XCSwiftPackageProductDependency;

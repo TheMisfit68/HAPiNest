@@ -8,7 +8,6 @@
 
 import Foundation
 import HAP
-import JVSwift
 import TizenDriver
 import OSLog
 

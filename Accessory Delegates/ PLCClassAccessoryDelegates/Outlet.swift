@@ -11,7 +11,6 @@ import HAP
 import SoftPLC
 import ModbusDriver
 import IOTypes
-import JVSwift
 
 // MARK: - PLC level class
 class Outlet:PLCClassAccessoryDelegate{
