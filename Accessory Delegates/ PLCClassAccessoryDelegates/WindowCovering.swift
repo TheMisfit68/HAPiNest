@@ -209,24 +209,24 @@ class WindowCovering:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateabl
 	private var hardwarePuls:Bool = false
 	private var hardwareTrigger:EBool
 	
-	private var hardwareState:WindowCoveringState = .stoppedAfterOpening
+	private var hardwareState:WindowCoveringState = .readyToClose
 	private enum WindowCoveringState{
 		
 		case opening
-		case stoppedAfterOpening
+		case readyToClose
 		case closing
-		case stoppedAfterClosing
+		case readyToOpen
 		
 		func nextState()->Self{
 			
 			switch self{
 				case .opening:
-					return .stoppedAfterOpening
-				case .stoppedAfterOpening:
+					return .readyToClose
+				case .readyToClose:
 					return .closing
 				case .closing:
-					return .stoppedAfterClosing
-				case .stoppedAfterClosing:
+					return .readyToOpen
+				case .readyToOpen:
 					return .opening
 			}
 		}
