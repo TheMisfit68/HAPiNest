@@ -36,9 +36,9 @@ extension MainConfiguration{
             let MaxNumberOfModulesPerRack = 7
             let MaxNumberOfChannelsPerModule = 16
             
-            let Channels:[SoftPLC.IOSymbol?] = Array(repeating: nil, count: MaxNumberOfChannelsPerModule)
-            let Modules:[[SoftPLC.IOSymbol?]] = Array(repeating: Channels, count: MaxNumberOfModulesPerRack)
-            var IOList:[[[SoftPLC.IOSymbol?]]] = Array(repeating: Modules, count: NumberOfRacks)
+            let Channels:[IOSymbol?] = Array(repeating: nil, count: MaxNumberOfChannelsPerModule)
+            let Modules:[[IOSymbol?]] = Array(repeating: Channels, count: MaxNumberOfModulesPerRack)
+            var IOList:[[[IOSymbol?]]] = Array(repeating: Modules, count: NumberOfRacks)
             
             // Analog Output 0
             // Dimmable lights
