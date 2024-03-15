@@ -64,7 +64,7 @@ class FunctionKey:PLCClassAccessoryDelegate{
 	
 	// MARK: - IO-Signal assignment
 	var inputSignal:DigitalInputSignal{
-		let ioSymbol:SoftPLC.IOSymbol = .functionKey(circuit:String(localized: "\(instanceName)"))
+		let ioSymbol:IOSymbol = .functionKey(circuit:String(localized: "\(instanceName)"))
 		return plc.signal(ioSymbol:ioSymbol) as! DigitalInputSignal
 	}
 	
