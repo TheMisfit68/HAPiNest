@@ -12,6 +12,7 @@ import JVNetworking
 
 extension MQTTClient:Singleton{
 	
-	public static var shared: MQTTClient = MQTTClient(autoSubscribeTo: ["HomeKit/ExternalEvents/ToServer"], autoPublishTo: ["HomeKit/ExternalEvents/FromServer"])
+	/// Convenience intitializer for the MQTTClient/Singleton  used within this project
+	public static var shared: MQTTClient = MQTTClient(name:MainConfiguration.HomeKitServer.ServerName, autoSubscribeTo: ["HomeKit/ExternalEvents/ToServer"], autoPublishTo: ["HomeKit/ExternalEvents/FromServer"])
 
 }
