@@ -1,5 +1,4 @@
 # ToDo for HAPiNest
-## A personal Home Automation System
 
 - [ ] Create Preference view/container for each module,
 use the leafsettingsView and to a lesser extend the WeatherService.CreditsView as an example (the views should be embedded by extensions in the main driver type}
@@ -14,16 +13,11 @@ For Siridriver
 For ScriptsDriver
 For Hapinest with UML diagrams to explain architecture
 
-use @observable instead of @Observable object and @publish macros where applicable
-
 
 # Performance
-Run the plc as a separate process from the main app improving isolation from the main app an gain maximum speed at the same time through parallel processing
-But keep in mind that you need to setup the PLC from the main app and that accessories need to access it to read and write to it and pass the plcobjects to it.
+Complete ToDo's of the SoftPLC package first
 Check doubleclick interval of the programmable switches (e.g. for the lights in the bedroom).
 
-
-- [ ] Add driver for IP Cams
 
 ## Testing
 - [ ] Test the smartsprinkler in Auto-enabled mode during dry-season.
