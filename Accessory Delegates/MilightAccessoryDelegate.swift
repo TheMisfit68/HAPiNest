@@ -18,12 +18,12 @@ import OSLog
 class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate{
 	
 	
-    let zone:MilightDriver.Zone
+    let zone: Zone
     var name: String{
         return zone.name
     }
     
-    init(ipAddress: String, zone:MilightDriver.Zone){
+    init(ipAddress: String, zone:Zone){
         self.zone = zone
         super.init(ipAddress: ipAddress)
     }
@@ -78,12 +78,12 @@ class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate{
         case CharacteristicType.powerState:
             
             let poweredOn = characteristic.value as! Bool
-            let action = poweredOn ? MilightDriver.Action.on : MilightDriver.Action.off
+            let action = poweredOn ? Action.on : Action.off
             executeCommand(mode: .rgbwwcw, action: action, zone: zone)
             
         case CharacteristicType.brightness:
             
-            brightness = characteristic.value as! Int
+				brightness = (characteristic.value as! Int)
             
         case CharacteristicType.hue:
             
