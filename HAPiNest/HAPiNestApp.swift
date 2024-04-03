@@ -13,6 +13,7 @@ import OSLog
 import JVSwift
 import JVSwiftCore
 import JVNetworking
+import JVScripting
 import HAP
 import SoftPLC
 import ModbusDriver
@@ -25,7 +26,8 @@ import ModbusDriver
 @main
 struct HAPiNestApp: App {
 	@SwiftUI.Environment(\.scenePhase) var scenePhase
-	
+
+	let appcontroller:AppController = AppController(name: "HAPiNest", terminal: TerminalDriver())
 	let appNapController: AppNapController = AppNapController.shared
 	
 	let homekitServer:HomeKitServer = HomeKitServer.shared
@@ -36,6 +38,8 @@ struct HAPiNestApp: App {
 	let cyclicPoller:CyclicPoller = CyclicPoller(timeInterval: 1.0)
 	
 	init() {
+		// Prevent running multiple instances of this App at all times
+		appcontroller.killOldAppInstances()
 		
 		let bridgename = MainConfiguration.HomeKitServer.BridgeName
 		let setupCode = MainConfiguration.HomeKitServer.BridgeSetupCode
