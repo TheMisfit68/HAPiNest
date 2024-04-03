@@ -25,11 +25,8 @@ class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource{
 	
 	let lowChargeLimit = 15
 	
-	
 	public override init(leafProtocol: LeafProtocol) {
-		
 		super.init(leafProtocol: leafProtocol)
-		
 	}
 	
 	var startCharging:Bool = false{
@@ -46,10 +43,10 @@ class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource{
 				self.acController.setAirCo(to: .on)
 			}else{
 				self.acController.setAirCo(to: .off)
-				
 			}
 		}
 	}
+	
 	
 	var mqttMessage:LeafMQTTMessage? = nil{
 		didSet{
@@ -99,17 +96,17 @@ class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource{
 	
 	func pollCycle() {
 		
-		if  let percentageRemaining = batteryChecker.percentageRemaining,
+		if  let feedbackTimeStamp = batteryChecker.updateTimeStamp,
+			let percentageRemaining = batteryChecker.percentageRemaining,
 			let rangeRemaining = batteryChecker.rangeRemaining,
 			let isConnected = batteryChecker.connectionStatus,
 			let isCharging = batteryChecker.chargingStatus
 		{
 			
-			// Send an MQTT-payload
-			let timeStamp = batteryChecker.updateTimeStamp!
-			self.mqttMessage = LeafMQTTMessage(timeStamp: timeStamp.localDateTimeString(), percentage: percentageRemaining, range: rangeRemaining, isConnected: isConnected, isCharging: isCharging)
+			// Send an MQTT-payload with the remaining battery charge
+			self.mqttMessage = LeafMQTTMessage(timeStamp: feedbackTimeStamp.utcToLocal().localDateTimeString(), percentage: percentageRemaining, range: rangeRemaining, isConnected: isConnected, isCharging: isCharging)
 			
-			// Chang the state of the accessory
+			// Adjust the battery indicators
 			accessory.primaryService.batteryLevel?.value =  UInt8(percentageRemaining)
 			if  (percentageRemaining >= lowChargeLimit){
 				accessory.primaryService.statusLowBattery.value = .batteryNormal
@@ -124,6 +121,16 @@ class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource{
 			
 		}
 		
+		// Reset the charging switch to off if the command was executed successfully.
+		if let chargeSwitchOn = accessory.chargerService.powerState.value,
+		   let chargingWasExecuted = charger.chargingWasExecuted{
+			accessory.chargerService.powerState.value?.reset(chargeSwitchOn && chargingWasExecuted)
+		}
+		
+		// Synchronize the AC switch if the feedback comes in.
+		if let aircoIsRunning = acController.aircoIsRunning{
+			accessory.aircoService.powerState.value = aircoIsRunning
+		}
 		
 	}
 	
