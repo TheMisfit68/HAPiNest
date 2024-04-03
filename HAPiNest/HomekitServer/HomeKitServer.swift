@@ -17,12 +17,11 @@ import SwiftUI
 import LeafDriver
 
 public class HomeKitServer:Singleton{
-	
+	let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "HomeKitServer")
 	public static var shared: HomeKitServer = HomeKitServer()
 	public var dashboard:HomeKitServerView?
 	public var name:String
 	private var HAPserver:Server!
-	
 	
 	var mainBridge:Bridge!{
 		didSet{
@@ -36,13 +35,12 @@ public class HomeKitServer:Singleton{
 	//    let sunnyPortalReporter = SunnyPortalReporter()
 	
 	private init(){
-		
+				
 		self.name = MainConfiguration.HomeKitServer.ServerName
 #if DEBUG
 		AppController(name: "Console", location: .systemUtilities, terminal: TerminalDriver()).startIfInstalled()
 		AppController(name: "Home", location: .systemApps, terminal: TerminalDriver()).startIfInstalled()
 #endif
-		let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "HomeKitServer")
 		logger.info("Initializing the server \(self.name, privacy: .public)...")
 		
 		
