@@ -16,8 +16,7 @@ import OSLog
 import SwiftUI
 import LeafDriver
 
-public class HomeKitServer:Singleton{
-	let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "HomeKitServer")
+public class HomeKitServer:Singleton, Loggable{
 	public static var shared: HomeKitServer = HomeKitServer()
 	public var dashboard:HomeKitServerView?
 	public var name:String
@@ -41,7 +40,7 @@ public class HomeKitServer:Singleton{
 		AppController(name: "Console", location: .systemUtilities, terminal: TerminalDriver()).startIfInstalled()
 		AppController(name: "Home", location: .systemApps, terminal: TerminalDriver()).startIfInstalled()
 #endif
-		logger.info("Initializing the server \(self.name, privacy: .public)...")
+		HomeKitServer.logger.info("Initializing the server \(self.name, privacy: .public)...")
 		
 		
 		// TODO: - reimplement SMAInverter

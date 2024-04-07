@@ -24,7 +24,7 @@ import ModbusDriver
 /// by translating those changes into actions for the hardware.
 /// The main accessory-delegate in this App is a SoftPLC that can interact with the outside world by means of a number of Input and Output-modules.
 @main
-struct HAPiNestApp: App {
+struct HAPiNestApp: App, Loggable {
 	@SwiftUI.Environment(\.scenePhase) var scenePhase
 
 	let appcontroller:AppController = AppController(name: "HAPiNest", terminal: TerminalDriver())

@@ -9,6 +9,7 @@
 import Foundation
 import HAP
 import JVSwift
+import JVSwiftCore
 import SoftPLC
 import OSLog
 
@@ -18,7 +19,7 @@ import OSLog
 /// An object (typically some hardware driver) capable of
 /// receiving events from a HomeKit-Accessory and
 /// process them accordingly.
-public protocol AccessoryDelegate: HAP.AccessoryDelegate{
+public protocol AccessoryDelegate: HAP.AccessoryDelegate, Loggable{
     
     var name:String{get}
     
@@ -37,8 +38,7 @@ extension AccessoryDelegate{
                                   ofAccessory accessory: HAP.Accessory,
                                   didChangeValue newValue: T?){
         
-        let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "AccessoryDelegate")
-        logger.info("✴️\tValue '\(characteristic.description ?? "", privacy: .public)' of '\(accessory.info.name.value ?? "", privacy: .public)/\(service.label ?? "", privacy: .public)' changed to \(String(describing:newValue), privacy: .public)")
+		Self.logger.info("✴️\tValue '\(characteristic.description ?? "", privacy: .public)' of '\(accessory.info.name.value ?? "", privacy: .public)/\(service.label ?? "", privacy: .public)' changed to \(String(describing:newValue), privacy: .public)")
         
         characteristicChanged.set()
         

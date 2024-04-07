@@ -12,13 +12,14 @@ import SoftPLC
 import ModbusDriver
 import IOTypes
 import JVSwift
+import JVSwiftCore
 import WeatherKit
 import JVWeather
 import CoreLocation
 import OSLog
 
 // MARK: - PLC level class
-class SmartSprinkler:PLCClassAccessoryDelegate{
+class SmartSprinkler:PLCClassAccessoryDelegate, Loggable{
     
 	// MARK: - Accessory binding
     typealias AccessorySubclass = Accessory.SmartSprinkler
@@ -32,8 +33,7 @@ class SmartSprinkler:PLCClassAccessoryDelegate{
     
     private let weatherReporter = WeatherReporter()
     private var needsIrrigation:Bool{
-        let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "Smartsprinkler")
-        logger.warning( "Drystate \(self.weatherReporter.wasDry)/\(self.weatherReporter.isDry)/\(self.weatherReporter.willBeDry)/\(self.weatherReporter.isWindy)")
+		SmartSprinkler.logger.warning( "Drystate \(self.weatherReporter.wasDry)/\(self.weatherReporter.isDry)/\(self.weatherReporter.willBeDry)/\(self.weatherReporter.isWindy)")
         
         return (weatherReporter.wasDry && weatherReporter.isDry && weatherReporter.willBeDry && !weatherReporter.isWindy)
     }

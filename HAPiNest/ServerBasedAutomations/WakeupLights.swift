@@ -22,7 +22,6 @@ class WakeupLights:PLCClass{
 // use a helper class a.k.a. composition instead of inheritance.
 class BrightnessTimer {
 	
-	// Public property for time to make a 100% change
 	private var timer: Timer?
 	
 	private func adjust(brightness:inout Int?, to targetBrightness:Int?, over totalTime:TimeInterval = 5.0){
@@ -61,11 +60,11 @@ class BrightnessTimer {
 			brightness = newBrightness
 			
 		}else{
-			stop()
+			self.stop()
 		}
 	}
 	
-	func stop() {
+	private func stop() {
 		timer?.invalidate()
 		timer = nil
 	}

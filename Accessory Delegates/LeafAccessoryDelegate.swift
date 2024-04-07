@@ -9,11 +9,11 @@
 import Foundation
 import HAP
 import LeafDriver
+import JVSwiftCore
 import OSLog
 import JVNetworking
 
 class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource{
-	let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "LeafAccessoryDelegate")
 	
 	var name: String{
 		return String(localized:"Electric Car")
@@ -68,7 +68,7 @@ class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource{
 						startCharging = characteristic.value as! Bool
 						
 					default:
-						logger.warning( "Unhandled characteristic change for accessory \(accessory.info.name.value ?? "")")
+						LeafAccessoryDelegate.logger.warning( "Unhandled characteristic change for accessory \(accessory.info.name.value ?? "")")
 				}
 				
 			case accessory.aircoService:
@@ -79,11 +79,11 @@ class LeafAccessoryDelegate:LeafDriver, AccessoryDelegate, AccessorySource{
 						setAirco = characteristic.value as! Bool
 						
 					default:
-						logger.warning( "Unhandled characteristic change for accessory \(accessory.info.name.value ?? "")")
+						LeafAccessoryDelegate.logger.warning( "Unhandled characteristic change for accessory \(accessory.info.name.value ?? "")")
 				}
 				
 			default:
-				logger.warning( "Unhandled characteristic change for accessory \(accessory.info.name.value ?? "")")
+				LeafAccessoryDelegate.logger.warning( "Unhandled characteristic change for accessory \(accessory.info.name.value ?? "")")
 		}
 		
 		

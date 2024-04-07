@@ -8,8 +8,8 @@
 
 import Foundation
 import HAP
+import JVSwiftCore
 import TizenDriver
-import OSLog
 
 class TizenAccessoryDelegate:TizenDriver, AccessoryDelegate, AccessorySource{
 	
@@ -59,8 +59,7 @@ class TizenAccessoryDelegate:TizenDriver, AccessoryDelegate, AccessorySource{
                 }
             
         default:
-            let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "TizenAccessoryDelegate")
-            logger.warning("Unhandled characteristic change for accessory \(self.name)")
+				TizenAccessoryDelegate.logger.warning("Unhandled characteristic change for accessory \(self.name)")
         }
         characteristicChanged.set()
 	}

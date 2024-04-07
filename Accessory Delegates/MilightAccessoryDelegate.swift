@@ -9,6 +9,7 @@
 import Foundation
 import HAP
 import JVSwift
+import JVSwiftCore
 import MilightDriver
 import OSLog
 
@@ -55,8 +56,7 @@ class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate{
             if inWhiteMode != oldValue{
                 let currentBrightness = brightness
                 if inWhiteMode{
-                    let logger = Logger(subsystem: "be.oneclick.MilightDriver", category: "MilightDriverV6")
-                    logger.info("Switching to dedicated whitemode")
+					MilightAccessoryDelegate.logger.info("Switching to dedicated whitemode")
 
                     hue = 0
                     saturation = 0
@@ -94,8 +94,7 @@ class MilightAccessoryDelegate:MilightDriverV6, AccessoryDelegate{
             saturation = Int(characteristic.value as! Float)
             
         default:
-            let logger = Logger(subsystem: "be.oneclick.HAPiNest", category: "MilightAccessoryDelegate")
-            logger.warning("Unhandled characteristic change for accessory \(self.name)")
+			MilightAccessoryDelegate.logger.warning("Unhandled characteristic change for accessory \(self.name)")
         }
         
     }
