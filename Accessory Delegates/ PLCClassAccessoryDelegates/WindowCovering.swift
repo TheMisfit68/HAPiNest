@@ -104,10 +104,6 @@ class WindowCovering:PLCClassAccessoryDelegate, PulsOperatedCircuit, Simulateabl
 	
 	// MARK: - Subroutines
 	private func updateCurrentPosition() {
-		// TODO: - remove this print
-		if self.instanceName == String(localized:"Living room Screens", table:"AccessoryNames"){
-			print("PositionState: \(String(describing: self.hardwarePositionState)), TargetPostiton: \(String(describing: self.targetPosition)), CurrentPosition: \(String(describing: self.currentPosition))")
-		}
 		
 		if (self.currentPosition == nil){
 			
