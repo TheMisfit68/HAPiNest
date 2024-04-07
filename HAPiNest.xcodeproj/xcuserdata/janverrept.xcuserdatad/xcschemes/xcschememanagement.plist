@@ -139,7 +139,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>19</integer>
 		</dict>
 		<key>Demo (Playground) 10.xcscheme</key>
 		<dict>
@@ -202,7 +202,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>20</integer>
 		</dict>
 		<key>Demo (Playground) 3.xcscheme</key>
 		<dict>
@@ -258,7 +258,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>18</integer>
 		</dict>
 		<key>DevelopmentTesting (Playground) 1.xcscheme</key>
 		<dict>
@@ -474,6 +474,20 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
+		</dict>
+		<key>Tools for plug-in “Swift-DocC Preview” 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
+		<key>Tools for plug-in “Swift-DocC Preview”.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>21</integer>
 		</dict>
 		<key>testapp.xcscheme_^#shared#^_</key>
 		<dict>
