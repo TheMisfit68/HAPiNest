@@ -1,12 +1,13 @@
 # ToDo
 
+- [ ] Check the IP-address of the simulator against localhost before starting the local modbus server.
+	  when a custom IP-address is used, assume a remote simulator (like on the home server) and do not start the local simulator.
+
 - [ ] Create Preference view/container for each module,
-use the leafsettingsView and to a lesser extend the WeatherService.CreditsView as an example (the views should be embedded by extensions in the main driver type}
+use the WeatherService.CreditsView as an example (the views should be embedded by extensions in the main driver type}
 use those views directly as the tabs from the apps prefs/settings - view
 
 - [ ] Create a Display/View/Container for each module where applicable
-
-- [ ] Complete the leafDriver1s ACController with temperature setpoint if Nissan developer account gets granted)
 - [ ] Complete DocC files with UML diagrams to explain architecture
 
 

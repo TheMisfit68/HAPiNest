@@ -34,13 +34,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>44</string>
+							<string>43</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>43</string>
+							<string>42</string>
 							<key>Timestamp</key>
-							<string>734182256.930252</string>
+							<string>758244371.967304</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -56,16 +56,16 @@
 					<key>text-context</key>
 					<dict>
 						<key>focused</key>
-						<string>            if errorCount == maxErrorCount{
+						<string>            errorCount = 0
 </string>
 						<key>leading</key>
-						<string>        case .error:
-            errorCount += 1
+						<string>            connect()
+        case .connected:
 </string>
 						<key>trailing</key>
-						<string>                DispatchQueue.main.asyncAfter(deadline: .now() + reconnectInterval) {
-                    // Try to reconnect after a while
-                    self.reconnect()
+						<string>        case .error:
+            errorCount += 1
+            if errorCount == maxErrorCount{
 </string>
 					</dict>
 					<key>title</key>
@@ -134,6 +134,25 @@
 			<string>TODO, FIXME</string>
 			<key>type</key>
 			<string>group</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>home-directory</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Documents/Development/Projects/Personal/Xcode/JVSwift/JVNetworking/Sources/JVNetworking/MQTT/JVMQTTClient.swift</string>
+					</dict>
+				</dict>
+				<key>type</key>
+				<string>DVTDocumentLocation</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
 		</dict>
 	</array>
 </dict>

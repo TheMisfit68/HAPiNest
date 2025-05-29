@@ -14,8 +14,8 @@ import ModbusDriver
 extension MainConfiguration{
     
     struct PLC{
-        
-        static var HardwareConfig:SoftPLC.HardwareConfiguration = [
+		
+        static let HardwareConfig:SoftPLC.HardwareConfiguration = [
             
             0:[
                 IOLogicE1241(ipAddress: "192.168.0.150"),
@@ -164,7 +164,7 @@ extension MainConfiguration{
             return IOList
         }
         
-        static var PLCobjects:[String:PLCClass] = [
+        static let PLCobjects:[String:PLCClass] = [
             
             String(localized:"Twilight Sensor Enable", table:"AccessoryNames") : CirtcuitEnabler(),
             String(localized:"Landing Light Enable", table:"AccessoryNames") : CirtcuitEnabler(),
