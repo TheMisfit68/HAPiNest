@@ -41,16 +41,6 @@
         }
       }
     },
-    "Electric Car" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elektrische auto"
-          }
-        }
-      }
-    },
     "General" : {
       "localizations" : {
         "nl" : {
@@ -97,16 +87,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "MQTT"
-          }
-        }
-      }
-    },
-    "Nissan Leaf" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nissan Leaf"
           }
         }
       }

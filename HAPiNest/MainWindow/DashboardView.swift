@@ -19,6 +19,8 @@ struct DashboardView: View {
 		TabView {
 			
 			serverView
+			Text(String(localized: "testLocalizedString"))
+
 				.tabItem {
 					Label("Homekit Server", systemImage:"server.rack")
 				}

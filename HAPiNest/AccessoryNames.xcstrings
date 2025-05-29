@@ -151,16 +151,6 @@
         }
       }
     },
-    "Electric Car" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elektrische auto"
-          }
-        }
-      }
-    },
     "Front Door" : {
       "localizations" : {
         "nl" : {

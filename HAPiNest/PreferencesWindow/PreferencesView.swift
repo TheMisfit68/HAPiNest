@@ -11,10 +11,6 @@ import WeatherKit
 import JVWeather
 import JVNetworking
 
-// Struct specifier needed because compiler can't keep module LeafDriver apart from the Class with the same name
-import struct LeafDriver.LeafSettingsView
-
-
 struct PreferencesView: View {
 	
 		var body: some View {
@@ -30,10 +26,6 @@ struct PreferencesView: View {
 				TizenSettingsView()
 					.tabItem {
 						Label("Samsung Tizen", systemImage: "tv")
-					}
-				LeafDriver.LeafSettingsView()
-					.tabItem {
-						Label("Nissan Leaf", systemImage: "bolt.car")
 					}
 				WeatherService.CreditsView()
 					.tabItem {
