@@ -17,6 +17,7 @@ import JVScripting
 import HAP
 import SoftPLC
 import ModbusDriver
+import MQTTNIO
 
 /// The main App that sets up a HomeKit-server together with its HomeKit-bridge
 /// and a number of hardwaredrivers that will act as Accessory-delegates.
@@ -26,13 +27,13 @@ import ModbusDriver
 @main
 struct HAPiNestApp: App, Loggable {
 	@SwiftUI.Environment(\.scenePhase) var scenePhase
-
+	
 	let appcontroller:AppController = AppController(name: "HAPiNest", terminal: TerminalDriver())
 	let appNapController: AppNapController = AppNapController.shared
 	
 	let homekitServer:HomeKitServer = HomeKitServer.shared
 	
-	let mqttCLient =  MQTTClient.shared
+	let mqttCLient =  MQTTClient()
 	
 	let plc:SoftPLC = SoftPLC(hardwareConfig:MainConfiguration.PLC.HardwareConfig, ioList: MainConfiguration.PLC.IOList, simulator:ModbusSimulator())
 	let cyclicPoller:CyclicPoller = CyclicPoller(timeInterval: 1.0)
@@ -76,9 +77,15 @@ struct HAPiNestApp: App, Loggable {
 			)
 			.padding()
 			.background(Color.Neumorphic.main)
-			.onAppear(perform:
-						{ mqttCLient.connect() }
-			)
+			.task {
+				let logger = Logger(subsystem: "be.oneclick.HAPiNest", category:.lifeCycle)
+				do {
+					try await mqttCLient.connect()
+					try await mqttCLient.subscribe()
+					logger.info("✅ 🔗 Succesfully connected MQTT client to broker")
+				} catch {
+					logger.error("❌ Error while connecting MQTT client to broker \(error)")
+				}			}
 			.onDisappear(perform:
 							{ mqttCLient.disconnect() }
 			)

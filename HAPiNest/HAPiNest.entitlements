@@ -4,6 +4,10 @@
 <dict>
 	<key>com.apple.developer.homekit</key>
 	<true/>
+	<key>com.apple.security.network.client</key>
+	<true/>
+	<key>com.apple.developer.networking.custom-protocol</key>
+	<true/>
 	<key>com.apple.developer.weatherkit</key>
 	<true/>
 	<key>com.apple.security.cs.disable-library-validation</key>
